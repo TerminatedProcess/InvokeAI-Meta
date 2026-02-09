@@ -270,7 +270,7 @@ def import_models(args: argparse.Namespace) -> None:
             filename = row["filename"]
             hub_hash = row["hash_blake3"]
             invoke_hash = f"blake3:{hub_hash}"
-            hub_name = row["name"] or Path(filename).stem
+            hub_name = Path(filename).stem
             file_size = row["file_size"]
 
             source_path = hub_models_dir / hub_hash / filename
