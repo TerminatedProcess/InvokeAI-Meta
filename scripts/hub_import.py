@@ -213,7 +213,8 @@ def import_models(args: argparse.Namespace) -> None:
             skip_reasons[bucket] = skip_reasons.get(bucket, 0) + 1
             continue
 
-        if row["hash_blake3"] in existing_hashes:
+        invoke_hash = f"blake3:{row['hash_blake3']}"
+        if invoke_hash in existing_hashes:
             skip_reasons["already in InvokeAI"] = skip_reasons.get("already in InvokeAI", 0) + 1
             continue
 
@@ -268,6 +269,7 @@ def import_models(args: argparse.Namespace) -> None:
         for i, row in enumerate(eligible, 1):
             filename = row["filename"]
             hub_hash = row["hash_blake3"]
+            invoke_hash = f"blake3:{hub_hash}"
             hub_name = row["name"] or Path(filename).stem
             file_size = row["file_size"]
 
@@ -300,7 +302,7 @@ def import_models(args: argparse.Namespace) -> None:
                     link_path,
                     override_fields={
                         "key": key,
-                        "hash": hub_hash,
+                        "hash": invoke_hash,
                         "name": hub_name,
                         "file_size": file_size,
                         "source": str(source_path),
@@ -348,7 +350,7 @@ def import_models(args: argparse.Namespace) -> None:
                     (config.key, config.model_dump_json()),
                 )
                 invokeai_conn.commit()
-                existing_hashes.add(hub_hash)
+                existing_hashes.add(invoke_hash)
                 imported += 1
 
                 info = f"{config.type.value}/{config.base.value}/{config.format.value}"
@@ -437,3 +439,7 @@ Examples:
 
 if __name__ == "__main__":
     main()
+    # Flush output then force-exit to avoid SIGSEGV during torch/CUDA cleanup
+    sys.stdout.flush()
+    sys.stderr.flush()
+    os._exit(0)
