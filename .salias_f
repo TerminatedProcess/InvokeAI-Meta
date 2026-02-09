@@ -86,6 +86,13 @@ function logs
     tail -f $INVOKE_DIR/invokeai_data/logs/invokeai.log
 end
 
+# Import models from hubrootv3 hub into InvokeAI
+function hubimport
+    imd
+    find .venv/ -name "*.pyc" -delete
+    python scripts/hub_import.py $argv
+end
+
 # install server
 function install
    echo "Installing ./setup_dev.sh"
