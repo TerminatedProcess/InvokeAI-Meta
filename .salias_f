@@ -10,7 +10,7 @@ function run
         sleep 2  # Give it time to shut down gracefully
     end
 
-    rmpyall
+    rmpyall;uvclean
 
     echo "Starting InvokeAI server..."
     # source .venv/bin/activate.fish - we are using direnv with .envrc file
@@ -54,12 +54,12 @@ function dev
     kill $backend_pid
 end
 
-# Build frontend
+# Build frontend (--mode test skips vite-plugin-eslint, avoids Node 25 V8 crash)
 function build-ui
     echo "Building frontend..."
     imd
     cd invokeai/frontend/web
-    pnpm build
+    npx vite build --mode test
     echo "✅ Frontend built"
 end
 
@@ -98,7 +98,5 @@ function install
    echo "Installing ./setup_dev.sh"
    cd $INVOKE_DIR
    pnpm self-update
-
    ./setup_dev.sh
-   echo "Close and reopen konsole before running"
 end

@@ -70,9 +70,9 @@ echo "Installing frontend dependencies..."
 cd invokeai/frontend/web
 pnpm i
 
-# 8. Build frontend (skip linting to avoid TypeScript crash)
+# 8. Build frontend (--mode test skips vite-plugin-eslint, avoids Node 25 V8 crash)
 echo "Building frontend (this may take a few minutes)..."
-pnpm exec vite build
+pnpm exec vite build --mode test
 
 # 9. Install pypatchmatch
 uv pip install pypatchmatch
