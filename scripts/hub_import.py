@@ -21,6 +21,10 @@ import traceback
 import uuid
 from pathlib import Path
 
+# Disable CUDA — probing only reads safetensors headers, no GPU needed.
+# Prevents SIGSEGV from torch/CUDA initialization during bulk imports.
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
+
 # ─── Default paths ───────────────────────────────────────────────────────────
 
 HUB_DB_DEFAULT = "/mnt/llm/hub/hubmodels/hubrootv3.db"

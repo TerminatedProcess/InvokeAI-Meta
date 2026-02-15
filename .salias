@@ -9,6 +9,7 @@ alias data='cd ./invokeai_data/databases'
 
 source ./.salias_f
 
+# hubimport- import valid models from hub3 to invokeai
 # install  - install invoke ./setup_dev.sh
 # run      - Start InvokeAI server
 # stop     - Stop InvokeAI server
