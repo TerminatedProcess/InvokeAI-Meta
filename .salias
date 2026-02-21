@@ -4,7 +4,7 @@ set -gx ENV_NAME '.venv'
 set -gx INVOKE_DIR (pwd)
 
 alias rmenv='clear;clean;rm -rf $ENV_NAME uv.lock .envrc; exit'
-alias mkenv='mkuv $ENV_NAME 3.12.10'
+alias mkenv='mkuv $ENV_NAME 3.13.11'
 alias data='cd ./invokeai_data/databases'
 
 source ./.salias_f
