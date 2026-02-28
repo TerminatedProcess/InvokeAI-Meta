@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Model Compare</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #1a1a2e; color: #e0e0e0; padding: 20px; }
+  h1 { color: #e0c040; margin-bottom: 16px; font-size: 1.5em; }
+  .section { background: #16213e; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+  .section h2 { font-size: 1.1em; color: #a0a0c0; margin-bottom: 12px; border-bottom: 1px solid #2a2a4e; padding-bottom: 8px; }
+  label { display: block; font-size: 0.85em; color: #888; margin-bottom: 4px; }
+  select, input[type="text"] {
+    width: 100%; padding: 8px; border: 1px solid #2a2a4e; border-radius: 4px;
+    background: #0f3460; color: #e0e0e0; font-size: 0.9em; font-family: inherit;
+  }
+  .filter-row { display: flex; gap: 8px; margin-bottom: 8px; align-items: center; }
+  .filter-row select, .filter-row input { flex: 1; }
+  .model-list { max-height: 400px; overflow-y: auto; border: 1px solid #2a2a4e; border-radius: 4px; }
+  .model-item { display: flex; align-items: center; padding: 6px 10px; border-bottom: 1px solid #1a1a2e; cursor: pointer; }
+  .model-item:hover { background: #1a3a6e; }
+  .model-item.selected { background: #0f3460; }
+  .model-item input[type="checkbox"] { margin-right: 10px; cursor: pointer; }
+  .model-name { flex: 1; font-size: 0.9em; }
+  .model-base { font-size: 0.75em; color: #888; background: #2a2a4e; padding: 2px 6px; border-radius: 3px; }
+  .controls { display: flex; gap: 8px; align-items: center; margin-top: 12px; }
+  .controls button { padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9em; }
+  .btn-select { background: #2a2a4e; color: #e0e0e0; }
+  .btn-select:hover { background: #3a3a5e; }
+  .btn-generate { background: #e0c040; color: #1a1a2e; font-weight: bold; padding: 10px 24px; }
+  .btn-generate:hover { background: #f0d050; }
+  .btn-generate:disabled { background: #555; color: #999; cursor: not-allowed; }
+  .status { margin-top: 12px; padding: 10px; border-radius: 4px; font-size: 0.9em; display: none; }
+  .status.success { display: block; background: #1a4a2e; color: #80e080; }
+  .status.error { display: block; background: #4a1a1a; color: #e08080; }
+  .status.info { display: block; background: #1a2a4e; color: #80a0e0; }
+  .count { font-size: 0.85em; color: #888; }
+</style>
+</head>
+<body>
+
+<h1>Model Compare</h1>
+
+<div class="section">
+  <h2>Models</h2>
+  <div class="filter-row">
+    <select id="baseFilter">
+      <option value="">All Bases</option>
+      <option value="sdxl">SDXL</option>
+      <option value="sd-1">SD 1.5</option>
+      <option value="sd-2">SD 2.x</option>
+      <option value="flux">Flux</option>
+    </select>
+    <input type="text" id="searchFilter" placeholder="Search models...">
+  </div>
+  <div class="controls">
+    <button class="btn-select" onclick="selectAll()">Select All</button>
+    <button class="btn-select" onclick="selectNone()">Select None</button>
+    <span class="count"><span id="selectedCount">0</span> selected / <span id="visibleCount">0</span> visible / <span id="totalCount">0</span> total</span>
+  </div>
+  <div class="model-list" id="modelList"></div>
+  <div class="controls" style="justify-content:space-between;">
+    <div>
+      <button class="btn-generate" id="generateBtn" onclick="generate()" disabled>Generate All Selected</button>
+    </div>
+  </div>
+  <div class="status" id="status"></div>
+</div>
+
+<script>
+let allModels = [];
+
+async function loadModels() {
+  try {
+    const resp = await fetch('/api/models');
+    const data = await resp.json();
+    allModels = data.models || [];
+    document.getElementById('totalCount').textContent = allModels.length;
+
+    // Auto-select base filter from current InvokeAI settings
+    try {
+      const settingsResp = await fetch('/api/settings');
+      const settings = await settingsResp.json();
+      if (settings.model && settings.model.base) {
+        document.getElementById('baseFilter').value = settings.model.base;
+      }
+    } catch (_) {}
+
+    filterModels();
+  } catch (e) {
+    showStatus('error', 'Failed to load models: ' + e.message);
+  }
+}
+
+function createModelItem(model) {
+  const div = document.createElement('div');
+  div.className = 'model-item' + (model._selected ? ' selected' : '');
+
+  const cb = document.createElement('input');
+  cb.type = 'checkbox';
+  cb.dataset.key = model.key;
+  cb.checked = !!model._selected;
+
+  const nameSpan = document.createElement('span');
+  nameSpan.className = 'model-name';
+  nameSpan.textContent = model.name;
+
+  const baseSpan = document.createElement('span');
+  baseSpan.className = 'model-base';
+  baseSpan.textContent = model.base;
+
+  div.appendChild(cb);
+  div.appendChild(nameSpan);
+  div.appendChild(baseSpan);
+
+  cb.addEventListener('change', function() {
+    model._selected = cb.checked;
+    div.classList.toggle('selected', cb.checked);
+    updateCounts();
+  });
+
+  div.addEventListener('click', function(e) {
+    if (e.target.tagName === 'INPUT') return;
+    cb.checked = !cb.checked;
+    cb.dispatchEvent(new Event('change'));
+  });
+
+  return div;
+}
+
+function filterModels() {
+  const base = document.getElementById('baseFilter').value.toLowerCase();
+  const search = document.getElementById('searchFilter').value.toLowerCase();
+  const list = document.getElementById('modelList');
+
+  while (list.firstChild) list.removeChild(list.firstChild);
+
+  let visible = 0;
+  for (const model of allModels) {
+    if (base && model.base !== base) continue;
+    if (search && !model.name.toLowerCase().includes(search)) continue;
+    visible++;
+    list.appendChild(createModelItem(model));
+  }
+
+  document.getElementById('visibleCount').textContent = visible;
+  updateCounts();
+}
+
+function updateCounts() {
+  const selected = allModels.filter(m => m._selected).length;
+  document.getElementById('selectedCount').textContent = selected;
+  document.getElementById('generateBtn').disabled = selected === 0;
+}
+
+function selectAll() {
+  const base = document.getElementById('baseFilter').value.toLowerCase();
+  const search = document.getElementById('searchFilter').value.toLowerCase();
+  for (const model of allModels) {
+    if (base && model.base !== base) continue;
+    if (search && !model.name.toLowerCase().includes(search)) continue;
+    model._selected = true;
+  }
+  filterModels();
+}
+
+function selectNone() {
+  for (const model of allModels) model._selected = false;
+  filterModels();
+}
+
+async function generate() {
+  const btn = document.getElementById('generateBtn');
+  btn.disabled = true;
+  btn.textContent = 'Enqueueing...';
+
+  const selectedKeys = allModels.filter(m => m._selected).map(m => m.key);
+
+  try {
+    const resp = await fetch('/api/generate', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ model_keys: selectedKeys }),
+    });
+    const result = await resp.json();
+
+    if (result.enqueued > 0) {
+      showStatus('success', 'Enqueued ' + result.enqueued + '/' + result.total + ' jobs (seed: ' + result.seed + '). Switch to InvokeAI to watch generation.');
+    }
+    if (result.errors && result.errors.length > 0) {
+      showStatus('error', 'Errors: ' + result.errors.join(', '));
+    }
+  } catch (e) {
+    showStatus('error', 'Failed to generate: ' + e.message);
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Generate All Selected';
+}
+
+function showStatus(type, msg) {
+  const el = document.getElementById('status');
+  el.className = 'status ' + type;
+  el.textContent = msg;
+}
+
+document.getElementById('baseFilter').addEventListener('change', filterModels);
+document.getElementById('searchFilter').addEventListener('input', filterModels);
+
+loadModels();
+</script>
+</body>
+</html>
