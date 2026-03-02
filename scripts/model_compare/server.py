@@ -54,19 +54,19 @@ def read_client_state() -> dict:
     """Read client_state from InvokeAI's SQLite database."""
     conn = sqlite3.connect(invokeai_db_path)
     try:
-        row = conn.execute("SELECT data FROM client_state WHERE id=1").fetchone()
-        if not row:
-            return {}
-        return json.loads(row[0])
+        rows = conn.execute(
+            "SELECT key, value FROM client_state WHERE user_id='system'"
+        ).fetchall()
+        return {key: json.loads(value) for key, value in rows}
     finally:
         conn.close()
 
 
 def parse_settings(state: dict) -> dict:
     """Extract generation settings from client_state."""
-    params = json.loads(state.get("params", "{}"))
-    canvas = json.loads(state.get("canvas", "{}"))
-    loras_state = json.loads(state.get("loras", "{}"))
+    params = state.get("params", {})
+    canvas = state.get("canvas", {})
+    loras_state = state.get("loras", {})
 
     bbox = canvas.get("bbox", {})
     rect = bbox.get("rect", {})
