@@ -11,11 +11,12 @@ source ./.salias_f
 
 # hubimport- import valid models from hub3 to invokeai
 # install  - install invoke ./setup_dev.sh
-# run      - Start InvokeAI server
-# stop     - Stop InvokeAI server
+# run      - Start InvokeAI server + Model Compare (port 9091)
+# stop     - Stop InvokeAI server + Model Compare
 # dev      - Start InvokeAI server with frontend in dev mode
 # build-ui - Build frontend
 # updateall- Update dependencies
 # clean    - Clean build artifacts
+# gitpull  - Sync main and mryan with upstream invoke-ai repo
 # data     - Open data directory
 # logs     - View logs
