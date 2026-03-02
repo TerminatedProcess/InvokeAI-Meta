@@ -115,6 +115,28 @@ function hubimport
     python scripts/hub_import.py $argv
 end
 
+# Sync both main and mryan with upstream invoke-ai repo
+function gitpull
+    imd
+    set -l current_branch (git branch --show-current)
+
+    echo "Fetching upstream..."
+    git fetch upstream
+
+    echo "Updating main..."
+    git checkout main
+    git merge upstream/main --ff-only
+    git push origin main
+
+    echo "Rebasing mryan onto main..."
+    git checkout mryan
+    git rebase main
+    git push origin mryan --force-with-lease
+
+    git checkout $current_branch
+    echo "✅ Both branches synced"
+end
+
 # install server
 function install
    echo "Installing ./setup_dev.sh"
