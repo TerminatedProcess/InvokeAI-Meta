@@ -31,7 +31,7 @@
   .btn-generate { background: #e0c040; color: #1a1a2e; font-weight: bold; padding: 10px 24px; }
   .btn-generate:hover { background: #f0d050; }
   .btn-generate:disabled { background: #555; color: #999; cursor: not-allowed; }
-  .status { margin-top: 12px; padding: 10px; border-radius: 4px; font-size: 0.9em; display: none; }
+  .status { margin-top: 12px; padding: 10px; border-radius: 4px; font-size: 0.9em; display: none; white-space: pre-line; }
   .status.success { display: block; background: #1a4a2e; color: #80e080; }
   .status.error { display: block; background: #4a1a1a; color: #e08080; }
   .status.info { display: block; background: #1a2a4e; color: #80a0e0; }
@@ -185,11 +185,20 @@ async function generate() {
     });
     const result = await resp.json();
 
+    let msg = '';
     if (result.enqueued > 0) {
-      showStatus('success', 'Enqueued ' + result.enqueued + '/' + result.total + ' jobs (seed: ' + result.seed + '). Switch to InvokeAI to watch generation.');
+      msg += 'Enqueued ' + result.enqueued + '/' + result.total + ' (seed: ' + result.seed + '). Switch to InvokeAI to watch.';
     }
     if (result.errors && result.errors.length > 0) {
-      showStatus('error', 'Errors: ' + result.errors.join(', '));
+      if (msg) msg += '\n';
+      msg += result.errors.join('\n');
+    }
+    if (result.enqueued > 0 && result.errors.length === 0) {
+      showStatus('success', msg);
+    } else if (result.enqueued > 0) {
+      showStatus('info', msg);
+    } else {
+      showStatus('error', msg || 'No models were enqueued');
     }
   } catch (e) {
     showStatus('error', 'Failed to generate: ' + e.message);
