@@ -6,8 +6,8 @@ set -gx INVOKE_DIR (pwd)
 alias rmenv='clear;clean;rm -rf $ENV_NAME uv.lock .envrc; exit'
 alias mkenv='mkuv $ENV_NAME 3.12.10'
 alias data='cd ./invokeai_data/databases'
-
 source ./.salias_f
+alias restart='stop;run'
 
 # hubimport- import valid models from hub3 to invokeai
 # install  - install invoke ./setup_dev.sh
