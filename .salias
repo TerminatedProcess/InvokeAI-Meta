@@ -17,6 +17,6 @@ alias restart='stop;run'
 # build-ui - Build frontend
 # updateall- Update dependencies
 # clean    - Clean build artifacts
-# gitpull  - Sync main and mryan with upstream invoke-ai repo
+# gitupdate- Sync main and mryan with upstream invoke-ai repo
 # data     - Open data directory
 # logs     - View logs
