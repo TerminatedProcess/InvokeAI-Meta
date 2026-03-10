@@ -116,7 +116,7 @@ function hubimport
 end
 
 # Sync both main and mryan with upstream invoke-ai repo
-function gitpull
+function gitupdate
     imd
     set -l current_branch (git branch --show-current)
 
@@ -134,6 +134,7 @@ function gitpull
     git push origin mryan --force-with-lease
 
     git checkout $current_branch
+    git pull
     echo "✅ Both branches synced"
 end
 
