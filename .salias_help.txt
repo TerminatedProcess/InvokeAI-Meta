@@ -1,0 +1,32 @@
+InvokeAI-Meta - Project Commands
+=================================
+
+HELP
+  help              Show this help text
+
+PYTHON ENVIRONMENT
+  envclean          Clean Python cache and uv artifacts
+  install           Run setup_dev.sh with pnpm self-update
+  mkenv             Full env rebuild: gitupdate, create venv, build UI
+  rmenv             Remove venv, lock files, .envrc and exit shell
+  updateall         Upgrade all pip dependencies via uv
+
+SERVER
+  restart           Stop services then start them again
+  run               Start InvokeAI server + Model Compare (port 9091)
+  stop              Stop all InvokeAI services and exit shell
+
+DEVELOPMENT
+  build-ui          Build frontend (--mode test, skips eslint)
+  dev               Start backend (9090) + frontend dev server (5173)
+
+MAINTENANCE
+  clean             Remove frontend dist, vite cache, __pycache__ dirs
+  data              cd to invokeai_data/databases
+  logs              Tail the InvokeAI log file
+
+GIT
+  gitupdate         Sync main and mryan branches with upstream
+
+MODELS
+  hubimport         Import models from hub into InvokeAI
