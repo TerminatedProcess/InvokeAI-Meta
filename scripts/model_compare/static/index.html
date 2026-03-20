@@ -63,6 +63,7 @@
   <div class="controls" style="justify-content:space-between;">
     <div>
       <button class="btn-generate" id="generateBtn" onclick="generate()" disabled>Generate All Selected</button>
+      <button class="btn-generate" id="randomBtn" onclick="generateRandom()" style="background:#4a90d9;">Generate 10 Random</button>
     </div>
   </div>
   <div class="status" id="status"></div>
@@ -70,6 +71,7 @@
 
 <script>
 let allModels = [];
+const previouslyGenerated = new Set();
 
 async function loadModels() {
   try {
@@ -185,6 +187,11 @@ async function generate() {
     });
     const result = await resp.json();
 
+    // Track generated keys
+    if (result.enqueued > 0) {
+      selectedKeys.forEach(k => previouslyGenerated.add(k));
+    }
+
     let msg = '';
     if (result.enqueued > 0) {
       msg += 'Enqueued ' + result.enqueued + '/' + result.total + ' (seed: ' + result.seed + '). Switch to InvokeAI to watch.';
@@ -206,6 +213,69 @@ async function generate() {
 
   btn.disabled = false;
   btn.textContent = 'Generate All Selected';
+}
+
+async function generateRandom() {
+  const btn = document.getElementById('randomBtn');
+
+  // Get eligible models: apply current base/search filter, exclude previously generated
+  const base = document.getElementById('baseFilter').value.toLowerCase();
+  const search = document.getElementById('searchFilter').value.toLowerCase();
+  const eligible = allModels.filter(m => {
+    if (previouslyGenerated.has(m.key)) return false;
+    if (base && m.base !== base) return false;
+    if (search && !m.name.toLowerCase().includes(search)) return false;
+    return true;
+  });
+
+  if (eligible.length === 0) {
+    showStatus('info', 'No eligible models remaining. All have been generated this session.');
+    return;
+  }
+
+  // Shuffle and pick up to 10
+  const shuffled = eligible.slice().sort(() => Math.random() - 0.5);
+  const picked = shuffled.slice(0, 10);
+  const pickedKeys = picked.map(m => m.key);
+
+  btn.disabled = true;
+  btn.textContent = 'Enqueueing ' + picked.length + ' random...';
+
+  try {
+    const resp = await fetch('/api/generate', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ model_keys: pickedKeys }),
+    });
+    const result = await resp.json();
+
+    if (result.enqueued > 0) {
+      pickedKeys.forEach(k => previouslyGenerated.add(k));
+    }
+
+    let msg = '';
+    if (result.enqueued > 0) {
+      const names = picked.slice(0, result.enqueued).map(m => m.name).join(', ');
+      msg += 'Enqueued ' + result.enqueued + ' random models (seed: ' + result.seed + ')\n' + names;
+      msg += '\n\n' + previouslyGenerated.size + ' models generated this session, ' + (eligible.length - result.enqueued) + ' remaining.';
+    }
+    if (result.errors && result.errors.length > 0) {
+      if (msg) msg += '\n';
+      msg += result.errors.join('\n');
+    }
+    if (result.enqueued > 0 && result.errors.length === 0) {
+      showStatus('success', msg);
+    } else if (result.enqueued > 0) {
+      showStatus('info', msg);
+    } else {
+      showStatus('error', msg || 'No models were enqueued');
+    }
+  } catch (e) {
+    showStatus('error', 'Failed to generate: ' + e.message);
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Generate 10 Random';
 }
 
 function showStatus(type, msg) {
