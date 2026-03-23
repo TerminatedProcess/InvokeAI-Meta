@@ -6,9 +6,9 @@
 <title>Model Compare</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #1a1a2e; color: #e0e0e0; padding: 20px; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #1a1a2e; color: #e0e0e0; padding: 20px; height: 100vh; display: flex; flex-direction: column; }
   h1 { color: #e0c040; margin-bottom: 16px; font-size: 1.5em; }
-  .section { background: #16213e; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+  .section { background: #16213e; border-radius: 8px; padding: 16px; margin-bottom: 16px; flex: 1; display: flex; flex-direction: column; min-height: 0; }
   .section h2 { font-size: 1.1em; color: #a0a0c0; margin-bottom: 12px; border-bottom: 1px solid #2a2a4e; padding-bottom: 8px; }
   label { display: block; font-size: 0.85em; color: #888; margin-bottom: 4px; }
   select, input[type="text"] {
@@ -17,7 +17,7 @@
   }
   .filter-row { display: flex; gap: 8px; margin-bottom: 8px; align-items: center; }
   .filter-row select, .filter-row input { flex: 1; }
-  .model-list { max-height: 400px; overflow-y: auto; border: 1px solid #2a2a4e; border-radius: 4px; }
+  .model-list { flex: 1; min-height: 100px; overflow-y: auto; border: 1px solid #2a2a4e; border-radius: 4px; }
   .model-item { display: flex; align-items: center; padding: 6px 10px; border-bottom: 1px solid #1a1a2e; cursor: pointer; }
   .model-item:hover { background: #1a3a6e; }
   .model-item.selected { background: #0f3460; }
