@@ -50,6 +50,8 @@ invokeai_api_url: str = INVOKEAI_API_DEFAULT
 
 class GenerateRequest(BaseModel):
     model_keys: list[str]
+    width: int | None = None
+    height: int | None = None
 
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
@@ -90,6 +92,8 @@ def parse_settings(state: dict) -> dict:
                 "weight": lora_entry.get("weight", 0.75),
             })
 
+    aspect_ratio = bbox.get("aspectRatio", {})
+
     return {
         "positivePrompt": params.get("positivePrompt") or "",
         "negativePrompt": params.get("negativePrompt") or "",
@@ -103,6 +107,7 @@ def parse_settings(state: dict) -> dict:
         "vae": params.get("vae"),
         "width": width,
         "height": height,
+        "aspectRatioId": aspect_ratio.get("id", "Free"),
         "loras": loras,
         # Flux-specific
         "guidance": params.get("guidance", 4),
@@ -169,8 +174,8 @@ async def generate(req: GenerateRequest):
     cfg_scale = settings["cfgScale"]
     cfg_rescale = settings["cfgRescaleMultiplier"]
     scheduler = settings["scheduler"]
-    width = settings["width"]
-    height = settings["height"]
+    width = req.width if req.width else settings["width"]
+    height = req.height if req.height else settings["height"]
     loras = settings["loras"]
 
     # Use saved seed, or generate random if InvokeAI is set to randomize
