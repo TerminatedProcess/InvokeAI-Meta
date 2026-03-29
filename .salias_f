@@ -144,6 +144,6 @@ function hubimport
     imd
     python scripts/hub_import.py $argv
 end
-function invokepush
-    python /home/dev/work/media/invokedev/invokepush/invokepush.py $argv
+function ipush
+    python /home/dev/work/media/invokedev/invokepush/app.py $argv
 end

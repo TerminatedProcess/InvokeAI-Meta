@@ -30,4 +30,4 @@ GIT
 
 MODELS
   hubimport         Import models from hub into InvokeAI
-  invokepush        Parse CivitAI metadata from clipboard, match and enqueue
+  ipush             Parse CivitAI metadata from clipboard, review and enqueue
