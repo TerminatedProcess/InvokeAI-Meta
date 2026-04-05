@@ -65,7 +65,8 @@
   <div class="controls" style="justify-content:space-between;">
     <div style="display:flex; gap:8px; align-items:center;">
       <button class="btn-generate" id="generateBtn" onclick="generate()" disabled>Generate All Selected</button>
-      <button class="btn-generate" id="randomBtn" onclick="generateRandom()" style="background:#4a90d9;">Generate 10 Random</button>
+      <button class="btn-generate" id="randomBtn" onclick="generateRandom()" style="background:#4a90d9;">Generate Random</button>
+      <input type="number" id="randomCount" value="10" min="1" max="100" style="width:50px; padding:10px 6px; text-align:center; background:#0f3460; color:#e0e0e0; border:1px solid #2a2a4e; border-radius:4px; font-size:0.9em;">
       <select id="aspectRatio" class="aspect-select" onchange="updateDims()">
         <option value="21:9">21:9</option>
         <option value="16:9">16:9</option>
@@ -311,7 +312,8 @@ async function generateRandom() {
 
   // Shuffle and pick up to 10
   const shuffled = eligible.slice().sort(() => Math.random() - 0.5);
-  const picked = shuffled.slice(0, 10);
+  const count = parseInt(document.getElementById('randomCount').value) || 10;
+  const picked = shuffled.slice(0, count);
   const pickedKeys = picked.map(m => m.key);
   const dims = getOverrideDims();
   const body = { model_keys: pickedKeys, width: dims.width, height: dims.height };
@@ -353,7 +355,7 @@ async function generateRandom() {
   }
 
   btn.disabled = false;
-  btn.textContent = 'Generate 10 Random';
+  btn.textContent = 'Generate Random';
 }
 
 function showStatus(type, msg) {
