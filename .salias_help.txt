@@ -13,7 +13,7 @@ PYTHON ENVIRONMENT
 
 SERVER
   restart           Stop services then start them again
-  run               Start InvokeAI server + Model Compare (port 9091)
+  run               Start InvokeAI (9090) + Model Compare (9091) + ipush (9092)
   stop              Stop all InvokeAI services and exit shell
 
 DEVELOPMENT
@@ -30,4 +30,4 @@ GIT
 
 MODELS
   hubimport         Import models from hub into InvokeAI
-  ipush             Parse CivitAI metadata from clipboard, review and enqueue
+  ipush             invokepush web service (auto-started by run)

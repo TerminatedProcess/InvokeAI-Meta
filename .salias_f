@@ -38,15 +38,21 @@ function run
         sleep 2
     end
     pkill -f "model_compare/server.py" 2>/dev/null
+    pkill -f "invokepush/web.py" 2>/dev/null
 
     echo "Starting Model Compare service on http://localhost:9091 ..."
     python $INVOKE_DIR/scripts/model_compare/server.py &
     set -g modelcompare_pid $last_pid
 
+    echo "Starting invokepush on http://localhost:9092 ..."
+    python /home/dev/work/media/invokedev/invokepush/web.py &
+    set -g invokepush_pid $last_pid
+
     echo "Starting InvokeAI server..."
     invokeai-web --root $INVOKE_DIR/invokeai_data
 
     kill $modelcompare_pid 2>/dev/null
+    kill $invokepush_pid 2>/dev/null
 end
 function stop
     set -l found 0
@@ -64,6 +70,14 @@ function stop
         echo "Found Model Compare service (PIDs: $mc_pids)"
         echo "Stopping Model Compare..."
         pkill -f "model_compare/server.py"
+        set found 1
+    end
+
+    set ip_pids (pgrep -f "invokepush/web.py")
+    if test -n "$ip_pids"
+        echo "Found invokepush service (PIDs: $ip_pids)"
+        echo "Stopping invokepush..."
+        pkill -f "invokepush/web.py"
         set found 1
     end
 
@@ -145,5 +159,5 @@ function hubimport
     python scripts/hub_import.py $argv
 end
 function ipush
-    python /home/dev/work/media/invokedev/invokepush/app.py $argv
+    python /home/dev/work/media/invokedev/invokepush/web.py $argv
 end
