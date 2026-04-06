@@ -21,14 +21,14 @@ echo "Downloading large files with git-lfs..."
 git lfs pull
 
 # 2. Create venv if it doesn't exist
-if [ ! -d ".venv" ]; then
-    echo "Creating virtual environment..."
-    uv venv --relocatable --prompt invoke-meta --python 3.12 --python-preference only-managed .venv
-fi
+#if [ ! -d ".venv" ]; then
+#    echo "Creating virtual environment..."
+#    uv venv --relocatable --prompt invoke-meta --python 3.12 --python-preference only-managed .venv
+#fi
 
 # 3. Activate venv
-echo "Activating virtual environment..."
-source .venv/bin/activate
+#echo "Activating virtual environment..."
+#source .venv/bin/activate
 
 # 4. Install InvokeAI in editable mode with dev dependencies
 echo "Installing InvokeAI with dev dependencies (this may take a while)..."
