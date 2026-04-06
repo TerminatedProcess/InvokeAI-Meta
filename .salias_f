@@ -7,6 +7,7 @@ clear
 set -gx ENV_NAME '.venv'
 set -gx INVOKE_DIR (pwd)
 set -gx PY_VERSION 3.12.10
+set -gx IMD_AUTO_OPEN false
 
 # ── Python Environment ──
 alias envclean='rmpyall;uvclean'
@@ -49,7 +50,9 @@ function run
     set -g invokepush_pid $last_pid
 
     # Open browser tabs after InvokeAI has time to start
-    fish -c "sleep 5; xdg-open http://localhost:8000; xdg-open http://localhost:9090; xdg-open http://localhost:9091; xdg-open http://localhost:9092" &
+    if test "$IMD_AUTO_OPEN" = "true"
+        fish -c "sleep 5; xdg-open http://localhost:8000; xdg-open http://localhost:9090; xdg-open http://localhost:9091; xdg-open http://localhost:9092" &
+    end
 
     echo "Starting InvokeAI server..."
     invokeai-web --root $INVOKE_DIR/invokeai_data
