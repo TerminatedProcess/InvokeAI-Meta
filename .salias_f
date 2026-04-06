@@ -49,7 +49,7 @@ function run
     set -g invokepush_pid $last_pid
 
     # Open browser tabs after InvokeAI has time to start
-    fish -c "sleep 5; xdg-open http://localhost:9090; xdg-open http://localhost:9091; xdg-open http://localhost:9092" &
+    fish -c "sleep 5; xdg-open http://localhost:8000; xdg-open http://localhost:9090; xdg-open http://localhost:9091; xdg-open http://localhost:9092" &
 
     echo "Starting InvokeAI server..."
     invokeai-web --root $INVOKE_DIR/invokeai_data
