@@ -27,7 +27,7 @@ import sys
 from pathlib import Path as _Path
 
 sys.path.insert(0, str(_Path(__file__).parent))
-from graphs import build_flux2_graph, build_flux_graph, build_sd1_graph, build_sdxl_graph
+from graphs import build_flux2_graph, build_flux_graph, build_sd1_graph, build_sdxl_graph, build_zimage_graph
 
 # ── Defaults ─────────────────────────────────────────────────────────────────
 
@@ -245,6 +245,13 @@ async def generate(req: GenerateRequest):
                     model=model_ref, positive_prompt=positive_prompt,
                     seed=seed, width=width, height=height,
                     steps=steps,
+                )
+            elif base == "z-image":
+                graph = build_zimage_graph(
+                    model=model_ref, positive_prompt=positive_prompt,
+                    seed=seed, width=width, height=height,
+                    steps=steps, cfg_scale=cfg_scale,
+                    scheduler=settings.get("zImageScheduler", "euler"),
                 )
             else:
                 errors.append(f"Skipped {model_info['name']} ('{base}' not supported)")

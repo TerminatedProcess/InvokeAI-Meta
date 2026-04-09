@@ -340,3 +340,51 @@ def build_flux2_graph(
     ]
 
     return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
+
+
+def build_zimage_graph(
+    model: dict,
+    positive_prompt: str,
+    seed: int,
+    width: int,
+    height: int,
+    steps: int,
+    cfg_scale: float = 1.0,
+    scheduler: str = "euler",
+) -> dict:
+    """Build a Z-Image text-to-image execution graph."""
+    ml = f"z_image_model_loader:{uuid.uuid4().hex[:10]}"
+    pp = f"positive_prompt:{uuid.uuid4().hex[:10]}"
+    te = f"z_image_text_encoder:{uuid.uuid4().hex[:10]}"
+    sd = f"seed:{uuid.uuid4().hex[:10]}"
+    dn = f"z_image_denoise:{uuid.uuid4().hex[:10]}"
+    out = f"z_image_l2i:{uuid.uuid4().hex[:10]}"
+
+    nodes = {
+        ml: {
+            "type": "z_image_model_loader", "id": ml, "is_intermediate": True, "use_cache": True,
+            "model": model,
+        },
+        pp: {"type": "string", "id": pp, "is_intermediate": True, "use_cache": True, "value": positive_prompt},
+        te: {"type": "z_image_text_encoder", "id": te, "is_intermediate": True, "use_cache": True},
+        sd: {"type": "rand_int", "id": sd, "is_intermediate": True, "use_cache": False, "low": seed, "high": seed + 1},
+        dn: {
+            "type": "z_image_denoise", "id": dn, "is_intermediate": True, "use_cache": True,
+            "width": width, "height": height, "steps": steps,
+            "guidance_scale": cfg_scale, "scheduler": scheduler,
+        },
+        out: {"type": "z_image_l2i", "id": out, "is_intermediate": False, "use_cache": False},
+    }
+
+    edges = [
+        {"source": {"node_id": ml, "field": "qwen3_encoder"}, "destination": {"node_id": te, "field": "qwen3_encoder"}},
+        {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": te, "field": "prompt"}},
+        {"source": {"node_id": te, "field": "conditioning"}, "destination": {"node_id": dn, "field": "positive_conditioning"}},
+        {"source": {"node_id": ml, "field": "transformer"}, "destination": {"node_id": dn, "field": "transformer"}},
+        {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": dn, "field": "vae"}},
+        {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
+        {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
+        {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": out, "field": "vae"}},
+    ]
+
+    return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
