@@ -162,7 +162,16 @@ end
 # ── Models ──
 function hubimport
     imd
+    stop
     python scripts/hub_import.py $argv
+end
+function hubreset
+    imd
+    stop
+    echo "Resetting InvokeAI models DB and symlinks, then re-importing..."
+    echo "Make sure InvokeAI is stopped first (run 'stop')"
+    echo ""
+    python scripts/hub_import.py --reset $argv
 end
 function ipush
     python /home/dev/work/media/invokedev/invokepush/web.py $argv
