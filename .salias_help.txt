@@ -30,4 +30,5 @@ GIT
 
 MODELS
   hubimport         Import models from hub into InvokeAI
+  hubreset          Wipe InvokeAI models DB + symlinks, then re-import
   ipush             invokepush web service (auto-started by run)

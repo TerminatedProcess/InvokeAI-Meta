@@ -390,6 +390,57 @@ def import_models(args: argparse.Namespace) -> None:
     print(f"  Total:     {len(eligible)}")
 
 
+def reset_invokeai_models(args: argparse.Namespace) -> None:
+    """Reset InvokeAI models: clear DB models table and wipe models directory."""
+    invokeai_db = Path(args.invokeai_db)
+    invokeai_models_dir = Path(args.invokeai_models)
+
+    if not invokeai_db.exists():
+        print(f"Error: InvokeAI database not found at {invokeai_db}", file=sys.stderr)
+        sys.exit(1)
+
+    # Count existing models
+    conn = sqlite3.connect(str(invokeai_db))
+    try:
+        count = conn.execute("SELECT COUNT(*) FROM models").fetchone()[0]
+    finally:
+        conn.close()
+
+    print(f"InvokeAI DB: {count} models registered")
+    print(f"Models dir:  {invokeai_models_dir}")
+
+    if args.dry_run:
+        print(f"\nDry run — would delete {count} model records and wipe {invokeai_models_dir}")
+        return
+
+    # Clear models table
+    conn = sqlite3.connect(str(invokeai_db))
+    try:
+        conn.execute("DELETE FROM models")
+        conn.execute("DELETE FROM model_relationships")
+        conn.commit()
+        print(f"Cleared {count} models from database")
+    finally:
+        conn.close()
+
+    # Wipe models directory (all symlinks and UUID dirs)
+    if invokeai_models_dir.exists():
+        import shutil
+        removed = 0
+        for child in invokeai_models_dir.iterdir():
+            if child.is_dir():
+                shutil.rmtree(child)
+                removed += 1
+            elif child.is_symlink() or child.is_file():
+                child.unlink()
+                removed += 1
+        print(f"Removed {removed} entries from {invokeai_models_dir}")
+    else:
+        print(f"Models directory doesn't exist, nothing to wipe")
+
+    print("\nReset complete. Run hubimport to re-import models.")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Import models from hubrootv3 hub into InvokeAI as symlinks.",
@@ -399,6 +450,8 @@ Examples:
   python scripts/hub_import.py --dry-run        Show what would be imported
   python scripts/hub_import.py --limit 5         Import first 5 eligible models
   python scripts/hub_import.py --verbose          Show detailed error info
+  python scripts/hub_import.py --reset            Wipe models and DB, then re-import
+  python scripts/hub_import.py --reset --dry-run  Show what reset would do
 """,
     )
     parser.add_argument(
@@ -436,8 +489,20 @@ Examples:
         action="store_true",
         help="Show full tracebacks on probe failures",
     )
+    parser.add_argument(
+        "--reset",
+        action="store_true",
+        help="Wipe InvokeAI models DB and symlinks before importing",
+    )
 
     args = parser.parse_args()
+
+    if args.reset:
+        reset_invokeai_models(args)
+        if args.dry_run:
+            return
+        print()
+
     import_models(args)
 
 
