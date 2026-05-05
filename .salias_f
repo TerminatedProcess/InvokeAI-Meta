@@ -103,6 +103,7 @@ function build-ui
     echo "Building frontend..."
     imd
     cd invokeai/frontend/web
+    pnpm install
     pnpm exec vite build --mode test
     echo "Done"
 end
