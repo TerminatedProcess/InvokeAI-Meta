@@ -6,6 +6,8 @@
 clear
 set -gx ENV_NAME '.venv'
 set -gx INVOKE_DIR (pwd)
+set -gx INVOKE_DATA_DIR "$INVOKE_DIR/invokeai_data"
+set -gx INVOKEAI_DB "$INVOKE_DATA_DIR/databases/invokeai.db"
 set -gx PY_VERSION 3.12.10
 set -gx IMD_AUTO_OPEN false
 
@@ -42,7 +44,8 @@ function run
     pkill -f "invokepush/web.py" 2>/dev/null
 
     echo "Starting Model Compare service on http://localhost:9091 ..."
-    python $INVOKE_DIR/scripts/model_compare/server.py &
+    python $INVOKE_DIR/scripts/model_compare/server.py \
+        --invokeai-db $INVOKE_DATA_DIR/databases/invokeai.db &
     set -g modelcompare_pid $last_pid
 
     echo "Starting invokepush on http://localhost:9092 ..."
@@ -55,7 +58,7 @@ function run
     end
 
     echo "Starting InvokeAI server..."
-    invokeai-web --root $INVOKE_DIR/invokeai_data
+    invokeai-web --root $INVOKE_DATA_DIR
 
     kill $modelcompare_pid 2>/dev/null
     kill $invokepush_pid 2>/dev/null
@@ -114,7 +117,7 @@ function dev
     echo "Frontend will run at http://127.0.0.1:5173"
     echo ""
 
-    invokeai-web --root $INVOKE_DIR/invokeai_data &
+    invokeai-web --root $INVOKE_DATA_DIR &
     set -l backend_pid $last_pid
 
     cd invokeai/frontend/web
@@ -132,9 +135,9 @@ function clean
     find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null
     echo "Done"
 end
-alias data='cd ./invokeai_data/databases'
+alias data='cd $INVOKE_DATA_DIR/databases'
 function logs
-    tail -f $INVOKE_DIR/invokeai_data/logs/invokeai.log
+    tail -f $INVOKE_DATA_DIR/logs/invokeai.log
 end
 
 # ── Git ──
@@ -164,15 +167,34 @@ end
 function hubimport
     imd
     stop
-    python scripts/hub_import.py $argv
+    python scripts/hub_import.py \
+        --invokeai-db $INVOKE_DATA_DIR/databases/invokeai.db \
+        --invokeai-models $INVOKE_DATA_DIR/models \
+        $argv
 end
 function hubreset
     imd
     stop
-    echo "Resetting InvokeAI models DB and symlinks, then re-importing..."
-    echo "Make sure InvokeAI is stopped first (run 'stop')"
+    echo "Resetting InvokeAI models DB and symlinks..."
+    echo "Data dir: $INVOKE_DATA_DIR"
     echo ""
-    python scripts/hub_import.py --reset $argv
+    python scripts/hub_import.py \
+        --invokeai-db $INVOKE_DATA_DIR/databases/invokeai.db \
+        --invokeai-models $INVOKE_DATA_DIR/models \
+        --reset --no-import $argv
+    or return $status
+
+    echo ""
+    read -P "Reimport? (Y/n) " -l reply
+    switch (string lower -- $reply)
+        case n no
+            echo "Skipping re-import."
+        case '*'
+            python scripts/hub_import.py \
+                --invokeai-db $INVOKE_DATA_DIR/databases/invokeai.db \
+                --invokeai-models $INVOKE_DATA_DIR/models \
+                $argv
+    end
 end
 function ipush
     python /home/dev/work/media/invokedev/invokepush/web.py $argv

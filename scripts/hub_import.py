@@ -494,6 +494,11 @@ Examples:
         action="store_true",
         help="Wipe InvokeAI models DB and symlinks before importing",
     )
+    parser.add_argument(
+        "--no-import",
+        action="store_true",
+        help="Skip the import step (useful with --reset to wipe only)",
+    )
 
     args = parser.parse_args()
 
@@ -503,7 +508,8 @@ Examples:
             return
         print()
 
-    import_models(args)
+    if not args.no_import:
+        import_models(args)
 
 
 if __name__ == "__main__":
