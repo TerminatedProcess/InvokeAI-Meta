@@ -194,3 +194,5 @@ installer/InvokeAI-Installer/
 
 # Weblate configuration file
 weblate.ini
+
+uv.lock
