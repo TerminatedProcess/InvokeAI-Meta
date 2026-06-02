@@ -199,3 +199,5 @@ weblate.ini
 # node_modules/ (created by running a JS tool from the repo root) was not covered by anything,
 # so vitest cache artifacts could be committed by accident.
 node_modules/
+
+uv.lock
