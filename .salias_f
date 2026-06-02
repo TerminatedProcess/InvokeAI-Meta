@@ -141,6 +141,20 @@ function logs
 end
 
 # ── Git ──
+function __gitupdate_bail
+    # Abort any in-progress rebase and switch back to the named branch,
+    # then return 1. Used by gitupdate so any failure leaves the user on
+    # the branch they started from.
+    set -l target $argv[1]
+    if test -d .git/rebase-merge; or test -d .git/rebase-apply
+        git rebase --abort
+    end
+    if test (git branch --show-current) != "$target"
+        git checkout $target
+    end
+    return 1
+end
+
 function gitupdate
     imd
     set -l current_branch (git branch --show-current)
@@ -157,22 +171,32 @@ function gitupdate
     git checkout main; or return $status
     git merge upstream/main --ff-only; or begin
         echo "Error: main is not fast-forwardable from upstream/main."
-        git checkout $current_branch
+        __gitupdate_bail $current_branch
         return 1
     end
-    git push origin main; or return $status
+    git push origin main; or begin
+        __gitupdate_bail $current_branch
+        return 1
+    end
 
     echo "Rebasing mryan onto main..."
-    git checkout mryan; or return $status
+    git checkout mryan; or begin
+        __gitupdate_bail $current_branch
+        return 1
+    end
     if not git rebase main
         echo ""
         echo "Error: rebase of mryan onto main failed."
-        echo "Resolve the conflicts and run 'git rebase --continue',"
-        echo "or run 'git rebase --abort' to back out."
-        echo "Skipping push and pull."
+        echo "Conflicted files: "(git diff --name-only --diff-filter=U | string join ', ')
+        echo "Aborting rebase and returning to $current_branch."
+        echo "To investigate manually: git checkout mryan; git rebase main"
+        __gitupdate_bail $current_branch
         return 1
     end
-    git push origin mryan --force-with-lease; or return $status
+    git push origin mryan --force-with-lease; or begin
+        __gitupdate_bail $current_branch
+        return 1
+    end
 
     git checkout $current_branch; or return $status
     if test "$current_branch" = "main"; or test "$current_branch" = "mryan"
@@ -182,9 +206,10 @@ function gitupdate
         if not git rebase mryan
             echo ""
             echo "Error: rebase of $current_branch onto mryan failed."
-            echo "Resolve the conflicts and run 'git rebase --continue',"
-            echo "or run 'git rebase --abort' to back out."
-            echo "Skipping push."
+            echo "Conflicted files: "(git diff --name-only --diff-filter=U | string join ', ')
+            echo "Aborting rebase."
+            echo "To investigate manually: git checkout $current_branch; git rebase mryan"
+            __gitupdate_bail $current_branch
             return 1
         end
         git push origin $current_branch --force-with-lease; or return $status
