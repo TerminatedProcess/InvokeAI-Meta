@@ -175,8 +175,21 @@ function gitupdate
     git push origin mryan --force-with-lease; or return $status
 
     git checkout $current_branch; or return $status
-    git pull; or return $status
-    echo "Both branches synced"
+    if test "$current_branch" = "main"; or test "$current_branch" = "mryan"
+        git pull; or return $status
+    else
+        echo "Rebasing $current_branch onto mryan..."
+        if not git rebase mryan
+            echo ""
+            echo "Error: rebase of $current_branch onto mryan failed."
+            echo "Resolve the conflicts and run 'git rebase --continue',"
+            echo "or run 'git rebase --abort' to back out."
+            echo "Skipping push."
+            return 1
+        end
+        git push origin $current_branch --force-with-lease; or return $status
+    end
+    echo "Branches synced"
 end
 
 # ── Models ──
