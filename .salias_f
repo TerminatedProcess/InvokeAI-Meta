@@ -8,6 +8,7 @@ set -gx ENV_NAME '.venv'
 set -gx INVOKE_DIR (pwd)
 set -gx INVOKE_DATA_DIR "$INVOKE_DIR/invokeai_data"
 set -gx INVOKEAI_DB "$INVOKE_DATA_DIR/databases/invokeai.db"
+set -gx CIVITAI_API_KEY f25326104c5147c40e339a883d3d430f
 set -gx PY_VERSION 3.12.10
 set -gx IMD_AUTO_OPEN false
 
