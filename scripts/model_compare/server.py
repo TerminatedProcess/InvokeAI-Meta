@@ -69,6 +69,36 @@ def read_client_state() -> dict:
         conn.close()
 
 
+def remap_loras(loras: list[dict], installed: list[dict], base: str) -> tuple[list[dict], list[str]]:
+    """Remap saved LoRAs to currently-installed models for a given base.
+
+    Saved client_state holds stale keys when LoRAs are re-installed (same hash/name,
+    new UUID). Match installed records by hash first, then (name, base), and rewrite
+    the model dict so InvokeAI can resolve it. Unresolvable LoRAs are skipped.
+    """
+    by_hash = {m["hash"]: m for m in installed if m.get("hash")}
+    by_name = {(m["name"], m["base"]): m for m in installed}
+
+    remapped: list[dict] = []
+    warnings: list[str] = []
+    for entry in loras:
+        model = entry["model"]
+        if model.get("base") != base:
+            continue
+        match = by_hash.get(model.get("hash")) or by_name.get((model.get("name"), model.get("base")))
+        if not match:
+            warnings.append(f"LoRA '{model.get('name')}' not installed — skipped")
+            continue
+        remapped.append({
+            "model": {
+                "key": match["key"], "hash": match.get("hash", ""),
+                "name": match["name"], "base": match["base"], "type": "lora",
+            },
+            "weight": entry["weight"],
+        })
+    return remapped, warnings
+
+
 def parse_settings(state: dict) -> dict:
     """Extract generation settings from client_state."""
     params = state.get("params", {})
@@ -181,11 +211,15 @@ async def generate(req: GenerateRequest):
     # Use saved seed, or generate random if InvokeAI is set to randomize
     base_seed = random.randint(0, 2**32 - 1) if settings["shouldRandomizeSeed"] else settings["seed"]
 
-    # Fetch model details for each key
+    # Fetch model details for each key, plus installed LoRAs for key remapping
     async with httpx.AsyncClient(timeout=30) as client:
         resp = await client.get(f"{invokeai_api_url}/api/v2/models/", params={"model_type": "main"})
         resp.raise_for_status()
         all_models = {m["key"]: m for m in resp.json().get("models", [])}
+
+        lora_resp = await client.get(f"{invokeai_api_url}/api/v2/models/", params={"model_type": "lora"})
+        lora_resp.raise_for_status()
+        installed_loras = lora_resp.json().get("models", [])
 
     enqueued = 0
     errors = []
@@ -207,8 +241,9 @@ async def generate(req: GenerateRequest):
 
             seed = base_seed
 
-            # Filter LoRAs to same base as model
-            compatible_loras = [l for l in loras if l["model"].get("base") == model_info["base"]]
+            # Filter LoRAs to same base as model, remapping stale keys to installed models
+            compatible_loras, lora_warnings = remap_loras(loras, installed_loras, model_info["base"])
+            errors.extend(f"{model_info['name']}: {w}" for w in lora_warnings)
 
             base = model_info["base"]
             if base in ("sdxl", "sdxl-refiner"):
