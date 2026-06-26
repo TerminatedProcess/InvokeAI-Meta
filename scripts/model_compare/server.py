@@ -13,7 +13,6 @@ Usage (from InvokeAI project root, with venv active):
 import argparse
 import json
 import random
-import sqlite3
 from pathlib import Path
 
 import httpx
@@ -31,7 +30,6 @@ from graphs import build_flux2_graph, build_flux_graph, build_sd1_graph, build_s
 
 # ── Defaults ─────────────────────────────────────────────────────────────────
 
-INVOKEAI_DB_DEFAULT = "/mnt/llm/hub/invokeai_data/databases/invokeai.db"
 INVOKEAI_API_DEFAULT = "http://127.0.0.1:9090"
 DEFAULT_PORT = 9091
 
@@ -41,7 +39,6 @@ app = FastAPI(title="Model Compare")
 app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 
 # Set via CLI args at startup
-invokeai_db_path: str = INVOKEAI_DB_DEFAULT
 invokeai_api_url: str = INVOKEAI_API_DEFAULT
 
 
@@ -57,16 +54,28 @@ class GenerateRequest(BaseModel):
 # ── Helpers ──────────────────────────────────────────────────────────────────
 
 
-def read_client_state() -> dict:
-    """Read client_state from InvokeAI's SQLite database."""
-    conn = sqlite3.connect(invokeai_db_path)
-    try:
-        rows = conn.execute(
-            "SELECT key, value FROM client_state WHERE user_id='system'"
-        ).fetchall()
-        return {key: json.loads(value) for key, value in rows}
-    finally:
-        conn.close()
+# client_state slices needed to reconstruct generation settings
+CLIENT_STATE_KEYS = ("params", "canvas", "loras")
+
+
+async def read_client_state() -> dict:
+    """Read client_state from the live InvokeAI server via its API.
+
+    Reading the running instance (rather than a guessed SQLite path) guarantees
+    Model Compare reuses whatever settings are currently active in InvokeAI — the
+    same instance it enqueues jobs to.
+    """
+    state: dict = {}
+    async with httpx.AsyncClient(timeout=30) as client:
+        for key in CLIENT_STATE_KEYS:
+            resp = await client.get(
+                f"{invokeai_api_url}/api/v1/client_state/default/get_by_key",
+                params={"key": key},
+            )
+            resp.raise_for_status()
+            raw = resp.json()  # endpoint returns the stringified slice, or null
+            state[key] = json.loads(raw) if raw else {}
+    return state
 
 
 def remap_loras(loras: list[dict], installed: list[dict], base: str) -> tuple[list[dict], list[str]]:
@@ -162,7 +171,7 @@ async def index():
 async def get_settings():
     """Read current generation settings from InvokeAI's saved state."""
     try:
-        state = read_client_state()
+        state = await read_client_state()
         return parse_settings(state)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -195,7 +204,7 @@ async def get_models():
 async def generate(req: GenerateRequest):
     """Build generation graphs and enqueue them in InvokeAI's queue."""
     # Read fresh settings from InvokeAI's saved state
-    state = read_client_state()
+    state = await read_client_state()
     settings = parse_settings(state)
 
     positive_prompt = settings["positivePrompt"]
@@ -325,20 +334,17 @@ async def generate(req: GenerateRequest):
 
 
 def main():
-    global invokeai_db_path, invokeai_api_url
+    global invokeai_api_url
 
     parser = argparse.ArgumentParser(description="Model Compare — companion service for InvokeAI")
     parser.add_argument("--port", type=int, default=DEFAULT_PORT)
-    parser.add_argument("--invokeai-db", default=INVOKEAI_DB_DEFAULT)
     parser.add_argument("--invokeai-api", default=INVOKEAI_API_DEFAULT)
     args = parser.parse_args()
 
-    invokeai_db_path = args.invokeai_db
     invokeai_api_url = args.invokeai_api
 
     print(f"Model Compare starting on http://127.0.0.1:{args.port}")
     print(f"InvokeAI API: {invokeai_api_url}")
-    print(f"InvokeAI DB:  {invokeai_db_path}")
     uvicorn.run(app, host="0.0.0.0", port=args.port, log_level="warning")
 
 
