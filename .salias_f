@@ -156,6 +156,29 @@ function __gitupdate_bail
     return 1
 end
 
+function __gitupdate_rebase
+    # Rebase the current branch onto $argv[1], auto-resolving the recurring
+    # uv.lock modify/delete conflict. Upstream tracks uv.lock, but our history
+    # deletes and gitignores it, so every upstream change to uv.lock collides.
+    # When uv.lock is the *only* conflict, keep the deletion and continue.
+    # Returns 0 on success, 1 if any other conflict remains.
+    set -l base $argv[1]
+    git rebase $base
+    set -l rc $status
+    while test $rc -ne 0
+        set -l conflicts (git diff --name-only --diff-filter=U)
+        if test (count $conflicts) -eq 1; and test "$conflicts[1]" = uv.lock
+            echo "Auto-resolving uv.lock modify/delete conflict (keeping deletion)..."
+            git rm --quiet uv.lock
+            GIT_EDITOR=true git rebase --continue
+            set rc $status
+        else
+            return 1
+        end
+    end
+    return 0
+end
+
 function gitupdate
     imd
     set -l current_branch (git branch --show-current)
@@ -185,7 +208,7 @@ function gitupdate
         __gitupdate_bail $current_branch
         return 1
     end
-    if not git rebase main
+    if not __gitupdate_rebase main
         echo ""
         echo "Error: rebase of mryan onto main failed."
         echo "Conflicted files: "(git diff --name-only --diff-filter=U | string join ', ')
@@ -204,7 +227,7 @@ function gitupdate
         git pull; or return $status
     else
         echo "Rebasing $current_branch onto mryan..."
-        if not git rebase mryan
+        if not __gitupdate_rebase mryan
             echo ""
             echo "Error: rebase of $current_branch onto mryan failed."
             echo "Conflicted files: "(git diff --name-only --diff-filter=U | string join ', ')
