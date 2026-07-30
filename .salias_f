@@ -183,37 +183,60 @@ function gitupdate
     imd
     set -l current_branch (git branch --show-current)
 
+    # Must be a git repo.
+    if not git rev-parse --git-dir >/dev/null 2>&1
+        echo "Error: not a git repository."
+        return 1
+    end
+
+    # Must be a fork wired for syncing.
+    if not git remote | string match -q upstream
+        echo "Error: no 'upstream' remote — not a fork set up for syncing."
+        echo "Add one:  git remote add upstream <original-repo-url>"
+        return 1
+    end
+
     if not git diff --quiet; or not git diff --cached --quiet
         echo "Error: working tree has uncommitted changes. Commit or stash first."
         return 1
     end
 
+    # Mirror branch = origin's default branch (main/master), resolved locally.
+    set -l mirror (git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null | string replace 'origin/' '')
+    if test -z "$mirror"
+        if git show-ref --verify --quiet refs/heads/main
+            set mirror main
+        else
+            set mirror master
+        end
+    end
+
     echo "Fetching upstream..."
     git fetch upstream; or return $status
 
-    echo "Updating main..."
-    git checkout main; or return $status
-    git merge upstream/main --ff-only; or begin
-        echo "Error: main is not fast-forwardable from upstream/main."
+    echo "Updating $mirror..."
+    git checkout $mirror; or return $status
+    git merge upstream/$mirror --ff-only; or begin
+        echo "Error: $mirror is not fast-forwardable from upstream/$mirror."
         __gitupdate_bail $current_branch
         return 1
     end
-    git push origin main; or begin
+    git push origin $mirror; or begin
         __gitupdate_bail $current_branch
         return 1
     end
 
-    echo "Rebasing mryan onto main..."
+    echo "Rebasing mryan onto $mirror..."
     git checkout mryan; or begin
         __gitupdate_bail $current_branch
         return 1
     end
-    if not __gitupdate_rebase main
+    if not __gitupdate_rebase $mirror
         echo ""
-        echo "Error: rebase of mryan onto main failed."
+        echo "Error: rebase of mryan onto $mirror failed."
         echo "Conflicted files: "(git diff --name-only --diff-filter=U | string join ', ')
         echo "Aborting rebase and returning to $current_branch."
-        echo "To investigate manually: git checkout mryan; git rebase main"
+        echo "To investigate manually: git checkout mryan; git rebase $mirror"
         __gitupdate_bail $current_branch
         return 1
     end
@@ -223,7 +246,7 @@ function gitupdate
     end
 
     git checkout $current_branch; or return $status
-    if test "$current_branch" = "main"; or test "$current_branch" = "mryan"
+    if test "$current_branch" = "$mirror"; or test "$current_branch" = "mryan"
         git pull; or return $status
     else
         echo "Rebasing $current_branch onto mryan..."
