@@ -142,127 +142,18 @@ function logs
 end
 
 # ── Git ──
-function __gitupdate_bail
-    # Abort any in-progress rebase and switch back to the named branch,
-    # then return 1. Used by gitupdate so any failure leaves the user on
-    # the branch they started from.
-    set -l target $argv[1]
-    if test -d .git/rebase-merge; or test -d .git/rebase-apply
-        git rebase --abort
-    end
-    if test (git branch --show-current) != "$target"
-        git checkout $target
-    end
-    return 1
-end
-
-function __gitupdate_rebase
-    # Rebase the current branch onto $argv[1], auto-resolving the recurring
-    # uv.lock modify/delete conflict. Upstream tracks uv.lock, but our history
-    # deletes and gitignores it, so every upstream change to uv.lock collides.
-    # When uv.lock is the *only* conflict, keep the deletion and continue.
-    # Returns 0 on success, 1 if any other conflict remains.
-    set -l base $argv[1]
-    git rebase $base
-    set -l rc $status
-    while test $rc -ne 0
-        set -l conflicts (git diff --name-only --diff-filter=U)
-        if test (count $conflicts) -eq 1; and test "$conflicts[1]" = uv.lock
-            echo "Auto-resolving uv.lock modify/delete conflict (keeping deletion)..."
-            git rm --quiet uv.lock
-            GIT_EDITOR=true git rebase --continue
-            set rc $status
-        else
-            return 1
-        end
-    end
-    return 0
-end
-
-function gitupdate
-    imd
-    set -l current_branch (git branch --show-current)
-
-    # Must be a git repo.
-    if not git rev-parse --git-dir >/dev/null 2>&1
-        echo "Error: not a git repository."
-        return 1
-    end
-
-    # Must be a fork wired for syncing.
-    if not git remote | string match -q upstream
-        echo "Error: no 'upstream' remote — not a fork set up for syncing."
-        echo "Add one:  git remote add upstream <original-repo-url>"
-        return 1
-    end
-
-    if not git diff --quiet; or not git diff --cached --quiet
-        echo "Error: working tree has uncommitted changes. Commit or stash first."
-        return 1
-    end
-
-    # Mirror branch = origin's default branch (main/master), resolved locally.
-    set -l mirror (git symbolic-ref --short refs/remotes/origin/HEAD 2>/dev/null | string replace 'origin/' '')
-    if test -z "$mirror"
-        if git show-ref --verify --quiet refs/heads/main
-            set mirror main
-        else
-            set mirror master
-        end
-    end
-
-    echo "Fetching upstream..."
-    git fetch upstream; or return $status
-
-    echo "Updating $mirror..."
-    git checkout $mirror; or return $status
-    git merge upstream/$mirror --ff-only; or begin
-        echo "Error: $mirror is not fast-forwardable from upstream/$mirror."
-        __gitupdate_bail $current_branch
-        return 1
-    end
-    git push origin $mirror; or begin
-        __gitupdate_bail $current_branch
-        return 1
-    end
-
-    echo "Rebasing mryan onto $mirror..."
-    git checkout mryan; or begin
-        __gitupdate_bail $current_branch
-        return 1
-    end
-    if not __gitupdate_rebase $mirror
-        echo ""
-        echo "Error: rebase of mryan onto $mirror failed."
-        echo "Conflicted files: "(git diff --name-only --diff-filter=U | string join ', ')
-        echo "Aborting rebase and returning to $current_branch."
-        echo "To investigate manually: git checkout mryan; git rebase $mirror"
-        __gitupdate_bail $current_branch
-        return 1
-    end
-    git push origin mryan --force-with-lease; or begin
-        __gitupdate_bail $current_branch
-        return 1
-    end
-
-    git checkout $current_branch; or return $status
-    if test "$current_branch" = "$mirror"; or test "$current_branch" = "mryan"
-        git pull; or return $status
-    else
-        echo "Rebasing $current_branch onto mryan..."
-        if not __gitupdate_rebase mryan
-            echo ""
-            echo "Error: rebase of $current_branch onto mryan failed."
-            echo "Conflicted files: "(git diff --name-only --diff-filter=U | string join ', ')
-            echo "Aborting rebase."
-            echo "To investigate manually: git checkout $current_branch; git rebase mryan"
-            __gitupdate_bail $current_branch
-            return 1
-        end
-        git push origin $current_branch --force-with-lease; or return $status
-    end
-    echo "Branches synced"
-end
+# gitupdate itself is the global fish function (~/.config/fish/functions/gitupdate.fish)
+# — this file used to carry a copy, but the two had to be kept in sync by hand.
+# Do NOT redefine it here: a local definition is sourced on dir-entry and shadows
+# the global one.
+#
+# Upstream tracks uv.lock; our history deletes and gitignores it, so every upstream
+# change to it produces the same modify/delete conflict on every rebase. Registering
+# it tells the global gitupdate to keep our deletion and carry on. Repo-local git
+# config rather than a shell var, so it can't leak into the other projects that
+# `update` syncs in the same shell. Idempotent — safe to re-run on every dir entry.
+git config --get-all gitupdate.autodrop | string match -q uv.lock
+or git config --add gitupdate.autodrop uv.lock
 
 # ── Models ──
 function hubimport
