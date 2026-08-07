@@ -940,6 +940,34 @@ def _has_complete_lora_pair(state_dict: dict[str | int, Any], prefixes: tuple[st
     return False
 
 
+def _has_complete_lokr_layer(state_dict: dict[str | int, Any], prefixes: tuple[str, ...] | None = None) -> bool:
+    """True if at least one complete LyCORIS LoKR layer exists, optionally under `prefixes`.
+
+    LoKR adapters carry Kronecker factors rather than a lora_A/B (or lora_down/up) pair, so
+    :func:`_has_complete_lora_pair` never matches them. A layer is complete when *both* factors are
+    present: w1 as the full ``lokr_w1`` or the decomposed ``lokr_w1_a`` + ``lokr_w1_b``, and likewise
+    w2. Many Krea-2 LoRAs published on Civitai are trained this way (LyCORIS/kohya LoKR).
+    """
+    string_keys = {key for key in state_dict if isinstance(key, str)}
+    layer_bases: set[str] = set()
+    for key in string_keys:
+        if prefixes is not None and not key.startswith(prefixes):
+            continue
+        for suffix in (".lokr_w1", ".lokr_w1_a"):
+            if key.endswith(suffix):
+                layer_bases.add(key[: -len(suffix)])
+    for base in layer_bases:
+        has_w1 = f"{base}.lokr_w1" in string_keys or (
+            f"{base}.lokr_w1_a" in string_keys and f"{base}.lokr_w1_b" in string_keys
+        )
+        has_w2 = f"{base}.lokr_w2" in string_keys or (
+            f"{base}.lokr_w2_a" in string_keys and f"{base}.lokr_w2_b" in string_keys
+        )
+        if has_w1 and has_w2:
+            return True
+    return False
+
+
 # Layouts the converter understands for an explicit Krea-2 override (a transformer-only or text-encoder-only
 # LoRA that lacks the auto-detection text_fusion/time_mod_proj keys still installs under an explicit base).
 _KREA2_SUPPORTED_LORA_PREFIXES = (
@@ -983,7 +1011,9 @@ class LoRA_LyCORIS_Krea2_Config(LoRA_LyCORIS_Config_Base, Config_Base):
 
         state_dict = mod.load_state_dict()
         explicit_krea2_override = override_fields.get("base") is BaseModelType.Krea2
-        has_supported_explicit_pair = _has_complete_lora_pair(state_dict, _KREA2_SUPPORTED_LORA_PREFIXES)
+        has_supported_explicit_pair = _has_complete_lora_pair(
+            state_dict, _KREA2_SUPPORTED_LORA_PREFIXES
+        ) or _has_complete_lokr_layer(state_dict, _KREA2_SUPPORTED_LORA_PREFIXES)
         # Reject an orphaned half *anywhere* in the state dict (e.g. a dangling text_fusion half not under
         # the approved prefixes) — it would install here but fail during LoRA conversion at generation time.
         if explicit_krea2_override and has_supported_explicit_pair and _lora_weight_keys_are_all_paired(state_dict):
@@ -998,11 +1028,15 @@ class LoRA_LyCORIS_Krea2_Config(LoRA_LyCORIS_Config_Base, Config_Base):
         """Krea-2 LoRAs have keys like transformer.text_fusion.* / transformer.transformer_blocks.* with
         a lora_A/lora_B (or lora_down/lora_up) suffix. The text-fusion stage is unique to Krea-2."""
         state_dict = mod.load_state_dict()
-        # Require a *complete* lora_A/B (or lora_down/up) pair, not merely any lora/dora suffix: a file with
-        # only ``dora_scale`` and no A/B weights would pass a suffix check but fail later on missing weights.
-        if not (_has_krea2_lora_keys(state_dict) and _has_complete_lora_pair(state_dict)):
+        # Require a *complete* lora_A/B (or lora_down/up) pair or a complete LoKR layer, not merely any
+        # lora/dora suffix: a file with only ``dora_scale`` and no A/B weights would pass a suffix check but
+        # fail later on missing weights.
+        if not (
+            _has_krea2_lora_keys(state_dict)
+            and (_has_complete_lora_pair(state_dict) or _has_complete_lokr_layer(state_dict))
+        ):
             raise NotAMatchError(
-                "model does not match Krea-2 LoRA heuristics (no complete lora_A/B or lora_down/up pair)"
+                "model does not match Krea-2 LoRA heuristics (no complete lora_A/B, lora_down/up, or LoKR layer)"
             )
         # Reject a file with an orphaned LoRA half (a valid layer plus a dangling lora_A/B/down/up); it
         # would install here but fail later during LoRA conversion.

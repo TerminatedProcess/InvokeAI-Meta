@@ -5,6 +5,7 @@ from diffusers import Krea2Transformer2DModel
 
 from invokeai.backend.model_manager.load.model_loaders.krea2 import KREA2_TRANSFORMER_CONFIG
 from invokeai.backend.patches.layers.dora_layer import DoRALayer
+from invokeai.backend.patches.layers.lokr_layer import LoKRLayer
 from invokeai.backend.patches.layers.lora_layer import LoRALayer
 from invokeai.backend.patches.lora_conversions.krea2_lora_constants import (
     KREA2_LORA_QWEN3VL_PREFIX,
@@ -29,6 +30,41 @@ def test_peft_layer_preserves_explicit_alpha() -> None:
     layer = model.layers[f"{KREA2_LORA_TRANSFORMER_PREFIX}text_fusion.0.attn.to_q"]
     assert isinstance(layer, LoRALayer)
     assert layer._alpha == 1.0
+
+
+def test_native_lokr_layer_converts_to_lokr_layer() -> None:
+    # A native (ComfyUI/LyCORIS) LoKR Krea-2 LoRA carries lokr_w1/lokr_w2 Kronecker factors. The converter
+    # must group them and produce a LoKRLayer whose Kronecker math (get_weight) runs, targeting the renamed
+    # diffusers module (attn.gate -> attn.to_gate).
+    state_dict = {
+        "diffusion_model.blocks.0.attn.gate.lokr_w1": torch.eye(4),
+        "diffusion_model.blocks.0.attn.gate.lokr_w2": torch.eye(4),
+        "diffusion_model.blocks.0.attn.gate.alpha": torch.tensor(4.0),
+    }
+
+    model = lora_model_from_krea2_state_dict(state_dict)
+
+    layer = model.layers[f"{KREA2_LORA_TRANSFORMER_PREFIX}transformer_blocks.0.attn.to_gate"]
+    assert isinstance(layer, LoKRLayer)
+    # Exercise the Kronecker product path: kron(eye(4), eye(4)) -> 16x16 identity.
+    weight = layer.get_weight(torch.zeros(1))
+    assert weight.shape == (16, 16)
+
+
+def test_decomposed_lokr_layer_converts_to_lokr_layer() -> None:
+    # Decomposed LoKR (lokr_w1_a/_b + lokr_w2_a/_b) must also group into a single LoKRLayer.
+    state_dict = {
+        "transformer.text_fusion.0.attn.to_q.lokr_w1_a": torch.ones(4, 2),
+        "transformer.text_fusion.0.attn.to_q.lokr_w1_b": torch.ones(2, 4),
+        "transformer.text_fusion.0.attn.to_q.lokr_w2_a": torch.ones(4, 2),
+        "transformer.text_fusion.0.attn.to_q.lokr_w2_b": torch.ones(2, 4),
+    }
+
+    model = lora_model_from_krea2_state_dict(state_dict)
+
+    layer = model.layers[f"{KREA2_LORA_TRANSFORMER_PREFIX}text_fusion.0.attn.to_q"]
+    assert isinstance(layer, LoKRLayer)
+    assert layer._rank() == 2
 
 
 def test_peft_dora_layer_preserves_magnitude_and_alpha() -> None:

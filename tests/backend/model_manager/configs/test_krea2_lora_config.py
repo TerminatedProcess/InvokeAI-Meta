@@ -254,6 +254,47 @@ def test_native_comfyui_krea2_lora_is_identified_as_krea2(_raise_if_not_file) ->
     assert config.base is BaseModelType.Krea2
 
 
+@patch("invokeai.backend.model_manager.configs.lora.raise_if_not_file")
+def test_native_lokr_krea2_lora_is_identified_as_krea2(_raise_if_not_file) -> None:
+    # LyCORIS LoKR Krea-2 LoRAs (common on Civitai, e.g. snofs_krea) carry Kronecker factors
+    # (lokr_w1/lokr_w2 + alpha) instead of a lora_A/B pair, under the native `txtfusion` layout. They must
+    # auto-identify as Krea-2 via the text-fusion signature plus a complete LoKR layer.
+    mod = MagicMock()
+    mod.load_state_dict.return_value = {
+        "diffusion_model.txtfusion.layerwise_blocks.0.attn.gate.lokr_w1": object(),
+        "diffusion_model.txtfusion.layerwise_blocks.0.attn.gate.lokr_w2": object(),
+        "diffusion_model.txtfusion.layerwise_blocks.0.attn.gate.alpha": object(),
+    }
+    config = LoRA_LyCORIS_Krea2_Config.from_model_on_disk(mod, {**_REQUIRED_FIELDS})
+    assert config.base is BaseModelType.Krea2
+
+
+@patch("invokeai.backend.model_manager.configs.lora.raise_if_not_file")
+def test_decomposed_lokr_krea2_lora_is_identified_as_krea2(_raise_if_not_file) -> None:
+    # Decomposed LoKR (lokr_w1_a/_b + lokr_w2_a/_b) is also a complete layer and must identify as Krea-2.
+    mod = MagicMock()
+    mod.load_state_dict.return_value = {
+        "diffusion_model.txtfusion.layerwise_blocks.0.attn.gate.lokr_w1_a": object(),
+        "diffusion_model.txtfusion.layerwise_blocks.0.attn.gate.lokr_w1_b": object(),
+        "diffusion_model.txtfusion.layerwise_blocks.0.attn.gate.lokr_w2_a": object(),
+        "diffusion_model.txtfusion.layerwise_blocks.0.attn.gate.lokr_w2_b": object(),
+    }
+    config = LoRA_LyCORIS_Krea2_Config.from_model_on_disk(mod, {**_REQUIRED_FIELDS})
+    assert config.base is BaseModelType.Krea2
+
+
+@patch("invokeai.backend.model_manager.configs.lora.raise_if_not_file")
+def test_automatic_probe_rejects_incomplete_lokr_layer(_raise_if_not_file) -> None:
+    # Only one Kronecker factor (w1, no w2) is not a loadable LoKR layer. text_fusion.* makes it look like
+    # Krea-2, but it must be rejected for lacking a complete LoKR layer.
+    mod = MagicMock()
+    mod.load_state_dict.return_value = {
+        "transformer.text_fusion.0.attn.to_q.lokr_w1": object(),
+    }
+    with pytest.raises(NotAMatchError):
+        LoRA_LyCORIS_Krea2_Config.from_model_on_disk(mod, {**_REQUIRED_FIELDS})
+
+
 @pytest.mark.parametrize(
     "native_module",
     [

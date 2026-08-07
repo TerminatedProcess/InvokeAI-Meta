@@ -248,7 +248,20 @@ def is_state_dict_likely_krea2_lora(state_dict: dict[str | int, torch.Tensor]) -
     str_keys = [k for k in state_dict.keys() if isinstance(k, str)]
     has_krea2_module = any(any(sig in k for sig in KREA2_TRANSFORMER_SIGNATURE_KEYS) for k in str_keys)
     has_lora_suffix = any(
-        k.endswith((".lora_A.weight", ".lora_B.weight", ".lora_down.weight", ".lora_up.weight")) for k in str_keys
+        k.endswith(
+            (
+                ".lora_A.weight",
+                ".lora_B.weight",
+                ".lora_down.weight",
+                ".lora_up.weight",
+                # LyCORIS LoKR adapters carry Kronecker factors instead of a lora_A/B (or lora_down/up) pair.
+                ".lokr_w1",
+                ".lokr_w1_a",
+                ".lokr_w2",
+                ".lokr_w2_a",
+            )
+        )
+        for k in str_keys
     )
     return has_krea2_module and has_lora_suffix
 
@@ -332,6 +345,13 @@ def _get_lora_layer_values(
         if alpha is not None:
             values["alpha"] = torch.tensor(alpha)
         return values
+    # LoKR (and other LyCORIS) layers are already in the internal value-key layout expected by
+    # any_lora_layer_from_state_dict. That dispatcher routes on ``dora_scale`` *before* ``lokr_w1``, so a
+    # LoKR layer that also carries a dora_scale would be misrouted to DoRALayer; strip it (the DoRA+LoKR
+    # combination is unsupported, matching the Anima converter's behavior).
+    has_lokr = "lokr_w1" in layer_dict or "lokr_w1_a" in layer_dict
+    if has_lokr and "dora_scale" in layer_dict:
+        return {k: v for k, v in layer_dict.items() if k != "dora_scale"}
     return layer_dict
 
 
@@ -347,6 +367,16 @@ _SUFFIX_TO_VALUE_KEY = {
     ".dora_scale": "dora_scale",
     ".lora_magnitude_vector.weight": "dora_scale",
     ".alpha": "alpha",
+    # LyCORIS LoKR Kronecker factors (full form ``lokr_w1``/``lokr_w2`` or decomposed ``*_a``/``*_b``,
+    # plus the optional ``lokr_t2`` tucker factor). None of these are a prefix of another, so endswith()
+    # matching is unambiguous.
+    ".lokr_w1": "lokr_w1",
+    ".lokr_w1_a": "lokr_w1_a",
+    ".lokr_w1_b": "lokr_w1_b",
+    ".lokr_w2": "lokr_w2",
+    ".lokr_w2_a": "lokr_w2_a",
+    ".lokr_w2_b": "lokr_w2_b",
+    ".lokr_t2": "lokr_t2",
 }
 
 
