@@ -388,3 +388,239 @@ def build_zimage_graph(
     ]
 
     return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
+
+
+def build_krea2_graph(
+    model: dict,
+    positive_prompt: str,
+    negative_prompt: str,
+    seed: int,
+    width: int,
+    height: int,
+    steps: int,
+    cfg_scale: float = 1.0,
+    loras: list[dict] | None = None,
+    vae_model: dict | None = None,
+    qwen3_vl_encoder_model: dict | None = None,
+) -> dict:
+    """Build a Krea-2 text-to-image execution graph.
+
+    Krea-2 encodes with a Qwen3-VL text encoder and decodes with the Qwen-Image VAE, so the
+    output node is `qwen_image_l2i`. Non-diffusers transformers (single-file checkpoint / GGUF)
+    carry no bundled VAE or encoder — pass `vae_model` and `qwen3_vl_encoder_model` for those.
+
+    Negative conditioning only exists when CFG is enabled; the distilled Turbo models run at
+    cfg_scale 1.0, where InvokeAI omits the negative encoder entirely.
+    """
+    loras = loras or []
+    use_cfg = cfg_scale > 1
+
+    ml = f"krea2_model_loader:{uuid.uuid4().hex[:10]}"
+    pp = f"positive_prompt:{uuid.uuid4().hex[:10]}"
+    pc = f"pos_cond:{uuid.uuid4().hex[:10]}"
+    pcc = f"pos_cond_collect:{uuid.uuid4().hex[:10]}"
+    nc = f"neg_cond:{uuid.uuid4().hex[:10]}"
+    sd = f"seed:{uuid.uuid4().hex[:10]}"
+    dn = f"denoise_latents:{uuid.uuid4().hex[:10]}"
+    out = f"krea2_l2i:{uuid.uuid4().hex[:10]}"
+
+    loader = {
+        "type": "krea2_model_loader", "id": ml, "is_intermediate": True, "use_cache": True,
+        "model": model,
+    }
+    if vae_model:
+        loader["vae_model"] = vae_model
+    if qwen3_vl_encoder_model:
+        loader["qwen3_vl_encoder_model"] = qwen3_vl_encoder_model
+
+    nodes = {
+        ml: loader,
+        pp: {"type": "string", "id": pp, "is_intermediate": True, "use_cache": True, "value": positive_prompt},
+        pc: {"type": "krea2_text_encoder", "id": pc, "is_intermediate": True, "use_cache": True},
+        pcc: {"type": "collect", "id": pcc, "is_intermediate": True, "use_cache": True, "collection": []},
+        sd: {"type": "rand_int", "id": sd, "is_intermediate": True, "use_cache": False, "low": seed, "high": seed + 1},
+        dn: {
+            "type": "krea2_denoise", "id": dn, "is_intermediate": True, "use_cache": True,
+            "width": width, "height": height, "steps": steps, "cfg_scale": cfg_scale,
+        },
+        out: {"type": "qwen_image_l2i", "id": out, "is_intermediate": False, "use_cache": False},
+    }
+
+    edges = [
+        {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": pc, "field": "prompt"}},
+        {"source": {"node_id": pc, "field": "conditioning"}, "destination": {"node_id": pcc, "field": "item"}},
+        {"source": {"node_id": pcc, "field": "collection"}, "destination": {"node_id": dn, "field": "positive_conditioning"}},
+        {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
+        {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
+        {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": out, "field": "vae"}},
+    ]
+
+    if use_cfg:
+        nodes[nc] = {
+            "type": "krea2_text_encoder", "id": nc, "is_intermediate": True, "use_cache": True,
+            "prompt": negative_prompt,
+        }
+        edges.append(
+            {"source": {"node_id": nc, "field": "conditioning"}, "destination": {"node_id": dn, "field": "negative_conditioning"}}
+        )
+
+    # The transformer and Qwen3-VL encoder either come straight off the loader, or get rerouted
+    # through the LoRA collection loader, which re-emits both.
+    if loras:
+        lc = f"lora_collector:{uuid.uuid4().hex[:10]}"
+        ll = f"krea2_lora_collection_loader:{uuid.uuid4().hex[:10]}"
+        nodes[lc] = {"type": "collect", "id": lc, "is_intermediate": True, "use_cache": True, "collection": []}
+        nodes[ll] = {"type": "krea2_lora_collection_loader", "id": ll, "is_intermediate": True, "use_cache": True}
+
+        for i, lora in enumerate(loras):
+            ls = f"lora_selector_{i}:{uuid.uuid4().hex[:10]}"
+            nodes[ls] = {
+                "type": "lora_selector", "id": ls, "is_intermediate": True, "use_cache": True,
+                "lora": lora["model"], "weight": lora["weight"],
+            }
+            edges.append({"source": {"node_id": ls, "field": "lora"}, "destination": {"node_id": lc, "field": "item"}})
+
+        edges.extend([
+            {"source": {"node_id": lc, "field": "collection"}, "destination": {"node_id": ll, "field": "loras"}},
+            {"source": {"node_id": ml, "field": "transformer"}, "destination": {"node_id": ll, "field": "transformer"}},
+            {"source": {"node_id": ml, "field": "qwen3_vl_encoder"}, "destination": {"node_id": ll, "field": "qwen3_vl_encoder"}},
+            {"source": {"node_id": ll, "field": "transformer"}, "destination": {"node_id": dn, "field": "transformer"}},
+            {"source": {"node_id": ll, "field": "qwen3_vl_encoder"}, "destination": {"node_id": pc, "field": "qwen3_vl_encoder"}},
+        ])
+        if use_cfg:
+            edges.append(
+                {"source": {"node_id": ll, "field": "qwen3_vl_encoder"}, "destination": {"node_id": nc, "field": "qwen3_vl_encoder"}}
+            )
+    else:
+        edges.extend([
+            {"source": {"node_id": ml, "field": "transformer"}, "destination": {"node_id": dn, "field": "transformer"}},
+            {"source": {"node_id": ml, "field": "qwen3_vl_encoder"}, "destination": {"node_id": pc, "field": "qwen3_vl_encoder"}},
+        ])
+        if use_cfg:
+            edges.append(
+                {"source": {"node_id": ml, "field": "qwen3_vl_encoder"}, "destination": {"node_id": nc, "field": "qwen3_vl_encoder"}}
+            )
+
+    return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
+
+
+# Anima's denoise node only accepts these; anything else fails validation server-side.
+ANIMA_SCHEDULERS = ("euler", "heun", "dpmpp_2m", "dpmpp_2m_sde", "er_sde", "lcm")
+
+
+def build_anima_graph(
+    model: dict,
+    positive_prompt: str,
+    negative_prompt: str,
+    seed: int,
+    width: int,
+    height: int,
+    steps: int,
+    guidance_scale: float = 4.5,
+    scheduler: str = "euler",
+    loras: list[dict] | None = None,
+    vae_model: dict | None = None,
+    qwen3_encoder_model: dict | None = None,
+) -> dict:
+    """Build an Anima text-to-image execution graph.
+
+    Anima always needs both submodels — a 16-channel VAE (Wan 2.1 / Qwen-Image, or a FLUX VAE
+    as fallback) and a Qwen3 0.6B encoder. Unlike Krea-2 these are required regardless of the
+    main model's format, and the encoder is a `qwen3_encoder`, NOT the `qwen3_vl_encoder`
+    Krea-2 uses. Negative conditioning exists only when guidance_scale > 1, and unlike Krea-2
+    it flows through its own collect node.
+    """
+    loras = loras or []
+    use_cfg = guidance_scale > 1
+    if scheduler not in ANIMA_SCHEDULERS:
+        scheduler = "euler"
+
+    ml = f"anima_model_loader:{uuid.uuid4().hex[:10]}"
+    pp = f"positive_prompt:{uuid.uuid4().hex[:10]}"
+    pc = f"pos_cond:{uuid.uuid4().hex[:10]}"
+    pcc = f"pos_cond_collect:{uuid.uuid4().hex[:10]}"
+    nc = f"neg_cond:{uuid.uuid4().hex[:10]}"
+    ncc = f"neg_cond_collect:{uuid.uuid4().hex[:10]}"
+    sd = f"seed:{uuid.uuid4().hex[:10]}"
+    dn = f"denoise_latents:{uuid.uuid4().hex[:10]}"
+    out = f"anima_l2i:{uuid.uuid4().hex[:10]}"
+
+    loader = {
+        "type": "anima_model_loader", "id": ml, "is_intermediate": True, "use_cache": True,
+        "model": model,
+    }
+    if vae_model:
+        loader["vae_model"] = vae_model
+    if qwen3_encoder_model:
+        loader["qwen3_encoder_model"] = qwen3_encoder_model
+
+    nodes = {
+        ml: loader,
+        pp: {"type": "string", "id": pp, "is_intermediate": True, "use_cache": True, "value": positive_prompt},
+        pc: {"type": "anima_text_encoder", "id": pc, "is_intermediate": True, "use_cache": True},
+        pcc: {"type": "collect", "id": pcc, "is_intermediate": True, "use_cache": True, "collection": []},
+        sd: {"type": "rand_int", "id": sd, "is_intermediate": True, "use_cache": False, "low": seed, "high": seed + 1},
+        dn: {
+            "type": "anima_denoise", "id": dn, "is_intermediate": True, "use_cache": True,
+            "width": width, "height": height, "steps": steps,
+            "guidance_scale": guidance_scale, "scheduler": scheduler,
+        },
+        out: {"type": "anima_l2i", "id": out, "is_intermediate": False, "use_cache": False},
+    }
+
+    edges = [
+        {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": pc, "field": "prompt"}},
+        {"source": {"node_id": pc, "field": "conditioning"}, "destination": {"node_id": pcc, "field": "item"}},
+        {"source": {"node_id": pcc, "field": "collection"}, "destination": {"node_id": dn, "field": "positive_conditioning"}},
+        {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
+        {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
+        {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": out, "field": "vae"}},
+    ]
+
+    if use_cfg:
+        nodes[nc] = {
+            "type": "anima_text_encoder", "id": nc, "is_intermediate": True, "use_cache": True,
+            "prompt": negative_prompt,
+        }
+        nodes[ncc] = {"type": "collect", "id": ncc, "is_intermediate": True, "use_cache": True, "collection": []}
+        edges.extend([
+            {"source": {"node_id": nc, "field": "conditioning"}, "destination": {"node_id": ncc, "field": "item"}},
+            {"source": {"node_id": ncc, "field": "collection"}, "destination": {"node_id": dn, "field": "negative_conditioning"}},
+        ])
+
+    if loras:
+        lc = f"lora_collector:{uuid.uuid4().hex[:10]}"
+        ll = f"anima_lora_collection_loader:{uuid.uuid4().hex[:10]}"
+        nodes[lc] = {"type": "collect", "id": lc, "is_intermediate": True, "use_cache": True, "collection": []}
+        nodes[ll] = {"type": "anima_lora_collection_loader", "id": ll, "is_intermediate": True, "use_cache": True}
+
+        for i, lora in enumerate(loras):
+            ls = f"lora_selector_{i}:{uuid.uuid4().hex[:10]}"
+            nodes[ls] = {
+                "type": "lora_selector", "id": ls, "is_intermediate": True, "use_cache": True,
+                "lora": lora["model"], "weight": lora["weight"],
+            }
+            edges.append({"source": {"node_id": ls, "field": "lora"}, "destination": {"node_id": lc, "field": "item"}})
+
+        edges.extend([
+            {"source": {"node_id": lc, "field": "collection"}, "destination": {"node_id": ll, "field": "loras"}},
+            {"source": {"node_id": ml, "field": "transformer"}, "destination": {"node_id": ll, "field": "transformer"}},
+            {"source": {"node_id": ml, "field": "qwen3_encoder"}, "destination": {"node_id": ll, "field": "qwen3_encoder"}},
+            {"source": {"node_id": ll, "field": "transformer"}, "destination": {"node_id": dn, "field": "transformer"}},
+            {"source": {"node_id": ll, "field": "qwen3_encoder"}, "destination": {"node_id": pc, "field": "qwen3_encoder"}},
+        ])
+        if use_cfg:
+            edges.append(
+                {"source": {"node_id": ll, "field": "qwen3_encoder"}, "destination": {"node_id": nc, "field": "qwen3_encoder"}}
+            )
+    else:
+        edges.extend([
+            {"source": {"node_id": ml, "field": "transformer"}, "destination": {"node_id": dn, "field": "transformer"}},
+            {"source": {"node_id": ml, "field": "qwen3_encoder"}, "destination": {"node_id": pc, "field": "qwen3_encoder"}},
+        ])
+        if use_cfg:
+            edges.append(
+                {"source": {"node_id": ml, "field": "qwen3_encoder"}, "destination": {"node_id": nc, "field": "qwen3_encoder"}}
+            )
+
+    return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
