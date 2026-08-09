@@ -59,6 +59,7 @@
       <option value="anima">Anima</option>
       <option value="qwen-image">Qwen-Image</option>
       <option value="ernie-image">ERNIE-Image</option>
+      <option value="wan">Wan (still)</option>
     </select>
     <input type="text" id="searchFilter" placeholder="Search models...">
   </div>
@@ -111,7 +112,7 @@ function getOptimalDimension(base) {
 function getGridSize(base) {
   if (
     base === 'flux' || base === 'flux2' || base === 'krea-2' || base === 'z-image' ||
-    base === 'qwen-image' || base === 'ernie-image'
+    base === 'qwen-image' || base === 'ernie-image' || base === 'wan'
   ) {
     return 16;
   }

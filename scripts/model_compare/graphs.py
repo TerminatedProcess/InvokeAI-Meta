@@ -851,3 +851,92 @@ def build_qwen_image_graph(
         ])
 
     return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
+
+
+def build_wan_graph(
+    model: dict,
+    positive_prompt: str,
+    negative_prompt: str,
+    seed: int,
+    width: int,
+    height: int,
+    steps: int,
+    cfg_scale: float = 5.0,
+    loras: list[dict] | None = None,
+    vae_model: dict | None = None,
+    wan_t5_encoder_model: dict | None = None,
+) -> dict:
+    """Build a Wan **still-image** execution graph (num_frames=1 path).
+
+    Wan is a video model, but its still path (``wan_denoise`` -> ``wan_l2i``) generates a single image,
+    which is what a model-comparison / push tool wants. Video (``wan_video_denoise`` -> video) is left to
+    InvokeAI's Workflow editor. Wan encodes with a UMT5 (``wan_t5_encoder``) and decodes with a Wan VAE;
+    diffusers mains bundle both, single-file / GGUF need them supplied. Negative conditioning exists only
+    when cfg_scale > 1. LoRAs are accepted for signature parity but not yet wired for Wan.
+
+    Note: dimensions are aligned to 16 here; the TI2V-5B variant actually requires multiples of 32, so an
+    odd TI2V-5B size may be rejected server-side.
+    """
+    use_cfg = cfg_scale > 1
+
+    ml = f"wan_model_loader:{uuid.uuid4().hex[:10]}"
+    pp = f"positive_prompt:{uuid.uuid4().hex[:10]}"
+    pc = f"pos_cond:{uuid.uuid4().hex[:10]}"
+    nc = f"neg_cond:{uuid.uuid4().hex[:10]}"
+    sd = f"seed:{uuid.uuid4().hex[:10]}"
+    dn = f"denoise_latents:{uuid.uuid4().hex[:10]}"
+    out = f"wan_l2i:{uuid.uuid4().hex[:10]}"
+    cm = f"core_metadata:{uuid.uuid4().hex[:10]}"
+
+    loader = {"type": "wan_model_loader", "id": ml, "is_intermediate": True, "use_cache": True, "model": model}
+    if vae_model:
+        loader["vae_model"] = vae_model
+    if wan_t5_encoder_model:
+        loader["wan_t5_encoder_model"] = wan_t5_encoder_model
+
+    metadata = {
+        "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
+        "generation_mode": "wan_txt2img",
+        "width": width, "height": height, "steps": steps, "cfg_scale": cfg_scale,
+        "model": model,
+    }
+    if use_cfg:
+        metadata["negative_prompt"] = negative_prompt
+
+    nodes = {
+        ml: loader,
+        pp: {"type": "string", "id": pp, "is_intermediate": True, "use_cache": True, "value": positive_prompt},
+        pc: {"type": "wan_text_encoder", "id": pc, "is_intermediate": True, "use_cache": True},
+        sd: {"type": "rand_int", "id": sd, "is_intermediate": True, "use_cache": False, "low": seed, "high": seed + 1},
+        dn: {
+            "type": "wan_denoise", "id": dn, "is_intermediate": True, "use_cache": True,
+            "width": width, "height": height, "steps": steps, "guidance_scale": cfg_scale,
+        },
+        cm: metadata,
+        out: {"type": "wan_l2i", "id": out, "is_intermediate": False, "use_cache": False},
+    }
+
+    edges = [
+        {"source": {"node_id": ml, "field": "transformer"}, "destination": {"node_id": dn, "field": "transformer"}},
+        {"source": {"node_id": ml, "field": "wan_t5_encoder"}, "destination": {"node_id": pc, "field": "wan_t5_encoder"}},
+        {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": out, "field": "vae"}},
+        {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": pc, "field": "prompt"}},
+        {"source": {"node_id": pc, "field": "conditioning"}, "destination": {"node_id": dn, "field": "positive_conditioning"}},
+        {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
+        {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
+        {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": cm, "field": "seed"}},
+        {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": cm, "field": "positive_prompt"}},
+        {"source": {"node_id": cm, "field": "metadata"}, "destination": {"node_id": out, "field": "metadata"}},
+    ]
+
+    if use_cfg:
+        nodes[nc] = {
+            "type": "wan_text_encoder", "id": nc, "is_intermediate": True, "use_cache": True,
+            "prompt": negative_prompt,
+        }
+        edges.extend([
+            {"source": {"node_id": ml, "field": "wan_t5_encoder"}, "destination": {"node_id": nc, "field": "wan_t5_encoder"}},
+            {"source": {"node_id": nc, "field": "conditioning"}, "destination": {"node_id": dn, "field": "negative_conditioning"}},
+        ])
+
+    return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
