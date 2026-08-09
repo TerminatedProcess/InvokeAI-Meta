@@ -53,6 +53,10 @@
       <option value="sd-1">SD 1.5</option>
       <option value="sd-2">SD 2.x</option>
       <option value="flux">Flux</option>
+      <option value="flux2">Flux.2</option>
+      <option value="z-image">Z-Image</option>
+      <option value="krea-2">Krea-2</option>
+      <option value="anima">Anima</option>
     </select>
     <input type="text" id="searchFilter" placeholder="Search models...">
   </div>
@@ -100,9 +104,10 @@ function getOptimalDimension(base) {
   return 1024; // sdxl, flux, flux2, sd-3, cogview4, etc.
 }
 
-// Grid size per base (matches InvokeAI)
+// Grid size per base (matches InvokeAI). krea-2 and z-image enforce multipleOf 16 on the
+// denoise/noise node — a non-16 dimension 422s the whole batch.
 function getGridSize(base) {
-  if (base === 'flux' || base === 'flux2') return 16;
+  if (base === 'flux' || base === 'flux2' || base === 'krea-2' || base === 'z-image') return 16;
   return 8;
 }
 
