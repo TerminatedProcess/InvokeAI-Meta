@@ -396,7 +396,7 @@ def build_zimage_graph(
         },
         cm: {
             "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
-            "generation_mode": "zimage_txt2img",
+            "generation_mode": "z_image_txt2img",
             "width": width, "height": height, "steps": steps,
             "cfg_scale": cfg_scale, "scheduler": scheduler,
             "model": model,
@@ -688,5 +688,166 @@ def build_anima_graph(
             edges.append(
                 {"source": {"node_id": ml, "field": "qwen3_encoder"}, "destination": {"node_id": nc, "field": "qwen3_encoder"}}
             )
+
+    return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
+
+
+def build_ernie_graph(
+    model: dict,
+    positive_prompt: str,
+    negative_prompt: str,
+    seed: int,
+    width: int,
+    height: int,
+    steps: int,
+    guidance_scale: float = 5.0,
+    loras: list[dict] | None = None,
+) -> dict:
+    """Build an ERNIE-Image text-to-image execution graph.
+
+    ERNIE-Image mains are self-contained diffusers pipelines — the model loader emits the transformer,
+    text encoder, and VAE, so no standalone submodels are needed. Negative conditioning exists only when
+    guidance_scale > 1 (ERNIE-Image-Turbo runs at ~8 steps with guidance disabled). LoRAs are accepted for
+    signature parity but not yet wired for ERNIE.
+    """
+    use_cfg = guidance_scale > 1
+
+    ml = f"ernie_image_model_loader:{uuid.uuid4().hex[:10]}"
+    pp = f"positive_prompt:{uuid.uuid4().hex[:10]}"
+    pc = f"pos_cond:{uuid.uuid4().hex[:10]}"
+    nc = f"neg_cond:{uuid.uuid4().hex[:10]}"
+    sd = f"seed:{uuid.uuid4().hex[:10]}"
+    dn = f"denoise_latents:{uuid.uuid4().hex[:10]}"
+    out = f"ernie_l2i:{uuid.uuid4().hex[:10]}"
+    cm = f"core_metadata:{uuid.uuid4().hex[:10]}"
+
+    metadata = {
+        "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
+        "generation_mode": "ernie_image_txt2img",
+        "width": width, "height": height, "steps": steps, "cfg_scale": guidance_scale,
+        "model": model,
+    }
+    if use_cfg:
+        metadata["negative_prompt"] = negative_prompt
+
+    nodes = {
+        ml: {"type": "ernie_image_model_loader", "id": ml, "is_intermediate": True, "use_cache": True, "model": model},
+        pp: {"type": "string", "id": pp, "is_intermediate": True, "use_cache": True, "value": positive_prompt},
+        pc: {"type": "ernie_image_text_encoder", "id": pc, "is_intermediate": True, "use_cache": True},
+        sd: {"type": "rand_int", "id": sd, "is_intermediate": True, "use_cache": False, "low": seed, "high": seed + 1},
+        dn: {
+            "type": "ernie_image_denoise", "id": dn, "is_intermediate": True, "use_cache": True,
+            "width": width, "height": height, "steps": steps, "guidance_scale": guidance_scale,
+        },
+        cm: metadata,
+        out: {"type": "ernie_image_vae_decode", "id": out, "is_intermediate": False, "use_cache": False},
+    }
+
+    edges = [
+        {"source": {"node_id": ml, "field": "transformer"}, "destination": {"node_id": dn, "field": "transformer"}},
+        {"source": {"node_id": ml, "field": "text_encoder"}, "destination": {"node_id": pc, "field": "text_encoder"}},
+        {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": out, "field": "vae"}},
+        {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": pc, "field": "prompt"}},
+        {"source": {"node_id": pc, "field": "conditioning"}, "destination": {"node_id": dn, "field": "positive_conditioning"}},
+        {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
+        {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
+        {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": cm, "field": "seed"}},
+        {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": cm, "field": "positive_prompt"}},
+        {"source": {"node_id": cm, "field": "metadata"}, "destination": {"node_id": out, "field": "metadata"}},
+    ]
+
+    if use_cfg:
+        nodes[nc] = {
+            "type": "ernie_image_text_encoder", "id": nc, "is_intermediate": True, "use_cache": True,
+            "prompt": negative_prompt,
+        }
+        edges.extend([
+            {"source": {"node_id": ml, "field": "text_encoder"}, "destination": {"node_id": nc, "field": "text_encoder"}},
+            {"source": {"node_id": nc, "field": "conditioning"}, "destination": {"node_id": dn, "field": "negative_conditioning"}},
+        ])
+
+    return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
+
+
+def build_qwen_image_graph(
+    model: dict,
+    positive_prompt: str,
+    negative_prompt: str,
+    seed: int,
+    width: int,
+    height: int,
+    steps: int,
+    cfg_scale: float = 4.0,
+    loras: list[dict] | None = None,
+    vae_model: dict | None = None,
+    qwen_vl_encoder_model: dict | None = None,
+) -> dict:
+    """Build a Qwen-Image text-to-image execution graph.
+
+    Diffusers Qwen-Image mains bundle the VAE + Qwen2.5-VL encoder; single-file / GGUF transformers need
+    them supplied via ``vae_model`` and ``qwen_vl_encoder_model``. Negative conditioning exists only when
+    cfg_scale > 1. LoRAs are accepted for signature parity but not yet wired for Qwen-Image.
+    """
+    use_cfg = cfg_scale > 1
+
+    ml = f"qwen_image_model_loader:{uuid.uuid4().hex[:10]}"
+    pp = f"positive_prompt:{uuid.uuid4().hex[:10]}"
+    pc = f"pos_cond:{uuid.uuid4().hex[:10]}"
+    nc = f"neg_cond:{uuid.uuid4().hex[:10]}"
+    sd = f"seed:{uuid.uuid4().hex[:10]}"
+    dn = f"denoise_latents:{uuid.uuid4().hex[:10]}"
+    out = f"qwen_image_l2i:{uuid.uuid4().hex[:10]}"
+    cm = f"core_metadata:{uuid.uuid4().hex[:10]}"
+
+    loader = {"type": "qwen_image_model_loader", "id": ml, "is_intermediate": True, "use_cache": True, "model": model}
+    if vae_model:
+        loader["vae_model"] = vae_model
+    if qwen_vl_encoder_model:
+        loader["qwen_vl_encoder_model"] = qwen_vl_encoder_model
+
+    metadata = {
+        "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
+        "generation_mode": "qwen_image_txt2img",
+        "width": width, "height": height, "steps": steps, "cfg_scale": cfg_scale,
+        "model": model,
+    }
+    if use_cfg:
+        metadata["negative_prompt"] = negative_prompt
+
+    nodes = {
+        ml: loader,
+        pp: {"type": "string", "id": pp, "is_intermediate": True, "use_cache": True, "value": positive_prompt},
+        pc: {"type": "qwen_image_text_encoder", "id": pc, "is_intermediate": True, "use_cache": True},
+        sd: {"type": "rand_int", "id": sd, "is_intermediate": True, "use_cache": False, "low": seed, "high": seed + 1},
+        dn: {
+            "type": "qwen_image_denoise", "id": dn, "is_intermediate": True, "use_cache": True,
+            "width": width, "height": height, "steps": steps, "cfg_scale": cfg_scale,
+        },
+        cm: metadata,
+        out: {"type": "qwen_image_l2i", "id": out, "is_intermediate": False, "use_cache": False},
+    }
+
+    edges = [
+        {"source": {"node_id": ml, "field": "transformer"}, "destination": {"node_id": dn, "field": "transformer"}},
+        {"source": {"node_id": ml, "field": "qwen_vl_encoder"}, "destination": {"node_id": pc, "field": "qwen_vl_encoder"}},
+        {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": out, "field": "vae"}},
+        {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": pc, "field": "prompt"}},
+        {"source": {"node_id": pc, "field": "conditioning"}, "destination": {"node_id": dn, "field": "positive_conditioning"}},
+        {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
+        {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
+        {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": cm, "field": "seed"}},
+        {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": cm, "field": "positive_prompt"}},
+        {"source": {"node_id": cm, "field": "metadata"}, "destination": {"node_id": out, "field": "metadata"}},
+    ]
+
+    if use_cfg:
+        nodes[nc] = {
+            "type": "qwen_image_text_encoder", "id": nc, "is_intermediate": True, "use_cache": True,
+            "prompt": negative_prompt,
+        }
+        edges.extend([
+            {"source": {"node_id": ml, "field": "qwen_vl_encoder"}, "destination": {"node_id": nc, "field": "qwen_vl_encoder"}},
+            {"source": {"node_id": nc, "field": "conditioning"}, "destination": {"node_id": dn, "field": "negative_conditioning"}},
+        ])
 
     return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
