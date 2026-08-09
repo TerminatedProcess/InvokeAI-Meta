@@ -35,6 +35,7 @@ from graphs import (
     build_qwen_image_graph,
     build_sd1_graph,
     build_sdxl_graph,
+    build_wan_graph,
     build_zimage_graph,
 )
 
@@ -281,6 +282,10 @@ async def generate(req: GenerateRequest):
         qwenvl_resp = await client.get(f"{invokeai_api_url}/api/v2/models/", params={"model_type": "qwen_vl_encoder"})
         qwenvl_resp.raise_for_status()
         qwen_vl_encoders = qwenvl_resp.json().get("models", [])
+        # Wan encodes with a UMT5 (wan_t5_encoder) and decodes with a Wan VAE.
+        want5_resp = await client.get(f"{invokeai_api_url}/api/v2/models/", params={"model_type": "wan_t5_encoder"})
+        want5_resp.raise_for_status()
+        wan_t5_encoders = want5_resp.json().get("models", [])
 
     vae_hint_key = (settings.get("vae") or {}).get("key")
 
@@ -414,6 +419,25 @@ async def generate(req: GenerateRequest):
                     width=width, height=height, steps=steps, cfg_scale=cfg_scale,
                     loras=compatible_loras, vae_model=vae_model,
                     qwen_vl_encoder_model=qwen_vl_encoder_model,
+                )
+            elif base == "wan":
+                # Wan still image (num_frames=1). Diffusers mains bundle VAE + UMT5; others need them supplied.
+                vae_model = wan_t5_encoder_model = None
+                if model_info.get("format") != "diffusers":
+                    vae_model, wan_t5_encoder_model = pick_submodels(
+                        installed_vaes, wan_t5_encoders, ("wan",), vae_hint_key
+                    )
+                    if not (vae_model and wan_t5_encoder_model):
+                        errors.append(
+                            f"Skipped {model_info['name']} (needs a Wan VAE and a Wan UMT5 encoder installed)"
+                        )
+                        continue
+                graph = build_wan_graph(
+                    model=model_ref, positive_prompt=positive_prompt,
+                    negative_prompt=negative_prompt, seed=seed,
+                    width=width, height=height, steps=steps, cfg_scale=cfg_scale,
+                    loras=compatible_loras, vae_model=vae_model,
+                    wan_t5_encoder_model=wan_t5_encoder_model,
                 )
             else:
                 errors.append(f"Skipped {model_info['name']} ('{base}' not supported)")
