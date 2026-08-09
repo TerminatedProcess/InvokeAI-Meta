@@ -28,9 +28,11 @@ from pathlib import Path as _Path
 sys.path.insert(0, str(_Path(__file__).parent))
 from graphs import (
     build_anima_graph,
+    build_ernie_graph,
     build_flux2_graph,
     build_flux_graph,
     build_krea2_graph,
+    build_qwen_image_graph,
     build_sd1_graph,
     build_sdxl_graph,
     build_zimage_graph,
@@ -275,6 +277,10 @@ async def generate(req: GenerateRequest):
         qwen3_resp = await client.get(f"{invokeai_api_url}/api/v2/models/", params={"model_type": "qwen3_encoder"})
         qwen3_resp.raise_for_status()
         qwen3_encoders = qwen3_resp.json().get("models", [])
+        # Qwen-Image uses a Qwen2.5-VL encoder (distinct from Krea-2's qwen3_vl_encoder).
+        qwenvl_resp = await client.get(f"{invokeai_api_url}/api/v2/models/", params={"model_type": "qwen_vl_encoder"})
+        qwenvl_resp.raise_for_status()
+        qwen_vl_encoders = qwenvl_resp.json().get("models", [])
 
     vae_hint_key = (settings.get("vae") or {}).get("key")
 
@@ -381,6 +387,33 @@ async def generate(req: GenerateRequest):
                     guidance_scale=cfg_scale, scheduler=scheduler,
                     loras=compatible_loras, vae_model=vae_model,
                     qwen3_encoder_model=qwen3_encoder_model,
+                )
+            elif base == "ernie-image":
+                # ERNIE mains are self-contained diffusers pipelines — no standalone submodels.
+                graph = build_ernie_graph(
+                    model=model_ref, positive_prompt=positive_prompt,
+                    negative_prompt=negative_prompt, seed=seed,
+                    width=width, height=height, steps=steps,
+                    guidance_scale=cfg_scale, loras=compatible_loras,
+                )
+            elif base == "qwen-image":
+                # Diffusers Qwen-Image bundles VAE + Qwen2.5-VL encoder; single-file/GGUF need them supplied.
+                vae_model = qwen_vl_encoder_model = None
+                if model_info.get("format") != "diffusers":
+                    vae_model, qwen_vl_encoder_model = pick_submodels(
+                        installed_vaes, qwen_vl_encoders, ("qwen-image",), vae_hint_key
+                    )
+                    if not (vae_model and qwen_vl_encoder_model):
+                        errors.append(
+                            f"Skipped {model_info['name']} (needs a Qwen-Image VAE and a Qwen2.5-VL encoder installed)"
+                        )
+                        continue
+                graph = build_qwen_image_graph(
+                    model=model_ref, positive_prompt=positive_prompt,
+                    negative_prompt=negative_prompt, seed=seed,
+                    width=width, height=height, steps=steps, cfg_scale=cfg_scale,
+                    loras=compatible_loras, vae_model=vae_model,
+                    qwen_vl_encoder_model=qwen_vl_encoder_model,
                 )
             else:
                 errors.append(f"Skipped {model_info['name']} ('{base}' not supported)")

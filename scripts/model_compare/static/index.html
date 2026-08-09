@@ -57,6 +57,8 @@
       <option value="z-image">Z-Image</option>
       <option value="krea-2">Krea-2</option>
       <option value="anima">Anima</option>
+      <option value="qwen-image">Qwen-Image</option>
+      <option value="ernie-image">ERNIE-Image</option>
     </select>
     <input type="text" id="searchFilter" placeholder="Search models...">
   </div>
@@ -107,7 +109,12 @@ function getOptimalDimension(base) {
 // Grid size per base (matches InvokeAI). krea-2 and z-image enforce multipleOf 16 on the
 // denoise/noise node — a non-16 dimension 422s the whole batch.
 function getGridSize(base) {
-  if (base === 'flux' || base === 'flux2' || base === 'krea-2' || base === 'z-image') return 16;
+  if (
+    base === 'flux' || base === 'flux2' || base === 'krea-2' || base === 'z-image' ||
+    base === 'qwen-image' || base === 'ernie-image'
+  ) {
+    return 16;
+  }
   return 8;
 }
 
