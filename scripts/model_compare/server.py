@@ -26,7 +26,15 @@ import sys
 from pathlib import Path as _Path
 
 sys.path.insert(0, str(_Path(__file__).parent))
-from graphs import build_flux2_graph, build_flux_graph, build_sd1_graph, build_sdxl_graph, build_zimage_graph
+from graphs import (
+    build_anima_graph,
+    build_flux2_graph,
+    build_flux_graph,
+    build_krea2_graph,
+    build_sd1_graph,
+    build_sdxl_graph,
+    build_zimage_graph,
+)
 
 # ── Defaults ─────────────────────────────────────────────────────────────────
 
@@ -106,6 +114,33 @@ def remap_loras(loras: list[dict], installed: list[dict], base: str) -> tuple[li
             "weight": entry["weight"],
         })
     return remapped, warnings
+
+
+def _submodel_field(m: dict) -> dict:
+    """Build a ModelIdentifierField dict from an InvokeAI /api/v2/models/ record."""
+    return {"key": m["key"], "hash": m.get("hash", ""), "name": m["name"], "base": m["base"], "type": m["type"]}
+
+
+def pick_submodels(
+    vaes: list[dict], encoders: list[dict], vae_bases: tuple[str, ...], vae_hint_key: str | None = None
+) -> tuple[dict | None, dict | None]:
+    """Pick a compatible VAE + text encoder from installed models (mirrors invokepush._pick_submodels).
+
+    `vae_bases` is ordered by preference. A VAE whose key matches `vae_hint_key` (the VAE currently set
+    in InvokeAI) wins if it's compatible; otherwise prefer a Qwen-Image-named VAE in the most-preferred
+    base, then the first of that base. The encoder is the first installed model of the requested type.
+    """
+    compatible = [v for v in vaes if v.get("base") in vae_bases]
+    vae = None
+    if compatible:
+        if vae_hint_key:
+            vae = next((v for v in compatible if v["key"] == vae_hint_key), None)
+        if vae is None:
+            compatible.sort(key=lambda v: vae_bases.index(v["base"]))
+            top_base = [v for v in compatible if v["base"] == compatible[0]["base"]]
+            named = [v for v in top_base if "qwen" in v["name"].lower() and "vae" in v["name"].lower()]
+            vae = (named or top_base)[0]
+    return (_submodel_field(vae) if vae else None), (_submodel_field(encoders[0]) if encoders else None)
 
 
 def parse_settings(state: dict) -> dict:
@@ -230,6 +265,19 @@ async def generate(req: GenerateRequest):
         lora_resp.raise_for_status()
         installed_loras = lora_resp.json().get("models", [])
 
+        # Standalone submodels for Krea-2 / Anima (single-file & GGUF mains carry no bundled VAE/encoder).
+        vae_resp = await client.get(f"{invokeai_api_url}/api/v2/models/", params={"model_type": "vae"})
+        vae_resp.raise_for_status()
+        installed_vaes = vae_resp.json().get("models", [])
+        qwen3vl_resp = await client.get(f"{invokeai_api_url}/api/v2/models/", params={"model_type": "qwen3_vl_encoder"})
+        qwen3vl_resp.raise_for_status()
+        qwen3_vl_encoders = qwen3vl_resp.json().get("models", [])
+        qwen3_resp = await client.get(f"{invokeai_api_url}/api/v2/models/", params={"model_type": "qwen3_encoder"})
+        qwen3_resp.raise_for_status()
+        qwen3_encoders = qwen3_resp.json().get("models", [])
+
+    vae_hint_key = (settings.get("vae") or {}).get("key")
+
     enqueued = 0
     errors = []
 
@@ -296,6 +344,43 @@ async def generate(req: GenerateRequest):
                     seed=seed, width=width, height=height,
                     steps=steps, cfg_scale=cfg_scale,
                     scheduler=settings.get("zImageScheduler", "euler"),
+                )
+            elif base == "krea-2":
+                # Diffusers mains bundle the VAE + Qwen3-VL encoder; single-file/GGUF need them supplied.
+                vae_model = qwen3_vl_encoder_model = None
+                if model_info.get("format") != "diffusers":
+                    vae_model, qwen3_vl_encoder_model = pick_submodels(
+                        installed_vaes, qwen3_vl_encoders, ("qwen-image", "anima"), vae_hint_key
+                    )
+                    if not (vae_model and qwen3_vl_encoder_model):
+                        errors.append(
+                            f"Skipped {model_info['name']} (needs a Qwen-Image VAE and a Qwen3-VL encoder installed)"
+                        )
+                        continue
+                graph = build_krea2_graph(
+                    model=model_ref, positive_prompt=positive_prompt,
+                    negative_prompt=negative_prompt, seed=seed,
+                    width=width, height=height, steps=steps, cfg_scale=cfg_scale,
+                    loras=compatible_loras, vae_model=vae_model,
+                    qwen3_vl_encoder_model=qwen3_vl_encoder_model,
+                )
+            elif base == "anima":
+                # Anima always needs a 16-channel VAE + Qwen3 0.6B encoder, regardless of main format.
+                vae_model, qwen3_encoder_model = pick_submodels(
+                    installed_vaes, qwen3_encoders, ("anima", "qwen-image", "flux"), vae_hint_key
+                )
+                if not (vae_model and qwen3_encoder_model):
+                    errors.append(
+                        f"Skipped {model_info['name']} (needs a 16-channel VAE and a Qwen3 0.6B encoder installed)"
+                    )
+                    continue
+                graph = build_anima_graph(
+                    model=model_ref, positive_prompt=positive_prompt,
+                    negative_prompt=negative_prompt, seed=seed,
+                    width=width, height=height, steps=steps,
+                    guidance_scale=cfg_scale, scheduler=scheduler,
+                    loras=compatible_loras, vae_model=vae_model,
+                    qwen3_encoder_model=qwen3_encoder_model,
                 )
             else:
                 errors.append(f"Skipped {model_info['name']} ('{base}' not supported)")
