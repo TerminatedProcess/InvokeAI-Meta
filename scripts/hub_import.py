@@ -48,8 +48,13 @@ SKIP_MODEL_TYPES = frozenset({
     "unknown",
 })
 
-# Skip base_model if it contains any of these substrings (video/unsupported arch)
-SKIP_BASE_KEYWORDS = frozenset({"wan", "ltxv", "hunyuan", "cogvideo", "chroma"})
+# Skip base_model if it contains any of these substrings (video/unsupported arch InvokeAI can't run).
+# Wan is NOT here — InvokeAI supports Wan 2.2 (T2V/I2V) natively; it's handled via WAN_BASE_PREFIX below.
+SKIP_BASE_KEYWORDS = frozenset({"ltxv", "hunyuan", "cogvideo", "chroma"})
+
+# Any hub base starting with this maps to InvokeAI's single "wan" base. The hub uses many wan labels
+# (wan, wan 2.1, wan 2.2, wan video, wan video 2.2 t2v-a14b, ...); the probe classifies the exact variant.
+WAN_BASE_PREFIX = "wan"
 
 # Skip base_model if it exactly matches one of these
 SKIP_BASE_EXACT = frozenset({
@@ -58,14 +63,16 @@ SKIP_BASE_EXACT = frozenset({
     "depth anything",
     "gemma",
     "other",
-    "qwen",
-    "qwen3",
-    "qwen3-vl",
     "raft",
     "sam",
     "unknown",
     "yolo",
 })
+
+# Text-encoder bases InvokeAI uses as Krea-2 / Anima submodels. The hub labels the Qwen3-VL encoder with
+# type 'llm' (which we'd otherwise skip), so allow these bases through regardless of type — a --reset then
+# re-imports the encoders those bases need. The probe classifies the exact encoder type.
+ENCODER_BASES = frozenset({"qwen3", "qwen3-vl"})
 
 # Hub base_model → InvokeAI BaseModelType string value
 # Models whose base_model is NOT in this map (and not skipped above) are skipped
@@ -88,8 +95,21 @@ BASE_MODEL_MAP = {
     "flux.2 klein 4b": "flux2",
     "flux.2 klein 4b-base": "flux2",
     "flux.2 klein 9b": "flux2",
+    "flux.2 klein 9b-base": "flux2",
     "z-image": "z-image",
     "zimageturbo": "z-image",
+    "zimagebase": "z-image",
+    # Qwen-Image family (main + LoRA + VAE). The hub labels some as bare "qwen".
+    "qwen-image": "qwen-image",
+    "qwen": "qwen-image",
+    # Krea-2 (12B MMDiT) — checkpoints, GGUF, and LoKr/standard LoRAs.
+    "krea 2": "krea-2",
+    "krea-2": "krea-2",
+    # Anima (Cosmos Predict2 DiT) — checkpoints, LoRAs, VAEs.
+    "anima": "anima",
+    # ERNIE-Image.
+    "ernie": "ernie-image",
+    "ernie-image": "ernie-image",
     "any": "any",
 }
 
@@ -102,6 +122,10 @@ def should_skip(model_type: str, base_model: str) -> tuple[bool, str]:
     mt = model_type.lower().strip()
     bm = base_model.lower().strip()
 
+    # Allow Krea-2 / Anima text encoders through even when the hub mislabels their type (e.g. 'llm').
+    if bm in ENCODER_BASES:
+        return False, ""
+
     if mt in SKIP_MODEL_TYPES:
         return True, f"unsupported type '{model_type}'"
 
@@ -111,6 +135,10 @@ def should_skip(model_type: str, base_model: str) -> tuple[bool, str]:
     for kw in SKIP_BASE_KEYWORDS:
         if kw in bm:
             return True, f"unsupported base '{base_model}' (matches '{kw}')"
+
+    # Wan (2.1/2.2 + video variants) — eligible under the single InvokeAI "wan" base.
+    if bm.startswith(WAN_BASE_PREFIX):
+        return False, ""
 
     if bm not in BASE_MODEL_MAP:
         return True, f"unmapped base '{base_model}'"
