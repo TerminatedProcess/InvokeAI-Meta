@@ -263,6 +263,7 @@ def build_flux_graph(
     sd = f"seed:{uuid.uuid4().hex[:10]}"
     dn = f"flux_denoise:{uuid.uuid4().hex[:10]}"
     out = f"flux_vae_decode:{uuid.uuid4().hex[:10]}"
+    cm = f"core_metadata:{uuid.uuid4().hex[:10]}"
 
     nodes = {
         ml: {
@@ -278,6 +279,12 @@ def build_flux_graph(
             "width": width, "height": height, "num_steps": steps, "guidance": guidance,
             "scheduler": scheduler, "denoising_start": 0.0, "denoising_end": 1.0,
         },
+        cm: {
+            "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
+            "generation_mode": "flux_txt2img",
+            "width": width, "height": height, "steps": steps, "guidance": guidance,
+            "model": model,
+        },
         out: {"type": "flux_vae_decode", "id": out, "is_intermediate": False, "use_cache": False},
     }
 
@@ -291,6 +298,9 @@ def build_flux_graph(
         {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
         {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
         {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": out, "field": "vae"}},
+        {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": cm, "field": "seed"}},
+        {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": cm, "field": "positive_prompt"}},
+        {"source": {"node_id": cm, "field": "metadata"}, "destination": {"node_id": out, "field": "metadata"}},
     ]
 
     return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
@@ -311,6 +321,7 @@ def build_flux2_graph(
     sd = f"seed:{uuid.uuid4().hex[:10]}"
     dn = f"flux2_denoise:{uuid.uuid4().hex[:10]}"
     out = f"flux2_vae_decode:{uuid.uuid4().hex[:10]}"
+    cm = f"core_metadata:{uuid.uuid4().hex[:10]}"
 
     nodes = {
         ml: {
@@ -323,6 +334,12 @@ def build_flux2_graph(
         dn: {
             "type": "flux2_denoise", "id": dn, "is_intermediate": True, "use_cache": True,
             "width": width, "height": height, "num_steps": steps,
+        },
+        cm: {
+            "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
+            "generation_mode": "flux2_txt2img",
+            "width": width, "height": height, "steps": steps,
+            "model": model,
         },
         out: {"type": "flux2_vae_decode", "id": out, "is_intermediate": False, "use_cache": False},
     }
@@ -337,6 +354,9 @@ def build_flux2_graph(
         {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
         {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
         {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": out, "field": "vae"}},
+        {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": cm, "field": "seed"}},
+        {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": cm, "field": "positive_prompt"}},
+        {"source": {"node_id": cm, "field": "metadata"}, "destination": {"node_id": out, "field": "metadata"}},
     ]
 
     return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
@@ -359,6 +379,7 @@ def build_zimage_graph(
     sd = f"seed:{uuid.uuid4().hex[:10]}"
     dn = f"z_image_denoise:{uuid.uuid4().hex[:10]}"
     out = f"z_image_l2i:{uuid.uuid4().hex[:10]}"
+    cm = f"core_metadata:{uuid.uuid4().hex[:10]}"
 
     nodes = {
         ml: {
@@ -373,6 +394,13 @@ def build_zimage_graph(
             "width": width, "height": height, "steps": steps,
             "guidance_scale": cfg_scale, "scheduler": scheduler,
         },
+        cm: {
+            "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
+            "generation_mode": "zimage_txt2img",
+            "width": width, "height": height, "steps": steps,
+            "cfg_scale": cfg_scale, "scheduler": scheduler,
+            "model": model,
+        },
         out: {"type": "z_image_l2i", "id": out, "is_intermediate": False, "use_cache": False},
     }
 
@@ -385,6 +413,9 @@ def build_zimage_graph(
         {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
         {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
         {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": out, "field": "vae"}},
+        {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": cm, "field": "seed"}},
+        {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": cm, "field": "positive_prompt"}},
+        {"source": {"node_id": cm, "field": "metadata"}, "destination": {"node_id": out, "field": "metadata"}},
     ]
 
     return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
@@ -423,6 +454,7 @@ def build_krea2_graph(
     sd = f"seed:{uuid.uuid4().hex[:10]}"
     dn = f"denoise_latents:{uuid.uuid4().hex[:10]}"
     out = f"krea2_l2i:{uuid.uuid4().hex[:10]}"
+    cm = f"core_metadata:{uuid.uuid4().hex[:10]}"
 
     loader = {
         "type": "krea2_model_loader", "id": ml, "is_intermediate": True, "use_cache": True,
@@ -432,6 +464,18 @@ def build_krea2_graph(
         loader["vae_model"] = vae_model
     if qwen3_vl_encoder_model:
         loader["qwen3_vl_encoder_model"] = qwen3_vl_encoder_model
+
+    # core_metadata makes the generation recallable in InvokeAI's gallery (Use Prompt/Seed/All).
+    # The seed and positive prompt are wired from their nodes so the recalled values match what ran.
+    metadata = {
+        "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
+        "generation_mode": "krea2_txt2img",
+        "width": width, "height": height, "steps": steps, "cfg_scale": cfg_scale,
+        "model": model,
+        "loras": [{"model": l["model"], "weight": l["weight"]} for l in loras],
+    }
+    if use_cfg:
+        metadata["negative_prompt"] = negative_prompt
 
     nodes = {
         ml: loader,
@@ -443,6 +487,7 @@ def build_krea2_graph(
             "type": "krea2_denoise", "id": dn, "is_intermediate": True, "use_cache": True,
             "width": width, "height": height, "steps": steps, "cfg_scale": cfg_scale,
         },
+        cm: metadata,
         out: {"type": "qwen_image_l2i", "id": out, "is_intermediate": False, "use_cache": False},
     }
 
@@ -453,6 +498,9 @@ def build_krea2_graph(
         {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
         {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
         {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": out, "field": "vae"}},
+        {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": cm, "field": "seed"}},
+        {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": cm, "field": "positive_prompt"}},
+        {"source": {"node_id": cm, "field": "metadata"}, "destination": {"node_id": out, "field": "metadata"}},
     ]
 
     if use_cfg:
@@ -544,6 +592,7 @@ def build_anima_graph(
     sd = f"seed:{uuid.uuid4().hex[:10]}"
     dn = f"denoise_latents:{uuid.uuid4().hex[:10]}"
     out = f"anima_l2i:{uuid.uuid4().hex[:10]}"
+    cm = f"core_metadata:{uuid.uuid4().hex[:10]}"
 
     loader = {
         "type": "anima_model_loader", "id": ml, "is_intermediate": True, "use_cache": True,
@@ -553,6 +602,19 @@ def build_anima_graph(
         loader["vae_model"] = vae_model
     if qwen3_encoder_model:
         loader["qwen3_encoder_model"] = qwen3_encoder_model
+
+    # core_metadata makes the generation recallable in InvokeAI's gallery. Anima's guidance maps onto the
+    # metadata cfg_scale field so recall restores it as the UI's CFG.
+    metadata = {
+        "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
+        "generation_mode": "anima_txt2img",
+        "width": width, "height": height, "steps": steps,
+        "cfg_scale": guidance_scale, "scheduler": scheduler,
+        "model": model,
+        "loras": [{"model": l["model"], "weight": l["weight"]} for l in loras],
+    }
+    if use_cfg:
+        metadata["negative_prompt"] = negative_prompt
 
     nodes = {
         ml: loader,
@@ -565,6 +627,7 @@ def build_anima_graph(
             "width": width, "height": height, "steps": steps,
             "guidance_scale": guidance_scale, "scheduler": scheduler,
         },
+        cm: metadata,
         out: {"type": "anima_l2i", "id": out, "is_intermediate": False, "use_cache": False},
     }
 
@@ -575,6 +638,9 @@ def build_anima_graph(
         {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
         {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
         {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": out, "field": "vae"}},
+        {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": cm, "field": "seed"}},
+        {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": cm, "field": "positive_prompt"}},
+        {"source": {"node_id": cm, "field": "metadata"}, "destination": {"node_id": out, "field": "metadata"}},
     ]
 
     if use_cfg:
