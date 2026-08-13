@@ -156,14 +156,6 @@ git config --get-all gitupdate.autodrop | string match -q uv.lock
 or git config --add gitupdate.autodrop uv.lock
 
 # ── Models ──
-function hubimport
-    imd
-    stop
-    python scripts/hub_import.py \
-        --invokeai-db $INVOKE_DATA_DIR/databases/invokeai.db \
-        --invokeai-models $INVOKE_DATA_DIR/models \
-        $argv
-end
 function hubupdate
     imd
     stop
