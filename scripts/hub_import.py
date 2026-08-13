@@ -280,7 +280,7 @@ def import_models(args: argparse.Namespace) -> None:
     os.environ.setdefault("INVOKEAI_ROOT", str(project_root / "invokeai_data"))
     sys.path.insert(0, str(project_root))
 
-    print("\nLoading InvokeAI model classification system...")
+    print("\nLoading InvokeAI model classification system (importing torch, ~1-2 min)...", flush=True)
     try:
         from invokeai.backend.model_manager.configs.factory import ModelConfigFactory
         from invokeai.backend.model_manager.configs.unknown import Unknown_Config
@@ -295,7 +295,7 @@ def import_models(args: argparse.Namespace) -> None:
     skipped = 0
     t0 = time.time()
 
-    print(f"\nImporting {len(eligible)} models...\n")
+    print(f"\nImporting {len(eligible)} models...\n", flush=True)
 
     try:
         for i, row in enumerate(eligible, 1):
