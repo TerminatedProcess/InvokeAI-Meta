@@ -164,6 +164,14 @@ function hubimport
         --invokeai-models $INVOKE_DATA_DIR/models \
         $argv
 end
+function hubupdate
+    imd
+    stop
+    python scripts/hub_update.py \
+        --invokeai-db $INVOKE_DATA_DIR/databases/invokeai.db \
+        --invokeai-models $INVOKE_DATA_DIR/models \
+        $argv
+end
 function hubreset
     imd
     stop
