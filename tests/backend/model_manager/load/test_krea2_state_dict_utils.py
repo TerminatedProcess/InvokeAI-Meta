@@ -1,12 +1,13 @@
 """Unit tests for the Krea-2 loader state-dict helpers.
 
 These cover the pure key/tensor transforms that the single-file, GGUF and Qwen3-VL encoder loaders
-run before ``load_state_dict`` (prefix stripping, native<->diffusers key conversion, scaled-fp8
-dequantization, encoder key remapping) plus the shared ``_reject_incomplete_load`` guard that turns a
+run before ``load_state_dict`` (prefix stripping, native<->diffusers key conversion, ComfyUI
+quantization folding, encoder key remapping) plus the shared ``_reject_incomplete_load`` guard that turns a
 silent partial load into an actionable error. They exercise the conversion logic without needing the
 real (diffusers ``Krea2Transformer2DModel`` / transformers ``Qwen3VLModel``) architectures or weights.
 """
 
+import json
 import re
 from types import SimpleNamespace
 
@@ -17,12 +18,14 @@ import torch
 from invokeai.backend.model_manager.load.model_loaders.krea2 import (
     KREA2_TRANSFORMER_CONFIG,
     _convert_krea2_native_to_diffusers,
-    _dequantize_scaled_fp8,
+    _dequantize_comfy_quant,
     _is_native_krea2_format,
     _normalize_qwen3vl_rope_config,
+    _regular_hadamard,
     _reject_incomplete_load,
     _remap_qwen3vl_singlefile_keys,
     _strip_comfyui_prefix,
+    _undo_convrot,
 )
 
 
@@ -84,13 +87,13 @@ class TestIsNativeKrea2Format:
         assert _is_native_krea2_format({key: torch.zeros(1)}) is False
 
 
-class TestDequantizeScaledFp8:
+class TestDequantizeComfyQuant:
     def test_folds_scale_into_weight_and_drops_scale_key(self) -> None:
         sd = {
             "layer.weight": torch.tensor([2.0, 4.0]),
             "layer.weight_scale": torch.tensor(0.5),
         }
-        out = _dequantize_scaled_fp8(sd, torch.bfloat16)
+        out = _dequantize_comfy_quant(sd, torch.bfloat16)
         assert "layer.weight_scale" not in out
         assert torch.allclose(out["layer.weight"].float(), torch.tensor([1.0, 2.0]))
 
@@ -105,25 +108,125 @@ class TestDequantizeScaledFp8:
             "layer.weight": torch.tensor([2.0, 4.0]),
             "layer.weight_scale": torch.tensor(0.5),
         }
-        assert _dequantize_scaled_fp8(dict(sd), torch.bfloat16)["layer.weight"].dtype is torch.bfloat16
-        assert _dequantize_scaled_fp8(dict(sd), torch.float16)["layer.weight"].dtype is torch.float16
+        assert _dequantize_comfy_quant(dict(sd), torch.bfloat16)["layer.weight"].dtype is torch.bfloat16
+        assert _dequantize_comfy_quant(dict(sd), torch.float16)["layer.weight"].dtype is torch.float16
 
     def test_dtype_is_required(self) -> None:
         """No implicit bfloat16 fallback: on a float16-only device that would cost an extra rounding step."""
         with pytest.raises(TypeError):
-            _dequantize_scaled_fp8({"layer.weight": torch.tensor([2.0])})  # type: ignore[call-arg]
+            _dequantize_comfy_quant({"layer.weight": torch.tensor([2.0])})  # type: ignore[call-arg]
 
     def test_noop_without_scale_keys(self) -> None:
         sd = {"layer.weight": torch.tensor([2.0, 4.0])}
-        out = _dequantize_scaled_fp8(sd, torch.bfloat16)
+        out = _dequantize_comfy_quant(sd, torch.bfloat16)
         assert out is sd
 
     def test_orphan_scale_key_is_dropped(self) -> None:
         # A scale key with no matching weight is simply removed (nothing to multiply).
         sd = {"other.weight": torch.tensor([1.0]), "layer.weight_scale": torch.tensor(0.5)}
-        out = _dequantize_scaled_fp8(sd, torch.bfloat16)
+        out = _dequantize_comfy_quant(sd, torch.bfloat16)
         assert "layer.weight_scale" not in out
         assert "other.weight" in out
+
+    def test_per_output_channel_scale_applies_along_the_output_dim(self) -> None:
+        """A 1-D per-channel scale must scale rows, not columns.
+
+        On a square weight both broadcasts succeed, so getting the axis wrong is silent: the model
+        loads with every weight scaled by the wrong channel's factor.
+        """
+        sd = {
+            "layer.weight": torch.ones(2, 2),
+            "layer.weight_scale": torch.tensor([1.0, 3.0]),
+        }
+        out = _dequantize_comfy_quant(sd, torch.float32)
+        assert torch.equal(out["layer.weight"], torch.tensor([[1.0, 1.0], [3.0, 3.0]]))
+
+    def test_rejects_a_scale_that_is_neither_scalar_nor_per_channel(self) -> None:
+        sd = {"layer.weight": torch.ones(2, 4), "layer.weight_scale": torch.ones(3)}
+        with pytest.raises(RuntimeError, match="scalar or per-output-channel"):
+            _dequantize_comfy_quant(sd, torch.float32)
+
+
+class TestConvRotDequantization:
+    """ConvRot checkpoints store ``W_rot = W @ H^T`` and rotate activations online.
+
+    InvokeAI has no such kernel, so the rotation must be folded back out at load time. Skipping it
+    does not fail — the shapes still match — it just loads weights in the wrong basis, which renders
+    as pure noise.
+    """
+
+    @staticmethod
+    def _descriptor(conf: dict[str, object]) -> torch.Tensor:
+        return torch.tensor(list(json.dumps(conf).encode()), dtype=torch.uint8)
+
+    def test_hadamard_is_a_normalized_symmetric_involution(self) -> None:
+        h = _regular_hadamard(256, "cpu", torch.float32)
+        assert torch.equal(h, h.T)
+        assert torch.allclose(h @ h, torch.eye(256), atol=1e-5)
+
+    @pytest.mark.parametrize("size", [3, 8, 100])
+    def test_rejects_group_sizes_that_are_not_powers_of_four(self, size: int) -> None:
+        with pytest.raises(ValueError, match="power of 4"):
+            _regular_hadamard(size, "cpu", torch.float32)
+
+    def test_unrotate_inverts_the_offline_rotation(self) -> None:
+        torch.manual_seed(0)
+        weight = torch.randn(32, 64)
+        h = _regular_hadamard(16, "cpu", torch.float32)
+        rotated = torch.matmul(weight.reshape(32, 4, 16), h.T).reshape(32, 64)
+        assert torch.allclose(_undo_convrot(rotated, 16), weight, atol=1e-5)
+
+    def test_convrot_weights_are_unrotated_during_dequantization(self) -> None:
+        torch.manual_seed(0)
+        weight = torch.randn(8, 16)
+        h = _regular_hadamard(16, "cpu", torch.float32)
+        rotated = torch.matmul(weight.reshape(8, 1, 16), h.T).reshape(8, 16)
+        sd = {
+            "layer.weight": rotated * 2.0,
+            "layer.weight_scale": torch.tensor(0.5),
+            "layer.comfy_quant": self._descriptor({"format": "int8_rowwise", "convrot": True, "convrot_groupsize": 16}),
+        }
+        out = _dequantize_comfy_quant(sd, torch.float32)
+        assert torch.allclose(out["layer.weight"], weight, atol=1e-5)
+        assert "layer.comfy_quant" not in out
+
+    def test_a_descriptor_without_convrot_leaves_the_weight_alone(self) -> None:
+        sd = {
+            "layer.weight": torch.tensor([[2.0, 4.0]]),
+            "layer.weight_scale": torch.tensor(0.5),
+            "layer.comfy_quant": self._descriptor({"format": "int8_tensorwise"}),
+        }
+        out = _dequantize_comfy_quant(sd, torch.float32)
+        assert torch.allclose(out["layer.weight"], torch.tensor([[1.0, 2.0]]))
+
+    def test_unsupported_quantization_format_raises_instead_of_loading_garbage(self) -> None:
+        """nvfp4 and friends pack sub-byte weights into uint8; ``weight * scale`` is meaningless there."""
+        sd = {
+            "layer.weight": torch.zeros(4, 4, dtype=torch.uint8),
+            "layer.weight_scale": torch.ones(1),
+            "layer.comfy_quant": self._descriptor({"format": "nvfp4"}),
+        }
+        with pytest.raises(RuntimeError, match="unsupported ComfyUI quantization format"):
+            _dequantize_comfy_quant(sd, torch.bfloat16)
+
+    def test_group_size_that_does_not_divide_in_features_raises(self) -> None:
+        sd = {
+            "layer.weight": torch.ones(4, 20),
+            "layer.weight_scale": torch.ones(1),
+            "layer.comfy_quant": self._descriptor({"format": "int8_rowwise", "convrot": True, "convrot_groupsize": 16}),
+        }
+        with pytest.raises(RuntimeError, match="does not divide in_features"):
+            _dequantize_comfy_quant(sd, torch.bfloat16)
+
+    def test_unparseable_descriptor_falls_back_to_the_plain_scaled_path(self) -> None:
+        sd = {
+            "layer.weight": torch.tensor([[2.0, 4.0]]),
+            "layer.weight_scale": torch.tensor(0.5),
+            "layer.comfy_quant": torch.tensor([0xFF, 0xFE], dtype=torch.uint8),
+        }
+        out = _dequantize_comfy_quant(sd, torch.float32)
+        assert torch.allclose(out["layer.weight"], torch.tensor([[1.0, 2.0]]))
+        assert "layer.comfy_quant" not in out
 
 
 class TestConvertKrea2NativeToDiffusers:
