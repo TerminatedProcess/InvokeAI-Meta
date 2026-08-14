@@ -1,6 +1,8 @@
 # Copyright (c) 2024, Lincoln D. Stein and the InvokeAI Development Team
 """Class for Krea-2 model loading in InvokeAI."""
 
+import json
+import math
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, Optional
 
@@ -93,12 +95,95 @@ def _is_native_krea2_format(sd: dict[str, Any]) -> bool:
     )
 
 
-def _dequantize_scaled_fp8(sd: dict[str, Any], dtype: "torch.dtype") -> dict[str, Any]:
-    """Dequantize ComfyUI 'scaled fp8' weights: ``dequant = weight.float() * weight_scale``.
+# ComfyUI quantization schemes this loader can fold back into dense weights. A layer's `.comfy_quant`
+# descriptor names its scheme; everything here dequantizes to `weight * weight_scale` (plus, for
+# convrot, an inverse rotation). Schemes NOT listed — nvfp4, convrot_w4a4, asym_w4a8_int8 — pack
+# sub-byte weights into uint8 and need a real unpacking step, so they are rejected rather than fed
+# through a formula that silently produces garbage weights.
+_DEQUANTIZABLE_QUANT_FORMATS = frozenset({"float8_e4m3fn", "float8_e5m2", "int8_tensorwise", "int8_rowwise"})
 
-    Each quantized layer stores an fp8 ``<name>.weight`` plus a (usually scalar) ``<name>.weight_scale``.
-    Returns a new dict with the weights dequantized and the ``.weight_scale`` keys removed. No-op if
-    there are no scale keys.
+
+def _read_comfy_quant_descriptors(sd: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    """Map ``<layer>`` → its parsed ``<layer>.comfy_quant`` descriptor.
+
+    ComfyUI records each quantized layer's scheme as a uint8 tensor holding JSON, e.g.
+    ``{"format": "int8_rowwise", "per_row": true, "convrot": true, "convrot_groupsize": 256}``.
+    Without reading it, an int8+convrot checkpoint is indistinguishable from a scaled-fp8 one — both
+    are just ``.weight`` + ``.weight_scale`` — which is how rotated weights used to load as noise.
+
+    Descriptors that don't parse map to ``{}``, i.e. the legacy scaled-fp8 assumption.
+    """
+    import torch
+
+    descriptors: dict[str, dict[str, Any]] = {}
+    for key, value in sd.items():
+        if not (isinstance(key, str) and key.endswith(".comfy_quant")):
+            continue
+        prefix = key[: -len(".comfy_quant")]
+        try:
+            raw = torch.as_tensor(_to_plain_tensor(value)).to(torch.uint8).cpu().numpy().tobytes()
+            parsed = json.loads(raw.decode("utf-8").rstrip("\x00"))
+            descriptors[prefix] = parsed if isinstance(parsed, dict) else {}
+        except Exception:
+            descriptors[prefix] = {}
+    return descriptors
+
+
+def _regular_hadamard(size: int, device: Any, dtype: "torch.dtype") -> "torch.Tensor":
+    """Build the normalized *regular* Hadamard matrix ComfyUI's convrot uses.
+
+    Kronecker powers of the 4x4 regular Hadamard, scaled by ``1/sqrt(size)``. This must match
+    comfy_kitchen's ``_build_hadamard`` exactly — a different sign convention or normalization
+    produces weights that are wrong but perfectly plausible-looking.
+
+    The matrix is symmetric *and* orthogonal, hence an involution (``H @ H == I``), which is why the
+    same multiply both applies and undoes the rotation.
+    """
+    import torch
+
+    if size < 4 or (size & (size - 1)) != 0 or math.log(size, 4) % 1 != 0:
+        raise ValueError(f"convrot group size must be a power of 4, got {size}")
+
+    h4 = torch.tensor([[1, 1, 1, -1], [1, 1, -1, 1], [1, -1, 1, 1], [-1, 1, 1, 1]], dtype=dtype, device=device)
+    h = h4
+    current = 4
+    while current < size:
+        h = torch.kron(h, h4)
+        current *= 4
+    return h / (size**0.5)
+
+
+def _undo_convrot(weight: "torch.Tensor", group_size: int) -> "torch.Tensor":
+    """Undo ComfyUI's offline convrot weight rotation: ``W = W_rot @ H``.
+
+    ConvRot quantization stores ``W_rot = W @ H^T`` (blocked over the input dim in groups of
+    ``group_size``) and rotates the activations by ``H`` online, so the two cancel inside ComfyUI's
+    int8 kernel. InvokeAI runs dense weights through ``torch.nn.functional.linear`` with no such
+    kernel, so the rotation has to come back out here or every matmul is computed in the wrong basis.
+
+    ``H`` is an involution, so this is the same blocked multiply that applied the rotation.
+    """
+    import torch
+
+    out_features, in_features = weight.shape
+    if in_features % group_size != 0:
+        raise RuntimeError(
+            f"convrot group size {group_size} does not divide in_features {in_features}; "
+            "refusing to unrotate with a mismatched group size."
+        )
+    h = _regular_hadamard(group_size, weight.device, weight.dtype)
+    grouped = weight.reshape(out_features, in_features // group_size, group_size)
+    return torch.matmul(grouped, h).reshape(out_features, in_features)
+
+
+def _dequantize_comfy_quant(sd: dict[str, Any], dtype: "torch.dtype") -> dict[str, Any]:
+    """Fold ComfyUI weight-only quantization back into dense weights: ``dequant = weight * weight_scale``.
+
+    Each quantized layer stores a ``<name>.weight`` (fp8 or int8) plus a ``<name>.weight_scale`` that is
+    either scalar (tensor-wise) or per-output-channel (row-wise), and optionally a ``<name>.comfy_quant``
+    descriptor naming the scheme. Layers quantized with convrot additionally get their rotation undone.
+    Returns a new dict with the weights dequantized and the ``.weight_scale`` / ``.comfy_quant`` keys
+    removed. No-op if there are no scale keys.
 
     The multiply runs in float32 for precision, but each result is stored as ``dtype`` immediately so
     the *whole model* is never materialized in float32. Krea-2's ~12 GB fp8 checkpoint would otherwise
@@ -116,15 +201,40 @@ def _dequantize_scaled_fp8(sd: dict[str, Any], dtype: "torch.dtype") -> dict[str
     scale_keys = [k for k in sd if isinstance(k, str) and k.endswith(".weight_scale")]
     if not scale_keys:
         return sd
+    descriptors = _read_comfy_quant_descriptors(sd)
     out = dict(sd)
     for scale_key in scale_keys:
-        weight_key = scale_key.replace(".weight_scale", ".weight")
+        prefix = scale_key[: -len(".weight_scale")]
+        weight_key = prefix + ".weight"
+        conf = descriptors.get(prefix, {})
+        quant_format = conf.get("format")
+        if quant_format is not None and quant_format not in _DEQUANTIZABLE_QUANT_FORMATS:
+            raise RuntimeError(
+                f"{prefix}: unsupported ComfyUI quantization format {quant_format!r}. This checkpoint "
+                "packs weights in a layout InvokeAI cannot dequantize; use an fp8 or int8 build of the "
+                "model instead."
+            )
         if weight_key in out:
             weight = torch.as_tensor(_to_plain_tensor(out[weight_key])).float()
             scale = torch.as_tensor(_to_plain_tensor(out[scale_key])).float()
-            out[weight_key] = (weight * scale).to(dtype)
+            # A per-output-channel scale stored 1-D would broadcast along the *input* dim — silently
+            # scaling the wrong axis on a square weight — so give it an explicit trailing axis.
+            if scale.numel() == weight.shape[0] and weight.ndim == 2:
+                scale = scale.reshape(-1, 1)
+            elif scale.numel() != 1:
+                raise RuntimeError(
+                    f"{prefix}: weight_scale must be scalar or per-output-channel, got "
+                    f"{tuple(scale.shape)} for weight {tuple(weight.shape)}."
+                )
+            dequantized = weight * scale
             del weight
+            if conf.get("convrot"):
+                dequantized = _undo_convrot(dequantized, int(conf.get("convrot_groupsize", 256)))
+            out[weight_key] = dequantized.to(dtype)
+            del dequantized
         del out[scale_key]
+    for key in [k for k in out if isinstance(k, str) and k.endswith(".comfy_quant")]:
+        del out[key]
     return out
 
 
@@ -352,10 +462,10 @@ class Krea2CheckpointModel(ModelLoader):
 
         sd = load_file(model_path)
         sd = _strip_comfyui_prefix(sd)
-        # ComfyUI 'scaled fp8' checkpoints: fold the per-tensor weight_scale into the weights. The
-        # compute dtype is resolved first so the dequantized weights land there directly instead of
-        # transiently materializing the whole model in float32.
-        sd = _dequantize_scaled_fp8(sd, model_dtype)
+        # ComfyUI weight-only quantization (scaled fp8, int8, ± convrot): fold weight_scale into the
+        # weights and undo any rotation. The compute dtype is resolved first so the dequantized weights
+        # land there directly instead of transiently materializing the whole model in float32.
+        sd = _dequantize_comfy_quant(sd, model_dtype)
         # Native/ComfyUI key naming → diffusers Krea2Transformer2DModel keys.
         if _is_native_krea2_format(sd):
             sd = _convert_krea2_native_to_diffusers(sd)
@@ -582,11 +692,18 @@ class Qwen3VLEncoderCheckpointLoader(ModelLoader):
         # Detect an fp8 source (ComfyUI 'scaled fp8' weight_scale keys, or raw float8 weights) BEFORE
         # dequantizing. An fp8-on-disk encoder is kept fp8-resident with layerwise upcasting below, so
         # it occupies ~half the VRAM of the dequantized bf16 model (the whole point of shipping fp8).
-        source_is_fp8 = any(isinstance(k, str) and k.endswith(".weight_scale") for k in sd) or any(
-            getattr(t, "dtype", None) in (torch.float8_e4m3fn, torch.float8_e5m2) for t in sd.values()
+        # A `.weight_scale` alone no longer implies fp8 — int8 encoders carry one too, and re-quantizing
+        # those to fp8 storage would add a second lossy step for no reason — so trust the descriptor
+        # when there is one and fall back to the on-disk dtype otherwise.
+        _encoder_quant_formats = {
+            conf.get("format") for conf in _read_comfy_quant_descriptors(sd).values() if conf.get("format")
+        }
+        source_is_fp8 = any(fmt in ("float8_e4m3fn", "float8_e5m2") for fmt in _encoder_quant_formats) or (
+            not _encoder_quant_formats
+            and any(getattr(t, "dtype", None) in (torch.float8_e4m3fn, torch.float8_e5m2) for t in sd.values())
         )
-        # ComfyUI 'scaled fp8': fold weight_scale into the weights, then drop quantization metadata.
-        sd = _dequantize_scaled_fp8(sd, model_dtype)
+        # ComfyUI weight-only quantization: fold weight_scale into the weights, then drop the metadata.
+        sd = _dequantize_comfy_quant(sd, model_dtype)
         for k in list(sd.keys()):
             if isinstance(k, str) and (k.endswith(".comfy_quant") or "scale_input" in k):
                 del sd[k]
