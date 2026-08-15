@@ -146,6 +146,59 @@ def should_skip(model_type: str, base_model: str) -> tuple[bool, str]:
     return False, ""
 
 
+# ─── VAE architecture sanity check ────────────────────────────────────────────
+
+# Bases whose pipeline decodes with the Qwen-Image / Wan 3D causal VAE (AutoencoderKLQwenImage /
+# AutoencoderKLWan): RMSNorm weights, tensor names ending in ".gamma".
+_RMSNORM_VAE_BASES = frozenset({"qwen-image", "wan"})
+
+# Bases whose pipeline decodes with a standard diffusers AutoencoderKL (GroupNorm; no ".gamma").
+# krea-2 and anima are deliberately absent: Krea-2 mains bundle their own VAE, and Anima accepts
+# Qwen-Image / Wan / FLUX VAEs interchangeably — neither has a single expected VAE class to check.
+_AUTOENCODER_KL_VAE_BASES = frozenset({"flux", "flux2", "z-image", "sd-1", "sd-2", "sdxl"})
+
+
+def read_safetensors_keys(path: Path) -> set[str] | None:
+    """Return tensor names from a safetensors header, or None if unreadable as safetensors.
+
+    Reads only the JSON header (no torch, no tensor data), so it's cheap during bulk imports.
+    """
+    try:
+        with open(path, "rb") as f:
+            header_len = int.from_bytes(f.read(8), "little")
+            header = json.loads(f.read(header_len))
+    except (OSError, ValueError, json.JSONDecodeError):
+        return None
+    return {k for k in header if k != "__metadata__"}
+
+
+def check_vae_arch(path: Path, base: str) -> tuple[bool, str]:
+    """Guard against a VAE the probe filed under a base whose pipeline can't load it.
+
+    InvokeAI's probe occasionally assigns the wrong base to a bare VAE checkpoint (e.g. a diffusers
+    AutoencoderKL landing in `qwen-image`), which then crashes at decode with a state_dict mismatch.
+    The Qwen-Image / Wan VAE uses RMSNorm (".gamma" tensors); a diffusers AutoencoderKL does not, so
+    the two are mutually exclusive and distinguishable from the header alone.
+
+    Returns (ok, reason); ok=False means the VAE is incompatible with `base` and should be skipped.
+    Only rejects on a confident mismatch — unreadable/non-safetensors files and un-checked bases
+    (krea-2, anima, any, encoders, …) always pass.
+    """
+    is_rmsnorm_base = base in _RMSNORM_VAE_BASES
+    is_kl_base = base in _AUTOENCODER_KL_VAE_BASES
+    if not (is_rmsnorm_base or is_kl_base):
+        return True, ""
+    keys = read_safetensors_keys(path)
+    if not keys:
+        return True, ""
+    has_rmsnorm = any(k.endswith(".gamma") for k in keys)
+    if is_rmsnorm_base and not has_rmsnorm:
+        return False, f"not a Qwen-Image/Wan VAE (no RMSNorm tensors) but probed as base '{base}'"
+    if is_kl_base and has_rmsnorm:
+        return False, f"is a Qwen-Image/Wan VAE (RMSNorm tensors) but probed as base '{base}'"
+    return True, ""
+
+
 # ─── Database helpers ─────────────────────────────────────────────────────────
 
 
@@ -361,6 +414,18 @@ def import_models(args: argparse.Namespace) -> None:
                         print(f"  [{i}/{len(eligible)}] SKIP  {filename} (classified as Unknown)")
                     skipped += 1
                     continue
+
+                # Reject VAEs whose architecture doesn't match the base the probe assigned — a
+                # mislabeled VAE (e.g. an AutoencoderKL filed under qwen-image) would otherwise poison
+                # submodel auto-pick and crash generation at decode time.
+                if config.type.value == "vae":
+                    vae_ok, vae_reason = check_vae_arch(link_path, config.base.value)
+                    if not vae_ok:
+                        link_path.unlink(missing_ok=True)
+                        link_dir.rmdir()
+                        print(f"  [{i}/{len(eligible)}] SKIP  {filename} ({vae_reason})")
+                        skipped += 1
+                        continue
 
             except Exception as e:
                 link_path.unlink(missing_ok=True)
