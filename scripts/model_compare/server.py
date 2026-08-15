@@ -192,6 +192,17 @@ def parse_settings(state: dict) -> dict:
         "fluxVAE": params.get("fluxVAE"),
         "t5EncoderModel": params.get("t5EncoderModel"),
         "clipEmbedModel": params.get("clipEmbedModel"),
+        # Base-specific submodel overrides. InvokeAI stores the Krea-2 / Anima / Qwen-Image / Wan
+        # VAE + text-encoder picks under per-base keys (NOT the generic `vae`), so we forward them
+        # verbatim and let the generation branches prefer them over auto-picked submodels.
+        "krea2VaeModel": params.get("krea2VaeModel"),
+        "krea2Qwen3VlEncoderModel": params.get("krea2Qwen3VlEncoderModel"),
+        "animaVaeModel": params.get("animaVaeModel"),
+        "animaQwen3EncoderModel": params.get("animaQwen3EncoderModel"),
+        "qwenImageVaeModel": params.get("qwenImageVaeModel"),
+        "qwenImageQwenVLEncoderModel": params.get("qwenImageQwenVLEncoderModel"),
+        "wanVaeModel": params.get("wanVaeModel"),
+        "wanT5EncoderModel": params.get("wanT5EncoderModel"),
     }
 
 
@@ -357,12 +368,16 @@ async def generate(req: GenerateRequest):
                     scheduler=settings.get("zImageScheduler", "euler"),
                 )
             elif base == "krea-2":
-                # Diffusers mains bundle the VAE + Qwen3-VL encoder; single-file/GGUF need them supplied.
-                vae_model = qwen3_vl_encoder_model = None
-                if model_info.get("format") != "diffusers":
-                    vae_model, qwen3_vl_encoder_model = pick_submodels(
+                # Prefer the VAE + Qwen3-VL encoder explicitly selected in InvokeAI; auto-pick only
+                # fills gaps. Diffusers mains bundle both, so single-file/GGUF need them supplied.
+                vae_model = settings.get("krea2VaeModel")
+                qwen3_vl_encoder_model = settings.get("krea2Qwen3VlEncoderModel")
+                if model_info.get("format") != "diffusers" and not (vae_model and qwen3_vl_encoder_model):
+                    picked_vae, picked_enc = pick_submodels(
                         installed_vaes, qwen3_vl_encoders, ("qwen-image", "anima"), vae_hint_key
                     )
+                    vae_model = vae_model or picked_vae
+                    qwen3_vl_encoder_model = qwen3_vl_encoder_model or picked_enc
                     if not (vae_model and qwen3_vl_encoder_model):
                         errors.append(
                             f"Skipped {model_info['name']} (needs a Qwen-Image VAE and a Qwen3-VL encoder installed)"
@@ -377,14 +392,20 @@ async def generate(req: GenerateRequest):
                 )
             elif base == "anima":
                 # Anima always needs a 16-channel VAE + Qwen3 0.6B encoder, regardless of main format.
-                vae_model, qwen3_encoder_model = pick_submodels(
-                    installed_vaes, qwen3_encoders, ("anima", "qwen-image", "flux"), vae_hint_key
-                )
+                # Prefer the pair selected in InvokeAI; auto-pick only fills gaps.
+                vae_model = settings.get("animaVaeModel")
+                qwen3_encoder_model = settings.get("animaQwen3EncoderModel")
                 if not (vae_model and qwen3_encoder_model):
-                    errors.append(
-                        f"Skipped {model_info['name']} (needs a 16-channel VAE and a Qwen3 0.6B encoder installed)"
+                    picked_vae, picked_enc = pick_submodels(
+                        installed_vaes, qwen3_encoders, ("anima", "qwen-image", "flux"), vae_hint_key
                     )
-                    continue
+                    vae_model = vae_model or picked_vae
+                    qwen3_encoder_model = qwen3_encoder_model or picked_enc
+                    if not (vae_model and qwen3_encoder_model):
+                        errors.append(
+                            f"Skipped {model_info['name']} (needs a 16-channel VAE and a Qwen3 0.6B encoder installed)"
+                        )
+                        continue
                 graph = build_anima_graph(
                     model=model_ref, positive_prompt=positive_prompt,
                     negative_prompt=negative_prompt, seed=seed,
@@ -402,12 +423,16 @@ async def generate(req: GenerateRequest):
                     guidance_scale=cfg_scale, loras=compatible_loras,
                 )
             elif base == "qwen-image":
-                # Diffusers Qwen-Image bundles VAE + Qwen2.5-VL encoder; single-file/GGUF need them supplied.
-                vae_model = qwen_vl_encoder_model = None
-                if model_info.get("format") != "diffusers":
-                    vae_model, qwen_vl_encoder_model = pick_submodels(
+                # Prefer the VAE + Qwen2.5-VL encoder selected in InvokeAI; auto-pick only fills gaps.
+                # Diffusers mains bundle both, so single-file/GGUF need them supplied.
+                vae_model = settings.get("qwenImageVaeModel")
+                qwen_vl_encoder_model = settings.get("qwenImageQwenVLEncoderModel")
+                if model_info.get("format") != "diffusers" and not (vae_model and qwen_vl_encoder_model):
+                    picked_vae, picked_enc = pick_submodels(
                         installed_vaes, qwen_vl_encoders, ("qwen-image",), vae_hint_key
                     )
+                    vae_model = vae_model or picked_vae
+                    qwen_vl_encoder_model = qwen_vl_encoder_model or picked_enc
                     if not (vae_model and qwen_vl_encoder_model):
                         errors.append(
                             f"Skipped {model_info['name']} (needs a Qwen-Image VAE and a Qwen2.5-VL encoder installed)"
@@ -421,12 +446,16 @@ async def generate(req: GenerateRequest):
                     qwen_vl_encoder_model=qwen_vl_encoder_model,
                 )
             elif base == "wan":
-                # Wan still image (num_frames=1). Diffusers mains bundle VAE + UMT5; others need them supplied.
-                vae_model = wan_t5_encoder_model = None
-                if model_info.get("format") != "diffusers":
-                    vae_model, wan_t5_encoder_model = pick_submodels(
+                # Wan still image (num_frames=1). Prefer the VAE + UMT5 selected in InvokeAI; auto-pick
+                # only fills gaps. Diffusers mains bundle both, so others need them supplied.
+                vae_model = settings.get("wanVaeModel")
+                wan_t5_encoder_model = settings.get("wanT5EncoderModel")
+                if model_info.get("format") != "diffusers" and not (vae_model and wan_t5_encoder_model):
+                    picked_vae, picked_enc = pick_submodels(
                         installed_vaes, wan_t5_encoders, ("wan",), vae_hint_key
                     )
+                    vae_model = vae_model or picked_vae
+                    wan_t5_encoder_model = wan_t5_encoder_model or picked_enc
                     if not (vae_model and wan_t5_encoder_model):
                         errors.append(
                             f"Skipped {model_info['name']} (needs a Wan VAE and a Wan UMT5 encoder installed)"
