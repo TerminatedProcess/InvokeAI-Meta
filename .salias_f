@@ -158,12 +158,18 @@ or git config --add gitupdate.autodrop uv.lock
 # ── Models ──
 function hubupdate
     imd
-    svstop
+    # Call svcgroup directly, NOT the svstop/svr aliases: those end in `exit`
+    # (they're meant for "stop the stack and close this window"), which would
+    # kill the shell before hub_update.py ever runs.
+    svcgroup media-stack stop
+    or return $status
     python scripts/hub_update.py \
         --invokeai-db $INVOKE_DATA_DIR/databases/invokeai.db \
         --invokeai-models $INVOKE_DATA_DIR/models \
         $argv
-    svr
+    set -l rc $status
+    svcgroup media-stack restart
+    return $rc
 end
 function hubreset
     imd
