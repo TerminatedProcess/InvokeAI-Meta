@@ -28,9 +28,15 @@ class SilenceWarnings(ContextDecorator):
         self._diffusers_verbosity = diffusers_logging.get_verbosity()
         transformers_logging.set_verbosity_error()
         diffusers_logging.set_verbosity_error()
+        # catch_warnings snapshots the filter list so __exit__ can put back exactly what was
+        # there. A bare simplefilter("default") on exit would not restore state — it prepends a
+        # catch-all "default" entry, un-suppressing every DeprecationWarning for the rest of the
+        # process (and overriding any -W / PYTHONWARNINGS the user set).
+        self._warnings_ctx = warnings.catch_warnings()
+        self._warnings_ctx.__enter__()
         warnings.simplefilter("ignore")
 
     def __exit__(self, *args) -> None:
         transformers_logging.set_verbosity(self._transformers_verbosity)
         diffusers_logging.set_verbosity(self._diffusers_verbosity)
-        warnings.simplefilter("default")
+        self._warnings_ctx.__exit__(*args)
