@@ -176,6 +176,9 @@ def main() -> None:
     parser.add_argument("--no-add", action="store_true", help="Skip importing new models; only clean up")
     parser.add_argument("--limit", type=int, help="Import only the first N eligible new models")
     parser.add_argument("--verbose", action="store_true", help="Show full tracebacks on probe failures")
+    parser.add_argument(
+        "--recheck", action="store_true", help="Ignore the probe-reject cache and re-probe every eligible model"
+    )
 
     args = parser.parse_args()
 

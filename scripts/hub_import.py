@@ -12,6 +12,7 @@ Usage (from the InvokeAI project root, with venv active):
 """
 
 import argparse
+import hashlib
 import json
 import os
 import sqlite3
@@ -31,6 +32,57 @@ HUB_DB_DEFAULT = "/mnt/llm/hub/hubmodels/hubrootv3.db"
 HUB_MODELS_DEFAULT = "/mnt/llm/hub/hubmodels/models"
 INVOKEAI_DB_DEFAULT = "/mnt/llm/hub/invokeai_data/databases/invokeai.db"
 INVOKEAI_MODELS_DEFAULT = "/mnt/llm/hub/invokeai_data/models"
+
+# ─── Probe-reject cache ──────────────────────────────────────────────────────
+#
+# InvokeAI's probe rejects a slice of the hub outright (Qwen-Image 2512 LoRAs, Illustrious GGUFs,
+# raw UMT5/CLIP encoders, LLM GGUFs, …). Those verdicts never change between runs, but the files
+# stayed "eligible" forever because eligibility is only hub-vs-InvokeAI hash comparison — so every
+# run re-probed them (~2 min for ~100 files) just to skip them again.
+#
+# Remember each rejection, keyed by a fingerprint of the code that produced it — the sources of
+# invokeai/backend/model_manager, which is what decides a model's class. Edit or sync that package
+# (a new base, a new config class) and the whole cache drops, so models that just became supported
+# get re-probed automatically; unrelated commits leave it intact. `--recheck` forces a re-probe.
+REJECT_CACHE_NAME = "hub_import_rejects.json"
+
+PROBE_SOURCE_DIR = Path(__file__).resolve().parent.parent / "invokeai" / "backend" / "model_manager"
+
+
+def _probe_fingerprint() -> str:
+    """Content hash of InvokeAI's model_manager sources — the reject cache key."""
+    h = hashlib.sha256()
+    try:
+        for py in sorted(PROBE_SOURCE_DIR.rglob("*.py")):
+            h.update(str(py.relative_to(PROBE_SOURCE_DIR)).encode())
+            h.update(py.read_bytes())
+    except OSError:
+        return "unknown"
+    return h.hexdigest()
+
+
+def load_reject_cache(path: Path, recheck: bool) -> dict[str, dict]:
+    """Load previously rejected hub hashes. Empty dict if stale, unreadable, or --recheck."""
+    if recheck or not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text())
+    except (OSError, ValueError):
+        return {}
+    if not isinstance(data, dict) or data.get("probe_fingerprint") != _probe_fingerprint():
+        return {}
+    rejects = data.get("rejects")
+    return rejects if isinstance(rejects, dict) else {}
+
+
+def save_reject_cache(path: Path, rejects: dict[str, dict]) -> None:
+    try:
+        path.write_text(
+            json.dumps({"probe_fingerprint": _probe_fingerprint(), "rejects": rejects}, indent=2, sort_keys=True)
+        )
+    except OSError as e:
+        print(f"Warning: could not write reject cache {path}: {e}", file=sys.stderr)
+
 
 # ─── Filtering tables ────────────────────────────────────────────────────────
 
@@ -288,6 +340,9 @@ def import_models(args: argparse.Namespace) -> None:
 
     print(f"Hub DB: {len(rows)} non-deleted models")
 
+    reject_cache_path = invokeai_db.parent / REJECT_CACHE_NAME
+    rejects = load_reject_cache(reject_cache_path, getattr(args, "recheck", False))
+
     eligible = []
     skip_reasons: dict[str, int] = {}
 
@@ -301,6 +356,12 @@ def import_models(args: argparse.Namespace) -> None:
         invoke_hash = f"blake3:{row['hash_blake3']}"
         if invoke_hash in existing_hashes:
             skip_reasons["already in InvokeAI"] = skip_reasons.get("already in InvokeAI", 0) + 1
+            continue
+
+        if row["hash_blake3"] in rejects:
+            skip_reasons["rejected by probe (cached; --recheck to retry)"] = (
+                skip_reasons.get("rejected by probe (cached; --recheck to retry)", 0) + 1
+            )
             continue
 
         eligible.append(dict(row))
@@ -346,6 +407,7 @@ def import_models(args: argparse.Namespace) -> None:
     imported = 0
     failed = 0
     skipped = 0
+    rejects_before = len(rejects)
     t0 = time.time()
 
     print(f"\nImporting {len(eligible)} models...\n", flush=True)
@@ -401,6 +463,7 @@ def import_models(args: argparse.Namespace) -> None:
                     link_dir.rmdir()
                     if args.verbose:
                         print(f"  [{i}/{len(eligible)}] SKIP  {filename} (no matching config class)")
+                    rejects[hub_hash] = {"filename": filename, "reason": "no matching config class"}
                     skipped += 1
                     continue
 
@@ -412,6 +475,7 @@ def import_models(args: argparse.Namespace) -> None:
                     link_dir.rmdir()
                     if args.verbose:
                         print(f"  [{i}/{len(eligible)}] SKIP  {filename} (classified as Unknown)")
+                    rejects[hub_hash] = {"filename": filename, "reason": "classified as Unknown"}
                     skipped += 1
                     continue
 
@@ -424,6 +488,7 @@ def import_models(args: argparse.Namespace) -> None:
                         link_path.unlink(missing_ok=True)
                         link_dir.rmdir()
                         print(f"  [{i}/{len(eligible)}] SKIP  {filename} ({vae_reason})")
+                        rejects[hub_hash] = {"filename": filename, "reason": vae_reason}
                         skipped += 1
                         continue
 
@@ -470,6 +535,9 @@ def import_models(args: argparse.Namespace) -> None:
 
     finally:
         invokeai_conn.close()
+        # Written even on Ctrl-C so a partial run still saves the verdicts it did reach.
+        if len(rejects) != rejects_before:
+            save_reject_cache(reject_cache_path, rejects)
 
     elapsed = time.time() - t0
     minutes = int(elapsed // 60)
@@ -481,6 +549,9 @@ def import_models(args: argparse.Namespace) -> None:
     print(f"  Skipped:   {skipped}")
     print(f"  Failed:    {failed}")
     print(f"  Total:     {len(eligible)}")
+    if len(rejects) != rejects_before:
+        print(f"\n  {len(rejects) - rejects_before} probe rejections cached — future runs skip them")
+        print(f"  ({reject_cache_path}; cleared automatically when InvokeAI's code changes)")
 
 
 def reset_invokeai_models(args: argparse.Namespace) -> None:
@@ -581,6 +652,11 @@ Examples:
         "--verbose",
         action="store_true",
         help="Show full tracebacks on probe failures",
+    )
+    parser.add_argument(
+        "--recheck",
+        action="store_true",
+        help="Ignore the probe-reject cache and re-probe every eligible model",
     )
     parser.add_argument(
         "--reset",
