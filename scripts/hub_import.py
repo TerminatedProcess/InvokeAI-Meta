@@ -1,9 +1,20 @@
 #!/usr/bin/env python3
-"""Import models from hubrootv3 hub into InvokeAI as symlinks.
+"""Import models from the hubrootv3 hub into InvokeAI as symlinks.
 
-Reads the hubrootv3 database, filters to InvokeAI-compatible models, creates
-symlinks in InvokeAI's models directory, probes each model using InvokeAI's
-own ModelConfigFactory, and registers them in InvokeAI's SQLite database.
+Asks the hub's HTTP API which models it holds, filters to InvokeAI-compatible
+ones, symlinks them into InvokeAI's models directory, probes each with
+InvokeAI's own ModelConfigFactory, and registers them in InvokeAI's SQLite
+database.
+
+This used to open hubrootv3.db directly and SELECT from its `models` table,
+which meant any column rename on the hub side silently broke this script, and
+this script had to know hub gotchas (that `name` is a user alias, not the
+filename; that the storage key is BLAKE3). It now reads
+`GET /api/v1/models/symlinks`, which is the hub's stable contract and hands
+back an absolute `source_path` per file, so nothing here reconstructs hub
+paths either.
+
+Requires the `hubroot` service to be up (systemctl --user status hubroot).
 
 Usage (from the InvokeAI project root, with venv active):
     python scripts/hub_import.py
@@ -16,9 +27,12 @@ import hashlib
 import json
 import os
 import sqlite3
+import subprocess
 import sys
 import time
 import traceback
+import urllib.error
+import urllib.request
 import uuid
 from pathlib import Path
 
@@ -28,10 +42,68 @@ os.environ["CUDA_VISIBLE_DEVICES"] = ""
 
 # ─── Default paths ───────────────────────────────────────────────────────────
 
-HUB_DB_DEFAULT = "/mnt/llm/hub/hubmodels/hubrootv3.db"
+HUB_API_DEFAULT = "http://127.0.0.1:8000"
 HUB_MODELS_DEFAULT = "/mnt/llm/hub/hubmodels/models"
 INVOKEAI_DB_DEFAULT = "/mnt/llm/hub/invokeai_data/databases/invokeai.db"
 INVOKEAI_MODELS_DEFAULT = "/mnt/llm/hub/invokeai_data/models"
+
+# The hub's bearer token, if the vault has one. Auth is not enforced on the hub
+# yet (HUBROOT_API_REQUIRE_AUTH defaults false), so a missing token is fine —
+# but sending one when it exists means this keeps working the day it is.
+VAULT_PATH = Path.home() / ".config" / "sops" / "vault.yaml"
+VAULT_KEY = "hub-api-token"
+
+
+def read_hub_token() -> str | None:
+    """Master token from the SOPS vault. None if unavailable — not an error."""
+    if os.environ.get("HUB_API_TOKEN"):
+        return os.environ["HUB_API_TOKEN"]
+    if not VAULT_PATH.exists():
+        return None
+    try:
+        out = subprocess.run(
+            ["sops", "-d", "--extract", f'["{VAULT_KEY}"]', str(VAULT_PATH)],
+            capture_output=True,
+            text=True,
+            timeout=15,
+            check=True,
+        ).stdout.strip()
+    except (subprocess.SubprocessError, OSError):
+        return None
+    return out or None
+
+
+def fetch_hub_models(api_url: str, token: str | None) -> list[dict]:
+    """The hub's model list, via its stable API contract.
+
+    `/models/symlinks` is the vault read endpoint: it already carries everything
+    needed here (type, base, size, both hashes) plus an absolute `source_path`
+    per file, so no hub layout is reconstructed on this side.
+    """
+    url = f"{api_url.rstrip('/')}/api/v1/models/symlinks"
+    headers = {"Accept": "application/json"}
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=120) as r:
+            payload = json.load(r)
+    except urllib.error.HTTPError as e:
+        detail = e.read().decode(errors="replace")[:200]
+        print(f"Error: hub API returned {e.code} for {url}\n  {detail}", file=sys.stderr)
+        sys.exit(1)
+    except (urllib.error.URLError, OSError) as e:
+        print(
+            f"Error: cannot reach the hub API at {api_url} ({e}).\n"
+            f"  Start it with:  systemctl --user start hubroot",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    models = payload.get("models", [])
+    # Match the ordering the old SQL used, so runs stay comparable.
+    models.sort(key=lambda m: (m["base_model"] or "", m["model_type"] or "", m["filename"] or ""))
+    return models
 
 # ─── Probe-reject cache ──────────────────────────────────────────────────────
 #
@@ -306,15 +378,14 @@ def load_existing_models(db_path: Path) -> tuple[set[str], set[str]]:
 
 
 def import_models(args: argparse.Namespace) -> None:
-    hub_db = Path(args.hub_db)
+    hub_api = getattr(args, "hub_api", HUB_API_DEFAULT)
     hub_models_dir = Path(args.hub_models)
     invokeai_db = Path(args.invokeai_db)
     invokeai_models_dir = Path(args.invokeai_models)
 
-    # Validate source paths
-    if not hub_db.exists():
-        print(f"Error: Hub database not found: {hub_db}", file=sys.stderr)
-        sys.exit(1)
+    # The API hands back absolute source paths, but it runs on this machine and
+    # would happily report paths on an unmounted share. Checking the mount here
+    # turns "every model MISS" into one clear error.
     if not hub_models_dir.exists():
         print(f"Error: Hub models directory not found: {hub_models_dir}", file=sys.stderr)
         sys.exit(1)
@@ -328,17 +399,8 @@ def import_models(args: argparse.Namespace) -> None:
     existing_hashes, existing_paths = load_existing_models(invokeai_db)
     print(f"InvokeAI DB: {len(existing_hashes)} existing models")
 
-    hub_conn = sqlite3.connect(str(hub_db))
-    hub_conn.row_factory = sqlite3.Row
-    rows = hub_conn.execute("""
-        SELECT id, hash_blake3, filename, file_size, model_type, base_model, name
-        FROM models
-        WHERE deleted = 0
-        ORDER BY base_model, model_type, filename
-    """).fetchall()
-    hub_conn.close()
-
-    print(f"Hub DB: {len(rows)} non-deleted models")
+    rows = fetch_hub_models(hub_api, read_hub_token())
+    print(f"Hub API: {len(rows)} non-deleted models ({hub_api})")
 
     reject_cache_path = invokeai_db.parent / REJECT_CACHE_NAME
     rejects = load_reject_cache(reject_cache_path, getattr(args, "recheck", False))
@@ -420,7 +482,8 @@ def import_models(args: argparse.Namespace) -> None:
             hub_name = Path(filename).stem
             file_size = row["file_size"]
 
-            source_path = hub_models_dir / hub_hash / filename
+            # Straight from the API — this script no longer knows the hub's layout.
+            source_path = Path(row["source_path"])
 
             # Verify source exists
             if not source_path.exists():
@@ -619,14 +682,14 @@ Examples:
 """,
     )
     parser.add_argument(
-        "--hub-db",
-        default=HUB_DB_DEFAULT,
-        help=f"Hub database path (default: {HUB_DB_DEFAULT})",
+        "--hub-api",
+        default=HUB_API_DEFAULT,
+        help=f"hubrootv3 API base URL (default: {HUB_API_DEFAULT})",
     )
     parser.add_argument(
         "--hub-models",
         default=HUB_MODELS_DEFAULT,
-        help=f"Hub models directory (default: {HUB_MODELS_DEFAULT})",
+        help=f"Hub models directory, checked for mount only (default: {HUB_MODELS_DEFAULT})",
     )
     parser.add_argument(
         "--invokeai-db",
