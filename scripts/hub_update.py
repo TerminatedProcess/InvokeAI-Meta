@@ -166,7 +166,7 @@ def main() -> None:
         "unknown entries, then import new hub models.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
-    parser.add_argument("--hub-db", default=hub_import.HUB_DB_DEFAULT)
+    parser.add_argument("--hub-api", default=hub_import.HUB_API_DEFAULT)
     parser.add_argument("--hub-models", default=hub_import.HUB_MODELS_DEFAULT)
     parser.add_argument("--invokeai-db", default=hub_import.INVOKEAI_DB_DEFAULT)
     parser.add_argument("--invokeai-models", default=hub_import.INVOKEAI_MODELS_DEFAULT)
