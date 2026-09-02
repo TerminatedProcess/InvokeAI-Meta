@@ -29,6 +29,6 @@ GIT
   gitupdate         Sync main and mryan branches with upstream
 
 MODELS
-  hubupdate         Reconcile with hub: prune broken/dupe/unknown, import new
+  hubup             Reconcile with hub: prune broken/dupe/unknown, import new
   hubreset          Wipe InvokeAI models DB + symlinks, then re-import
   ipush             invokepush web service (auto-started by run)

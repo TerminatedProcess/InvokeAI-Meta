@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Reconcile InvokeAI's model database with the hub.
 
-`hubupdate` runs four maintenance steps:
+`hubup` runs four maintenance steps:
 
   1. Remove models whose hub source is gone (broken symlinks / missing files).
   2. Delete duplicate DB entries (more than one row for the same file hash —
@@ -16,10 +16,11 @@ Only model directories under the InvokeAI models dir are ever deleted from disk;
 entries that point directly at a hub source file (absolute path outside the
 models dir) are unregistered from the DB but their files are left untouched.
 
+Cleanup removals are not confirmed interactively — use --dry-run to preview them.
+
 Usage (from the InvokeAI project root, with venv active):
-    python scripts/hub_update.py --dry-run
+    python scripts/hub_update.py --dry-run        # preview; make no changes
     python scripts/hub_update.py
-    python scripts/hub_update.py --yes            # skip the confirmation prompt
     python scripts/hub_update.py --no-add         # cleanup only, don't import new
 """
 
@@ -143,15 +144,7 @@ def cleanup(args: argparse.Namespace) -> None:
         conn.close()
         return
 
-    if not args.yes:
-        try:
-            reply = input(f"Remove {total} models? (y/N) ").strip().lower()
-        except (KeyboardInterrupt, EOFError):
-            reply = ""
-        if reply != "y":
-            print("Aborted — no changes made.")
-            conn.close()
-            sys.exit(1)
+    print(f"Removing {total} models...")
 
     for key, path_str, _name in broken + duplicates + unknown:
         _remove_model(conn, models_dir, key, path_str)
@@ -171,7 +164,6 @@ def main() -> None:
     parser.add_argument("--invokeai-db", default=hub_import.INVOKEAI_DB_DEFAULT)
     parser.add_argument("--invokeai-models", default=hub_import.INVOKEAI_MODELS_DEFAULT)
     parser.add_argument("--dry-run", action="store_true", help="Show what would change; make no changes")
-    parser.add_argument("--yes", "-y", action="store_true", help="Skip the cleanup confirmation prompt")
     parser.add_argument("--no-cleanup", action="store_true", help="Skip cleanup; only import new models")
     parser.add_argument("--no-add", action="store_true", help="Skip importing new models; only clean up")
     parser.add_argument("--limit", type=int, help="Import only the first N eligible new models")
