@@ -156,7 +156,7 @@ git config --get-all gitupdate.autodrop | string match -q uv.lock
 or git config --add gitupdate.autodrop uv.lock
 
 # ── Models ──
-function hubupdate
+function hubup
     clear
     imd
     # Call svcgroup directly, NOT the svstop/svr aliases: those end in `exit`
@@ -181,7 +181,7 @@ function hubupdate
         sleep 1
     end
     if test $hub_up -eq 0
-        echo "hubupdate: hub API never came up on http://127.0.0.1:8000 — aborting" >&2
+        echo "hubup: hub API never came up on http://127.0.0.1:8000 — aborting" >&2
         svcgroup media-stack restart
         return 1
     end
