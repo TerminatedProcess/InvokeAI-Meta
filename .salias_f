@@ -11,6 +11,9 @@ set -gx INVOKEAI_DB "$INVOKE_DATA_DIR/databases/invokeai.db"
 set -gx CIVITAI_API_KEY f25326104c5147c40e339a883d3d430f
 set -gx PY_VERSION 3.12.10
 set -gx IMD_AUTO_OPEN false
+set -gx SVC_DASH http://localhost:8090
+set -gx INVOKE_UNIT invokeai-web.service
+set -gx INVOKE_URL http://localhost:9090
 
 # ── Python Environment ──
 alias envclean='rmpyall;uvclean'
@@ -33,36 +36,53 @@ end
 alias help='clear; cat /home/dev/work/media/invokedev/InvokeAI-Meta/.salias_help.txt'
 
 # ── Server ──
+# invokeai-web runs as a systemd user unit fronted by the Service Dashboard
+# on :8090. Only invokeai-web is touched here — model-compare and invokepush
+# are their own units in the media-stack group, started from the dashboard.
+# 'restart' also starts a stopped unit, so one call covers both cases.
 function run
-    set existing_pids (pgrep -f invokeai-web)
-    if test -n "$existing_pids"
-        echo "Found existing InvokeAI server (PIDs: $existing_pids)"
-        echo "Stopping existing server..."
-        pkill -f invokeai-web
+    echo "Restarting $INVOKE_UNIT via the Service Dashboard ..."
+    set -l result (curl -s -m 30 -w '\n%{http_code}' -X POST $SVC_DASH/api/services/$INVOKE_UNIT/restart)
+    set -l code $result[-1]
+
+    switch $code
+        case 200
+            # nothing to report yet — the readiness poll below speaks for it
+        case 409
+            echo "$INVOKE_UNIT is set to Disabled in the dashboard."
+            echo "Change its mode at $SVC_DASH, then run again."
+            return 1
+        case 000
+            echo "Service Dashboard is not reachable at $SVC_DASH"
+            echo "Start it with: systemctl --user start porthub-service-dash.service"
+            return 1
+        case '*'
+            echo "Dashboard returned HTTP $code"
+            test (count $result) -gt 1; and echo $result[1..-2]
+            return 1
+    end
+
+    # The unit is backgrounded by systemd, so wait for the API to answer rather
+    # than handing back a prompt that points at a dead port.
+    echo -n "Waiting for InvokeAI to come up "
+    for i in (seq 60)
+        if curl -sf -m 2 -o /dev/null $INVOKE_URL/api/v1/app/version
+            echo ""
+            echo "InvokeAI is up at $INVOKE_URL"
+            if test "$IMD_AUTO_OPEN" = "true"
+                xdg-open $INVOKE_URL &
+            end
+
+            exit
+            return 0
+        end
+        echo -n "."
         sleep 2
     end
-    pkill -f "model_compare/server.py" 2>/dev/null
-    pkill -f "invokepush/web.py" 2>/dev/null
 
-    echo "Starting Model Compare service on http://localhost:9091 ..."
-    python $INVOKE_DIR/scripts/model_compare/server.py \
-        --invokeai-db $INVOKE_DATA_DIR/databases/invokeai.db &
-    set -g modelcompare_pid $last_pid
-
-    echo "Starting invokepush on http://localhost:9092 ..."
-    python /home/dev/work/media/invokedev/invokepush/web.py &
-    set -g invokepush_pid $last_pid
-
-    # Open browser tabs after InvokeAI has time to start
-    if test "$IMD_AUTO_OPEN" = "true"
-        fish -c "sleep 5; xdg-open http://localhost:8000; xdg-open http://localhost:9090; xdg-open http://localhost:9091; xdg-open http://localhost:9092" &
-    end
-
-    echo "Starting InvokeAI server..."
-    invokeai-web --root $INVOKE_DATA_DIR
-
-    kill $modelcompare_pid 2>/dev/null
-    kill $invokepush_pid 2>/dev/null
+    echo ""
+    echo "Timed out after 120s. Check the logs with: logs"
+    return 1
 end
 function stop
     set -l found 0
