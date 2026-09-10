@@ -440,11 +440,20 @@ def test_kohya_lycoris_algorithm_keys_do_not_abort_the_load(lycoris_suffixes: tu
 
     model = lora_model_from_krea2_state_dict(state_dict)
 
-    # The ordinary module still converts, and the LyCORIS one stays verbatim so it degrades to the per-layer
-    # "Failed to find module" warning at apply time rather than taking the whole adapter down.
+    # The ordinary module always converts. What happens to the LyCORIS one depends on whether this branch
+    # supports its algorithm: LoKr is supported (see `_has_complete_lokr_layer`), so it un-flattens to its
+    # real module path. LoHa/`diff` are not, so they stay verbatim and degrade to the per-layer "Failed to
+    # find module" warning at apply time rather than taking the whole adapter down.
+    lycoris_is_supported = any(suffix.startswith("lokr_") for suffix in lycoris_suffixes)
+    expected_lycoris_layer = (
+        f"{KREA2_LORA_TRANSFORMER_PREFIX}transformer_blocks.6.attn.to_q"
+        if lycoris_is_supported
+        else f"{KREA2_LORA_TRANSFORMER_PREFIX}lora_unet_blocks_6_attn_wq"
+    )
+
     assert set(model.layers) == {
         f"{KREA2_LORA_TRANSFORMER_PREFIX}transformer_blocks.0.attn.to_v",
-        f"{KREA2_LORA_TRANSFORMER_PREFIX}lora_unet_blocks_6_attn_wq",
+        expected_lycoris_layer,
     }
 
 

@@ -946,9 +946,7 @@ def _has_complete_lora_pair(state_dict: dict[str | int, Any], key_filter: Callab
     return False
 
 
-def _has_complete_lokr_layer(
-    state_dict: dict[str | int, Any], key_filter: Callable[[str], bool] | None = None
-) -> bool:
+def _has_complete_lokr_layer(state_dict: dict[str | int, Any], key_filter: Callable[[str], bool] | None = None) -> bool:
     """True if at least one complete LyCORIS LoKR layer exists, optionally restricted to the keys
     `key_filter` accepts.
 
