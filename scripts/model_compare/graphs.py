@@ -32,49 +32,95 @@ def build_sdxl_graph(
 
     nodes = {
         ml: {
-            "type": "sdxl_model_loader", "id": ml, "is_intermediate": True, "use_cache": True,
+            "type": "sdxl_model_loader",
+            "id": ml,
+            "is_intermediate": True,
+            "use_cache": True,
             "model": model,
         },
         pp: {"type": "string", "id": pp, "is_intermediate": True, "use_cache": True, "value": positive_prompt},
         np_: {"type": "string", "id": np_, "is_intermediate": True, "use_cache": True, "value": negative_prompt},
         pc: {
-            "type": "sdxl_compel_prompt", "id": pc, "is_intermediate": True, "use_cache": True,
-            "prompt": "", "style": "",
-            "original_width": width, "original_height": height,
-            "crop_top": 0, "crop_left": 0, "target_width": width, "target_height": height,
+            "type": "sdxl_compel_prompt",
+            "id": pc,
+            "is_intermediate": True,
+            "use_cache": True,
+            "prompt": "",
+            "style": "",
+            "original_width": width,
+            "original_height": height,
+            "crop_top": 0,
+            "crop_left": 0,
+            "target_width": width,
+            "target_height": height,
         },
         pcc: {"type": "collect", "id": pcc, "is_intermediate": True, "use_cache": True, "collection": []},
         nc: {
-            "type": "sdxl_compel_prompt", "id": nc, "is_intermediate": True, "use_cache": True,
-            "prompt": negative_prompt, "style": negative_prompt,
-            "original_width": width, "original_height": height,
-            "crop_top": 0, "crop_left": 0, "target_width": width, "target_height": height,
+            "type": "sdxl_compel_prompt",
+            "id": nc,
+            "is_intermediate": True,
+            "use_cache": True,
+            "prompt": negative_prompt,
+            "style": negative_prompt,
+            "original_width": width,
+            "original_height": height,
+            "crop_top": 0,
+            "crop_left": 0,
+            "target_width": width,
+            "target_height": height,
         },
         ncc: {"type": "collect", "id": ncc, "is_intermediate": True, "use_cache": True, "collection": []},
         sd: {"type": "integer", "id": sd, "is_intermediate": True, "use_cache": True, "value": seed},
         ns: {
-            "type": "noise", "id": ns, "is_intermediate": True, "use_cache": True,
-            "seed": 0, "width": width, "height": height, "use_cpu": True,
+            "type": "noise",
+            "id": ns,
+            "is_intermediate": True,
+            "use_cache": True,
+            "seed": 0,
+            "width": width,
+            "height": height,
+            "use_cpu": True,
         },
         dn: {
-            "type": "denoise_latents", "id": dn, "is_intermediate": True, "use_cache": True,
-            "steps": steps, "cfg_scale": cfg_scale, "denoising_start": 0.0, "denoising_end": 1.0,
-            "scheduler": scheduler, "cfg_rescale_multiplier": cfg_rescale,
+            "type": "denoise_latents",
+            "id": dn,
+            "is_intermediate": True,
+            "use_cache": True,
+            "steps": steps,
+            "cfg_scale": cfg_scale,
+            "denoising_start": 0.0,
+            "denoising_end": 1.0,
+            "scheduler": scheduler,
+            "cfg_rescale_multiplier": cfg_rescale,
         },
         cm: {
-            "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
-            "generation_mode": "sdxl_txt2img", "negative_prompt": negative_prompt,
-            "width": width, "height": height, "rand_device": "cpu",
-            "cfg_scale": cfg_scale, "cfg_rescale_multiplier": cfg_rescale,
-            "steps": steps, "scheduler": scheduler,
-            "seamless_x": False, "seamless_y": False,
+            "type": "core_metadata",
+            "id": cm,
+            "is_intermediate": True,
+            "use_cache": True,
+            "generation_mode": "sdxl_txt2img",
+            "negative_prompt": negative_prompt,
+            "width": width,
+            "height": height,
+            "rand_device": "cpu",
+            "cfg_scale": cfg_scale,
+            "cfg_rescale_multiplier": cfg_rescale,
+            "steps": steps,
+            "scheduler": scheduler,
+            "seamless_x": False,
+            "seamless_y": False,
             "model": model,
-            "loras": [{"model": l["model"], "weight": l["weight"]} for l in loras],
+            "loras": [{"model": lora["model"], "weight": lora["weight"]} for lora in loras],
             "ref_images": [],
         },
         out: {
-            "type": "l2i", "id": out, "is_intermediate": False, "use_cache": False,
-            "tiled": False, "tile_size": 0, "fp32": True,
+            "type": "l2i",
+            "id": out,
+            "is_intermediate": False,
+            "use_cache": False,
+            "tiled": False,
+            "tile_size": 0,
+            "fp32": True,
         },
     }
 
@@ -82,9 +128,15 @@ def build_sdxl_graph(
         {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": pc, "field": "prompt"}},
         {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": pc, "field": "style"}},
         {"source": {"node_id": pc, "field": "conditioning"}, "destination": {"node_id": pcc, "field": "item"}},
-        {"source": {"node_id": pcc, "field": "collection"}, "destination": {"node_id": dn, "field": "positive_conditioning"}},
+        {
+            "source": {"node_id": pcc, "field": "collection"},
+            "destination": {"node_id": dn, "field": "positive_conditioning"},
+        },
         {"source": {"node_id": nc, "field": "conditioning"}, "destination": {"node_id": ncc, "field": "item"}},
-        {"source": {"node_id": ncc, "field": "collection"}, "destination": {"node_id": dn, "field": "negative_conditioning"}},
+        {
+            "source": {"node_id": ncc, "field": "collection"},
+            "destination": {"node_id": dn, "field": "negative_conditioning"},
+        },
         {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": ns, "field": "seed"}},
         {"source": {"node_id": ns, "field": "noise"}, "destination": {"node_id": dn, "field": "noise"}},
         {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
@@ -103,30 +155,38 @@ def build_sdxl_graph(
         for i, lora in enumerate(loras):
             ls = f"lora_selector_{i}:{uuid.uuid4().hex[:10]}"
             nodes[ls] = {
-                "type": "lora_selector", "id": ls, "is_intermediate": True, "use_cache": True,
-                "lora": lora["model"], "weight": lora["weight"],
+                "type": "lora_selector",
+                "id": ls,
+                "is_intermediate": True,
+                "use_cache": True,
+                "lora": lora["model"],
+                "weight": lora["weight"],
             }
             edges.append({"source": {"node_id": ls, "field": "lora"}, "destination": {"node_id": lc, "field": "item"}})
 
-        edges.extend([
-            {"source": {"node_id": lc, "field": "collection"}, "destination": {"node_id": ll, "field": "loras"}},
-            {"source": {"node_id": ml, "field": "unet"}, "destination": {"node_id": ll, "field": "unet"}},
-            {"source": {"node_id": ml, "field": "clip"}, "destination": {"node_id": ll, "field": "clip"}},
-            {"source": {"node_id": ml, "field": "clip2"}, "destination": {"node_id": ll, "field": "clip2"}},
-            {"source": {"node_id": ll, "field": "unet"}, "destination": {"node_id": dn, "field": "unet"}},
-            {"source": {"node_id": ll, "field": "clip"}, "destination": {"node_id": pc, "field": "clip"}},
-            {"source": {"node_id": ll, "field": "clip"}, "destination": {"node_id": nc, "field": "clip"}},
-            {"source": {"node_id": ll, "field": "clip2"}, "destination": {"node_id": pc, "field": "clip2"}},
-            {"source": {"node_id": ll, "field": "clip2"}, "destination": {"node_id": nc, "field": "clip2"}},
-        ])
+        edges.extend(
+            [
+                {"source": {"node_id": lc, "field": "collection"}, "destination": {"node_id": ll, "field": "loras"}},
+                {"source": {"node_id": ml, "field": "unet"}, "destination": {"node_id": ll, "field": "unet"}},
+                {"source": {"node_id": ml, "field": "clip"}, "destination": {"node_id": ll, "field": "clip"}},
+                {"source": {"node_id": ml, "field": "clip2"}, "destination": {"node_id": ll, "field": "clip2"}},
+                {"source": {"node_id": ll, "field": "unet"}, "destination": {"node_id": dn, "field": "unet"}},
+                {"source": {"node_id": ll, "field": "clip"}, "destination": {"node_id": pc, "field": "clip"}},
+                {"source": {"node_id": ll, "field": "clip"}, "destination": {"node_id": nc, "field": "clip"}},
+                {"source": {"node_id": ll, "field": "clip2"}, "destination": {"node_id": pc, "field": "clip2"}},
+                {"source": {"node_id": ll, "field": "clip2"}, "destination": {"node_id": nc, "field": "clip2"}},
+            ]
+        )
     else:
-        edges.extend([
-            {"source": {"node_id": ml, "field": "unet"}, "destination": {"node_id": dn, "field": "unet"}},
-            {"source": {"node_id": ml, "field": "clip"}, "destination": {"node_id": pc, "field": "clip"}},
-            {"source": {"node_id": ml, "field": "clip"}, "destination": {"node_id": nc, "field": "clip"}},
-            {"source": {"node_id": ml, "field": "clip2"}, "destination": {"node_id": pc, "field": "clip2"}},
-            {"source": {"node_id": ml, "field": "clip2"}, "destination": {"node_id": nc, "field": "clip2"}},
-        ])
+        edges.extend(
+            [
+                {"source": {"node_id": ml, "field": "unet"}, "destination": {"node_id": dn, "field": "unet"}},
+                {"source": {"node_id": ml, "field": "clip"}, "destination": {"node_id": pc, "field": "clip"}},
+                {"source": {"node_id": ml, "field": "clip"}, "destination": {"node_id": nc, "field": "clip"}},
+                {"source": {"node_id": ml, "field": "clip2"}, "destination": {"node_id": pc, "field": "clip2"}},
+                {"source": {"node_id": ml, "field": "clip2"}, "destination": {"node_id": nc, "field": "clip2"}},
+            ]
+        )
 
     return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
 
@@ -160,7 +220,10 @@ def build_sd1_graph(
 
     nodes = {
         ml: {
-            "type": "main_model_loader", "id": ml, "is_intermediate": True, "use_cache": True,
+            "type": "main_model_loader",
+            "id": ml,
+            "is_intermediate": True,
+            "use_cache": True,
             "model": model,
         },
         pp: {"type": "string", "id": pp, "is_intermediate": True, "use_cache": True, "value": positive_prompt},
@@ -171,37 +234,70 @@ def build_sd1_graph(
         ncc: {"type": "collect", "id": ncc, "is_intermediate": True, "use_cache": True, "collection": []},
         sd: {"type": "integer", "id": sd, "is_intermediate": True, "use_cache": True, "value": seed},
         ns: {
-            "type": "noise", "id": ns, "is_intermediate": True, "use_cache": True,
-            "seed": 0, "width": width, "height": height, "use_cpu": True,
+            "type": "noise",
+            "id": ns,
+            "is_intermediate": True,
+            "use_cache": True,
+            "seed": 0,
+            "width": width,
+            "height": height,
+            "use_cpu": True,
         },
         dn: {
-            "type": "denoise_latents", "id": dn, "is_intermediate": True, "use_cache": True,
-            "steps": steps, "cfg_scale": cfg_scale, "denoising_start": 0.0, "denoising_end": 1.0,
-            "scheduler": scheduler, "cfg_rescale_multiplier": cfg_rescale,
+            "type": "denoise_latents",
+            "id": dn,
+            "is_intermediate": True,
+            "use_cache": True,
+            "steps": steps,
+            "cfg_scale": cfg_scale,
+            "denoising_start": 0.0,
+            "denoising_end": 1.0,
+            "scheduler": scheduler,
+            "cfg_rescale_multiplier": cfg_rescale,
         },
         cm: {
-            "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
-            "generation_mode": "txt2img", "negative_prompt": negative_prompt,
-            "width": width, "height": height, "rand_device": "cpu",
-            "cfg_scale": cfg_scale, "cfg_rescale_multiplier": cfg_rescale,
-            "steps": steps, "scheduler": scheduler,
-            "seamless_x": False, "seamless_y": False,
+            "type": "core_metadata",
+            "id": cm,
+            "is_intermediate": True,
+            "use_cache": True,
+            "generation_mode": "txt2img",
+            "negative_prompt": negative_prompt,
+            "width": width,
+            "height": height,
+            "rand_device": "cpu",
+            "cfg_scale": cfg_scale,
+            "cfg_rescale_multiplier": cfg_rescale,
+            "steps": steps,
+            "scheduler": scheduler,
+            "seamless_x": False,
+            "seamless_y": False,
             "model": model,
-            "loras": [{"model": l["model"], "weight": l["weight"]} for l in loras],
+            "loras": [{"model": lora["model"], "weight": lora["weight"]} for lora in loras],
             "ref_images": [],
         },
         out: {
-            "type": "l2i", "id": out, "is_intermediate": False, "use_cache": False,
-            "tiled": False, "tile_size": 0, "fp32": True,
+            "type": "l2i",
+            "id": out,
+            "is_intermediate": False,
+            "use_cache": False,
+            "tiled": False,
+            "tile_size": 0,
+            "fp32": True,
         },
     }
 
     edges = [
         {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": pc, "field": "prompt"}},
         {"source": {"node_id": pc, "field": "conditioning"}, "destination": {"node_id": pcc, "field": "item"}},
-        {"source": {"node_id": pcc, "field": "collection"}, "destination": {"node_id": dn, "field": "positive_conditioning"}},
+        {
+            "source": {"node_id": pcc, "field": "collection"},
+            "destination": {"node_id": dn, "field": "positive_conditioning"},
+        },
         {"source": {"node_id": nc, "field": "conditioning"}, "destination": {"node_id": ncc, "field": "item"}},
-        {"source": {"node_id": ncc, "field": "collection"}, "destination": {"node_id": dn, "field": "negative_conditioning"}},
+        {
+            "source": {"node_id": ncc, "field": "collection"},
+            "destination": {"node_id": dn, "field": "negative_conditioning"},
+        },
         {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": ns, "field": "seed"}},
         {"source": {"node_id": ns, "field": "noise"}, "destination": {"node_id": dn, "field": "noise"}},
         {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
@@ -220,25 +316,33 @@ def build_sd1_graph(
         for i, lora in enumerate(loras):
             ls = f"lora_selector_{i}:{uuid.uuid4().hex[:10]}"
             nodes[ls] = {
-                "type": "lora_selector", "id": ls, "is_intermediate": True, "use_cache": True,
-                "lora": lora["model"], "weight": lora["weight"],
+                "type": "lora_selector",
+                "id": ls,
+                "is_intermediate": True,
+                "use_cache": True,
+                "lora": lora["model"],
+                "weight": lora["weight"],
             }
             edges.append({"source": {"node_id": ls, "field": "lora"}, "destination": {"node_id": lc, "field": "item"}})
 
-        edges.extend([
-            {"source": {"node_id": lc, "field": "collection"}, "destination": {"node_id": ll, "field": "loras"}},
-            {"source": {"node_id": ml, "field": "unet"}, "destination": {"node_id": ll, "field": "unet"}},
-            {"source": {"node_id": ml, "field": "clip"}, "destination": {"node_id": ll, "field": "clip"}},
-            {"source": {"node_id": ll, "field": "unet"}, "destination": {"node_id": dn, "field": "unet"}},
-            {"source": {"node_id": ll, "field": "clip"}, "destination": {"node_id": pc, "field": "clip"}},
-            {"source": {"node_id": ll, "field": "clip"}, "destination": {"node_id": nc, "field": "clip"}},
-        ])
+        edges.extend(
+            [
+                {"source": {"node_id": lc, "field": "collection"}, "destination": {"node_id": ll, "field": "loras"}},
+                {"source": {"node_id": ml, "field": "unet"}, "destination": {"node_id": ll, "field": "unet"}},
+                {"source": {"node_id": ml, "field": "clip"}, "destination": {"node_id": ll, "field": "clip"}},
+                {"source": {"node_id": ll, "field": "unet"}, "destination": {"node_id": dn, "field": "unet"}},
+                {"source": {"node_id": ll, "field": "clip"}, "destination": {"node_id": pc, "field": "clip"}},
+                {"source": {"node_id": ll, "field": "clip"}, "destination": {"node_id": nc, "field": "clip"}},
+            ]
+        )
     else:
-        edges.extend([
-            {"source": {"node_id": ml, "field": "unet"}, "destination": {"node_id": dn, "field": "unet"}},
-            {"source": {"node_id": ml, "field": "clip"}, "destination": {"node_id": pc, "field": "clip"}},
-            {"source": {"node_id": ml, "field": "clip"}, "destination": {"node_id": nc, "field": "clip"}},
-        ])
+        edges.extend(
+            [
+                {"source": {"node_id": ml, "field": "unet"}, "destination": {"node_id": dn, "field": "unet"}},
+                {"source": {"node_id": ml, "field": "clip"}, "destination": {"node_id": pc, "field": "clip"}},
+                {"source": {"node_id": ml, "field": "clip"}, "destination": {"node_id": nc, "field": "clip"}},
+            ]
+        )
 
     return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
 
@@ -267,22 +371,41 @@ def build_flux_graph(
 
     nodes = {
         ml: {
-            "type": "flux_model_loader", "id": ml, "is_intermediate": True, "use_cache": True,
-            "model": model, "t5_encoder_model": t5_encoder_model,
-            "clip_embed_model": clip_embed_model, "vae_model": vae_model,
+            "type": "flux_model_loader",
+            "id": ml,
+            "is_intermediate": True,
+            "use_cache": True,
+            "model": model,
+            "t5_encoder_model": t5_encoder_model,
+            "clip_embed_model": clip_embed_model,
+            "vae_model": vae_model,
         },
         pp: {"type": "string", "id": pp, "is_intermediate": True, "use_cache": True, "value": positive_prompt},
         te: {"type": "flux_text_encoder", "id": te, "is_intermediate": True, "use_cache": True},
         sd: {"type": "rand_int", "id": sd, "is_intermediate": True, "use_cache": False, "low": seed, "high": seed + 1},
         dn: {
-            "type": "flux_denoise", "id": dn, "is_intermediate": True, "use_cache": True,
-            "width": width, "height": height, "num_steps": steps, "guidance": guidance,
-            "scheduler": scheduler, "denoising_start": 0.0, "denoising_end": 1.0,
+            "type": "flux_denoise",
+            "id": dn,
+            "is_intermediate": True,
+            "use_cache": True,
+            "width": width,
+            "height": height,
+            "num_steps": steps,
+            "guidance": guidance,
+            "scheduler": scheduler,
+            "denoising_start": 0.0,
+            "denoising_end": 1.0,
         },
         cm: {
-            "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
+            "type": "core_metadata",
+            "id": cm,
+            "is_intermediate": True,
+            "use_cache": True,
             "generation_mode": "flux_txt2img",
-            "width": width, "height": height, "steps": steps, "guidance": guidance,
+            "width": width,
+            "height": height,
+            "steps": steps,
+            "guidance": guidance,
             "model": model,
         },
         out: {"type": "flux_vae_decode", "id": out, "is_intermediate": False, "use_cache": False},
@@ -293,7 +416,10 @@ def build_flux_graph(
         {"source": {"node_id": ml, "field": "t5_encoder"}, "destination": {"node_id": te, "field": "t5_encoder"}},
         {"source": {"node_id": ml, "field": "max_seq_len"}, "destination": {"node_id": te, "field": "t5_max_seq_len"}},
         {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": te, "field": "prompt"}},
-        {"source": {"node_id": te, "field": "conditioning"}, "destination": {"node_id": dn, "field": "positive_text_conditioning"}},
+        {
+            "source": {"node_id": te, "field": "conditioning"},
+            "destination": {"node_id": dn, "field": "positive_text_conditioning"},
+        },
         {"source": {"node_id": ml, "field": "transformer"}, "destination": {"node_id": dn, "field": "transformer"}},
         {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
         {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
@@ -325,20 +451,33 @@ def build_flux2_graph(
 
     nodes = {
         ml: {
-            "type": "flux2_klein_model_loader", "id": ml, "is_intermediate": True, "use_cache": True,
+            "type": "flux2_klein_model_loader",
+            "id": ml,
+            "is_intermediate": True,
+            "use_cache": True,
             "model": model,
         },
         pp: {"type": "string", "id": pp, "is_intermediate": True, "use_cache": True, "value": positive_prompt},
         te: {"type": "flux2_klein_text_encoder", "id": te, "is_intermediate": True, "use_cache": True},
         sd: {"type": "rand_int", "id": sd, "is_intermediate": True, "use_cache": False, "low": seed, "high": seed + 1},
         dn: {
-            "type": "flux2_denoise", "id": dn, "is_intermediate": True, "use_cache": True,
-            "width": width, "height": height, "num_steps": steps,
+            "type": "flux2_denoise",
+            "id": dn,
+            "is_intermediate": True,
+            "use_cache": True,
+            "width": width,
+            "height": height,
+            "num_steps": steps,
         },
         cm: {
-            "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
+            "type": "core_metadata",
+            "id": cm,
+            "is_intermediate": True,
+            "use_cache": True,
             "generation_mode": "flux2_txt2img",
-            "width": width, "height": height, "steps": steps,
+            "width": width,
+            "height": height,
+            "steps": steps,
             "model": model,
         },
         out: {"type": "flux2_vae_decode", "id": out, "is_intermediate": False, "use_cache": False},
@@ -348,7 +487,10 @@ def build_flux2_graph(
         {"source": {"node_id": ml, "field": "qwen3_encoder"}, "destination": {"node_id": te, "field": "qwen3_encoder"}},
         {"source": {"node_id": ml, "field": "max_seq_len"}, "destination": {"node_id": te, "field": "max_seq_len"}},
         {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": te, "field": "prompt"}},
-        {"source": {"node_id": te, "field": "conditioning"}, "destination": {"node_id": dn, "field": "positive_text_conditioning"}},
+        {
+            "source": {"node_id": te, "field": "conditioning"},
+            "destination": {"node_id": dn, "field": "positive_text_conditioning"},
+        },
         {"source": {"node_id": ml, "field": "transformer"}, "destination": {"node_id": dn, "field": "transformer"}},
         {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": dn, "field": "vae"}},
         {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
@@ -383,22 +525,37 @@ def build_zimage_graph(
 
     nodes = {
         ml: {
-            "type": "z_image_model_loader", "id": ml, "is_intermediate": True, "use_cache": True,
+            "type": "z_image_model_loader",
+            "id": ml,
+            "is_intermediate": True,
+            "use_cache": True,
             "model": model,
         },
         pp: {"type": "string", "id": pp, "is_intermediate": True, "use_cache": True, "value": positive_prompt},
         te: {"type": "z_image_text_encoder", "id": te, "is_intermediate": True, "use_cache": True},
         sd: {"type": "rand_int", "id": sd, "is_intermediate": True, "use_cache": False, "low": seed, "high": seed + 1},
         dn: {
-            "type": "z_image_denoise", "id": dn, "is_intermediate": True, "use_cache": True,
-            "width": width, "height": height, "steps": steps,
-            "guidance_scale": cfg_scale, "scheduler": scheduler,
+            "type": "z_image_denoise",
+            "id": dn,
+            "is_intermediate": True,
+            "use_cache": True,
+            "width": width,
+            "height": height,
+            "steps": steps,
+            "guidance_scale": cfg_scale,
+            "scheduler": scheduler,
         },
         cm: {
-            "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
+            "type": "core_metadata",
+            "id": cm,
+            "is_intermediate": True,
+            "use_cache": True,
             "generation_mode": "z_image_txt2img",
-            "width": width, "height": height, "steps": steps,
-            "cfg_scale": cfg_scale, "scheduler": scheduler,
+            "width": width,
+            "height": height,
+            "steps": steps,
+            "cfg_scale": cfg_scale,
+            "scheduler": scheduler,
             "model": model,
         },
         out: {"type": "z_image_l2i", "id": out, "is_intermediate": False, "use_cache": False},
@@ -407,7 +564,10 @@ def build_zimage_graph(
     edges = [
         {"source": {"node_id": ml, "field": "qwen3_encoder"}, "destination": {"node_id": te, "field": "qwen3_encoder"}},
         {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": te, "field": "prompt"}},
-        {"source": {"node_id": te, "field": "conditioning"}, "destination": {"node_id": dn, "field": "positive_conditioning"}},
+        {
+            "source": {"node_id": te, "field": "conditioning"},
+            "destination": {"node_id": dn, "field": "positive_conditioning"},
+        },
         {"source": {"node_id": ml, "field": "transformer"}, "destination": {"node_id": dn, "field": "transformer"}},
         {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": dn, "field": "vae"}},
         {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
@@ -457,7 +617,10 @@ def build_krea2_graph(
     cm = f"core_metadata:{uuid.uuid4().hex[:10]}"
 
     loader = {
-        "type": "krea2_model_loader", "id": ml, "is_intermediate": True, "use_cache": True,
+        "type": "krea2_model_loader",
+        "id": ml,
+        "is_intermediate": True,
+        "use_cache": True,
         "model": model,
     }
     if vae_model:
@@ -468,11 +631,17 @@ def build_krea2_graph(
     # core_metadata makes the generation recallable in InvokeAI's gallery (Use Prompt/Seed/All).
     # The seed and positive prompt are wired from their nodes so the recalled values match what ran.
     metadata = {
-        "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
+        "type": "core_metadata",
+        "id": cm,
+        "is_intermediate": True,
+        "use_cache": True,
         "generation_mode": "krea2_txt2img",
-        "width": width, "height": height, "steps": steps, "cfg_scale": cfg_scale,
+        "width": width,
+        "height": height,
+        "steps": steps,
+        "cfg_scale": cfg_scale,
         "model": model,
-        "loras": [{"model": l["model"], "weight": l["weight"]} for l in loras],
+        "loras": [{"model": lora["model"], "weight": lora["weight"]} for lora in loras],
     }
     if use_cfg:
         metadata["negative_prompt"] = negative_prompt
@@ -484,8 +653,14 @@ def build_krea2_graph(
         pcc: {"type": "collect", "id": pcc, "is_intermediate": True, "use_cache": True, "collection": []},
         sd: {"type": "rand_int", "id": sd, "is_intermediate": True, "use_cache": False, "low": seed, "high": seed + 1},
         dn: {
-            "type": "krea2_denoise", "id": dn, "is_intermediate": True, "use_cache": True,
-            "width": width, "height": height, "steps": steps, "cfg_scale": cfg_scale,
+            "type": "krea2_denoise",
+            "id": dn,
+            "is_intermediate": True,
+            "use_cache": True,
+            "width": width,
+            "height": height,
+            "steps": steps,
+            "cfg_scale": cfg_scale,
         },
         cm: metadata,
         out: {"type": "qwen_image_l2i", "id": out, "is_intermediate": False, "use_cache": False},
@@ -494,7 +669,10 @@ def build_krea2_graph(
     edges = [
         {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": pc, "field": "prompt"}},
         {"source": {"node_id": pc, "field": "conditioning"}, "destination": {"node_id": pcc, "field": "item"}},
-        {"source": {"node_id": pcc, "field": "collection"}, "destination": {"node_id": dn, "field": "positive_conditioning"}},
+        {
+            "source": {"node_id": pcc, "field": "collection"},
+            "destination": {"node_id": dn, "field": "positive_conditioning"},
+        },
         {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
         {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
         {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": out, "field": "vae"}},
@@ -505,11 +683,17 @@ def build_krea2_graph(
 
     if use_cfg:
         nodes[nc] = {
-            "type": "krea2_text_encoder", "id": nc, "is_intermediate": True, "use_cache": True,
+            "type": "krea2_text_encoder",
+            "id": nc,
+            "is_intermediate": True,
+            "use_cache": True,
             "prompt": negative_prompt,
         }
         edges.append(
-            {"source": {"node_id": nc, "field": "conditioning"}, "destination": {"node_id": dn, "field": "negative_conditioning"}}
+            {
+                "source": {"node_id": nc, "field": "conditioning"},
+                "destination": {"node_id": dn, "field": "negative_conditioning"},
+            }
         )
 
     # The transformer and Qwen3-VL encoder either come straight off the loader, or get rerouted
@@ -523,30 +707,62 @@ def build_krea2_graph(
         for i, lora in enumerate(loras):
             ls = f"lora_selector_{i}:{uuid.uuid4().hex[:10]}"
             nodes[ls] = {
-                "type": "lora_selector", "id": ls, "is_intermediate": True, "use_cache": True,
-                "lora": lora["model"], "weight": lora["weight"],
+                "type": "lora_selector",
+                "id": ls,
+                "is_intermediate": True,
+                "use_cache": True,
+                "lora": lora["model"],
+                "weight": lora["weight"],
             }
             edges.append({"source": {"node_id": ls, "field": "lora"}, "destination": {"node_id": lc, "field": "item"}})
 
-        edges.extend([
-            {"source": {"node_id": lc, "field": "collection"}, "destination": {"node_id": ll, "field": "loras"}},
-            {"source": {"node_id": ml, "field": "transformer"}, "destination": {"node_id": ll, "field": "transformer"}},
-            {"source": {"node_id": ml, "field": "qwen3_vl_encoder"}, "destination": {"node_id": ll, "field": "qwen3_vl_encoder"}},
-            {"source": {"node_id": ll, "field": "transformer"}, "destination": {"node_id": dn, "field": "transformer"}},
-            {"source": {"node_id": ll, "field": "qwen3_vl_encoder"}, "destination": {"node_id": pc, "field": "qwen3_vl_encoder"}},
-        ])
+        edges.extend(
+            [
+                {"source": {"node_id": lc, "field": "collection"}, "destination": {"node_id": ll, "field": "loras"}},
+                {
+                    "source": {"node_id": ml, "field": "transformer"},
+                    "destination": {"node_id": ll, "field": "transformer"},
+                },
+                {
+                    "source": {"node_id": ml, "field": "qwen3_vl_encoder"},
+                    "destination": {"node_id": ll, "field": "qwen3_vl_encoder"},
+                },
+                {
+                    "source": {"node_id": ll, "field": "transformer"},
+                    "destination": {"node_id": dn, "field": "transformer"},
+                },
+                {
+                    "source": {"node_id": ll, "field": "qwen3_vl_encoder"},
+                    "destination": {"node_id": pc, "field": "qwen3_vl_encoder"},
+                },
+            ]
+        )
         if use_cfg:
             edges.append(
-                {"source": {"node_id": ll, "field": "qwen3_vl_encoder"}, "destination": {"node_id": nc, "field": "qwen3_vl_encoder"}}
+                {
+                    "source": {"node_id": ll, "field": "qwen3_vl_encoder"},
+                    "destination": {"node_id": nc, "field": "qwen3_vl_encoder"},
+                }
             )
     else:
-        edges.extend([
-            {"source": {"node_id": ml, "field": "transformer"}, "destination": {"node_id": dn, "field": "transformer"}},
-            {"source": {"node_id": ml, "field": "qwen3_vl_encoder"}, "destination": {"node_id": pc, "field": "qwen3_vl_encoder"}},
-        ])
+        edges.extend(
+            [
+                {
+                    "source": {"node_id": ml, "field": "transformer"},
+                    "destination": {"node_id": dn, "field": "transformer"},
+                },
+                {
+                    "source": {"node_id": ml, "field": "qwen3_vl_encoder"},
+                    "destination": {"node_id": pc, "field": "qwen3_vl_encoder"},
+                },
+            ]
+        )
         if use_cfg:
             edges.append(
-                {"source": {"node_id": ml, "field": "qwen3_vl_encoder"}, "destination": {"node_id": nc, "field": "qwen3_vl_encoder"}}
+                {
+                    "source": {"node_id": ml, "field": "qwen3_vl_encoder"},
+                    "destination": {"node_id": nc, "field": "qwen3_vl_encoder"},
+                }
             )
 
     return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
@@ -595,7 +811,10 @@ def build_anima_graph(
     cm = f"core_metadata:{uuid.uuid4().hex[:10]}"
 
     loader = {
-        "type": "anima_model_loader", "id": ml, "is_intermediate": True, "use_cache": True,
+        "type": "anima_model_loader",
+        "id": ml,
+        "is_intermediate": True,
+        "use_cache": True,
         "model": model,
     }
     if vae_model:
@@ -606,12 +825,18 @@ def build_anima_graph(
     # core_metadata makes the generation recallable in InvokeAI's gallery. Anima's guidance maps onto the
     # metadata cfg_scale field so recall restores it as the UI's CFG.
     metadata = {
-        "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
+        "type": "core_metadata",
+        "id": cm,
+        "is_intermediate": True,
+        "use_cache": True,
         "generation_mode": "anima_txt2img",
-        "width": width, "height": height, "steps": steps,
-        "cfg_scale": guidance_scale, "scheduler": scheduler,
+        "width": width,
+        "height": height,
+        "steps": steps,
+        "cfg_scale": guidance_scale,
+        "scheduler": scheduler,
         "model": model,
-        "loras": [{"model": l["model"], "weight": l["weight"]} for l in loras],
+        "loras": [{"model": lora["model"], "weight": lora["weight"]} for lora in loras],
     }
     if use_cfg:
         metadata["negative_prompt"] = negative_prompt
@@ -623,9 +848,15 @@ def build_anima_graph(
         pcc: {"type": "collect", "id": pcc, "is_intermediate": True, "use_cache": True, "collection": []},
         sd: {"type": "rand_int", "id": sd, "is_intermediate": True, "use_cache": False, "low": seed, "high": seed + 1},
         dn: {
-            "type": "anima_denoise", "id": dn, "is_intermediate": True, "use_cache": True,
-            "width": width, "height": height, "steps": steps,
-            "guidance_scale": guidance_scale, "scheduler": scheduler,
+            "type": "anima_denoise",
+            "id": dn,
+            "is_intermediate": True,
+            "use_cache": True,
+            "width": width,
+            "height": height,
+            "steps": steps,
+            "guidance_scale": guidance_scale,
+            "scheduler": scheduler,
         },
         cm: metadata,
         out: {"type": "anima_l2i", "id": out, "is_intermediate": False, "use_cache": False},
@@ -634,7 +865,10 @@ def build_anima_graph(
     edges = [
         {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": pc, "field": "prompt"}},
         {"source": {"node_id": pc, "field": "conditioning"}, "destination": {"node_id": pcc, "field": "item"}},
-        {"source": {"node_id": pcc, "field": "collection"}, "destination": {"node_id": dn, "field": "positive_conditioning"}},
+        {
+            "source": {"node_id": pcc, "field": "collection"},
+            "destination": {"node_id": dn, "field": "positive_conditioning"},
+        },
         {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
         {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
         {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": out, "field": "vae"}},
@@ -645,14 +879,22 @@ def build_anima_graph(
 
     if use_cfg:
         nodes[nc] = {
-            "type": "anima_text_encoder", "id": nc, "is_intermediate": True, "use_cache": True,
+            "type": "anima_text_encoder",
+            "id": nc,
+            "is_intermediate": True,
+            "use_cache": True,
             "prompt": negative_prompt,
         }
         nodes[ncc] = {"type": "collect", "id": ncc, "is_intermediate": True, "use_cache": True, "collection": []}
-        edges.extend([
-            {"source": {"node_id": nc, "field": "conditioning"}, "destination": {"node_id": ncc, "field": "item"}},
-            {"source": {"node_id": ncc, "field": "collection"}, "destination": {"node_id": dn, "field": "negative_conditioning"}},
-        ])
+        edges.extend(
+            [
+                {"source": {"node_id": nc, "field": "conditioning"}, "destination": {"node_id": ncc, "field": "item"}},
+                {
+                    "source": {"node_id": ncc, "field": "collection"},
+                    "destination": {"node_id": dn, "field": "negative_conditioning"},
+                },
+            ]
+        )
 
     if loras:
         lc = f"lora_collector:{uuid.uuid4().hex[:10]}"
@@ -663,30 +905,62 @@ def build_anima_graph(
         for i, lora in enumerate(loras):
             ls = f"lora_selector_{i}:{uuid.uuid4().hex[:10]}"
             nodes[ls] = {
-                "type": "lora_selector", "id": ls, "is_intermediate": True, "use_cache": True,
-                "lora": lora["model"], "weight": lora["weight"],
+                "type": "lora_selector",
+                "id": ls,
+                "is_intermediate": True,
+                "use_cache": True,
+                "lora": lora["model"],
+                "weight": lora["weight"],
             }
             edges.append({"source": {"node_id": ls, "field": "lora"}, "destination": {"node_id": lc, "field": "item"}})
 
-        edges.extend([
-            {"source": {"node_id": lc, "field": "collection"}, "destination": {"node_id": ll, "field": "loras"}},
-            {"source": {"node_id": ml, "field": "transformer"}, "destination": {"node_id": ll, "field": "transformer"}},
-            {"source": {"node_id": ml, "field": "qwen3_encoder"}, "destination": {"node_id": ll, "field": "qwen3_encoder"}},
-            {"source": {"node_id": ll, "field": "transformer"}, "destination": {"node_id": dn, "field": "transformer"}},
-            {"source": {"node_id": ll, "field": "qwen3_encoder"}, "destination": {"node_id": pc, "field": "qwen3_encoder"}},
-        ])
+        edges.extend(
+            [
+                {"source": {"node_id": lc, "field": "collection"}, "destination": {"node_id": ll, "field": "loras"}},
+                {
+                    "source": {"node_id": ml, "field": "transformer"},
+                    "destination": {"node_id": ll, "field": "transformer"},
+                },
+                {
+                    "source": {"node_id": ml, "field": "qwen3_encoder"},
+                    "destination": {"node_id": ll, "field": "qwen3_encoder"},
+                },
+                {
+                    "source": {"node_id": ll, "field": "transformer"},
+                    "destination": {"node_id": dn, "field": "transformer"},
+                },
+                {
+                    "source": {"node_id": ll, "field": "qwen3_encoder"},
+                    "destination": {"node_id": pc, "field": "qwen3_encoder"},
+                },
+            ]
+        )
         if use_cfg:
             edges.append(
-                {"source": {"node_id": ll, "field": "qwen3_encoder"}, "destination": {"node_id": nc, "field": "qwen3_encoder"}}
+                {
+                    "source": {"node_id": ll, "field": "qwen3_encoder"},
+                    "destination": {"node_id": nc, "field": "qwen3_encoder"},
+                }
             )
     else:
-        edges.extend([
-            {"source": {"node_id": ml, "field": "transformer"}, "destination": {"node_id": dn, "field": "transformer"}},
-            {"source": {"node_id": ml, "field": "qwen3_encoder"}, "destination": {"node_id": pc, "field": "qwen3_encoder"}},
-        ])
+        edges.extend(
+            [
+                {
+                    "source": {"node_id": ml, "field": "transformer"},
+                    "destination": {"node_id": dn, "field": "transformer"},
+                },
+                {
+                    "source": {"node_id": ml, "field": "qwen3_encoder"},
+                    "destination": {"node_id": pc, "field": "qwen3_encoder"},
+                },
+            ]
+        )
         if use_cfg:
             edges.append(
-                {"source": {"node_id": ml, "field": "qwen3_encoder"}, "destination": {"node_id": nc, "field": "qwen3_encoder"}}
+                {
+                    "source": {"node_id": ml, "field": "qwen3_encoder"},
+                    "destination": {"node_id": nc, "field": "qwen3_encoder"},
+                }
             )
 
     return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
@@ -722,9 +996,15 @@ def build_ernie_graph(
     cm = f"core_metadata:{uuid.uuid4().hex[:10]}"
 
     metadata = {
-        "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
+        "type": "core_metadata",
+        "id": cm,
+        "is_intermediate": True,
+        "use_cache": True,
         "generation_mode": "ernie_image_txt2img",
-        "width": width, "height": height, "steps": steps, "cfg_scale": guidance_scale,
+        "width": width,
+        "height": height,
+        "steps": steps,
+        "cfg_scale": guidance_scale,
         "model": model,
     }
     if use_cfg:
@@ -736,8 +1016,14 @@ def build_ernie_graph(
         pc: {"type": "ernie_image_text_encoder", "id": pc, "is_intermediate": True, "use_cache": True},
         sd: {"type": "rand_int", "id": sd, "is_intermediate": True, "use_cache": False, "low": seed, "high": seed + 1},
         dn: {
-            "type": "ernie_image_denoise", "id": dn, "is_intermediate": True, "use_cache": True,
-            "width": width, "height": height, "steps": steps, "guidance_scale": guidance_scale,
+            "type": "ernie_image_denoise",
+            "id": dn,
+            "is_intermediate": True,
+            "use_cache": True,
+            "width": width,
+            "height": height,
+            "steps": steps,
+            "guidance_scale": guidance_scale,
         },
         cm: metadata,
         out: {"type": "ernie_image_vae_decode", "id": out, "is_intermediate": False, "use_cache": False},
@@ -748,7 +1034,10 @@ def build_ernie_graph(
         {"source": {"node_id": ml, "field": "text_encoder"}, "destination": {"node_id": pc, "field": "text_encoder"}},
         {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": out, "field": "vae"}},
         {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": pc, "field": "prompt"}},
-        {"source": {"node_id": pc, "field": "conditioning"}, "destination": {"node_id": dn, "field": "positive_conditioning"}},
+        {
+            "source": {"node_id": pc, "field": "conditioning"},
+            "destination": {"node_id": dn, "field": "positive_conditioning"},
+        },
         {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
         {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
         {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": cm, "field": "seed"}},
@@ -758,13 +1047,24 @@ def build_ernie_graph(
 
     if use_cfg:
         nodes[nc] = {
-            "type": "ernie_image_text_encoder", "id": nc, "is_intermediate": True, "use_cache": True,
+            "type": "ernie_image_text_encoder",
+            "id": nc,
+            "is_intermediate": True,
+            "use_cache": True,
             "prompt": negative_prompt,
         }
-        edges.extend([
-            {"source": {"node_id": ml, "field": "text_encoder"}, "destination": {"node_id": nc, "field": "text_encoder"}},
-            {"source": {"node_id": nc, "field": "conditioning"}, "destination": {"node_id": dn, "field": "negative_conditioning"}},
-        ])
+        edges.extend(
+            [
+                {
+                    "source": {"node_id": ml, "field": "text_encoder"},
+                    "destination": {"node_id": nc, "field": "text_encoder"},
+                },
+                {
+                    "source": {"node_id": nc, "field": "conditioning"},
+                    "destination": {"node_id": dn, "field": "negative_conditioning"},
+                },
+            ]
+        )
 
     return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
 
@@ -806,9 +1106,15 @@ def build_qwen_image_graph(
         loader["qwen_vl_encoder_model"] = qwen_vl_encoder_model
 
     metadata = {
-        "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
+        "type": "core_metadata",
+        "id": cm,
+        "is_intermediate": True,
+        "use_cache": True,
         "generation_mode": "qwen_image_txt2img",
-        "width": width, "height": height, "steps": steps, "cfg_scale": cfg_scale,
+        "width": width,
+        "height": height,
+        "steps": steps,
+        "cfg_scale": cfg_scale,
         "model": model,
     }
     if use_cfg:
@@ -820,8 +1126,14 @@ def build_qwen_image_graph(
         pc: {"type": "qwen_image_text_encoder", "id": pc, "is_intermediate": True, "use_cache": True},
         sd: {"type": "rand_int", "id": sd, "is_intermediate": True, "use_cache": False, "low": seed, "high": seed + 1},
         dn: {
-            "type": "qwen_image_denoise", "id": dn, "is_intermediate": True, "use_cache": True,
-            "width": width, "height": height, "steps": steps, "cfg_scale": cfg_scale,
+            "type": "qwen_image_denoise",
+            "id": dn,
+            "is_intermediate": True,
+            "use_cache": True,
+            "width": width,
+            "height": height,
+            "steps": steps,
+            "cfg_scale": cfg_scale,
         },
         cm: metadata,
         out: {"type": "qwen_image_l2i", "id": out, "is_intermediate": False, "use_cache": False},
@@ -829,10 +1141,16 @@ def build_qwen_image_graph(
 
     edges = [
         {"source": {"node_id": ml, "field": "transformer"}, "destination": {"node_id": dn, "field": "transformer"}},
-        {"source": {"node_id": ml, "field": "qwen_vl_encoder"}, "destination": {"node_id": pc, "field": "qwen_vl_encoder"}},
+        {
+            "source": {"node_id": ml, "field": "qwen_vl_encoder"},
+            "destination": {"node_id": pc, "field": "qwen_vl_encoder"},
+        },
         {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": out, "field": "vae"}},
         {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": pc, "field": "prompt"}},
-        {"source": {"node_id": pc, "field": "conditioning"}, "destination": {"node_id": dn, "field": "positive_conditioning"}},
+        {
+            "source": {"node_id": pc, "field": "conditioning"},
+            "destination": {"node_id": dn, "field": "positive_conditioning"},
+        },
         {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
         {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
         {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": cm, "field": "seed"}},
@@ -842,13 +1160,24 @@ def build_qwen_image_graph(
 
     if use_cfg:
         nodes[nc] = {
-            "type": "qwen_image_text_encoder", "id": nc, "is_intermediate": True, "use_cache": True,
+            "type": "qwen_image_text_encoder",
+            "id": nc,
+            "is_intermediate": True,
+            "use_cache": True,
             "prompt": negative_prompt,
         }
-        edges.extend([
-            {"source": {"node_id": ml, "field": "qwen_vl_encoder"}, "destination": {"node_id": nc, "field": "qwen_vl_encoder"}},
-            {"source": {"node_id": nc, "field": "conditioning"}, "destination": {"node_id": dn, "field": "negative_conditioning"}},
-        ])
+        edges.extend(
+            [
+                {
+                    "source": {"node_id": ml, "field": "qwen_vl_encoder"},
+                    "destination": {"node_id": nc, "field": "qwen_vl_encoder"},
+                },
+                {
+                    "source": {"node_id": nc, "field": "conditioning"},
+                    "destination": {"node_id": dn, "field": "negative_conditioning"},
+                },
+            ]
+        )
 
     return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
 
@@ -895,9 +1224,15 @@ def build_wan_graph(
         loader["wan_t5_encoder_model"] = wan_t5_encoder_model
 
     metadata = {
-        "type": "core_metadata", "id": cm, "is_intermediate": True, "use_cache": True,
+        "type": "core_metadata",
+        "id": cm,
+        "is_intermediate": True,
+        "use_cache": True,
         "generation_mode": "wan_txt2img",
-        "width": width, "height": height, "steps": steps, "cfg_scale": cfg_scale,
+        "width": width,
+        "height": height,
+        "steps": steps,
+        "cfg_scale": cfg_scale,
         "model": model,
     }
     if use_cfg:
@@ -909,8 +1244,14 @@ def build_wan_graph(
         pc: {"type": "wan_text_encoder", "id": pc, "is_intermediate": True, "use_cache": True},
         sd: {"type": "rand_int", "id": sd, "is_intermediate": True, "use_cache": False, "low": seed, "high": seed + 1},
         dn: {
-            "type": "wan_denoise", "id": dn, "is_intermediate": True, "use_cache": True,
-            "width": width, "height": height, "steps": steps, "guidance_scale": cfg_scale,
+            "type": "wan_denoise",
+            "id": dn,
+            "is_intermediate": True,
+            "use_cache": True,
+            "width": width,
+            "height": height,
+            "steps": steps,
+            "guidance_scale": cfg_scale,
         },
         cm: metadata,
         out: {"type": "wan_l2i", "id": out, "is_intermediate": False, "use_cache": False},
@@ -918,10 +1259,16 @@ def build_wan_graph(
 
     edges = [
         {"source": {"node_id": ml, "field": "transformer"}, "destination": {"node_id": dn, "field": "transformer"}},
-        {"source": {"node_id": ml, "field": "wan_t5_encoder"}, "destination": {"node_id": pc, "field": "wan_t5_encoder"}},
+        {
+            "source": {"node_id": ml, "field": "wan_t5_encoder"},
+            "destination": {"node_id": pc, "field": "wan_t5_encoder"},
+        },
         {"source": {"node_id": ml, "field": "vae"}, "destination": {"node_id": out, "field": "vae"}},
         {"source": {"node_id": pp, "field": "value"}, "destination": {"node_id": pc, "field": "prompt"}},
-        {"source": {"node_id": pc, "field": "conditioning"}, "destination": {"node_id": dn, "field": "positive_conditioning"}},
+        {
+            "source": {"node_id": pc, "field": "conditioning"},
+            "destination": {"node_id": dn, "field": "positive_conditioning"},
+        },
         {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": dn, "field": "seed"}},
         {"source": {"node_id": dn, "field": "latents"}, "destination": {"node_id": out, "field": "latents"}},
         {"source": {"node_id": sd, "field": "value"}, "destination": {"node_id": cm, "field": "seed"}},
@@ -931,12 +1278,23 @@ def build_wan_graph(
 
     if use_cfg:
         nodes[nc] = {
-            "type": "wan_text_encoder", "id": nc, "is_intermediate": True, "use_cache": True,
+            "type": "wan_text_encoder",
+            "id": nc,
+            "is_intermediate": True,
+            "use_cache": True,
             "prompt": negative_prompt,
         }
-        edges.extend([
-            {"source": {"node_id": ml, "field": "wan_t5_encoder"}, "destination": {"node_id": nc, "field": "wan_t5_encoder"}},
-            {"source": {"node_id": nc, "field": "conditioning"}, "destination": {"node_id": dn, "field": "negative_conditioning"}},
-        ])
+        edges.extend(
+            [
+                {
+                    "source": {"node_id": ml, "field": "wan_t5_encoder"},
+                    "destination": {"node_id": nc, "field": "wan_t5_encoder"},
+                },
+                {
+                    "source": {"node_id": nc, "field": "conditioning"},
+                    "destination": {"node_id": dn, "field": "negative_conditioning"},
+                },
+            ]
+        )
 
     return {"id": uuid.uuid4().hex, "nodes": nodes, "edges": edges}
