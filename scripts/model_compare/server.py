@@ -13,7 +13,9 @@ Usage (from InvokeAI project root, with venv active):
 import argparse
 import json
 import random
+import sys
 from pathlib import Path
+from pathlib import Path as _Path
 
 import httpx
 import uvicorn
@@ -21,9 +23,6 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
-
-import sys
-from pathlib import Path as _Path
 
 sys.path.insert(0, str(_Path(__file__).parent))
 from graphs import (
@@ -109,13 +108,18 @@ def remap_loras(loras: list[dict], installed: list[dict], base: str) -> tuple[li
         if not match:
             warnings.append(f"LoRA '{model.get('name')}' not installed — skipped")
             continue
-        remapped.append({
-            "model": {
-                "key": match["key"], "hash": match.get("hash", ""),
-                "name": match["name"], "base": match["base"], "type": "lora",
-            },
-            "weight": entry["weight"],
-        })
+        remapped.append(
+            {
+                "model": {
+                    "key": match["key"],
+                    "hash": match.get("hash", ""),
+                    "name": match["name"],
+                    "base": match["base"],
+                    "type": "lora",
+                },
+                "weight": entry["weight"],
+            }
+        )
     return remapped, warnings
 
 
@@ -164,10 +168,12 @@ def parse_settings(state: dict) -> dict:
     loras = []
     for lora_entry in loras_state.get("loras", []):
         if lora_entry.get("isEnabled", True):
-            loras.append({
-                "model": lora_entry["model"],
-                "weight": lora_entry.get("weight", 0.75),
-            })
+            loras.append(
+                {
+                    "model": lora_entry["model"],
+                    "weight": lora_entry.get("weight", 0.75),
+                }
+            )
 
     aspect_ratio = bbox.get("aspectRatio", {})
 
@@ -206,8 +212,6 @@ def parse_settings(state: dict) -> dict:
     }
 
 
-
-
 # ── API Routes ───────────────────────────────────────────────────────────────
 
 
@@ -236,14 +240,16 @@ async def get_models():
 
     models = []
     for m in data.get("models", []):
-        models.append({
-            "key": m["key"],
-            "name": m["name"],
-            "base": m["base"],
-            "format": m.get("format", ""),
-            "hash": m.get("hash", ""),
-            "type": m.get("type", "main"),
-        })
+        models.append(
+            {
+                "key": m["key"],
+                "name": m["name"],
+                "base": m["base"],
+                "format": m.get("format", ""),
+                "hash": m.get("hash", ""),
+                "type": m.get("type", "main"),
+            }
+        )
 
     models.sort(key=lambda x: (x["base"], x["name"].lower()))
     return {"models": models}
@@ -304,7 +310,7 @@ async def generate(req: GenerateRequest):
     errors = []
 
     async with httpx.AsyncClient(timeout=60) as client:
-        for i, key in enumerate(req.model_keys):
+        for _i, key in enumerate(req.model_keys):
             model_info = all_models.get(key)
             if not model_info:
                 errors.append(f"Model {key} not found")
@@ -327,28 +333,46 @@ async def generate(req: GenerateRequest):
             base = model_info["base"]
             if base in ("sdxl", "sdxl-refiner"):
                 graph = build_sdxl_graph(
-                    model=model_ref, positive_prompt=positive_prompt,
-                    negative_prompt=negative_prompt, seed=seed,
-                    width=width, height=height, steps=steps,
-                    cfg_scale=cfg_scale, cfg_rescale=cfg_rescale,
-                    scheduler=scheduler, loras=compatible_loras,
+                    model=model_ref,
+                    positive_prompt=positive_prompt,
+                    negative_prompt=negative_prompt,
+                    seed=seed,
+                    width=width,
+                    height=height,
+                    steps=steps,
+                    cfg_scale=cfg_scale,
+                    cfg_rescale=cfg_rescale,
+                    scheduler=scheduler,
+                    loras=compatible_loras,
                 )
             elif base in ("sd-1", "sd-2"):
                 graph = build_sd1_graph(
-                    model=model_ref, positive_prompt=positive_prompt,
-                    negative_prompt=negative_prompt, seed=seed,
-                    width=width, height=height, steps=steps,
-                    cfg_scale=cfg_scale, cfg_rescale=cfg_rescale,
-                    scheduler=scheduler, loras=compatible_loras,
+                    model=model_ref,
+                    positive_prompt=positive_prompt,
+                    negative_prompt=negative_prompt,
+                    seed=seed,
+                    width=width,
+                    height=height,
+                    steps=steps,
+                    cfg_scale=cfg_scale,
+                    cfg_rescale=cfg_rescale,
+                    scheduler=scheduler,
+                    loras=compatible_loras,
                 )
             elif base == "flux":
                 if not settings["t5EncoderModel"] or not settings["clipEmbedModel"] or not settings["fluxVAE"]:
-                    errors.append(f"Skipped {model_info['name']} (needs T5 encoder, CLIP embed, and VAE configured in InvokeAI)")
+                    errors.append(
+                        f"Skipped {model_info['name']} (needs T5 encoder, CLIP embed, and VAE configured in InvokeAI)"
+                    )
                     continue
                 graph = build_flux_graph(
-                    model=model_ref, positive_prompt=positive_prompt,
-                    seed=seed, width=width, height=height,
-                    steps=steps, guidance=settings["guidance"],
+                    model=model_ref,
+                    positive_prompt=positive_prompt,
+                    seed=seed,
+                    width=width,
+                    height=height,
+                    steps=steps,
+                    guidance=settings["guidance"],
                     scheduler=settings["fluxScheduler"],
                     t5_encoder_model=settings["t5EncoderModel"],
                     clip_embed_model=settings["clipEmbedModel"],
@@ -356,15 +380,22 @@ async def generate(req: GenerateRequest):
                 )
             elif base == "flux2":
                 graph = build_flux2_graph(
-                    model=model_ref, positive_prompt=positive_prompt,
-                    seed=seed, width=width, height=height,
+                    model=model_ref,
+                    positive_prompt=positive_prompt,
+                    seed=seed,
+                    width=width,
+                    height=height,
                     steps=steps,
                 )
             elif base == "z-image":
                 graph = build_zimage_graph(
-                    model=model_ref, positive_prompt=positive_prompt,
-                    seed=seed, width=width, height=height,
-                    steps=steps, cfg_scale=cfg_scale,
+                    model=model_ref,
+                    positive_prompt=positive_prompt,
+                    seed=seed,
+                    width=width,
+                    height=height,
+                    steps=steps,
+                    cfg_scale=cfg_scale,
                     scheduler=settings.get("zImageScheduler", "euler"),
                 )
             elif base == "krea-2":
@@ -384,10 +415,16 @@ async def generate(req: GenerateRequest):
                         )
                         continue
                 graph = build_krea2_graph(
-                    model=model_ref, positive_prompt=positive_prompt,
-                    negative_prompt=negative_prompt, seed=seed,
-                    width=width, height=height, steps=steps, cfg_scale=cfg_scale,
-                    loras=compatible_loras, vae_model=vae_model,
+                    model=model_ref,
+                    positive_prompt=positive_prompt,
+                    negative_prompt=negative_prompt,
+                    seed=seed,
+                    width=width,
+                    height=height,
+                    steps=steps,
+                    cfg_scale=cfg_scale,
+                    loras=compatible_loras,
+                    vae_model=vae_model,
                     qwen3_vl_encoder_model=qwen3_vl_encoder_model,
                 )
             elif base == "anima":
@@ -407,20 +444,31 @@ async def generate(req: GenerateRequest):
                         )
                         continue
                 graph = build_anima_graph(
-                    model=model_ref, positive_prompt=positive_prompt,
-                    negative_prompt=negative_prompt, seed=seed,
-                    width=width, height=height, steps=steps,
-                    guidance_scale=cfg_scale, scheduler=scheduler,
-                    loras=compatible_loras, vae_model=vae_model,
+                    model=model_ref,
+                    positive_prompt=positive_prompt,
+                    negative_prompt=negative_prompt,
+                    seed=seed,
+                    width=width,
+                    height=height,
+                    steps=steps,
+                    guidance_scale=cfg_scale,
+                    scheduler=scheduler,
+                    loras=compatible_loras,
+                    vae_model=vae_model,
                     qwen3_encoder_model=qwen3_encoder_model,
                 )
             elif base == "ernie-image":
                 # ERNIE mains are self-contained diffusers pipelines — no standalone submodels.
                 graph = build_ernie_graph(
-                    model=model_ref, positive_prompt=positive_prompt,
-                    negative_prompt=negative_prompt, seed=seed,
-                    width=width, height=height, steps=steps,
-                    guidance_scale=cfg_scale, loras=compatible_loras,
+                    model=model_ref,
+                    positive_prompt=positive_prompt,
+                    negative_prompt=negative_prompt,
+                    seed=seed,
+                    width=width,
+                    height=height,
+                    steps=steps,
+                    guidance_scale=cfg_scale,
+                    loras=compatible_loras,
                 )
             elif base == "qwen-image":
                 # Prefer the VAE + Qwen2.5-VL encoder selected in InvokeAI; auto-pick only fills gaps.
@@ -439,10 +487,16 @@ async def generate(req: GenerateRequest):
                         )
                         continue
                 graph = build_qwen_image_graph(
-                    model=model_ref, positive_prompt=positive_prompt,
-                    negative_prompt=negative_prompt, seed=seed,
-                    width=width, height=height, steps=steps, cfg_scale=cfg_scale,
-                    loras=compatible_loras, vae_model=vae_model,
+                    model=model_ref,
+                    positive_prompt=positive_prompt,
+                    negative_prompt=negative_prompt,
+                    seed=seed,
+                    width=width,
+                    height=height,
+                    steps=steps,
+                    cfg_scale=cfg_scale,
+                    loras=compatible_loras,
+                    vae_model=vae_model,
                     qwen_vl_encoder_model=qwen_vl_encoder_model,
                 )
             elif base == "wan":
@@ -451,9 +505,7 @@ async def generate(req: GenerateRequest):
                 vae_model = settings.get("wanVaeModel")
                 wan_t5_encoder_model = settings.get("wanT5EncoderModel")
                 if model_info.get("format") != "diffusers" and not (vae_model and wan_t5_encoder_model):
-                    picked_vae, picked_enc = pick_submodels(
-                        installed_vaes, wan_t5_encoders, ("wan",), vae_hint_key
-                    )
+                    picked_vae, picked_enc = pick_submodels(installed_vaes, wan_t5_encoders, ("wan",), vae_hint_key)
                     vae_model = vae_model or picked_vae
                     wan_t5_encoder_model = wan_t5_encoder_model or picked_enc
                     if not (vae_model and wan_t5_encoder_model):
@@ -462,10 +514,16 @@ async def generate(req: GenerateRequest):
                         )
                         continue
                 graph = build_wan_graph(
-                    model=model_ref, positive_prompt=positive_prompt,
-                    negative_prompt=negative_prompt, seed=seed,
-                    width=width, height=height, steps=steps, cfg_scale=cfg_scale,
-                    loras=compatible_loras, vae_model=vae_model,
+                    model=model_ref,
+                    positive_prompt=positive_prompt,
+                    negative_prompt=negative_prompt,
+                    seed=seed,
+                    width=width,
+                    height=height,
+                    steps=steps,
+                    cfg_scale=cfg_scale,
+                    loras=compatible_loras,
+                    vae_model=vae_model,
                     wan_t5_encoder_model=wan_t5_encoder_model,
                 )
             else:

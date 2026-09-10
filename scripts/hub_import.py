@@ -94,8 +94,7 @@ def fetch_hub_models(api_url: str, token: str | None) -> list[dict]:
         sys.exit(1)
     except (urllib.error.URLError, OSError) as e:
         print(
-            f"Error: cannot reach the hub API at {api_url} ({e}).\n"
-            f"  Start it with:  systemctl --user start hubroot",
+            f"Error: cannot reach the hub API at {api_url} ({e}).\n  Start it with:  systemctl --user start hubroot",
             file=sys.stderr,
         )
         sys.exit(1)
@@ -104,6 +103,7 @@ def fetch_hub_models(api_url: str, token: str | None) -> list[dict]:
     # Match the ordering the old SQL used, so runs stay comparable.
     models.sort(key=lambda m: (m["base_model"] or "", m["model_type"] or "", m["filename"] or ""))
     return models
+
 
 # ─── Probe-reject cache ──────────────────────────────────────────────────────
 #
@@ -159,18 +159,20 @@ def save_reject_cache(path: Path, rejects: dict[str, dict]) -> None:
 # ─── Filtering tables ────────────────────────────────────────────────────────
 
 # Hub model_type values that InvokeAI cannot use at all
-SKIP_MODEL_TYPES = frozenset({
-    "audio",
-    "audio_separation",
-    "depth_estimation",
-    "face_detection",
-    "image_translation",
-    "llm",
-    "optical_flow",
-    "projection",
-    "segmentation",
-    "unknown",
-})
+SKIP_MODEL_TYPES = frozenset(
+    {
+        "audio",
+        "audio_separation",
+        "depth_estimation",
+        "face_detection",
+        "image_translation",
+        "llm",
+        "optical_flow",
+        "projection",
+        "segmentation",
+        "unknown",
+    }
+)
 
 # Skip base_model if it contains any of these substrings (video/unsupported arch InvokeAI can't run).
 # Wan is NOT here — InvokeAI supports Wan 2.2 (T2V/I2V) natively; it's handled via WAN_BASE_PREFIX below.
@@ -181,17 +183,19 @@ SKIP_BASE_KEYWORDS = frozenset({"ltxv", "hunyuan", "cogvideo", "chroma"})
 WAN_BASE_PREFIX = "wan"
 
 # Skip base_model if it exactly matches one of these
-SKIP_BASE_EXACT = frozenset({
-    "bs-roformer",
-    "cyclegan",
-    "depth anything",
-    "gemma",
-    "other",
-    "raft",
-    "sam",
-    "unknown",
-    "yolo",
-})
+SKIP_BASE_EXACT = frozenset(
+    {
+        "bs-roformer",
+        "cyclegan",
+        "depth anything",
+        "gemma",
+        "other",
+        "raft",
+        "sam",
+        "unknown",
+        "yolo",
+    }
+)
 
 # Text-encoder bases InvokeAI uses as Krea-2 / Anima submodels. The hub labels the Qwen3-VL encoder with
 # type 'llm' (which we'd otherwise skip), so allow these bases through regardless of type — a --reset then
@@ -340,9 +344,7 @@ def validate_invokeai_db(db_path: Path) -> None:
 
     conn = sqlite3.connect(str(db_path))
     try:
-        row = conn.execute(
-            "SELECT name FROM sqlite_master WHERE type='table' AND name='models'"
-        ).fetchone()
+        row = conn.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='models'").fetchone()
         if not row:
             print("Error: 'models' table not found in InvokeAI database.", file=sys.stderr)
             print("Start InvokeAI at least once to initialize the database.", file=sys.stderr)
@@ -428,7 +430,7 @@ def import_models(args: argparse.Namespace) -> None:
 
         eligible.append(dict(row))
 
-    print(f"\nFilter results:")
+    print("\nFilter results:")
     for reason, count in sorted(skip_reasons.items(), key=lambda x: -x[1]):
         print(f"  {count:>5}  {reason}")
     print(f"  {len(eligible):>5}  eligible for import")
@@ -653,6 +655,7 @@ def reset_invokeai_models(args: argparse.Namespace) -> None:
     # Wipe models directory (all symlinks and UUID dirs)
     if invokeai_models_dir.exists():
         import shutil
+
         removed = 0
         for child in invokeai_models_dir.iterdir():
             if child.is_dir():
@@ -663,7 +666,7 @@ def reset_invokeai_models(args: argparse.Namespace) -> None:
                 removed += 1
         print(f"Removed {removed} entries from {invokeai_models_dir}")
     else:
-        print(f"Models directory doesn't exist, nothing to wipe")
+        print("Models directory doesn't exist, nothing to wipe")
 
     print("\nReset complete. Run hubimport to re-import models.")
 
