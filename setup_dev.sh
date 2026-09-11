@@ -4,8 +4,11 @@
 clear
 set -e
 
-PROJECT_DIR="$INVOKE_DIR"
-DATA_DIR="$INVOKE_DIR/invokeai_data"
+# INVOKE_DIR is exported by .salias, which is only sourced once the project has an
+# `sw` tag — not the case on a fresh clone, which is precisely when this script runs.
+# Fall back to the script's own location so it works standalone.
+PROJECT_DIR="${INVOKE_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
+DATA_DIR="$PROJECT_DIR/invokeai_data"
 
 echo "🚀 Setting up InvokeAI development environment..."
 
@@ -20,27 +23,50 @@ git lfs install
 echo "Downloading large files with git-lfs..."
 git lfs pull
 
-# 2. Create venv if it doesn't exist
+# 2. Ensure the companion tooling repo is checked out beside this one.
+# scripts/hub_import.py, scripts/hub_update.py and scripts/model_compare are
+# relative symlinks into a sibling clone of invokeai-claude-fixes. Without it they
+# dangle, and `hubup` / model-compare.service fail with a confusing ENOENT.
+TOOLS_DIR="$(dirname "$PROJECT_DIR")/invokeai-claude-fixes"
+TOOLS_REPO="https://github.com/TerminatedProcess/invokeai-claude-fixes.git"
+if [ ! -d "$TOOLS_DIR/.git" ]; then
+    echo "Cloning companion tooling repo to $TOOLS_DIR..."
+    git clone "$TOOLS_REPO" "$TOOLS_DIR"
+else
+    echo "Companion tooling repo present, updating..."
+    git -C "$TOOLS_DIR" pull --ff-only
+fi
+
+# Resolve the symlinks now, so a missing sibling fails here with a clear message
+# rather than hours later inside a service.
+for link in scripts/hub_import.py scripts/hub_update.py scripts/model_compare; do
+    if [ ! -e "$link" ]; then
+        echo "Error: $link does not resolve. Expected its target under $TOOLS_DIR" >&2
+        exit 1
+    fi
+done
+
+# 3. Create venv if it doesn't exist
 #if [ ! -d ".venv" ]; then
 #    echo "Creating virtual environment..."
 #    uv venv --relocatable --prompt invoke-meta --python 3.12 --python-preference only-managed .venv
 #fi
 
-# 3. Activate venv
+# 4. Activate venv
 #echo "Activating virtual environment..."
 #source .venv/bin/activate
 
-# 4. Install InvokeAI in editable mode with dev dependencies
+# 5. Install InvokeAI in editable mode with dev dependencies
 echo "Installing InvokeAI with dev dependencies (this may take a while)..."
 uv pip install -e ".[dev,test,docs]" --python 3.12 --python-preference only-managed --torch-backend=cu128 --reinstall
 
-# 5. Create data directory
+# 6. Create data directory
 if [ ! -d "$DATA_DIR" ]; then
     echo "Creating data directory at $DATA_DIR..."
     mkdir -p "$DATA_DIR"
 fi
 
-# 6. Create initial config file
+# 7. Create initial config file
 echo "Creating invokeai.yaml config..."
 cat > "$DATA_DIR/invokeai.yaml" << EOF
 # InvokeAI-Meta Configuration
@@ -65,16 +91,16 @@ port: 9090
 log_level: info
 EOF
 
-# 7. Install Node.js dependencies for frontend
+# 8. Install Node.js dependencies for frontend
 echo "Installing frontend dependencies..."
 cd invokeai/frontend/web
 pnpm i
 
-# 8. Build frontend (--mode test skips vite-plugin-eslint, avoids Node 25 V8 crash)
+# 9. Build frontend (--mode test skips vite-plugin-eslint, avoids Node 25 V8 crash)
 echo "Building frontend (this may take a few minutes)..."
 pnpm exec vite build --mode test
 
-# 9. Install pypatchmatch
+# 10. Install pypatchmatch
 uv pip install pypatchmatch
 
 cd "$PROJECT_DIR"
