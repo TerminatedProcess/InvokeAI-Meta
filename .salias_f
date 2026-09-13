@@ -156,7 +156,6 @@ function clean
     find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null
     echo "Done"
 end
-alias data='cd $INVOKE_DATA_DIR/databases'
 function logs
     tail -f $INVOKE_DATA_DIR/logs/invokeai.log
 end

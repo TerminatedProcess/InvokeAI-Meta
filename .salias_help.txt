@@ -22,7 +22,6 @@ DEVELOPMENT
 
 MAINTENANCE
   clean             Remove frontend dist, vite cache, __pycache__ dirs
-  data              cd to invokeai_data/databases
   logs              Tail the InvokeAI log file
 
 GIT
