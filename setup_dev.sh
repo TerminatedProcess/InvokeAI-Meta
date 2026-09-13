@@ -46,6 +46,30 @@ for link in scripts/hub_import.py scripts/hub_update.py scripts/model_compare; d
     fi
 done
 
+# 2b. Wire the custom node pack into the data directory.
+# InvokeAI only loads custom nodes from invokeai_data/nodes, but invokeai_data is
+# gitignored — so the pack itself is tracked at ./nodes and linked into place here.
+# Without this a fresh clone starts with no custom nodes and no error to explain why.
+NODES_LINK="$DATA_DIR/nodes"
+mkdir -p "$DATA_DIR"
+if [ -L "$NODES_LINK" ]; then
+    # Re-point a stale link. Removing a symlink discards nothing.
+    if [ "$(readlink "$NODES_LINK")" != "../nodes" ]; then
+        echo "Re-pointing $NODES_LINK at ../nodes..."
+        rm "$NODES_LINK" && ln -s ../nodes "$NODES_LINK"
+    fi
+elif [ -d "$NODES_LINK" ]; then
+    # A real directory here predates the move and may hold node packs that exist
+    # nowhere else. Never clobber it — tell the user how to migrate it by hand.
+    echo "Warning: $NODES_LINK is a real directory, not a link to ./nodes." >&2
+    echo "         Custom nodes there are untracked. To migrate:" >&2
+    echo "           mv $NODES_LINK/* $PROJECT_DIR/nodes/ && rmdir $NODES_LINK" >&2
+    echo "           ln -s ../nodes $NODES_LINK" >&2
+else
+    echo "Linking $NODES_LINK -> ../nodes..."
+    ln -s ../nodes "$NODES_LINK"
+fi
+
 # 3. Create venv if it doesn't exist
 #if [ ! -d ".venv" ]; then
 #    echo "Creating virtual environment..."
