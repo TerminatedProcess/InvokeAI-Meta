@@ -226,6 +226,17 @@
     },
     {
       "category": "PATHS",
+      "default": "wildcards",
+      "description": "Path to directory of .txt wildcard files for dynamic prompts. A prompt reference like __poses__ is replaced with a line from poses.txt.",
+      "env_var": "INVOKEAI_WILDCARDS_DIR",
+      "literal_values": [],
+      "name": "wildcards_dir",
+      "required": false,
+      "type": "<class 'pathlib.Path'>",
+      "validation": {}
+    },
+    {
+      "category": "PATHS",
       "default": "flat",
       "description": "Strategy for organizing images into subfolders. 'flat' stores all images in a single folder. 'date' organizes by YYYY/MM/DD. 'type' organizes by image category. 'hash' uses first 2 characters of UUID for filesystem performance.",
       "env_var": "INVOKEAI_IMAGE_SUBFOLDER_STRATEGY",

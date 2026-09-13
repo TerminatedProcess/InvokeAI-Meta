@@ -17,7 +17,13 @@ set -gx INVOKE_URL http://localhost:9090
 
 # ── Python Environment ──
 alias envclean='rmpyall;uvclean'
-alias mkenv='gitupdate;mkuv $ENV_NAME $PY_VERSION;build-ui'
+alias mkenv='gitupdate;mkuv $ENV_NAME $PY_VERSION;build-ui;wiredata'
+# Link invokeai_data_git/{nodes,wildcards,...} into invokeai_data. The real work lives in
+# scripts/wire_data_dir.sh, shared with setup_dev.sh — without the links InvokeAI loads no
+# custom nodes and no wildcards, and says nothing about why.
+function wiredata
+    bash $INVOKE_DIR/scripts/wire_data_dir.sh
+end
 alias rmenv='rm -rf $ENV_NAME uv.lock .envrc; exit'
 function install
     echo "Installing ./setup_dev.sh"

@@ -23,6 +23,7 @@ DEVELOPMENT
 MAINTENANCE
   clean             Remove frontend dist, vite cache, __pycache__ dirs
   logs              Tail the InvokeAI log file
+  wiredata          Link invokeai_data_git (nodes, wildcards) into invokeai_data
 
 GIT
   gitupdate         Sync main and mryan branches with upstream
