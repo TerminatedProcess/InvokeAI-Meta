@@ -186,6 +186,7 @@ class InvokeAIAppConfig(BaseSettings):
     db_dir:                        Path = Field(default=Path("databases"),  description="Path to InvokeAI databases directory.")
     outputs_dir:                   Path = Field(default=Path("outputs"),    description="Path to directory for outputs.")
     fonts_dir:                     Path = Field(default=Path("fonts"),      description="Path to directory for custom fonts.")
+    wildcards_dir:                 Path = Field(default=Path("wildcards"),  description="Path to directory of .txt wildcard files for dynamic prompts. A prompt reference like __poses__ is replaced with a line from poses.txt.")
     image_subfolder_strategy: IMAGE_SUBFOLDER_STRATEGY = Field(default="flat", description="Strategy for organizing images into subfolders. 'flat' stores all images in a single folder. 'date' organizes by YYYY/MM/DD. 'type' organizes by image category. 'hash' uses first 2 characters of UUID for filesystem performance.")
     custom_nodes_dir:              Path = Field(default=Path("nodes"),      description="Path to directory for custom nodes.")
     style_presets_dir:      Path = Field(default=Path("style_presets"),      description="Path to directory for style presets.")
@@ -420,6 +421,11 @@ class InvokeAIAppConfig(BaseSettings):
     def fonts_path(self) -> Path:
         """Path to the custom fonts directory, resolved to an absolute path."""
         return self._resolve(self.fonts_dir)
+
+    @property
+    def wildcards_path(self) -> Path:
+        """Path to the dynamic-prompt wildcards directory, resolved to an absolute path."""
+        return self._resolve(self.wildcards_dir)
 
     @property
     def db_path(self) -> Path:

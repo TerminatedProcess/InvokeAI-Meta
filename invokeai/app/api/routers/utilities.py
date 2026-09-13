@@ -8,6 +8,7 @@ from urllib.parse import quote
 
 import torch
 from dynamicprompts.generators import CombinatorialPromptGenerator, RandomPromptGenerator
+from dynamicprompts.wildcards import WildcardManager
 from fastapi import Body, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.routing import APIRouter
@@ -91,22 +92,28 @@ def parse_dynamicprompts(
     generator: Union[RandomPromptGenerator, CombinatorialPromptGenerator]
     error: Optional[str] = None
 
+    # Resolve `__wildcard__` references against the configured wildcards directory, so a prompt can pull
+    # a line from `<wildcards_path>/<name>.txt`. A missing directory is not an error: WildcardManager
+    # simply finds no collections, and unknown wildcards are reported below (combinatorial) or left as
+    # literal text (random), which is the pre-wildcard behaviour.
+    wildcard_manager = WildcardManager(ApiDependencies.invoker.services.configuration.wildcards_path)
+
     # An unknown wildcard used as a variant value sends the combinatorial generator into an infinite
     # loop, so bail out early with a clear message instead of hanging the request (and with it the UI
     # preview). The random generator handles unknown wildcards gracefully, so only the combinatorial
     # path is guarded.
     if combinatorial:
-        missing_wildcards = find_missing_wildcards(prompt)
+        missing_wildcards = find_missing_wildcards(prompt, wildcard_manager)
         if missing_wildcards:
             wildcards = ", ".join(missing_wildcards)
             return DynamicPromptsResponse(prompts=[prompt], error=f"No values found for wildcard(s): {wildcards}")
 
     try:
         if combinatorial:
-            generator = CombinatorialPromptGenerator()
+            generator = CombinatorialPromptGenerator(wildcard_manager=wildcard_manager)
             prompts = generator.generate(prompt, max_prompts=max_prompts)
         else:
-            generator = RandomPromptGenerator(seed=seed)
+            generator = RandomPromptGenerator(wildcard_manager=wildcard_manager, seed=seed)
             prompts = generator.generate(prompt, num_images=max_prompts)
     except ParseException as e:
         prompts = [prompt]
