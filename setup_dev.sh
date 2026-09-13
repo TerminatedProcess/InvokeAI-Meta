@@ -46,37 +46,10 @@ for link in scripts/hub_import.py scripts/hub_update.py scripts/model_compare; d
     fi
 done
 
-# 2b. Wire the tracked parts of the data directory into place.
-# invokeai_data/ holds models, databases and outputs, so it is gitignored wholesale.
-# But some of what lives under it is source we want versioned — custom nodes, dynamic
-# prompt wildcards. Those are kept in ./invokeai_data_git (tracked) and symlinked into
-# invokeai_data, which is the only path InvokeAI itself looks at. Without this step a
-# fresh clone silently loads no custom nodes and no wildcards, with nothing to explain why.
-GIT_DATA_DIR="$PROJECT_DIR/invokeai_data_git"
-mkdir -p "$DATA_DIR"
-for target in "$GIT_DATA_DIR"/*/; do
-    [ -d "$target" ] || continue            # no-op if invokeai_data_git is empty
-    name="$(basename "$target")"
-    link="$DATA_DIR/$name"
-    # Relative, so the pair keeps working if the repo is cloned to a different path.
-    rel="../invokeai_data_git/$name"
-    if [ -L "$link" ]; then
-        # Re-point a stale link. Removing a symlink discards nothing.
-        if [ "$(readlink "$link")" != "$rel" ]; then
-            echo "Re-pointing $link -> $rel"
-            rm "$link" && ln -s "$rel" "$link"
-        fi
-    elif [ -d "$link" ]; then
-        # A real directory here predates the split and may hold files that exist
-        # nowhere else. Never clobber it — tell the user how to migrate by hand.
-        echo "Warning: $link is a real directory, not a link to $rel." >&2
-        echo "         Its contents are untracked. To migrate:" >&2
-        echo "           mv $link/* $target && rmdir $link && ln -s $rel $link" >&2
-    else
-        echo "Linking $link -> $rel"
-        ln -s "$rel" "$link"
-    fi
-done
+# 2b. Link the tracked parts of the data directory (custom nodes, wildcards) into
+# invokeai_data. Shared with the `wiredata` shell function so there is one implementation.
+echo "Wiring tracked data-dir files..."
+bash "$PROJECT_DIR/scripts/wire_data_dir.sh"
 
 # 3. Create venv if it doesn't exist
 #if [ ! -d ".venv" ]; then

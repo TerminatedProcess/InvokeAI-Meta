@@ -1,8 +1,18 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 import pytest
+from dynamicprompts.wildcards import WildcardManager
 
 from invokeai.app.util.dynamicprompts import find_missing_wildcards
+
+
+@pytest.fixture
+def wildcard_manager(tmp_path: Path) -> WildcardManager:
+    """A manager over a directory holding a single `poses.txt` wildcard."""
+    (tmp_path / "poses.txt").write_text("standing\nkneeling\n", encoding="utf-8")
+    return WildcardManager(tmp_path)
 
 
 def test_find_missing_wildcards_detects_unknown_wildcard_in_variant() -> None:
@@ -29,3 +39,22 @@ def test_find_missing_wildcards_ignores_prompts_without_wildcards(prompt: str) -
 
 def test_find_missing_wildcards_dedupes_repeated_unknown_wildcards() -> None:
     assert find_missing_wildcards("{__nope__|a} {__nope__|b} {__other__|c}") == ["nope", "other"]
+
+
+def test_find_missing_wildcards_resolves_against_a_wildcard_manager(wildcard_manager: WildcardManager) -> None:
+    # A wildcard backed by a file on disk generates fine, so it must not be reported as missing.
+    assert find_missing_wildcards("{__poses__|a}", wildcard_manager) == []
+
+
+def test_find_missing_wildcards_still_reports_unknown_names_with_a_manager(
+    wildcard_manager: WildcardManager,
+) -> None:
+    # Only the names the manager cannot resolve hang the generator.
+    assert find_missing_wildcards("{__poses__|a} {__nope__|b}", wildcard_manager) == ["nope"]
+
+
+def test_find_missing_wildcards_without_a_manager_treats_every_wildcard_as_missing(tmp_path: Path) -> None:
+    # Default behaviour resolves nothing against disk, so even a real file is reported. Callers that
+    # have a wildcards directory must pass its manager in.
+    (tmp_path / "poses.txt").write_text("standing\n", encoding="utf-8")
+    assert find_missing_wildcards("{__poses__|a}") == ["poses"]
