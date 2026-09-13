@@ -41,6 +41,9 @@ const slice = createSlice({
     maxPromptsChanged: (state, action: PayloadAction<number>) => {
       state.maxPrompts = action.payload;
     },
+    combinatorialChanged: (state, action: PayloadAction<boolean>) => {
+      state.combinatorial = action.payload;
+    },
     promptsChanged: (state, action: PayloadAction<string[]>) => {
       state.prompts = action.payload;
       state.isLoading = false;
@@ -62,6 +65,7 @@ const slice = createSlice({
 
 export const {
   maxPromptsChanged,
+  combinatorialChanged,
   promptsChanged,
   parsingErrorChanged,
   isErrorChanged,

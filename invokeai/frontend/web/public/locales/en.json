@@ -1920,6 +1920,7 @@
         "showDynamicPrompts": "Show Dynamic Prompts",
         "dynamicPrompts": "Dynamic Prompts",
         "maxPrompts": "Max Prompts",
+        "combinatorial": "Combinatorial",
         "promptsPreview": "Prompts Preview",
         "seedBehaviour": {
             "label": "Seed Behaviour",
