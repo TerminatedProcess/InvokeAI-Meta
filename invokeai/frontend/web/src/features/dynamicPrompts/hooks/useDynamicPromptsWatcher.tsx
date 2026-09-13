@@ -5,6 +5,7 @@ import {
   isLoadingChanged,
   parsingErrorChanged,
   promptsChanged,
+  selectDynamicPromptsCombinatorial,
   selectDynamicPromptsMaxPrompts,
 } from 'features/dynamicPrompts/store/dynamicPromptsSlice';
 import { getShouldProcessPrompt } from 'features/dynamicPrompts/util/getShouldProcessPrompt';
@@ -22,10 +23,11 @@ export const useDynamicPromptsWatcher = () => {
   // The prompt to process is derived from the preset-modified prompts
   const presetModifiedPrompts = useAppSelector(selectPresetModifiedPrompts);
   const maxPrompts = useAppSelector(selectDynamicPromptsMaxPrompts);
+  const combinatorial = useAppSelector(selectDynamicPromptsCombinatorial);
 
   const debouncedUpdateDynamicPrompts = useMemo(
     () =>
-      debounce(async (positivePrompt: string, maxPrompts: number) => {
+      debounce(async (positivePrompt: string, maxPrompts: number, combinatorial: boolean) => {
         // Try to fetch the dynamic prompts and store in state
         try {
           const req = dispatch(
@@ -33,6 +35,7 @@ export const useDynamicPromptsWatcher = () => {
               {
                 prompt: positivePrompt,
                 max_prompts: maxPrompts,
+                combinatorial,
               },
               { subscribe: false }
             )
@@ -58,6 +61,7 @@ export const useDynamicPromptsWatcher = () => {
     const cachedPrompts = utilitiesApi.endpoints.dynamicPrompts.select({
       prompt: presetModifiedPrompts.positive,
       max_prompts: maxPrompts,
+      combinatorial,
     })(state).data;
 
     if (cachedPrompts) {
@@ -80,6 +84,6 @@ export const useDynamicPromptsWatcher = () => {
       dispatch(isLoadingChanged(true));
     }
 
-    debouncedUpdateDynamicPrompts(presetModifiedPrompts.positive, maxPrompts);
-  }, [debouncedUpdateDynamicPrompts, dispatch, getState, maxPrompts, presetModifiedPrompts]);
+    debouncedUpdateDynamicPrompts(presetModifiedPrompts.positive, maxPrompts, combinatorial);
+  }, [combinatorial, debouncedUpdateDynamicPrompts, dispatch, getState, maxPrompts, presetModifiedPrompts]);
 };

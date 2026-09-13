@@ -1,11 +1,7 @@
 import { CompositeNumberInput, CompositeSlider, FormControl, FormLabel } from '@invoke-ai/ui-library';
 import { useAppDispatch, useAppSelector } from 'app/store/storeHooks';
 import { InformationalPopover } from 'common/components/InformationalPopover/InformationalPopover';
-import {
-  maxPromptsChanged,
-  selectDynamicPromptsCombinatorial,
-  selectDynamicPromptsMaxPrompts,
-} from 'features/dynamicPrompts/store/dynamicPromptsSlice';
+import { maxPromptsChanged, selectDynamicPromptsMaxPrompts } from 'features/dynamicPrompts/store/dynamicPromptsSlice';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -21,7 +17,6 @@ const CONSTRAINTS = {
 
 const ParamDynamicPromptsMaxPrompts = () => {
   const maxPrompts = useAppSelector(selectDynamicPromptsMaxPrompts);
-  const combinatorial = useAppSelector(selectDynamicPromptsCombinatorial);
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
 
@@ -32,8 +27,9 @@ const ParamDynamicPromptsMaxPrompts = () => {
     [dispatch]
   );
 
+  // Caps the prompt count in both modes: combinations enumerated, or random draws taken.
   return (
-    <FormControl isDisabled={!combinatorial}>
+    <FormControl>
       <InformationalPopover feature="dynamicPromptsMaxPrompts" inPortal={false}>
         <FormLabel>{t('dynamicPrompts.maxPrompts')}</FormLabel>
       </InformationalPopover>
