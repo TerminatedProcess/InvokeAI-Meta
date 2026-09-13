@@ -1,0 +1,4 @@
+sitting, __poses_sitting_back__, __look_behind__
+standing, __poses_standing_back__, __look_behind__
+__poses_knees_squat_back__, __look_behind__
+lying, __poses_lying_back__, __look_behind__

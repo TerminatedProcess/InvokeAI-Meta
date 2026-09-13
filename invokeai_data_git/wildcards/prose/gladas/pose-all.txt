@@ -1,0 +1,7 @@
+__not_so/pose-candid__
+__not_so/pose-casual__
+__not_so/pose-eating-drinking__
+__not_so/pose-gun-fu__
+__not_so/pose-moody__
+__not_so/pose-running__
+__not_so/pose-walking__

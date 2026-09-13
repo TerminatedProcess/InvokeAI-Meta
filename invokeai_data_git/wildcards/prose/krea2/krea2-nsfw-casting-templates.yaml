@@ -1,0 +1,474 @@
+# =============================================================================
+# Krea 2 NSFW CASTING-SHEET templates (LoRA multi-pose progression product)
+# Tags: __uw-krea2-nsfw-casting/router|template|leaf|pool/*__
+# Root key: uw-krea2-nsfw-casting
+# version: 6
+# =============================================================================
+#
+# WHY THIS FILE EXISTS (READ BEFORE EDITING)
+# ------------------------------------------
+# This is NOT a normal Krea 2 room/selfie template file.
+# Normal __uw-krea2-nsfw/*__ templates build one cohesive eight-clause photographic
+# paragraph (medium → subject → single pose → wardrobe → environment → lighting →
+# camera → treatment) for a single figure in one stance.
+#
+# Casting-sheet prompts describe ONE widescreen image that contains the SAME
+# character repeated in a LEFT-TO-RIGHT sequence of poses (typically 5 panels).
+# The Casting LoRA was trained on a rigid natural-language formula. Drifting too
+# far from that formula reduces reliability (author: "if you change the base
+# prompt too much you might need to cherrypick").
+#
+# WORD BUDGET — EXPLICITLY EXEMPTED
+# ---------------------------------
+# Pack-wide guidance (~110–130 words, hard max ~140) does NOT apply here.
+# Multi-pose sequences require long pose clauses. Expansions routinely exceed
+# 140–200+ words. Do not "fix" casting templates by trimming pose language
+# down to the room-template budget. Keep formula fidelity first.
+#
+# LoRA TAGS
+# ---------
+# Do NOT embed <lora:...> strings in this file. Load the Casting LoRA (and any
+# character LoRAs) in the ComfyUI workflow / Lora Manager. Wildcard text is
+# prompt language only.
+#
+# SFW / NSFW
+# ----------
+# NSFW product. Pull identity from __uw-shared/common/*__ and optional outfit
+# atoms from __uw-shared/nsfw/wardrobe/*__. Never pull __uw-shared/sfw/*__.
+#
+# ROUTER RULE
+# -----------
+# Register templates ONLY under
+#   __uw-krea2-nsfw-casting/router/landscape-casting-sheet-pics__
+# Never add these L2s to bedroom/bathroom/hotel/… room routers in
+# krea2-nsfw-templates.yaml.
+#
+# ASPECT / RESOLUTION (workflow, not wildcard text)
+# -------------------------------------------------
+# Author trained at 1696x1024; also suggests other wide sizes (e.g. 1920x1088).
+# Use a landscape canvas when testing these tags.
+#
+# BASE FORMULA (author)
+# ---------------------
+# A realistic photograph of a [DESCRIBE SUBJECT], she is posing in 5 different
+# [DESCRIBE VIEW] poses, the first pose on the left she is wearing clothes and
+# facing the viewer, the second pose she is naked nude and facing to the right,
+# the third pose she is naked nude facing the viewer, the fourth pose she is
+# naked nude facing to the left, the fifth pose she is naked nude facing away
+# from the viewer showing her butt, the background is [DESCRIBE BACKGROUND]
+#
+# AUTHOR EXAMPLE PROMPTS (reference — do not copy LoRA tags into expansions)
+# --------------------------------------------------------------------------
+# Example A:
+# A realistic photograph of beautiful rlyhelena, with long hair, flawless skin,
+# big beautiful eyes and long eyelashes and a smile. she is posing in 5 different
+# standing, thighs up poses, the first pose on the left she is wearing a white
+# fishnet leotard and facing the viewer, the second pose she is naked nude and
+# facing to the right, the third pose she is naked nude with her full front
+# facing the viewer, the fourth pose she is naked nude facing to the left, the
+# fifth pose she is naked nude facing away from the viewer showing her butt,
+# the background is a continuous white photo studio backdrop
+#
+# Example B:
+# A realistic photograph of a cute 25-year-old woman. She has big eyes, fair skin,
+# pink blush, and winged eyeliner, long platinum blonde hair and bangs. She is
+# posing in 6 different full body poses, the first pose on the left she is naked
+# nude on her hands and knees on a chair facing away from the viewer with her
+# butt up, the second pose she is naked nude and facing to the right, the third
+# pose she is naked nude facing the viewer, the fourth pose she is naked nude
+# facing to the left, the fifth pose she is naked nude facing away from the
+# viewer showing her butt, the sixth pose she is naked nude facing the viewer
+# with cum spattered all over her face and hair, the background is an office.
+# Highly detailed, sharp focus, high contrast.
+#
+# Example C (lingerie progression / cosplay first panel):
+# A realistic photograph of a blonde 34 year old woman, she is posing in 5
+# different poses, the first pose on the left she is wearing clothes an anime
+# cosplay of sailor moon and facing the viewer, the second pose she is wearing
+# underwear and bra and facing to the right, the third pose she is she is wearing
+# underwear and bra facing the viewer, the fourth pose she is she is wearing
+# underwear and bra facing to the left, the fifth pose she is she is wearing
+# underwear and bra facing away from the viewer showing her butt, the background
+# is in a nerd convention
+#
+# V1 TEMPLATE IDEAS IN THIS FILE
+# ------------------------------
+# 1) casting-sheet-clothed-to-nude
+#    Panel 1 clothed facing viewer → panels 2–5 nude angle ladder.
+# 2) casting-sheet-dynamic-then-nude-angles
+#    Panel 1 clothed dynamic pose → panels 2–5 nude angle ladder.
+# 3) casting-sheet-dynamic-then-undress
+#    Panel 1 clothed dynamic pose → panels 2–5 correlated undress (one garment
+#    removed per panel with facing turns).
+# 4) casting-sheet-dynamic-then-undress-front
+#    Panel 1 clothed dynamic pose → panel 2 top-off facing right → panel 3
+#    lowers-off facing left → panel 4 bra-off panties-only diagonal lookback
+#    (butt toward frame corner, face over shoulder at camera) → panel 5 nude
+#    facing viewer in a cute pose.
+# 5) casting-sheet-dynamic-then-undress-front-action
+#    Same P1–P4 ladder as undress-front; panel 5 starts "naked nude" then nests a
+#    shared solo action pose (fingering / toy / hitachi / panties-aside). Nude +
+#    panties-aside is intentional (panties pulled aside on an otherwise nude body).
+#    No partner actions. Separate L2 from cute P5 closer.
+#
+# OUT OF SCOPE FOR V1
+# -------------------
+# 6-pose / cum-finish variants, character-trigger appendices, SFW casting,
+# inline LoRA tags, registering into room routers.
+# =============================================================================
+
+uw-krea2-nsfw-casting:
+  # Local atom pools (casting-only). Prefer extending these over editing room packs.
+  # Key depth under root: pool → element → family (3 levels). Family = leaf list.
+  pool:
+    shot:
+      casting-sheet:
+      - 2::A realistic photograph of
+      - A photorealistic photograph of
+      - A realistic wide photograph of
+
+    view:
+      casting:
+      - full body
+      - standing
+      - standing, thighs up
+      - standing full body
+
+    dynamic-first-pose:
+      casting:
+      # Clothed dynamic panel-1 body positions (Idea 2 + Idea 3). Outfit is separate.
+      - on her hands and knees facing away from the viewer with her butt up
+      - bent forward at the waist with her hands on her knees, looking back over her shoulder
+      - kneeling upright with her knees apart, torso turned slightly toward the viewer
+      - kneeling on all fours on a low chair facing away from the viewer with her butt up
+      - standing and bent over with her hands on her thighs, looking back at the viewer
+      - squatting low with her elbows on her knees, looking toward the viewer
+      - on her knees leaning forward with her chest toward the floor, looking to the side
+
+    first-outfit:
+      casting:
+      # Reuse shared NSFW wardrobe composers for variety (no SFW pulls).
+      - 3::__uw-shared/nsfw/wardrobe/lingerie-composer__
+      - 2::__uw-shared/nsfw/wardrobe/semi-nsfw-composer__
+      - 2::__uw-shared/nsfw/wardrobe/cosplay-composer__
+      - 2::casual clothes
+      - 1::a simple white tank top and shorts
+      - 1::a fitted blouse and skirt
+      - 1::a short dress
+
+    pose:
+      casting-sheet-clothed-to-nude:
+      - >-
+          she is posing in 5 different __uw-krea2-nsfw-casting/pool/view/casting__ poses,
+          the first pose on the left she is wearing __uw-krea2-nsfw-casting/pool/first-outfit/casting__ and facing the viewer,
+          the second pose she is naked nude and facing to the right,
+          the third pose she is naked nude facing the viewer,
+          the fourth pose she is naked nude facing to the left,
+          the fifth pose she is naked nude facing away from the viewer showing her butt
+      casting-sheet-dynamic-then-nude-angles:
+      - >-
+          she is posing in 5 different __uw-krea2-nsfw-casting/pool/view/casting__ poses,
+          the first pose on the left she is __uw-krea2-nsfw-casting/pool/dynamic-first-pose/casting__, wearing __uw-krea2-nsfw-casting/pool/first-outfit/casting__,
+          the second pose she is naked nude and facing to the right,
+          the third pose she is naked nude facing the viewer,
+          the fourth pose she is naked nude facing to the left,
+          the fifth pose she is naked nude facing away from the viewer showing her butt
+      casting-sheet-dynamic-then-undress:
+      # Each line is a FULL correlated undress sequence (do not split across independent tags).
+      - >-
+          she is posing in 5 different __uw-krea2-nsfw-casting/pool/view/casting__ poses,
+          the first pose on the left she is __uw-krea2-nsfw-casting/pool/dynamic-first-pose/casting__, wearing a __uw-shared/nsfw/wardrobe/color__ blouse, skirt, bra and panties,
+          the second pose she has removed the blouse and is facing to the right in her bra, skirt and panties,
+          the third pose she has dropped the skirt and is facing the viewer in her bra and panties,
+          the fourth pose she has removed the bra and is facing to the left in only her panties,
+          the fifth pose she is naked nude facing away from the viewer showing her butt
+      - >-
+          she is posing in 5 different __uw-krea2-nsfw-casting/pool/view/casting__ poses,
+          the first pose on the left she is __uw-krea2-nsfw-casting/pool/dynamic-first-pose/casting__, wearing a __uw-shared/nsfw/wardrobe/color__ dress over a bra and panties,
+          the second pose she has slipped the dress off her shoulders and is facing to the right with the dress at her waist,
+          the third pose she has stepped out of the dress and is facing the viewer in her bra and panties,
+          the fourth pose she has unhooked the bra and is facing to the left holding it aside in only her panties,
+          the fifth pose she is naked nude facing away from the viewer showing her butt
+      - >-
+          she is posing in 5 different __uw-krea2-nsfw-casting/pool/view/casting__ poses,
+          the first pose on the left she is __uw-krea2-nsfw-casting/pool/dynamic-first-pose/casting__, wearing a __uw-shared/nsfw/wardrobe/color__ jacket over a top, shorts, bra and panties,
+          the second pose she has removed the jacket and is facing to the right in her top, shorts, bra and panties,
+          the third pose she has pulled the top off and is facing the viewer in her bra, shorts and panties,
+          the fourth pose she has dropped the shorts and is facing to the left in her bra and panties,
+          the fifth pose she is naked nude facing away from the viewer showing her butt
+      - >-
+          she is posing in 5 different __uw-krea2-nsfw-casting/pool/view/casting__ poses,
+          the first pose on the left she is __uw-krea2-nsfw-casting/pool/dynamic-first-pose/casting__, wearing a __uw-shared/nsfw/wardrobe/color__ sweater, jeans, bra and panties,
+          the second pose she has taken off the sweater and is facing to the right in her bra and jeans,
+          the third pose she has unbuttoned and lowered the jeans and is facing the viewer in her bra and panties,
+          the fourth pose she has removed the bra and is facing to the left in only her panties,
+          the fifth pose she is naked nude facing away from the viewer showing her butt
+      casting-sheet-dynamic-then-undress-front:
+      # Undress-front sequence: P2 right / P3 left / P4 lookback / P5 nude cute.
+      # Banned closers: nude facing away from the viewer showing her butt (P5 must face viewer).
+      - >-
+          she is posing in 5 different __uw-krea2-nsfw-casting/pool/view/casting__ poses,
+          the first pose on the left she is __uw-krea2-nsfw-casting/pool/dynamic-first-pose/casting__, wearing a __uw-shared/nsfw/wardrobe/color__ blouse, skirt, bra and panties,
+          the second pose she has removed the blouse and is facing to the right in her bra, skirt and panties,
+          the third pose she has dropped the skirt and is facing to the left in her bra and panties,
+          the fourth pose she has removed the bra and is standing in only her panties, body turned on a diagonal with her butt angled toward the corner of the frame, looking back over her shoulder at the camera,
+          the fifth pose she is naked nude facing the viewer, __uw-krea2-nsfw-casting/pool/cute-final-pose/casting__
+      - >-
+          she is posing in 5 different __uw-krea2-nsfw-casting/pool/view/casting__ poses,
+          the first pose on the left she is __uw-krea2-nsfw-casting/pool/dynamic-first-pose/casting__, wearing a __uw-shared/nsfw/wardrobe/color__ dress over a bra and panties,
+          the second pose she has pulled the dress down so her upper body is bare with the dress at her hips or waist still covering her lowers and is facing to the right in her bra,
+          the third pose she has stepped out of the dress and is facing to the left in her bra and panties,
+          the fourth pose she has removed the bra and is standing in only her panties, body turned on a diagonal with her butt angled toward the corner of the frame, looking back over her shoulder at the camera,
+          the fifth pose she is naked nude facing the viewer, __uw-krea2-nsfw-casting/pool/cute-final-pose/casting__
+      # Jacket: P2 may shed jacket and top together so a 5-panel sheet hits top-off/bra+lowers on panel 2.
+      - >-
+          she is posing in 5 different __uw-krea2-nsfw-casting/pool/view/casting__ poses,
+          the first pose on the left she is __uw-krea2-nsfw-casting/pool/dynamic-first-pose/casting__, wearing a __uw-shared/nsfw/wardrobe/color__ jacket over a top, shorts, bra and panties,
+          the second pose she has removed the jacket and top and is facing to the right in her bra, shorts and panties,
+          the third pose she has dropped the shorts and is facing to the left in her bra and panties,
+          the fourth pose she has removed the bra and is standing in only her panties, body turned on a diagonal with her butt angled toward the corner of the frame, looking back over her shoulder at the camera,
+          the fifth pose she is naked nude facing the viewer, __uw-krea2-nsfw-casting/pool/cute-final-pose/casting__
+      - >-
+          she is posing in 5 different __uw-krea2-nsfw-casting/pool/view/casting__ poses,
+          the first pose on the left she is __uw-krea2-nsfw-casting/pool/dynamic-first-pose/casting__, wearing a __uw-shared/nsfw/wardrobe/color__ sweater, jeans, bra and panties,
+          the second pose she has taken off the sweater and is facing to the right in her bra and jeans,
+          the third pose she has taken off the jeans and is facing to the left in her bra and panties,
+          the fourth pose she has removed the bra and is standing in only her panties, body turned on a diagonal with her butt angled toward the corner of the frame, looking back over her shoulder at the camera,
+          the fifth pose she is naked nude facing the viewer, __uw-krea2-nsfw-casting/pool/cute-final-pose/casting__
+      casting-sheet-dynamic-then-undress-front-action:
+      # Same P1–P4 as undress-front; P5 nests shared solo action (no facing-viewer shell).
+      # Solo only — no partner actions. Panties-aside OK with "naked nude" shell.
+      - >-
+          she is posing in 5 different __uw-krea2-nsfw-casting/pool/view/casting__ poses,
+          the first pose on the left she is __uw-krea2-nsfw-casting/pool/dynamic-first-pose/casting__, wearing a __uw-shared/nsfw/wardrobe/color__ blouse, skirt, bra and panties,
+          the second pose she has removed the blouse and is facing to the right in her bra, skirt and panties,
+          the third pose she has dropped the skirt and is facing to the left in her bra and panties,
+          the fourth pose she has removed the bra and is standing in only her panties, body turned on a diagonal with her butt angled toward the corner of the frame, looking back over her shoulder at the camera,
+          the fifth pose she is naked nude, __uw-krea2-nsfw-casting/pool/final-action-pose/casting__
+      - >-
+          she is posing in 5 different __uw-krea2-nsfw-casting/pool/view/casting__ poses,
+          the first pose on the left she is __uw-krea2-nsfw-casting/pool/dynamic-first-pose/casting__, wearing a __uw-shared/nsfw/wardrobe/color__ dress over a bra and panties,
+          the second pose she has pulled the dress down so her upper body is bare with the dress at her hips or waist still covering her lowers and is facing to the right in her bra,
+          the third pose she has stepped out of the dress and is facing to the left in her bra and panties,
+          the fourth pose she has removed the bra and is standing in only her panties, body turned on a diagonal with her butt angled toward the corner of the frame, looking back over her shoulder at the camera,
+          the fifth pose she is naked nude, __uw-krea2-nsfw-casting/pool/final-action-pose/casting__
+      # Jacket: P2 may shed jacket and top together so a 5-panel sheet hits top-off/bra+lowers on panel 2.
+      - >-
+          she is posing in 5 different __uw-krea2-nsfw-casting/pool/view/casting__ poses,
+          the first pose on the left she is __uw-krea2-nsfw-casting/pool/dynamic-first-pose/casting__, wearing a __uw-shared/nsfw/wardrobe/color__ jacket over a top, shorts, bra and panties,
+          the second pose she has removed the jacket and top and is facing to the right in her bra, shorts and panties,
+          the third pose she has dropped the shorts and is facing to the left in her bra and panties,
+          the fourth pose she has removed the bra and is standing in only her panties, body turned on a diagonal with her butt angled toward the corner of the frame, looking back over her shoulder at the camera,
+          the fifth pose she is naked nude, __uw-krea2-nsfw-casting/pool/final-action-pose/casting__
+      - >-
+          she is posing in 5 different __uw-krea2-nsfw-casting/pool/view/casting__ poses,
+          the first pose on the left she is __uw-krea2-nsfw-casting/pool/dynamic-first-pose/casting__, wearing a __uw-shared/nsfw/wardrobe/color__ sweater, jeans, bra and panties,
+          the second pose she has taken off the sweater and is facing to the right in her bra and jeans,
+          the third pose she has taken off the jeans and is facing to the left in her bra and panties,
+          the fourth pose she has removed the bra and is standing in only her panties, body turned on a diagonal with her butt angled toward the corner of the frame, looking back over her shoulder at the camera,
+          the fifth pose she is naked nude, __uw-krea2-nsfw-casting/pool/final-action-pose/casting__
+
+    cute-final-pose:
+      casting:
+      # Panel-5 nude closer for undress-front (facing viewer).
+      - shy smile with her hands at her sides
+      - cute peace sign beside her face
+      - hands clasped behind her back with a soft smile
+      - slight hip cock and a playful smile
+      - hands lightly covering her chest with a coy smile
+      - tilting her head with a sweet closed-mouth smile
+
+    final-action-pose:
+      casting:
+      # Panel-5 closer for undress-front-action — shared solo pools only (no partner).
+      # Panties-aside is allowed with the "naked nude," shell (aside garment on nude body).
+      - __uw-shared/nsfw/pose/action-solo-fingering__
+      - __uw-shared/nsfw/pose/action-solo-toy__
+      - __uw-shared/nsfw/pose/action-solo-hitachi__
+      - __uw-shared/nsfw/pose/action-solo-panties-aside__
+
+    wardrobe:
+      casting-panel-consistency:
+      - the same woman with identical face, hair, and body across every pose
+      - the identical woman repeated across all five poses
+      - matching face and body proportions across every panel pose
+
+    environment:
+      casting-backdrop:
+      - a continuous white photo studio backdrop
+      - a seamless light gray photo studio backdrop
+      - a plain black backdrop
+      - a continuous black photo studio backdrop
+      - an office
+      - a simple office interior with a desk in soft focus
+      - a nerd convention hall with blurred booths behind her
+      - a clean bedroom with neutral walls
+      - a minimal hotel room with plain walls
+      - a plain concrete studio wall
+
+    lighting:
+      casting-sheet:
+      - even soft studio lighting across all poses
+      - bright even photography lighting
+      - soft diffused studio light with gentle shadows
+      - clean ambient indoor light across the sequence
+
+    camera:
+      casting-sheet:
+      - wide framing that shows all five poses in one horizontal image
+      - wide landscape framing with the poses arranged left to right
+      - a single wide shot containing the full pose sequence left to right
+      - landscape multi-pose framing with sharp focus on each figure
+
+    treatment:
+      casting-sheet:
+      - highly detailed, sharp focus, high contrast
+      - highly detailed, sharp focus, high contrast, natural skin texture
+      - sharp focus, high contrast, fine detail across every pose
+      - highly detailed photoreal finish, sharp focus, high contrast
+
+  router:
+    landscape-casting-sheet-pics:
+    - __uw-krea2-nsfw-casting/template/casting-sheet-clothed-to-nude__
+    - __uw-krea2-nsfw-casting/template/casting-sheet-dynamic-then-nude-angles__
+    - __uw-krea2-nsfw-casting/template/casting-sheet-dynamic-then-undress__
+    - __uw-krea2-nsfw-casting/template/casting-sheet-dynamic-then-undress-front__
+    - __uw-krea2-nsfw-casting/template/casting-sheet-dynamic-then-undress-front-action__
+
+  template:
+    casting-sheet-clothed-to-nude:
+    - >-
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-clothed-to-nude/medium__
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-clothed-to-nude/subject__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-clothed-to-nude/pose__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-clothed-to-nude/wardrobe__,
+        the background is __uw-krea2-nsfw-casting/leaf/casting-sheet-clothed-to-nude/environment__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-clothed-to-nude/lighting__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-clothed-to-nude/camera__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-clothed-to-nude/treatment__. [23:9]
+    casting-sheet-dynamic-then-nude-angles:
+    - >-
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-nude-angles/medium__
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-nude-angles/subject__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-nude-angles/pose__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-nude-angles/wardrobe__,
+        the background is __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-nude-angles/environment__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-nude-angles/lighting__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-nude-angles/camera__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-nude-angles/treatment__. [23:9]
+    casting-sheet-dynamic-then-undress:
+    - >-
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress/medium__
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress/subject__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress/pose__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress/wardrobe__,
+        the background is __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress/environment__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress/lighting__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress/camera__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress/treatment__. [23:9]
+    casting-sheet-dynamic-then-undress-front:
+    - >-
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress-front/medium__
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress-front/subject__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress-front/pose__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress-front/wardrobe__,
+        the background is __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress-front/environment__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress-front/lighting__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress-front/camera__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress-front/treatment__. [23:9]
+    casting-sheet-dynamic-then-undress-front-action:
+    - >-
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress-front-action/medium__
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress-front-action/subject__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress-front-action/pose__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress-front-action/wardrobe__,
+        the background is __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress-front-action/environment__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress-front-action/lighting__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress-front-action/camera__,
+        __uw-krea2-nsfw-casting/leaf/casting-sheet-dynamic-then-undress-front-action/treatment__. [23:9]
+  leaf:
+    casting-sheet-clothed-to-nude:
+      medium:
+      - __uw-krea2-nsfw-casting/pool/shot/casting-sheet__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-krea2-nsfw-casting/pool/pose/casting-sheet-clothed-to-nude__
+      wardrobe:
+      - __uw-krea2-nsfw-casting/pool/wardrobe/casting-panel-consistency__
+      environment:
+      - __uw-krea2-nsfw-casting/pool/environment/casting-backdrop__
+      lighting:
+      - __uw-krea2-nsfw-casting/pool/lighting/casting-sheet__
+      camera:
+      - __uw-krea2-nsfw-casting/pool/camera/casting-sheet__
+      treatment:
+      - __uw-krea2-nsfw-casting/pool/treatment/casting-sheet__
+    casting-sheet-dynamic-then-nude-angles:
+      medium:
+      - __uw-krea2-nsfw-casting/pool/shot/casting-sheet__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-krea2-nsfw-casting/pool/pose/casting-sheet-dynamic-then-nude-angles__
+      wardrobe:
+      - __uw-krea2-nsfw-casting/pool/wardrobe/casting-panel-consistency__
+      environment:
+      - __uw-krea2-nsfw-casting/pool/environment/casting-backdrop__
+      lighting:
+      - __uw-krea2-nsfw-casting/pool/lighting/casting-sheet__
+      camera:
+      - __uw-krea2-nsfw-casting/pool/camera/casting-sheet__
+      treatment:
+      - __uw-krea2-nsfw-casting/pool/treatment/casting-sheet__
+    casting-sheet-dynamic-then-undress:
+      medium:
+      - __uw-krea2-nsfw-casting/pool/shot/casting-sheet__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-krea2-nsfw-casting/pool/pose/casting-sheet-dynamic-then-undress__
+      wardrobe:
+      - __uw-krea2-nsfw-casting/pool/wardrobe/casting-panel-consistency__
+      environment:
+      - __uw-krea2-nsfw-casting/pool/environment/casting-backdrop__
+      lighting:
+      - __uw-krea2-nsfw-casting/pool/lighting/casting-sheet__
+      camera:
+      - __uw-krea2-nsfw-casting/pool/camera/casting-sheet__
+      treatment:
+      - __uw-krea2-nsfw-casting/pool/treatment/casting-sheet__
+    casting-sheet-dynamic-then-undress-front:
+      medium:
+      - __uw-krea2-nsfw-casting/pool/shot/casting-sheet__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-krea2-nsfw-casting/pool/pose/casting-sheet-dynamic-then-undress-front__
+      wardrobe:
+      - __uw-krea2-nsfw-casting/pool/wardrobe/casting-panel-consistency__
+      environment:
+      - __uw-krea2-nsfw-casting/pool/environment/casting-backdrop__
+      lighting:
+      - __uw-krea2-nsfw-casting/pool/lighting/casting-sheet__
+      camera:
+      - __uw-krea2-nsfw-casting/pool/camera/casting-sheet__
+      treatment:
+      - __uw-krea2-nsfw-casting/pool/treatment/casting-sheet__
+    casting-sheet-dynamic-then-undress-front-action:
+      medium:
+      - __uw-krea2-nsfw-casting/pool/shot/casting-sheet__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-krea2-nsfw-casting/pool/pose/casting-sheet-dynamic-then-undress-front-action__
+      wardrobe:
+      - __uw-krea2-nsfw-casting/pool/wardrobe/casting-panel-consistency__
+      environment:
+      - __uw-krea2-nsfw-casting/pool/environment/casting-backdrop__
+      lighting:
+      - __uw-krea2-nsfw-casting/pool/lighting/casting-sheet__
+      camera:
+      - __uw-krea2-nsfw-casting/pool/camera/casting-sheet__
+      treatment:
+      - __uw-krea2-nsfw-casting/pool/treatment/casting-sheet__

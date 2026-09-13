@@ -1,0 +1,3 @@
+__composition_with_pov_intimate_pose_trap__, ((__character_trap__, __faces__):0.9), ((__locations__):0.8)
+__composition_with_intimate_pose_clothes_trap__, ((__character_trap__, __faces__):0.9), ((__locations__):0.8)
+__composition_view_angle_pose_intimate_user_specials_trap__

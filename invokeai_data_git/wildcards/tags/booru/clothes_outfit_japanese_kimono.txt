@@ -1,0 +1,9 @@
+kimono, ((obi, obiage, obijime, obidome):0.7)
+kimono, hakama, hakama skirt
+kimono, hakama, hakama short skirt
+kosode, hakama, hakama skirt
+kimono, ((obi, obiage, obijime, obidome):0.7), furisode
+kimono, short kimono, ((obi, obiage, obijime, obidome):0.7)
+yukata, ((obi):0.7)
+yukata, short yukata, ((obi):0.7)
+yukata, bath yukata, ((obi):0.7)

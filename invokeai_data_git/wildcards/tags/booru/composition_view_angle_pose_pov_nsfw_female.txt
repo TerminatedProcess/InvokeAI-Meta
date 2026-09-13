@@ -1,0 +1,6 @@
+from below, assertive female, __poses_pov_intimate_acts_below__, ((clothes lift, clothes pull):0.9), ((unworn clothes, __clothes_intimate_female__):0.8)
+from below, from behind, ((looking back):0.8), assertive female, girl on top, __poses_pov_intimate_acts_below_back__, ass, ((clothes lift, clothes pull):0.9), ((unworn clothes, __clothes_intimate_female__):0.8)
+from below, __poses_pov_intimate_acts_below__, ((clothes lift, clothes pull):0.9), ((unworn clothes, __clothes_intimate_female__):0.8)
+from below, from behind, ((looking back):0.8), girl on top, __poses_pov_intimate_acts_below_back__, ass, ((clothes lift, clothes pull):0.9), ((unworn clothes, __clothes_intimate_female__):0.8)
+from above, __poses_pov_intimate_acts__, ((clothes lift, clothes pull):0.9), ((unworn clothes, __clothes_intimate_female__):0.8)
+from above, from behind, ((looking back):0.8), __poses_pov_intimate_acts_back__, ass, ((clothes lift, clothes pull):0.9), ((unworn clothes, __clothes_intimate_female__):0.8)

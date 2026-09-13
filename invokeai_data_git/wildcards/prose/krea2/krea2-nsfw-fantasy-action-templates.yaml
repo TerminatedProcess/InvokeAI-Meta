@@ -1,0 +1,705 @@
+# Krea 2 NSFW FANTASY-ACTION templates (Model A #16 — explicit fantasy × intimate-action)
+# Tags: __uw-krea2-nsfw/router|template|leaf/*__  (SAME root as room/theme/fantasy files)
+# Root key: uw-krea2-nsfw
+# Hard rule: register ONLY under fantasy-action routers — NEVER room/theme/vanilla-action/casting/core-fantasy/fantasy-selfie (Model A #16)
+# Pulls: __uw-shared/common/*__ + __uw-shared/fantasy/*__ primarily; fantasy-action-partner-missionary(+wide) also reuse nsfw camera/intimate-documentary + finish/missionary-side|landscape (Batch C correlated finish).
+# Partner stays anonymous "her partner" + optional short partner-cue (no second fantasy race). Scene affinity hard-wires identity+env.
+# No phone/selfie L2s.
+# Landscape action L2s register ONLY under landscape-fantasy-intimate-action-pics — NEVER portrait-fantasy-intimate-action-*
+# version: 13
+# 2026-08-13: Missionary pose absorbs coupling; strip scene-geometry from fantasy-action-partner-missionary(+wide).
+# 2026-08-02: Retarget fingering/toy/masturbating LoRA embeds to nsfw/acts/ (post LoRA library reorg).
+# 2026-07-30: Batch C fantasy missionary — extended dual-subject assembly (scene-geometry + partner-body/action); nsfw documentary+finish; keep castle locks.
+# 2026-07-29: fantasy-action-solo-toy dildo LoRA embed + pose rewrite (Batch B).
+# 2026-07-29: fantasy-action-solo-fingering LoRA embed + action-fingering-front medium; fantasy-action-solo-masturbating LoRA embed.
+uw-krea2-nsfw:
+  router:
+    # Master union — even mix of all 16 fantasy-action L2s (Model A #16)
+    portrait-fantasy-intimate-action-pics:
+    - __uw-krea2-nsfw/template/fantasy-action-solo-fingering__
+    - __uw-krea2-nsfw/template/fantasy-action-solo-toy__
+    - __uw-krea2-nsfw/template/fantasy-action-solo-hitachi__
+    - __uw-krea2-nsfw/template/fantasy-action-solo-panties-aside__
+    - __uw-krea2-nsfw/template/fantasy-action-solo-masturbating__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-missionary__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-cowgirl__
+    - __uw-krea2-nsfw/template/fantasy-action-riding-cowgirl__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-oral__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-implied-oral__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-doggystyle__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-reverse-cowgirl__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-massage__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-handjob__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-giving-oral__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-prone__
+
+    # Solo sub-router (Batch B C1) — 5 solo L2s only
+    portrait-fantasy-intimate-action-solo-pics:
+    - __uw-krea2-nsfw/template/fantasy-action-solo-fingering__
+    - __uw-krea2-nsfw/template/fantasy-action-solo-toy__
+    - __uw-krea2-nsfw/template/fantasy-action-solo-hitachi__
+    - __uw-krea2-nsfw/template/fantasy-action-solo-panties-aside__
+    - __uw-krea2-nsfw/template/fantasy-action-solo-masturbating__
+
+    # Partner sub-router (Batch B C1) — 11 partner L2s including riding-cowgirl
+    portrait-fantasy-intimate-action-partner-pics:
+    - __uw-krea2-nsfw/template/fantasy-action-partner-missionary__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-cowgirl__
+    - __uw-krea2-nsfw/template/fantasy-action-riding-cowgirl__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-oral__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-implied-oral__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-doggystyle__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-reverse-cowgirl__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-massage__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-handjob__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-giving-oral__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-prone__
+
+    # Landscape-only fantasy-action router — NEVER on portrait-fantasy-intimate-action-* routers
+    landscape-fantasy-intimate-action-pics:
+    - __uw-krea2-nsfw/template/fantasy-action-partner-missionary-wide__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-cowgirl-wide__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-doggystyle-wide__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-prone-wide__
+    - __uw-krea2-nsfw/template/fantasy-action-riding-cowgirl-wide__
+    - __uw-krea2-nsfw/template/fantasy-action-partner-spooning-wide__
+    - __uw-krea2-nsfw/template/fantasy-action-solo-reclined-wide__
+
+  template:
+    fantasy-action-solo-fingering:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-fingering/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-fingering/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-fingering/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-fingering/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-fingering/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-fingering/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-fingering/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-fingering/treatment__. [3:4]
+    fantasy-action-solo-toy:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-toy/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-toy/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-toy/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-toy/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-toy/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-toy/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-toy/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-toy/treatment__. [3:4]
+    fantasy-action-solo-hitachi:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-hitachi/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-hitachi/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-hitachi/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-hitachi/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-hitachi/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-hitachi/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-hitachi/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-hitachi/treatment__. [3:4]
+    fantasy-action-solo-panties-aside:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-panties-aside/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-panties-aside/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-panties-aside/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-panties-aside/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-panties-aside/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-panties-aside/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-panties-aside/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-panties-aside/treatment__. [3:4]
+    fantasy-action-solo-masturbating:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-masturbating/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-masturbating/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-masturbating/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-masturbating/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-masturbating/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-masturbating/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-masturbating/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-masturbating/treatment__. [3:4]
+    fantasy-action-partner-missionary:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary/partner-body__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary/partner-action__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary/treatment__. [3:4]
+    fantasy-action-partner-cowgirl:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-cowgirl/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-cowgirl/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-cowgirl/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-cowgirl/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-cowgirl/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-cowgirl/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-cowgirl/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-cowgirl/treatment__. [3:4]
+    fantasy-action-riding-cowgirl:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-riding-cowgirl/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-riding-cowgirl/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-riding-cowgirl/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-riding-cowgirl/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-riding-cowgirl/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-riding-cowgirl/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-riding-cowgirl/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-riding-cowgirl/treatment__. [3:4]
+    fantasy-action-partner-oral:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-oral/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-oral/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-oral/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-oral/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-oral/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-oral/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-oral/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-oral/treatment__. [3:4]
+    fantasy-action-partner-implied-oral:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-implied-oral/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-implied-oral/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-implied-oral/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-implied-oral/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-implied-oral/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-implied-oral/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-implied-oral/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-implied-oral/treatment__. [3:4]
+    fantasy-action-partner-doggystyle:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-doggystyle/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-doggystyle/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-doggystyle/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-doggystyle/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-doggystyle/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-doggystyle/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-doggystyle/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-doggystyle/treatment__. [3:4]
+    fantasy-action-partner-reverse-cowgirl:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-reverse-cowgirl/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-reverse-cowgirl/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-reverse-cowgirl/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-reverse-cowgirl/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-reverse-cowgirl/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-reverse-cowgirl/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-reverse-cowgirl/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-reverse-cowgirl/treatment__. [3:4]
+    fantasy-action-partner-massage:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-massage/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-massage/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-massage/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-massage/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-massage/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-massage/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-massage/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-massage/treatment__. [3:4]
+    fantasy-action-partner-handjob:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-handjob/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-handjob/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-handjob/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-handjob/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-handjob/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-handjob/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-handjob/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-handjob/treatment__. [3:4]
+    fantasy-action-partner-giving-oral:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-giving-oral/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-giving-oral/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-giving-oral/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-giving-oral/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-giving-oral/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-giving-oral/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-giving-oral/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-giving-oral/treatment__. [3:4]
+    fantasy-action-partner-prone:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-prone/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-prone/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-prone/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-prone/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-prone/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-prone/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-prone/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-prone/treatment__. [3:4]
+    # --- Landscape action (Batch C3) — landscape router only ---
+    fantasy-action-partner-missionary-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary-wide/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary-wide/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary-wide/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary-wide/partner-body__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary-wide/partner-action__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary-wide/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary-wide/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary-wide/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-missionary-wide/treatment__. [16:9]
+    fantasy-action-partner-cowgirl-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-cowgirl-wide/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-cowgirl-wide/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-cowgirl-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-cowgirl-wide/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-cowgirl-wide/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-cowgirl-wide/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-cowgirl-wide/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-cowgirl-wide/treatment__. [16:9]
+    fantasy-action-partner-doggystyle-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-doggystyle-wide/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-doggystyle-wide/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-doggystyle-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-doggystyle-wide/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-doggystyle-wide/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-doggystyle-wide/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-doggystyle-wide/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-doggystyle-wide/treatment__. [16:9]
+    fantasy-action-partner-prone-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-prone-wide/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-prone-wide/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-prone-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-prone-wide/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-prone-wide/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-prone-wide/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-prone-wide/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-prone-wide/treatment__. [16:9]
+    fantasy-action-riding-cowgirl-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-riding-cowgirl-wide/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-riding-cowgirl-wide/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-riding-cowgirl-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-riding-cowgirl-wide/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-riding-cowgirl-wide/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-riding-cowgirl-wide/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-riding-cowgirl-wide/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-riding-cowgirl-wide/treatment__. [16:9]
+    fantasy-action-partner-spooning-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-spooning-wide/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-spooning-wide/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-spooning-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-spooning-wide/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-spooning-wide/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-spooning-wide/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-spooning-wide/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-partner-spooning-wide/treatment__. [4:3]
+    fantasy-action-solo-reclined-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-reclined-wide/medium__
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-reclined-wide/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-reclined-wide/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-reclined-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-reclined-wide/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-reclined-wide/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-reclined-wide/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-action-solo-reclined-wide/treatment__. [4:3]
+  leaf:
+    fantasy-action-solo-fingering:
+      medium:
+      - __uw-shared/fantasy/shot/action-fingering-front__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-forest__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-solo-fingering__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-forest__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-forest__
+      camera:
+      - __uw-shared/fantasy/camera/candid__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    fantasy-action-solo-toy:
+      medium:
+      - __uw-shared/fantasy/shot/candid__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-solo-toy__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-castle__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-castle__
+      camera:
+      - __uw-shared/fantasy/camera/candid__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    fantasy-action-solo-hitachi:
+      medium:
+      - __uw-shared/fantasy/shot/intimate-portrait__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-solo-hitachi__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-castle__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-castle__
+      camera:
+      - __uw-shared/fantasy/camera/intimate-portrait__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    fantasy-action-solo-panties-aside:
+      medium:
+      - __uw-shared/fantasy/shot/candid__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-tavern__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-solo-panties-aside__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-panties-aside-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-tavern__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-tavern__
+      camera:
+      - __uw-shared/fantasy/camera/candid__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    fantasy-action-solo-masturbating:
+      medium:
+      - __uw-shared/fantasy/shot/candid__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-forest__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-solo-masturbating__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-forest__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-forest__
+      camera:
+      - __uw-shared/fantasy/camera/candid__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    fantasy-action-partner-missionary:
+      medium:
+      - __uw-shared/fantasy/shot/action-missionary-side__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-partner-missionary__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      partner-body:
+      - __uw-shared/fantasy/partner-body/male-missionary__
+      partner-action:
+      - __uw-shared/fantasy/partner-action/male-missionary-hands__
+      environment:
+      - __uw-shared/fantasy/environment/action-castle__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-castle__
+      camera:
+      - __uw-shared/nsfw/camera/intimate-documentary__
+      treatment:
+      - __uw-shared/nsfw/finish/missionary-side__
+    fantasy-action-partner-cowgirl:
+      medium:
+      - __uw-shared/fantasy/shot/candid__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-tavern__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-partner-cowgirl__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-tavern__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-tavern__
+      camera:
+      - __uw-shared/fantasy/camera/candid__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    fantasy-action-riding-cowgirl:
+      medium:
+      - __uw-shared/fantasy/shot/action-pov__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-partner-riding-cowgirl__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-castle__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-castle__
+      camera:
+      - __uw-shared/fantasy/camera/action-pov__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    fantasy-action-partner-oral:
+      medium:
+      - __uw-shared/fantasy/shot/intimate-portrait__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-forest__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-partner-oral__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-forest__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-forest__
+      camera:
+      - __uw-shared/fantasy/camera/intimate-portrait__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    fantasy-action-partner-implied-oral:
+      medium:
+      - __uw-shared/fantasy/shot/intimate-portrait__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-partner-implied-oral__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-castle__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-castle__
+      camera:
+      - __uw-shared/fantasy/camera/intimate-portrait__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    fantasy-action-partner-doggystyle:
+      medium:
+      - __uw-shared/fantasy/shot/cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-ruins__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-partner-doggystyle__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-ruins__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-ruins__
+      camera:
+      - __uw-shared/fantasy/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+    fantasy-action-partner-reverse-cowgirl:
+      medium:
+      - __uw-shared/fantasy/shot/candid__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-tavern__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-partner-reverse-cowgirl__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-tavern__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-tavern__
+      camera:
+      - __uw-shared/fantasy/camera/candid__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    fantasy-action-partner-massage:
+      medium:
+      - __uw-shared/fantasy/shot/candid__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-partner-massage__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-castle__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-castle__
+      camera:
+      - __uw-shared/fantasy/camera/candid__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    fantasy-action-partner-handjob:
+      medium:
+      - __uw-shared/fantasy/shot/intimate-portrait__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-tavern__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-partner-handjob__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-tavern__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-tavern__
+      camera:
+      - __uw-shared/fantasy/camera/intimate-portrait__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    fantasy-action-partner-giving-oral:
+      medium:
+      - __uw-shared/fantasy/shot/intimate-portrait__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-ruins__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-partner-giving-oral__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-ruins__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-ruins__
+      camera:
+      - __uw-shared/fantasy/camera/intimate-portrait__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    fantasy-action-partner-prone:
+      medium:
+      - __uw-shared/fantasy/shot/cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-partner-prone__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-castle__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-castle__
+      camera:
+      - __uw-shared/fantasy/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+
+    # --- Landscape action (Batch C3) ---
+    fantasy-action-partner-missionary-wide:
+      medium:
+      - __uw-shared/fantasy/shot/action-missionary-landscape__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-partner-missionary-wide__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      partner-body:
+      - __uw-shared/fantasy/partner-body/male-missionary__
+      partner-action:
+      - __uw-shared/fantasy/partner-action/male-missionary-hands__
+      environment:
+      - __uw-shared/fantasy/environment/action-castle-landscape__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-castle__
+      camera:
+      - __uw-shared/nsfw/camera/intimate-documentary__
+      treatment:
+      - __uw-shared/nsfw/finish/missionary-landscape__
+    fantasy-action-partner-cowgirl-wide:
+      medium:
+      - __uw-shared/fantasy/shot/action-landscape__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-tavern__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-partner-cowgirl-wide__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-tavern-landscape__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-tavern__
+      camera:
+      - __uw-shared/fantasy/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    fantasy-action-partner-doggystyle-wide:
+      medium:
+      - __uw-shared/fantasy/shot/action-landscape__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-ruins__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-partner-doggystyle-wide__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-ruins-landscape__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-ruins__
+      camera:
+      - __uw-shared/fantasy/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+    fantasy-action-partner-prone-wide:
+      medium:
+      - __uw-shared/fantasy/shot/action-landscape__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-partner-prone-wide__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-castle-landscape__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-castle__
+      camera:
+      - __uw-shared/fantasy/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+    fantasy-action-riding-cowgirl-wide:
+      medium:
+      - __uw-shared/fantasy/shot/action-landscape__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-riding-cowgirl-wide__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-castle-landscape__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-castle__
+      camera:
+      - __uw-shared/fantasy/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    fantasy-action-partner-spooning-wide:
+      medium:
+      - __uw-shared/fantasy/shot/action-landscape__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-partner-spooning-wide__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-castle-landscape__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-castle__
+      camera:
+      - __uw-shared/fantasy/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    fantasy-action-solo-reclined-wide:
+      medium:
+      - __uw-shared/fantasy/shot/action-landscape__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-forest__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-action-solo-reclined-wide__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/action-fantasy__
+      environment:
+      - __uw-shared/fantasy/environment/action-forest-landscape__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-forest__
+      camera:
+      - __uw-shared/fantasy/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__

@@ -1,0 +1,99 @@
+# Krea 2 NSFW FANTASY-MONSTER-ACTION templates (Model A #19 — size-diff / partner-body cast × intimate-action)
+# Tags: __uw-krea2-nsfw/router|template|leaf/*__  (SAME root as room/theme/fantasy files)
+# Root key: uw-krea2-nsfw
+# Hard rule: register ONLY under fantasy-monster-action routers — NEVER room/theme/vanilla-action/casting/core-fantasy/fantasy-selfie/fantasy-action (Model A #19)
+# Pulls: __uw-shared/common/*__ + __uw-shared/fantasy/*__ only
+# Partner stays in pose via partner-body/{troll,knight} — never a second identity paragraph. Race-only identity-router/fantasy-forest.
+# No landscape twins in v1 (YAGNI). No phone/selfie L2s.
+# version: 3
+uw-krea2-nsfw:
+  router:
+    # Master union — even mix of all 3 fantasy-monster-action L2s (Model A #19)
+    portrait-fantasy-monster-action-pics:
+    - __uw-krea2-nsfw/template/fantasy-monster-standing-doggystyle__
+    - __uw-krea2-nsfw/template/fantasy-monster-upright-straddle__
+    - __uw-krea2-nsfw/template/fantasy-monster-knight-oral__
+
+  template:
+    fantasy-monster-standing-doggystyle:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-monster-standing-doggystyle/medium__
+        __uw-krea2-nsfw/leaf/fantasy-monster-standing-doggystyle/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-monster-standing-doggystyle/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-monster-standing-doggystyle/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-monster-standing-doggystyle/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-monster-standing-doggystyle/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-monster-standing-doggystyle/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-monster-standing-doggystyle/treatment__. [3:4]
+    fantasy-monster-upright-straddle:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-monster-upright-straddle/medium__
+        __uw-krea2-nsfw/leaf/fantasy-monster-upright-straddle/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-monster-upright-straddle/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-monster-upright-straddle/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-monster-upright-straddle/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-monster-upright-straddle/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-monster-upright-straddle/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-monster-upright-straddle/treatment__. [3:4]
+    fantasy-monster-knight-oral:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-monster-knight-oral/medium__
+        __uw-krea2-nsfw/leaf/fantasy-monster-knight-oral/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-monster-knight-oral/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-monster-knight-oral/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-monster-knight-oral/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-monster-knight-oral/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-monster-knight-oral/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-monster-knight-oral/treatment__. [3:4]
+  leaf:
+    fantasy-monster-standing-doggystyle:
+      medium:
+      - __uw-shared/fantasy/shot/cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-forest__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-monster-standing-doggystyle__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/cloak-stockings-boots__
+      environment:
+      - __uw-shared/fantasy/environment/action-forest__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-forest__
+      camera:
+      - __uw-shared/fantasy/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+    fantasy-monster-upright-straddle:
+      medium:
+      - __uw-shared/fantasy/shot/candid__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-forest__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-monster-upright-straddle__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/cloak-stockings-boots__
+      environment:
+      - __uw-shared/fantasy/environment/action-forest__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-forest__
+      camera:
+      - __uw-shared/fantasy/camera/candid__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    fantasy-monster-knight-oral:
+      medium:
+      - __uw-shared/fantasy/shot/intimate-portrait__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-forest__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-monster-knight-oral__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/action-forest__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-forest__
+      camera:
+      - __uw-shared/fantasy/camera/intimate-portrait__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__

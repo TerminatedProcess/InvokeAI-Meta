@@ -1,0 +1,13 @@
+indoors, mirror, bedroom, __lighting__
+indoors, mirror, bedroom, bed, nightstand, __lighting__
+indoors, mirror, bedroom, plush, __lighting__
+indoors, mirror, bathroom, __lighting__
+indoors, mirror, bathroom, bathtub, __lighting__
+indoors, mirror, bathroom, public restroom
+indoors, mirror, bathroom, shower
+indoors, mirror, bathroom, __lighting__
+indoors, mirror, fitting room, curtains
+indoors, mirror, dressing room, vanity table, __lighting__
+indoors, mirror, gym, locker room
+indoors, mirror, gym, weight rack, weight bench, __lighting__
+indoors, mirror, gym, __lighting__

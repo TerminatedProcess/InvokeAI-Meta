@@ -1,0 +1,17 @@
+__clothes_tops__, __clothes_bottoms__
+((__clothes_tops__):0.9), __clothes_bottoms__
+__clothes_tops__, ((__clothes_bottoms__):0.9)
+((__clothes_tops__, __clothes_bottoms__):0.9)
+__colors__ __clothes_dresses__, __clothes_dress_length__
+multicolored dress, __colors__ dress, ((__colors__ dress):0.8), __clothes_dresses__, __clothes_dress_length__
+gradient dress, __colors__ dress, ((__colors__ dress):0.8), __clothes_dresses__, __clothes_dress_length__
+two-tone dress, __colors__ dress, ((__colors__ dress):0.8), __clothes_dresses__, __clothes_dress_length__
+two-sided dress, __colors__ dress, ((__colors__ dress):0.8), __clothes_dresses__, __clothes_dress_length__
+__colors__ __clothes_swimsuit__
+__colors__ japanese clothes, __clothes_outfit_japanese__
+__colors__ maid, __clothes_outfit_maid__
+__colors__ school uniform, __clothes_outfit_school__
+__clothes_outfits_suit__
+__colors__ gym uniform, ((gym shirt, gym shorts, (buruma:0.5)):0.8)
+__clothes_outfits_special__
+__clothes_bodysuit__

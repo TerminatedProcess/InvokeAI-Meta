@@ -1,0 +1,10 @@
+nun, habit
+wedding dress
+overalls, __colors__ overalls, __colors__ shirt, __clothes_tops_shirt__
+__colors__ harem outfit, harem pants, tube top, anklet, earrings, bracelet, necklace
+__colors__ sportswear, multicolored clothes, __clothes_outfits_sportswear__
+__colors__ tuxedo, bowtie
+__colors__ pajamas
+__colors__ playboy bunny, ((strapless leotard, fake animal ears, rabbit ears, fake tail, rabbit tail, wrist cuffs, detached collar, pantyhose, bowtie):0.8)
+__colors__ translucent bunnysuit, ((strapless leotard, fake animal ears, rabbit ears, fake tail, rabbit tail, wrist cuffs, detached collar, thighhighs, bowtie):0.8)
+__colors__ idol clothes, __clothes_outfit_idol__

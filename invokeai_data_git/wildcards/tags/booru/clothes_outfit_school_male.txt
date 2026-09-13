@@ -1,0 +1,4 @@
+gakuran, pants, long sleeves
+summer uniform, short sleeves, necktie, cardigan vest, pants
+summer uniform, short sleeves, necktie, sweater vest, necktie
+winter uniform, long sleeves, necktie, blazer, ((pants):0.8)

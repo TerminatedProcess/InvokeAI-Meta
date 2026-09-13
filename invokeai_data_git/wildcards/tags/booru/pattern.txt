@@ -1,0 +1,8 @@
+argyle
+checkered
+print
+((__prints__):0.9), print
+polka dot
+striped
+((__stripes__):0.9), striped
+camouflage

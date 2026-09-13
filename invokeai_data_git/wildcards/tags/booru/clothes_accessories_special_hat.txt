@@ -1,0 +1,9 @@
+animal hat, ((bear hat):0.8)
+animal hat, ((rabbit hat):0.8)
+animal hat, ((cat hat):0.8)
+animal hat, ((dog hat):0.8)
+animal hat, ((fox hat):0.8)
+animal hat, ((penguin hat):0.8)
+animal hat, ((wolf hat):0.8)
+witch hat
+santa hat

@@ -1,0 +1,20 @@
+sunlight
+sunlight, light rays
+sunlight, sunbeam
+sunlight, dappled sunlight
+dark, dark room, crack of light
+dim lighting
+moonlight, light rays
+dark
+dark, darkness
+dark, shadow
+dark, shadow, ((window shadow):0.7)
+sunlight, __lighting_direction__
+sunlight, light rays, __lighting_direction__
+sunlight, sunbeam, __lighting_direction__
+sunlight, dappled sunlight, __lighting_direction__
+dark, dark room, crack of light, __lighting_direction__
+dim lighting, __lighting_direction__
+moonlight, light rays, __lighting_direction__
+dark, shadow, __lighting_direction__
+dark, shadow, ((window shadow):0.7), __lighting_direction__

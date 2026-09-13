@@ -1,0 +1,16 @@
+__colors__-framed eyewear
+tortoiseshell-framed eyewear
+rectangular eyewear
+rimless eyewear
+round eyewear
+semi-circular eyewear
+semi-rimless eyewear, over-rim eyewear
+semi-rimless eyewear, under-rim eyewear
+cat eye-framed eyewear, __colors__-framed eyewear
+rectangular eyewear, __colors__-framed eyewear
+rimless eyewear, __colors__-framed eyewear
+round eyewear, __colors__-framed eyewear
+semi-circular eyewear, __colors__-framed eyewear
+semi-rimless eyewear, over-rim eyewear, __colors__-framed eyewear
+semi-rimless eyewear, under-rim eyewear, __colors__-framed eyewear
+__clothes_accessories_special_glasses__

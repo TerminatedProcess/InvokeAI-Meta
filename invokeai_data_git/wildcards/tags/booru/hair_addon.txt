@@ -1,0 +1,46 @@
+ponytail
+ponytail, split ponytail
+ponytail, low ponytail
+ponytail, folded ponytail
+ponytail, high ponytail
+ponytail, short ponytail
+ponytail, wide ponytail
+side ponytail, ((ponytail):0.9)
+braided ponytail, ((ponytail):0.9)
+french braid, french braided ponytail, ((ponytail):0.9)
+twintails
+twintails, low twintails
+twintails, short twintails
+twintails, uneven twintails
+twintails, tri tails
+twintails, quad tails
+twintails, quin tails
+twintails, ((french braid, french braided twintails):0.9)
+braid
+braid, braided bangs
+braid, front braid
+braid, side braid
+braid, crown braid
+braid, single braid
+braid, multiple braids, twin braids
+braid, multiple braids, low twin braids
+braid, multiple braids, tri braids
+braid, multiple braids, quad braids
+hair bun
+hair bun, single hair bun
+hair bun, double bun
+hair bun, braided bun
+hair slicked back
+afro
+african braids, cornrows
+african braids, dreadlocks
+hair rings
+hair rings, ((feixianji):0.9)
+hair rings, ((katsuyamamage):0.9)
+hair rings, single hair ring
+half updo
+half updo, half up braid
+half updo, half up half down braid
+one side up
+two side up
+blunt ends

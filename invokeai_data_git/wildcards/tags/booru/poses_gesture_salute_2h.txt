@@ -1,0 +1,23 @@
+kuji-in
+mudra
+double \m/
+double \n/
+double thumbs up
+double thumbs down
+heart hands
+heart hands, ((thumbs down heart hands):0.8)
+heart hands, ((four-finger heart hands):0.8)
+heart hands, ((heart-shaped boob challenge):0.8)
+penetration gesture
+((paw pose):0.9)
+((claw pose):0.9)
+((bunny pose):0.9)
+((arms up, index fingers raised):0.8), ((horns pose):0.6)
+double middle finger
+double finger heart
+double finger gun
+w, ((double middle w):0.9)
+w, ((double inward w):0.9)
+w, ((double w):0.9)
+v, ((double inward v):0.9)
+v, ((double v):0.9)

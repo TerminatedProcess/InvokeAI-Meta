@@ -1,0 +1,15 @@
+sitting, __poses_sitting__, __look_front__
+sitting, __poses_sitting__, __poses_gesture_salute_2h__, __look_front__
+sitting, __poses_sitting__, __poses_arms_hands__, __look_front__
+standing, __poses_standing__, __look_front__
+standing, __poses_standing__, __look_front__
+standing, __poses_arms_hands__, __look_front__
+midair, __poses_midair__, __look_front__
+midair, __poses_midair__, __poses_gesture_salute__, __look_front__
+midair, __poses_midair__, __poses_arms_hands__, __look_front__
+__poses_knees_squat__, __look_front__
+__poses_knees_squat__, __look_front__
+__poses_knees_squat__, __look_front__
+lying, __poses_lying__, __look_front__
+lying, __poses_lying__, __poses_arms_hands__, __look_front__
+lying, __poses_lying__, __poses_gesture_salute_2h__, __look_front__

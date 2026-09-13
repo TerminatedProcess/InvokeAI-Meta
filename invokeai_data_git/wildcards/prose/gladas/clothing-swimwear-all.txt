@@ -1,0 +1,4 @@
+__not_so/clothing-swimwear-athletic__
+__not_so/clothing-swimwear-high-fashion__
+__not_so/clothing-swimwear-tactical__
+__not_so/clothing-swimwear-tropical__

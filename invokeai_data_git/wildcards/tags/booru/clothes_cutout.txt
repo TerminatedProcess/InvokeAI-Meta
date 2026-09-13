@@ -1,0 +1,7 @@
+__clothes_cutout_upper__
+__clothes_cutout_mid__
+__clothes_cutout_lower__
+__clothes_cutout_upper__, __clothes_cutout_mid__
+__clothes_cutout_upper__, __clothes_cutout_lower__
+__clothes_cutout_upper__, __clothes_cutout_mid__, __clothes_cutout_lower__
+__clothes_cutout_mid__, __clothes_cutout_lower__

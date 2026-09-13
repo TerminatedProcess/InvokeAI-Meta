@@ -1,0 +1,4 @@
+sitting, __poses_sitting_selfcare__, __look_front__
+standing, __poses_standing_selfcare__, __look_front__
+__poses_knees_squat_selfcare__, __look_front__
+lying, __poses_lying_selfcare__, __look_front__

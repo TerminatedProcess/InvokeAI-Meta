@@ -1,0 +1,7 @@
+__clothes_tops__, __clothes_bottoms__, ((pants pull, shorts pull):0.7)
+__colors__ japanese clothes, __clothes_outfit_japanese__, ((open clothes, kimono lift):0.7)
+__colors__ maid, __clothes_outfit_maid__, ((dress lift, skirt lift):0.7)
+__colors__ school uniform, __clothes_outfit_school__, ((skirt lift):0.7)
+__clothes_outfits_suit__, ((pants pull, skirt lift):0.7)
+__colors__ gym uniform, ((shorts pull):0.7)
+__colors__ idol clothes, __clothes_outfit_idol__, ((skirt lift):0.7)

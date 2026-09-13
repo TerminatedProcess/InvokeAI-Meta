@@ -1,0 +1,8 @@
+__clothes_bodysuit_details__, __clothes_bodysuit_mecha_type__
+__clothes_bodysuit_details__, wetsuit
+__clothes_bodysuit_details__, bikesuit, zipper
+__clothes_bodysuit_details__, catsuit, zipper
+__clothes_bodysuit_details__, __clothes_bodysuit_mecha_type__, clothing cutout, __clothes_cutout__
+__clothes_bodysuit_details__, wetsuit, ((partially unzipped):0.9)
+__clothes_bodysuit_details__, bikesuit, zipper, ((partially unzipped):0.9)
+__clothes_bodysuit_details__, catsuit, zipper, ((partially unzipped):0.9)

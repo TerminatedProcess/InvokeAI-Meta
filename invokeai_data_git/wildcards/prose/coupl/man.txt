@@ -1,0 +1,30 @@
+a 28-year-old man of Scandinavian descent with a square face, ash blonde shag cut, fair skin, light stubble, athletic build, wearing a denim jacket over a tee
+a 41-year-old man of South Asian descent with a round face, copper red sleek low bun, tan skin, short beard, average build, wearing a cashmere cardigan
+a 55-year-old man of Sub-Saharan African descent with a diamond face, white-gray locs, deep brown skin, clean-shaven, slim build, wearing a relaxed business blazer
+a 23-year-old man of Latin American descent with an oval face, black messy bun, tan skin, light stubble, petite build, wearing a plain casual tee
+a 62-year-old man of Mediterranean descent with a heart-shaped face, silver-gray loose curls, olive skin, full beard, curvy build, wearing a wool coat
+a 30-year-old man of East Asian descent with a square face, fiery red high ponytail, porcelain skin, clean-shaven, athletic build, wearing a sporty zip jacket
+a 47-year-old man of Middle Eastern and North African descent with an oblong face, dark brown braided crown, brown skin, short beard, average build, wearing an embroidered ethnic top
+a 19-year-old man of Slavic descent with a round face, strawberry blonde wolf cut, fair skin with freckles across the nose, clean-shaven, slim build, wearing a hoodie
+a 30-year-old man of Central Asian descent with a diamond face, platinum blonde with a subtle teal tint long braids, tan skin, light stubble, athletic build, wearing a turtleneck bodysuit
+a 66-year-old man of Southeast Asian descent with a square face, white-gray pixie cut, brown skin, short beard, petite build, wearing a linen shirt
+a 36-year-old man of multiracial descent with a heart-shaped face, auburn wolf cut, tan skin with freckles across the nose, light stubble, curvy build, wearing a leather jacket
+a 74-year-old man of Scandinavian descent with an oval face, white-gray long straight hair, fair skin, clean-shaven, average build, wearing a knit turtleneck
+a 27-year-old man of Andean indigenous descent with a round face, copper red messy bun, tan skin, short beard, athletic build, wearing workwear overalls
+a 50-year-old man of Sub-Saharan African descent with a diamond face, black wolf cut, deep brown skin, light stubble, plus-size build, wearing a relaxed business blazer
+a 21-year-old man of Mediterranean descent with a heart-shaped face, honey blonde loose curls, olive skin, clean-shaven, slim build, wearing a silk blouse
+a 66-year-old man of East Asian descent with a square face, silver-gray long braids, porcelain skin, short beard, average build, wearing a wool coat
+a 33-year-old man of Slavic descent with an oblong face, copper red with a subtle lavender tint locs, fair skin, light stubble, slim build, wearing a plain casual tee
+a 58-year-old man of South Asian descent with a round face, platinum blonde top knot, tan skin, full beard, curvy build, wearing a cashmere cardigan
+a 25-year-old man of Latin American descent with a diamond face, chestnut pixie cut, brown skin, clean-shaven, athletic build, wearing a sporty zip jacket
+a 45-year-old man of Central Asian descent with a heart-shaped face, strawberry blonde sleek low bun, olive skin, light stubble, average build, wearing an embroidered ethnic top
+a 30-year-old man of Southeast Asian descent with an oval face, black long straight hair, tan skin, short beard, petite build, wearing a denim jacket over a tee
+a 70-year-old man of Middle Eastern and North African descent with a square face, white-gray braided crown, brown skin, full beard, average build, wearing a wool coat
+a 39-year-old man of multiracial descent with a round face, black loose curls, fair skin, light stubble, athletic build, wearing a hoodie
+a 53-year-old man of Andean indigenous descent with a diamond face, honey blonde sleek low bun, tan skin, full beard, curvy build, wearing workwear overalls
+a 26-year-old man of Scandinavian descent with a heart-shaped face, fiery red with a subtle rose tint sleek bob, fair skin, clean-shaven, slim build, wearing a turtleneck bodysuit
+a 46-year-old man of Sub-Saharan African descent with an oblong face, silver-gray with a subtle teal tint shag cut, deep brown skin, short beard, plus-size build, wearing a leather jacket
+a 31-year-old man of East Asian descent with a round face, chestnut with a subtle teal tint coily afro, porcelain skin, clean-shaven, average build, wearing a plain casual tee
+a 63-year-old man of Mediterranean descent with a diamond face, auburn with a subtle lavender tint loose curls, olive skin, light stubble, curvy build, wearing a silk blouse
+a 36-year-old man of Slavic descent with a square face, white-gray coily afro, fair skin with freckles across the nose, short beard, athletic build, wearing a linen shirt
+a 55-year-old man of Central Asian descent with an oval face, honey blonde top knot, tan skin, light stubble, average build, wearing a knit turtleneck

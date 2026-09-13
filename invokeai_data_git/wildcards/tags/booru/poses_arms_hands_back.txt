@@ -1,0 +1,46 @@
+arm support
+arms behind back
+arm behind back
+arm behind back, __poses_gesture_salute__
+arms above head
+crossed wrists
+outstretched arms
+outstretched arm
+outstreched arm, __poses_gesture_salute__
+arm at side
+arms at side
+arm up
+arm up, __poses_gesture_salute__
+arms up
+arm behind head
+arm behind head, __poses_gesture_salute__
+((spread arms):0.8), ((airplane arms):0.7)
+crossed arms
+flexing
+flexing, __poses_gesture_salute__
+((outstretched arms):0.9), ((\o/, praise the sun):0.7)
+reaching
+shrugging
+a-pose
+v arms
+w arms
+w arms, __poses_gesture_salute__
+hand on hip
+hand on hip, __poses_gesture_salute__
+hands on hips
+hand on own neck
+hand on own chest
+hand on own shoulder
+hand on own stomach
+hand on own arm
+hand on own elbow
+hand on own ear
+hand on own head
+hand on own face
+hand on own forehead
+hand on own cheek
+hand on own chin
+hand on own chest, __poses_gesture_salute__
+hand on own stomach, __poses_gesture_salute__
+hand on own head, __poses_gesture_salute__
+__poses_gesture_salute__

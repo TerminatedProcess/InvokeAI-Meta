@@ -1,0 +1,1172 @@
+# Shared common atom pools (universal — safe in any template, SFW or NSFW)
+# Tags: __uw-shared/common/*__
+# Depth: max 3 key levels under uw-shared -> common -> element -> family
+# Leaves are full string terms; composed pools may reference other common sub-pools.
+# No negative/exclusion phrasing. Positive wording only (Krea 2).
+# Ported from _archive-user-wildcards/shared-sfw-data.yaml (character identity stack).
+# version: 52
+# 2026-08-22: treatment/intimate-portrait — drop sheen/polish/creamy grade lines (photoreal speckle stack on bare skin).
+# 2026-08-15: treatment/natural + natural-action — GOONSPACE phone-camera / unretouched amateur adjectives (post 139199687).
+# 2026-08-15: age/nsfw-birthday-18-25 + identity-router/natural-nsfw-birthday (ordinal banner lock).
+# 2026-08-15: skin/natural — detailed skin only; drop pores/peach-fuzz/vellus/blemish/imperfection lines.
+# 2026-08-14: Drop all freckle lines from skin/natural (photoreal over-speckle).
+# 2026-08-13: Literal body banks (willowy/silhouette/occupation-frame removed).
+# 2026-07-30: Batch B missionary reference alignment — treatment/amateur-phone-snapshot.
+# 2026-07-26: Batch A Task 1 — accessories/expression/makeup/effects atom harvest (shared pools only).
+# W2 review: drop optional particle effects from treatment/natural (photoreal room scenes).
+# W1 (2026-07-13): makeup/accessories/effects + treatment/analogue deepen; hair-color grp/fashion depth (pool expand only).
+
+uw-shared:
+  common:
+    age:
+      sfw-default:
+      - a young woman in her early twenties
+      - a woman in her mid-twenties
+      - a woman around twenty-five
+      - a woman in her early twenties
+      - a youthful mid-twenties woman
+      - an 18 year old woman
+      - a 19 year old woman
+      - a 20 year old woman
+      - a 21 year old woman
+      - a 22 year old woman
+      - a 24 year old woman
+      - a 25 year old woman
+      nsfw-default:
+      - a young woman in her early twenties
+      - a woman in her mid-twenties
+      - a woman around twenty-five
+      - a woman in her early twenties
+      - a youthful mid-twenties woman
+      - an 18 year old woman
+      - a 19 year old woman
+      - a 20 year old woman
+      - a 21 year old woman
+      - a 22 year old woman
+      - a 24 year old woman
+      - a 25 year old woman
+      id4-young-adult:
+      - an 18 year old woman
+      - a 19 year old woman
+      # Correlated numeric age + banner ordinal — use only on roleplay birthday L2s
+      nsfw-birthday-18-25:
+      - an 18 year old woman with a glitter HAPPY 18TH BIRTHDAY banner on the wall behind her
+      - a 19 year old woman with a glitter HAPPY 19TH BIRTHDAY banner on the wall behind her
+      - a 20 year old woman with a glitter HAPPY 20TH BIRTHDAY banner on the wall behind her
+      - a 21 year old woman with a glitter HAPPY 21ST BIRTHDAY banner on the wall behind her
+      - a 22 year old woman with a glitter HAPPY 22ND BIRTHDAY banner on the wall behind her
+      - a 23 year old woman with a glitter HAPPY 23RD BIRTHDAY banner on the wall behind her
+      - a 24 year old woman with a glitter HAPPY 24TH BIRTHDAY banner on the wall behind her
+      - a 25 year old woman with a glitter HAPPY 25TH BIRTHDAY banner on the wall behind her
+
+    high-lvl-subj:
+      id4-young-adult:
+      - a young woman
+
+    nationality:
+      grp1:
+      - french
+      - british
+      - swedish
+      - russian
+      - german
+      - canadian
+      - australian
+      - american
+      - irish
+      - dutch
+      grp2:
+      - italian
+      - spanish
+      - brazilian
+      - portuguese
+      - colombian
+      grp3:
+      - chinese
+      - thai
+      - korean
+      - japanese
+      - philippine
+      - vietnamese
+      - indonesian
+      grp4:
+      - mexican
+      - native american
+      - arabian
+      - persian
+      - indian
+      - turkish
+      - polynesian
+      - maori
+
+    skin-tone:
+      light:
+      - pale
+      - fair
+      - light
+      - ivory
+      - pale cool-toned
+      - fair with warm undertone
+      - light golden
+      - soft peachy
+      tan:
+      - tan
+      - olive
+      - warm olive
+      - honey
+      - golden tan
+      - sun-kissed tan
+      - light olive
+      - warm amber
+      brown:
+      - mocha
+      - caramel
+      - deep warm brown
+      - honey-brown
+      - warm caramel
+      - butterscotch
+      - rich caramel
+      - warm bronze
+
+    eye-color:
+      # Brace-safe short tokens for ethnicity-hair-coupled ("… {token} eyes")
+      blue:
+      - blue
+      - light blue
+      - dark blue
+      - turquoise
+      - ice blue
+      - gray-blue
+      - sapphire
+      green:
+      - green
+      - light green
+      - dark green
+      - olive green
+      - emerald
+      - seafoam
+      - moss green
+      brown:
+      - brown
+      - light brown
+      - hazel
+      - amber
+      - chocolate brown
+      - warm honey-brown
+      - dark walnut
+      # Full-phrase pools — empty-wired (not pulled by ethnicity-hair-coupled)
+      amber:
+      - warm amber eyes with a golden honey cast
+      - Warm amber-brown eyes with golden iris tones
+      - copper-amber eyes with soft rust striations
+      flecked:
+      - deep chocolate brown eyes with amber flecks
+      - emerald green eyes speckled with golden flecks
+      - hazel eyes shifting between green and warm brown
+      - olive green eyes with brown-gold iris flecks
+      heterochromia:
+      - striking heterochromia with one blue eye and one brown
+      - mismatched eyes, one vivid blue and one warm brown
+      - soft heterochromia pairing ice blue with hazel
+
+    hair-color:
+      # Natural undertone tokens — inserted mid-phrase before "hair"
+      # W1: deepen fashion-adjacent depth within existing grp coupling (P3); no coily/P2 styles here.
+      grp1-palette:
+      - blonde
+      - strawberry blonde
+      - ginger
+      - red
+      - auburn
+      - brown
+      - dark
+      - honey blonde
+      - ash blonde
+      - platinum blonde
+      - warm chestnut brown
+      - sandy light brown
+      - copper red
+      - soft auburn
+      - lived-in honey blonde
+      - warm golden blonde
+      - soft copper
+      - rose-gold blonde
+      - buttery pale blonde
+      - sun-bleached dirty blonde
+      grp2-palette:
+      - brown
+      - dark
+      - auburn
+      - ginger
+      - warm chestnut brown
+      - dark chocolate brown
+      - rich auburn
+      - toffee brown
+      - warm bronze-brown
+      - soft cinnamon brown
+      - caramel brown
+      - soft mahogany brown
+      - warm honey-caramel brown
+      - coppery auburn
+      - deep espresso-brown
+      grp3-palette:
+      - dark
+      - brown
+      - jet black
+      - blue-black
+      - dark chocolate brown
+      - soft black
+      - deep espresso brown
+      - inky black
+      - blue-sheen jet black
+      - inky blue-black
+      - soft charcoal black
+      - deep blue-violet black
+      grp4-palette:
+      - dark
+      - brown
+      - dark chocolate brown
+      - warm chestnut brown
+      - rich auburn
+      - soft black
+      - warm bronze-brown
+      - deep espresso brown
+      - warm honey-caramel brown
+      - soft mahogany brown
+      - coppery auburn
+      - blue-sheen jet black
+      # Fashion / dyed looks — NOT equal-weight in photoreal coupling (call explicitly)
+      fashion:
+      - burgundy wine-red
+      - soft rose-gold
+      - caramel ombré
+      - dark-to-blonde ombré
+      - blonde money-piece
+      - platinum money-piece
+      - copper money-piece
+      - soft balayage brunette
+      - lived-in caramel balayage
+      - dark-root caramel ombré
+      - espresso-to-honey balayage
+      - face-framing blonde money-piece
+      - burgundy-wine violet
+      - soft rose-gold ombré
+      - 1::split-dye black-and-blonde
+      - 1::cherry red
+      - 1::pastel rose pink
+      - 1::deep burgundy
+
+    hair:
+      grp1:
+      - Her long __uw-shared/common/hair-color/grp1-palette__ hair is gathered in a messy bun
+      - Her long wavy __uw-shared/common/hair-color/grp1-palette__ hair falls loose over her shoulders
+      - Her long straight __uw-shared/common/hair-color/grp1-palette__ hair is worn in a high ponytail
+      - Her extra long __uw-shared/common/hair-color/grp1-palette__ hair is braided in a single thick braid
+      - Her long curly __uw-shared/common/hair-color/grp1-palette__ hair has soft face-framing layers
+      - Her long __uw-shared/common/hair-color/grp1-palette__ hair is pinned in a low loose bun
+      - Her long __uw-shared/common/hair-color/grp1-palette__ hair is styled half-up half-down
+      - Her long __uw-shared/common/hair-color/grp1-palette__ hair has curtain bangs and a soft wave
+      - Her short __uw-shared/common/hair-color/grp1-palette__ hair is tucked behind one ear
+      - Her shoulder-length wavy __uw-shared/common/hair-color/grp1-palette__ hair frames her face
+      - Her chin-length __uw-shared/common/hair-color/grp1-palette__ bob has a soft side part
+      - Her long __uw-shared/common/hair-color/grp1-palette__ hair falls in soft beach waves past her shoulders
+      - Her long __uw-shared/common/hair-color/grp1-palette__ hair is twisted into a loose side braid
+      - Her long __uw-shared/common/hair-color/grp1-palette__ hair is twisted into a soft low chignon
+      - Her __uw-shared/common/hair-color/grp1-palette__ hair is styled in two small space buns
+      - Her shoulder-length __uw-shared/common/hair-color/grp1-palette__ hair is cut in a blunt lob
+      - Her long __uw-shared/common/hair-color/grp1-palette__ hair is slicked back in a wet-look style
+      - Her long __uw-shared/common/hair-color/grp1-palette__ hair is woven into a classic French braid
+      - Her long __uw-shared/common/hair-color/grp1-palette__ hair falls in glossy Hollywood waves
+      - Her shoulder-length __uw-shared/common/hair-color/grp1-palette__ hair is a shaggy wolf cut
+      - Her short __uw-shared/common/hair-color/grp1-palette__ hair is a textured bixie cut
+      - Her __uw-shared/common/hair-color/grp1-palette__ hair is twisted into a sleek French twist
+      - Her __uw-shared/common/hair-color/grp1-palette__ hair is wrapped in a high ballet bun
+      - Her long __uw-shared/common/hair-color/grp1-palette__ hair is worn in a bubble ponytail
+      grp2:
+      - Her long thick __uw-shared/common/hair-color/grp2-palette__ hair falls in soft waves over her shoulders
+      - Her long wavy __uw-shared/common/hair-color/grp2-palette__ hair is gathered in a messy bun
+      - Her long straight __uw-shared/common/hair-color/grp2-palette__ hair is worn in a high ponytail
+      - Her long curly __uw-shared/common/hair-color/grp2-palette__ hair has soft face-framing layers
+      - Her long __uw-shared/common/hair-color/grp2-palette__ hair is pinned in a low loose bun
+      - Her long __uw-shared/common/hair-color/grp2-palette__ hair is styled half-up half-down
+      - Her long __uw-shared/common/hair-color/grp2-palette__ hair has curtain bangs and a soft wave
+      - Her shoulder-length wavy __uw-shared/common/hair-color/grp2-palette__ hair frames her face
+      - Her chin-length __uw-shared/common/hair-color/grp2-palette__ bob has a soft side part
+      - Her long __uw-shared/common/hair-color/grp2-palette__ hair is swept into a low side ponytail
+      - Her extra long __uw-shared/common/hair-color/grp2-palette__ hair is braided in a single thick braid
+      - Her short __uw-shared/common/hair-color/grp2-palette__ hair is tucked behind one ear
+      - Her long voluminous __uw-shared/common/hair-color/grp2-palette__ hair is clipped up in a casual claw-clip twist
+      - Her long curly __uw-shared/common/hair-color/grp2-palette__ hair falls in soft defined curls
+      - Her shoulder-length __uw-shared/common/hair-color/grp2-palette__ hair has soft layered ends
+      - Her long __uw-shared/common/hair-color/grp2-palette__ hair is loosely braided with a soft ribbon finish
+      - Her long thick __uw-shared/common/hair-color/grp2-palette__ hair is swept into a high voluminous ponytail
+      - Her long __uw-shared/common/hair-color/grp2-palette__ hair falls in glossy Hollywood waves
+      - Her __uw-shared/common/hair-color/grp2-palette__ hair is pinned in twisted milkmaid braids
+      - Her long thick __uw-shared/common/hair-color/grp2-palette__ hair is worn in a bubble ponytail
+      - Her __uw-shared/common/hair-color/grp2-palette__ hair is twisted into a soft French twist
+      - Her shoulder-length __uw-shared/common/hair-color/grp2-palette__ hair is a soft wolf cut
+      grp3:
+      - Her long straight sleek __uw-shared/common/hair-color/grp3-palette__ hair falls past her shoulders
+      - Her long straight __uw-shared/common/hair-color/grp3-palette__ hair is worn in a high ponytail
+      - Her long __uw-shared/common/hair-color/grp3-palette__ hair is pinned in a neat low bun
+      - Her shoulder-length straight __uw-shared/common/hair-color/grp3-palette__ hair has soft layers framing her face
+      - Her long straight __uw-shared/common/hair-color/grp3-palette__ hair has a clean center part
+      - Her chin-length __uw-shared/common/hair-color/grp3-palette__ bob has a soft side part
+      - Her long __uw-shared/common/hair-color/grp3-palette__ hair is styled in a sleek half-up twist
+      - Her long straight __uw-shared/common/hair-color/grp3-palette__ hair is tucked behind one ear
+      - Her medium-length layered __uw-shared/common/hair-color/grp3-palette__ hair falls with a soft side part
+      - Her long __uw-shared/common/hair-color/grp3-palette__ hair is braided in a single neat braid
+      - Her short __uw-shared/common/hair-color/grp3-palette__ hair is tucked behind one ear
+      - Her long straight __uw-shared/common/hair-color/grp3-palette__ hair falls loose with a blunt cut fringe
+      - Her long sleek __uw-shared/common/hair-color/grp3-palette__ hair is worn in a low polished ponytail
+      - Her long __uw-shared/common/hair-color/grp3-palette__ hair is twisted into a neat topknot
+      - Her shoulder-length __uw-shared/common/hair-color/grp3-palette__ hair is cut in a blunt lob
+      - Her long straight __uw-shared/common/hair-color/grp3-palette__ hair has a soft fringe and silk-smooth finish
+      - Her medium-length sleek __uw-shared/common/hair-color/grp3-palette__ hair falls with a clean center part
+      - Her straight __uw-shared/common/hair-color/grp3-palette__ hair is cut in a classic hime style
+      - Her long straight __uw-shared/common/hair-color/grp3-palette__ hair falls in sleek mirror-smooth lengths
+      - Her __uw-shared/common/hair-color/grp3-palette__ hair is wrapped in a high ballet bun
+      - Her __uw-shared/common/hair-color/grp3-palette__ hair is twisted into a sleek French twist
+      - Her long straight __uw-shared/common/hair-color/grp3-palette__ hair has soft micro bangs
+      grp4:
+      - Her long wavy __uw-shared/common/hair-color/grp4-palette__ hair falls loose over her shoulders
+      - Her long curly __uw-shared/common/hair-color/grp4-palette__ hair has soft face-framing layers
+      - Her long textured __uw-shared/common/hair-color/grp4-palette__ hair is gathered in a messy bun
+      - Her shoulder-length wavy __uw-shared/common/hair-color/grp4-palette__ hair frames her face
+      - Her long __uw-shared/common/hair-color/grp4-palette__ hair is worn in a high ponytail with soft volume
+      - Her long __uw-shared/common/hair-color/grp4-palette__ hair is pinned in a low loose bun
+      - Her long __uw-shared/common/hair-color/grp4-palette__ hair has a deep side part and soft waves
+      - Her chin-length wavy __uw-shared/common/hair-color/grp4-palette__ bob has a soft side part
+      - Her long voluminous __uw-shared/common/hair-color/grp4-palette__ hair falls in loose curls
+      - Her long __uw-shared/common/hair-color/grp4-palette__ hair is styled half-up half-down with soft texture
+      - Her short wavy __uw-shared/common/hair-color/grp4-palette__ hair is tucked behind one ear
+      - Her extra long wavy __uw-shared/common/hair-color/grp4-palette__ hair is twisted into a loose side braid
+      - Her long __uw-shared/common/hair-color/grp4-palette__ hair is woven into a soft braided crown
+      - Her long soft __uw-shared/common/hair-color/grp4-palette__ curls fall loosely around her shoulders
+      - Her long __uw-shared/common/hair-color/grp4-palette__ hair falls in a voluminous blowout wave
+      - Her long textured __uw-shared/common/hair-color/grp4-palette__ hair is pulled into a low textured ponytail
+      - Her shoulder-length __uw-shared/common/hair-color/grp4-palette__ curls are swept to one side
+      - Her long __uw-shared/common/hair-color/grp4-palette__ hair falls in glossy Hollywood waves
+      - Her __uw-shared/common/hair-color/grp4-palette__ hair is pinned in twisted milkmaid braids
+      - Her long voluminous __uw-shared/common/hair-color/grp4-palette__ hair is worn in a bubble ponytail
+      - Her shoulder-length __uw-shared/common/hair-color/grp4-palette__ hair is a shaggy wolf cut
+      - Her __uw-shared/common/hair-color/grp4-palette__ hair is wrapped in a high ballet bun
+
+    ethnicity-hair-coupled:
+      natural:
+      - >-
+          __uw-shared/common/nationality/grp1__ with {__uw-shared/common/skin-tone/light__|__uw-shared/common/skin-tone/tan__} skin and {__uw-shared/common/eye-color/blue__|__uw-shared/common/eye-color/green__|__uw-shared/common/eye-color/brown__} eyes.
+          __uw-shared/common/hair/grp1__.
+      - >-
+          __uw-shared/common/nationality/grp2__ with tan skin and {__uw-shared/common/eye-color/blue__|__uw-shared/common/eye-color/green__|__uw-shared/common/eye-color/brown__} eyes.
+          __uw-shared/common/hair/grp2__.
+      - >-
+          __uw-shared/common/nationality/grp3__ with __uw-shared/common/skin-tone/light__ skin and __uw-shared/common/eye-color/brown__ eyes.
+          __uw-shared/common/hair/grp3__.
+      - >-
+          __uw-shared/common/nationality/grp4__ with {__uw-shared/common/skin-tone/brown__|__uw-shared/common/skin-tone/tan__} skin and {__uw-shared/common/eye-color/green__|__uw-shared/common/eye-color/brown__} eyes.
+          __uw-shared/common/hair/grp4__.
+
+    # Frame-only (stature / waist / limbs). Bust + rear come from breast-size + butt-size via body-archetype.
+    build-female:
+      petite:
+      - a short slim petite frame with a narrow waist
+      - a compact petite build with short limbs and a light frame
+      - a petite figure with a small waist and narrow shoulders
+      - a slim petite body with lean arms
+      - a short petite frame with a narrow ribcage
+      - a tiny slim figure with a toned midsection and short stature
+      slender:
+      - a slim frame with a narrow waist and long legs
+      - a slender build with a flat stomach and long limbs
+      - a slim slender build with a narrow waist
+      - a slender frame with long legs and a defined waist
+      - a slim figure with a flat toned midsection
+      - a slim slender build with long lean limbs
+      curvy-hourglass:
+      - a curvy frame with a defined waist and full hips
+      - a curvy build with a narrow waist and full hips
+      - a curvy figure with a tight waist
+      - a curvy frame with a narrow waist
+      - a curvy balanced frame with a defined waist
+      - a curvy frame with a small waist and full hips
+      athletic:
+      - a lean athletic frame with toned legs and firm posture
+      - a sporty slim build with light visible muscle tone
+      - a lean toned figure with defined shoulders and a narrow waist
+      - a lean athletic build with long toned legs
+      - a compact athletic frame with firm posture
+      - a lean frame with broad shoulders and a narrow waist
+      - a compact athletic frame with strong legs and a neat waist
+      soft-curvy:
+      - a soft curvy figure with a gentle waist curve
+      - a soft curvy frame with a gentle waist and full hips
+      - a softly rounded frame with a gentle waist
+      - a soft curvy build with a soft waist
+      tall-slender:
+      - a tall slender frame with long lean legs
+      - a tall slim frame with long limbs
+      - a tall slim build with long lean limbs
+      - a tall slender frame with long legs
+      pear:
+      - a pear figure with a narrow torso and fuller hips
+      - a hip-forward frame with a slim waist
+      - a pear frame with a narrow upper body
+      - a pear frame with a narrow torso and hip curves
+      - a pear frame with lean upper body and shaped hips
+      - a bottom-curvy frame with a narrow waist and full thighs
+      busty-petite:
+      - a short petite frame with a compact torso
+      - a tiny petite build with short limbs and a small waist
+      - a compact petite frame with short stature
+      - a short compact frame with petite proportions
+      athletic-curvy:
+      - a toned athletic frame with a soft waist curve
+      - a fit curvy build with firm posture
+      - a toned athletic frame with a soft waist
+      - a toned curvy frame with firm posture
+      - a lean-upper athletic frame with shaped hips
+      - an athletic curvy frame with firm glutes and a defined waist
+      - a compact athletic frame with strong legs and a neat waist
+
+    # Weighted frame picker (legacy / direct use). NSFW identity prefers body-archetype/natural.
+    build-female-description:
+    - 4::__uw-shared/common/build-female/petite__
+    - 3::__uw-shared/common/build-female/slender__
+    - 3::__uw-shared/common/build-female/curvy-hourglass__
+    - 2::__uw-shared/common/build-female/athletic__
+
+    # Family breast pools — correlated by body-archetype; natural = mixed independent bank.
+    breast-size:
+      petite:
+      - small breasts
+      - modest breasts
+      - petite breasts
+      - small firm breasts
+      - small soft breasts
+      - soft petite breasts
+      slender:
+      - modest breasts
+      - soft breasts
+      - medium breasts
+      - small breasts
+      - medium soft breasts
+      - modest soft breasts
+      - soft slender breasts
+      - light soft breasts
+      curvy:
+      - full breasts
+      - soft full breasts
+      - medium full breasts
+      - full soft breasts
+      - round full breasts
+      athletic:
+      - modest firm breasts
+      - medium breasts
+      - firm medium breasts
+      - athletic toned breasts
+      - firm modest breasts
+      - compact firm breasts
+      - toned modest breasts
+      soft-curvy:
+      - soft full breasts
+      - medium full breasts
+      - gently full breasts
+      - soft rounded breasts
+      tall-slender:
+      - small breasts
+      - modest breasts
+      - small soft breasts
+      pear:
+      - modest breasts
+      - small breasts
+      - medium breasts
+      - soft modest breasts
+      busty-petite:
+      - full breasts
+      - soft full breasts
+      athletic-curvy:
+      - firm full breasts
+      - medium full breasts
+      natural:
+      - small breasts
+      - modest breasts
+      - petite breasts
+      - small firm breasts
+      - soft breasts
+      - medium breasts
+      - medium soft breasts
+      - modest firm breasts
+      - firm medium breasts
+      - athletic toned breasts
+      - full breasts
+      - soft full breasts
+      - medium full breasts
+      - modest full breasts
+
+    # Independent rear / hip clause — correlated by body-archetype; natural = mixed bank.
+    butt-size:
+      petite:
+      - a small firm butt
+      - a petite rounded butt
+      - a compact little butt
+      - narrow hips and a small butt
+      - a neat petite butt
+      - a tiny soft butt
+      - a slim petite butt
+      slender:
+      - a slim rounded butt
+      - a lean soft butt
+      - modest hips and a firm butt
+      - a slender rounded butt
+      - a slim firm butt
+      - a lean firm butt
+      - a narrow slim butt
+      curvy:
+      - a full round butt
+      - a soft full butt
+      - wide hips and a full rounded butt
+      - plump rounded hips and a full butt
+      - a full butt
+      - a round full butt
+      - a soft round butt
+      athletic:
+      - a firm toned butt
+      - a tight athletic butt
+      - athletic rounded glutes
+      - a firm athletic butt
+      - toned athletic glutes
+      - firm athletic glutes
+      - a compact toned butt
+      soft-curvy:
+      - a soft round butt
+      - rounded hips and a full butt
+      - a soft full butt
+      tall-slender:
+      - a slim rounded butt
+      - a lean soft butt
+      - narrow hips and a slim butt
+      pear:
+      - wide hips and a full butt
+      - rounded hips and a full butt
+      - a hip-forward full butt
+      - wide hips and a plump butt
+      busty-petite:
+      - a petite rounded butt
+      - a compact little butt
+      - a small firm butt
+      athletic-curvy:
+      - a firm round butt
+      - athletic hips and a full butt
+      - a toned full butt
+      natural:
+      - a small firm butt
+      - a petite rounded butt
+      - a slim rounded butt
+      - a lean soft butt
+      - a firm toned butt
+      - a full round butt
+      - a soft full butt
+      - wide hips and a full rounded butt
+      - a full butt
+
+    # Correlated body stacks (frame + bust + rear). Face stays outside for variety.
+    # natural = weighted archetype router wired into NSFW identity-paragraph families.
+    body-archetype:
+      petite:
+      - __uw-shared/common/build-female/petite__, __uw-shared/common/breast-size/petite__, __uw-shared/common/butt-size/petite__
+      slender:
+      - __uw-shared/common/build-female/slender__, __uw-shared/common/breast-size/slender__, __uw-shared/common/butt-size/slender__
+      curvy:
+      - __uw-shared/common/build-female/curvy-hourglass__, __uw-shared/common/breast-size/curvy__, __uw-shared/common/butt-size/curvy__
+      athletic:
+      - __uw-shared/common/build-female/athletic__, __uw-shared/common/breast-size/athletic__, __uw-shared/common/butt-size/athletic__
+      soft-curvy:
+      - __uw-shared/common/build-female/soft-curvy__, __uw-shared/common/breast-size/soft-curvy__, __uw-shared/common/butt-size/soft-curvy__
+      tall-slender:
+      - __uw-shared/common/build-female/tall-slender__, __uw-shared/common/breast-size/tall-slender__, __uw-shared/common/butt-size/tall-slender__
+      pear:
+      - __uw-shared/common/build-female/pear__, __uw-shared/common/breast-size/pear__, __uw-shared/common/butt-size/pear__
+      busty-petite:
+      - __uw-shared/common/build-female/busty-petite__, __uw-shared/common/breast-size/busty-petite__, __uw-shared/common/butt-size/busty-petite__
+      athletic-curvy:
+      - __uw-shared/common/build-female/athletic-curvy__, __uw-shared/common/breast-size/athletic-curvy__, __uw-shared/common/butt-size/athletic-curvy__
+      natural:
+      - 3::__uw-shared/common/body-archetype/petite__
+      - 3::__uw-shared/common/body-archetype/slender__
+      - 3::__uw-shared/common/body-archetype/curvy__
+      - 2::__uw-shared/common/body-archetype/athletic__
+      - 2::__uw-shared/common/body-archetype/soft-curvy__
+      - 2::__uw-shared/common/body-archetype/tall-slender__
+      - 2::__uw-shared/common/body-archetype/pear__
+      - 1::__uw-shared/common/body-archetype/busty-petite__
+      - 2::__uw-shared/common/body-archetype/athletic-curvy__
+
+    face-features:
+      natural:
+      - a soft oval face with full lips
+      - a heart-shaped face with soft cheeks and a tapered chin
+      - an oval face with a straight nose and full lips
+      - high cheekbones with a refined jaw and soft full lips
+      - a heart-shaped face with arched brows and plush lips
+      - a soft round face with delicate brows
+      - an oval face with a soft jawline and full lips
+      - defined cheekbones with a straight nose and soft lips
+      - a soft oval face with a soft jawline
+      - arched brows framing soft cheeks and full lips
+      - a heart-shaped face with high cheekbones and a petite nose
+      - a soft jawline with warm cheeks and full lips
+      editorial:
+      - defined cheekbones with a refined jaw and full symmetrical lips
+      - a striking photogenic face with high cheekbones and a clean angular jawline
+      - high cheekbones with a refined straight nose and soft full lips
+      - an oval face with defined cheekbones and a clean jawline
+      - arched brows framing defined cheekbones and full symmetrical lips
+
+    skin:
+      natural:
+      - Natural detailed skin
+      - Detailed skin with a soft natural finish
+      - Soft detailed skin with a natural glow
+      - Matte skin with soft jaw shadows
+      - Soft highlight along her cheekbones
+      - Natural skin with soft cheekbone highlight
+      editorial:
+      - Refined even skin reads with a controlled matte finish
+      - Soft controlled highlight along her cheekbones under the key light
+      - Subtle contour shapes her cheekbones and jawline in a controlled matte finish
+      - Matte skin with fine-grain texture holds soft shadows along her jaw
+      - Clean even skin holds soft editorial shadows along her jawline
+      soft-glam:
+      - Smooth skin with soft highlight on her cheekbones
+      - Soft warm highlight on her cheeks and the bridge of her nose
+      - Dewy highlight along her cheekbones under soft key light
+      - Smooth skin with soft cheekbone highlight
+      - Warm dewy skin with a healthy cheek highlight
+
+    expression:
+      calm:
+      - with a soft relaxed smile toward the camera
+      - with a playful half-smile and direct warm gaze
+      - with lightly parted lips and a warm affectionate look
+      - laughing naturally with bright eyes
+      - with a confident calm look and a subtle raised brow
+      - with a soft subtle smile and warm inviting eyes
+      - with a gentle closed-mouth smile and relaxed features
+      - with a serene peaceful look and lightly closed eyes
+      - with a quiet contented smile and soft lifted cheeks
+      - with a calm observant gaze and a neutral soft mouth
+      - with a genuine unguarded smile and bright warm eyes
+      - with a soft dreamy gaze and relaxed unfocused features
+      intimate-calm:
+      - with eyes half closed and lips slightly parted
+      - with a breathless unguarded look
+      - with a soft half-lidded gaze and parted lips
+      - with a relaxed gentle gaze and parted lips
+      - breathing softly with half-closed eyes
+      - with sultry half-lidded eyes and parted lips
+      - with a soft hungry look and gently parted lips
+      - with a slow knowing smile and half-lowered lashes
+      - with a languid satisfied look and softened mouth
+      - with an intimate close gaze and softly parted lips
+      - with a quiet soft expression and locked quiet eyes
+      # Face-hidden / out-of-frame — no gaze, lens, camera, tongue, or looking phrases
+      intimate-calm-face-hidden:
+      - with a breathless unguarded look
+      - breathing softly with half-closed eyes
+      - with lips slightly parted
+      - with a soft open-mouthed breath
+      - with flushed cheeks and parted lips
+      - with eyes nearly closed in quiet intensity
+      - with a soft flush across her cheeks
+      bold:
+      - with an intense focused gaze and parted lips
+      - with flushed cheeks and a steady direct gaze
+      - meeting the lens with focused intent and parted lips
+      - with a smoldering intense gaze and slightly narrowed eyes
+      - with confident direct eye contact and a knowing smile
+      - with a fierce determined look and a set soft jawline
+      - with a defiant raised chin and unwavering eye contact
+      - with a seductive half-smile and one slightly raised brow
+      - with a bold flirtatious stare and a curved tempting mouth
+      playful:
+      - with a playful smile looking directly at the camera
+      - with a coy teasing look and softened jawline
+      - with a dreamy distant gaze and gentle closed-mouth smile
+      - with a playful smirk and a mischievous glint in her eyes
+      - glancing sideways with a subtle flirtatious look
+      - winking playfully at the camera with a cheeky grin
+      - with a coy look up through her lashes
+      - biting her lower lip gently with half-lidded eyes
+      - with a teasing grin and narrowed playful eyes
+      - with lips pursed as if about to blow a kiss
+      - with a bemused quirky grin and a tilted head
+      - blowing a soft kiss toward the camera
+      - with a mock pout of playful disappointment
+      glance-back:
+      - with a soft flirtatious glance back over her shoulder
+      - with half-lidded eyes catching the mirror at the edge of her gaze
+      - with a coy look back toward the vanity mirror
+      - with a knowing smirk glimpsed over her bare shoulder
+      - glancing back with a playful half-smile
+      - with a sidelong glance over one shoulder and softened lashes
+      - with a teasing look back caught in the mirror beside her
+      - with a quiet over-shoulder glance and lips slightly parted
+      - with a sideways glance glimpsed over her bare shoulder in the mirror
+      - with a slow look back over her shoulder and a faint smile
+      playful-unguarded:
+      - with her head tilted back and eyes closed
+      - with her tongue out playfully
+      - laughing with her eyes nearly closed
+      - with a goofy wide grin and scrunched nose
+      - laughing with a goofy open-mouthed grin
+      # Catalog / aesthetic — empty-biased; low-weight on sfw-catalog
+      editorial:
+      - with a blank neutral expression and high-fashion stillness
+      - with a cool editorial stare and a relaxed unsmiling mouth
+      - with detached runway composure and perfectly controlled features
+      - with heavy-lidded eyes and deliberate quiet indifference
+      - with a clean beauty-campaign look and softly parted lips
+      - with intense editorial eye contact and neutral defined lips
+      - with composed campaign calm and expensive effortless poise
+      # Shot-class expression routers (one trailing pull from pose lines)
+      sfw-front:
+      - 6::__uw-shared/common/expression/calm__
+      - 2::__uw-shared/common/expression/playful__
+      sfw-catalog:
+      - 6::__uw-shared/common/expression/calm__
+      - 2::__uw-shared/common/expression/playful__
+      - 1::__uw-shared/common/expression/editorial__
+      nsfw-front:
+      - 6::__uw-shared/common/expression/intimate-calm__
+      - 2::__uw-shared/common/expression/playful__
+      - 2::__uw-shared/common/expression/bold__
+      # Unguarded / soft — candid + moody front poses (avoid heavy lens-locked playful)
+      nsfw-candid:
+      - 5::__uw-shared/common/expression/intimate-calm__
+      - 3::__uw-shared/common/expression/playful-unguarded__
+      - 1::__uw-shared/common/expression/bold__
+      nsfw-glance:
+      - 5::__uw-shared/common/expression/glance-back__
+      - 3::__uw-shared/common/expression/intimate-calm__
+      - 2::__uw-shared/common/expression/playful__
+      nsfw-action-aroused:
+      - with open mouth in a soft moan shape and flushed cheeks
+      - with brows drawn together in pleasure and lips parted
+      - with flushed cheeks and open mouth catching her breath
+      - with eyes half-closed in pleasure and parted lips
+      - with biting her lower lip and flushed cheeks
+      - with gasping open mouth and pleasure-tight jaw
+      - with furrowed brows in pleasure and an open breathless mouth
+      - with half-lidded eyes lost in pleasure and lips slightly open
+      - with a flush spreading across her cheeks, mouth open in pleasure
+      - with brows knit in ecstasy and open lips
+      - with parted lips and a pleasure-flushed face, eyes half-shut
+      - with open mouth and flushed skin, jaw tense with pleasure
+      nsfw-action:
+      - 4::__uw-shared/common/expression/nsfw-action-aroused__
+      - 3::__uw-shared/common/expression/bold__
+      - 2::__uw-shared/common/expression/intimate-calm__
+      # Face hidden / out of frame — gaze-free leaf only (no calm/unguarded child pulls)
+      nsfw-action-face-hidden:
+      - __uw-shared/common/expression/intimate-calm-face-hidden__
+      nsfw-action-oral:
+      - with half-lidded eyes and muffled breath
+      - with eyes softly closed and cheeks flushed
+      - with a muffled intense look and eyes nearly shut
+      - with half-lowered lashes and a quiet muffled expression
+      - with eyes closed in concentration and flushed cheeks
+      - with a soft muffled look and half-lidded eyes
+      - with watery half-lidded eyes and muffled breath
+
+    # Optional ear / navel jewelry only (no nose, eyebrow, lip, labret).
+    # Pulled from wardrobe composers (not identity) — natural look stays body-only.
+    piercing:
+      natural:
+      - with a small ear piercing
+      - with small stud earrings
+      - with silver hoop earrings
+      - with thin gold hoop earrings
+      - with a delicate navel piercing
+      - with a small belly-button piercing
+      - with a subtle silver navel piercing
+
+    # Optional face finish — empty-biased braces on a few wardrobe composers.
+    makeup:
+      natural:
+      - soft natural makeup with light mascara and rosy lips
+      - clean skin-perfecting makeup with subtle coverage
+      - fresh natural makeup with glossy lips and soft blush
+      - K-beauty makeup with straight brows and gradient lips
+      - sheer natural makeup with delicate blush and glossy lips
+      - warm natural makeup with peach blush and nude lips
+      - minimal makeup with brushed brows and tinted lips
+      - soft feminine makeup with peach blush and a satin lip
+      - romantic makeup with rosy cheeks and softly defined eyes
+      - gentle everyday makeup with nude lips and light eyeliner
+      - cool-toned natural makeup with taupe shadow and pink lips
+      - soft matte makeup with blurred lips and natural brows
+      - warm bronzed makeup with golden cheek highlight
+      - peachy makeup with coral blush and warm shimmer lids
+      - soft bridal makeup with even skin and rose-toned lips
+      - strawberry makeup with flushed cheeks and glossy pink lips
+      soft-glam:
+      - soft glam makeup with warm browns and smooth highlighted skin
+      - soft-glam makeup with champagne shimmer on the lids
+      - polished soft-glam makeup with defined lashes
+      - Korean soft glam with straight brows and even skin finish
+      - light natural glam with neutral eyeshadow and defined lashes
+      - champagne glam with pale shimmer and rosy-nude lips
+      - bronze soft-glam with warm shimmer lids and peach-nude lips
+      - soft smoky eye with taupe blending and fluttery lashes
+      - rose-gold soft-glam with warm pink metallic lids
+      - berry-toned soft-glam with plum blush and wine-stained lips
+      - cat-eye soft-glam with winged liner and soft matte skin
+      - luxury soft-glam with flawless skin and glossy nude lips
+      - bold soft-glam with sharp winged liner and full black lips
+      - heavy smoky-eye soft-glam with dark smoky lids and defined lashes
+      - glam soft-glam with winged liner and deep dark matte lips
+
+    # Optional jewelry / gloves — empty-biased braces on a few wardrobe composers.
+    accessories:
+      natural:
+      - a delicate gold pendant at her throat
+      - a thin black leather choker
+      - long black satin opera gloves
+      - a stack of thin gold bangles
+      - a fine gold belly chain
+      - layered silver chain necklaces
+      - a sheer lace fingerless glove on one hand
+      - a slim diamond tennis bracelet
+      - a vintage pearl necklace
+      - a fine gold body chain across her torso
+      - a satin ribbon choker with a small bow at the back
+      - oversized gold hoop earrings framing her jawline
+      - a delicate hand-chain linking ring to wrist
+      - long tassel earrings brushing her shoulders
+      - classic pearl studs with a matching pearl bracelet
+      - a velvet ribbon tied around her upper arm
+      - diamond stud earrings catching pinpoint sparkles
+      - a thin gold anklet with a tiny charm
+      - elbow-length white silk gloves, old-Hollywood soft
+      - a slim silver choker with a small pendant
+      - a brass ankh pendant at her throat
+      - chunky star rings stacked on her fingers
+      - mismatched hoop earrings with a light Y2K stack
+
+    # Optional atmospheric particles — empty-biased on some treatment lines only.
+    effects:
+      natural:
+      - falling cherry blossom petals
+      - falling rose petals in soft light
+      - light snow drifting through the frame
+      - fireflies glowing around her
+      - floating flower petals in the air
+      - falling sparks and glowing embers
+      - soft confetti drifting past
+      - dust motes floating in warm light
+      - falling maple leaves in soft autumn light
+      - fine mist drifting through the frame
+      - soft golden pollen floating in warm air
+      - falling white feathers in soft light
+      - faint metallic body linework catching the light
+      - thin metallic face linework along her cheekbones
+
+    treatment:
+      natural:
+      - subtle film grain, low dynamic range, candid snapshot finish
+      - fine organic film grain, muted earthy palette, natural candid finish
+      - natural color, soft film grain, candid documentary finish
+      - understated film grain, muted tones, candid finish
+      - gentle organic grain, warm neutral palette, casual snapshot quality
+      - muted natural colors, fine grain texture, unposed candid capture
+      - slightly compressed phone-camera color, everyday snapshot finish
+      - harsh midday highlights, unretouched amateur still, candid phone grade
+      cinematic:
+      - rich cinematic grade, soft roll-off, filmic finish
+      - teal-and-amber grade, soft roll-off, cinematic polish
+      - muted cinematic palette, controlled contrast, polished film look
+      - warm cinematic grade with soft filmic texture
+      - low-contrast cinematic finish with subtle grain and rich midtones
+      - refined filmic color, soft falloff, cinematic still-frame quality
+      - bleach-bypass grade, muted desaturation, silver metallic grit{4::|1::, __uw-shared/common/effects/natural__}
+      - dark academia palette, forest greens, burgundy, aged-paper cream
+      - muted VHS-ish bleed, soft color degradation, retro softness
+      # Action products only — no outdoor atmospheric effects pulls
+      natural-action:
+      - subtle film grain, low dynamic range, candid snapshot finish
+      - organic grain, muted palette, candid finish
+      - natural color, soft film grain, candid documentary finish
+      - understated film grain, muted tones, candid finish
+      - gentle organic grain, warm neutral palette, casual snapshot quality
+      - muted natural colors, fine grain texture, unposed candid capture
+      - slightly compressed phone-camera color, everyday snapshot finish
+      - harsh midday highlights, unretouched amateur still, candid phone grade
+      cinematic-action:
+      - rich cinematic grade, soft roll-off, filmic finish
+      - teal-and-amber grade, soft roll-off, cinematic polish
+      - muted cinematic palette, controlled contrast, polished film look
+      - warm cinematic grade with soft filmic texture
+      - low-contrast cinematic finish with subtle grain and rich midtones
+      - refined filmic color, soft falloff, cinematic still-frame quality
+      - bleach-bypass grade, muted desaturation, silver metallic grit
+      - dark academia palette, forest greens, burgundy, aged-paper cream
+      - muted VHS-ish bleed, soft color degradation, retro softness
+      # Missionary pilot / amateur capture finish (phone snapshot aesthetic)
+      amateur-phone-snapshot:
+      - candid phone snapshot with high ISO, visible digital noise, JPEG compression artifacts, awkward unposed framing, off white balance
+      - amateur phone snapshot finish, high ISO grain, JPEG blockiness, slightly missed exposure
+      - casual phone-camera look, digital noise, compressed JPEG color, unposed snapshot framing
+      - phone-snapshot aesthetic with harsh auto-white-balance, high ISO noise, soft JPEG smear
+      - candid smartphone capture finish, elevated ISO, visible compression artifacts, flat flashy midtones
+      - handheld phone snapshot grade, digital grain, crushed shadow detail, imperfect JPEG color
+      - unposed phone-photo finish with high ISO noise, mild motion softness, consumer JPEG artifacts
+      moody:
+      - deep low-key grade, crushed shadows, moody intimate finish
+      - muted desaturated palette, soft shadow crush, low-key mood
+      - dark intimate grade with restrained highlights and quiet grain
+      - shadowy low-key finish, cool midtones, subdued contrast
+      - dim atmospheric grade with soft falloff and muted color
+      - quiet low-key film look, deep shadows, intimate mood
+      - dark academia low-key, deep forest greens, warm leather browns
+      - bleach-bypass hush, desaturated contrast, metallic grain overlay
+      analogue:
+      - Kodak Portra finish, soft pastel color, fine grain, natural skin tones
+      - Cinestill 800T look, tungsten blue shadows, glowing highlight halation
+      - disposable-camera flash finish, plastic-lens softness, warm nostalgic cast
+      - Polaroid SX-70 softness, lifted shadows, creamy instant-film romance
+      - Instax-like pastel compression, pocket-snapshot charm
+      - Kodak Gold warmth, soft consumer contrast, nostalgic family-photo grain
+      - Fuji Superia green-cyan shadows, lively minilab nostalgia
+      - Tri-X black-and-white grit, punchy monochrome street intensity
+      - expired film color drift, muted saturation, authentic analog instability
+      - direct-flash 35mm snapshot, harsh catchlights, candid party-photo energy
+      - Portra 800 grain, warm skin, intimate low-light analog depth
+      - drugstore print scan, slight magenta shift, early-2000s album nostalgia
+      - Kodak Ektar finish, vivid saturated color, fine grain, crisp travel gloss
+      - Portra 400 cream, natural skin, fine grain, fashion-on-film softness
+      - Fuji Pro 400H finish, pastel greens, cool highlights, airy editorial softness
+      - Kodak Ultramax punch, warm consumer reds, medium grain, party-film energy
+      - Cinestill 400D daylight, subtle halation, polished modern-cinema film look
+      - Ilford HP5 grit, crushed shadows, raw documentary monochrome
+      - cross-processed C-41, cyan shadows, yellow-red highlights, zine attitude
+      - Holga toy-camera look, heavy vignette, soft corners, lo-fi charm
+      - Lomography oversaturation, strong vignette, playful analog imperfection
+      - Super-8 still-frame grain, warm home-movie nostalgia, soft motion texture
+      - light-leak warm edge bleed, accidental analog character, soft frame edge
+      - sepia darkroom print, warm historical toning, soft antique contrast
+      intimate-portrait:
+      - flattering portrait finish, muted contrast, soft skin rendering
+      - dusty rose intimate grade, muted pink-beige mids, romantic soft contrast
+      - soft intimate grade with gentle falloff and flattering finish
+      - warm intimate palette with muted midtones and natural portrait finish
+      editorial:
+      - crisp facial focus, fine grain, editorial magazine finish
+      - sharp portrait grade, subtle grain, polished editorial finish
+      - clean editorial color, controlled contrast, magazine still look
+      - refined editorial grade with soft matte skin rendering
+      - muted fashion palette, fine grain, editorial portrait finish
+      soft-glam:
+      - soft-glam grade, creamy midtones, polished beauty finish
+      - warm beauty palette, soft glow roll-off, soft-glam polish
+      - fine grain with a luminous glam finish
+      - soft beauty grade, gentle cheek highlight, soft-glam look
+      - flattering soft-glam finish with smooth natural skin rendering
+      - soft magazine-beauty grade, even skin tones, polished low-contrast refinement
+      - candlelit rose-gold grade, warm pinkish highlights, boudoir luxury tone
+      - soft sunset editorial palette, coral apricot mauve blend, glam evening glow
+      # Epic illustration / matte concept finish (fantasy epic product) — positive style adjectives only
+      illustration-epic:
+      - painterly epic illustration finish, soft matte surfaces, concept-art polish
+      - matte epic concept grade with bold silhouette and rich midtones
+      - painterly fantasy illustration look, soft brush-edge finish, epic scale
+      - matte illustration grade with dramatic contrast and epic composition polish
+      - soft painterly concept finish, muted varnish sheen, epic fantasy still
+      - epic illustration treatment with matte skin rendering and bold color depth
+      - painterly matte finish, bold heroic rim light, epic concept polish
+      - rich epic illustration grade with soft edge falloff and dramatic atmosphere
+
+    # Identity paragraphs — natural look only (age, ethnicity-hair, body-archetype, face, skin).
+    # NSFW (+ catalog / aesthetic) families use body-archetype/natural (correlated stacks).
+    # Jewelry lives in wardrobe composers via piercing/natural — not here.
+    # Subject leaves should call identity-router/* (aliases below).
+    identity-paragraph:
+      natural-sfw:
+      - >-
+          __uw-shared/common/age/sfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-nsfw:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-nsfw-id4-young-adult:
+      - >-
+          __uw-shared/common/age/id4-young-adult__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-nsfw-birthday:
+      - >-
+          __uw-shared/common/age/nsfw-birthday-18-25__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      editorial-nsfw:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/editorial__.
+          __uw-shared/common/skin/editorial__
+      soft-glam-nsfw:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/soft-glam__
+      catalog-build:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      # Locked-look identity paragraphs — pin body-archetype/<A> instead of natural
+      natural-nsfw-petite:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/petite__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-nsfw-slender:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/slender__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-nsfw-curvy:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/curvy__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-nsfw-athletic:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/athletic__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-nsfw-soft-curvy:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/soft-curvy__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-nsfw-tall-slender:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/tall-slender__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-nsfw-pear:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/pear__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-nsfw-busty-petite:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/busty-petite__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-nsfw-athletic-curvy:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/athletic-curvy__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-sfw-petite:
+      - >-
+          __uw-shared/common/age/sfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/petite__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-sfw-slender:
+      - >-
+          __uw-shared/common/age/sfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/slender__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-sfw-curvy:
+      - >-
+          __uw-shared/common/age/sfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/curvy__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-sfw-athletic:
+      - >-
+          __uw-shared/common/age/sfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/athletic__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-sfw-soft-curvy:
+      - >-
+          __uw-shared/common/age/sfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/soft-curvy__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-sfw-tall-slender:
+      - >-
+          __uw-shared/common/age/sfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/tall-slender__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-sfw-pear:
+      - >-
+          __uw-shared/common/age/sfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/pear__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-sfw-busty-petite:
+      - >-
+          __uw-shared/common/age/sfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/busty-petite__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+      natural-sfw-athletic-curvy:
+      - >-
+          __uw-shared/common/age/sfw-default__, __uw-shared/common/ethnicity-hair-coupled/natural__
+          She has __uw-shared/common/body-archetype/athletic-curvy__, __uw-shared/common/face-features/natural__.
+          __uw-shared/common/skin/natural__
+
+    # Single entry gate for subject leaves — pick register, get the matching identity-paragraph.
+    identity-router:
+      natural-sfw:
+      - __uw-shared/common/identity-paragraph/natural-sfw__
+      natural-nsfw:
+      - __uw-shared/common/identity-paragraph/natural-nsfw__
+      natural-nsfw-id4-young-adult:
+      - __uw-shared/common/identity-paragraph/natural-nsfw-id4-young-adult__
+      natural-nsfw-birthday:
+      - __uw-shared/common/identity-paragraph/natural-nsfw-birthday__
+      catalog:
+      - __uw-shared/common/identity-paragraph/catalog-build__
+      editorial-nsfw:
+      - __uw-shared/common/identity-paragraph/editorial-nsfw__
+      soft-glam-nsfw:
+      - __uw-shared/common/identity-paragraph/soft-glam-nsfw__
+      natural-nsfw-petite:
+      - __uw-shared/common/identity-paragraph/natural-nsfw-petite__
+      natural-nsfw-slender:
+      - __uw-shared/common/identity-paragraph/natural-nsfw-slender__
+      natural-nsfw-curvy:
+      - __uw-shared/common/identity-paragraph/natural-nsfw-curvy__
+      natural-nsfw-athletic:
+      - __uw-shared/common/identity-paragraph/natural-nsfw-athletic__
+      natural-nsfw-soft-curvy:
+      - __uw-shared/common/identity-paragraph/natural-nsfw-soft-curvy__
+      natural-nsfw-tall-slender:
+      - __uw-shared/common/identity-paragraph/natural-nsfw-tall-slender__
+      natural-nsfw-pear:
+      - __uw-shared/common/identity-paragraph/natural-nsfw-pear__
+      natural-nsfw-busty-petite:
+      - __uw-shared/common/identity-paragraph/natural-nsfw-busty-petite__
+      natural-nsfw-athletic-curvy:
+      - __uw-shared/common/identity-paragraph/natural-nsfw-athletic-curvy__
+      natural-sfw-petite:
+      - __uw-shared/common/identity-paragraph/natural-sfw-petite__
+      natural-sfw-slender:
+      - __uw-shared/common/identity-paragraph/natural-sfw-slender__
+      natural-sfw-curvy:
+      - __uw-shared/common/identity-paragraph/natural-sfw-curvy__
+      natural-sfw-athletic:
+      - __uw-shared/common/identity-paragraph/natural-sfw-athletic__
+      natural-sfw-soft-curvy:
+      - __uw-shared/common/identity-paragraph/natural-sfw-soft-curvy__
+      natural-sfw-tall-slender:
+      - __uw-shared/common/identity-paragraph/natural-sfw-tall-slender__
+      natural-sfw-pear:
+      - __uw-shared/common/identity-paragraph/natural-sfw-pear__
+      natural-sfw-busty-petite:
+      - __uw-shared/common/identity-paragraph/natural-sfw-busty-petite__
+      natural-sfw-athletic-curvy:
+      - __uw-shared/common/identity-paragraph/natural-sfw-athletic-curvy__

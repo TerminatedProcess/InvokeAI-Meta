@@ -1,0 +1,10 @@
+frills, frilled dress, layered dress, short dress, (petticoat:0.8), ((__clothes_legwear__):0.9)
+frills, frilled skirt, layered skirt, short skirt, (petticoat:0.8), ((__clothes_legwear__):0.9), collared shirt, short sleeves
+frills, frilled skirt, layered skirt, short skirt, ((__clothes_legwear__):0.9), collared shirt, short sleeves
+frills, frilled skirt, layered skirt, miniskirt, ((__clothes_legwear__):0.9), collared shirt, short sleeves, crop top, midriff
+frills, frilled skirt, layered skirt, miniskirt, ((__clothes_legwear__):0.9), short sleeves, crop top, midriff
+frills, frilled skirt, layered skirt, miniskirt, ((__clothes_legwear__):0.9), sleeveless shirt, crop top, midriff
+frills, frilled skirt, layered skirt, miniskirt, ((__clothes_legwear__):0.9), sleeveless shirt, crop top, midriff, cropped vest
+frills, frilled skirt, layered skirt, miniskirt, ((__clothes_legwear__):0.9), sleeveless shirt, crop top, midriff, cropped jacket
+frills, frilled skirt, layered skirt, short skirt, (petticoat:0.8), ((__clothes_legwear__):0.9), sleeveless shirt, crop top, midriff, cropped vest
+frills, frilled skirt, layered skirt, short skirt, (petticoat:0.8), ((__clothes_legwear__):0.9), sleeveless shirt, crop top, midriff, cropped jacket

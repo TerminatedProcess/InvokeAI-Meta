@@ -1,0 +1,17 @@
+from below, __poses_front_side__, __clothes_below_only__
+from below, crotch focus, __poses_front_side__, __clothes_below_only__
+crotch focus, __poses_front_side__, __clothes__
+from side, __poses_back_side__, __clothes__
+from side, __poses_front_side__, __clothes__
+from side, breast focus, __poses_front_side__, __clothes__
+from side, __poses_back_side__, __clothes__, ((ass focus):0.7)
+from above, __poses_front_side__, __clothes__
+from above, breast focus, __poses_front_side__, __clothes__
+breast focus, __poses_front_side__, __clothes__
+from behind, __poses_back_side__, __clothes__
+from behind, ((from below):0.8), __poses_back_side__, __clothes_below_only__
+from behind, __poses_back_side__, __clothes__, ((ass focus):0.7)
+__poses_back_side__, __clothes_below_only__, ((ass focus):0.7)
+straight-on, __poses_front_side__, __clothes__
+dutch angle, __poses_front_side__, __clothes__
+dutch angle, __poses_back_side__, __clothes__

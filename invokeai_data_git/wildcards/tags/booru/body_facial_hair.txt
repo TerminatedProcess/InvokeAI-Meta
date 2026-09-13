@@ -1,0 +1,21 @@
+beard, __body_facial_hair_beard_details__
+braided beard, __body_facial_hair_beard_details__
+chinstrap beard, __body_facial_hair_beard_details__
+connected beard, __body_facial_hair_beard_details__
+full beard, __body_facial_hair_beard_details__
+neckbeard, __body_facial_hair_beard_details__
+tied beard, __body_facial_hair_beard_details__
+goatee
+goatee stubble
+mustache
+mustache stubble
+fu manchu
+long mustache
+very long mustache
+pencil mustache
+thick mustache
+mutton chops
+sideburns
+long sideburns
+sideburns stubble
+soul patch

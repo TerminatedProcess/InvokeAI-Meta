@@ -1,0 +1,50 @@
+interior, cozy cafe, wooden tables, hanging plants, pastry display, warm lighting, steam rising from cups
+interior, bedroom, soft bedding, fairy lights, bookshelf, warm lamp light, evening glow
+exterior, forest clearing, tall pine trees, moss-covered rocks, dappled sunlight, drifting mist
+exterior, beach, white sand, rolling waves, palm trees, golden sunset, scattered clouds
+interior, library, tall bookshelves, wooden ladder, reading nook, soft window light, drifting dust motes
+exterior, city street, neon signs, rain-slicked pavement, parked cars, streetlights, wet reflections
+interior, kitchen, marble countertops, hanging pots, fresh herbs, bright morning light
+exterior, mountain peak, misty clouds below, jagged rocks, distant valley, cool pale light
+interior, art studio, easels, paint splatters, stacked canvases, tall windows, soft natural light
+exterior, garden, blooming flowers, stone path, wooden bench, butterflies, soft afternoon light
+interior, greenhouse, glass panels, hanging vines, potted plants, humid golden light
+exterior, snowy village, wooden cabins, smoke from chimneys, falling snow, warm window glow
+interior, throne room, tall stone pillars, red carpet, stained glass windows, dramatic light beams
+exterior, desert dunes, rippled sand, distant cliffs, orange sky, long shadows
+interior, laboratory, glass beakers, glowing monitors, metal countertops, cool blue light
+exterior, cherry blossom park, pink petals falling, wooden bridge, still pond, soft pastel light
+interior, concert hall, red velvet seats, grand chandelier, heavy stage curtains, warm spotlight
+exterior, rooftop, city skyline, string lights, potted plants, twilight glow
+interior, bookstore, narrow aisles, stacked books, wooden ladder, warm amber lighting
+exterior, waterfall, mossy rocks, rising mist, dense jungle foliage, dappled light
+interior, bedroom balcony, sheer curtains, potted plants, string lights, night sky view
+exterior, cobblestone street, old European buildings, hanging lanterns, cafe tables, evening light
+interior, dance studio, mirrored walls, wooden floor, ballet barre, soft natural light
+exterior, lake shore, still water reflections, wooden dock, pine trees, misty morning light
+interior, attic, exposed wooden beams, dusty boxes, small round window, warm dusty light
+exterior, temple courtyard, stone lanterns, torii gate, maple trees, soft autumn light
+interior, spaceship corridor, metal walls, glowing panels, small windows to the stars, cool blue light
+exterior, vineyard, rows of grapevines, rolling hills, distant farmhouse, golden hour light
+interior, cozy living room, fireplace, soft rug, tall bookshelves, warm firelight
+exterior, coastal cliffs, crashing waves below, tall grass, circling seabirds, overcast light
+interior, dressing room, vanity mirror ringed with bulbs, costume racks, soft warm light
+exterior, night market, hanging lanterns, food stalls, bustling crowds, warm golden light
+interior, classroom, wooden desks, chalkboard, tall windows, soft afternoon light
+exterior, open meadow, tall grass, scattered wildflowers, distant hills, bright midday sun
+interior, museum hall, marble floors, tall statues, arched ceilings, soft diffused light
+exterior, harbor, docked boats, wooden pier, seagulls overhead, early morning mist
+interior, gym, exercise equipment, mirrored wall, large windows, bright natural light
+exterior, autumn park, fallen leaves, wooden benches, tall trees, warm afternoon light
+interior, potter's studio, clay-covered shelves, spinning wheel, drying pots, warm window light
+exterior, campsite, canvas tent, glowing campfire, pine trees, starry night sky
+interior, train station platform, arched glass ceiling, old clock, soft golden light
+exterior, rice terraces, layered green fields, distant mountains, early morning fog
+interior, wine cellar, stone arches, wooden barrels, hanging lanterns, dim warm light
+exterior, castle courtyard, stone walls, climbing ivy, stone fountain, soft overcast light
+interior, observatory, large telescope, domed ceiling, star charts, cool blue moonlight
+exterior, hot air balloon festival, colorful balloons rising, open field, clear blue sky
+interior, jazz club, small stage, round tables, dim ambient light, faint smoky haze
+exterior, bamboo forest, tall green stalks, narrow dirt path, filtered green light
+interior, indoor pool, glass ceiling, tiled floor, potted palms, bright reflective light
+exterior, mountain lake at dawn, calm water, surrounding pines, soft pink sky

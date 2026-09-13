@@ -1,0 +1,6 @@
+__clothes_outfits_nsfw_presenting_female__
+__clothes_outfits_nsfw_presenting_female__, __clothes_accessories__
+__clothes_outfits_nsfw_presenting_female__, ((undressing):0.8)
+__clothes_outfits_nsfw_presenting_female__, ((dressing):0.8)
+__clothes_outfits_nsfw_presenting_female__, ((unworn clothes):0.8)
+__clothes_outfits_nsfw_presenting_female__, ((__clothes_accessories__):0.8)

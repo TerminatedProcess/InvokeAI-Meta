@@ -1,0 +1,8 @@
+__colors__-tinted eyewear
+multicolor-tinted eyewear
+rainbow-tinted eyewear
+__colors__-tinted eyewear, __colors__-framed eyewear
+multicolor-tinted eyewear, __colors__-framed eyewear
+rainbow-tinted eyewear, __colors__-framed eyewear
+heart-shaped eyewear
+heart-shaped eyewear, __colors__-framed eyewear

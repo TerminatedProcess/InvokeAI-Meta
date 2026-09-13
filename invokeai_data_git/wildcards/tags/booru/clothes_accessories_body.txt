@@ -1,0 +1,10 @@
+thigh strap
+arm strap
+arm garter
+thigh belt
+belt skirt, loose belt
+chest belt
+chest strap
+sash, ((__colors__ sash)
+((__colors__ sash):0.9), waist sash
+belly chain

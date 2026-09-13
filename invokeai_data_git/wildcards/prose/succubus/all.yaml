@@ -1,0 +1,77 @@
+# all.yaml — ネスト型ワイルドカード（sd-dynamic-prompts / CivitAI 互換）
+# 各セクションをサブワイルドカードとして定義。
+# combined キーで全属性を一括ランダムに引ける。
+#
+# 使用例:
+#   全ランダム  : __succubus_outfit_builder/all/combined__
+#   髪色のみ    : __succubus_outfit_builder/hair_color__  (セクション別 .txt 参照)
+
+outfit:
+  - tiny bat-shaped succubus lingerie
+  - demonic leather bikini armor
+  - sheer dark robe hanging open, nearly nude
+  - demonic bondage straps over bare skin
+  - heart-shaped pasties and heart-cutout panties
+  - high-leg succubus leotard with demonic trim
+  - sheer black succubus bodysuit, see-through fabric
+  - leather harness dress with wide cutouts
+  - veiled succubus dress, flowing translucent panels
+
+demon_parts:
+  - large bat wings and an arrow-tipped demon tail
+  - small demon wings and curled horns
+  - black wings and a heart-tipped tail
+  - single torn wing and long horns
+  - translucent ethereal wings and a slim tail
+  - huge bat wings and a thick demon tail
+  - tiny horns and a heart-tipped tail, no wings
+  - horns and tail only, no wings
+
+exposure:
+  - nipples exposed
+  - both breasts fully bared
+  - underboob exposed
+  - glowing demonic womb tattoo on the lower abdomen
+  - crotchless succubus bottom
+  - buttocks fully exposed
+  - almost completely nude, only tiny accents
+
+legwear:
+  - dark garter stockings
+  - demonic thigh-high boots
+  - lace-top thigh-high stockings
+  - black fishnet stockings
+  - demonic high heels
+  - barefoot with dark ankle chains
+
+accessory:
+  - holding a small demonic trident
+  - choker with a heart chain
+  - dark glowing halo above the head
+  - bat-wing hairband
+  - thin chain leash attached to the choker
+  - spiked armbands on both arms
+  - ""
+
+eyes:
+  - glowing heart-shaped pupils, seductive smile
+  - glowing red eyes, sultry expression
+  - slit pupils, predatory gaze
+  - half-lidded eyes, melting seductive look
+  - glowing purple eyes, hypnotic stare
+
+color:
+  - black outfit
+  - dark red outfit
+  - crimson red outfit
+  - purple outfit
+  - deep purple outfit
+  - red-purple outfit
+  - dark pink outfit
+  - dark blue outfit
+  - dark green outfit
+  - black and gold outfit
+
+# ---- 全セクションをまとめて引く combined wildcard ----
+combined:
+  - "__succubus_outfit_builder/outfit__, __succubus_outfit_builder/demon_parts__, __succubus_outfit_builder/exposure__, __succubus_outfit_builder/legwear__, __succubus_outfit_builder/accessory__, __succubus_outfit_builder/eyes__, __succubus_outfit_builder/color__"

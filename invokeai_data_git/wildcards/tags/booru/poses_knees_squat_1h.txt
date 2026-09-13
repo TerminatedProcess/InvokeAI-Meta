@@ -1,0 +1,20 @@
+all fours
+all fours, top-down bottom-up
+all fours, bear position
+all fours, top-down bottom-up, jack-o' challenge, spread legs, flexible
+all fours, body bridge
+kneeling
+kneeling, on one knee
+kneeling, leaning forward, on one knee
+kneeling, leaning back, on one knee
+kneeling, leaning on object, on one knee
+kneeling, __poses_arms_hands__, on one knee
+kneeling, leaning forward
+kneeling, leaning back
+kneeling, leaning on object
+kneeling, __poses_arms_hands__
+squatting
+squatting, leaning forward
+squatting, leaning back
+squatting, leaning on object
+squatting, __poses_arms_hands__

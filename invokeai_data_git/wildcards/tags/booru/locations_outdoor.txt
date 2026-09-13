@@ -1,0 +1,39 @@
+great wall of china, __time__
+canyon, __time__
+niagara falls, __time__
+mount fuji, __time__
+forbidden city, __time__
+floating island, __time__
+machu picchu, __time__
+stonehenge, __time__
+pyramid, desert, __time__
+rooftop, building, skyscraper, __time__
+amusement park, ((carousel, ferris wheel, roller coaster):0.7), __time__
+street, traffic lights, neon lights, lamppost, __time__
+las vegas, fountain, neon lights, __time__
+manhattan, manhattan bridge, __time__
+sapporo \(city\), __time__
+hakodate \(city\), __time__
+park, park bench, lamppost, __time__
+park, playground, __time__
+park, park bench, pond, __time__
+park, lake, __time__
+school, school gateway, __time__
+city, city lights, __time__
+airfield, ((aircraft):0.8), __time__
+heaven, rainbow, on cloud, __time__
+mountain, __time__
+river, riverbank, mountainous horizon, __time__
+river, waterfall, ((water):0.8), __time__
+garden, ((bush, flower, plant):0.8), (stone stairs, floral arch):0.6), __time__
+veranda, ((sliding doors):0.8), __time__
+meadow, flower, grass, mountainous horizon, __time__
+beach, palm tree, towel, __time__
+beach, ocean, waves, __time__
+beach, beach chair, towel, beach umbrella, ((shade, shadow):0.8), __time__
+flower field, flowers, __time__
+town, suburbs, __time__
+town, rural, __time__
+concert, __time__
+concert, stage, stage lights, idol, __time__
+train station, train station platform, railroad tracks, __time__

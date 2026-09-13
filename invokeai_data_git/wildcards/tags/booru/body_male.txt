@@ -1,0 +1,8 @@
+__body_skin_male__, __body_shape_male__
+__body_skin_male__, __body_shape_male__
+__body_skin_male__, __body_shape_male__
+__body_skin_male__, __body_shape_male__
+__body_shape_male__
+__body_skin_male__, __body_shape_male__, __body_hair_male__, body hair
+__body_skin_male__, __body_shape_male__, __body_hair_male__, body hair
+__body_skin_male__, __body_shape_male__, __body_hair_male__, body hair

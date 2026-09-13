@@ -1,0 +1,12 @@
+tennis uniform, tennis dress
+tennis uniform, ((tennis skirt, short shorts):0.5), ((polo shirt, sleeveless):0.7)
+hockey uniform, hockey sweater, ((shorts):0.8)
+basketball uniform, sleeveless shirt, basketball jersey, basketball shorts
+volleyball uniform, short shorts, sleeveless shirt, jersey, ((knee pads, elbow pads, elbow sleeve):0.5)
+volleyball uniform, buruma, sleeveless shirt, jersey, ((knee pads, elbow pads, elbow sleeve):0.5)
+volleyball uniform, sports bikini, sports bra, ((racerback, bikini bridge):0.7)
+track uniform, sports bikini, sports bra, ((racerback, bikini bridge):0.7)
+track uniform, gym uniform, ((sleeveless shirt, sports bra):0.9), ((buruma, short shorts):0.8)
+baseball uniform, baseball jersey, baseball hat, ((pants, shorts):0.5)
+track suit, track pants, track jacket
+cycling uniform, bike jersey, short shorts, bike shorts, ((gloves, fingerless gloves):0.5)

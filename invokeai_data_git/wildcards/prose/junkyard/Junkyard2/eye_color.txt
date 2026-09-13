@@ -1,0 +1,20 @@
+blue
+pale blue
+icy blue
+steel blue
+grey-blue
+deep blue
+green
+emerald
+sage
+olive
+hazel
+golden hazel
+warm brown
+dark brown
+amber
+honey
+copper
+grey
+slate
+charcoal

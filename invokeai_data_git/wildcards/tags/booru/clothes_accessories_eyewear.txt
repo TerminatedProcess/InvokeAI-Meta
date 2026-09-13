@@ -1,0 +1,2 @@
+glasses, __clothes_accessories_glasses__
+(sunglasses), __clothes_accessories_sunglasses__

@@ -1,0 +1,6 @@
+((hairy):0.8)
+((hairy):0.9)
+hairy
+very hairy
+(very hairy)
+hairy, ((__body_hair_density__ chest hair, __body_hair_density__ leg hair,  __body_hair_density__ arm hair,  __body_hair_density__ ass hair, __body_hair_density__ navel hair, __body_hair_density__ back hair):0.6) 

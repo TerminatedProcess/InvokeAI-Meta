@@ -1,0 +1,23 @@
+wide shot, perspective, __composition_view_angle_pose_clothes_male__
+wide shot, perspective, __composition_view_angle_pose_clothes_male__
+wide shot, perspective, __composition_view_angle_pose_clothes_male__
+close-up, __composition_view_angle_pose_clothes_male__
+upper body, __composition_view_angle_pose_clothes_male__
+cowboy shot, __composition_view_angle_pose_clothes_male__
+cowboy shot, __composition_view_angle_pose_clothes_male__
+cowboy shot, __composition_view_angle_pose_clothes_male__
+cowboy shot, __composition_view_angle_pose_clothes_male__
+perspective, __composition_view_angle_pose_clothes_male__
+selfie, perspective, depth of field, __composition_view_angle_pose_clothes_male__
+selfie, perspective, __composition_view_angle_pose_clothes_male__
+foreshortening, __composition_view_angle_pose_clothes_male__
+foreshortening, perspective, __composition_view_angle_pose_clothes_male__
+foreshortening, __composition_view_angle_pose_clothes_male__
+depth of field, __composition_view_angle_pose_clothes_male__
+__composition_view_angle_pose_clothes_male__, arm out of frame
+__composition_view_angle_pose_clothes_male__, foot out of frame
+(__composition_view_angle_pose_clothes_male__)
+__composition_view_angle_pose_clothes_male__, vanishing point
+full body, __composition_view_angle_pose_clothes_male__
+fisheye, __composition_view_angle_pose_clothes_male__
+((multiple views):0.8), ((__composition_multiple_view_type_clothes_male__):0.9)

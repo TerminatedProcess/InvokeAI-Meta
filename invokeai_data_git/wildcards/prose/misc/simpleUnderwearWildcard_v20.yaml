@@ -1,0 +1,142 @@
+simple_underwear:
+  Random:
+    - "__simple_underwear/TopColor__ __simple_underwear/Top__ and mismatching __simple_underwear/BottomColor__ __simple_underwear/Bottom__"
+    - "__simple_underwear/BottomColor__ __simple_underwear/BottomPattern__ __simple_underwear/Bottom__ and mismatching __simple_underwear/TopColor__ __simple_underwear/TopPattern__ __simple_underwear/Top__"
+    - "__simple_underwear/BottomColor__ __simple_underwear/BottomPattern__ __simple_underwear/Bottom__ with __simple_underwear/BottomDecorations__ and mismatching __simple_underwear/TopColor__ __simple_underwear/TopPattern__ __simple_underwear/Top__ with __simple_underwear/TopDecorations__"
+    
+
+  # --- Oberteile ---
+  # --- Farben für Mismatches ---
+  
+  Top:
+    - cotton bra
+    - lace bralette
+    - seamless bra
+    - padded bra
+    - sports bra
+    - soft cup bra
+    - plunge bra
+    - strapless bra
+    - triangle bra
+  
+  TopColor:
+    - white
+    - black
+    - pastel pink
+    - soft beige
+    - mint green
+    - baby blue
+    - cream
+    - sage green
+    - lavender
+    - cherry red
+    - aqua
+    - blue
+    - brown
+    - green
+    - grey
+    - gold
+    - orange
+    - pink
+    - purple
+    - red
+    - yellow
+    - multicolored
+
+  # --- Top Patterns mit Gewichtung ---
+  TopPattern:
+    - "{
+      2::plain
+      |2::solid
+      |1::striped
+      |1::floral print
+      |1::polka dot
+      |0.8::checkered
+      |0.6::plaid
+      |0.5::leopard print
+      |0.4::heart
+      |0.3::strawberry print
+      |0.2::camouflage
+      |0.2::print
+      }"
+  
+  # --- Top Dekorationen mit Gewichtung ---
+  TopDecorations:
+    - "{
+      1::lace-trimmed
+      |2::bow
+      |1::ribbon-trimmed
+      |0.8::frilled
+      |0.6::flower-trimmed
+      |0.5::embroidered
+      |0.4::o-ring
+      |0.3::fur-trimmed
+      |0.2::Santa
+      }"
+
+################################
+# --- Unterteile ---
+  Bottom:
+    - cotton panties
+    - bikini cut panties
+    - lace panties
+    - high waist panties
+    - seamless panties
+    - briefs
+    - hipster panties
+    - thong
+    - boy shorts
+
+  BottomColor:
+    - black
+    - white
+    - navy blue
+    - beige
+    - grey
+    - dark red
+    - forest green
+    - dark blue
+    - aqua
+    - blue
+    - brown
+    - gold
+    - green
+    - grey
+    - orange
+    - pink
+    - purple
+    - red
+    - yellow
+    - two-tone
+    - multicolored
+
+  # --- Bottom Patterns mit Gewichtung ---
+  BottomPattern:
+    - "{
+      2::plain
+      |2::solid
+      |1::striped
+      |1::polka dot
+      |0.8::checkered
+      |0.6::back-print
+      |0.5::front-print
+      |0.4::cat print
+      |0.4::bear print
+      |0.6::camouflage
+      }"
+
+  BottomDecorations:
+    - "{
+      0.8::checkered
+      |0.5::print
+      |1::floral print
+      |0.4::leopard print
+      |0.5::rabbit print
+      |0.5::star print
+      |0.3::strawberry print
+      |1::ribbed
+      |1::striped
+      |0.8::vertical-striped
+      }"
+
+  

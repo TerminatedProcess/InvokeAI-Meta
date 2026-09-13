@@ -1,0 +1,22 @@
+indoors, __locations_indoor__
+indoors, __locations_indoor__
+indoors, __locations_indoor__
+indoors, __lighting__
+indoors, loaded interior, __lighting__
+outdoors, __locations_outdoor__
+outdoors, __locations_outdoor__
+outdoors, __locations_outdoor__
+outdoors, scenery, __time__
+outdoors, loaded exterior, __time__
+simple background, __colors__ background, ((__lighting_direction__):0.7)
+indoors, __locations_indoor__, ((__genres__):0.8)
+indoors, __locations_indoor__, ((__genres__):0.8)
+indoors, __locations_indoor__, ((__genres__):0.8)
+indoors, ((__genres__):0.8), __lighting__
+indoors, loaded interior, ((__genres__):0.8), __lighting__
+outdoors, __locations_outdoor__, ((__genres__):0.8)
+outdoors, __locations_outdoor__, ((__genres__):0.8)
+outdoors, __locations_outdoor__, ((__genres__):0.8)
+outdoors, scenery, ((__genres__):0.8), __time__
+outdoors, loaded exterior, ((__genres__):0.8), __time__
+simple background, __colors__ background, ((__genres__):0.8), ((__lighting_direction__):0.7)

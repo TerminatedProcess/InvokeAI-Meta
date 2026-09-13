@@ -1,0 +1,5 @@
+__colors__ __clothes_dresses__, __clothes_dress_length__
+multicolored dress, __colors__ dress, ((__colors__ dress):0.8), __clothes_dresses__, __clothes_dress_length__
+gradient dress, __colors__ dress, ((__colors__ dress):0.8), __clothes_dresses__, __clothes_dress_length__
+two-tone dress, __colors__ dress, ((__colors__ dress):0.8), __clothes_dresses__, __clothes_dress_length__
+two-sided dress, __colors__ dress, ((__colors__ dress):0.8), __clothes_dresses__, __clothes_dress_length__

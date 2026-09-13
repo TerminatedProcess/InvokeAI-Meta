@@ -1,0 +1,703 @@
+# Krea 2 NSFW DUAL-IMAGE (side-by-side) templates
+# Tags: __uw-krea2-nsfw/router|template|leaf/*__  (SAME root as room/action files)
+# Root key: uw-krea2-nsfw
+#
+# WHY: Side-by-side dual-panel product — shared identity once; left panel clothed;
+#      right panel wardrobe/pose deltas only. Never nest full room/action L2 templates.
+#
+# WORD BUDGET EXEMPT: dual L2s may exceed the usual ~140w target (two panels).
+#
+# ROUTER RULE: Dual L2s register ONLY under landscape-dual-* routers — never
+#              portrait / room / intimate-action routers.
+#
+# SHARED ATOMS: Pull only __uw-shared/common/*__ and __uw-shared/nsfw/*__.
+#               Never pull __uw-shared/sfw/*__. Partner cue only via existing
+#               action pose pools (no double cue).
+#
+# ASPECT: Every dual L2 ends with [3:2], [4:3], or [16:9] (landscape family).
+#
+# version: 5
+# 2026-07-30: Batch D — dual-outfit-partner-living-room-missionary pose-right → pose/dual-missionary-coupling
+uw-krea2-nsfw:
+  router:
+    # Master union of all dual-image L2s
+    landscape-dual-image-pics:
+    - __uw-krea2-nsfw/template/dual-outfit-reveal-living-room-sofa__
+    - __uw-krea2-nsfw/template/dual-outfit-reveal-kitchen-stool__
+    - __uw-krea2-nsfw/template/dual-outfit-reveal-bedroom-stand__
+    - __uw-krea2-nsfw/template/dual-outfit-reveal-poolside-lounge__
+    - __uw-krea2-nsfw/template/dual-outfit-solo-living-room-fingering__
+    - __uw-krea2-nsfw/template/dual-outfit-solo-bedroom-panties-aside__
+    - __uw-krea2-nsfw/template/dual-outfit-solo-bedroom-masturbating__
+    - __uw-krea2-nsfw/template/dual-outfit-solo-living-room-toy__
+    - __uw-krea2-nsfw/template/dual-outfit-partner-living-room-missionary__
+    - __uw-krea2-nsfw/template/dual-outfit-partner-bedroom-cowgirl__
+    - __uw-krea2-nsfw/template/dual-outfit-partner-bedroom-oral__
+    - __uw-krea2-nsfw/template/dual-outfit-partner-bedroom-doggystyle__
+    - __uw-krea2-nsfw/template/dual-outfit-partner-kitchen-standing__
+    - __uw-krea2-nsfw/template/dual-pose-shift-living-room-over-shoulder__
+    - __uw-krea2-nsfw/template/dual-pose-shift-bedroom-standing-to-reclined__
+    - __uw-krea2-nsfw/template/dual-pose-shift-kitchen-stool-to-lean__
+
+    landscape-dual-outfit-reveal-pics:
+    - __uw-krea2-nsfw/template/dual-outfit-reveal-living-room-sofa__
+    - __uw-krea2-nsfw/template/dual-outfit-reveal-kitchen-stool__
+    - __uw-krea2-nsfw/template/dual-outfit-reveal-bedroom-stand__
+    - __uw-krea2-nsfw/template/dual-outfit-reveal-poolside-lounge__
+
+    landscape-dual-outfit-solo-pics:
+    - __uw-krea2-nsfw/template/dual-outfit-solo-living-room-fingering__
+    - __uw-krea2-nsfw/template/dual-outfit-solo-bedroom-panties-aside__
+    - __uw-krea2-nsfw/template/dual-outfit-solo-bedroom-masturbating__
+    - __uw-krea2-nsfw/template/dual-outfit-solo-living-room-toy__
+
+    landscape-dual-outfit-partner-pics:
+    - __uw-krea2-nsfw/template/dual-outfit-partner-living-room-missionary__
+    - __uw-krea2-nsfw/template/dual-outfit-partner-bedroom-cowgirl__
+    - __uw-krea2-nsfw/template/dual-outfit-partner-bedroom-oral__
+    - __uw-krea2-nsfw/template/dual-outfit-partner-bedroom-doggystyle__
+    - __uw-krea2-nsfw/template/dual-outfit-partner-kitchen-standing__
+
+    landscape-dual-pose-shift-pics:
+    - __uw-krea2-nsfw/template/dual-pose-shift-living-room-over-shoulder__
+    - __uw-krea2-nsfw/template/dual-pose-shift-bedroom-standing-to-reclined__
+    - __uw-krea2-nsfw/template/dual-pose-shift-kitchen-stool-to-lean__
+
+  template:
+    # --- Family 1: outfit → reveal (Batch B / Task 3) ---
+    dual-outfit-reveal-living-room-sofa:
+    - >-
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-living-room-sofa/opener__,
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-living-room-sofa/subject__.
+        Dressed in __uw-krea2-nsfw/leaf/dual-outfit-reveal-living-room-sofa/wardrobe-left__,
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-living-room-sofa/environment__.
+        In the first photo, __uw-krea2-nsfw/leaf/dual-outfit-reveal-living-room-sofa/pose-left__.
+        In the second photo, the same woman __uw-krea2-nsfw/leaf/dual-outfit-reveal-living-room-sofa/wardrobe-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-living-room-sofa/pose-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-living-room-sofa/lighting__,
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-living-room-sofa/camera__,
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-living-room-sofa/treatment__. [3:2]
+
+    dual-outfit-reveal-kitchen-stool:
+    - >-
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-kitchen-stool/opener__,
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-kitchen-stool/subject__.
+        Dressed in __uw-krea2-nsfw/leaf/dual-outfit-reveal-kitchen-stool/wardrobe-left__,
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-kitchen-stool/environment__.
+        In the first photo, __uw-krea2-nsfw/leaf/dual-outfit-reveal-kitchen-stool/pose-left__.
+        In the second photo, the same woman __uw-krea2-nsfw/leaf/dual-outfit-reveal-kitchen-stool/wardrobe-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-kitchen-stool/pose-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-kitchen-stool/lighting__,
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-kitchen-stool/camera__,
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-kitchen-stool/treatment__. [3:2]
+
+    dual-outfit-reveal-bedroom-stand:
+    - >-
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-bedroom-stand/opener__,
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-bedroom-stand/subject__.
+        Dressed in __uw-krea2-nsfw/leaf/dual-outfit-reveal-bedroom-stand/wardrobe-left__,
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-bedroom-stand/environment__.
+        In the first photo, __uw-krea2-nsfw/leaf/dual-outfit-reveal-bedroom-stand/pose-left__.
+        In the second photo, the same woman __uw-krea2-nsfw/leaf/dual-outfit-reveal-bedroom-stand/wardrobe-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-bedroom-stand/pose-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-bedroom-stand/lighting__,
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-bedroom-stand/camera__,
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-bedroom-stand/treatment__. [4:3]
+
+    dual-outfit-reveal-poolside-lounge:
+    - >-
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-poolside-lounge/opener__,
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-poolside-lounge/subject__.
+        Dressed in __uw-krea2-nsfw/leaf/dual-outfit-reveal-poolside-lounge/wardrobe-left__,
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-poolside-lounge/environment__.
+        In the first photo, __uw-krea2-nsfw/leaf/dual-outfit-reveal-poolside-lounge/pose-left__.
+        In the second photo, the same woman __uw-krea2-nsfw/leaf/dual-outfit-reveal-poolside-lounge/wardrobe-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-poolside-lounge/pose-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-poolside-lounge/lighting__,
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-poolside-lounge/camera__,
+        __uw-krea2-nsfw/leaf/dual-outfit-reveal-poolside-lounge/treatment__. [3:2]
+
+    # --- Family 2: outfit → solo action (Batch B / Task 4) ---
+    dual-outfit-solo-living-room-fingering:
+    - >-
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-fingering/opener__,
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-fingering/subject__.
+        Dressed in __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-fingering/wardrobe-left__,
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-fingering/environment__.
+        In the first photo, __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-fingering/pose-left__.
+        In the second photo, the same woman __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-fingering/wardrobe-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-fingering/pose-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-fingering/lighting__,
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-fingering/camera__,
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-fingering/treatment__. [3:2]
+
+    dual-outfit-solo-bedroom-panties-aside:
+    - >-
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-panties-aside/opener__,
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-panties-aside/subject__.
+        Dressed in __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-panties-aside/wardrobe-left__,
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-panties-aside/environment__.
+        In the first photo, __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-panties-aside/pose-left__.
+        In the second photo, the same woman __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-panties-aside/wardrobe-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-panties-aside/pose-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-panties-aside/lighting__,
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-panties-aside/camera__,
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-panties-aside/treatment__. [3:2]
+
+    dual-outfit-solo-bedroom-masturbating:
+    - >-
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-masturbating/opener__,
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-masturbating/subject__.
+        Dressed in __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-masturbating/wardrobe-left__,
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-masturbating/environment__.
+        In the first photo, __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-masturbating/pose-left__.
+        In the second photo, the same woman __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-masturbating/wardrobe-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-masturbating/pose-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-masturbating/lighting__,
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-masturbating/camera__,
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-bedroom-masturbating/treatment__. [3:2]
+
+    dual-outfit-solo-living-room-toy:
+    - >-
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-toy/opener__,
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-toy/subject__.
+        Dressed in __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-toy/wardrobe-left__,
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-toy/environment__.
+        In the first photo, __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-toy/pose-left__.
+        In the second photo, the same woman __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-toy/wardrobe-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-toy/pose-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-toy/lighting__,
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-toy/camera__,
+        __uw-krea2-nsfw/leaf/dual-outfit-solo-living-room-toy/treatment__. [4:3]
+
+    # --- Family 3: outfit → partner (Batch A hero + Batch B / Task 5) ---
+    dual-outfit-partner-living-room-missionary:
+    - >-
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-living-room-missionary/opener__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-living-room-missionary/subject__.
+        Dressed in __uw-krea2-nsfw/leaf/dual-outfit-partner-living-room-missionary/wardrobe-left__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-living-room-missionary/environment__.
+        In the first photo, __uw-krea2-nsfw/leaf/dual-outfit-partner-living-room-missionary/pose-left__.
+        In the second photo, the same woman __uw-krea2-nsfw/leaf/dual-outfit-partner-living-room-missionary/wardrobe-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-living-room-missionary/pose-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-living-room-missionary/lighting__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-living-room-missionary/camera__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-living-room-missionary/treatment__. [16:9]
+
+    dual-outfit-partner-bedroom-cowgirl:
+    - >-
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-cowgirl/opener__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-cowgirl/subject__.
+        Dressed in __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-cowgirl/wardrobe-left__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-cowgirl/environment__.
+        In the first photo, __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-cowgirl/pose-left__.
+        In the second photo, the same woman __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-cowgirl/wardrobe-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-cowgirl/pose-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-cowgirl/lighting__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-cowgirl/camera__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-cowgirl/treatment__. [16:9]
+
+    dual-outfit-partner-bedroom-oral:
+    - >-
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-oral/opener__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-oral/subject__.
+        Dressed in __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-oral/wardrobe-left__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-oral/environment__.
+        In the first photo, __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-oral/pose-left__.
+        In the second photo, the same woman __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-oral/wardrobe-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-oral/pose-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-oral/lighting__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-oral/camera__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-oral/treatment__. [3:2]
+
+    dual-outfit-partner-bedroom-doggystyle:
+    - >-
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-doggystyle/opener__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-doggystyle/subject__.
+        Dressed in __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-doggystyle/wardrobe-left__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-doggystyle/environment__.
+        In the first photo, __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-doggystyle/pose-left__.
+        In the second photo, the same woman __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-doggystyle/wardrobe-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-doggystyle/pose-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-doggystyle/lighting__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-doggystyle/camera__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-bedroom-doggystyle/treatment__. [16:9]
+
+    dual-outfit-partner-kitchen-standing:
+    - >-
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-kitchen-standing/opener__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-kitchen-standing/subject__.
+        Dressed in __uw-krea2-nsfw/leaf/dual-outfit-partner-kitchen-standing/wardrobe-left__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-kitchen-standing/environment__.
+        In the first photo, __uw-krea2-nsfw/leaf/dual-outfit-partner-kitchen-standing/pose-left__.
+        In the second photo, the same woman __uw-krea2-nsfw/leaf/dual-outfit-partner-kitchen-standing/wardrobe-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-kitchen-standing/pose-right__.
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-kitchen-standing/lighting__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-kitchen-standing/camera__,
+        __uw-krea2-nsfw/leaf/dual-outfit-partner-kitchen-standing/treatment__. [3:2]
+
+    # --- Family 4: pose → pose shift (Batch B / Task 6) ---
+    dual-pose-shift-living-room-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/dual-pose-shift-living-room-over-shoulder/opener__,
+        __uw-krea2-nsfw/leaf/dual-pose-shift-living-room-over-shoulder/subject__.
+        Dressed in __uw-krea2-nsfw/leaf/dual-pose-shift-living-room-over-shoulder/wardrobe-left__,
+        __uw-krea2-nsfw/leaf/dual-pose-shift-living-room-over-shoulder/environment__.
+        In the first photo, __uw-krea2-nsfw/leaf/dual-pose-shift-living-room-over-shoulder/pose-left__.
+        In the second photo, the same woman __uw-krea2-nsfw/leaf/dual-pose-shift-living-room-over-shoulder/wardrobe-right__.
+        __uw-krea2-nsfw/leaf/dual-pose-shift-living-room-over-shoulder/pose-right__.
+        __uw-krea2-nsfw/leaf/dual-pose-shift-living-room-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/dual-pose-shift-living-room-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/dual-pose-shift-living-room-over-shoulder/treatment__. [3:2]
+
+    dual-pose-shift-bedroom-standing-to-reclined:
+    - >-
+        __uw-krea2-nsfw/leaf/dual-pose-shift-bedroom-standing-to-reclined/opener__,
+        __uw-krea2-nsfw/leaf/dual-pose-shift-bedroom-standing-to-reclined/subject__.
+        Dressed in __uw-krea2-nsfw/leaf/dual-pose-shift-bedroom-standing-to-reclined/wardrobe-left__,
+        __uw-krea2-nsfw/leaf/dual-pose-shift-bedroom-standing-to-reclined/environment__.
+        In the first photo, __uw-krea2-nsfw/leaf/dual-pose-shift-bedroom-standing-to-reclined/pose-left__.
+        In the second photo, the same woman __uw-krea2-nsfw/leaf/dual-pose-shift-bedroom-standing-to-reclined/wardrobe-right__.
+        __uw-krea2-nsfw/leaf/dual-pose-shift-bedroom-standing-to-reclined/pose-right__.
+        __uw-krea2-nsfw/leaf/dual-pose-shift-bedroom-standing-to-reclined/lighting__,
+        __uw-krea2-nsfw/leaf/dual-pose-shift-bedroom-standing-to-reclined/camera__,
+        __uw-krea2-nsfw/leaf/dual-pose-shift-bedroom-standing-to-reclined/treatment__. [4:3]
+
+    dual-pose-shift-kitchen-stool-to-lean:
+    - >-
+        __uw-krea2-nsfw/leaf/dual-pose-shift-kitchen-stool-to-lean/opener__,
+        __uw-krea2-nsfw/leaf/dual-pose-shift-kitchen-stool-to-lean/subject__.
+        Dressed in __uw-krea2-nsfw/leaf/dual-pose-shift-kitchen-stool-to-lean/wardrobe-left__,
+        __uw-krea2-nsfw/leaf/dual-pose-shift-kitchen-stool-to-lean/environment__.
+        In the first photo, __uw-krea2-nsfw/leaf/dual-pose-shift-kitchen-stool-to-lean/pose-left__.
+        In the second photo, the same woman __uw-krea2-nsfw/leaf/dual-pose-shift-kitchen-stool-to-lean/wardrobe-right__.
+        __uw-krea2-nsfw/leaf/dual-pose-shift-kitchen-stool-to-lean/pose-right__.
+        __uw-krea2-nsfw/leaf/dual-pose-shift-kitchen-stool-to-lean/lighting__,
+        __uw-krea2-nsfw/leaf/dual-pose-shift-kitchen-stool-to-lean/camera__,
+        __uw-krea2-nsfw/leaf/dual-pose-shift-kitchen-stool-to-lean/treatment__. [3:2]
+
+  leaf:
+    # ========== Family 1: reveal ==========
+    dual-outfit-reveal-living-room-sofa:
+      opener:
+      - __uw-shared/nsfw/shot/dual-side-by-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      wardrobe-left:
+      - __uw-shared/nsfw/wardrobe/dual-clothed-casual__
+      environment:
+      - __uw-shared/nsfw/environment/living-room__
+      pose-left:
+      - she sits on the couch with a subtle smile, __uw-shared/common/expression/nsfw-candid__
+      - she sits upright on the sofa facing the camera, __uw-shared/common/expression/nsfw-front__
+      - she perches on the couch cushion with hands in her lap, __uw-shared/common/expression/nsfw-candid__
+      wardrobe-right:
+      - __uw-shared/nsfw/wardrobe/dual-reveal-state__
+      pose-right:
+      - She is mid-laugh on the couch, __uw-shared/common/expression/nsfw-candid__
+      - She has a knowing side look on the sofa as she bites her bottom lip, __uw-shared/common/expression/nsfw-glance__
+      - She sits back on the cushions facing the camera, __uw-shared/common/expression/nsfw-front__
+      - She leans into the sofa arm with a playful smile, __uw-shared/common/expression/nsfw-candid__
+      lighting:
+      - __uw-shared/nsfw/lighting/living-room__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+
+    dual-outfit-reveal-kitchen-stool:
+      opener:
+      - __uw-shared/nsfw/shot/dual-side-by-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      wardrobe-left:
+      - __uw-shared/nsfw/wardrobe/dual-clothed-casual__
+      environment:
+      - __uw-shared/nsfw/environment/kitchen-morning__
+      pose-left:
+      - she perches on a bar stool at the island facing the camera, __uw-shared/common/expression/nsfw-front__
+      - she sits on a kitchen stool with hands resting on her thighs, __uw-shared/common/expression/nsfw-candid__
+      - she leans lightly on the counter from the stool, __uw-shared/common/expression/nsfw-candid__
+      wardrobe-right:
+      - __uw-shared/nsfw/wardrobe/dual-reveal-state__
+      pose-right:
+      - She is mid-laugh at the island, __uw-shared/common/expression/nsfw-candid__
+      - She has a knowing side look on the stool as she bites her lip, __uw-shared/common/expression/nsfw-glance__
+      - She sits at the counter edge facing the camera, __uw-shared/common/expression/nsfw-front__
+      - She leans into the island with a playful smile, __uw-shared/common/expression/nsfw-candid__
+      lighting:
+      - __uw-shared/nsfw/lighting/kitchen-morning__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+
+    dual-outfit-reveal-bedroom-stand:
+      opener:
+      - __uw-shared/nsfw/shot/dual-side-by-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      wardrobe-left:
+      - __uw-shared/nsfw/wardrobe/dual-clothed-casual__
+      environment:
+      - __uw-shared/nsfw/environment/bedroom__
+      pose-left:
+      - she stands facing the camera with weight on one hip, __uw-shared/common/expression/nsfw-front__
+      - she stands in the bedroom with shoulders relaxed and chin slightly lifted, __uw-shared/common/expression/nsfw-candid__
+      - she stands before the bed with one hand at her waist, __uw-shared/common/expression/nsfw-candid__
+      wardrobe-right:
+      - __uw-shared/nsfw/wardrobe/dual-reveal-state__
+      pose-right:
+      - She stands facing the camera with weight on one hip, __uw-shared/common/expression/nsfw-front__
+      - She is mid-laugh in the bedroom, __uw-shared/common/expression/nsfw-candid__
+      - She has a knowing side look toward the lens, __uw-shared/common/expression/nsfw-glance__
+      - She stands upright with relaxed shoulders, __uw-shared/common/expression/nsfw-candid__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+
+    dual-outfit-reveal-poolside-lounge:
+      opener:
+      - __uw-shared/nsfw/shot/dual-side-by-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      wardrobe-left:
+      - __uw-shared/nsfw/wardrobe/dual-clothed-casual__
+      environment:
+      - __uw-shared/nsfw/environment/poolside-day__
+      pose-left:
+      - she reclines on the lounger with one knee up and shoulders soft, __uw-shared/common/expression/nsfw-candid__
+      - she sits on the lounger edge facing the camera, __uw-shared/common/expression/nsfw-front__
+      - she lounges sideways on the chaise with posture easy, __uw-shared/common/expression/nsfw-candid__
+      wardrobe-right:
+      - __uw-shared/nsfw/wardrobe/dual-reveal-state__
+      pose-right:
+      - She is mid-laugh on the lounger, __uw-shared/common/expression/nsfw-candid__
+      - She has a knowing side look on the chaise as she bites her lip, __uw-shared/common/expression/nsfw-glance__
+      - She reclines on the lounger facing the camera, __uw-shared/common/expression/nsfw-front__
+      - She sits at the lounger edge with a playful smile, __uw-shared/common/expression/nsfw-candid__
+      lighting:
+      - __uw-shared/nsfw/lighting/poolside-day__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+
+    # ========== Family 2: solo ==========
+    dual-outfit-solo-living-room-fingering:
+      opener:
+      - __uw-shared/nsfw/shot/dual-side-by-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      wardrobe-left:
+      - __uw-shared/nsfw/wardrobe/dual-clothed-casual__
+      environment:
+      - __uw-shared/nsfw/environment/living-room__
+      pose-left:
+      - she sits on the couch facing the camera with hands in her lap, __uw-shared/common/expression/nsfw-front__
+      - she sits upright on the sofa with a subtle smile, __uw-shared/common/expression/nsfw-candid__
+      - she perches on the couch cushion facing the lens, __uw-shared/common/expression/nsfw-front__
+      wardrobe-right:
+      - __uw-shared/nsfw/wardrobe/dual-reveal-state__
+      pose-right:
+      - __uw-shared/nsfw/pose/action-solo-fingering__
+      lighting:
+      - __uw-shared/nsfw/lighting/living-room__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+
+    dual-outfit-solo-bedroom-panties-aside:
+      opener:
+      - __uw-shared/nsfw/shot/dual-side-by-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      wardrobe-left:
+      - __uw-shared/nsfw/wardrobe/dual-clothed-casual__
+      environment:
+      - __uw-shared/nsfw/environment/bedroom__
+      pose-left:
+      - she sits on the bed edge facing the camera, __uw-shared/common/expression/nsfw-front__
+      - she sits upright on the mattress with hands in her lap, __uw-shared/common/expression/nsfw-candid__
+      - she perches on the bed facing the lens with shoulders soft, __uw-shared/common/expression/nsfw-front__
+      wardrobe-right:
+      - with panties pulled aside and her jeans open at the fly
+      - with lace panties tugged to one side
+      - with panties shifted aside and top bunched at her ribs
+      - with thong pulled aside and bare hips above the waistband
+      pose-right:
+      - __uw-shared/nsfw/pose/action-solo-panties-aside__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+
+    dual-outfit-solo-bedroom-masturbating:
+      opener:
+      - __uw-shared/nsfw/shot/dual-side-by-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      wardrobe-left:
+      - __uw-shared/nsfw/wardrobe/dual-clothed-casual__
+      environment:
+      - __uw-shared/nsfw/environment/bedroom__
+      pose-left:
+      - she sits on the bed edge facing the camera, __uw-shared/common/expression/nsfw-front__
+      - she sits upright on the mattress with a subtle smile, __uw-shared/common/expression/nsfw-candid__
+      - she perches on the bedding facing the lens, __uw-shared/common/expression/nsfw-front__
+      wardrobe-right:
+      - __uw-shared/nsfw/wardrobe/dual-reveal-state__
+      pose-right:
+      - __uw-shared/nsfw/pose/action-solo-masturbating__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+
+    dual-outfit-solo-living-room-toy:
+      opener:
+      - __uw-shared/nsfw/shot/dual-side-by-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      wardrobe-left:
+      - __uw-shared/nsfw/wardrobe/dual-clothed-casual__
+      environment:
+      - __uw-shared/nsfw/environment/living-room__
+      pose-left:
+      - she sits on the couch facing the camera with hands in her lap, __uw-shared/common/expression/nsfw-front__
+      - she sits upright on the sofa with shoulders relaxed, __uw-shared/common/expression/nsfw-candid__
+      - she perches on the couch cushion facing the lens, __uw-shared/common/expression/nsfw-front__
+      wardrobe-right:
+      - __uw-shared/nsfw/wardrobe/dual-reveal-state__
+      pose-right:
+      - __uw-shared/nsfw/pose/action-solo-toy__
+      lighting:
+      - __uw-shared/nsfw/lighting/living-room__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+
+    # ========== Family 3: partner ==========
+    dual-outfit-partner-living-room-missionary:
+      opener:
+      - __uw-shared/nsfw/shot/dual-side-by-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      wardrobe-left:
+      - __uw-shared/nsfw/wardrobe/dual-clothed-casual__
+      environment:
+      - __uw-shared/nsfw/environment/living-room__
+      pose-left:
+      - she sits on the couch with a subtle smile, __uw-shared/common/expression/nsfw-candid__
+      - she sits upright on the sofa facing the camera, __uw-shared/common/expression/nsfw-front__
+      - she perches on the couch cushion with hands in her lap, __uw-shared/common/expression/nsfw-candid__
+      wardrobe-right:
+      - __uw-shared/nsfw/wardrobe/dual-reveal-state__
+      pose-right:
+      - __uw-shared/nsfw/pose/dual-missionary-coupling__
+      lighting:
+      - __uw-shared/nsfw/lighting/living-room__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+
+    dual-outfit-partner-bedroom-cowgirl:
+      opener:
+      - __uw-shared/nsfw/shot/dual-side-by-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      wardrobe-left:
+      - __uw-shared/nsfw/wardrobe/dual-clothed-casual__
+      environment:
+      - __uw-shared/nsfw/environment/bedroom__
+      pose-left:
+      - she sits on the bed edge facing the camera, __uw-shared/common/expression/nsfw-front__
+      - she sits upright on the mattress with hands in her lap, __uw-shared/common/expression/nsfw-candid__
+      - she perches on the bedding facing the lens, __uw-shared/common/expression/nsfw-front__
+      wardrobe-right:
+      - __uw-shared/nsfw/wardrobe/dual-reveal-state__
+      pose-right:
+      - __uw-shared/nsfw/pose/action-partner-cowgirl__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+
+    dual-outfit-partner-bedroom-oral:
+      opener:
+      - __uw-shared/nsfw/shot/dual-side-by-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      wardrobe-left:
+      - __uw-shared/nsfw/wardrobe/dual-clothed-casual__
+      environment:
+      - __uw-shared/nsfw/environment/bedroom__
+      pose-left:
+      - she sits on the bed edge facing the camera, __uw-shared/common/expression/nsfw-front__
+      - she sits upright on the mattress with a subtle smile, __uw-shared/common/expression/nsfw-candid__
+      - she perches on the bedding facing the lens, __uw-shared/common/expression/nsfw-front__
+      wardrobe-right:
+      - __uw-shared/nsfw/wardrobe/dual-reveal-state__
+      pose-right:
+      - __uw-shared/nsfw/pose/action-partner-oral__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+
+    dual-outfit-partner-bedroom-doggystyle:
+      opener:
+      - __uw-shared/nsfw/shot/dual-side-by-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      wardrobe-left:
+      - __uw-shared/nsfw/wardrobe/dual-clothed-casual__
+      environment:
+      - __uw-shared/nsfw/environment/bedroom__
+      pose-left:
+      - she sits on the bed edge facing the camera, __uw-shared/common/expression/nsfw-front__
+      - she sits upright on the mattress with hands in her lap, __uw-shared/common/expression/nsfw-candid__
+      - she perches on the bedding facing the lens, __uw-shared/common/expression/nsfw-front__
+      wardrobe-right:
+      - __uw-shared/nsfw/wardrobe/dual-reveal-state__
+      pose-right:
+      - __uw-shared/nsfw/pose/action-partner-doggystyle__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+
+    dual-outfit-partner-kitchen-standing:
+      opener:
+      - __uw-shared/nsfw/shot/dual-side-by-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      wardrobe-left:
+      - __uw-shared/nsfw/wardrobe/dual-clothed-casual__
+      environment:
+      - __uw-shared/nsfw/environment/kitchen-morning__
+      pose-left:
+      - she perches on a bar stool at the island facing the camera, __uw-shared/common/expression/nsfw-front__
+      - she sits on a kitchen stool with hands resting on her thighs, __uw-shared/common/expression/nsfw-candid__
+      - she leans lightly on the counter from the stool, __uw-shared/common/expression/nsfw-candid__
+      wardrobe-right:
+      - __uw-shared/nsfw/wardrobe/dual-reveal-state__
+      pose-right:
+      # Kitchen-locked standing partner (avoids bed/wall generics in action-partner-standing)
+      - Standing at the kitchen island with her partner behind her, one thigh lifted, __uw-shared/common/expression/nsfw-action__. __uw-shared/nsfw/partner-cue/male__
+      - Bent forward over the counter as her partner holds her hips, __uw-shared/common/expression/nsfw-action__. __uw-shared/nsfw/partner-cue/male__
+      - Standing at the island edge with partner behind her thighs, __uw-shared/common/expression/nsfw-action__. __uw-shared/nsfw/partner-cue/male__
+      - Upright against the counter with one knee hooked around her partner's hip, __uw-shared/common/expression/nsfw-action__. __uw-shared/nsfw/partner-cue/male__
+      - Standing pressed back against her partner at the island with thighs parted, __uw-shared/common/expression/nsfw-action__. __uw-shared/nsfw/partner-cue/male__
+      - Leaning on the counter with partner close behind her hips, __uw-shared/common/expression/nsfw-action__. __uw-shared/nsfw/partner-cue/male__
+      lighting:
+      - __uw-shared/nsfw/lighting/kitchen-morning__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+
+    # ========== Family 4: pose-shift ==========
+    dual-pose-shift-living-room-over-shoulder:
+      opener:
+      - __uw-shared/nsfw/shot/dual-side-by-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      wardrobe-left:
+      - __uw-shared/nsfw/wardrobe/dual-clothed-casual__
+      environment:
+      - __uw-shared/nsfw/environment/living-room__
+      pose-left:
+      - she stands beside the sofa with her back to the camera looking back over her shoulder, __uw-shared/common/expression/nsfw-glance__
+      - she faces away from the cushions glancing over her shoulder toward the lens, __uw-shared/common/expression/nsfw-glance__
+      - she stands before the sectional with back to the viewer and chin turned over one shoulder, __uw-shared/common/expression/nsfw-glance__
+      wardrobe-right:
+      - __uw-shared/nsfw/wardrobe/dual-reveal-state__
+      pose-right:
+      - She turns to face the camera standing before the sofa, __uw-shared/common/expression/nsfw-front__
+      - She sits on the couch cushions facing the lens, __uw-shared/common/expression/nsfw-candid__
+      - She stands front-facing with relaxed shoulders before the sectional, __uw-shared/common/expression/nsfw-front__
+      - She perches on the sofa arm facing the camera, __uw-shared/common/expression/nsfw-candid__
+      lighting:
+      - __uw-shared/nsfw/lighting/living-room__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+
+    dual-pose-shift-bedroom-standing-to-reclined:
+      opener:
+      - __uw-shared/nsfw/shot/dual-side-by-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      wardrobe-left:
+      - __uw-shared/nsfw/wardrobe/dual-clothed-casual__
+      environment:
+      - __uw-shared/nsfw/environment/bedroom__
+      pose-left:
+      - she stands facing the camera with weight on one hip, __uw-shared/common/expression/nsfw-front__
+      - she stands in the bedroom with shoulders relaxed and chin slightly lifted, __uw-shared/common/expression/nsfw-candid__
+      - she stands before the bed with one hand at her waist, __uw-shared/common/expression/nsfw-candid__
+      wardrobe-right:
+      - __uw-shared/nsfw/wardrobe/dual-reveal-state__
+      pose-right:
+      - She reclines across the bed on her side with head propped on one hand, __uw-shared/common/expression/nsfw-candid__
+      - She lies across rumpled sheets with shoulders relaxed toward the lens, __uw-shared/common/expression/nsfw-front__
+      - She stretches across the mattress propped on one elbow, __uw-shared/common/expression/nsfw-candid__
+      - She reclines along the bedding with gaze toward the camera, __uw-shared/common/expression/nsfw-front__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+
+    dual-pose-shift-kitchen-stool-to-lean:
+      opener:
+      - __uw-shared/nsfw/shot/dual-side-by-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      wardrobe-left:
+      - __uw-shared/nsfw/wardrobe/dual-clothed-casual__
+      environment:
+      - __uw-shared/nsfw/environment/kitchen-morning__
+      pose-left:
+      - she perches on a bar stool at the island facing the camera, __uw-shared/common/expression/nsfw-front__
+      - she sits on a kitchen stool with hands resting on her thighs, __uw-shared/common/expression/nsfw-candid__
+      - she leans lightly on the counter from the stool, __uw-shared/common/expression/nsfw-candid__
+      wardrobe-right:
+      - __uw-shared/nsfw/wardrobe/dual-reveal-state__
+      pose-right:
+      - She leans against the counter with weight on one elbow, __uw-shared/common/expression/nsfw-candid__
+      - She stands at the island with both palms flat on the marble, __uw-shared/common/expression/nsfw-front__
+      - She leans into the countertop facing the lens, __uw-shared/common/expression/nsfw-candid__
+      - She perches on the counter edge with legs dangling, __uw-shared/common/expression/nsfw-front__
+      lighting:
+      - __uw-shared/nsfw/lighting/kitchen-morning__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__

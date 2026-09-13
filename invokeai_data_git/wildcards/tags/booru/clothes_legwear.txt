@@ -1,0 +1,8 @@
+bare legs
+__clothes_legwear_height__
+socks, __clothes_sock_styles__, __colors__ socks
+__clothes_legwear_height__
+socks, __clothes_sock_styles__, __pattern__ socks
+leggings, __clothes_legwear_height__
+__clothes_legwear_height__
+leg warmers, __colors__ leg warmers

@@ -1,0 +1,2336 @@
+# Shared fantasy atom pools (NSFW fantasy product — race, fantasy-safe skin, identity, race-tinted wardrobe,
+# plus Batch B core env/lighting/pose/shot/camera, Batch C fantasy-selfie, Batch D fantasy-action pools)
+# Tags: __uw-shared/fantasy/*__
+# Depth: max 3 key levels under uw-shared -> fantasy -> element -> family
+# Fantasy templates pull __uw-shared/common/*__ + __uw-shared/fantasy/*__ only (not sfw; not room nsfw wardrobe/env/pose).
+# Scene-locked identity routers pick race-specialized identity-paragraph/<race> (hair/eyes/skin/mods correlated).
+# Tier A races: human-base + fantasy mods; ethnicity/nationality OK (incl. blood-elf / valkyrie / goddess).
+# Tier B races (goblin): ethnicity-incompatible — identity paragraphs omit nationality / ethnicity-hair.
+# Positive wording only (Krea 2). Human base always; no full-fur. Catgirl/foxgirl affirm human skin/limbs.
+# Fantasy-selfie and fantasy-action shot/camera/pose are LOCAL copies — do NOT pull __uw-shared/nsfw/shot|camera|pose/*__.
+# Exception (Batch C missionary): fantasy-action-partner-missionary(+wide) reuse nsfw camera/intimate-documentary + finish/missionary-side|landscape for correlated finish.
+# version: 53
+# 2026-08-15: shot/intimate-portrait → amateur candid openers; fantasy skin banks drop pores/blemish/imperfection wording.
+# 2026-08-14: Drop freckle wording from race/human-enchanted and fantasy-safe skin banks.
+# 2026-08-13: Literal identity race lines; fantasy-action/group/monster pose slang; missionary pose absorbs coupling; delete scene/missionary-coupling.
+# 2026-08-02: Missionary opener harden parity — every action-missionary-side|landscape opener locks her-on-back+him-on-top; soft hands scrub (mirror nsfw v128).
+# 2026-08-02: Missionary side-leak parity — side-camera face-to-face openers; scrub rear-entry hands + pillow-away faces; chest-to-chest scene lock (mirror nsfw v127).
+# 2026-08-02: Missionary pose-lock parity — scene on-her-back+him-over; scrub hair-pull/pulling-onto-him hands (mirror nsfw v126).
+# 2026-07-30: Batch C fantasy missionary — shot/action-missionary-side|landscape, scene/missionary-coupling, partner-body|action male-missionary; trim missionary poses to head/furs + aroused.
+# 2026-07-29: fantasy-action-solo-toy pose rewrite — pussy/dildo wording + legs-up (Batch B).
+# 2026-07-29: fantasy-action-solo-fingering pose parity (braced hand + vagina + legs-up) + shot/action-fingering-front.
+# 2026-07-26: Batch C Task 4 — tribal-scant wardrobe; low-weight into forest-composer (soft-action path).
+# 2026-07-26: Batch B Task 3 — throne-room + dungeon-candlelit env/pose; nipple-cover-accent wardrobe.
+# 2026-07-26: Batch A Task 1 — warrior-armor enrich (black/gold cutout plates, chains, exposure).
+# Partner-cue: brief scene-biased male ONE-SENTENCE looks (Batch A); wired into fantasy-action partner poses + fantasy-group (two scene-cue pulls) — never a second race.
+# Partner-body: short male cast descriptors (troll/knight/warrior/orc/goblin) for monster/dark poses — never a second identity paragraph.
+
+uw-shared:
+  fantasy:
+
+    # -------------------------------------------------------------------------
+    # Race atoms — body-mod / undertone cues on a human base (no hair-color or eye-color
+    # that can clash with ethnicity-hair). Vampire/demon crimson|ember eyes live HERE only
+    # (paired with ethnicity-hair/vampire|demon that omit eye color). Dark-elf/elf pale hair
+    # lives in ethnicity-hair/dark-elf|elf — not in these short-lines.
+    # -------------------------------------------------------------------------
+    race:
+      elf:
+      - 3::an elf with pointed ears and a slim frame
+      - 2::an elf with delicate pointed ears and soft cheekbone glow
+      - 2::a wood elf with sharp pointed ears and a lean forest-born frame
+      - 2::a moon elf with delicate pointed ears and a slim nocturnal frame
+      - 1::an elf with pointed ears, refined features, and leaf-mote glow
+      - 1::an elf with pointed ears under leaf-mote shimmer
+      - 1::a sun elf with golden-warm features and a slim radiant frame
+      - 1::a snow elf with cool features and a slim icy frame
+      - 1::a wild elf with pointed ears and a slim woodland frame
+      - 1::a half-elf with delicate pointed ears and a slim magical frame
+      fairy:
+      - 3::a delicate fairy with fine pointed ears and subtle iridescence
+      - 2::a fairy with pointed ears, pearl sheen, and translucent wing shimmer
+      - 1::a petite fairy with pointed ears and shimmering translucent wings
+      - 1::a delicate fairy with pointed ears, iridescence, and dramatic translucent wings
+      nymph:
+      - 3::a nymph with floral accents and a soft petal drift
+      - 2::a woodland nymph with bark-kissed accents and quiet biolume
+      - 2::a rose dryad nymph with petal-soft accents and thorny floral markings
+      - 1::a forest nymph with bark-kissed accents and soft petal drift
+      - 1::a dryad-touched nymph with bark-kissed markings and soft biolume motes
+      - 1::a dryad-shaded nymph with bark-soft textures and leafy adornments
+      druid:
+      - 3::a druid with vine-leaf skin markings and an earthy glow
+      - 2::a forest druid with earthy vine markings and soft green motes
+      - 1::a wild druid with vine and leaf markings and drifting green motes
+      - 1::a nature-bound druid with leaf markings and rare soft antler tips
+      foxgirl:
+      - 3::a foxgirl with fox ears, a fluffy fox tail, and smooth human skin
+      - 2::a foxgirl with fox ears and a fluffy tail
+      - 1::a foxgirl with fox ears and a fluffy tail
+      - 1::a foxgirl with fox ears, a fluffy tail, and human skin
+      human-enchanted:
+      - 3::an enchanted human with a quiet glow tracing faint runes
+      - 2::a spell-kissed human woman with soft glow and light particle motes
+      - 1::an enchanted human woman with faint runic marks under a particle veil
+      - 1::a magically touched human with a soft luminous sheen and a faint particle veil
+      vampire:
+      - 3::a vampire with fangs, cool undertone, and crimson eyes
+      - 2::a pale vampire with sharp fangs and blood-red eyes
+      - 1::a nightbound vampire with fangs and a crimson gaze under moonlight motes
+      - 1::a vampire with sharp fangs and crimson eyes under soft moonlight motes
+      demon:
+      - 3::a demon with horns, a thin tail, and glowing ember eyes
+      - 2::a fiendish demon with curved horns, thin tail, and ember eyes
+      - 1::a horned demon with a thin tail and ember eyes under heat shimmer
+      - 1::a demon with curved horns, thin tail, and ember eyes under drifting sparks
+      succubus:
+      - 3::a succubus with horns, a heart-tail tip, and soft bat-wing accents
+      - 2::a succubus with curved horns, heart-tail, and dramatic bat wings
+      - 1::a seductive succubus with horns, bat-wing accents, and rose-shadow motes
+      - 1::a succubus with curved horns, heart-tail, and dramatic bat wings under rose motes
+      dark-elf:
+      - 3::a dark-elf with pointed ears and a cool undertone catching faint violet light
+      - 2::a shadowed dark-elf with pointed ears, cool undertone, and thin violet motes
+      - 2::a dark-elf with pointed ears, cool undertone, and thin violet motes
+      - 1::a dark-elf with pointed ears, cooler undertone, and faint violet mote light
+      - 1::a dark-elf with delicate pointed ears under soft violet mote shimmer
+      - 1::a shadowed dark-elf with pointed ears catching faint violet light
+      angel:
+      - 3::an angel with feathered wings and quiet god-ray motes
+      - 2::an angel with feathered wings folding behind her and a soft mote veil
+      - 1::an angel with dramatic feathered wings and soft god-ray motes
+      - 1::an angelic woman with full feathered wings and soft god-ray motes
+      catgirl:
+      - 3::a catgirl with cat ears, a slender cat tail, and smooth human skin
+      - 2::a catgirl with cat ears and a slender cat tail on human skin
+      - 1::a catgirl with soft cat ears and a slender cat tail, human skin on her limbs
+      - 1::a catgirl with perked cat ears and a slender cat tail, human skin visible
+      # Golden eyes owned HERE — ethnicity-hair/blood-elf omits eye color
+      blood-elf:
+      - 3::a blood elf with pointed ears, warm bronze undertone, and golden eyes
+      - 2::a blood elf with pointed ears and a golden gaze
+      - 2::a blood elf with delicate pointed ears, bronze flush, and golden eyes
+      - 1::a blood elf with pointed ears and radiant golden eyes
+      - 1::a blood elf with sharp pointed ears under soft golden gaze light
+      valkyrie:
+      - 3::a valkyrie with battle-forged poise and faint wing-feather accents
+      - 2::a valkyrie with armored plates and soft god-ray motes
+      - 1::a war-maiden valkyrie with feathered wing accents and fierce composure
+      - 1::a tall valkyrie with quiet battle aura and faint feather shimmer
+      goddess:
+      - 3::a goddess with luminous divine presence and soft god-ray motes
+      - 2::a radiant goddess with serene divine poise and pearl mote veil
+      - 1::a goddess with quiet celestial glow tracing her skin
+      - 1::a divine goddess with soft luminous aura and faint particle veil
+      # Tier B — green skin / small stature / insect wings; no ethnicity-hair in identity
+      goblin:
+      - 3::a petite goblin with green skin, long pointed green ears, and sparse hair
+      - 2::a small goblin with leaf-green skin, long pointed ears, and insect wing shimmer
+      - 2::a diminutive goblin with green undertone, pointed ears, and animalistic feminine features
+      - 1::a short goblin with green skin, hairless scalp, and delicate insect wings
+      - 1::a petite goblin with green skin, long pointed ears, and sparse wispy hair under wing shimmer
+
+      # Scene-locked race composers (matched weights ≈ wardrobe scene composers)
+      forest-composer:
+      - 3::__uw-shared/fantasy/race/elf__
+      - 2::__uw-shared/fantasy/race/fairy__
+      - 2::__uw-shared/fantasy/race/nymph__
+      - 2::__uw-shared/fantasy/race/druid__
+      - 2::__uw-shared/fantasy/race/foxgirl__
+      - 2::__uw-shared/fantasy/race/human-enchanted__
+      castle-composer:
+      - 3::__uw-shared/fantasy/race/vampire__
+      - 3::__uw-shared/fantasy/race/demon__
+      - 3::__uw-shared/fantasy/race/succubus__
+      - 2::__uw-shared/fantasy/race/dark-elf__
+      - 2::__uw-shared/fantasy/race/angel__
+      - 2::__uw-shared/fantasy/race/human-enchanted__
+      tavern-composer:
+      - 3::__uw-shared/fantasy/race/catgirl__
+      - 3::__uw-shared/fantasy/race/foxgirl__
+      - 3::__uw-shared/fantasy/race/human-enchanted__
+      - 1::__uw-shared/fantasy/race/succubus__
+      - 1::__uw-shared/fantasy/race/elf__
+      ruins-composer:
+      - 3::__uw-shared/fantasy/race/demon__
+      - 3::__uw-shared/fantasy/race/dark-elf__
+      - 3::__uw-shared/fantasy/race/vampire__
+      - 2::__uw-shared/fantasy/race/druid__
+      - 2::__uw-shared/fantasy/race/succubus__
+      - 1::__uw-shared/fantasy/race/angel__
+      - 2::__uw-shared/fantasy/race/human-enchanted__
+
+    # -------------------------------------------------------------------------
+    # Fantasy-safe skin — photographic finish + undertone (not common/skin/natural)
+    # -------------------------------------------------------------------------
+    skin:
+      fair-cool:
+      - Cool fair skin with a porcelain finish and natural detailed finish
+      - Pale cool undertone with a matte porcelain finish
+      - Fair cool skin with soft cheekbone sheen and fine texture
+      - Porcelain-cool skin finish with quiet blue-pink undertone
+      - Cool fair skin with soft highlight along her cheekbones
+      - Pale cool finish with a soft matte cast
+      warm-human:
+      - Warm human skin with a natural candid finish and natural detailed finish
+      - Soft warm undertone with dewy cheek sheen
+      - Warm natural skin finish with a soft natural glow
+      - Honey-warm human skin with soft highlight along her jaw
+      - Warm candid skin with soft cheek sheen
+      - Soft warm undertone with matte finish and natural detailed skin
+      sun-kissed:
+      - Sun-kissed skin with a warm daylight cast and a soft dewy finish
+      - Golden sun-kissed undertone with a soft dewy cheek finish
+      - Warm sunlit skin finish with soft cheekbone sheen
+      - Sun-kissed candid skin with natural detailed finish
+      - Warm daylight-kissed skin with a soft natural glow
+      - Soft sun-kissed finish with a natural glow
+      ember-undertone:
+      - Warm ember undertone with a soft heated flush across her cheeks
+      - Ember-warm skin finish with a faint heat flush and natural detailed finish
+      - Soft ember undertone with dewy sheen along her cheekbones
+      - Warm copper-ember skin cast with soft candid texture
+      - Ember-kissed undertone with a quiet flush at her chest and cheeks
+      - Heat-warm skin finish with soft highlight and natural detailed finish
+      iridescent-sheer:
+      - Soft pearl iridescence over sheer fair skin with natural detailed finish
+      - Subtle pearl sheen on fair skin with a quiet iridescent cast
+      - Sheer fair skin with soft pearl highlight along her cheekbones
+      - Delicate iridescent pearl finish with a gentle pearl cast and soft texture
+      - Soft pearl-sheer skin with natural detailed finish and quiet glow
+      - Fair skin with a subtle pearl iridescence catching the light
+      moonlit-pale:
+      - Moonlit pale skin with a cool silver finish and natural detailed finish
+      - Cool moonlit undertone with a pale matte cast
+      - Pale moonlight skin finish with soft cheekbone sheen
+      - Moonlit-cool pale skin with quiet blue undertone
+      - Soft moonlit pale finish with fine texture and cool highlight
+      - Pale cool moonlight cast with a soft natural finish
+      # Wood-elf / goblin friendly green undertone (photographic finish)
+      leaf-green:
+      - Soft leaf-green undertone with a natural candid finish and natural detailed finish
+      - Pale green-cast skin with soft moss undertone and quiet sheen
+      - Leaf-green human skin finish with soft cheekbone highlight
+      - Cool green undertone with matte candid texture
+      - Soft woodland-green skin cast with a soft natural glow
+      - Pale leaf-green finish with soft highlight along her jaw
+      # Blood-elf warm bronze (photographic finish)
+      bronze-warm:
+      - Warm bronze undertone with a soft candid finish and natural detailed finish
+      - Honey-bronze skin with soft cheek flush and quiet sheen
+      - Bronze-warm human skin finish with a soft candid sheen
+      - Warm copper-bronze undertone with dewy cheekbone highlight
+      - Soft bronze-cast skin with matte finish and natural detailed skin
+      - Bronze-warm candid finish with soft glow along her collarbone
+
+    # -------------------------------------------------------------------------
+    # Ethnicity + hair WITHOUT skin-tone words (avoids clash with fantasy/skin)
+    # Race-owned families: vampire/demon omit eye color (eyes on race/*); dark-elf/elf
+    # own pale/silver hair bias. natural = generic Tier A pull for races without locks.
+    # -------------------------------------------------------------------------
+    ethnicity-hair:
+      natural:
+      - >-
+          __uw-shared/common/nationality/grp1__ with {__uw-shared/common/eye-color/blue__|__uw-shared/common/eye-color/green__|__uw-shared/common/eye-color/brown__} eyes.
+          __uw-shared/common/hair/grp1__.
+      - >-
+          __uw-shared/common/nationality/grp2__ with {__uw-shared/common/eye-color/blue__|__uw-shared/common/eye-color/green__|__uw-shared/common/eye-color/brown__} eyes.
+          __uw-shared/common/hair/grp2__.
+      - >-
+          __uw-shared/common/nationality/grp3__ with __uw-shared/common/eye-color/brown__ eyes.
+          __uw-shared/common/hair/grp3__.
+      - >-
+          __uw-shared/common/nationality/grp4__ with {__uw-shared/common/eye-color/green__|__uw-shared/common/eye-color/brown__} eyes.
+          __uw-shared/common/hair/grp4__.
+      # Eyes omitted — race/vampire owns crimson / blood-red
+      vampire:
+      - >-
+          __uw-shared/common/nationality/grp1__.
+          __uw-shared/common/hair/grp1__.
+      - >-
+          __uw-shared/common/nationality/grp2__.
+          __uw-shared/common/hair/grp2__.
+      - >-
+          __uw-shared/common/nationality/grp3__.
+          __uw-shared/common/hair/grp3__.
+      - >-
+          __uw-shared/common/nationality/grp4__.
+          __uw-shared/common/hair/grp4__.
+      # Eyes omitted — race/demon owns ember / glowing
+      demon:
+      - >-
+          __uw-shared/common/nationality/grp1__.
+          __uw-shared/common/hair/grp1__.
+      - >-
+          __uw-shared/common/nationality/grp2__.
+          __uw-shared/common/hair/grp2__.
+      - >-
+          __uw-shared/common/nationality/grp3__.
+          __uw-shared/common/hair/grp3__.
+      - >-
+          __uw-shared/common/nationality/grp4__.
+          __uw-shared/common/hair/grp4__.
+      # Pale/silver/white hair owned here (not on race/dark-elf)
+      dark-elf:
+      - >-
+          __uw-shared/common/nationality/grp1__ with {__uw-shared/common/eye-color/blue__|__uw-shared/common/eye-color/green__|silver|violet} eyes.
+          Her long silver-white hair falls loose over her shoulders.
+      - >-
+          __uw-shared/common/nationality/grp1__ with {__uw-shared/common/eye-color/blue__|__uw-shared/common/eye-color/green__} eyes.
+          Her long pale platinum hair is worn in a high ponytail.
+      - >-
+          __uw-shared/common/nationality/grp2__ with {__uw-shared/common/eye-color/blue__|__uw-shared/common/eye-color/green__|violet} eyes.
+          Her long moon-white hair has soft face-framing layers.
+      - >-
+          __uw-shared/common/nationality/grp3__ with {__uw-shared/common/eye-color/brown__|violet} eyes.
+          Her long straight silver hair falls past her shoulders.
+      - >-
+          __uw-shared/common/nationality/grp4__ with {__uw-shared/common/eye-color/green__|__uw-shared/common/eye-color/brown__|silver} eyes.
+          Her long pale ivory hair is gathered in a messy bun.
+      - >-
+          __uw-shared/common/nationality/grp1__ with silver eyes.
+          Her shoulder-length white hair frames her face.
+      # Moon-elf pale bias mixed with natural ethnicity (no second hair assert on race/elf)
+      elf:
+      - >-
+          __uw-shared/common/nationality/grp1__ with {__uw-shared/common/eye-color/blue__|__uw-shared/common/eye-color/green__|__uw-shared/common/eye-color/brown__} eyes.
+          __uw-shared/common/hair/grp1__.
+      - >-
+          __uw-shared/common/nationality/grp1__ with {__uw-shared/common/eye-color/blue__|__uw-shared/common/eye-color/green__|__uw-shared/common/eye-color/brown__} eyes.
+          __uw-shared/common/hair/grp1__.
+      - >-
+          __uw-shared/common/nationality/grp2__ with {__uw-shared/common/eye-color/blue__|__uw-shared/common/eye-color/green__|__uw-shared/common/eye-color/brown__} eyes.
+          __uw-shared/common/hair/grp2__.
+      - >-
+          __uw-shared/common/nationality/grp2__ with {__uw-shared/common/eye-color/blue__|__uw-shared/common/eye-color/green__|__uw-shared/common/eye-color/brown__} eyes.
+          __uw-shared/common/hair/grp2__.
+      - >-
+          __uw-shared/common/nationality/grp3__ with __uw-shared/common/eye-color/brown__ eyes.
+          __uw-shared/common/hair/grp3__.
+      - >-
+          __uw-shared/common/nationality/grp3__ with __uw-shared/common/eye-color/brown__ eyes.
+          __uw-shared/common/hair/grp3__.
+      - >-
+          __uw-shared/common/nationality/grp4__ with {__uw-shared/common/eye-color/green__|__uw-shared/common/eye-color/brown__} eyes.
+          __uw-shared/common/hair/grp4__.
+      - >-
+          __uw-shared/common/nationality/grp4__ with {__uw-shared/common/eye-color/green__|__uw-shared/common/eye-color/brown__} eyes.
+          __uw-shared/common/hair/grp4__.
+      - >-
+          __uw-shared/common/nationality/grp1__ with {__uw-shared/common/eye-color/blue__|__uw-shared/common/eye-color/green__|silver} eyes.
+          Her long silver-lit hair falls loose over her shoulders.
+      - >-
+          __uw-shared/common/nationality/grp1__ with {__uw-shared/common/eye-color/blue__|__uw-shared/common/eye-color/green__} eyes.
+          Her long pale platinum hair is braided in a single thick braid.
+      - >-
+          __uw-shared/common/nationality/grp2__ with silver eyes.
+          Her long moon-white hair has soft face-framing layers.
+      # Eyes omitted — race/blood-elf owns golden; pale/platinum + shaved-temple bias here
+      blood-elf:
+      - >-
+          __uw-shared/common/nationality/grp1__.
+          Her long pale platinum hair is shaved at the temples and falls loose.
+      - >-
+          __uw-shared/common/nationality/grp1__.
+          Her long ivory-blonde hair is worn with shaved temples and a high ponytail.
+      - >-
+          __uw-shared/common/nationality/grp2__.
+          Her shoulder-length pale platinum hair frames her face with shaved temples.
+      - >-
+          __uw-shared/common/nationality/grp2__.
+          Her long ash-blonde hair is swept back from shaved temples.
+      - >-
+          __uw-shared/common/nationality/grp3__.
+          Her long pale platinum hair falls past her shoulders in soft layers.
+      - >-
+          __uw-shared/common/nationality/grp4__.
+          Her long ivory hair is gathered in a messy bun above shaved temples.
+
+    # -------------------------------------------------------------------------
+    # Race-specialized identity paragraphs (Tier A — correlated hair/eyes/skin/mods)
+    # Race-only: soft-action + fantasy-action. *-matched: core/selfie (race↔wardrobe lock).
+    # Scene fantasy-* keys are thin aliases → routers (templates use routers).
+    # -------------------------------------------------------------------------
+    identity-paragraph:
+      elf:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/elf__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/sun-kissed__|2::__uw-shared/fantasy/skin/fair-cool__|2::__uw-shared/fantasy/skin/warm-human__|1::__uw-shared/fantasy/skin/moonlit-pale__}.
+          She is __uw-shared/fantasy/race/elf__
+      fairy:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {4::__uw-shared/fantasy/skin/iridescent-sheer__|2::__uw-shared/fantasy/skin/fair-cool__|1::__uw-shared/fantasy/skin/sun-kissed__}.
+          She is __uw-shared/fantasy/race/fairy__
+      nymph:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/sun-kissed__|2::__uw-shared/fantasy/skin/warm-human__|2::__uw-shared/fantasy/skin/iridescent-sheer__}.
+          She is __uw-shared/fantasy/race/nymph__
+      druid:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/sun-kissed__|3::__uw-shared/fantasy/skin/warm-human__|1::__uw-shared/fantasy/skin/fair-cool__}.
+          She is __uw-shared/fantasy/race/druid__
+      foxgirl:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {4::__uw-shared/fantasy/skin/warm-human__|2::__uw-shared/fantasy/skin/sun-kissed__|1::__uw-shared/fantasy/skin/fair-cool__}.
+          She is __uw-shared/fantasy/race/foxgirl__
+      human-enchanted:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/warm-human__|2::__uw-shared/fantasy/skin/fair-cool__|1::__uw-shared/fantasy/skin/sun-kissed__|1::__uw-shared/fantasy/skin/moonlit-pale__}.
+          She is __uw-shared/fantasy/race/human-enchanted__
+      vampire:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/vampire__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/fair-cool__|3::__uw-shared/fantasy/skin/moonlit-pale__|1::__uw-shared/fantasy/skin/warm-human__}.
+          She is __uw-shared/fantasy/race/vampire__
+      demon:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/demon__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {4::__uw-shared/fantasy/skin/ember-undertone__|2::__uw-shared/fantasy/skin/warm-human__|1::__uw-shared/fantasy/skin/fair-cool__}.
+          She is __uw-shared/fantasy/race/demon__
+      succubus:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/ember-undertone__|2::__uw-shared/fantasy/skin/fair-cool__|2::__uw-shared/fantasy/skin/warm-human__}.
+          She is __uw-shared/fantasy/race/succubus__
+      dark-elf:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/dark-elf__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/moonlit-pale__|3::__uw-shared/fantasy/skin/fair-cool__|1::__uw-shared/fantasy/skin/warm-human__}.
+          She is __uw-shared/fantasy/race/dark-elf__
+      angel:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/fair-cool__|2::__uw-shared/fantasy/skin/warm-human__|2::__uw-shared/fantasy/skin/moonlit-pale__}.
+          She is __uw-shared/fantasy/race/angel__
+      catgirl:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {4::__uw-shared/fantasy/skin/warm-human__|2::__uw-shared/fantasy/skin/sun-kissed__|1::__uw-shared/fantasy/skin/fair-cool__}.
+          She is __uw-shared/fantasy/race/catgirl__
+      blood-elf:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/blood-elf__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {4::__uw-shared/fantasy/skin/bronze-warm__|2::__uw-shared/fantasy/skin/sun-kissed__|1::__uw-shared/fantasy/skin/warm-human__}.
+          She is __uw-shared/fantasy/race/blood-elf__
+      valkyrie:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/fair-cool__|2::__uw-shared/fantasy/skin/warm-human__|2::__uw-shared/fantasy/skin/moonlit-pale__}.
+          She is __uw-shared/fantasy/race/valkyrie__
+      goddess:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/fair-cool__|2::__uw-shared/fantasy/skin/moonlit-pale__|2::__uw-shared/fantasy/skin/warm-human__}.
+          She is __uw-shared/fantasy/race/goddess__
+      # Tier B — no nationality / ethnicity-hair
+      goblin:
+      - >-
+          __uw-shared/common/age/nsfw-default__.
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          __uw-shared/fantasy/skin/leaf-green__.
+          She is __uw-shared/fantasy/race/goblin__
+
+      # Matched = same identity stack + wearing race-tinted wardrobe (core/selfie)
+      elf-matched:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/elf__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/sun-kissed__|2::__uw-shared/fantasy/skin/fair-cool__|2::__uw-shared/fantasy/skin/warm-human__|1::__uw-shared/fantasy/skin/moonlit-pale__}.
+          She is __uw-shared/fantasy/race/elf__, wearing __uw-shared/fantasy/wardrobe/elf-tinted__
+      fairy-matched:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {4::__uw-shared/fantasy/skin/iridescent-sheer__|2::__uw-shared/fantasy/skin/fair-cool__|1::__uw-shared/fantasy/skin/sun-kissed__}.
+          She is __uw-shared/fantasy/race/fairy__, wearing __uw-shared/fantasy/wardrobe/fairy-tinted__
+      nymph-matched:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/sun-kissed__|2::__uw-shared/fantasy/skin/warm-human__|2::__uw-shared/fantasy/skin/iridescent-sheer__}.
+          She is __uw-shared/fantasy/race/nymph__, wearing __uw-shared/fantasy/wardrobe/druid-nymph-tinted__
+      druid-matched:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/sun-kissed__|3::__uw-shared/fantasy/skin/warm-human__|1::__uw-shared/fantasy/skin/fair-cool__}.
+          She is __uw-shared/fantasy/race/druid__, wearing __uw-shared/fantasy/wardrobe/druid-nymph-tinted__
+      foxgirl-matched:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {4::__uw-shared/fantasy/skin/warm-human__|2::__uw-shared/fantasy/skin/sun-kissed__|1::__uw-shared/fantasy/skin/fair-cool__}.
+          She is __uw-shared/fantasy/race/foxgirl__, wearing __uw-shared/fantasy/wardrobe/beastkin-tinted__
+      human-enchanted-matched:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/warm-human__|2::__uw-shared/fantasy/skin/fair-cool__|1::__uw-shared/fantasy/skin/sun-kissed__|1::__uw-shared/fantasy/skin/moonlit-pale__}.
+          She is __uw-shared/fantasy/race/human-enchanted__, wearing __uw-shared/fantasy/wardrobe/tavern-tinted__
+      human-enchanted-castle-matched:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/warm-human__|2::__uw-shared/fantasy/skin/fair-cool__|1::__uw-shared/fantasy/skin/sun-kissed__|1::__uw-shared/fantasy/skin/moonlit-pale__}.
+          She is __uw-shared/fantasy/race/human-enchanted__, wearing __uw-shared/fantasy/wardrobe/vampire-tinted__
+      vampire-matched:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/vampire__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/fair-cool__|3::__uw-shared/fantasy/skin/moonlit-pale__|1::__uw-shared/fantasy/skin/warm-human__}.
+          She is __uw-shared/fantasy/race/vampire__, wearing __uw-shared/fantasy/wardrobe/vampire-tinted__
+      demon-matched:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/demon__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {4::__uw-shared/fantasy/skin/ember-undertone__|2::__uw-shared/fantasy/skin/warm-human__|1::__uw-shared/fantasy/skin/fair-cool__}.
+          She is __uw-shared/fantasy/race/demon__, wearing __uw-shared/fantasy/wardrobe/demon-tinted__
+      succubus-matched:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/ember-undertone__|2::__uw-shared/fantasy/skin/fair-cool__|2::__uw-shared/fantasy/skin/warm-human__}.
+          She is __uw-shared/fantasy/race/succubus__, wearing __uw-shared/fantasy/wardrobe/succubus-tinted__
+      dark-elf-matched:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/dark-elf__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/moonlit-pale__|3::__uw-shared/fantasy/skin/fair-cool__|1::__uw-shared/fantasy/skin/warm-human__}.
+          She is __uw-shared/fantasy/race/dark-elf__, wearing __uw-shared/fantasy/wardrobe/succubus-tinted__
+      angel-matched:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/fair-cool__|2::__uw-shared/fantasy/skin/warm-human__|2::__uw-shared/fantasy/skin/moonlit-pale__}.
+          She is __uw-shared/fantasy/race/angel__, wearing __uw-shared/fantasy/wardrobe/angel-tinted__
+      catgirl-matched:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {4::__uw-shared/fantasy/skin/warm-human__|2::__uw-shared/fantasy/skin/sun-kissed__|1::__uw-shared/fantasy/skin/fair-cool__}.
+          She is __uw-shared/fantasy/race/catgirl__, wearing __uw-shared/fantasy/wardrobe/beastkin-tinted__
+      blood-elf-matched:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/blood-elf__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {4::__uw-shared/fantasy/skin/bronze-warm__|2::__uw-shared/fantasy/skin/sun-kissed__|1::__uw-shared/fantasy/skin/warm-human__}.
+          She is __uw-shared/fantasy/race/blood-elf__, wearing {3::__uw-shared/fantasy/wardrobe/warrior-armor__|2::__uw-shared/fantasy/wardrobe/battle-gown__}
+      valkyrie-matched:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/fair-cool__|2::__uw-shared/fantasy/skin/warm-human__|2::__uw-shared/fantasy/skin/moonlit-pale__}.
+          She is __uw-shared/fantasy/race/valkyrie__, wearing {2::__uw-shared/fantasy/wardrobe/angel-tinted__|2::__uw-shared/fantasy/wardrobe/battle-gown__|1::__uw-shared/fantasy/wardrobe/soft-bare__}
+      goddess-matched:
+      - >-
+          __uw-shared/common/age/nsfw-default__, __uw-shared/fantasy/ethnicity-hair/natural__
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          {3::__uw-shared/fantasy/skin/fair-cool__|2::__uw-shared/fantasy/skin/moonlit-pale__|2::__uw-shared/fantasy/skin/warm-human__}.
+          She is __uw-shared/fantasy/race/goddess__, wearing __uw-shared/fantasy/wardrobe/angel-tinted__
+      goblin-matched:
+      - >-
+          __uw-shared/common/age/nsfw-default__.
+          She has __uw-shared/common/body-archetype/natural__, __uw-shared/common/face-features/natural__.
+          __uw-shared/fantasy/skin/leaf-green__.
+          She is __uw-shared/fantasy/race/goblin__, wearing __uw-shared/fantasy/wardrobe/goblin-rags__
+
+      # Thin aliases (legacy scene keys) → routers; prefer identity-router/fantasy-<scene>
+      fantasy-forest:
+      - __uw-shared/fantasy/identity-router/fantasy-forest__
+      fantasy-castle:
+      - __uw-shared/fantasy/identity-router/fantasy-castle__
+      fantasy-tavern:
+      - __uw-shared/fantasy/identity-router/fantasy-tavern__
+      fantasy-ruins:
+      - __uw-shared/fantasy/identity-router/fantasy-ruins__
+      fantasy-forest-matched:
+      - __uw-shared/fantasy/identity-router/fantasy-forest-matched__
+      fantasy-castle-matched:
+      - __uw-shared/fantasy/identity-router/fantasy-castle-matched__
+      fantasy-tavern-matched:
+      - __uw-shared/fantasy/identity-router/fantasy-tavern-matched__
+      fantasy-ruins-matched:
+      - __uw-shared/fantasy/identity-router/fantasy-ruins-matched__
+
+    identity-router:
+      fantasy-forest:
+      - 3::__uw-shared/fantasy/identity-paragraph/elf__
+      - 2::__uw-shared/fantasy/identity-paragraph/fairy__
+      - 2::__uw-shared/fantasy/identity-paragraph/nymph__
+      - 2::__uw-shared/fantasy/identity-paragraph/druid__
+      - 2::__uw-shared/fantasy/identity-paragraph/foxgirl__
+      - 2::__uw-shared/fantasy/identity-paragraph/human-enchanted__
+      - 1::__uw-shared/fantasy/identity-paragraph/goblin__
+      fantasy-castle:
+      - 3::__uw-shared/fantasy/identity-paragraph/vampire__
+      - 3::__uw-shared/fantasy/identity-paragraph/demon__
+      - 3::__uw-shared/fantasy/identity-paragraph/succubus__
+      - 2::__uw-shared/fantasy/identity-paragraph/dark-elf__
+      - 2::__uw-shared/fantasy/identity-paragraph/angel__
+      - 2::__uw-shared/fantasy/identity-paragraph/human-enchanted__
+      - 1::__uw-shared/fantasy/identity-paragraph/blood-elf__
+      fantasy-tavern:
+      - 3::__uw-shared/fantasy/identity-paragraph/catgirl__
+      - 3::__uw-shared/fantasy/identity-paragraph/foxgirl__
+      - 3::__uw-shared/fantasy/identity-paragraph/human-enchanted__
+      - 1::__uw-shared/fantasy/identity-paragraph/succubus__
+      - 1::__uw-shared/fantasy/identity-paragraph/elf__
+      fantasy-ruins:
+      - 3::__uw-shared/fantasy/identity-paragraph/demon__
+      - 3::__uw-shared/fantasy/identity-paragraph/dark-elf__
+      - 3::__uw-shared/fantasy/identity-paragraph/vampire__
+      - 2::__uw-shared/fantasy/identity-paragraph/druid__
+      - 2::__uw-shared/fantasy/identity-paragraph/succubus__
+      - 1::__uw-shared/fantasy/identity-paragraph/angel__
+      - 2::__uw-shared/fantasy/identity-paragraph/human-enchanted__
+      - 1::__uw-shared/fantasy/identity-paragraph/blood-elf__
+      fantasy-forest-matched:
+      - 3::__uw-shared/fantasy/identity-paragraph/elf-matched__
+      - 2::__uw-shared/fantasy/identity-paragraph/fairy-matched__
+      - 2::__uw-shared/fantasy/identity-paragraph/nymph-matched__
+      - 2::__uw-shared/fantasy/identity-paragraph/druid-matched__
+      - 2::__uw-shared/fantasy/identity-paragraph/foxgirl-matched__
+      - 2::__uw-shared/fantasy/identity-paragraph/human-enchanted-matched__
+      - 1::__uw-shared/fantasy/identity-paragraph/goblin-matched__
+      fantasy-castle-matched:
+      - 3::__uw-shared/fantasy/identity-paragraph/vampire-matched__
+      - 3::__uw-shared/fantasy/identity-paragraph/demon-matched__
+      - 3::__uw-shared/fantasy/identity-paragraph/succubus-matched__
+      - 2::__uw-shared/fantasy/identity-paragraph/dark-elf-matched__
+      - 2::__uw-shared/fantasy/identity-paragraph/angel-matched__
+      - 2::__uw-shared/fantasy/identity-paragraph/human-enchanted-castle-matched__
+      - 1::__uw-shared/fantasy/identity-paragraph/blood-elf-matched__
+      fantasy-tavern-matched:
+      - 3::__uw-shared/fantasy/identity-paragraph/catgirl-matched__
+      - 3::__uw-shared/fantasy/identity-paragraph/foxgirl-matched__
+      - 3::__uw-shared/fantasy/identity-paragraph/human-enchanted-matched__
+      - 1::__uw-shared/fantasy/identity-paragraph/succubus-matched__
+      - 1::__uw-shared/fantasy/identity-paragraph/elf-matched__
+      fantasy-ruins-matched:
+      - 3::__uw-shared/fantasy/identity-paragraph/demon-matched__
+      - 3::__uw-shared/fantasy/identity-paragraph/dark-elf-matched__
+      - 3::__uw-shared/fantasy/identity-paragraph/vampire-matched__
+      - 2::__uw-shared/fantasy/identity-paragraph/druid-matched__
+      - 2::__uw-shared/fantasy/identity-paragraph/succubus-matched__
+      - 1::__uw-shared/fantasy/identity-paragraph/angel-matched__
+      - 2::__uw-shared/fantasy/identity-paragraph/human-enchanted-matched__
+      - 1::__uw-shared/fantasy/identity-paragraph/blood-elf-matched__
+
+    # Hard race↔wardrobe lock (legacy; matched identity-paragraph/<race>-matched owns the lock now)
+    bundle:
+      forest-matched:
+      - 3::She is __uw-shared/fantasy/race/elf__, wearing __uw-shared/fantasy/wardrobe/elf-tinted__
+      - 2::She is __uw-shared/fantasy/race/fairy__, wearing __uw-shared/fantasy/wardrobe/fairy-tinted__
+      - 2::She is __uw-shared/fantasy/race/nymph__, wearing __uw-shared/fantasy/wardrobe/druid-nymph-tinted__
+      - 2::She is __uw-shared/fantasy/race/druid__, wearing __uw-shared/fantasy/wardrobe/druid-nymph-tinted__
+      - 2::She is __uw-shared/fantasy/race/foxgirl__, wearing __uw-shared/fantasy/wardrobe/beastkin-tinted__
+      - 2::She is __uw-shared/fantasy/race/human-enchanted__, wearing __uw-shared/fantasy/wardrobe/tavern-tinted__
+      castle-matched:
+      - 3::She is __uw-shared/fantasy/race/vampire__, wearing __uw-shared/fantasy/wardrobe/vampire-tinted__
+      - 3::She is __uw-shared/fantasy/race/demon__, wearing __uw-shared/fantasy/wardrobe/demon-tinted__
+      - 3::She is __uw-shared/fantasy/race/succubus__, wearing __uw-shared/fantasy/wardrobe/succubus-tinted__
+      - 2::She is __uw-shared/fantasy/race/dark-elf__, wearing __uw-shared/fantasy/wardrobe/succubus-tinted__
+      - 2::She is __uw-shared/fantasy/race/angel__, wearing __uw-shared/fantasy/wardrobe/angel-tinted__
+      - 2::She is __uw-shared/fantasy/race/human-enchanted__, wearing __uw-shared/fantasy/wardrobe/vampire-tinted__
+      tavern-matched:
+      - 3::She is __uw-shared/fantasy/race/catgirl__, wearing __uw-shared/fantasy/wardrobe/beastkin-tinted__
+      - 3::She is __uw-shared/fantasy/race/foxgirl__, wearing __uw-shared/fantasy/wardrobe/beastkin-tinted__
+      - 3::She is __uw-shared/fantasy/race/human-enchanted__, wearing __uw-shared/fantasy/wardrobe/tavern-tinted__
+      - 1::She is __uw-shared/fantasy/race/succubus__, wearing __uw-shared/fantasy/wardrobe/succubus-tinted__
+      - 1::She is __uw-shared/fantasy/race/elf__, wearing __uw-shared/fantasy/wardrobe/elf-tinted__
+      ruins-matched:
+      - 3::She is __uw-shared/fantasy/race/demon__, wearing __uw-shared/fantasy/wardrobe/demon-tinted__
+      - 3::She is __uw-shared/fantasy/race/dark-elf__, wearing __uw-shared/fantasy/wardrobe/succubus-tinted__
+      - 3::She is __uw-shared/fantasy/race/vampire__, wearing __uw-shared/fantasy/wardrobe/vampire-tinted__
+      - 2::She is __uw-shared/fantasy/race/druid__, wearing __uw-shared/fantasy/wardrobe/druid-nymph-tinted__
+      - 2::She is __uw-shared/fantasy/race/succubus__, wearing __uw-shared/fantasy/wardrobe/succubus-tinted__
+      - 1::She is __uw-shared/fantasy/race/angel__, wearing __uw-shared/fantasy/wardrobe/angel-tinted__
+      - 2::She is __uw-shared/fantasy/race/human-enchanted__, wearing __uw-shared/fantasy/wardrobe/tavern-tinted__
+
+    # -------------------------------------------------------------------------
+    # Race-tinted wardrobe (self-contained NSFW phrases — no leading "wearing")
+    # Scene composers deprecated for core/selfie leaves (matched identity-paragraph/<race>-matched owns the lock).
+    # Soft-action dancing still may pull <scene>-composer; bathing/lounge use soft-bare.
+    # -------------------------------------------------------------------------
+    wardrobe:
+      elf-tinted:
+      - a sheer leaf-green lace bodice with open sides and a scant hem
+      - a soft moss-silk hip wrap with high side slits
+      - a translucent forest-green chemise open down the front
+      - a scant leaf-embroidered panel with open sides and bare midriff
+      - a sheer ivy-trimmed gauze slipping off one shoulder
+      - a lace-up woodland bustier over a translucent micro-skirt
+      - a short asymmetrical forest silk barely covering her hips
+      - a sheer green ritual gauze with open back and raised hem
+      fairy-tinted:
+      - a sheer iridescent gauze slip with a scant raised hem
+      - a translucent petal-silk micro-slip with thin straps
+      - a short moon-gauze fairy wrap tied loosely at the side
+      - a delicate sheer petal wrap with open shoulders and open sides
+      - a translucent fairy gauze with high slits and bare thighs
+      - a petal-light sheer overdress clinging to her silhouette
+      - a scant iridescent slip with loose ties and open sides
+      - a sheer glitter-trimmed fairy chemise with a high slit
+      succubus-tinted:
+      - a deep crimson lace bustier with a scant split skirt
+      - a sheer black ritual gauze with open sides and bare hips
+      - a tight wine-red corset over translucent micro-panels
+      - a black velvet lace-up with open sides and bare thighs
+      - a thigh-baring crimson silk robe open down the front
+      - a front-laced dark silk with high slits and sheer panels
+      - a sheer shadow-rose wrap over minimal lace scraps
+      - a short bat-wing-trimmed bustier with bare midriff and thighs
+      vampire-tinted:
+      - a deep crimson silk with thigh-high slits and sheer side panels
+      - a sheer black lace chemise under an open cloak
+      - a blood-red lace bustier with a scant hem and open sides
+      - a moonlit silk micro-slip with open back and high slits
+      - a dark velvet lace-up with deep plunge and bare thighs
+      - a sheer ivory chemise under a loose open black robe
+      - a midnight lace slip with a deep neckline and raised hem
+      - a short black silk wrap with silver cords and open sides
+      demon-tinted:
+      - a charcoal lace bustier with ember-red trim and open sides
+      - a sheer smoke-black wrap with high slits and bare hips
+      - a scant ash-silk panel with open sides and bare midriff
+      - a dark ritual robe half-open over bare skin
+      - an ember-trimmed corset with a scant split skirt
+      - a front-open dark silk with sheer side panels and raised hem
+      - a sheer heat-kissed gauze with open shoulders and open sides
+      - a short black leather-cord wrap barely covering her hips
+      tavern-tinted:
+      - a short linen tavern slip with raised hems and open sides
+      - a lace-up bustier over a sheer translucent chemise
+      - a warm brown sleeveless wrap with high slits and scant hem
+      - a cinched tavern lace-up with deep plunge and bare thighs
+      - a cropped village tunic with exposed midriff and thighs
+      - a short asymmetrical leather-strap wrap with open sides
+      - a damp ivory linen chemise sheer and open at the sleeves
+      - a wine-red tavern corset with a scant layered hem
+      - a peasant-style short panel with open sides and bare hips
+      druid-nymph-tinted:
+      - a sheer moss-linen wrap with open back and high slits
+      - a side-open forest gauze in soft green linen
+      - a sheer leaf-wrapped ritual cloth with loose ties
+      - a short bark-cord hip wrap with floral trim and open sides
+      - a weathered forest sheer with open sides and scant hem
+      - a petal-draped nymph micro-slip with open shoulders
+      - a vine-laced bustier over a sheer micro-skirt
+      - a damp mist-soaked ritual gauze at her collarbone and hips
+      beastkin-tinted:
+      - a short lace-up leather-trim wrap with open sides and scant hem
+      - a soft fur-trimmed crop wrap over sheer micro-panels
+      - a sleeveless village lace-up with deep plunge and bare midriff
+      - a short bard wrap with open neckline and high slits
+      - a hip-length fantasy panel with open sides and bare thighs
+      - a loosely tied sheer chemise under a scant over-wrap
+      - a cropped lace-up with a sheer micro-skirt and open sides
+      - a soft leather-cord wrap barely covering her hips and shoulders
+      angel-tinted:
+      - a sheer ivory ceremonial gauze with open back and high slits
+      - a translucent white silk robe open at the chest and sides
+      - a soft pearl gauze micro-slip with high slits
+      - a luminous sheer ceremonial wrap with open shoulders
+      - a sheer silver-grey gauze with deep lacing and scant hem
+      - a light ivory silk wrap open at the chest and hips
+      - a short ceremonial angel sheer with bare thighs and open sides
+      - a loosely fastened white ritual gauze over bare skin
+      soft-bare:
+      - her soft bare skin with a scant cloth drape at her hips
+      - her nude-adjacent wet skin with a thin sheer wrap
+      - her bare shoulders to hips with loose sheer cloth
+      - her soft nude silhouette with a sheer veil
+      - her wet bare skin with a thin wrap at her waist
+      - her bare intimate skin with scant cloth at her thighs
+      - her nude-adjacent silhouette with a draped sheer sash
+      - her soft bare skin under a half-fallen sheer wrap
+      # Batch C Task 4 — tribal scant (IP-scrubbed; generic fiber/leather only)
+      tribal-scant:
+      - a narrow {woven fiber|soft leather} loincloth on an ornate carved belt, with an intricately woven choker of beads and feathers
+      - a scant soft-leather loincloth under an ornate belt, bead-and-tooth necklace partially covering her breasts, feather accents at her throat
+      - a narrow woven-fiber loincloth with an ornate belt, layered bead chokers and animal-tooth charms, soft feather fringe at her collarbone
+      - a thin leather loincloth tied under an ornate belt, intricate bead necklace with feather drops partially concealing her chest
+      - a scant woven loincloth and ornate belt, woven bead-and-feather choker with tooth charms resting on her breasts
+      - a narrow soft-leather loincloth, ornate belt with carved clasps, and an intricate necklace of beads, teeth, and feathers
+      # Epic sorceress lace (Batch C) — yellow lace bra/panties; semi-NSFW interior
+      sorceress-lace:
+      - a pale yellow lace bra and matching panties
+      - soft yellow lace lingerie with sheer panels
+      - a delicate lace bra set in soft yellow
+      - sheer yellow lace panties with a matching lace bra
+      - pale yellow lace lingerie barely covering her hips
+      - a soft yellow lace bra over sheer yellow panties
+      cloak-stockings-boots:
+      - an open cloak over sheer stockings and boots
+      - a short travel cloak with thigh stockings and boots
+      - a hooded cloak over lace stockings and boots
+      - a flowing cloak over sheer hose and laced boots
+      - an open cloak with stocking tops and tall boots
+      - a travel cloak over gartered stockings and boots
+      slave-revealing:
+      - a scant slave wrap barely covering her hips
+      - a revealing slave silk with open sides and a short hem
+      - a thin slave cloth tied at the waist leaving her chest bare
+      - a servant wrap with high slits and bare shoulders
+      - a scant slave harness of soft leather straps
+      - thin slave gauze on her thighs and midriff
+      collar-accent:
+      - a thin metal slave collar at her throat
+      - a soft leather collar with a small ring
+      - a delicate chain collar resting at her collarbone
+      - a thin iron collar catching the light
+      - a slim ornate collar with a short leash ring
+      - a narrow velvet collar with a metal clasp
+      nipple-cover-accent:
+      - minimal gold jewelry with small nipple covers
+      - thin gold chains and ornate nipple covers
+      - scant gold jewelry with metallic nipple covers
+      - delicate gold body jewelry with nipple covers
+      - minimal gold adornment and small ornate nipple covers
+      warrior-armor:
+      - ornate plate armor with a short hem and bare thighs
+      - a carved breastplate over a sheer short underskirt
+      - light fantasy armor with open sides and tall greaves
+      - a gold-trimmed cuirass with thigh gaps and soft straps
+      - polished plate with a raised hem and bare midriff
+      - a fitted warrior breastplate over translucent silk
+      - black and gold ornate cutout plates with dangling silver chains
+      - ornate black-gold armor plates leaving her rear and sides bare
+      - gold-trimmed cutout plate armor with silver chains and open sides
+      battle-gown:
+      - a torn battle gown with high slits and bare shoulders
+      - a war-torn silk gown open at the chest
+      - a battle-stained gown with raised hem and soft lace
+      - a regal battle dress with open sides and thigh gaps
+      - a silk war gown slipping from one shoulder
+      - a torn ceremonial battle gown with bare thighs
+      goblin-rags:
+      - tattered green rags tied loosely at her hips
+      - scant goblin cloth scraps across her chest and waist
+      - ragged leaf-stained wraps with open sides
+      - torn greenish rags hanging from thin cords
+      - sparse goblin scraps barely covering her hips
+      - frayed moss-stained cloth tied at her collarbone
+
+      # Thin accent only (~3–6 words) — full outfit lives in matched identity; lean sheer/sexy
+      outfit-accent:
+      - sheer silk catching light
+      - thin gold jewelry glint
+      - scant fabric drape at hip
+      - lace edge on bare skin
+      - light chain at her throat
+      - sheer hem catching glow
+      - faint bead sparkle at wrist
+      - open-side cloth at waist
+
+
+      action-fantasy:
+      - 7::__uw-shared/fantasy/wardrobe/soft-bare__
+      - 2::__uw-shared/fantasy/wardrobe/action-panties-aside-fantasy__
+      - 1::open ritual robe fallen from her shoulders
+      action-panties-aside-fantasy:
+      - her lace fantasy panties pulled to the side, her bare chest and midriff above the waistband
+      - her enchanted thong pulled to the side, her bare breasts, sheer wrap bunched at her hips
+      - her silk panties pulled to the side, topless from the waist up, open ritual robe fallen at her thighs
+      - her lace thong pulled to the side, her bare skin from collarbone down, wrap discarded nearby
+      - her fantasy panties pulled to the side with her bare chest flushed above
+      - her sheer dyed panties pulled to the side, her bare torso from shoulders to hips
+      - her thong pulled to the side with her bare breasts, open ritual robe fallen from her shoulders
+      - her lace panties pulled to the side, her bare chest, enchanted wrap slipped to her waist
+
+      # Scene composers — unused by core/selfie (hard bundles); soft-action dancing may still pull.
+      # Line order mirrors race composer races; shared tint pools may repeat (nymph+druid, etc.).
+      forest-composer:
+      - 3::__uw-shared/fantasy/wardrobe/elf-tinted__
+      - 2::__uw-shared/fantasy/wardrobe/fairy-tinted__
+      - 2::__uw-shared/fantasy/wardrobe/druid-nymph-tinted__
+      - 2::__uw-shared/fantasy/wardrobe/druid-nymph-tinted__
+      - 2::__uw-shared/fantasy/wardrobe/beastkin-tinted__
+      - 2::__uw-shared/fantasy/wardrobe/tavern-tinted__
+      - 1::__uw-shared/fantasy/wardrobe/tribal-scant__
+      castle-composer:
+      - 3::__uw-shared/fantasy/wardrobe/vampire-tinted__
+      - 3::__uw-shared/fantasy/wardrobe/demon-tinted__
+      - 3::__uw-shared/fantasy/wardrobe/succubus-tinted__
+      - 2::__uw-shared/fantasy/wardrobe/succubus-tinted__
+      - 2::__uw-shared/fantasy/wardrobe/angel-tinted__
+      - 2::__uw-shared/fantasy/wardrobe/vampire-tinted__
+      tavern-composer:
+      - 3::__uw-shared/fantasy/wardrobe/beastkin-tinted__
+      - 3::__uw-shared/fantasy/wardrobe/beastkin-tinted__
+      - 3::__uw-shared/fantasy/wardrobe/tavern-tinted__
+      - 1::__uw-shared/fantasy/wardrobe/succubus-tinted__
+      - 1::__uw-shared/fantasy/wardrobe/elf-tinted__
+      ruins-composer:
+      - 3::__uw-shared/fantasy/wardrobe/demon-tinted__
+      - 3::__uw-shared/fantasy/wardrobe/succubus-tinted__
+      - 3::__uw-shared/fantasy/wardrobe/vampire-tinted__
+      - 2::__uw-shared/fantasy/wardrobe/druid-nymph-tinted__
+      - 2::__uw-shared/fantasy/wardrobe/succubus-tinted__
+      - 1::__uw-shared/fantasy/wardrobe/angel-tinted__
+      - 2::__uw-shared/fantasy/wardrobe/tavern-tinted__
+
+    # -------------------------------------------------------------------------
+    # Shot (coarse) — cinematic/moody bias + fantasy-selfie (local; do NOT pull nsfw/shot)
+    # -------------------------------------------------------------------------
+    shot:
+      cinematic:
+      - Cinematic photograph of
+      - Cinematic intimate photography of
+      - A cinematic photograph of
+      - Cinematic portrait photography of
+      moody:
+      - A moody intimate photograph of
+      - Moody intimate photography of
+      - A dimly lit intimate photograph of
+      - A low-light intimate photograph of
+      intimate-portrait:
+      - An amateur candid photo of
+      - An amateur candid photograph of
+      - A candid amateur photo of
+      - An unposed amateur candid photo of
+      - A casual amateur snapshot of
+      candid:
+      - A candid photograph of
+      - An unposed intimate photograph of
+      - A candid photoreal snapshot of
+      action-fingering-front:
+      - A candid photograph of
+      - A documentary intimate photograph of
+      - An unposed intimate photograph of
+      - A candid photoreal snapshot of
+      - A natural unposed photograph of
+      - An intimate candid photograph of
+
+      landscape-cinematic:
+      - A wide cinematic photograph of
+      - A horizontal cinematic still of
+      - A widescreen fantasy photograph of
+      - A cinematic wide photograph of
+      action-landscape:
+      - A wide intimate photograph of
+      - A horizontal candid photograph of
+      - A widescreen intimate still of
+      - A cinematic wide intimate photograph of
+      # Dual-subject side-CAMERA openers (fantasy missionary) — camera angle, not body-side-lying; EVERY line locks her on her back + him on top; mirrors nsfw
+      action-missionary-side:
+      - A profile-camera photograph of a couple face-to-face in missionary, her on her back and him on top,
+      - A side-camera view of a couple with her on her back and him on top,
+      - A lateral camera angle of a couple in missionary, her on her back under him, bodies face-to-face,
+      - A documentary side-camera photograph of a couple face-to-face in missionary, her on her back and him on top,
+      # Dual-subject wide/horizontal side-CAMERA openers (fantasy landscape missionary)
+      action-missionary-landscape:
+      - A wide side-camera photograph of a couple face-to-face in missionary, her on her back and him on top,
+      - A widescreen profile-camera photograph of a couple in missionary, her on her back and him on top, bodies face-to-face,
+      - A horizontal side-camera candid of a couple with her on her back and him on top,
+      - A wide-frame documentary side-camera photograph of a couple face-to-face in missionary, her on her back and him on top,
+      - An unposed horizontal side-camera angle of a couple in missionary, her on her back under him,
+      - A widescreen candid side-camera photograph of a couple face-to-face in missionary, her on her back and him on top,
+
+      action-pov:
+      - A low angle POV intimate photograph of
+      - A low-angle POV intimate photograph of
+      - A close POV intimate photograph of
+
+      selfie:
+      - An iPhone photo of
+      - A casual phone snapshot of
+      - An arm's-length phone selfie of
+      - A handheld phone selfie of
+      - A natural phone selfie of
+      - A candid phone selfie of
+      selfie-mirror:
+      - A mirror phone selfie of
+      - An iPhone mirror selfie of
+      - A handheld mirror selfie of
+      - A mirror selfie of
+      - A casual mirror snapshot of
+      - An arm's-length mirror selfie of
+
+    # -------------------------------------------------------------------------
+    # Camera (coarse) — matching shot class + fantasy-selfie phone
+    # -------------------------------------------------------------------------
+    camera:
+      cinematic:
+      - shot with cinematic framing and shallow depth
+      - captured with a cinematic lens and soft falloff
+      - photographed with cinematic compression and creamy bokeh
+      - shot with cinematic medium framing and soft blur
+      moody:
+      - shot with low-key shallow depth and muted falloff
+      - captured with moody low-key framing and soft depth
+      - photographed with dim low-key perspective and muted falloff
+      - shot with moody shallow depth and subdued blur
+      intimate-portrait:
+      - shot on an 85mm lens with shallow depth
+      - captured on an 85mm lens with tight focus
+      - photographed on an 85mm lens with soft blur
+      - shot on an 85mm lens with creamy bokeh
+      candid:
+      - shot on a 35mm lens with natural perspective
+      - captured on a 35mm lens with documentary framing
+      - photographed on a 35mm lens with candid framing
+
+      landscape-cinematic:
+      - shot on a 35mm lens with wide horizontal framing
+      - captured on a 35mm lens with scenic width
+      - photographed on a 35mm lens with open landscape composition
+      - shot on a 35mm lens with horizontal cinematic framing
+      action-landscape:
+      - shot on a 35mm lens with wide horizontal framing
+      - captured on a 35mm lens with full-length horizontal composition
+      - photographed on a 35mm lens with soft depth across the full scene
+      - shot on a 35mm lens with bodies stretched wide in frame
+
+      action-pov:
+      - shot from a low angle with soft depth toward her torso
+      - captured from below with shallow focus along her body
+      - photographed low toward her hips with soft falloff behind
+      - low-angle POV framing with soft blur behind her
+
+      selfie-phone:
+      - shot on a phone with mild wide-angle depth
+      - front-camera phone angle with soft bokeh
+      - handheld phone selfie with soft blur behind her
+      - arm's-length phone capture with shallow depth
+      - casual phone selfie with a blurred backdrop
+
+    # -------------------------------------------------------------------------
+    # Environment (fine) — scene families; soft-action surfaces included
+    # -------------------------------------------------------------------------
+    environment:
+      forest:
+      - in a misty forest clearing among ancient trees
+      - in an enchanted woodland glade with soft mist
+      - in a sunlit forest grove under filtered canopy
+      - along a woodland trail of leaves and roots
+      - in a quiet forest glade ringed by ferns
+      - in a moonlit forest clearing with silver mist
+      - beside a mossy riverbank under woodland cover
+      - on a rain-softened forest path with low fog
+      forest-spring:
+      - at a hidden forest spring among ferns
+      - in a shallow woodland spring over stones
+      - beside a fern-hidden spring pool
+      - in a mossy spring basin under dappled shade
+      - at a quiet forest spring with wet ledges
+      - in a cool woodland spring with clear shallows
+      - at a spring-fed pool among twisted roots
+      - in a secluded forest spring with mossy banks
+      forest-clearing-dance:
+      - in an open forest clearing with soft moss underfoot
+      - in a moonlit woodland clearing edged by stones
+      - in a festival forest glade with soft lanterns
+      - in a wide mossy clearing with drifting mist
+      - in a ritual forest clearing with standing stones
+      - in a celebration glade with soft fern underfoot
+      - in an open woodland ring with warm torch posts
+      - in a forest dance clearing with low curling fog
+      castle:
+      - in a noble castle chamber with carved wood
+      - in a stone castle corridor with wall torches
+      - in a castle tower chamber with open windows
+      - in a candle-lit royal chamber with warm stone
+      - in a grand castle hall with hanging banners
+      - along a torch-lit corridor with deep arches
+      - in a tower room overlooking distant forests
+      - in a quiet castle chamber with heavy drapes
+      throne-room:
+      - in a dark opulent demonic throne room with ornate architecture and red curtains
+      - in a demonic throne hall with carved black stone and heavy red drapes
+      - in an opulent dark throne room with red curtains and dramatic shadowed arches
+      - before a massive dark throne under red curtains and ornate stonework
+      - in a demonic throne chamber with crimson drapes and gold-trimmed stone
+      - in a dark regal throne room with red curtains and dramatic architectural light
+      dungeon-candlelit:
+      - in a candlelit castle dungeon with chains and leather benches
+      - in a candlelit dungeon with silk cushions on a leather bench
+      - in a castle dungeon lit by candles with hanging chains soft behind
+      - in a candlelit dungeon chamber with leather benches and silk cushions
+      - in a stone dungeon with warm candle clusters and tasteful restraint furniture
+      - in a candlelit castle dungeon with chains on the wall and silk-draped benches
+      castle-bath:
+      - in a stone castle bath with warm steam
+      - in a private bathing chamber with wet stone
+      - beside a heated castle plunge pool
+      - in a noble bathing room with marble ledges
+      - in a torch-lit stone bath with rippling water
+      - in a castle wash chamber with soaked cloths
+      - at a sunken stone bath with candlelit rim
+      - in a steamy castle bathing alcove
+      castle-bedchamber:
+      - in a castle bedchamber with carved posts
+      - on a noble bed piled with soft furs
+      - in a private castle bedroom with candlelight
+      - in a moonlit bedchamber with open curtains
+      - in a castle bedchamber with thick rugs and low candlelight
+      - in a quiet noble bedroom with warm bedding
+      - on a canopy bed in a candlelit chamber
+      - in a private bedchamber with rumpled sheets
+      tavern:
+      - in a warm tavern booth with lantern light
+      - at a candle-lit tavern corner table
+      - in a rustic tavern interior with hanging lanterns
+      - in a dim tavern booth with warm amber glow
+      - beside a tavern hearth with wooden benches
+      - in a crowded tavern nook with barrels behind
+      - at a private tavern booth with half-drawn curtains
+      - in a candle-warm tavern corner with soft smoke
+      tavern-loft:
+      - in a quiet tavern loft with low timber beams
+      - in a lofted tavern sleeping nook with lantern light
+      - in a timber loft overlooking the tavern floor
+      - in a private loft above the tavern with warm wood
+      - in a lofted tavern alcove with rough blankets
+      - in an upstairs tavern loft with lantern spill below
+      - in a timber loft bunk with worn wood
+      - in a lofted settle above the tavern with soft rugs
+      tavern-dance-floor:
+      - on a tavern dance floor with swinging lanterns
+      - in the open tavern floor with benches pushed back
+      - on a packed tavern floor under candlelight
+      - in a festival tavern hall with raised boards
+      - on the tavern dance boards with spinning light
+      - in an open tavern floor ringed by barrels
+      - on a worn tavern dance floor with amber glow
+      - in a celebration tavern floor with warm haze
+      ruins:
+      - among ruined stone arches with ivy and mist
+      - in a ruined shrine courtyard with broken pillars
+      - among collapsed ruin walls and still water pools
+      - in an abandoned watchtower ruin over misty hills
+      - among weathered ruin stones with carved symbols
+      - in a moonlit ruin cloister with pale silver haze
+      - among broken columns in an ancient shrine ruin
+      - in a flooded ruin courtyard with collapsed walls
+      ruins-altar:
+      - at a moonlit ritual altar with ancient carvings
+      - on a weathered stone altar among ruined pillars
+      - at a ruined shrine altar with ivy-wrapped stones
+      - on a carved ritual altar in a collapsed temple
+      - at an ancient altar slab with worn runes
+      - on a mossy altar stone among broken shrine walls
+      - at a ruined woodland altar claimed by roots
+      - on a cold stone altar under open ruined arches
+      ruins-tide-pool:
+      - in a flooded ruin tide-pool among collapsed walls
+      - at a shallow tide-pool in ruined stone
+      - in a salt-kissed ruin pool with broken pillars
+      - beside a tide-filled ruin basin with fog
+      - in a coastal ruin pool with wet stone
+      - at a flooded shrine pool among arches
+      - in a shallow ruin tide-pool with mossy ledges
+      - at a flooded ruin basin with shallow still water
+      # Epic / landscape scenic env (Batch A foundation — photoreal phrasing)
+      mountain-peak-landscape:
+      - on a wind-swept mountain peak above the clouds
+      - along a high alpine ridge with distant valleys below
+      - on a rocky mountain summit with snow-dusted stone
+      - atop a cliff-edge peak overlooking vast ranges
+      - on a high mountain ledge with thin cold air and wide sky
+      - along a summit path of stone and sparse alpine grass
+      waterfall-pool-landscape:
+      - at a wide waterfall pool with misting spray
+      - beside a cascading waterfall into a clear stone pool
+      - in a forest waterfall basin with wet rock ledges
+      - at a misty waterfall pool ringed by mossy stone
+      - beside a plunging falls with shallow clear water
+      - at a wide cascade pool under drifting spray
+      cliff-valley-landscape:
+      - on a cliff ledge overlooking a deep green valley
+      - along a high cliff path with valley mist below
+      - on a rocky overlook above a winding river valley
+      - at a cliff edge with distant forested hills
+      - on a stone outcrop above a sunlit valley floor
+      - along a sheer cliff trail with open valley air
+      biolume-forest-night:
+      - in a night forest glowing with soft biolume fungus
+      - among bioluminescent trees under deep night canopy
+      - in a dark woodland path lit by blue-green biolume
+      - among glowing mushrooms in a night forest glade
+      - in a biolume-lit forest clearing with soft blue haze
+      - along a night forest trail with drifting biolume motes
+      desert-temple:
+      - in a sun-bleached desert temple of carved sandstone
+      - among weathered desert temple columns under harsh light
+      - in a ruined desert sanctuary with sand-drifted floors
+      - inside a desert temple hall with cracked stone
+      - among desert temple ruins half-buried in sand
+      - in a sandstone temple courtyard with dry heat haze
+      arena-colosseum:
+      - in a sand-floored arena under open sky
+      - inside a stone colosseum with tiered seats above
+      - on arena sand ringed by weathered stone walls
+      - in a colosseum pit with dust and open light
+      - on packed arena ground under bright stadium glare
+      - inside a stone amphitheater with sand underfoot
+      treasure-chamber:
+      - in a treasure chamber stacked with gold and relics
+      - inside a vaulted chamber glittering with coin and gems
+      - in a candle-lit treasure room with open chests
+      - among piled gold and ancient relics in a stone vault
+      - in a torch-lit hoard chamber with scattered treasure
+      - inside a sealed treasure vault with glittering piles
+      ancient-oak-ivy:
+      - beneath an ancient oak wrapped in thick ivy
+      - among ivy-choked oak roots in a quiet grove
+      - under a massive oak canopy with hanging ivy
+      - beside an ancient oak trunk bound in climbing ivy
+      - in an ivy-wrapped oak hollow with soft moss
+      - among twisted oak roots and trailing ivy vines
+      # Epic interior (Batch C) — sorceress window
+      rustic-window-room:
+      - in a rustic stone room at a tall mullioned window
+      - beside a weathered wooden window with open shutters
+      - at a cottage window with a worn stone sill
+      - in a rustic chamber framed by a leaded window
+      - at an old timber-framed window with soft daylight
+      - in a simple rustic room at an open casement window
+
+      # Landscape scenic env (Batch C3) — wide horizontal stretch
+      forest-landscape:
+      - in a misty forest glade among ancient trees
+      - across an enchanted woodland glade with soft mist
+      - in a sunlit forest grove under filtered canopy
+      - along a wide woodland trail of leaves and roots
+      - in a quiet forest glade ringed by ferns
+      - in a moonlit forest clearing with silver mist
+      - beside a mossy riverbank under woodland cover
+      - on a rain-softened forest path with low fog
+      forest-spring-landscape:
+      - at a hidden forest spring among ferns
+      - in a shallow woodland spring over stones
+      - beside a fern-hidden spring pool with mossy banks
+      - in a mossy spring basin under dappled shade
+      - at a quiet forest spring with wet ledges
+      - in a cool woodland spring with clear shallows
+      - at a spring-fed pool among twisted roots
+      - in a secluded forest spring with mossy banks
+      castle-landscape:
+      - in a noble castle chamber with carved wood
+      - across a stone castle corridor with wall torches
+      - in a castle tower chamber with open windows
+      - in a candle-lit royal chamber with warm stone
+      - in a grand castle hall with hanging banners
+      - along a torch-lit corridor with deep arches
+      - in a tower room overlooking distant forests
+      - in a quiet castle chamber with heavy drapes
+      castle-bedchamber-landscape:
+      - in a castle bedchamber with carved posts
+      - on a noble bed piled with soft furs
+      - in a private castle bedroom with candlelight
+      - in a moonlit bedchamber with open curtains
+      - in a castle bedchamber with thick rugs
+      - in a quiet noble bedroom with warm bedding
+      - on a canopy bed in a candlelit chamber
+      - in a private bedchamber with rumpled sheets
+      tavern-landscape:
+      - in a warm tavern booth with lantern light
+      - at a candle-lit tavern corner table
+      - in a rustic tavern interior with hanging lanterns
+      - in a dim tavern booth with warm amber glow
+      - beside a tavern hearth with wooden benches
+      - in a crowded tavern nook with barrels behind
+      - at a private tavern booth with half-drawn curtains
+      - in a candle-warm tavern corner with soft smoke
+      tavern-loft-landscape:
+      - in a quiet tavern loft with low timber beams
+      - in a lofted tavern sleeping nook with lantern light
+      - in a timber loft overlooking the tavern floor
+      - in a private loft above the tavern with warm wood
+      - in a lofted tavern alcove with rough blankets
+      - in an upstairs tavern loft with lantern spill below
+      - in a timber loft bunk with worn wood
+      - in a lofted settle above the tavern with soft rugs
+      ruins-landscape:
+      - among ruined stone arches with ivy and mist
+      - across a ruined shrine colonnade with broken pillars
+      - among collapsed ruin walls and still water pools
+      - in an abandoned watchtower ruin over misty hills
+      - among weathered ruin stones with carved symbols
+      - in a moonlit ruin cloister with pale silver haze
+      - among broken columns in an ancient shrine ruin
+      - in a flooded ruin courtyard with collapsed walls
+
+      # Selfie-framed env (mirror/reflection cues; reuse core env when pose carries the phone)
+      forest-selfie:
+      - in a forest glade beside a still spring reflection
+      - among ferns at a quiet woodland spring
+      - in a misty forest clearing near shallow water
+      - beside a mossy spring with clear reflective surface
+      castle-selfie:
+      - in a castle bedchamber before an ornate standing mirror
+      - in a noble chamber with a tall polished mirror
+      - in a candle-lit bedchamber beside an ornate glass
+      - in a private castle room with a full-length mirror
+      tavern-selfie:
+      - in a tavern loft with a small standing glass
+      - in a timber loft nook beside a worn looking-glass
+      - in a warm tavern loft with a propped mirror
+      - in a private loft alcove with a small mirror
+      ruins-selfie:
+      - among ruins beside a polished stone reflection
+      - in a moonlit ruin cloister with wet polished stone
+      - among broken pillars near a glassy stone basin
+      - in a ruined shrine with a still polished slab
+
+
+      # Fantasy-action env (sex-capable private surfaces; Batch D)
+      action-forest:
+      - on a soft moss bed in a private glade
+      - on deep moss among ferns in a secluded clearing
+      - on soft earth and moss at a spring edge
+      - on a mossy glade bed ringed by trees
+      - on damp moss beside a quiet spring
+      - on a private moss nest under canopy shade
+      - on soft moss and leaves in a hidden glade
+      - on a moss bed at the spring-edge under ferns
+      action-castle:
+      - on a canopied bed piled with furs
+      - on thick furs across a stone-floor rug
+      - on a noble bed with soft furs in a private chamber
+      - on fur-draped bedding in a candlelit bedchamber
+      - on a canopied bed with rumpled furs
+      - on stone-floor rugs layered with furs
+      - on a private castle bed with heavy drapes
+      - on fur covers across a low bed platform
+      action-tavern:
+      - on a private loft bed above the tavern
+      - on an inn mattress behind a half-drawn curtain
+      - on loft bedding under low timber beams
+      - on a curtained inn mattress in the loft
+      - on a private loft bunk with rough blankets
+      - on an upstairs inn bed behind a curtain
+      - on loft mattresses with warm lantern spill below
+      - on a timber loft bed with soft rugs
+      action-ruins:
+      - on an altar cloth across a ruined chapel dais
+      - on a moonlit stone platform among broken pillars
+      - on a cloth-draped altar in a collapsed shrine
+      - on a ruined chapel dais with ritual cloth
+      - on a moonlit platform under open arches
+      - on an altar slab draped with soft cloth
+      - on a raised ruin platform with worn carvings
+      - on ritual cloth across a mossy altar stone
+
+      # Action landscape env (sex-capable wide surfaces; Batch C3)
+      action-forest-landscape:
+      - on a soft moss bed in a private glade
+      - on deep moss among ferns in a secluded clearing
+      - on soft earth and moss at a spring edge
+      - on a mossy glade bed ringed by trees
+      - on damp moss beside a quiet spring
+      - on a private moss nest under canopy shade
+      - on soft moss and leaves in a hidden glade
+      - on a moss bed at the spring-edge under ferns
+      action-castle-landscape:
+      - on a canopied bed piled with furs in a private chamber
+      - on thick furs across a stone-floor rug
+      - on a noble bed with soft furs in a private chamber
+      - on fur-draped bedding in a candlelit bedchamber
+      - on a canopied bed with rumpled furs
+      - on stone-floor rugs layered with furs
+      - on a private castle bed with heavy drapes
+      - on fur covers across a low bed platform
+      action-tavern-landscape:
+      - on a private loft bed above the tavern
+      - on an inn mattress behind a half-drawn curtain
+      - on loft bedding under low timber beams
+      - on a curtained inn mattress in the loft
+      - on a private loft bunk with rough blankets
+      - on an upstairs inn bed behind a curtain
+      - on loft mattresses with warm lantern spill below
+      - on a timber loft bed with soft rugs
+      action-ruins-landscape:
+      - on an altar cloth across a ruined chapel dais
+      - on a moonlit stone platform among broken pillars
+      - on a cloth-draped altar in a collapsed shrine
+      - on a ruined chapel dais with ritual cloth
+      - on a moonlit platform under open arches
+      - on an altar slab draped with soft cloth
+      - on a raised ruin platform with worn carvings
+      - on ritual cloth across a mossy altar stone
+
+    # -------------------------------------------------------------------------
+    # Lighting (medium) — photographic framing; particles sparse not dominant
+    # -------------------------------------------------------------------------
+    lighting:
+      forest:
+      - soft volumetric sunlight through ancient trees
+      - dappled canopy light with faint leaf-mote glitter
+      - cool moonlight casting pale silver across the path
+      - fog-filtered sunlight with soft clearing depth
+      - moody forest shadow light under dense canopy
+      - golden god-rays piercing trees through soft mist
+      - twilight forest light with fading warm glow
+      - soft enchanted forest light with sparse particles
+      castle:
+      - warm candlelight pooling across stone and skin
+      - torch-lit corridor light with deep amber flicker
+      - sunbeams through castle windows in dusty shafts
+      - soft morning light through curtains
+      - low candlelit ambiance with intimate warm tones
+      - moonlit spill through open stone windows
+      - hearth glow warming carved wood and drapes
+      - sparse arcane mote shimmer along candle-warm stone
+      throne-room:
+      - dramatic side light cutting across red curtains and dark stone
+      - warm torchlight pooling on the throne with deep architectural shadow
+      - golden rim light against crimson drapes in the throne hall
+      - dramatic motivated light from high windows across ornate stone
+      - low warm key light with deep shadow behind the dark throne
+      - stark dramatic light with red curtain glow and soft mote shimmer
+      dungeon-candlelit:
+      - warm candle clusters casting soft flicker across stone and skin
+      - low candlelight pooling on leather benches with deep dungeon shadow
+      - intimate candle glow along chains and silk cushions
+      - soft multi-candle fill with warm amber falloff on damp stone
+      - quiet candlelit ambiance with gentle flicker on restraint furniture
+      - warm clustered candlelight with soft shadow between stone pillars
+      tavern:
+      - warm lantern light across wooden tables
+      - candle-lit tavern ambiance with amber flicker
+      - hearth firelight warming timber beams
+      - low amber lantern glow with soft smoke
+      - intimate candlelight on polished wood
+      - warm rustic tavern light with muted depth
+      - soft lantern spill with lofted shadow falloff
+      - festival lantern glow with warm amber bounce
+      ruins:
+      - cold moonlight on pale blue ruin stone
+      - silver-blue moonbeams through broken arches
+      - ritual candlelight around ancient carvings
+      - cool twilight light with drifting haze
+      - soft arcane glow along ruined stone
+      - dim overcast light on wet ruin stone
+      - moonlight reflecting off still ruin water
+      - quiet god-ray shafts through a broken shrine roof
+      # Selfie lighting — dial particles down; rare phone-screen glow secondary
+      forest-selfie:
+      - 4::soft dappled canopy light on her face
+      - 3::cool moonlight through the trees
+      - 3::gentle forest shade with soft fill
+      - 1::soft forest light with faint phone-screen glow
+      castle-selfie:
+      - 4::warm candlelight on her face and mirror
+      - 3::soft window light across the chamber
+      - 3::low candlelit ambiance with quiet falloff
+      - 1::candlelight with faint phone-screen glow
+      tavern-selfie:
+      - 4::warm lantern light on her face
+      - 3::soft amber candle glow in the loft
+      - 3::hearth spill with muted tavern depth
+      - 1::lantern light with faint phone-screen glow
+      ruins-selfie:
+      - 4::cool moonlight on pale ruin stone
+      - 3::silver moonlight through broken arches
+      - 3::soft twilight light with quiet haze
+      - 1::moonlight with faint phone-screen glow
+
+
+      # Fantasy-action lighting — scene-tinted (replaces deprecated action-fantasy mix)
+      action-forest:
+      - soft canopy spill with cool forest fill
+      - dappled spring light across bare skin
+      - cool forest shade with quiet leaf-mote glitter
+      - soft volumetric canopy light on skin
+      - spring clearing light with faint particles
+      - cool moss-edge light under dense trees
+      action-castle:
+      - warm candlelight soft across her skin
+      - low hearth ember glow with body shadow
+      - chamber candle spill on bare skin
+      - soft torch-warm light with quiet falloff
+      - intimate candlelit chamber glow
+      - hearth-warm ember light on skin
+      action-tavern:
+      - warm lantern glow across bare skin
+      - loft amber lantern spill with soft shadow
+      - booth candlelight with muted tavern depth
+      - soft amber lantern light on skin
+      - low loft lantern glow with warm bounce
+      - intimate booth candle spill
+      action-ruins:
+      - cool moonlight with quiet silver falloff
+      - silver moonbeams on bare skin
+      - dim shrine moonlight with soft haze
+      - cool silver moonlight through broken arches
+      - soft moonlit ruin light on skin
+      - dim overcast moonlight on pale stone
+      # Per-env lighting twins for Batch A epic/scenic env families
+      mountain-peak-landscape:
+      - bright high-altitude sunlight with thin cold air clarity
+      - crisp alpine daylight across stone and skin
+      - cool summit light with soft cloud-shadow falloff
+      - sharp peak sunlight with distant haze
+      - bright open-sky light on wind-swept stone
+      - cool mountain daylight with soft rim glow
+      waterfall-pool-landscape:
+      - soft mist-filtered daylight through waterfall spray
+      - cool cascade light with wet-stone sparkle
+      - bright spray-lit daylight on skin and water
+      - soft volumetric mist light at the falls
+      - cool shaded pool light under drifting spray
+      - bright waterfall bounce light with soft haze
+      cliff-valley-landscape:
+      - open cliff daylight with deep valley shadow below
+      - warm late sun across the overlook edge
+      - cool high-cliff light with soft valley haze
+      - bright ridge light with distant atmospheric depth
+      - soft golden overlook light on stone and skin
+      - clear cliff-edge daylight with quiet falloff
+      biolume-forest-night:
+      - soft blue-green biolume glow on skin and leaves
+      - cool night biolume light with quiet forest depth
+      - low bioluminescent fill under dark canopy
+      - soft blue fungal glow with faint mote sparkle
+      - cool biolume path light with deep night shadow
+      - quiet night-forest biolume wash on bare skin
+      desert-temple:
+      - harsh desert sunlight through sandstone openings
+      - warm sandstone bounce light across carved walls
+      - bright dry daylight with sharp temple shadows
+      - golden late sun on sand-dusted stone
+      - hot desert glare softened by temple shade
+      - warm sandstone ambient light with dust motes
+      arena-colosseum:
+      - bright open-arena sunlight on sand and stone
+      - harsh stadium daylight with sharp shadow edges
+      - warm packed-sand bounce light under open sky
+      - bright colosseum glare with soft dust haze
+      - clear arena daylight across weathered tiers
+      - hot open-pit light with high contrast falloff
+      treasure-chamber:
+      - warm candlelight glittering across gold and gems
+      - torch-lit vault glow with metallic sparkle
+      - low amber chamber light on piled treasure
+      - soft candle spill with gold bounce highlights
+      - warm torch ambiance in a sealed vault
+      - intimate candlelit gleam on coin and skin
+      ancient-oak-ivy:
+      - soft dappled canopy light through oak and ivy
+      - cool green-filtered daylight under ancient leaves
+      - quiet grove shade with soft leaf-mote glitter
+      - soft volumetric light through ivy gaps
+      - cool moss-edge light under thick oak canopy
+      - gentle forest-green ambient under hanging ivy
+      rustic-window-room:
+      - soft window daylight across bare skin
+      - cool sidelight from the open casement
+      - warm late-day window spill with soft falloff
+      - gentle diffused daylight through leaded panes
+      - quiet window light with soft interior shadow
+      - soft directional daylight from the rustic window
+
+      # Deprecated — unused after Q3 scene retarget; kept only if offline greps need a mix
+      # action-fantasy: was warm candle / cool moon / ember / arcane mix
+
+    # -------------------------------------------------------------------------
+    # Partner-cue — brief fantasy-male ONE-SENTENCE looks (Batch A); scene-biased
+    # Wired into fantasy-action partner pose lines; never a second fantasy race paragraph
+    # anonymous kept empty-biased; partner poses use scene cues after Phase 2
+    # -------------------------------------------------------------------------
+    partner-cue:
+      anonymous:
+      - "6::"
+      forest:
+      - Her partner is a burly green orc with tusks and short black hair
+      - Her partner is a lean male goblin with sharp ears and wiry muscle
+      - Her partner is a massive moss-streaked troll with heavy shoulders
+      - Her partner is a rugged forest warrior with a thick beard and scarred arms
+      - Her partner is a broad orc with green skin and a heavy jaw
+      - Her partner is a wiry goblin male with yellow eyes and lean limbs
+      - Her partner is a towering troll with stone-hide skin and thick fangs
+      - Her partner is a rugged woodsman-warrior with unkempt dark hair
+      castle:
+      - Her partner is a wounded knight in battered plate with a rugged beard
+      - Her partner is a mail-clad warrior with short dark hair and a strong jaw
+      - Her partner is a pale consort with sharp features and neat dark hair
+      - Her partner is a battle-worn knight with scratched steel and light stubble
+      - Her partner is a lean castle guard in half-open mail with cropped hair
+      - Her partner is a tall pale noble with refined features and dark eyes
+      - Her partner is a scarred knight in scarred plate with a trimmed beard
+      - Her partner is a mail warrior with broad shoulders and short black hair
+      tavern:
+      - Her partner is a burly human with a thick beard and barrel chest
+      - Her partner is a scarred mercenary with cropped hair and a broken nose
+      - Her partner is a beast-touched warrior with faint fangs and heavy muscle
+      - Her partner is a broad tavern fighter with short dark hair and thick arms
+      - Her partner is a lean sellsword with a weathered face and light stubble
+      - Her partner is a burly man with a wild beard and road-worn gear open at the chest
+      - Her partner is a mercenary with a scarred cheek and close-cropped hair
+      - Her partner is a beast-touched fighter with amber eyes and broad shoulders
+      ruins:
+      - Her partner is a scarred green orc with tusks and battle marks
+      - Her partner is a dark knight in blackened plate with a stern jaw
+      - Her partner is a scarred warrior with a ragged beard and torn mail
+      - Her partner is a broad orc with broken armor straps and heavy arms
+      - Her partner is a dark-plated knight with pale eyes and short black hair
+      - Her partner is a battle-scarred warrior with ash-streaked skin
+      - Her partner is a lean dark knight with a closed helm at his side
+      - Her partner is a scarred orc warrior with tusks and cropped hair
+      # Thin secondaries for fantasy-group (Batch B) — shorter than primary; never a second identity paragraph
+      forest-secondary:
+      - A second lean goblin with sharp ears
+      - Another burly orc with tusks
+      - A second forest warrior with a thick beard
+      - Another moss-streaked troll with heavy shoulders
+      - A second wiry goblin with yellow eyes
+      - Another broad orc with a heavy jaw
+      castle-secondary:
+      - A second mail warrior with cropped hair
+      - Another wounded knight in battered plate
+      - A second lean guard with short dark hair
+      - Another scarred knight with light stubble
+      - A second pale noble with dark eyes
+      - Another broad warrior with short black hair
+      tavern-secondary:
+      - A second lean sellsword with light stubble
+      - Another burly man with a thick beard
+      - A second scarred mercenary with cropped hair
+      - Another beast-touched fighter with amber eyes
+      - A second broad tavern fighter with thick arms
+      - Another mercenary with a scarred cheek
+      ruins-secondary:
+      - A second scarred green orc with tusks
+      - Another dark knight in blackened plate
+      - A second battle-scarred warrior with a ragged beard
+      - Another broad orc with heavy arms
+      - A second lean dark knight with pale eyes
+      - Another scarred orc warrior with cropped hair
+
+    # -------------------------------------------------------------------------
+    # Partner-body — short male cast descriptors (monster/dark vignettes); never identity essays
+    # -------------------------------------------------------------------------
+    partner-body:
+      troll:
+      - a huge green troll with thick fangs
+      - a massive green troll with heavy fangs
+      - an enormous stone-hide troll with fangs
+      - a towering green troll with fangs
+      - a giant green troll with stone-textured skin
+      knight:
+      - a wounded bearded knight in battered plate
+      - a battle-worn knight with a rugged beard
+      - a wounded knight in scarred half-open plate
+      - a bearded knight in battered steel plate
+      - a wounded knight in scratched plate
+      warrior:
+      - a scarred warrior
+      - a bearded warrior
+      - a mail-clad warrior
+      - a chainmail warrior
+      - a battle-scarred warrior
+      orc:
+      - a burly green orc with tusks
+      - a broad-shouldered orc with heavy tusks
+      - a scarred green orc with a thick jaw
+      - a muscular orc with dark green skin
+      - a towering orc with broken tusks
+      goblin:
+      - a lean male goblin with sharp ears
+      - a wiry goblin with yellow eyes
+      - a small muscular goblin with pointed ears
+      - a scarred goblin with lean limbs
+      - a sharp-featured goblin with greenish skin
+      # Fantasy missionary male cast (Batch C) — body/build primary; light warrior/castle tint; braced/between-thighs cues
+      male-missionary:
+      - The man has a muscular body with broad shoulders and a solid chest, torso braced over hers on the furs
+      - The man has a lean athletic body with defined arms and warm olive skin, body between her spread thighs
+      - The man has a battle-scarred warrior build with thick thighs and a strong back, chest pressed over her on the fur bed
+      - The man has a tall fit frame with long limbs and fair skin, hips locked between her open legs
+      - The man has a toned body with close-cropped hair and light chest hair, weight braced on his forearms above her
+      - The man has a solid-built torso with a square jaw and short dark hair, torso covering hers in missionary on the rugs
+      - The man has a muscular athletic build with mail-calloused shoulders, body pressed over her on the furs
+      - The man has a lean wiry body with visible ribs and neat short hair, kneeling between her parted thighs
+      - The man has a broad soft body with fair skin and light belly softness, torso angled over hers on the fur bedding
+      - The man has a scarred warrior frame with defined arms, hips driving between her spread thighs
+
+    # -------------------------------------------------------------------------
+    # Partner-action — spatial hand/thigh cues (fantasy missionary)
+    # -------------------------------------------------------------------------
+    partner-action:
+      male-missionary-hands:
+      - his hands holding her thighs open around his hips while his body covers hers
+      - both hands braced on the furs beside her shoulders as he thrusts over her
+      - one hand holding her thigh open around his hip, the other braced by her shoulder as he covers her between her legs
+      - his hands braced on the furs beside her head as he drives forward between her legs covering her
+      - both hands guiding her knees open around his hips while he covers her and thrusts between her legs
+      - one hand by her hip as he covers her, the other gripping the furs by her shoulder
+      - both hands beside her shoulders on the furs as his chest presses to hers over her
+      - his forearms braced by her head as he covers her and thrusts between her legs
+
+    # -------------------------------------------------------------------------
+    # Pose (fine) — one family per L2; core cinematic/moody + fantasy-selfie
+    # -------------------------------------------------------------------------
+    pose:
+      fantasy-forest-cinematic-glade:
+      - looking back over her shoulder in the glade, __uw-shared/common/expression/nsfw-glance__
+      - facing the treeline with one hand on her hip glancing back, __uw-shared/common/expression/nsfw-glance__
+      - over-the-shoulder in soft mist, __uw-shared/common/expression/nsfw-glance__
+      - chin turned over one bare shoulder among ferns, __uw-shared/common/expression/nsfw-glance__
+      - weight on one hip looking back toward the lens, __uw-shared/common/expression/nsfw-glance__
+      - facing away with shoulder rolled toward canopy light, __uw-shared/common/expression/nsfw-glance__
+      fantasy-forest-moody-moonlit:
+      - standing in moonlight with chin lifted, __uw-shared/common/expression/nsfw-front__
+      - leaning against an ancient tree with gaze low, __uw-shared/common/expression/nsfw-candid__
+      - among silver mist with one hand at her collarbone, __uw-shared/common/expression/nsfw-front__
+      - half in shadow with eyes toward the lens, __uw-shared/common/expression/nsfw-front__
+      - standing on moss with soft moonlit gaze, __uw-shared/common/expression/nsfw-candid__
+      - beside standing stones with chin slightly turned, __uw-shared/common/expression/nsfw-front__
+      fantasy-forest-intimate-portrait-grove:
+      - facing the camera among soft ferns, __uw-shared/common/expression/nsfw-front__
+      - close toward the lens with one hand at her waist, __uw-shared/common/expression/nsfw-front__
+      - upright in dappled shade with soft shoulders, __uw-shared/common/expression/nsfw-front__
+      - weight on one hip with hand on her thigh, __uw-shared/common/expression/nsfw-front__
+      - among mossy stones with open intimate posture, __uw-shared/common/expression/nsfw-front__
+      - standing close in the grove with soft eye contact, __uw-shared/common/expression/nsfw-front__
+      fantasy-forest-soft-bathing-spring:
+      - kneeling in the shallow spring, __uw-shared/common/expression/nsfw-front__
+      - seated on a mossy ledge with wet skin, __uw-shared/common/expression/nsfw-candid__
+      - standing waist-deep in the spring, __uw-shared/common/expression/nsfw-front__
+      - reclining against wet roots, __uw-shared/common/expression/nsfw-front__
+      - cupping spring water at her chest, __uw-shared/common/expression/nsfw-candid__
+      - perched on a stone step in the spring, __uw-shared/common/expression/nsfw-front__
+      fantasy-forest-soft-dancing-clearing:
+      - mid-turn in the clearing with arms lifted, __uw-shared/common/expression/nsfw-candid__
+      - spinning on moss with hair in motion, __uw-shared/common/expression/nsfw-front__
+      - dancing barefoot among stones with one arm arched, __uw-shared/common/expression/nsfw-candid__
+      - stepping a ritual turn on the ball of her foot, __uw-shared/common/expression/nsfw-front__
+      - swaying in the glade with shoulders open, __uw-shared/common/expression/nsfw-candid__
+      - mid-dance with cloth drifting toward the lens, __uw-shared/common/expression/nsfw-front__
+      fantasy-castle-cinematic-chamber:
+      - seated on a carved chair looking back over her shoulder, __uw-shared/common/expression/nsfw-glance__
+      - standing by heavy drapes with an over-shoulder glance, __uw-shared/common/expression/nsfw-glance__
+      - perched at the bed edge half-turned to the lens, __uw-shared/common/expression/nsfw-glance__
+      - facing a tall window then glancing back, __uw-shared/common/expression/nsfw-glance__
+      - chin turned over one shoulder in the chamber, __uw-shared/common/expression/nsfw-glance__
+      - beside a carved post looking back through candle haze, __uw-shared/common/expression/nsfw-glance__
+      fantasy-castle-moody-candle-corridor:
+      - standing still in the torch-lit corridor, __uw-shared/common/expression/nsfw-front__
+      - leaning against cold stone with gaze low, __uw-shared/common/expression/nsfw-candid__
+      - paused mid-step in the corridor toward the lens, __uw-shared/common/expression/nsfw-front__
+      - half in arch shadow with one hand on the wall, __uw-shared/common/expression/nsfw-front__
+      - standing between wall torches with chin lifted, __uw-shared/common/expression/nsfw-front__
+      - pressed lightly to stone with soft candlelit gaze, __uw-shared/common/expression/nsfw-candid__
+      fantasy-castle-cinematic-tower-window:
+      - at the open tower window looking back over her shoulder, __uw-shared/common/expression/nsfw-glance__
+      - leaning on the stone sill glancing back, __uw-shared/common/expression/nsfw-glance__
+      - framed in the tower window half-turned to the lens, __uw-shared/common/expression/nsfw-glance__
+      - one hand on the sill looking over her shoulder, __uw-shared/common/expression/nsfw-glance__
+      - standing in flowing curtains with an over-shoulder glance, __uw-shared/common/expression/nsfw-glance__
+      - perched on the window ledge looking back into the room, __uw-shared/common/expression/nsfw-glance__
+      fantasy-castle-soft-lounge-bedchamber:
+      - lounging on the bed with one knee up, __uw-shared/common/expression/nsfw-front__
+      - reclining among furs in an open robe, __uw-shared/common/expression/nsfw-candid__
+      - propped on one elbow in rumpled sheets, __uw-shared/common/expression/nsfw-front__
+      - sitting at the bed edge with cloth slipping, __uw-shared/common/expression/nsfw-front__
+      - sprawled on velvet covers, __uw-shared/common/expression/nsfw-candid__
+      - lounging sideways with one arm raised, __uw-shared/common/expression/nsfw-front__
+      fantasy-castle-soft-bathing-stone:
+      - seated on the stone bath rim, __uw-shared/common/expression/nsfw-front__
+      - standing in warm bathwater to mid-thigh, __uw-shared/common/expression/nsfw-candid__
+      - reclining against wet marble, __uw-shared/common/expression/nsfw-front__
+      - kneeling in the plunge pool, __uw-shared/common/expression/nsfw-front__
+      - perched on bath steps wringing her hair, __uw-shared/common/expression/nsfw-candid__
+      - lounging in the stone basin, __uw-shared/common/expression/nsfw-front__
+      fantasy-tavern-cinematic-candle-booth:
+      - seated in the booth looking back over her shoulder, __uw-shared/common/expression/nsfw-glance__
+      - leaning on the table with an over-shoulder glance, __uw-shared/common/expression/nsfw-glance__
+      - half-turned in the booth with chin over one shoulder, __uw-shared/common/expression/nsfw-glance__
+      - perched at the booth edge glancing back, __uw-shared/common/expression/nsfw-glance__
+      - sitting with back to the room looking toward the lens, __uw-shared/common/expression/nsfw-glance__
+      - leaning into booth shadows with an over-shoulder look, __uw-shared/common/expression/nsfw-glance__
+      fantasy-tavern-moody-loft:
+      - seated on loft bedding under low beams, __uw-shared/common/expression/nsfw-front__
+      - lounging in the loft nook with lantern spill below, __uw-shared/common/expression/nsfw-candid__
+      - kneeling on loft rugs with chin lifted, __uw-shared/common/expression/nsfw-front__
+      - leaning on the loft railing with soft eyes, __uw-shared/common/expression/nsfw-front__
+      - sitting cross-legged in the loft, __uw-shared/common/expression/nsfw-candid__
+      - reclining against timber with quiet gaze, __uw-shared/common/expression/nsfw-front__
+      fantasy-tavern-soft-lounge-settle:
+      - lounging on a tavern settle, __uw-shared/common/expression/nsfw-front__
+      - reclining on the settle with draped cloth, __uw-shared/common/expression/nsfw-candid__
+      - sprawled on warm wood, __uw-shared/common/expression/nsfw-front__
+      - seated sideways with open robe slipping, __uw-shared/common/expression/nsfw-front__
+      - propped on one elbow on settle cushions, __uw-shared/common/expression/nsfw-candid__
+      - lounging back in tavern haze, __uw-shared/common/expression/nsfw-front__
+      fantasy-tavern-soft-dancing-floor:
+      - mid-spin on the tavern floor with arms lifted, __uw-shared/common/expression/nsfw-candid__
+      - dancing barefoot on stamped boards, __uw-shared/common/expression/nsfw-front__
+      - stepping a lively turn with hair in motion, __uw-shared/common/expression/nsfw-candid__
+      - celebrating on the dance floor with one arm arched, __uw-shared/common/expression/nsfw-front__
+      - mid-dance between lanterns with cloth drifting, __uw-shared/common/expression/nsfw-candid__
+      - stomping a festival step toward the lens, __uw-shared/common/expression/nsfw-front__
+      fantasy-ruins-cinematic-shrine:
+      - looking back over her shoulder among broken pillars, __uw-shared/common/expression/nsfw-glance__
+      - facing ruined arches with an over-shoulder glance, __uw-shared/common/expression/nsfw-glance__
+      - chin turned over one shoulder among ivy stones, __uw-shared/common/expression/nsfw-glance__
+      - half-turned to the lens in the shrine ruin, __uw-shared/common/expression/nsfw-glance__
+      - beside a collapsed column glancing back through mist, __uw-shared/common/expression/nsfw-glance__
+      - framed by broken arches looking over her shoulder, __uw-shared/common/expression/nsfw-glance__
+      fantasy-ruins-moody-moonlit-ruins:
+      - standing in moonlight among ruined stones, __uw-shared/common/expression/nsfw-front__
+      - leaning on a broken pillar with gaze low, __uw-shared/common/expression/nsfw-candid__
+      - among silver mist with one hand on carved stone, __uw-shared/common/expression/nsfw-front__
+      - half in ruin shadow toward the lens, __uw-shared/common/expression/nsfw-front__
+      - standing on mossy ruin floors with soft gaze, __uw-shared/common/expression/nsfw-candid__
+      - beside collapsed walls with chin slightly lifted, __uw-shared/common/expression/nsfw-front__
+      fantasy-ruins-soft-lounge-altar:
+      - lounging on the stone altar, __uw-shared/common/expression/nsfw-front__
+      - reclining across the altar with cloth slipping, __uw-shared/common/expression/nsfw-candid__
+      - seated on the altar edge, __uw-shared/common/expression/nsfw-front__
+      - sprawled on carved stone, __uw-shared/common/expression/nsfw-front__
+      - propped on one elbow on the altar, __uw-shared/common/expression/nsfw-candid__
+      - lounging sideways on the altar, __uw-shared/common/expression/nsfw-front__
+      fantasy-ruins-soft-ritual-dance:
+      - mid-ritual turn among ruined pillars with arms lifted, __uw-shared/common/expression/nsfw-candid__
+      - dancing barefoot around the shrine stones, __uw-shared/common/expression/nsfw-front__
+      - spinning in mist with cloth drifting, __uw-shared/common/expression/nsfw-candid__
+      - stepping a ceremonial dance with one arm arched, __uw-shared/common/expression/nsfw-front__
+      - celebrating at the ruined altar with hair in motion, __uw-shared/common/expression/nsfw-candid__
+      - mid-dance among broken arches with soft sway, __uw-shared/common/expression/nsfw-front__
+      fantasy-ruins-soft-bathing-tide-pool:
+      - kneeling in the shallow tide-pool, __uw-shared/common/expression/nsfw-front__
+      - seated on wet stone with legs in cool water, __uw-shared/common/expression/nsfw-candid__
+      - standing waist-deep in the flooded basin, __uw-shared/common/expression/nsfw-front__
+      - reclining against a collapsed pillar, __uw-shared/common/expression/nsfw-front__
+      - perched on a mossy ledge in the tide-pool, __uw-shared/common/expression/nsfw-candid__
+      - lounging in the flooded ruin basin, __uw-shared/common/expression/nsfw-front__
+
+      # --- Core landscape wide poses (Batch C3) ---
+      fantasy-forest-cinematic-glade-wide:
+      - looking back over her shoulder in the glade, __uw-shared/common/expression/nsfw-glance__
+      - facing the treeline with one hand on her hip glancing back, __uw-shared/common/expression/nsfw-glance__
+      - over-the-shoulder in soft mist, __uw-shared/common/expression/nsfw-glance__
+      - chin turned over one bare shoulder among ferns, __uw-shared/common/expression/nsfw-glance__
+      - weight on one hip looking back toward the lens, __uw-shared/common/expression/nsfw-glance__
+      - facing away with shoulder rolled toward canopy light, __uw-shared/common/expression/nsfw-glance__
+      fantasy-forest-soft-bathing-spring-wide:
+      - kneeling in the shallow spring with mossy banks behind, __uw-shared/common/expression/nsfw-front__
+      - seated on a mossy ledge with wet skin and spring water behind, __uw-shared/common/expression/nsfw-candid__
+      - standing waist-deep in the spring among ferns, __uw-shared/common/expression/nsfw-front__
+      - reclining against wet roots by the spring, __uw-shared/common/expression/nsfw-front__
+      - cupping spring water at her chest, __uw-shared/common/expression/nsfw-candid__
+      - perched on a stone step in the spring, __uw-shared/common/expression/nsfw-front__
+      fantasy-castle-cinematic-chamber-wide:
+      - seated on a carved chair looking back across the chamber, __uw-shared/common/expression/nsfw-glance__
+      - standing by heavy drapes with an over-shoulder glance, __uw-shared/common/expression/nsfw-glance__
+      - perched at the bed edge half-turned to the lens, __uw-shared/common/expression/nsfw-glance__
+      - facing a tall window then glancing back, __uw-shared/common/expression/nsfw-glance__
+      - chin turned over one shoulder in the chamber, __uw-shared/common/expression/nsfw-glance__
+      - beside a carved post looking back through candle haze, __uw-shared/common/expression/nsfw-glance__
+      fantasy-castle-soft-lounge-bedchamber-wide:
+      - lounging on the bed with one knee up among furs, __uw-shared/common/expression/nsfw-front__
+      - reclining among furs in an open robe, __uw-shared/common/expression/nsfw-candid__
+      - propped on one elbow in rumpled sheets, __uw-shared/common/expression/nsfw-front__
+      - sitting at the bed edge with cloth slipping, __uw-shared/common/expression/nsfw-front__
+      - sprawled on velvet covers across the bed, __uw-shared/common/expression/nsfw-candid__
+      - lounging sideways with one arm raised, __uw-shared/common/expression/nsfw-front__
+      fantasy-tavern-cinematic-candle-booth-wide:
+      - seated in the booth looking back with lanterns behind, __uw-shared/common/expression/nsfw-glance__
+      - leaning on the table with an over-shoulder glance, __uw-shared/common/expression/nsfw-glance__
+      - half-turned in the booth with chin over one shoulder, __uw-shared/common/expression/nsfw-glance__
+      - perched at the booth edge glancing back, __uw-shared/common/expression/nsfw-glance__
+      - sitting with back to the room looking toward the lens, __uw-shared/common/expression/nsfw-glance__
+      - leaning into booth shadows with an over-shoulder look, __uw-shared/common/expression/nsfw-glance__
+      fantasy-tavern-moody-loft-wide:
+      - seated on loft bedding under low beams, __uw-shared/common/expression/nsfw-front__
+      - lounging in the loft nook with lantern spill below, __uw-shared/common/expression/nsfw-candid__
+      - kneeling on loft rugs with chin lifted, __uw-shared/common/expression/nsfw-front__
+      - leaning on the loft railing with soft eyes, __uw-shared/common/expression/nsfw-front__
+      - sitting cross-legged in the loft, __uw-shared/common/expression/nsfw-candid__
+      - reclining against timber with quiet gaze, __uw-shared/common/expression/nsfw-front__
+      fantasy-ruins-cinematic-shrine-wide:
+      - looking back over her shoulder among broken pillars, __uw-shared/common/expression/nsfw-glance__
+      - facing ruined arches with an over-shoulder glance, __uw-shared/common/expression/nsfw-glance__
+      - chin turned over one shoulder among ivy stones, __uw-shared/common/expression/nsfw-glance__
+      - half-turned to the lens in the shrine ruin, __uw-shared/common/expression/nsfw-glance__
+      - beside a collapsed column glancing back through mist, __uw-shared/common/expression/nsfw-glance__
+      - framed by broken arches looking over her shoulder, __uw-shared/common/expression/nsfw-glance__
+      fantasy-ruins-moody-moonlit-ruins-wide:
+      - standing in moonlight among ruined stones, __uw-shared/common/expression/nsfw-front__
+      - leaning on a broken pillar with gaze low, __uw-shared/common/expression/nsfw-candid__
+      - among silver mist with one hand on carved stone, __uw-shared/common/expression/nsfw-front__
+      - half in ruin shadow toward the lens, __uw-shared/common/expression/nsfw-front__
+      - standing on mossy ruin floors with soft gaze, __uw-shared/common/expression/nsfw-candid__
+      - beside collapsed walls with chin slightly lifted, __uw-shared/common/expression/nsfw-front__
+
+      # --- Fantasy-selfie poses (Batch C) — short; phone/mirror carry the anachronism ---
+      fantasy-forest-selfie-mirror:
+      - arm's-length phone selfie at the forest spring, pool behind her, __uw-shared/common/expression/nsfw-front__
+      - standing in the shallow spring holding her phone out, __uw-shared/common/expression/nsfw-front__
+      - front-camera phone selfie beside the spring, water at her calves, __uw-shared/common/expression/nsfw-front__
+      - perched on a mossy spring ledge with phone at arm's length, __uw-shared/common/expression/nsfw-front__
+      - weight on one hip at the spring with phone raised toward the lens, __uw-shared/common/expression/nsfw-front__
+      - kneeling at the spring edge taking a phone selfie, pool in the background, __uw-shared/common/expression/nsfw-front__
+      fantasy-forest-selfie-front:
+      - arm extended with phone toward the glade, __uw-shared/common/expression/nsfw-front__
+      - standing in the clearing phone out, __uw-shared/common/expression/nsfw-front__
+      - front-camera pose among ferns, __uw-shared/common/expression/nsfw-front__
+      - weight on one hip holding the phone out, __uw-shared/common/expression/nsfw-front__
+      - lying on moss with phone above her, __uw-shared/common/expression/nsfw-front__
+      - seated among roots with phone angled in, __uw-shared/common/expression/nsfw-front__
+      fantasy-forest-selfie-over-shoulder:
+      - glancing back with phone raised behind her, __uw-shared/common/expression/nsfw-glance__
+      - back to the glade looking over one shoulder, __uw-shared/common/expression/nsfw-glance__
+      - over-the-shoulder phone selfie among ferns, __uw-shared/common/expression/nsfw-glance__
+      - facing away with phone over one shoulder, __uw-shared/common/expression/nsfw-glance__
+      - chin turned over bare shoulder at the phone, __uw-shared/common/expression/nsfw-glance__
+      - back half-turned with phone raised behind, __uw-shared/common/expression/nsfw-glance__
+      fantasy-castle-selfie-mirror:
+      - holding her phone to the chamber mirror, __uw-shared/common/expression/nsfw-front__
+      - facing the polished mirror with phone raised, __uw-shared/common/expression/nsfw-front__
+      - before the ornate glass with phone up, __uw-shared/common/expression/nsfw-front__
+      - leaning toward the tall mirror, __uw-shared/common/expression/nsfw-front__
+      - hip cocked at the full-length mirror, __uw-shared/common/expression/nsfw-front__
+      - facing the mirror with phone in one hand, __uw-shared/common/expression/nsfw-front__
+      fantasy-castle-selfie-front:
+      - arm extended holding the phone in chamber, __uw-shared/common/expression/nsfw-front__
+      - by the bed with phone at arm's length, __uw-shared/common/expression/nsfw-front__
+      - front-camera pose among furs, __uw-shared/common/expression/nsfw-front__
+      - seated at the bed edge phone out, __uw-shared/common/expression/nsfw-front__
+      - lying on velvet with phone above her, __uw-shared/common/expression/nsfw-front__
+      - propped on one elbow with phone angled in, __uw-shared/common/expression/nsfw-front__
+      fantasy-castle-selfie-over-shoulder:
+      - at the window glancing back with phone raised, __uw-shared/common/expression/nsfw-glance__
+      - leaning on the sill looking back at the phone, __uw-shared/common/expression/nsfw-glance__
+      - over-the-shoulder phone selfie by curtains, __uw-shared/common/expression/nsfw-glance__
+      - facing the window with phone over one shoulder, __uw-shared/common/expression/nsfw-glance__
+      - chin turned over bare shoulder at the phone, __uw-shared/common/expression/nsfw-glance__
+      - framed in the window looking back, __uw-shared/common/expression/nsfw-glance__
+      fantasy-tavern-selfie-mirror:
+      - holding her phone to the loft glass, __uw-shared/common/expression/nsfw-front__
+      - facing the looking-glass with phone raised, __uw-shared/common/expression/nsfw-front__
+      - at the loft mirror with phone up, __uw-shared/common/expression/nsfw-front__
+      - leaning toward the propped mirror, __uw-shared/common/expression/nsfw-front__
+      - hip cocked at the tavern glass, __uw-shared/common/expression/nsfw-front__
+      - facing the small mirror phone in hand, __uw-shared/common/expression/nsfw-front__
+      fantasy-tavern-selfie-front:
+      - arm extended holding the phone in the loft, __uw-shared/common/expression/nsfw-front__
+      - kneeling on loft rugs phone out, __uw-shared/common/expression/nsfw-front__
+      - front-camera pose under low beams, __uw-shared/common/expression/nsfw-front__
+      - seated cross-legged holding the phone out, __uw-shared/common/expression/nsfw-front__
+      - lying on loft bedding with phone above, __uw-shared/common/expression/nsfw-front__
+      - leaning on the loft railing phone angled in, __uw-shared/common/expression/nsfw-front__
+      fantasy-tavern-selfie-sitting-edge:
+      - sitting on the settle edge with phone raised, __uw-shared/common/expression/nsfw-front__
+      - perched on the booth edge phone out, __uw-shared/common/expression/nsfw-front__
+      - seated on warm wood with phone at eye level, __uw-shared/common/expression/nsfw-front__
+      - on the settle edge with legs dangling, __uw-shared/common/expression/nsfw-front__
+      - leaning forward from the edge phone in both hands, __uw-shared/common/expression/nsfw-front__
+      - perched sideways on the settle phone up, __uw-shared/common/expression/nsfw-front__
+      fantasy-ruins-selfie-front:
+      - arm extended holding the phone among pillars, __uw-shared/common/expression/nsfw-front__
+      - standing in moonlight phone out, __uw-shared/common/expression/nsfw-front__
+      - front-camera pose on mossy ruin stone, __uw-shared/common/expression/nsfw-front__
+      - weight on one hip holding the phone out, __uw-shared/common/expression/nsfw-front__
+      - sitting on a broken column phone angled in, __uw-shared/common/expression/nsfw-front__
+      - among silver mist with phone held out, __uw-shared/common/expression/nsfw-front__
+      fantasy-ruins-selfie-over-shoulder:
+      - glancing back with phone raised among arches, __uw-shared/common/expression/nsfw-glance__
+      - facing pillars looking back at the phone, __uw-shared/common/expression/nsfw-glance__
+      - over-the-shoulder phone selfie in moonlit ruins, __uw-shared/common/expression/nsfw-glance__
+      - back half-turned with phone over one shoulder, __uw-shared/common/expression/nsfw-glance__
+      - chin turned over bare shoulder at the phone, __uw-shared/common/expression/nsfw-glance__
+      - framed by collapsed walls looking back, __uw-shared/common/expression/nsfw-glance__
+      fantasy-ruins-selfie-mirror:
+      - holding her phone to polished stone, __uw-shared/common/expression/nsfw-front__
+      - facing a glassy stone slab with phone raised, __uw-shared/common/expression/nsfw-front__
+      - at the polished basin with phone up, __uw-shared/common/expression/nsfw-front__
+      - leaning toward wet polished stone, __uw-shared/common/expression/nsfw-front__
+      - hip cocked at the reflective slab, __uw-shared/common/expression/nsfw-front__
+      - facing still stone with phone in one hand, __uw-shared/common/expression/nsfw-front__
+
+      # --- Fantasy-action poses (Batch D) — anatomy parity with nsfw/action-*; local surface twins ---
+      fantasy-action-solo-fingering:
+      - Lying back on soft moss with knees parted, one hand flat on the moss beside her while her other hand is fingering her vagina, __uw-shared/common/expression/nsfw-action__
+      - Reclined on a moss bed with thighs open, one hand braced on the moss beside her hip while her other hand is fingering her vagina, __uw-shared/common/expression/nsfw-action__
+      - Seated on moss with knees wide, one hand resting on the moss beside her while her other hand is fingering her vagina, __uw-shared/common/expression/nsfw-action__
+      - Propped on one elbow on moss with her other arm braced flat beside her while her free hand is fingering her vagina, __uw-shared/common/expression/nsfw-action__
+      - Reclined on moss facing the camera with weight shifted to one hip, one hand flat beside her while her other hand is fingering her vagina, __uw-shared/common/expression/nsfw-action__
+      - Seated at the moss-bed edge with thighs spread, one hand gripping moss beside her while her other hand is fingering her vagina, __uw-shared/common/expression/nsfw-action__
+      - Lying back on soft moss with knees bent and parted, one palm pressed flat on the moss beside her shoulder while her other hand is fingering her vagina, __uw-shared/common/expression/nsfw-action__
+      - Lying back on soft moss with legs raised high and spread wide, one hand braced flat on the moss beside her while her other hand is fingering her vagina, __uw-shared/common/expression/nsfw-action__
+      - Reclined on a moss nest with thighs lifted high and parted, one palm pressed on the moss beside her hip while her free hand is fingering her vagina, __uw-shared/common/expression/nsfw-action__
+      fantasy-action-solo-toy:
+      - Lying back on furs with knees parted while slowly guiding a smooth dildo into her pussy, __uw-shared/common/expression/nsfw-action__
+      - Reclined on furs with thighs open as she slides a dildo into her pussy, __uw-shared/common/expression/nsfw-action__
+      - Straddling a dildo on furs with the toy buried in her pussy, hips rolling in a steady rhythm, __uw-shared/common/expression/nsfw-action__
+      - On her back on fur bedding gripping a sleek toy as she takes it deeper into her pussy, __uw-shared/common/expression/nsfw-action__
+      - Seated on furs with legs spread while pressing a dildo into her pussy, __uw-shared/common/expression/nsfw-action__
+      - Reclined on rugs with one knee raised as she works a smooth toy inside her pussy, __uw-shared/common/expression/nsfw-action__
+      - Lying back on furs with hips lifted toward the lens as she guides the toy deeper into her pussy, __uw-shared/common/expression/nsfw-action__
+      - Seated facing the camera on furs with thighs wide and toy pressed into her pussy, __uw-shared/common/expression/nsfw-action__
+      - Lying back on furs with legs raised high and spread wide while guiding a smooth dildo into her pussy, __uw-shared/common/expression/nsfw-action__
+      - Reclined on furs with thighs lifted high and parted as she slides a dildo into her pussy, __uw-shared/common/expression/nsfw-action__
+      fantasy-action-solo-hitachi:
+      - Lying back on furs with thighs parted pressing a wand vibrator against her clit, __uw-shared/common/expression/nsfw-action__
+      - Reclined on a fur bed as the wand hums tight against her clit, __uw-shared/common/expression/nsfw-action__
+      - On her back on fur covers holding a magic wand firm against her clit, __uw-shared/common/expression/nsfw-action__
+      - Seated at the fur-bed edge pressing a wand vibrator against her clit, __uw-shared/common/expression/nsfw-action__
+      - Lying back on furs trembling as she holds the wand on her clit, __uw-shared/common/expression/nsfw-action__
+      - Propped on fur pillows with both hands guiding the wand against her clit, __uw-shared/common/expression/nsfw-action__
+      - Reclined on furs with one knee up as the wand works against her clit, __uw-shared/common/expression/nsfw-action__
+      - Seated on a fur bed gripping a humming wand pressed to her clit, __uw-shared/common/expression/nsfw-action__
+      fantasy-action-solo-panties-aside:
+      - Lying back on a loft mattress with her panties pulled to the side and fingers in her pussy, __uw-shared/common/expression/nsfw-action__
+      - Reclined on an inn bed with her panties pulled to the side as she fingers her pussy, __uw-shared/common/expression/nsfw-action__
+      - On her back behind a curtain with her panties pulled to the side and fingers pressing into her pussy, __uw-shared/common/expression/nsfw-action__
+      - Seated on loft bedding with her panties pulled to the side while fingering her pussy, __uw-shared/common/expression/nsfw-action__
+      - Lying back arched on a loft bunk with her panties pulled to the side as her fingers circle her clit, __uw-shared/common/expression/nsfw-action__
+      - Propped on one elbow on an inn mattress with her panties pulled to the side and her free hand fingering her pussy, __uw-shared/common/expression/nsfw-action__
+      - Reclined on loft rugs with knees open and her panties pulled to the side as she slides two fingers into her pussy, __uw-shared/common/expression/nsfw-action__
+      - Seated at the loft bunk edge with her panties pulled to the side and fingers in her pussy, __uw-shared/common/expression/nsfw-action__
+      fantasy-action-solo-masturbating:
+      - Lying back on soft moss with one hand between her thighs rubbing her clit in slow circles, __uw-shared/common/expression/nsfw-action__
+      - Reclined on a moss bed with knees parted and fingertips pressing her clit in steady rhythm, __uw-shared/common/expression/nsfw-action__
+      - On her back on damp moss with hips slightly lifted as she rubs her clit, __uw-shared/common/expression/nsfw-action__
+      - Seated on moss with thighs spread and palm cupped over her pussy rubbing her clit, __uw-shared/common/expression/nsfw-action__
+      - Lying back arched on soft earth with one hand working her clit while the other grips moss, __uw-shared/common/expression/nsfw-action__
+      - Propped on one elbow on moss with her free hand rubbing slow circles on her clit, __uw-shared/common/expression/nsfw-action__
+      - Reclined facing the camera on moss with knees bent and fingers rubbing her clit, __uw-shared/common/expression/nsfw-action__
+      - Seated at the spring-edge moss with one hand pressing her clit between her parted thighs, __uw-shared/common/expression/nsfw-action__
+      fantasy-action-partner-missionary:
+      - On her back in missionary on the furs with knees open, his cock in her pussy, looking up at him with mouth open, __uw-shared/common/expression/nsfw-action-aroused__
+      - On her back in missionary on fur bedding with thighs apart, his cock in her pussy, tilting her head up toward him, __uw-shared/common/expression/nsfw-action-aroused__
+      - On her back in missionary on the furs, his chest against hers, his cock in her pussy, lips parted, __uw-shared/common/expression/nsfw-action-aroused__
+      - On her back under him in missionary on the furs with knees open, his cock in her pussy, mouth open, __uw-shared/common/expression/nsfw-action-aroused__
+      - On her back in missionary on fur covers with thighs spread, his cock in her pussy, eyes half-lidded toward him, __uw-shared/common/expression/nsfw-action-aroused__
+      - On her back in missionary on the furs, his cock in her pussy, face turned up toward him with mouth parted, __uw-shared/common/expression/nsfw-action-aroused__
+      - On her back in missionary on the rumpled fur pillow, his cock in her pussy, chin lifted toward him, __uw-shared/common/expression/nsfw-action-aroused__
+      - On her back in missionary on the furs with knees open, his cock in her pussy, eyes wide and mouth open, __uw-shared/common/expression/nsfw-action-aroused__
+      - On her back in missionary on fur bedding, his cock in her pussy, looking up at him with parted lips, __uw-shared/common/expression/nsfw-action-aroused__
+      - On her back in missionary with cheek against the furs, his cock in her pussy, mouth parted, __uw-shared/common/expression/nsfw-action-aroused__
+      fantasy-action-partner-cowgirl:
+      - Straddling her partner on a loft mattress in cowgirl with his cock in her pussy, hips rolling, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Astride her partner on an inn bed in cowgirl with his cock buried in her pussy, thighs tight around his hips, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Sitting astride her partner on loft bedding in cowgirl with his cock in her pussy and hands braced on his chest, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Riding her partner in cowgirl on a curtained loft bunk with his cock deep in her pussy, hips grinding down, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Straddling her partner on timber loft rugs in cowgirl leaning forward as she rides his cock in her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Astride her partner on an inn mattress in cowgirl with spine arched and his cock sliding in her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - On top in cowgirl on loft bedding with knees wide as she takes his cock deep in her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Straddling him upright on a private loft bed bouncing slowly in cowgirl on his cock in her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      fantasy-action-partner-riding-cowgirl:
+      - Straddling her partner in cowgirl on thick furs with his cock in her pussy, leaning toward the camera, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - On top in cowgirl on a canopied bed with his cock buried in her pussy, chest leaning toward the lens, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Astride her partner in cowgirl on fur bedding with his cock in her pussy and weight toward the camera, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Riding cowgirl on furs with his cock deep in her pussy, hips forward and torso leaning to the lens, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Straddling him in cowgirl on stone-floor rugs with his cock in her pussy, weight shifted toward the camera, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - On top in cowgirl on a fur-draped bed with his cock in her pussy, leaning into the low-angle lens, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      fantasy-action-partner-oral:
+      - Lying back on soft moss with thighs parted while her partner licks her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/forest__
+      - Reclined on a moss bed with knees open as her partner's mouth is on her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/forest__
+      - On her back on damp moss with her partner's tongue on her clit, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/forest__
+      - Hips lifted toward her partner's mouth on moss as he licks her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/forest__
+      - Reclined on moss with one hand in her partner's hair while he licks her clit, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/forest__
+      - Lying back arched on soft earth as her partner's tongue licks her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/forest__
+      - On her back on moss with knees bent wide and her partner's mouth on her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/forest__
+      - Reclined on moss with thighs spread and her partner licking her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/forest__
+      fantasy-action-partner-implied-oral:
+      - Kneeling between her partner's thighs on furs with his cock near her mouth, her face out of frame, __uw-shared/common/expression/nsfw-action-face-hidden__. __uw-shared/fantasy/partner-cue/castle__
+      - Leaning over her partner on a fur bed with hair hiding her face and his cock near her mouth, __uw-shared/common/expression/nsfw-action-face-hidden__. __uw-shared/fantasy/partner-cue/castle__
+      - Kneeling at the fur-bed edge with her face out of frame and his cock at her mouth, __uw-shared/common/expression/nsfw-action-face-hidden__. __uw-shared/fantasy/partner-cue/castle__
+      - Bent toward her partner on furs with face hidden and his cock near her lips, __uw-shared/common/expression/nsfw-action-face-hidden__. __uw-shared/fantasy/partner-cue/castle__
+      - Kneeling between his thighs on fur covers with hair covering her face and his cock at her mouth, __uw-shared/common/expression/nsfw-action-face-hidden__. __uw-shared/fantasy/partner-cue/castle__
+      - Leaning in on rugs with her head out of frame and his cock near her mouth, __uw-shared/common/expression/nsfw-action-face-hidden__. __uw-shared/fantasy/partner-cue/castle__
+      - On her knees beside him on a fur bed with face out of frame and his cock at her mouth, __uw-shared/common/expression/nsfw-action-face-hidden__. __uw-shared/fantasy/partner-cue/castle__
+      - Kneeling forward on furs with face hidden and his cock near her mouth, __uw-shared/common/expression/nsfw-action-face-hidden__. __uw-shared/fantasy/partner-cue/castle__
+      fantasy-action-partner-doggystyle:
+      - On all fours on an altar cloth in doggystyle as her partner thrusts his cock into her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/ruins__
+      - Kneeling forward on a ruined chapel dais in doggystyle as her partner drives his cock into her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/ruins__
+      - On hands and knees on a moonlit stone platform in doggystyle with her partner gripping her hips and his cock buried in her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/ruins__
+      - Bent forward on ritual cloth in doggystyle while her partner thrusts his cock into her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/ruins__
+      - On all fours on a cloth-draped altar in doggystyle with back softly arched and his cock deep in her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/ruins__
+      - Kneeling with chest low on a mossy altar stone in doggystyle as her partner holds her hips and thrusts his cock into her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/ruins__
+      - On all fours facing the camera on a ruin platform in doggystyle with partner's hands on her hips and his cock in her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/ruins__
+      - Kneeling forward on altar cloth with weight on her forearms in doggystyle and his cock thrusting into her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/ruins__
+      fantasy-action-partner-reverse-cowgirl:
+      - Straddling her partner facing away on a loft mattress in reverse cowgirl with his cock in her pussy, hips rolling, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Riding her partner reverse cowgirl on an inn bed with his cock buried in her pussy, thighs tight and spine arched, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Astride her partner facing away on loft bedding in reverse cowgirl with his cock in her pussy and hands on his thighs, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Riding her partner reverse cowgirl on a curtained loft bunk with his cock deep in her pussy, hips grinding down, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Facing away astride her partner on timber loft rugs in reverse cowgirl as she rides his cock in her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Riding her partner reverse cowgirl on an inn mattress with his cock in her pussy and his hands on her hips, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Reverse cowgirl on loft bedding leaning forward with his cock in her pussy and hands braced on his knees, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Facing away bouncing slowly in reverse cowgirl on a private loft bed on his cock in her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      fantasy-action-partner-massage:
+      - Lying back on thick furs with thighs softly parted while oiled hands work her breasts and inner thighs, __uw-shared/common/expression/intimate-calm__. __uw-shared/fantasy/partner-cue/castle__
+      - Reclined on a canopied bed receiving an oil massage with oiled hands on her shoulders and back, __uw-shared/common/expression/intimate-calm__. __uw-shared/fantasy/partner-cue/castle__
+      - On her back on fur bedding as her partner's oiled hands work slowly across her breasts and ribs, __uw-shared/common/expression/intimate-calm__. __uw-shared/fantasy/partner-cue/castle__
+      - Lying prone on fur bedding receiving an oil massage with oiled hands on her shoulders and back, __uw-shared/common/expression/intimate-calm__. __uw-shared/fantasy/partner-cue/castle__
+      - Lying back on furs while oiled hands rest on her inner thighs and hips, __uw-shared/common/expression/intimate-calm__. __uw-shared/fantasy/partner-cue/castle__
+      - Reclined on stone-floor rugs as oiled hands massage along her waist and breasts, __uw-shared/common/expression/intimate-calm__. __uw-shared/fantasy/partner-cue/castle__
+      - On her stomach on fur covers with oiled hands on her shoulders and back, __uw-shared/common/expression/intimate-calm__. __uw-shared/fantasy/partner-cue/castle__
+      - Reclined on a fur-draped bed with oiled hands gliding across her breasts and hips, __uw-shared/common/expression/intimate-calm__. __uw-shared/fantasy/partner-cue/castle__
+      fantasy-action-partner-handjob:
+      - Kneeling beside her partner on a loft mattress with one fist wrapped around his cock stroking slowly, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Kneeling at the inn-bed edge with both hands wrapped around his cock in a steady rhythm, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Seated facing her partner on loft bedding with one hand gripping his cock and thumb circling the tip, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Kneeling between his thighs on a curtained loft bunk with fist pumping his cock while gazing toward the lens, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Leaning over her partner on timber loft rugs with one hand wrapped tight around his cock stroking up, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Kneeling with both hands on his cock in alternating strokes on an inn mattress, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Seated at his hip on loft bedding with one fist gliding along his cock in slow pumps, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Kneeling forward on a private loft bed with one hand wrapped around his cock and wrist rolling steady, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      fantasy-action-partner-giving-oral:
+      - Kneeling between his thighs on altar cloth with her lips around his cock, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/ruins__
+      - On her knees on a chapel dais with her lips around his cock and one hand on his thigh, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/ruins__
+      - Kneeling at a moonlit platform edge with her lips around his cock, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/ruins__
+      - Bent forward on her knees on ritual cloth with his cock deep in her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/ruins__
+      - Kneeling between his legs on a draped altar with her lips sliding along his cock, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/ruins__
+      - On her knees on an altar stone with her lips around his cock and one hand at the base, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/ruins__
+      - Kneeling on a ruin platform with her lips around his cock and eyes lifted toward camera, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/ruins__
+      - On her knees between his thighs on altar cloth with her lips around his cock, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/ruins__
+      fantasy-action-partner-prone:
+      - Lying flat on her stomach on thick furs in prone bone with his cock thrusting into her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Prone on a canopied bed with hips slightly raised as her partner drives his cock into her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Flat on her belly on fur bedding in prone bone with cheek turned toward the camera and his cock buried in her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Lying face-down on furs in prone bone with thighs pressed together and his cock thrusting into her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Prone on stone-floor rugs with arms stretched forward as her partner settles on her hips with his cock deep in her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Flat on her stomach on fur covers in prone bone with spine softly arched and his cock buried in her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Lying prone on a fur-draped bed with one knee bent slightly as her partner thrusts his cock into her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Face-down on rumpled furs in prone bone with his cock pressing deep into her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+
+      # --- Fantasy-action landscape wide poses (Batch C3) ---
+      fantasy-action-partner-missionary-wide:
+      - On her back in missionary along the furs with knees open, his cock in her pussy, looking up at him with mouth open, __uw-shared/common/expression/nsfw-action-aroused__
+      - On her back in missionary spanning the fur bedding with thighs apart, his cock in her pussy, tilting her head up toward him, __uw-shared/common/expression/nsfw-action-aroused__
+      - On her back in missionary along the furs, his chest against hers, his cock in her pussy, lips parted, __uw-shared/common/expression/nsfw-action-aroused__
+      - On her back under him in missionary across the furs with knees open, his cock in her pussy, mouth open, __uw-shared/common/expression/nsfw-action-aroused__
+      - On her back in missionary spanning the rugs with thighs spread, his cock in her pussy, eyes half-lidded toward him, __uw-shared/common/expression/nsfw-action-aroused__
+      - On her back in missionary along the frame, his cock in her pussy, face turned up toward him with mouth parted, __uw-shared/common/expression/nsfw-action-aroused__
+      - On her back in missionary on the rumpled fur pillow along the bedding, his cock in her pussy, chin lifted toward him, __uw-shared/common/expression/nsfw-action-aroused__
+      - On her back in missionary spanning the furs with knees open, his cock in her pussy, eyes wide and mouth open, __uw-shared/common/expression/nsfw-action-aroused__
+      - On her back in missionary across the fur bedding, his cock in her pussy, looking up at him with parted lips, __uw-shared/common/expression/nsfw-action-aroused__
+      - On her back in missionary along the furs with cheek against the fur, his cock in her pussy, mouth parted, __uw-shared/common/expression/nsfw-action-aroused__
+      fantasy-action-partner-cowgirl-wide:
+      - Astride her partner on loft bedding in cowgirl with his cock in her pussy, hips centered and torso upright, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Straddling her partner across an inn mattress in cowgirl with his cock buried in her pussy, hips rolling, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Sitting astride her partner in wide loft framing in cowgirl with his cock in her pussy, thighs open and torso upright, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Riding cowgirl with loft bedding behind and his cock deep in her pussy, full body readable, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Astride her partner centered on timber rugs in cowgirl with his cock in her pussy, hips grinding, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - On top in cowgirl with rumpled loft bedding and his cock sliding in her pussy, hips rolling down, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Straddling her partner full-length across a private loft bed in cowgirl with his cock in her pussy, spine arched, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      - Astride her partner in cowgirl, hips centered, his cock in her pussy, loft bedding behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/tavern__
+      fantasy-action-partner-doggystyle-wide:
+      - On all fours in profile along an altar cloth in doggystyle with knees wide and his cock thrusting into her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/ruins__
+      - Kneeling forward on a ruined chapel dais in doggystyle, partner gripping her hips with his cock buried in her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/ruins__
+      - On hands and knees on a moonlit platform in doggystyle with knees spread and his cock deep in her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/ruins__
+      - Bent forward across ritual cloth in doggystyle as her partner thrusts his cock into her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/ruins__
+      - On all fours on the altar in doggystyle with her partner behind and his cock in her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/ruins__
+      - Kneeling in profile along the shrine in doggystyle with knees wide and his cock thrusting into her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/ruins__
+      - On hands and knees on a ruin platform in doggystyle, spine arched, his cock buried in her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/ruins__
+      - Bent forward along altar cloth in doggystyle with his cock thrusting into her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/ruins__
+      fantasy-action-partner-prone-wide:
+      - Face-down stretched along thick furs in prone bone with his cock thrusting into her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Lying prone across a canopied bed in prone bone, his cock pressing into her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Flat on her stomach on the bedding in prone bone with his cock buried in her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Face-down stretched along the furs in prone bone with her partner behind and his cock deep in her pussy, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Prone along the rugs in prone bone, arms forward, his cock in her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Lying face-down across rumpled furs in prone bone with his cock thrusting into her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Prone along fur covers in prone bone with his cock buried in her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Flat on her belly in prone bone, spine arched, his cock in her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      fantasy-action-riding-cowgirl-wide:
+      - Astride her partner on thick furs in cowgirl with his cock in her pussy, hips centered and torso upright, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Straddling her partner across a canopied bed in cowgirl with his cock buried in her pussy, hips rolling, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Sitting astride her partner in wide fur framing in cowgirl with his cock in her pussy, thighs open and torso upright, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Riding cowgirl with fur bedding behind and his cock deep in her pussy, full body readable, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Astride her partner centered on stone-floor rugs in cowgirl with his cock in her pussy, hips grinding, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - On top in cowgirl with rumpled furs and his cock sliding in her pussy, hips rolling down, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Straddling her partner full-length across a fur-draped bed in cowgirl with his cock in her pussy, spine arched, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Astride her partner in cowgirl, hips centered, his cock in her pussy, furs behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      fantasy-action-partner-spooning-wide:
+      - Lying on her side spooned along thick furs with his cock in her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Spooned along the fur bed with his cock in her pussy and her partner pressed close behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Spooned on the bedding with his cock in her pussy from behind, thighs parted, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Side spoon across rumpled furs with his cock in her pussy as her partner holds her from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Bodies spooned along the rugs with his cock thrusting into her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Lying sideways in a spoon with his cock in her pussy and hips tilted back, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - Spoon along fur covers with his cock in her pussy from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      - On her side across the furs with his cock in her pussy as her partner wraps her from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__
+      fantasy-action-solo-reclined-wide:
+      - Reclined across soft moss horizontally with shoulders relaxed, __uw-shared/common/expression/nsfw-candid__
+      - Lying back stretched across a moss bed, legs softly open, __uw-shared/common/expression/nsfw-candid__
+      - Reclined full-length along damp moss with one arm above her head, __uw-shared/common/expression/nsfw-front__
+      - Stretched horizontally on her back with knees softly parted on soft earth, __uw-shared/common/expression/nsfw-candid__
+      - Reclined across the moss with shoulders easy, __uw-shared/common/expression/nsfw-front__
+      - Reclined across the moss with fingers rubbing her clit, __uw-shared/common/expression/nsfw-front__
+      - Lying back stretched along a moss nest with one hand rubbing her clit between her parted thighs, __uw-shared/common/expression/nsfw-candid__
+      - Reclined horizontally across the spring-edge with fingertips on her clit, __uw-shared/common/expression/nsfw-front__
+
+      # --- Fantasy-group multi-partner poses (Batch B / Phase 3) — primary + secondary scene cues; keep lines short ---
+      fantasy-group-forest-spitroast:
+      - On all fours on moss with a cock in her pussy from behind and a cock in her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/forest__. __uw-shared/fantasy/partner-cue/forest-secondary__
+      - Kneeling between two partners on soft earth with a cock in her pussy from behind and a cock in her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/forest__. __uw-shared/fantasy/partner-cue/forest-secondary__
+      - Bent on a moss nest with a cock in her pussy from behind and a cock in her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/forest__. __uw-shared/fantasy/partner-cue/forest-secondary__
+      - On hands and knees in the glade with a cock in her pussy from behind and a cock in her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/forest__. __uw-shared/fantasy/partner-cue/forest-secondary__
+      - Chest low on moss with a cock in her pussy from behind and a cock in her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/forest__. __uw-shared/fantasy/partner-cue/forest-secondary__
+      - On all fours under the canopy with a cock in her pussy from behind and a cock in her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/forest__. __uw-shared/fantasy/partner-cue/forest-secondary__
+      fantasy-group-tavern-threesome:
+      - On all fours on loft bedding with a cock in her pussy from behind and a cock in her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/tavern__. __uw-shared/fantasy/partner-cue/tavern-secondary__
+      - Kneeling between two partners on an inn mattress with a cock in her pussy from behind and a cock in her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/tavern__. __uw-shared/fantasy/partner-cue/tavern-secondary__
+      - Bent on loft sheets with a cock in her pussy from behind and a cock in her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/tavern__. __uw-shared/fantasy/partner-cue/tavern-secondary__
+      - On hands and knees on timber rugs with a cock in her pussy from behind and a cock in her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/tavern__. __uw-shared/fantasy/partner-cue/tavern-secondary__
+      - Astride one partner on loft bedding with his cock in her pussy while a second cock fills her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/tavern__. __uw-shared/fantasy/partner-cue/tavern-secondary__
+      - Kneeling on a loft bunk with a cock in her pussy from behind and a cock in her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/tavern__. __uw-shared/fantasy/partner-cue/tavern-secondary__
+      fantasy-group-castle-double:
+      - On furs with a cock in her pussy and a cock in her ass between two partners, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__. __uw-shared/fantasy/partner-cue/castle-secondary__
+      - Kneeling on canopied furs with a cock in her pussy and a cock in her ass, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__. __uw-shared/fantasy/partner-cue/castle-secondary__
+      - Straddling one partner with his cock in her pussy while a second cock enters her ass from behind, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__. __uw-shared/fantasy/partner-cue/castle-secondary__
+      - On all fours on rugs with a cock in her pussy from behind and a cock at her mouth, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__. __uw-shared/fantasy/partner-cue/castle-secondary__
+      - Reclined on fur bedding with a cock in her pussy and a cock in her ass, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__. __uw-shared/fantasy/partner-cue/castle-secondary__
+      - On bedchamber furs with a cock in her pussy and a cock in her ass between two partners, __uw-shared/common/expression/nsfw-action__. __uw-shared/fantasy/partner-cue/castle__. __uw-shared/fantasy/partner-cue/castle-secondary__
+      fantasy-group-ruins-multi:
+      - On all fours on altar cloth with a cock in her pussy from behind and a cock in her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/ruins__. __uw-shared/fantasy/partner-cue/ruins-secondary__
+      - Kneeling between two partners on moonlit stone with a cock in her pussy from behind and a cock in her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/ruins__. __uw-shared/fantasy/partner-cue/ruins-secondary__
+      - Bent on a chapel dais with a cock in her pussy from behind and a cock in her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/ruins__. __uw-shared/fantasy/partner-cue/ruins-secondary__
+      - On hands and knees on ritual cloth with a cock in her pussy from behind and a cock in her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/ruins__. __uw-shared/fantasy/partner-cue/ruins-secondary__
+      - On a ruined shrine with a cock in her pussy from behind and a cock in her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/ruins__. __uw-shared/fantasy/partner-cue/ruins-secondary__
+      - Kneeling on altar stone with a cock in her pussy from behind and a cock in her mouth, __uw-shared/common/expression/nsfw-action-oral__. __uw-shared/fantasy/partner-cue/ruins__. __uw-shared/fantasy/partner-cue/ruins-secondary__
+
+      # Monster-action poses (Batch A foundation; partner-body/troll embedded for Batch B reuse)
+      fantasy-monster-standing-doggystyle:
+      - Bent forward in standing doggystyle with __uw-shared/fantasy/partner-body/orc__ gripping her hips from behind, his cock in her pussy, __uw-shared/common/expression/nsfw-action__
+      - On her feet bent over in standing doggystyle, __uw-shared/fantasy/partner-body/troll__ behind her with his cock in her pussy, __uw-shared/common/expression/nsfw-action__
+      - Standing doggystyle braced on her hands while __uw-shared/fantasy/partner-body/troll__ thrusts his cock into her pussy from behind, __uw-shared/common/expression/nsfw-action__
+      - Bent standing with back arched, __uw-shared/fantasy/partner-body/troll__ gripping her waist from behind with his cock in her pussy, __uw-shared/common/expression/nsfw-action__
+      - Standing doggystyle with soft knees, __uw-shared/fantasy/partner-body/orc__ holding her hips from behind with his cock in her pussy, __uw-shared/common/expression/nsfw-action__
+      - Bent forward on her feet with __uw-shared/fantasy/partner-body/goblin__ close behind in standing doggystyle, his cock in her pussy, __uw-shared/common/expression/nsfw-action__
+      fantasy-monster-upright-straddle:
+      - Upright face-to-face straddle on __uw-shared/fantasy/partner-body/troll__ at stump height with his cock in her pussy, __uw-shared/common/expression/nsfw-action__
+      - Face-to-face on __uw-shared/fantasy/partner-body/orc__ at stump height, arms around his neck, his cock in her pussy, __uw-shared/common/expression/nsfw-action__
+      - Sitting upright astride __uw-shared/fantasy/partner-body/troll__ face-to-face, thighs around his torso, his cock in her pussy, __uw-shared/common/expression/nsfw-action__
+      - Upright straddle on __uw-shared/fantasy/partner-body/troll__ at stump height with his cock in her pussy, __uw-shared/common/expression/nsfw-action__
+      - Face-to-face upright on __uw-shared/fantasy/partner-body/troll__, straddling his lap-height bulk with his cock in her pussy, __uw-shared/common/expression/nsfw-action__
+      - Straddling __uw-shared/fantasy/partner-body/goblin__ upright chest-to-chest with his cock in her pussy, __uw-shared/common/expression/nsfw-action__
+      fantasy-monster-knight-oral:
+      - Kneeling between the thighs of __uw-shared/fantasy/partner-body/knight__ on a stump, her lips around his cock, __uw-shared/common/expression/nsfw-action-oral__
+      - On her knees before __uw-shared/fantasy/partner-body/knight__ on a stump, her lips around his cock, __uw-shared/common/expression/nsfw-action-oral__
+      - Her lips around the cock of __uw-shared/fantasy/partner-body/knight__ seated on a stump, __uw-shared/common/expression/nsfw-action-oral__
+      - Kneeling with her lips around the cock of __uw-shared/fantasy/partner-body/knight__ seated wounded on a stump, __uw-shared/common/expression/nsfw-action-oral__
+      - Between his thighs on moss, her lips around the cock of __uw-shared/fantasy/partner-body/knight__ seated upright, __uw-shared/common/expression/nsfw-action-oral__
+      - On her knees with her lips around the cock of __uw-shared/fantasy/partner-body/knight__, __uw-shared/common/expression/nsfw-action-oral__
+      # Epic artistic-nude / semi-NSFW poses (Batch C — Model A #20); keep short for word budget
+      fantasy-epic-valkyrie-peak:
+      - standing triumphant on the summit with chin lifted, __uw-shared/common/expression/nsfw-front__
+      - arms open to the sky on the peak, __uw-shared/common/expression/nsfw-front__
+      - one foot forward on the ridge in triumph, __uw-shared/common/expression/nsfw-candid__
+      - wind-caught stance on the summit edge, __uw-shared/common/expression/nsfw-front__
+      - raised chin on the high ledge overlooking ranges, __uw-shared/common/expression/nsfw-front__
+      - victorious stance on wind-swept stone, __uw-shared/common/expression/nsfw-candid__
+      fantasy-epic-nymph-waterfall:
+      - touching the pool surface at the falls, __uw-shared/common/expression/nsfw-candid__
+      - kneeling at the misted pool edge, __uw-shared/common/expression/nsfw-front__
+      - fingertips trailing through cascade water, __uw-shared/common/expression/nsfw-candid__
+      - seated on wet stone reaching toward the spray, __uw-shared/common/expression/nsfw-front__
+      - standing at the pool rim with water at her calves, __uw-shared/common/expression/nsfw-front__
+      - leaning to touch the clear waterfall pool, __uw-shared/common/expression/nsfw-candid__
+      fantasy-epic-goddess-cliff:
+      - in contrapposto on the cliff edge facing the horizon, __uw-shared/common/expression/nsfw-front__
+      - weight on one hip overlooking the valley, __uw-shared/common/expression/nsfw-candid__
+      - classical contrapposto with gaze to the distant hills, __uw-shared/common/expression/nsfw-front__
+      - standing open to the horizon on the overlook, __uw-shared/common/expression/nsfw-front__
+      - one hip cocked toward the valley light, __uw-shared/common/expression/nsfw-candid__
+      - serene contrapposto on the cliff path, __uw-shared/common/expression/nsfw-front__
+      fantasy-epic-sorceress-window:
+      - at the rustic window gazing outward, __uw-shared/common/expression/nsfw-front__
+      - leaning on the sill looking out, __uw-shared/common/expression/nsfw-candid__
+      - leaning on the sill looking out with a small familiar cat nearby, __uw-shared/common/expression/nsfw-candid__
+      - framed in the casement with soft sidelight, __uw-shared/common/expression/nsfw-front__
+      - chin turned toward the open window, __uw-shared/common/expression/nsfw-glance__
+      - perched on the sill gazing into daylight, __uw-shared/common/expression/nsfw-front__
+      - perched on the sill gazing into daylight with a familiar cat at her elbow, __uw-shared/common/expression/nsfw-front__
+      - at the leaded window with quiet focus, __uw-shared/common/expression/nsfw-candid__
+      # Epic orphan scenic poses (Batch C Phase 4) — consume biolume/desert/arena/treasure env+light
+      fantasy-epic-nymph-biolume:
+      - standing among glowing fungus with soft night air on her skin, __uw-shared/common/expression/nsfw-front__
+      - fingertips brushing a biolume trunk in the dark glade, __uw-shared/common/expression/nsfw-candid__
+      - turning through blue-green mote light under the canopy, __uw-shared/common/expression/nsfw-front__
+      - barefoot on moss among biolume mushrooms, __uw-shared/common/expression/nsfw-candid__
+      - chin lifted in cool fungal glow along the night path, __uw-shared/common/expression/nsfw-front__
+      - pausing in a biolume clearing with quiet night stillness, __uw-shared/common/expression/nsfw-front__
+      fantasy-epic-blood-elf-desert:
+      - standing among weathered temple columns in dry heat, __uw-shared/common/expression/nsfw-front__
+      - one hand on carved sandstone in the temple courtyard, __uw-shared/common/expression/nsfw-candid__
+      - crossing a sand-drifted temple hall with chin high, __uw-shared/common/expression/nsfw-front__
+      - paused in a ruined sanctuary doorway under harsh light, __uw-shared/common/expression/nsfw-front__
+      - weight on one hip beside cracked desert temple stone, __uw-shared/common/expression/nsfw-candid__
+      - gazing across the sun-bleached temple ruins, __uw-shared/common/expression/nsfw-front__
+      fantasy-epic-valkyrie-arena:
+      - standing triumphant on packed arena sand, __uw-shared/common/expression/nsfw-front__
+      - arms open under open colosseum sky, __uw-shared/common/expression/nsfw-front__
+      - one foot forward in the pit with chin lifted, __uw-shared/common/expression/nsfw-candid__
+      - victorious stance on sand ringed by stone tiers, __uw-shared/common/expression/nsfw-front__
+      - wind-caught pose at the arena center, __uw-shared/common/expression/nsfw-front__
+      - raised chin under bright stadium glare, __uw-shared/common/expression/nsfw-candid__
+      fantasy-epic-goblin-treasure:
+      - seated among piled gold with a hand in coin, __uw-shared/common/expression/nsfw-candid__
+      - perched on an open chest glittering with gems, __uw-shared/common/expression/nsfw-front__
+      - kneeling beside stacked relics in warm candlelight, __uw-shared/common/expression/nsfw-front__
+      - lounging against a treasure pile with quiet smugness, __uw-shared/common/expression/nsfw-candid__
+      - standing in a vault aisle of coin and artifacts, __uw-shared/common/expression/nsfw-front__
+      - fingertips trailing across gold in the sealed chamber, __uw-shared/common/expression/nsfw-candid__
+      # Dark vignette pose starters (Batch D ready) — anonymous cast in pose text only
+      fantasy-dark-ivy-bound:
+      - bound by thick ivy against an oak while two wood elves approach, __uw-shared/common/expression/nsfw-front__
+      - ivy-wrapped at the wrists as two wood elves step close, __uw-shared/common/expression/nsfw-candid__
+      - bound by climbing ivy with two anonymous wood elves closing in, __uw-shared/common/expression/nsfw-front__
+      - ivy-bound against bark as two wood elves reach toward her, __uw-shared/common/expression/nsfw-glance__
+      - held by thick ivy vines while two wood elves approach from either side, __uw-shared/common/expression/nsfw-front__
+      - ivy-bound with soft struggle as two wood elves draw near, __uw-shared/common/expression/nsfw-candid__
+      fantasy-dark-slave-service:
+      - serving drinks on a tray while patrons leer and a hand rests on her waist, __uw-shared/common/expression/nsfw-candid__
+      - offering a serving tray as patrons stare and a hand grips her waist, __uw-shared/common/expression/nsfw-front__
+      - tray service with leering patrons close and a hand at her hip, __uw-shared/common/expression/nsfw-candid__
+      - holding a drink tray while anonymous patrons leer and touch her waist, __uw-shared/common/expression/nsfw-glance__
+      - serving with a tray as patrons crowd close and a hand settles on her waist, __uw-shared/common/expression/nsfw-front__
+      - tray in hand, patrons leering, a possessive hand on her waist, __uw-shared/common/expression/nsfw-candid__
+      fantasy-dark-warrior-lap:
+      - seated on __uw-shared/fantasy/partner-body/warrior__'s lap, collar at her throat, __uw-shared/common/expression/nsfw-front__
+      - on __uw-shared/fantasy/partner-body/warrior__'s lap, his hand at her waist, __uw-shared/common/expression/nsfw-candid__
+      - perched on __uw-shared/fantasy/partner-body/warrior__'s lap with a firm grip, __uw-shared/common/expression/nsfw-front__
+      - sitting across __uw-shared/fantasy/partner-body/warrior__'s lap, hands on her hips, __uw-shared/common/expression/nsfw-glance__
+      - held close on __uw-shared/fantasy/partner-body/warrior__'s lap, thin collar visible, __uw-shared/common/expression/nsfw-candid__
+      - across __uw-shared/fantasy/partner-body/warrior__'s thighs with a firm grip, __uw-shared/common/expression/nsfw-front__
+      # Batch B — demon throne + dungeon micro-actions (non-explicit)
+      fantasy-demon-throne:
+      - seated regally on a massive dark throne with arms on the armrests, __uw-shared/common/expression/nsfw-front__
+      - perched on a dark throne with wings spread and hands resting on carved armrests, __uw-shared/common/expression/nsfw-front__
+      - seated upright on an ornate dark throne with regal composure, __uw-shared/common/expression/nsfw-candid__
+      - on a massive throne with arms settled on the armrests and chin lifted, __uw-shared/common/expression/nsfw-front__
+      - seated regally on dark carved stone with wings open behind her, __uw-shared/common/expression/nsfw-front__
+      - perched on the throne edge with one hand on an armrest and gaze locked, __uw-shared/common/expression/nsfw-candid__
+      fantasy-dungeon-collar-chain:
+      - fingertips dragging slowly along a collar chain, __uw-shared/common/expression/nsfw-candid__
+      - tracing a collar chain with her fingertips in slow tactile motion, __uw-shared/common/expression/nsfw-front__
+      - gently drawing her fingers along a thin collar chain, __uw-shared/common/expression/nsfw-candid__
+      - fingertips sliding along a collar chain with quiet focus, __uw-shared/common/expression/nsfw-front__
+      - slowly dragging fingertips over a metal collar chain at her throat, __uw-shared/common/expression/nsfw-candid__
+      - one hand lifting a collar chain as fingertips trail its length, __uw-shared/common/expression/nsfw-front__
+      fantasy-dungeon-silk-restraint:
+      - silk restraint ribbon loosely around her wrists, __uw-shared/common/expression/nsfw-candid__
+      - a soft silk ribbon loosely binding her wrists as she leans back, __uw-shared/common/expression/nsfw-front__
+      - silk restraint loosely on her thighs with hands resting open, __uw-shared/common/expression/nsfw-candid__
+      - loosely silk-bound wrists resting on a cushioned bench, __uw-shared/common/expression/nsfw-front__
+      - a pale silk ribbon loosely circling her wrists in quiet stillness, __uw-shared/common/expression/nsfw-candid__
+      - soft silk restraint on one thigh as she reclines against leather, __uw-shared/common/expression/nsfw-front__

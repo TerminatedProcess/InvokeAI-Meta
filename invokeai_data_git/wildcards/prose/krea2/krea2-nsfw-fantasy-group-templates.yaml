@@ -1,0 +1,127 @@
+# Krea 2 NSFW FANTASY-GROUP templates (Model A #21 — multi-partner fantasy × intimate-action)
+# Tags: __uw-krea2-nsfw/router|template|leaf/*__  (SAME root as room/theme/fantasy files)
+# Root key: uw-krea2-nsfw
+# Hard rule: register ONLY under portrait-fantasy-intimate-action-group-pics — NEVER room/theme/vanilla-action/vanilla-group/casting/core/selfie/fantasy-action/monster/epic (Model A #21)
+# Pulls: __uw-shared/common/*__ + __uw-shared/fantasy/*__ only
+# Subject = race-only identity-router/fantasy-<scene>; extra cast ONLY in pose via partner-cue/<scene> + <scene>-secondary
+# Wardrobe: soft-bare (tight for dual male cues / word budget)
+# version: 3
+uw-krea2-nsfw:
+  router:
+    # Fantasy multi-partner group — NEVER register into room/theme/vanilla-action/vanilla-group/core/selfie/fantasy-action/monster/epic
+    portrait-fantasy-intimate-action-group-pics:
+    - __uw-krea2-nsfw/template/fantasy-group-forest-spitroast__
+    - __uw-krea2-nsfw/template/fantasy-group-tavern-threesome__
+    - __uw-krea2-nsfw/template/fantasy-group-castle-double__
+    - __uw-krea2-nsfw/template/fantasy-group-ruins-multi__
+
+  template:
+    fantasy-group-forest-spitroast:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-group-forest-spitroast/medium__
+        __uw-krea2-nsfw/leaf/fantasy-group-forest-spitroast/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-group-forest-spitroast/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-group-forest-spitroast/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-group-forest-spitroast/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-group-forest-spitroast/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-group-forest-spitroast/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-group-forest-spitroast/treatment__. [3:4]
+    fantasy-group-tavern-threesome:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-group-tavern-threesome/medium__
+        __uw-krea2-nsfw/leaf/fantasy-group-tavern-threesome/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-group-tavern-threesome/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-group-tavern-threesome/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-group-tavern-threesome/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-group-tavern-threesome/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-group-tavern-threesome/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-group-tavern-threesome/treatment__. [3:4]
+    fantasy-group-castle-double:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-group-castle-double/medium__
+        __uw-krea2-nsfw/leaf/fantasy-group-castle-double/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-group-castle-double/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-group-castle-double/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-group-castle-double/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-group-castle-double/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-group-castle-double/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-group-castle-double/treatment__. [3:4]
+    fantasy-group-ruins-multi:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-group-ruins-multi/medium__
+        __uw-krea2-nsfw/leaf/fantasy-group-ruins-multi/subject__.
+        __uw-krea2-nsfw/leaf/fantasy-group-ruins-multi/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-group-ruins-multi/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-group-ruins-multi/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-group-ruins-multi/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-group-ruins-multi/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-group-ruins-multi/treatment__. [3:4]
+  leaf:
+    fantasy-group-forest-spitroast:
+      medium:
+      - __uw-shared/fantasy/shot/cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-forest__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-group-forest-spitroast__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/action-forest__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-forest__
+      camera:
+      - __uw-shared/fantasy/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+    fantasy-group-tavern-threesome:
+      medium:
+      - __uw-shared/fantasy/shot/candid__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-tavern__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-group-tavern-threesome__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/action-tavern__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-tavern__
+      camera:
+      - __uw-shared/fantasy/camera/candid__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    fantasy-group-castle-double:
+      medium:
+      - __uw-shared/fantasy/shot/intimate-portrait__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-group-castle-double__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/action-castle__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-castle__
+      camera:
+      - __uw-shared/fantasy/camera/intimate-portrait__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    fantasy-group-ruins-multi:
+      medium:
+      - __uw-shared/fantasy/shot/cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-ruins__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-group-ruins-multi__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/action-ruins__
+      lighting:
+      - __uw-shared/fantasy/lighting/action-ruins__
+      camera:
+      - __uw-shared/fantasy/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__

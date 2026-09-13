@@ -1,0 +1,24 @@
+((:D):0.85)
+((:\3):0.85)
+((:o):0.85)
+((:p, tongue):0.75)
+((:q, tongue):0.75)
+smile
+light smile
+naughty smile
+naughty face, seductive smile
+rape face, smirk
+seductive smile
+half-closed eyes, smile
+open mouth
+embarrassed
+smirk
+shy
+nervous
+neutral expression
+happy
+relaxed
+laughing
+giggling
+smug
+ahegao, ((rolling eyes, open mouth, tongue, tongue out):0.8)

@@ -1,0 +1,57 @@
+classic black
+matte black
+glossy black
+nude
+soft nude
+tan
+camel
+cognac brown
+chocolate brown
+white
+off-white
+cream
+ivory
+bone
+red
+cherry red
+scarlet
+deep burgundy
+wine
+oxblood
+blush pink
+dusty rose
+hot pink
+fuchsia
+coral
+peach
+metallic gold
+metallic silver
+rose gold
+bronze
+copper
+champagne
+pewter
+gunmetal
+navy blue
+royal blue
+cobalt blue
+powder blue
+emerald green
+forest green
+olive green
+sage green
+mint green
+lilac
+lavender
+deep purple
+plum
+mustard yellow
+buttery yellow
+soft grey
+charcoal grey
+taupe
+beige
+terracotta
+rust
+teal
+turquoise

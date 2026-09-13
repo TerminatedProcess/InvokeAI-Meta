@@ -1,0 +1,3 @@
+__composition_with_pov_intimate_pose__, ((__character__, __faces__):0.9), __locations__
+__composition_with_intimate_pose_clothes__, ((__character__, __faces__):0.9), __locations__
+__composition_view_angle_pose_intimate_user_specials__

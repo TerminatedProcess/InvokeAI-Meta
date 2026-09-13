@@ -1,0 +1,35 @@
+naked apron, ((__body_bare_female_crotch__):0.7), ((pussy peek):0.8)
+naked cape, ((__body_bare_female_crotch__):0.7), ((cleavage):0.8)
+naked jacket, ((__body_bare_female_crotch__):0.7), ((pussy peek, cleavage):0.8)
+naked overalls, ((cleavage):0.8)
+naked ribbon, ((__body_bare_female_crotch__):0.7), ((partially visible vulva, cleavage):0.8)
+naked shirt, ((__body_bare_female_crotch__):0.7), ((pussy peek):0.8)
+naked sweater, ((__body_bare_female_crotch__):0.7), ((pussy peek):0.8)
+virgin killer sweater, ((bare shoulders, backless outfit, naked sweater, ribbed sweater, sleeveless, sleeveless sweater, sleeveless turtleneck, sweater, turtleneck, turtleneck sweater, sideboob, clothing cutout):0.8), ((__body_bare_female_crotch__):0.7), ((pussy peek):0.8)
+virgin destoyer sweater, ((thong, bare shoulders, backless outfit, detached sleeves, garter straps, navel, panties, ribbed panties, ribbed sleeves, ribbed sweater, ribbed thighhighs, side-tie panties, sleeveless, sleeveless sweater, sleeveless turtleneck, sweater, thighhighs, turtleneck, turtleneck sweater):0.8)
+naked towel, ((__body_bare_female_crotch__):0.7), ((pussy peek):0.8)
+naked tabard, ((__body_bare_female_crotch__):0.7), ((pussy peek):0.8)
+naked lab coat, ((__body_bare_female_crotch__):0.7), ((pussy peek):0.8)
+naked kigurumi, kigurumi, onesie, ((cleavage):0.8)
+naked kimono, ((__body_bare_female_crotch__):0.7), ((pussy peek):0.8)
+naked cardigan, ((__body_bare_female_crotch__):0.7), ((pussy peek):0.8)
+naked kappougi, ((__body_bare_female_crotch__):0.7), ((pussy peek):0.8)
+naked hoodie, ((__body_bare_female_crotch__):0.7), ((pussy peek):0.8)
+naked raincoat, see-through raincoat, ((__body_bare_female_crotch__):0.7), ((pussy peek):0.8), ((__body_breast_details__, ((__body_areolae_details__):0.4)):0.6)
+naked apron
+naked cape, ((__body_bare_female_crotch__):0.7), ((__body_breast_details__, ((__body_areolae_details__):0.9)):0.8)
+naked jacket
+naked overalls
+naked ribbon
+naked shirt
+naked sweater
+virgin killer sweater, ((bare shoulders, backless outfit, naked sweater, ribbed sweater, sleeveless, sleeveless sweater, sleeveless turtleneck, sweater, turtleneck, turtleneck sweater, sideboob, clothing cutout):0.8)
+naked towel
+naked tabard
+naked lab coat
+naked kigurumi, kigurumi, onesie
+naked kimono
+naked cardigan
+naked kappougi
+naked hoodie
+naked raincoat, see-through raincoat, ((__body_bare_female_crotch__):0.5), ((__body_breast_details__, ((__body_areolae_details__):0.4)):0.6)

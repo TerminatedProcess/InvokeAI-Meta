@@ -1,0 +1,16 @@
+babydoll, __colors__ babydoll, see-through clothes, ((covered nipples):0.9), no panties, __body_bare_male_crotch__
+babydoll, __colors__ babydoll, see-through clothes, ((covered nipples):0.9), ((__clothes_lingerie_bottoms_trap__:0.8)
+negligee, __colors__ negligee, see-through clothes, ((covered nipples):0.9), no panties, __body_bare_male_crotch__
+negligee, __colors__ negligee, see-through clothes, ((covered nipples):0.9), ((__clothes_lingerie_bottoms_trap__:0.8)
+no bra, topless, ((__clothes_lingerie_bottoms_trap__:0.8)
+chemise, __colors__ chemise, no panties, __body_bare_male_crotch__
+chemise, __colors__ chemise, ((__clothes_lingerie_bottoms_trap__:0.8)
+nightgown, __colors__ nightgown, no panties, __body_bare_male_crotch__
+nightgown, __colors__ nightgown, ((__clothes_lingerie_bottoms_trap__:0.8)
+nightgown, __colors__ nightgown, see-through clothes, ((covered nipples):0.9), no panties, __body_bare_male_crotch__
+nightgown, __colors__ nightgown, see-through clothes, ((covered nipples):0.9), ((__clothes_lingerie_bottoms_trap__:0.8)
+camisole, __colors__ camisole, no panties, __body_bare_male_crotch__
+camisole, __colors__ camisole, ((__clothes_lingerie_bottoms_trap__:0.8)
+pajamas, __colors__ pajamas, short sleeves, shorts, partially unbuttoned, ((areolae slip):0.8)
+lingerie, ((leotard):0.8), ((see-through clothes, spaghetti strap, sleeveless, lace):0.8), ((see-through leotard, loose clothes, lace-trim, backless leotard):0.7), ((covered nipples):0.9), __colors__ lingerie, ((bulge):0.8)
+nude, completely nude, ((__body_bare_male_crotch__,):0.9)

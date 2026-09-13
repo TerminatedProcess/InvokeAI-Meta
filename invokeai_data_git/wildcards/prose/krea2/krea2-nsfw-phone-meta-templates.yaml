@@ -1,0 +1,89 @@
+# Krea 2 NSFW PHONE-META stills (nested one-frame: foreground device + live background)
+# Tags: __uw-krea2-nsfw/router|template|leaf/*__  (SAME root as room/action files)
+# Root key: uw-krea2-nsfw
+#
+# WHY: Collection still merge_112 is one photograph with two depth layers, not two
+#      eight-leaf scenes and not dual-image side-by-side. Picture type = phone in
+#      the viewer's hand (on-screen explicit) + the same woman live in the background.
+#
+# WORD BUDGET EXEMPT: nested layers (same exemption class as dual-image).
+#
+# ROUTER RULE: Phone-meta L2s register ONLY under portrait-phone-meta-* — never
+#              room / vanilla-action / group / dual / theme / fantasy / casting.
+#
+# SHARED ATOMS: Pull only __uw-shared/common/*__ and __uw-shared/nsfw/*__.
+# ASPECT: Portrait phone [9:16] on L2 only.
+#
+# version: 1
+# 2026-08-15: Nested phone-meta stills from collection 17567740 / 139070548.
+uw-krea2-nsfw:
+  router:
+    portrait-phone-meta-pics:
+    - __uw-krea2-nsfw/template/phone-meta-caught-watching__
+    - __uw-krea2-nsfw/template/phone-meta-table-caught__
+
+  template:
+    phone-meta-caught-watching:
+    - >-
+        __uw-krea2-nsfw/leaf/phone-meta-caught-watching/medium__
+        __uw-krea2-nsfw/leaf/phone-meta-caught-watching/subject__.
+        In the foreground the viewer's hand holds a phone with glare on the screen.
+        On that phone screen, __uw-krea2-nsfw/leaf/phone-meta-caught-watching/onscreen__.
+        In the live background, the same woman __uw-krea2-nsfw/leaf/phone-meta-caught-watching/pose__,
+        wearing __uw-krea2-nsfw/leaf/phone-meta-caught-watching/wardrobe__,
+        __uw-krea2-nsfw/leaf/phone-meta-caught-watching/environment__,
+        __uw-krea2-nsfw/leaf/phone-meta-caught-watching/lighting__,
+        __uw-krea2-nsfw/leaf/phone-meta-caught-watching/camera__,
+        __uw-krea2-nsfw/leaf/phone-meta-caught-watching/treatment__. [9:16]
+    phone-meta-table-caught:
+    - >-
+        __uw-krea2-nsfw/leaf/phone-meta-table-caught/medium__
+        __uw-krea2-nsfw/leaf/phone-meta-table-caught/subject__.
+        In the foreground the viewer's hand holds a phone with glare on the screen.
+        On that phone screen, __uw-krea2-nsfw/leaf/phone-meta-table-caught/onscreen__.
+        In the live background, the same woman __uw-krea2-nsfw/leaf/phone-meta-table-caught/pose__,
+        wearing __uw-krea2-nsfw/leaf/phone-meta-table-caught/wardrobe__,
+        __uw-krea2-nsfw/leaf/phone-meta-table-caught/environment__,
+        __uw-krea2-nsfw/leaf/phone-meta-table-caught/lighting__,
+        __uw-krea2-nsfw/leaf/phone-meta-table-caught/camera__,
+        __uw-krea2-nsfw/leaf/phone-meta-table-caught/treatment__. [9:16]
+
+  leaf:
+    phone-meta-caught-watching:
+      medium:
+      - __uw-shared/nsfw/shot/phone-meta-nested__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      onscreen:
+      - __uw-shared/nsfw/pose/phone-meta-onscreen-explicit__
+      pose:
+      - __uw-shared/nsfw/pose/phone-meta-background-innocent__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/phone-meta-background-casual__
+      environment:
+      - __uw-shared/nsfw/environment/phone-meta-table-indoor__
+      lighting:
+      - __uw-shared/nsfw/lighting/phone-meta-screen-glare__
+      camera:
+      - __uw-shared/nsfw/camera/phone-meta-hand-foreground__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    phone-meta-table-caught:
+      medium:
+      - __uw-shared/nsfw/shot/phone-meta-nested__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      onscreen:
+      - __uw-shared/nsfw/pose/phone-meta-onscreen-table__
+      pose:
+      - __uw-shared/nsfw/pose/phone-meta-background-innocent__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/phone-meta-background-casual__
+      environment:
+      - __uw-shared/nsfw/environment/phone-meta-table-indoor__
+      lighting:
+      - __uw-shared/nsfw/lighting/phone-meta-screen-glare__
+      camera:
+      - __uw-shared/nsfw/camera/phone-meta-hand-foreground__
+      treatment:
+      - __uw-shared/common/treatment/natural__

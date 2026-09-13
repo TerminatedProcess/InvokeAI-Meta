@@ -1,0 +1,3 @@
+__colors__ __clothes_bottoms_skirt__
+__colors__ __clothes_bottoms_shorts__
+__colors__ __clothes_bottoms_pants__

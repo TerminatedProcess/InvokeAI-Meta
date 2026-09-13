@@ -1,0 +1,21 @@
+adhesive bra
+belt bra
+bow bra
+bridgeless bra
+cupless bra, __body_breast_details__, ((__body_areolae_details__):0.9)
+frilled bra
+front-hook bra
+lace bra
+lace bra, see-through bra, ((covered nipples):0.8)
+lace-trimmed bra
+front-hook bra
+front-tie bra
+((nursing bra):0.8)
+((nursing bra):0.8), one breast out, __body_breast_details__, ((__body_areolae_details__):0.9)
+shelf bra, (breasts out), __body_breast_details__, ((__body_areolae_details__):0.9), breasts
+sports bra
+strapless bra
+strapless bra, ((covered nipples):0.8)
+training bra
+training bra, ((covered nipples):0.8)
+see-through bra, ((covered nipples):0.8)

@@ -1,0 +1,6 @@
+slingshot swimsuit
+one-piece swimsuit, __pattern__ swimsuit, casual one-piece swimsuit
+one-piece swimsuit, competition swimsuit
+one-piece swimsuit, ((gris swimsuit, strapless one-piece swimsuit, see-through clothes, see-through one-piece swimsuit):0.8)
+one-piece swimsuit, __pattern__ swimsuit, monokini, ((clothing cutout, one-piece swimsuit, backless outfit):0.8)
+one-piece swimsuit, school swimsuit

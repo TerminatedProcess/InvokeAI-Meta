@@ -1,0 +1,7 @@
+falling, floating hair, ((wind lift):0.5)
+floating, floating hair, ((wind lift):0.5)
+flying, floating hair, ((wind lift):0.5)
+jumping, floating hair, ((wind lift):0.5)
+hopping, floating hair, ((wind lift):0.5)
+pouncing, floating hair, ((wind lift):0.5)
+spread legs, floating hair, ((wind lift):0.5)

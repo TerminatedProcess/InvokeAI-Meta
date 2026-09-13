@@ -1,0 +1,4 @@
+__clothes_underwear_male__
+__clothes_underwear_male__, tank top, __colors__ tank top
+pajamas, __colors__ pajamas, short sleeves, shorts, partially unbuttoned
+pajamas, __colors__ pajamas, partially unbuttoned

@@ -1,0 +1,68 @@
+Extreme close-up portrait — frame tightly around the eyes, nose, cheeks, and lips, minimal background visible, camera positioned at eye level, intimate editorial portrait composition.
+Close-up beauty portrait — frame from the top of the head to the upper chest, face dominating the composition, eye-level camera, shallow depth of field and softly blurred background.
+Head and shoulders portrait — frame from the top of the head to the shoulders, centered facial composition, camera at eye level, subtle negative space around the head.
+Upper-body portrait — frame from the top of the head to the waist, shoulders and torso clearly visible, camera positioned slightly above chest level, balanced glamour composition.
+Bust glamour portrait — frame from the top of the head to the upper torso, shoulders angled slightly toward camera, eye-level viewpoint, softly blurred luxurious background.
+Waist-up portrait — frame from the top of the head to the waist, full shoulders and arms visible, camera at eye level, natural magazine editorial composition.
+Three-quarter portrait — frame from the top of the head to approximately mid-thigh, body angled slightly away from camera, eye-level perspective, elegant fashion-magazine composition.
+Thigh-up glamour shot — frame from the top of the head to the mid-thigh, full upper body and most of the legs visible, camera positioned around waist height, strong model-focused composition.
+Knee-up portrait — frame from the top of the head to the knees, model centered with generous environmental context, camera around waist height, classic glamour photography composition.
+Full-body portrait — entire figure visible from head to feet with a small amount of space above the head and beneath the feet, camera positioned around waist height, symmetrical editorial framing.
+Full-length fashion shot — entire body visible with deliberate negative space surrounding the silhouette, camera approximately chest height, clean fashion-editorial composition.
+Full-body low-angle shot — entire figure visible from head to feet, camera positioned slightly below waist level and angled upward, emphasizing height and elongated proportions.
+Full-body high-angle shot — entire figure visible from head to feet, camera positioned slightly above waist height and angled downward, creating a refined editorial perspective.
+Low-angle glamour portrait — camera positioned below the model's waist and aimed slightly upward, framing the entire figure while emphasizing long legs and a powerful silhouette.
+High-angle glamour portrait — camera positioned above the model's eye level and angled gently downward, capturing the complete pose with a flattering editorial perspective.
+Ground-level full-body shot — camera positioned very close to floor level and aimed upward, entire figure visible, dramatic perspective emphasizing the environment and model silhouette.
+Floor-level seated framing — camera positioned near floor height while the model sits on a chair or sofa, framing from head to feet with strong foreground perspective.
+Seated full-body framing — camera positioned at approximately the model's seated chest height, entire seated figure visible including feet and surrounding furniture.
+Seated three-quarter framing — frame the seated model from head to approximately below the knees, camera positioned at seated torso height, elegant balanced composition.
+Seated knee-up framing — frame from head to knees while the model sits on a chair or sofa, camera at approximately eye level, clean magazine portrait composition.
+Reclining full-body framing — frame the entire reclining figure from head to feet, camera positioned perpendicular to the surface she is lying on, emphasizing the complete body line.
+Reclining three-quarter framing — frame from head to mid-thigh while the model reclines across a bed or chaise lounge, camera positioned slightly above the surface, elegant diagonal composition.
+Overhead reclining shot — camera positioned directly above the model while she reclines on a bed, chaise, or rug, entire figure arranged diagonally through the frame, symmetrical editorial composition.
+Diagonal composition — position the model diagonally from one corner of the frame toward the opposite corner, full or three-quarter body visible, camera positioned slightly above eye level, dynamic fashion composition.
+Rule-of-thirds portrait — position the model on the left or right third of the frame rather than directly in the center, leaving clean negative space on the opposite side, natural editorial composition.
+Centered symmetrical portrait — place the model directly in the center of the frame with balanced background elements on both sides, camera at eye level, polished magazine composition.
+Off-center glamour framing — position the model slightly to one side of the frame while maintaining clear visibility of the complete silhouette, allowing the environment to create visual balance.
+Negative-space glamour shot — place the model toward one side of a wide frame with substantial clean negative space surrounding her, minimalist editorial composition.
+Environmental portrait — frame the model from head to knees while keeping enough of the room, furniture, and architectural setting visible to establish the environment.
+Wide environmental shot — use a wide frame showing the model's complete figure together with the surrounding bedroom, studio, hotel, or lounge environment, model remaining the primary focal point.
+Medium environmental shot — frame from head to thighs while including recognizable environmental elements such as a bed, chair, window, or vanity.
+Tight environmental portrait — frame from head to waist while retaining enough background detail to establish the location without distracting from the model.
+Over-the-shoulder framing — camera positioned behind and slightly to one side of the model, framing her head, shoulders, and torso as she looks back toward the camera.
+Rear three-quarter framing — camera positioned behind the model at a three-quarter angle, framing most of her body while capturing her head turned toward the camera.
+Side-profile framing — camera positioned perpendicular to the model's body, capturing a clean side profile from head to waist or full body depending on the pose.
+Three-quarter camera angle — camera positioned approximately 45 degrees from the model's front, capturing both facial features and body contours while maintaining dimensionality.
+Front-facing framing — camera positioned directly in front of the model, symmetrical body alignment, straightforward editorial composition.
+Back-facing framing — camera positioned directly behind the model, full figure centered in frame, emphasizing silhouette, posture, hair, and clothing from the rear.
+Mirror reflection framing — camera positioned to capture both the model and her reflection in a large mirror, carefully balanced composition with the reflection remaining clearly visible.
+Doorway framing — frame the model naturally within a doorway, using the doorframe as a visual border around her body, medium or full-body composition.
+Window framing — position the model within the architectural lines of a large window, using the window frame to create a natural border, soft environmental portrait composition.
+Chair-framed portrait — use the chair back, armrests, or seat as foreground framing elements around the model, medium or three-quarter composition.
+Foreground furniture framing — photograph the model through a partially visible chair, sofa, table, or other foreground object, creating depth while keeping her face unobstructed.
+Through-curtain framing — photograph the model through softly blurred sheer curtains in the foreground, creating atmospheric depth while maintaining clear facial focus.
+Low foreground framing — position a nearby furniture edge or architectural element in the lower foreground while keeping the model clearly visible above it, cinematic depth.
+Full-body portrait with headroom — entire figure visible with deliberate space above the head and beneath the feet, balanced vertical composition suitable for fashion photography.
+Tight full-body crop — frame the entire figure with minimal empty space around the body while ensuring the feet and top of the head remain visible.
+Extended leg composition — frame the model from head to feet with additional horizontal space in the direction of her extended legs, emphasizing the length of the pose.
+Face-focused glamour crop — crop around the head and upper torso while allowing one shoulder and part of the neckline to remain visible, shallow depth of field and strong facial emphasis.
+Hair-focused portrait — frame the head and upper torso while allowing the hairstyle to extend naturally into the surrounding negative space, soft editorial lighting.
+Hands-and-face composition — frame from approximately the waist upward with particular attention to the face and hands positioned near the hair or cheek, intimate fashion-editorial composition.
+Torso-focused composition — frame from the shoulders to the hips while keeping the face partially or fully visible, emphasizing clothing, posture, and body lines without excessive background.
+Leg-focused fashion framing — frame from approximately the waist to the feet, emphasizing leg positioning, footwear, and lower-body fashion details while keeping the pose elegant.
+Reflection detail framing — compose the shot so the model and a secondary reflection are both visible, using the mirror to add depth and visual symmetry.
+Dutch-angle glamour shot — camera tilted slightly off horizontal while maintaining the model clearly within frame, creating a dynamic editorial perspective.
+Long-lens compressed portrait — camera positioned farther away with a longer focal length, flattering perspective compression, softly compressed background and polished fashion-magazine aesthetic.
+Wide-angle environmental portrait — camera positioned relatively close with a wider field of view, entire figure visible alongside the surrounding environment, subtle perspective exaggeration.
+Telephoto full-body portrait — camera positioned farther away using a longer focal length, entire figure visible with compressed background and clean professional fashion composition.
+Candid editorial framing — slightly off-center framing with the model appearing naturally caught between poses, environmental context retained, authentic magazine photography aesthetic.
+Magazine cover framing — vertical composition with the model positioned centrally or slightly off-center, clean negative space around the upper body for potential typography, polished editorial photography.
+Double-page editorial framing — wide horizontal composition with the model positioned toward one side and substantial negative space across the opposite side, luxury fashion-magazine aesthetic.
+Portrait orientation full-body — vertical frame optimized for the complete standing figure, balanced headroom and footroom, model occupying most of the frame.
+Landscape glamour composition — horizontal frame with the model positioned slightly off-center, enough environmental space to create a cinematic editorial photograph.
+Cinematic wide framing — wide horizontal composition showing the model's full figure and surrounding environment, strong foreground and background depth, sophisticated cinematic glamour aesthetic.
+Tight vertical glamour framing — vertical frame tightly surrounding the model from head to knees, minimal distractions, strong silhouette and fashion-editorial composition.
+Balanced medium shot — frame from head to upper thighs with equal visual weight between model and environment, camera at approximately chest height, polished commercial photography.
+Intimate close framing — frame tightly around the model's face and upper torso with minimal environmental context, shallow depth of field and soft editorial perspective.
+Dynamic perspective framing — camera positioned slightly off-axis while maintaining the entire figure in frame, creating depth and visual movement through the pose.

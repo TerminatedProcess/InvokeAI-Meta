@@ -1,0 +1,1032 @@
+# Krea 2 NSFW FANTASY CORE templates (Model A — forest / castle / tavern / ruins)
+# Tags: __uw-krea2-nsfw/router|template|leaf/*__  (SAME root as room/theme files)
+# Root key: uw-krea2-nsfw
+# Hard rule: register ONLY under fantasy routers below — NEVER room/theme/vanilla-action/casting (Model A #14)
+# Pulls: __uw-shared/common/*__ + __uw-shared/fantasy/*__ only
+# Soft-action = bathing / dancing / nude-adjacent lounging only (no explicit sex — see fantasy-action product)
+# Dark vignettes (Batch D C1) = non-explicit power-imbalance moody L2s; race-only identity + soft-bare/slave-revealing
+# No phone/selfie L2s (see fantasy-selfie) · No fantasy-action L2s (see krea2-nsfw-fantasy-action-templates.yaml)
+# Landscape L2s register ONLY under landscape-fantasy-* routers — NEVER portrait-fantasy-* (aspect purity)
+# version: 8
+uw-krea2-nsfw:
+  router:
+    portrait-fantasy-forest-pics:
+    - 3::__uw-krea2-nsfw/template/fantasy-forest-cinematic-glade__
+    - 3::__uw-krea2-nsfw/template/fantasy-forest-moody-moonlit__
+    - 1::__uw-krea2-nsfw/template/fantasy-forest-intimate-portrait-grove__
+    - 2::__uw-krea2-nsfw/template/fantasy-forest-soft-bathing-spring__
+    - 2::__uw-krea2-nsfw/template/fantasy-forest-soft-dancing-clearing__
+    - 1::__uw-krea2-nsfw/template/fantasy-forest-moody-ivy-bound__
+
+    portrait-fantasy-castle-pics:
+    - 3::__uw-krea2-nsfw/template/fantasy-castle-cinematic-chamber__
+    - 3::__uw-krea2-nsfw/template/fantasy-castle-moody-candle-corridor__
+    - 3::__uw-krea2-nsfw/template/fantasy-castle-cinematic-tower-window__
+    - 2::__uw-krea2-nsfw/template/fantasy-castle-soft-lounge-bedchamber__
+    - 2::__uw-krea2-nsfw/template/fantasy-castle-soft-bathing-stone__
+    - 2::__uw-krea2-nsfw/template/fantasy-castle-demon-throne__
+    - 1::__uw-krea2-nsfw/template/fantasy-castle-moody-warrior-lap__
+    - 1::__uw-krea2-nsfw/template/fantasy-dungeon-collar-chain__
+    - 1::__uw-krea2-nsfw/template/fantasy-dungeon-silk-restraint__
+
+    portrait-fantasy-tavern-pics:
+    - 3::__uw-krea2-nsfw/template/fantasy-tavern-cinematic-candle-booth__
+    - 3::__uw-krea2-nsfw/template/fantasy-tavern-moody-loft__
+    - 2::__uw-krea2-nsfw/template/fantasy-tavern-soft-lounge-settle__
+    - 2::__uw-krea2-nsfw/template/fantasy-tavern-soft-dancing-floor__
+    - 1::__uw-krea2-nsfw/template/fantasy-tavern-moody-slave-service__
+
+    portrait-fantasy-ruins-pics:
+    - 3::__uw-krea2-nsfw/template/fantasy-ruins-cinematic-shrine__
+    - 3::__uw-krea2-nsfw/template/fantasy-ruins-moody-moonlit-ruins__
+    - 2::__uw-krea2-nsfw/template/fantasy-ruins-soft-lounge-altar__
+    - 2::__uw-krea2-nsfw/template/fantasy-ruins-soft-ritual-dance__
+    - 2::__uw-krea2-nsfw/template/fantasy-ruins-soft-bathing-tide-pool__
+
+    # Aggregate — forest+castle heavy; cinematic/moody > intimate-portrait/soft; dark vignettes at 1::
+    portrait-fantasy-pics:
+    - 4::__uw-krea2-nsfw/template/fantasy-forest-cinematic-glade__
+    - 4::__uw-krea2-nsfw/template/fantasy-forest-moody-moonlit__
+    - 4::__uw-krea2-nsfw/template/fantasy-castle-cinematic-chamber__
+    - 4::__uw-krea2-nsfw/template/fantasy-castle-moody-candle-corridor__
+    - 3::__uw-krea2-nsfw/template/fantasy-castle-cinematic-tower-window__
+    - 2::__uw-krea2-nsfw/template/fantasy-tavern-cinematic-candle-booth__
+    - 2::__uw-krea2-nsfw/template/fantasy-tavern-moody-loft__
+    - 2::__uw-krea2-nsfw/template/fantasy-ruins-cinematic-shrine__
+    - 2::__uw-krea2-nsfw/template/fantasy-ruins-moody-moonlit-ruins__
+    - 1::__uw-krea2-nsfw/template/fantasy-forest-intimate-portrait-grove__
+    - 1::__uw-krea2-nsfw/template/fantasy-forest-soft-bathing-spring__
+    - 1::__uw-krea2-nsfw/template/fantasy-forest-soft-dancing-clearing__
+    - 1::__uw-krea2-nsfw/template/fantasy-castle-soft-lounge-bedchamber__
+    - 1::__uw-krea2-nsfw/template/fantasy-castle-soft-bathing-stone__
+    - 1::__uw-krea2-nsfw/template/fantasy-castle-demon-throne__
+    - 1::__uw-krea2-nsfw/template/fantasy-tavern-soft-lounge-settle__
+    - 1::__uw-krea2-nsfw/template/fantasy-tavern-soft-dancing-floor__
+    - 1::__uw-krea2-nsfw/template/fantasy-ruins-soft-lounge-altar__
+    - 1::__uw-krea2-nsfw/template/fantasy-ruins-soft-ritual-dance__
+    - 1::__uw-krea2-nsfw/template/fantasy-ruins-soft-bathing-tide-pool__
+    - 1::__uw-krea2-nsfw/template/fantasy-forest-moody-ivy-bound__
+    - 1::__uw-krea2-nsfw/template/fantasy-tavern-moody-slave-service__
+    - 1::__uw-krea2-nsfw/template/fantasy-castle-moody-warrior-lap__
+    - 1::__uw-krea2-nsfw/template/fantasy-dungeon-collar-chain__
+    - 1::__uw-krea2-nsfw/template/fantasy-dungeon-silk-restraint__
+
+    # Convenience — dark vignettes only (Batch D C1 + Batch B dungeon); never room/theme/action/monster/epic/selfie
+    portrait-fantasy-dark-pics:
+    - __uw-krea2-nsfw/template/fantasy-forest-moody-ivy-bound__
+    - __uw-krea2-nsfw/template/fantasy-tavern-moody-slave-service__
+    - __uw-krea2-nsfw/template/fantasy-castle-moody-warrior-lap__
+    - __uw-krea2-nsfw/template/fantasy-castle-demon-throne__
+    - __uw-krea2-nsfw/template/fantasy-dungeon-collar-chain__
+    - __uw-krea2-nsfw/template/fantasy-dungeon-silk-restraint__
+
+    # Landscape-only core routers — NEVER on portrait-fantasy-* routers
+    landscape-fantasy-forest-pics:
+    - 3::__uw-krea2-nsfw/template/fantasy-forest-cinematic-glade-wide__
+    - 2::__uw-krea2-nsfw/template/fantasy-forest-soft-bathing-spring-wide__
+
+    landscape-fantasy-castle-pics:
+    - 3::__uw-krea2-nsfw/template/fantasy-castle-cinematic-chamber-wide__
+    - 2::__uw-krea2-nsfw/template/fantasy-castle-soft-lounge-bedchamber-wide__
+
+    landscape-fantasy-tavern-pics:
+    - 3::__uw-krea2-nsfw/template/fantasy-tavern-cinematic-candle-booth-wide__
+    - 2::__uw-krea2-nsfw/template/fantasy-tavern-moody-loft-wide__
+
+    landscape-fantasy-ruins-pics:
+    - 3::__uw-krea2-nsfw/template/fantasy-ruins-cinematic-shrine-wide__
+    - 2::__uw-krea2-nsfw/template/fantasy-ruins-moody-moonlit-ruins-wide__
+
+    # Aggregate landscape — cinematic/moody heavy; soft bathing/lounge lighter
+    landscape-fantasy-pics:
+    - 4::__uw-krea2-nsfw/template/fantasy-forest-cinematic-glade-wide__
+    - 4::__uw-krea2-nsfw/template/fantasy-castle-cinematic-chamber-wide__
+    - 3::__uw-krea2-nsfw/template/fantasy-tavern-cinematic-candle-booth-wide__
+    - 3::__uw-krea2-nsfw/template/fantasy-ruins-cinematic-shrine-wide__
+    - 2::__uw-krea2-nsfw/template/fantasy-tavern-moody-loft-wide__
+    - 2::__uw-krea2-nsfw/template/fantasy-ruins-moody-moonlit-ruins-wide__
+    - 1::__uw-krea2-nsfw/template/fantasy-forest-soft-bathing-spring-wide__
+    - 1::__uw-krea2-nsfw/template/fantasy-castle-soft-lounge-bedchamber-wide__
+
+  template:
+    fantasy-forest-cinematic-glade:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-forest-cinematic-glade/medium__
+        __uw-krea2-nsfw/leaf/fantasy-forest-cinematic-glade/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-cinematic-glade/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-cinematic-glade/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-cinematic-glade/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-cinematic-glade/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-cinematic-glade/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-cinematic-glade/treatment__. [3:4]
+    fantasy-forest-moody-moonlit:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-forest-moody-moonlit/medium__
+        __uw-krea2-nsfw/leaf/fantasy-forest-moody-moonlit/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-moody-moonlit/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-moody-moonlit/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-moody-moonlit/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-moody-moonlit/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-moody-moonlit/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-moody-moonlit/treatment__. [3:4]
+    fantasy-forest-intimate-portrait-grove:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-forest-intimate-portrait-grove/medium__
+        __uw-krea2-nsfw/leaf/fantasy-forest-intimate-portrait-grove/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-intimate-portrait-grove/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-intimate-portrait-grove/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-intimate-portrait-grove/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-intimate-portrait-grove/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-intimate-portrait-grove/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-intimate-portrait-grove/treatment__. [3:4]
+    fantasy-forest-soft-bathing-spring:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-bathing-spring/medium__
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-bathing-spring/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-bathing-spring/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-bathing-spring/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-bathing-spring/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-bathing-spring/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-bathing-spring/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-bathing-spring/treatment__. [3:4]
+    fantasy-forest-soft-dancing-clearing:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-dancing-clearing/medium__
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-dancing-clearing/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-dancing-clearing/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-dancing-clearing/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-dancing-clearing/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-dancing-clearing/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-dancing-clearing/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-dancing-clearing/treatment__. [3:4]
+    fantasy-castle-cinematic-chamber:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-chamber/medium__
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-chamber/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-chamber/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-chamber/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-chamber/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-chamber/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-chamber/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-chamber/treatment__. [3:4]
+    fantasy-castle-moody-candle-corridor:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-castle-moody-candle-corridor/medium__
+        __uw-krea2-nsfw/leaf/fantasy-castle-moody-candle-corridor/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-moody-candle-corridor/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-moody-candle-corridor/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-moody-candle-corridor/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-moody-candle-corridor/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-moody-candle-corridor/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-moody-candle-corridor/treatment__. [3:4]
+    fantasy-castle-cinematic-tower-window:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-tower-window/medium__
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-tower-window/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-tower-window/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-tower-window/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-tower-window/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-tower-window/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-tower-window/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-tower-window/treatment__. [3:4]
+    fantasy-castle-soft-lounge-bedchamber:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-lounge-bedchamber/medium__
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-lounge-bedchamber/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-lounge-bedchamber/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-lounge-bedchamber/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-lounge-bedchamber/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-lounge-bedchamber/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-lounge-bedchamber/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-lounge-bedchamber/treatment__. [3:4]
+    fantasy-castle-soft-bathing-stone:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-bathing-stone/medium__
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-bathing-stone/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-bathing-stone/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-bathing-stone/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-bathing-stone/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-bathing-stone/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-bathing-stone/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-bathing-stone/treatment__. [3:4]
+    fantasy-tavern-cinematic-candle-booth:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-tavern-cinematic-candle-booth/medium__
+        __uw-krea2-nsfw/leaf/fantasy-tavern-cinematic-candle-booth/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-cinematic-candle-booth/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-cinematic-candle-booth/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-cinematic-candle-booth/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-cinematic-candle-booth/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-cinematic-candle-booth/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-cinematic-candle-booth/treatment__. [3:4]
+    fantasy-tavern-moody-loft:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-loft/medium__
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-loft/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-loft/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-loft/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-loft/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-loft/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-loft/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-loft/treatment__. [3:4]
+    fantasy-tavern-soft-lounge-settle:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-tavern-soft-lounge-settle/medium__
+        __uw-krea2-nsfw/leaf/fantasy-tavern-soft-lounge-settle/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-soft-lounge-settle/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-soft-lounge-settle/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-soft-lounge-settle/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-soft-lounge-settle/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-soft-lounge-settle/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-soft-lounge-settle/treatment__. [3:4]
+    fantasy-tavern-soft-dancing-floor:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-tavern-soft-dancing-floor/medium__
+        __uw-krea2-nsfw/leaf/fantasy-tavern-soft-dancing-floor/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-soft-dancing-floor/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-soft-dancing-floor/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-soft-dancing-floor/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-soft-dancing-floor/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-soft-dancing-floor/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-soft-dancing-floor/treatment__. [3:4]
+    fantasy-ruins-cinematic-shrine:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-ruins-cinematic-shrine/medium__
+        __uw-krea2-nsfw/leaf/fantasy-ruins-cinematic-shrine/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-cinematic-shrine/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-cinematic-shrine/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-cinematic-shrine/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-cinematic-shrine/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-cinematic-shrine/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-cinematic-shrine/treatment__. [3:4]
+    fantasy-ruins-moody-moonlit-ruins:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-ruins-moody-moonlit-ruins/medium__
+        __uw-krea2-nsfw/leaf/fantasy-ruins-moody-moonlit-ruins/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-moody-moonlit-ruins/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-moody-moonlit-ruins/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-moody-moonlit-ruins/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-moody-moonlit-ruins/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-moody-moonlit-ruins/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-moody-moonlit-ruins/treatment__. [3:4]
+    fantasy-ruins-soft-lounge-altar:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-lounge-altar/medium__
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-lounge-altar/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-lounge-altar/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-lounge-altar/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-lounge-altar/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-lounge-altar/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-lounge-altar/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-lounge-altar/treatment__. [3:4]
+    fantasy-ruins-soft-ritual-dance:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-ritual-dance/medium__
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-ritual-dance/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-ritual-dance/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-ritual-dance/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-ritual-dance/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-ritual-dance/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-ritual-dance/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-ritual-dance/treatment__. [3:4]
+    fantasy-ruins-soft-bathing-tide-pool:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-bathing-tide-pool/medium__
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-bathing-tide-pool/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-bathing-tide-pool/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-bathing-tide-pool/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-bathing-tide-pool/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-bathing-tide-pool/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-bathing-tide-pool/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-soft-bathing-tide-pool/treatment__. [3:4]
+    # --- Dark vignettes (Batch D C1) — non-explicit; race-only identity + soft-bare/slave-revealing ---
+    fantasy-forest-moody-ivy-bound:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-forest-moody-ivy-bound/medium__
+        __uw-krea2-nsfw/leaf/fantasy-forest-moody-ivy-bound/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-moody-ivy-bound/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-moody-ivy-bound/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-moody-ivy-bound/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-moody-ivy-bound/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-moody-ivy-bound/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-moody-ivy-bound/treatment__. [3:4]
+    fantasy-tavern-moody-slave-service:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-slave-service/medium__
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-slave-service/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-slave-service/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-slave-service/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-slave-service/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-slave-service/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-slave-service/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-slave-service/treatment__. [3:4]
+    fantasy-castle-moody-warrior-lap:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-castle-moody-warrior-lap/medium__
+        __uw-krea2-nsfw/leaf/fantasy-castle-moody-warrior-lap/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-moody-warrior-lap/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-moody-warrior-lap/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-moody-warrior-lap/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-moody-warrior-lap/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-moody-warrior-lap/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-moody-warrior-lap/treatment__. [3:4]
+    # --- Batch B — demon throne + dungeon micro-actions (non-explicit) ---
+    fantasy-castle-demon-throne:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-castle-demon-throne/medium__
+        __uw-krea2-nsfw/leaf/fantasy-castle-demon-throne/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-demon-throne/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-demon-throne/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-demon-throne/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-demon-throne/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-demon-throne/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-demon-throne/treatment__. [3:4]
+    fantasy-dungeon-collar-chain:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-dungeon-collar-chain/medium__
+        __uw-krea2-nsfw/leaf/fantasy-dungeon-collar-chain/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-dungeon-collar-chain/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-dungeon-collar-chain/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-dungeon-collar-chain/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-dungeon-collar-chain/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-dungeon-collar-chain/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-dungeon-collar-chain/treatment__. [3:4]
+    fantasy-dungeon-silk-restraint:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-dungeon-silk-restraint/medium__
+        __uw-krea2-nsfw/leaf/fantasy-dungeon-silk-restraint/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-dungeon-silk-restraint/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-dungeon-silk-restraint/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-dungeon-silk-restraint/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-dungeon-silk-restraint/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-dungeon-silk-restraint/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-dungeon-silk-restraint/treatment__. [2:3]
+    # --- Landscape core (Batch C3) — landscape routers only ---
+    fantasy-forest-cinematic-glade-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-forest-cinematic-glade-wide/medium__
+        __uw-krea2-nsfw/leaf/fantasy-forest-cinematic-glade-wide/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-cinematic-glade-wide/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-cinematic-glade-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-cinematic-glade-wide/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-cinematic-glade-wide/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-cinematic-glade-wide/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-cinematic-glade-wide/treatment__. [16:9]
+    fantasy-forest-soft-bathing-spring-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-bathing-spring-wide/medium__
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-bathing-spring-wide/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-bathing-spring-wide/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-bathing-spring-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-bathing-spring-wide/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-bathing-spring-wide/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-bathing-spring-wide/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-forest-soft-bathing-spring-wide/treatment__. [16:9]
+    fantasy-castle-cinematic-chamber-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-chamber-wide/medium__
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-chamber-wide/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-chamber-wide/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-chamber-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-chamber-wide/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-chamber-wide/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-chamber-wide/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-cinematic-chamber-wide/treatment__. [16:9]
+    fantasy-castle-soft-lounge-bedchamber-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-lounge-bedchamber-wide/medium__
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-lounge-bedchamber-wide/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-lounge-bedchamber-wide/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-lounge-bedchamber-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-lounge-bedchamber-wide/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-lounge-bedchamber-wide/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-lounge-bedchamber-wide/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-castle-soft-lounge-bedchamber-wide/treatment__. [16:9]
+    fantasy-tavern-cinematic-candle-booth-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-tavern-cinematic-candle-booth-wide/medium__
+        __uw-krea2-nsfw/leaf/fantasy-tavern-cinematic-candle-booth-wide/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-cinematic-candle-booth-wide/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-cinematic-candle-booth-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-cinematic-candle-booth-wide/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-cinematic-candle-booth-wide/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-cinematic-candle-booth-wide/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-cinematic-candle-booth-wide/treatment__. [16:9]
+    fantasy-tavern-moody-loft-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-loft-wide/medium__
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-loft-wide/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-loft-wide/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-loft-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-loft-wide/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-loft-wide/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-loft-wide/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-tavern-moody-loft-wide/treatment__. [16:9]
+    fantasy-ruins-cinematic-shrine-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-ruins-cinematic-shrine-wide/medium__
+        __uw-krea2-nsfw/leaf/fantasy-ruins-cinematic-shrine-wide/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-cinematic-shrine-wide/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-cinematic-shrine-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-cinematic-shrine-wide/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-cinematic-shrine-wide/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-cinematic-shrine-wide/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-cinematic-shrine-wide/treatment__. [16:9]
+    fantasy-ruins-moody-moonlit-ruins-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-ruins-moody-moonlit-ruins-wide/medium__
+        __uw-krea2-nsfw/leaf/fantasy-ruins-moody-moonlit-ruins-wide/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-moody-moonlit-ruins-wide/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-moody-moonlit-ruins-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-moody-moonlit-ruins-wide/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-moody-moonlit-ruins-wide/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-moody-moonlit-ruins-wide/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-ruins-moody-moonlit-ruins-wide/treatment__. [16:9]
+  leaf:
+    # --- Forest ---
+    fantasy-forest-cinematic-glade:
+      medium:
+      - __uw-shared/fantasy/shot/cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-forest-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-forest-cinematic-glade__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/forest__
+      lighting:
+      - __uw-shared/fantasy/lighting/forest__
+      camera:
+      - __uw-shared/fantasy/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    fantasy-forest-moody-moonlit:
+      medium:
+      - __uw-shared/fantasy/shot/moody__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-forest-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-forest-moody-moonlit__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/forest__
+      lighting:
+      - __uw-shared/fantasy/lighting/forest__
+      camera:
+      - __uw-shared/fantasy/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    fantasy-forest-intimate-portrait-grove:
+      medium:
+      - __uw-shared/fantasy/shot/intimate-portrait__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-forest-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-forest-intimate-portrait-grove__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/forest__
+      lighting:
+      - __uw-shared/fantasy/lighting/forest__
+      camera:
+      - __uw-shared/fantasy/camera/intimate-portrait__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    fantasy-forest-soft-bathing-spring:
+      medium:
+      - __uw-shared/fantasy/shot/cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-forest__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-forest-soft-bathing-spring__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/forest-spring__
+      lighting:
+      - __uw-shared/fantasy/lighting/forest__
+      camera:
+      - __uw-shared/fantasy/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    fantasy-forest-soft-dancing-clearing:
+      medium:
+      - __uw-shared/fantasy/shot/cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-forest__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-forest-soft-dancing-clearing__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/forest-composer__
+      environment:
+      - __uw-shared/fantasy/environment/forest-clearing-dance__
+      lighting:
+      - __uw-shared/fantasy/lighting/forest__
+      camera:
+      - __uw-shared/fantasy/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+
+    # --- Castle ---
+    fantasy-castle-cinematic-chamber:
+      medium:
+      - __uw-shared/fantasy/shot/cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-castle-cinematic-chamber__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/castle__
+      lighting:
+      - __uw-shared/fantasy/lighting/castle__
+      camera:
+      - __uw-shared/fantasy/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    fantasy-castle-moody-candle-corridor:
+      medium:
+      - __uw-shared/fantasy/shot/moody__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-castle-moody-candle-corridor__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/castle__
+      lighting:
+      - __uw-shared/fantasy/lighting/castle__
+      camera:
+      - __uw-shared/fantasy/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    fantasy-castle-cinematic-tower-window:
+      medium:
+      - __uw-shared/fantasy/shot/cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-castle-cinematic-tower-window__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/castle__
+      lighting:
+      - __uw-shared/fantasy/lighting/castle__
+      camera:
+      - __uw-shared/fantasy/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    fantasy-castle-soft-lounge-bedchamber:
+      medium:
+      - __uw-shared/fantasy/shot/moody__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-castle-soft-lounge-bedchamber__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/castle-bedchamber__
+      lighting:
+      - __uw-shared/fantasy/lighting/castle__
+      camera:
+      - __uw-shared/fantasy/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    fantasy-castle-soft-bathing-stone:
+      medium:
+      - __uw-shared/fantasy/shot/cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-castle-soft-bathing-stone__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/castle-bath__
+      lighting:
+      - __uw-shared/fantasy/lighting/castle__
+      camera:
+      - __uw-shared/fantasy/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+
+    # --- Tavern ---
+    fantasy-tavern-cinematic-candle-booth:
+      medium:
+      - __uw-shared/fantasy/shot/cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-tavern-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-tavern-cinematic-candle-booth__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/tavern__
+      lighting:
+      - __uw-shared/fantasy/lighting/tavern__
+      camera:
+      - __uw-shared/fantasy/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    fantasy-tavern-moody-loft:
+      medium:
+      - __uw-shared/fantasy/shot/moody__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-tavern-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-tavern-moody-loft__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/tavern-loft__
+      lighting:
+      - __uw-shared/fantasy/lighting/tavern__
+      camera:
+      - __uw-shared/fantasy/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    fantasy-tavern-soft-lounge-settle:
+      medium:
+      - __uw-shared/fantasy/shot/moody__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-tavern__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-tavern-soft-lounge-settle__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/tavern__
+      lighting:
+      - __uw-shared/fantasy/lighting/tavern__
+      camera:
+      - __uw-shared/fantasy/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    fantasy-tavern-soft-dancing-floor:
+      medium:
+      - __uw-shared/fantasy/shot/cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-tavern__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-tavern-soft-dancing-floor__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/tavern-composer__
+      environment:
+      - __uw-shared/fantasy/environment/tavern-dance-floor__
+      lighting:
+      - __uw-shared/fantasy/lighting/tavern__
+      camera:
+      - __uw-shared/fantasy/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+
+    # --- Ruins ---
+    fantasy-ruins-cinematic-shrine:
+      medium:
+      - __uw-shared/fantasy/shot/cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-ruins-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-ruins-cinematic-shrine__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/ruins__
+      lighting:
+      - __uw-shared/fantasy/lighting/ruins__
+      camera:
+      - __uw-shared/fantasy/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    fantasy-ruins-moody-moonlit-ruins:
+      medium:
+      - __uw-shared/fantasy/shot/moody__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-ruins-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-ruins-moody-moonlit-ruins__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/ruins__
+      lighting:
+      - __uw-shared/fantasy/lighting/ruins__
+      camera:
+      - __uw-shared/fantasy/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    fantasy-ruins-soft-lounge-altar:
+      medium:
+      - __uw-shared/fantasy/shot/moody__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-ruins__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-ruins-soft-lounge-altar__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/ruins-altar__
+      lighting:
+      - __uw-shared/fantasy/lighting/ruins__
+      camera:
+      - __uw-shared/fantasy/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    fantasy-ruins-soft-ritual-dance:
+      medium:
+      - __uw-shared/fantasy/shot/cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-ruins__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-ruins-soft-ritual-dance__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/ruins-composer__
+      environment:
+      - __uw-shared/fantasy/environment/ruins-altar__
+      lighting:
+      - __uw-shared/fantasy/lighting/ruins__
+      camera:
+      - __uw-shared/fantasy/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    fantasy-ruins-soft-bathing-tide-pool:
+      medium:
+      - __uw-shared/fantasy/shot/cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-ruins__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-ruins-soft-bathing-tide-pool__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/ruins-tide-pool__
+      lighting:
+      - __uw-shared/fantasy/lighting/ruins__
+      camera:
+      - __uw-shared/fantasy/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+
+    # --- Dark vignettes (Batch D C1) — race-only (soft-bare/slave wardrobe; not matched) ---
+    fantasy-forest-moody-ivy-bound:
+      medium:
+      - __uw-shared/fantasy/shot/moody__
+      subject:
+      - 3::__uw-shared/fantasy/identity-paragraph/elf__
+      - 2::__uw-shared/fantasy/identity-paragraph/human-enchanted__
+      - 1::__uw-shared/fantasy/identity-router/fantasy-forest__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-dark-ivy-bound__
+      wardrobe:
+      - 2::__uw-shared/fantasy/wardrobe/soft-bare__
+      - 2::__uw-shared/fantasy/wardrobe/slave-revealing__
+      environment:
+      - __uw-shared/fantasy/environment/ancient-oak-ivy__
+      lighting:
+      - __uw-shared/fantasy/lighting/ancient-oak-ivy__
+      camera:
+      - __uw-shared/fantasy/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    fantasy-tavern-moody-slave-service:
+      medium:
+      - __uw-shared/fantasy/shot/moody__
+      subject:
+      - 3::__uw-shared/fantasy/identity-paragraph/human-enchanted__
+      - 2::__uw-shared/fantasy/identity-paragraph/elf__
+      - 1::__uw-shared/fantasy/identity-router/fantasy-tavern__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-dark-slave-service__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/slave-revealing__
+      environment:
+      - __uw-shared/fantasy/environment/tavern__
+      lighting:
+      - __uw-shared/fantasy/lighting/tavern__
+      camera:
+      - __uw-shared/fantasy/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    fantasy-castle-moody-warrior-lap:
+      medium:
+      - __uw-shared/fantasy/shot/moody__
+      subject:
+      - __uw-shared/fantasy/identity-paragraph/human-enchanted__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-dark-warrior-lap__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/slave-revealing__
+      environment:
+      - __uw-shared/fantasy/environment/castle__
+      lighting:
+      - __uw-shared/fantasy/lighting/castle__
+      camera:
+      - __uw-shared/fantasy/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+
+    # --- Batch B — demon throne (race-only + nipple-cover) + dungeon micro-actions ---
+    fantasy-castle-demon-throne:
+      medium:
+      - __uw-shared/fantasy/shot/cinematic__
+      subject:
+      - 1::__uw-shared/fantasy/identity-paragraph/demon__
+      - 1::__uw-shared/fantasy/identity-paragraph/succubus__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-demon-throne__
+      wardrobe:
+      - 3::__uw-shared/fantasy/wardrobe/nipple-cover-accent__
+      - 1::__uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/throne-room__
+      lighting:
+      - __uw-shared/fantasy/lighting/throne-room__
+      camera:
+      - __uw-shared/fantasy/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    fantasy-dungeon-collar-chain:
+      medium:
+      - __uw-shared/fantasy/shot/moody__
+      subject:
+      - 3::__uw-shared/fantasy/identity-paragraph/human-enchanted__
+      - 2::__uw-shared/fantasy/identity-paragraph/elf__
+      - 1::__uw-shared/fantasy/identity-paragraph/dark-elf__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-dungeon-collar-chain__
+      wardrobe:
+      - 2::__uw-shared/fantasy/wardrobe/collar-accent__
+      - 2::__uw-shared/fantasy/wardrobe/slave-revealing__
+      environment:
+      - __uw-shared/fantasy/environment/dungeon-candlelit__
+      lighting:
+      - __uw-shared/fantasy/lighting/dungeon-candlelit__
+      camera:
+      - __uw-shared/fantasy/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    fantasy-dungeon-silk-restraint:
+      medium:
+      - __uw-shared/fantasy/shot/moody__
+      subject:
+      - 3::__uw-shared/fantasy/identity-paragraph/human-enchanted__
+      - 2::__uw-shared/fantasy/identity-paragraph/elf__
+      - 1::__uw-shared/fantasy/identity-paragraph/dark-elf__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-dungeon-silk-restraint__
+      wardrobe:
+      - 2::__uw-shared/fantasy/wardrobe/soft-bare__
+      - 2::__uw-shared/fantasy/wardrobe/slave-revealing__
+      environment:
+      - __uw-shared/fantasy/environment/dungeon-candlelit__
+      lighting:
+      - __uw-shared/fantasy/lighting/dungeon-candlelit__
+      camera:
+      - __uw-shared/fantasy/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+
+    # --- Landscape core (Batch C3) ---
+    fantasy-forest-cinematic-glade-wide:
+      medium:
+      - __uw-shared/fantasy/shot/landscape-cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-forest-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-forest-cinematic-glade-wide__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/forest-landscape__
+      lighting:
+      - __uw-shared/fantasy/lighting/forest__
+      camera:
+      - __uw-shared/fantasy/camera/landscape-cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    fantasy-forest-soft-bathing-spring-wide:
+      medium:
+      - __uw-shared/fantasy/shot/landscape-cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-forest__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-forest-soft-bathing-spring-wide__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/forest-spring-landscape__
+      lighting:
+      - __uw-shared/fantasy/lighting/forest__
+      camera:
+      - __uw-shared/fantasy/camera/landscape-cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    fantasy-castle-cinematic-chamber-wide:
+      medium:
+      - __uw-shared/fantasy/shot/landscape-cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-castle-cinematic-chamber-wide__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/castle-landscape__
+      lighting:
+      - __uw-shared/fantasy/lighting/castle__
+      camera:
+      - __uw-shared/fantasy/camera/landscape-cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    fantasy-castle-soft-lounge-bedchamber-wide:
+      medium:
+      - __uw-shared/fantasy/shot/landscape-cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-castle-soft-lounge-bedchamber-wide__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/castle-bedchamber-landscape__
+      lighting:
+      - __uw-shared/fantasy/lighting/castle__
+      camera:
+      - __uw-shared/fantasy/camera/landscape-cinematic__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    fantasy-tavern-cinematic-candle-booth-wide:
+      medium:
+      - __uw-shared/fantasy/shot/landscape-cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-tavern-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-tavern-cinematic-candle-booth-wide__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/tavern-landscape__
+      lighting:
+      - __uw-shared/fantasy/lighting/tavern__
+      camera:
+      - __uw-shared/fantasy/camera/landscape-cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    fantasy-tavern-moody-loft-wide:
+      medium:
+      - __uw-shared/fantasy/shot/landscape-cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-tavern-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-tavern-moody-loft-wide__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/tavern-loft-landscape__
+      lighting:
+      - __uw-shared/fantasy/lighting/tavern__
+      camera:
+      - __uw-shared/fantasy/camera/landscape-cinematic__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    fantasy-ruins-cinematic-shrine-wide:
+      medium:
+      - __uw-shared/fantasy/shot/landscape-cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-ruins-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-ruins-cinematic-shrine-wide__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/ruins-landscape__
+      lighting:
+      - __uw-shared/fantasy/lighting/ruins__
+      camera:
+      - __uw-shared/fantasy/camera/landscape-cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    fantasy-ruins-moody-moonlit-ruins-wide:
+      medium:
+      - __uw-shared/fantasy/shot/landscape-cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-ruins-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-ruins-moody-moonlit-ruins-wide__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/ruins-landscape__
+      lighting:
+      - __uw-shared/fantasy/lighting/ruins__
+      camera:
+      - __uw-shared/fantasy/camera/landscape-cinematic__
+      treatment:
+      - __uw-shared/common/treatment/moody__

@@ -1,0 +1,3 @@
+__clothes_outfits_intimate_female__
+__clothes_outfits_intimate_female__, __clothes_accessories__
+__clothes_outfits_intimate_female__, ((__clothes_accessories__):0.8)

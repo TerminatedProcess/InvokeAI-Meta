@@ -1,0 +1,20 @@
+morning
+morning, dawn
+morning, twilight
+morning, sunrise
+day
+evening
+evening, sunset
+evening, twilight
+evening, dusk
+night
+morning, __lighting_direction__
+morning, dawn, __lighting_direction__
+morning, twilight, __lighting_direction__
+morning, sunrise, __lighting_direction__
+day, __lighting_direction__
+evening, __lighting_direction__
+evening, sunset, __lighting_direction__
+evening, twilight, __lighting_direction__
+evening, dusk, __lighting_direction__
+night, __lighting_direction__

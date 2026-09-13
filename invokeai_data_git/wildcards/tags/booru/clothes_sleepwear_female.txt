@@ -1,0 +1,7 @@
+babydoll, __colors__ babydoll, ((panties, __colors__ panties:0.8)
+negligee, __colors__ negligee, ((panties, __colors__ panties:0.8)
+chemise, __colors__ chemise, ((panties, __colors__ panties:0.8)
+nightgown, __colors__ nightgown, ((panties, __colors__ panties:0.8)
+camisole, __colors__ camisole, ((panties, __colors__ panties:0.8)
+pajamas, __colors__ pajamas, short sleeves, shorts, partially unbuttoned, ((cleavage):0.8)
+pajamas, __colors__ pajamas, partially unbuttoned, ((cleavage):0.8)

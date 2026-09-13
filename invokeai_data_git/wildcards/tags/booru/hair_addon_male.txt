@@ -1,0 +1,17 @@
+ponytail
+ponytail, low ponytail
+ponytail, high ponytail
+ponytail, short ponytail
+braided ponytail, ((ponytail):0.9)
+braid
+braid, braided bangs
+braid, side braid
+hair slicked back
+afro
+african braids, cornrows
+african braids, dreadlocks
+half updo
+blunt ends
+quiff
+pompadour
+topknot

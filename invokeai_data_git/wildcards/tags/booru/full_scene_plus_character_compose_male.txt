@@ -1,0 +1,5 @@
+1boy, solo, __character_male__, __faces__, __locations__, __composition_with_pose_and_clothes_male__
+1boy, solo, __character_male__, ((__faces__):0.9), __locations__, __composition_with_pose_and_clothes_male__
+1boy, solo, __character_male__, ((__faces__):0.9), ((__locations__):0.9), __composition_with_pose_and_clothes_male__
+1boy, solo, __character_male__, __faces__, ((__locations__):0.9), __composition_with_pose_and_clothes_male__
+__composition_view_angle_pose_user_specials_male__

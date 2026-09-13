@@ -1,0 +1,4 @@
+__clothes_naked_nsfw_type_male__
+open clothes, __clothes_naked_nsfw_type_male__, ((__body_penis_state__):0.7)
+open clothes, __clothes_naked_nsfw_type_male__, ((__body_penis_state__):0.7)
+nude, completely nude, ((__body_bare_male_crotch__, __body_penis_state__):0.9)

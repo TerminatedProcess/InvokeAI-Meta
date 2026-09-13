@@ -1,0 +1,36 @@
+school, classroom, school desk, school chair, __lighting__
+school, classroom, chalkboard, __lighting__
+school, lecture hall, __lighting__
+school, clubroom, __lighting__
+spacecraft interior, __lighting__
+bedroom, __lighting__
+bedroom, bed, nightstand, __lighting__
+bedroom, plush, __lighting__
+bathroom, __lighting__
+bathroom, ((mirror):0.8), ((__lighting__):0.6)
+soapland, ((mat play, air mattress, bathroom, mixed-sex bathing, shared bathing, lube, lotion play, lotion bottle):0.8), ((__lighting__):0.9)
+dressing room, vanity table, mirror, __lighting__
+cafeteria, __lighting__
+library, book, bookshelf, __lighting__
+living room, __lighting__
+living room, table, __lighting__
+living room, plant, __lighting__
+kitchen, __lighting__
+kitchen, cooking, __lighting__
+shop, bakery, __lighting__
+shop, bookstore, __lighting__
+shop, convenience store, __lighting__
+shop, flower shop, __lighting__
+shop, pharmacy, __lighting__
+shop, salon, __lighting__
+shop, sex shop, __lighting__
+shop, supermarket, __lighting__
+shop, weapon shop, __lighting__
+shopping mall, stores, signs, __lighting__
+tomb, ((dark, shadow, __lighting_direction__):0.7)
+train station, turnstile, __lighting__
+gym, locker room, dim lighting, __lighting_direction__
+gym, gym storeroom, dim lighting, __lighting_direction__
+gym, weight rack, weight bench, __lighting__
+gym, __lighting__
+nightclub, neon lights

@@ -1,0 +1,7 @@
+__character_multiple_boys_girls__, circle formation, from below, looking down, looking at viewer, ((__colors__ __clothes_swimsuit_male__, bulge):0.7), BREAK, ((__colors__ __clothes_swimsuit__):0.7), ((sky, clouds):0.7)
+__character_multiple_boys_girls_clothes_below_only__, circle formation, standing, looking at viewer, ((__locations__):0.7)
+__character_multiple_boys_girls_clothes__, height difference, height chart, lineup, standing, from side, profile, ((__locations__):0.7)
+__character_multiple_boys_girls_clothes__, height difference, queue, from side, waiting, ((__colors__ wall):0.7)
+__character_multiple_boys_girls_clothes_below_only__, group picture, standing, looking at viewer, ((__locations__):0.7)
+__character_multiple_boys_girls_clothes_below_only__, group picture, hug, looking at viewer, ((__locations__):0.7)
+__character_multiple_boys_girls__, side-by-side, ((take your pick):0.8), window, sunlight, backlit, shadow, window shadow, from above, wariza, seiza, looking at viewer, ((happy, smug, light smile):0.9), ((__clothes_trap__):0.7), ((__clothes_male__):0.8), ((__clothes__):0.8)

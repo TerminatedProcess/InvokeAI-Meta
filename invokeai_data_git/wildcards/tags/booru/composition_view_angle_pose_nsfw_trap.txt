@@ -1,0 +1,4 @@
+__poses_pov_intimate_acts_male_below__, ((clothes lift, clothes pull):0.9), ((unworn clothes, __clothes_intimate_trap__):0.7)
+__poses_pov_intimate_acts_male_below_back__, ass, ((clothes lift, clothes pull):0.9), ((unworn clothes, __clothes_intimate_trap__):0.7)
+__poses_pov_intimate_acts_male__, ((clothes lift, clothes pull):0.9), ((unworn clothes, __clothes_intimate_trap__):0.7)
+__poses_pov_intimate_acts_male_back__, ass, ((clothes lift, clothes pull):0.9), ((unworn clothes, __clothes_intimate_trap__):0.7)

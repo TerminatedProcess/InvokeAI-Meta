@@ -1,0 +1,350 @@
+crewneck t-shirt (basic round neckline)
+v-neck t-shirt (deep v-neckline)
+oversized t-shirt (loose, boxy fit)
+tank top (sleeveless, fitted)
+camisole top (strapless, minimal coverage)
+bodysuit (one-piece, seamless)
+polo shirt (collared, buttoned placket)
+button-down shirt (collar with button tabs)
+tie-dye t-shirt (artisanal dye technique)
+sleeveless blouse (structured, feminine)
+banded tee (ruched waistband)
+crop top (short, high-waisted)
+knit tank (thick jersey fabric)
+fitted crewneck (contoured for shape)
+sweatshirt t-shirt (jersey fabric, soft feel)
+linen shirt (lightweight, breathable)
+silk blouse (smooth, elegant)
+gingham shirt (checkered pattern)
+shirtwaist blouse (1920s silhouette)
+peplum top (flared waistband)
+halter top (straps over shoulders)
+nautical shirt (sailor-style collar)
+bibbed shirt (front bib detail)
+sash top (belted, draped)
+wrap blouse (self-tie front)
+bustier top (structured, corset-inspired)
+lace-trimmed blouse (delicate detailing)
+shirt with rolled sleeves (casual cuff)
+vest top (non-sleeved, buttoned)
+jacket shirt (worn over shoulders)
+bodysuit vest (tight-fitting, sleeveless)
+sailor vest (naval-inspired, striped)
+bustle vest (19th-century structured)
+biker vest (leather, mesh panels)
+quilted vest (insulated, padded)
+sailor vest (double-breasted, buttoned)
+beaded vest (embellished with sequins)
+crewneck t-shirt (round, ribbed neckline)
+v-neck t-shirt (deep v, no collar)
+o-neck t-shirt (rounded, collarless)
+sleeveless t-shirt (no sleeves, collarless)
+crewneck with collar t-shirt (folded-over crew neck)
+banded neck t-shirt (elasticated neckline)
+turtleneck t-shirt (high neck, fitted)
+halter neck t-shirt (straps over shoulders)
+nautical neck t-shirt (short, curved collar like sailor shirts)
+scoop neck t-shirt (soft, shallow u-shape)
+high neck t-shirt (extended neckline to chest)
+cutaway neck t-shirt (sleeveless, diagonal neckline)
+twin-needle neck t-shirt (stitched with visible twin stitching)
+collared crew t-shirt (collarless crewneck with small fold)
+neckline ruching t-shirt (gathered fabric at neckline)
+keyhole neck t-shirt (small keyhole at center)
+boat neck t-shirt (wide, u-shaped neckline)
+raglan sleeve t-shirt (diagonal seam from neck to underarm)
+short sleeve t-shirt (standard sleeve length)
+cuffed sleeve t-shirt (rolled or folded sleeves)
+cap sleeve t-shirt (short sleeves ending at shoulder)
+french sleeve t-shirt (loose, slightly rolled sleeves)
+cover-up sleeve t-shirt (long sleeves with rolled cuffs)
+bell sleeve t-shirt (flared, wide sleeves)
+off-the-shoulder sleeve t-shirt (sleeves extending over shoulders)
+sleeveless tank t-shirt (no sleeves, fitted)
+sleeveless mesh t-shirt (transparent fabric sleeveless)
+fitted t-shirt (tight, body-hugging)
+slim fit t-shirt (narrow torso, tapered sleeves)
+regular fit t-shirt (classic, roomy cut)
+oversized t-shirt (loose, baggy, relaxed)
+baggy t-shirt (extremely loose, dropped shoulders)
+muscle fit t-shirt (form-fitting for athletic builds)
+boxy fit t-shirt (square silhouette, wide waist)
+slim fit tank t-shirt (form-fitting sleeveless version)
+pleated t-shirt (gathered waist with hidden seams)
+banded waist t-shirt (elasticated hem for a snug fit)
+chest protector vest (for trades)
+corset vest (boned, figure-hugging)
+bib vest (over shirt, buttoned)
+ashmere sweater (soft, luxury)
+fingerless knit (gloves integrated)
+balaclava-style knit (hooded, face-covering)
+turtleneck sweater (high neck)
+v-neck knit (simple, fitted)
+sweater vest (knit, sleeveless)
+chunky knit (thick, oversized)
+argyle knit (patterned, classic)
+ribbed knit (elasticized cuffs)
+tunisian knit (tunisian stitch)
+cable-knit sweater (intricate texture)
+sweater hoodie (hooded, knitted)
+balaclava (full-face hooded)
+cable-knit vest (sleeveless)
+bulky knit (heavy wool, thick)
+sweatshirt jacket (hooded, zippered)
+denim jacket (unlined, buttoned)
+rain jacket (waterproof, lightweight)
+fleece jacket (insulated, soft)
+bomber jacket (ribbed cuffs)
+trench coat (long, belted)
+sailor jacket (naval-style collar)
+flight jacket (military, leather)
+hoodie jacket (hooded, zippered)
+sweatshirt vest (hooded, sleeveless)
+nylon shell (lightweight, windproof)
+fedoras-style jacket (collar detail)
+gilet (short, sleeveless jacket)
+knee-length jacket (short, tailored)
+biker jacket (leather, zippered)
+imono top (sleeveless, draped)
+kameez (south asian tunic)
+sari blouse (cotton, fitted)
+banyan (18th-century robe)
+sleeveless vest (19th-century)
+bustle gown top (1860s)
+fustanella (greece, sleeveless)
+jilbab (islamic hooded top)
+sarouel top (wide-legged, draped)
+tunic top (long, loose)
+mangal (tibetan hooded top)
+pehlwani (persian chest piece)
+loincloth top (ancient, minimal)
+bib-and-brace top (19th-century)
+muscle tee (athletic, fitted)
+compression top (tight, moisture-wicking)
+lifting vest (for weightlifting)
+jogger top (sweat-wicking)
+lace-up vest (strap detail)
+bikini top (bikini-style, sleeveless)
+sports bra top (high-support)
+windbreaker top (lightweight)
+pantsuit top (part of pantsuit)
+racerback top (strapless, athletic)
+bodysuit top (integrated bra)
+gore-tex top (waterproof, technical)
+banded crop top (ruched waist)
+sleeveless corset top (boned)
+nude mesh top (sheer, form-fitting)
+tie-back top (back tie detail)
+cotton t-shirt (standard woven cotton)
+french terry t-shirt (soft looped surface, brushed feel)
+modal t-shirt (smooth, silky rayon blend)
+hacci knit t-shirt (thick, textured knit)
+jersey knit t-shirt (basic cotton fabric)
+sponge knit t-shirt (textured, bumpy surface)
+gauze t-shirt (lightweight, airy woven)
+mesh t-shirt (transparent or semi-transparent fabric)
+bamboo t-shirt (soft, sustainable material)
+fleece-lined t-shirt (warm, fuzzy interior)
+side slit t-shirt (cut-outs on sides)
+back cutout t-shirt (open back design)
+racerback tank t-shirt (strappy racerback design)
+lace-up neck t-shirt (adjustable lace details at neck)
+keyhole back t-shirt (keyhole opening at back)
+collarless t-shirt (no collar, raw neckline)
+halter-neck tank t-shirt (strappy neck design)
+ruched hem t-shirt (gathered bottom edge)
+pleated sleeve t-shirt (gathered sleeves)
+slit sleeve t-shirt (cut-outs on sleeves)
+vintage 1950s t-shirt (high-waisted, fitted)
+1970s flare t-shirt (flowing, wide silhouette)
+1980s crop t-shirt (short torso, narrow sleeves)
+1990s hooded t-shirt (with attached hood)
+minimalist t-shirt (solid color, no prints)
+graphic print t-shirt (bold imagery or text)
+sleeveless band t-shirt (for music festivals)
+athleisure t-shirt (performance fabric, fitted)
+biker tank t-shirt (motorcycle-inspired, sleeveless)
+tankini top t-shirt (one-piece swimsuit top)
+racerback mesh t-shirt (breathable, sports-oriented)
+oversized unisex t-shirt (gender-neutral, loose fit)
+thermal layer t-shirt (insulated, winter-ready)
+tucked-in t-shirt (designed to be worn under pants)
+raglan sleeve muscle t-shirt (athletic, fitted raglan)
+tank top muscle t-shirt (muscle-fit sleeveless)
+sleeveless shirts t-shirt (collarless, sleeveless)
+sleeveless with side slits t-shirt (side cutouts)
+crewneck pullover
+v-neck pullover
+o-neck pullover
+high neck pullover
+turtleneck pullover
+boat neck pullover
+scoop neck pullover
+cutaway neck pullover
+halter neck pullover
+keyhole neck pullover
+collarless pullover
+raglan sleeve pullover
+long sleeve pullover
+short sleeve pullover
+cap sleeve pullover
+french sleeve pullover
+bell sleeve pullover
+sleeveless pullover
+set-in sleeve pullover
+3/4 sleeve pullover
+cropped sleeve pullover
+v-neck sleeve pullover
+asymmetrical sleeve pullover
+fitted pullover
+slim fit pullover
+regular fit pullover
+oversized pullover
+baggy pullover
+muscle fit pullover
+boxy fit pullover
+ruched waist pullover
+tucked-in pullover
+cropped pullover
+cotton pullover
+french terry pullover
+modal pullover
+hacci knit pullover
+jersey knit pullover
+sponge knit pullover
+gauze pullover
+mesh pullover
+bamboo pullover
+fleece-lined pullover
+twill fabric pullover
+side slit pullover
+back cutout pullover
+zip-up pullover
+hooded pullover
+lace-up pullover
+drawstring pullover
+ribbed hem pullover
+puff sleeve pullover
+asymmetric hem pullover
+pocketed pullover
+athleisure pullover
+cozy knit pullover
+denim pullover
+vintage patchwork pullover
+bohemian print pullover
+neon color pullover
+minimalist monochrome pullover
+chunky knit pullover
+tropical print pullover
+retro graphic pullover
+varsity pullover
+tank top pullover
+sweater dress pullover
+knit jacket pullover
+sleeveless hoodie pullover
+fleece vest pullover
+crochet detail pullover
+embroidered logo pullover
+recycled fabric pullover
+gothic hem pullovercrewneck jacket
+stand-up collar jacket
+notch collar jacket
+point collar jacket
+v-neck jacket
+turtleneck jacket
+shirt collar jacket
+cutaway collar jacket
+high collar jacket
+boat neck jacket
+halter neck jacket
+keyhole neck jacket
+collarless jacket
+lapel jacket
+peaked lapel jacket
+shawl collar jacket
+bomber collar jacket
+long sleeve jacket
+3/4 sleeve jacket
+short sleeve jacket
+cropped sleeve jacket
+raglan sleeve jacket
+set-in sleeve jacket
+bell sleeve jacket
+cap sleeve jacket
+cuffed sleeve jacket
+sleeveless jacket
+asymmetrical sleeve jacket
+puff sleeve jacket
+cropped sleeve hooded jacket
+fitted jacket
+slim fit jacket
+regular fit jacket
+oversized jacket
+baggy jacket
+tapered jacket
+loose fit jacket
+boxy fit jacket
+cropped jacket
+trench coat jacket
+puffer jacket
+waist-cinched jacket
+slim overcoat jacket
+button-front jacket
+zipper-front jacket
+zip-up jacket
+snap-front jacket
+lapel-button jacket
+tie-front jacket
+belt-loop jacket
+velcro closure jacket
+full-zip jacket
+half-zip jacket
+drawstring jacket
+open-front jacket
+denim jacket
+cotton jacket
+nylon jacket
+leather jacket
+suede jacket
+fleece jacket
+wool jacket
+tech-weave jacket
+mesh jacket
+knit jacket
+chunky knit jacket
+twill fabric jacket
+canvas jacket
+linen jacket
+recycled fabric jacket
+patent leather jacket
+pvc jacket
+workwear jacket
+vintage patchwork jacket
+aviator jacket
+biker jacket
+windbreaker jacket
+rain jacket
+hooded jacket
+sweater jacket
+bomber jacket
+chino jacket
+nautical jacket
+bohemian print jacket
+neon color jacket
+minimalist monochrome jacket
+vintage denim jacket
+retro graphic jacket
+jacket duster
+tank top jacket
+jacket dress
+jacket vest
+jacket cape
+jacket hoodie
+jacket cardigan
+jacket sweater
+jacket trench
+jacket poncho
+jacket wrap
+jacket blazer
+jacket parka
+jacket puffer

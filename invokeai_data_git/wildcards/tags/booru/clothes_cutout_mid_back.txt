@@ -1,0 +1,6 @@
+back cutout
+hip vent
+side cutout
+back cutout, side cutout
+back cutout, hip vent
+side cutout, hip vent

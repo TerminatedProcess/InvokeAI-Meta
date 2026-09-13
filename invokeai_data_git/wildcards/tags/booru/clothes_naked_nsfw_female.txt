@@ -1,0 +1,4 @@
+__clothes_naked_nsfw_type_female__
+open clothes, __clothes_naked_nsfw_type_female__, ((nipple slip):0.8)
+open clothes, __clothes_naked_nsfw_type_female__, ((areolae slip):0.8)
+nude, completely nude, ((__body_bare_female_crotch__, __body_breast_details__, ((__body_areolae_details__):0.9)):0.9)

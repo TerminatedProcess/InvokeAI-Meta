@@ -1,0 +1,14 @@
+flipped hair
+flipped hair, __hair_addon__
+flipped hair, __hair_addon_bangs__
+flipped hair, __hair_addon__, __hair_addon_bangs__
+((wolf cut):0.9)
+hime cut
+__hair_addon__, __hair_addon_bangs__
+__hair_addon_texture__
+__hair_addon_texture__, __hair_addon_bangs__
+__hair_addon_texture__, __hair_addon_bangs__, __hair_addon__
+__hair_addon_texture__, __hair_addon__
+__hair_addon_texture__, __hair_addon__, ((__hair_addon_sidelocks__):0.9)
+__hair_addon__, __hair_addon_bangs__, ((__hair_addon_sidelocks__):0.9)
+__hair_addon__, ((__hair_addon_sidelocks__):0.9)

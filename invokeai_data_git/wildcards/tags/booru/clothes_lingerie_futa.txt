@@ -1,0 +1,36 @@
+babydoll, __colors__ babydoll, __clothes_lingerie_bottoms_futa__, __clothes_legwear__
+babydoll, __colors__ babydoll, __clothes_lingerie_bottoms_futa__
+babydoll, __colors__ babydoll, no panties, ((__body_bare_futa_crotch__, penis peek, __body_penis_state__):0.8)
+bodystocking, __colors__ bodystocking, bodystocking only, ((covered nipples):0.9), futanari, bulge
+bodystocking, __colors__ bodystocking, bodystocking only, ((covered nipples):0.9), see-through clothes, ((futanari, bulge):0.9), ((covered penis, covered testicles):0.7)
+bodystocking, __colors__ bodystocking, bodystocking only, ((covered nipples):0.9), see-through clothes, ((futanari, bulge):0.9), ((covered penis, covered testicles):0.7)
+__colors__ lingerie, bra, __clothes_bra_type__, __clothes_lingerie_bottoms_futa__
+__colors__ lingerie, bra, __clothes_bra_type__, __clothes_lingerie_bottoms_futa__, __clothes_legwear__
+__colors__ lingerie, bra, __clothes_bra_type__, __clothes_pantyhose_futa__
+bra, __clothes_bra_type__, __colors__ bra, __clothes_lingerie_bottoms_futa__
+bra, __clothes_bra_type__, __colors__ bra, __clothes_lingerie_bottoms_futa__, __clothes_legwear__
+bra, __clothes_bra_type__, __colors__ bra, __clothes_pantyhose_futa__
+no bra, __clothes_lingerie_bottoms_futa__, __body_breast_details__, ((__body_areolae_details__):0.9)
+no bra, __clothes_lingerie_bottoms_futa__, __body_breast_details__, ((__body_areolae_details__):0.9), __clothes_legwear__
+no bra, __clothes_pantyhose_futa__, __body_breast_details__, ((__body_areolae_details__):0.9)
+bra, __clothes_bra_type__, __colors__ bra, no panties, ((__body_bare_futa_crotch__, __body_penis_state__):0.8)
+bra, __clothes_bra_type__, __colors__ bra, no panties, ((__body_bare_futa_crotch__, __body_penis_state__):0.8), __clothes_legwear__
+chemise, __colors__ chemise, ((futanari, bulge):0.9)
+chemise, __colors__ chemise, panty peek, __clothes_lingerie_bottoms_futa__
+chemise, __colors__ chemise, penis peek, no panties, ((__body_bare_futa_crotch__, penis peek, __body_penis_state__):0.8)
+corset, __colors__ corset, __clothes_lingerie_bottoms_futa__, __body_breast_details__, ((__body_areolae_details__):0.9)
+corset, __colors__ corset, __clothes_pantyhose_futa__, __body_breast_details__, ((__body_areolae_details__):0.9)):0.9)
+corset, __colors__ corset, __clothes_lingerie_bottoms_futa__, __clothes_legwear__ __body_breast_details__, ((__body_areolae_details__):0.9)
+corset, __colors__ corset, __clothes_legwear__, no panties, ((__body_bare_futa_crotch__, __body_penis_state__):0.8), __body_breast_details__, ((__body_areolae_details__):0.9)
+nightgown, __colors__ nightgown, ((futanari, bulge):0.9)
+nightgown, __colors__ nightgown, panty peek, __clothes_lingerie_bottoms_futa__
+nightgown, __colors__ nightgown, no panties, ((__body_bare_futa_crotch__, penis peek, __body_penis_state__):0.8)
+lingerie, ((leotard):0.8), ((see-through clothes, spaghetti strap, sleeveless, lace):0.8), ((see-through leotard, loose clothes, lace-trim, backless leotard):0.7), __colors__ lingerie, ((futanari, bulge):0.9)
+bustier, __colors__ bustier, __clothes_lingerie_bottoms_futa__
+bustier, __colors__ bustier, __clothes_lingerie_bottoms_futa__, __clothes_legwear__
+bustier, __colors__ bustier, __clothes_pantyhose_futa__
+bustier, __colors__ bustier, __clothes_legwear__, no panties, ((__body_bare_futa_crotch__, __body_penis_state__):0.8)
+camisole, __colors__ camisole, __clothes_lingerie_bottoms_futa__
+camisole, __colors__ camisole, __clothes_lingerie_bottoms_futa__, __clothes_legwear__
+camisole, __colors__ camisole, __clothes_pantyhose_futa__
+camisole, __colors__ camisole, __clothes_legwear__, no panties, ((__body_bare_futa_crotch__, __body_penis_state__):0.8)

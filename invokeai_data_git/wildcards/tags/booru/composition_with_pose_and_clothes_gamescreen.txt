@@ -1,0 +1,4 @@
+cowboy shot, __composition_view_angle_pose_clothes_gamescreen__
+cowboy shot, __composition_view_angle_pose_clothes_gamescreen__
+selfie, perspective, depth of field, __composition_view_angle_pose_clothes_gamescreen__
+foreshortening, perspective, __composition_view_angle_pose_clothes_gamescreen__

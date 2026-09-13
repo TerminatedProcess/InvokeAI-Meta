@@ -1,0 +1,244 @@
+# Krea 2 NSFW FANTASY-EPIC templates (Model A #20 — artistic-nude / semi-NSFW illustration)
+# Tags: __uw-krea2-nsfw/router|template|leaf/*__  (SAME root as room/theme/fantasy files)
+# Root key: uw-krea2-nsfw
+# Hard rule: register ONLY under fantasy-epic routers — NEVER room/theme/vanilla-action/casting/
+#   core-fantasy/fantasy-selfie/fantasy-action/monster-action (Model A #20)
+# Pulls: __uw-shared/common/*__ + __uw-shared/fantasy/*__ only
+# Treatment ALWAYS illustration-epic. Landscape L2s = soft-bare nude scenic; sorceress = portrait lace.
+# Valkyrie/goddess stay OFF photoreal forest/castle/tavern/ruins identity routers (gate).
+# Orphan scenic envs (biolume/desert/arena/treasure) consume epic-only — never photoreal core routers.
+# version: 3
+uw-krea2-nsfw:
+  router:
+    # Landscape-first — 7 nude scenic L2s (aspect purity; sorceress is portrait)
+    landscape-fantasy-epic-pics:
+    - 3::__uw-krea2-nsfw/template/fantasy-epic-valkyrie-peak__
+    - 3::__uw-krea2-nsfw/template/fantasy-epic-nymph-waterfall__
+    - 3::__uw-krea2-nsfw/template/fantasy-epic-goddess-cliff__
+    - 2::__uw-krea2-nsfw/template/fantasy-epic-nymph-biolume__
+    - 2::__uw-krea2-nsfw/template/fantasy-epic-blood-elf-desert__
+    - 2::__uw-krea2-nsfw/template/fantasy-epic-valkyrie-arena__
+    - 2::__uw-krea2-nsfw/template/fantasy-epic-goblin-treasure__
+
+    # Portrait — sorceress window (semi-NSFW lace interior)
+    portrait-fantasy-epic-pics:
+    - __uw-krea2-nsfw/template/fantasy-epic-sorceress-window__
+
+  template:
+    fantasy-epic-valkyrie-peak:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-epic-valkyrie-peak/medium__
+        __uw-krea2-nsfw/leaf/fantasy-epic-valkyrie-peak/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-valkyrie-peak/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-valkyrie-peak/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-valkyrie-peak/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-valkyrie-peak/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-valkyrie-peak/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-valkyrie-peak/treatment__. [23:9]
+    fantasy-epic-nymph-waterfall:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-epic-nymph-waterfall/medium__
+        __uw-krea2-nsfw/leaf/fantasy-epic-nymph-waterfall/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-nymph-waterfall/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-nymph-waterfall/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-nymph-waterfall/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-nymph-waterfall/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-nymph-waterfall/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-nymph-waterfall/treatment__. [23:9]
+    fantasy-epic-goddess-cliff:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-epic-goddess-cliff/medium__
+        __uw-krea2-nsfw/leaf/fantasy-epic-goddess-cliff/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-goddess-cliff/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-goddess-cliff/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-goddess-cliff/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-goddess-cliff/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-goddess-cliff/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-goddess-cliff/treatment__. [23:9]
+    fantasy-epic-nymph-biolume:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-epic-nymph-biolume/medium__
+        __uw-krea2-nsfw/leaf/fantasy-epic-nymph-biolume/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-nymph-biolume/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-nymph-biolume/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-nymph-biolume/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-nymph-biolume/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-nymph-biolume/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-nymph-biolume/treatment__. [23:9]
+    fantasy-epic-blood-elf-desert:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-epic-blood-elf-desert/medium__
+        __uw-krea2-nsfw/leaf/fantasy-epic-blood-elf-desert/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-blood-elf-desert/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-blood-elf-desert/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-blood-elf-desert/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-blood-elf-desert/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-blood-elf-desert/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-blood-elf-desert/treatment__. [23:9]
+    fantasy-epic-valkyrie-arena:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-epic-valkyrie-arena/medium__
+        __uw-krea2-nsfw/leaf/fantasy-epic-valkyrie-arena/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-valkyrie-arena/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-valkyrie-arena/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-valkyrie-arena/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-valkyrie-arena/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-valkyrie-arena/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-valkyrie-arena/treatment__. [23:9]
+    fantasy-epic-goblin-treasure:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-epic-goblin-treasure/medium__
+        __uw-krea2-nsfw/leaf/fantasy-epic-goblin-treasure/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-goblin-treasure/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-goblin-treasure/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-goblin-treasure/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-goblin-treasure/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-goblin-treasure/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-goblin-treasure/treatment__. [23:9]
+    fantasy-epic-sorceress-window:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-epic-sorceress-window/medium__
+        __uw-krea2-nsfw/leaf/fantasy-epic-sorceress-window/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-sorceress-window/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-sorceress-window/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-sorceress-window/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-sorceress-window/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-sorceress-window/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-epic-sorceress-window/treatment__. [3:4]
+  leaf:
+    fantasy-epic-valkyrie-peak:
+      medium:
+      - __uw-shared/fantasy/shot/landscape-cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-paragraph/valkyrie__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-epic-valkyrie-peak__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/mountain-peak-landscape__
+      lighting:
+      - __uw-shared/fantasy/lighting/mountain-peak-landscape__
+      camera:
+      - __uw-shared/fantasy/camera/landscape-cinematic__
+      treatment:
+      - __uw-shared/common/treatment/illustration-epic__
+    fantasy-epic-nymph-waterfall:
+      medium:
+      - __uw-shared/fantasy/shot/landscape-cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-paragraph/nymph__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-epic-nymph-waterfall__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/waterfall-pool-landscape__
+      lighting:
+      - __uw-shared/fantasy/lighting/waterfall-pool-landscape__
+      camera:
+      - __uw-shared/fantasy/camera/landscape-cinematic__
+      treatment:
+      - __uw-shared/common/treatment/illustration-epic__
+    fantasy-epic-goddess-cliff:
+      medium:
+      - __uw-shared/fantasy/shot/landscape-cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-paragraph/goddess__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-epic-goddess-cliff__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/cliff-valley-landscape__
+      lighting:
+      - __uw-shared/fantasy/lighting/cliff-valley-landscape__
+      camera:
+      - __uw-shared/fantasy/camera/landscape-cinematic__
+      treatment:
+      - __uw-shared/common/treatment/illustration-epic__
+    fantasy-epic-nymph-biolume:
+      medium:
+      - __uw-shared/fantasy/shot/landscape-cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-paragraph/nymph__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-epic-nymph-biolume__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/biolume-forest-night__
+      lighting:
+      - __uw-shared/fantasy/lighting/biolume-forest-night__
+      camera:
+      - __uw-shared/fantasy/camera/landscape-cinematic__
+      treatment:
+      - __uw-shared/common/treatment/illustration-epic__
+    fantasy-epic-blood-elf-desert:
+      medium:
+      - __uw-shared/fantasy/shot/landscape-cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-paragraph/blood-elf__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-epic-blood-elf-desert__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/desert-temple__
+      lighting:
+      - __uw-shared/fantasy/lighting/desert-temple__
+      camera:
+      - __uw-shared/fantasy/camera/landscape-cinematic__
+      treatment:
+      - __uw-shared/common/treatment/illustration-epic__
+    fantasy-epic-valkyrie-arena:
+      medium:
+      - __uw-shared/fantasy/shot/landscape-cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-paragraph/valkyrie__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-epic-valkyrie-arena__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/arena-colosseum__
+      lighting:
+      - __uw-shared/fantasy/lighting/arena-colosseum__
+      camera:
+      - __uw-shared/fantasy/camera/landscape-cinematic__
+      treatment:
+      - __uw-shared/common/treatment/illustration-epic__
+    fantasy-epic-goblin-treasure:
+      medium:
+      - __uw-shared/fantasy/shot/landscape-cinematic__
+      subject:
+      - __uw-shared/fantasy/identity-paragraph/goblin__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-epic-goblin-treasure__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/soft-bare__
+      environment:
+      - __uw-shared/fantasy/environment/treasure-chamber__
+      lighting:
+      - __uw-shared/fantasy/lighting/treasure-chamber__
+      camera:
+      - __uw-shared/fantasy/camera/landscape-cinematic__
+      treatment:
+      - __uw-shared/common/treatment/illustration-epic__
+    fantasy-epic-sorceress-window:
+      medium:
+      - __uw-shared/fantasy/shot/intimate-portrait__
+      subject:
+      - __uw-shared/fantasy/identity-paragraph/human-enchanted__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-epic-sorceress-window__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/sorceress-lace__
+      environment:
+      - __uw-shared/fantasy/environment/rustic-window-room__
+      lighting:
+      - __uw-shared/fantasy/lighting/rustic-window-room__
+      camera:
+      - __uw-shared/fantasy/camera/intimate-portrait__
+      treatment:
+      - __uw-shared/common/treatment/illustration-epic__

@@ -1,0 +1,1868 @@
+﻿# Krea 2 NSFW INTIMATE-ACTION templates (separate product)
+# Tags: __uw-krea2-nsfw/router|template|leaf/*__  (SAME root as room file)
+# Root key: uw-krea2-nsfw
+# Hard rule: register action L2s ONLY under action routers — never room routers
+# Bus: scene-locked location (action-bus-*) — not a separate product; convenience bus routers OK
+# Aspect purity: landscape L2s stay OFF portrait routers
+# version: 38
+# 2026-08-13: Missionary pose absorbs coupling; delete scene-geometry leaf.
+# 2026-08-02: Missionary POV — insert scene-geometry leaf (missionary-coupling) before subject; opener harden lives in shared-nsfw v128.
+# 2026-08-02: Missionary pose-lock — missionary-pov medium → shot/action-missionary-pov; wardrobe → action-missionary (split from riding-cowgirl lean-into-lens).
+# 2026-08-02: Retarget fingering/toy LoRA embeds to nsfw/acts/ (post LoRA library reorg).
+# 2026-07-30: Batch B landscape missionary — action-partner-missionary-wide + creampie-missionary-wide dual-subject extended assembly; landscape shot/finish.
+# 2026-07-30: Tier 1 missionary rollout — anal-missionary, creampie-missionary, missionary-hotel clone dual-subject side-view assembly from pilot.
+# 2026-07-30: Batch A review — missionary leaf camera → intimate-documentary; treatment → finish/missionary-side (correlated).
+# 2026-07-30: Batch B missionary reference alignment — dual-subject side medium + scene-geometry + partner body/action leaves; amateur-phone weighted.
+# 2026-07-30: Batch A missionary pose coherence — action-partner-missionary leaf → shot/action-missionary-front + env bed + candid-35mm + natural-action.
+# 2026-07-29: action-solo-toy embed krea2 dildo in pussy @0.75 + kreadildoinpussy (Batch B).
+# 2026-07-29: action-solo-fingering (+ mirror-selfie) retarget LoRA to krea2/sex-acts/EasonnLi/krea2-masturbation (dead poses path removed).
+# 2026-07-28: action-solo-fingering (+ mirror-selfie L2) embed krea2-masturbation @0.75 + zitmast; mirror-selfie L2 [9:16].
+# 2026-07-28: action-solo-fingering medium → shot/action-fingering-front (front-only openers).
+# 2026-07-26: Partner/bus L2 assembly ? wardrobe before pose so female wardrobe never follows partner-cue.
+# 2026-07-26: Task 5 Batch C — anal + creampie harder L2s on action routers only.
+uw-krea2-nsfw:
+  router:
+    # Phase 5 — explicit action / partner family (separate product; NEVER register into room routers)
+    # Master union of all portrait action L2s (solo + partner + portrait bus) — landscape L2s excluded
+    portrait-intimate-action-pics:
+    - __uw-krea2-nsfw/template/action-solo-fingering__
+    - __uw-krea2-nsfw/template/action-solo-fingering-mirror-selfie__
+    - __uw-krea2-nsfw/template/action-solo-toy__
+    - __uw-krea2-nsfw/template/action-solo-hitachi__
+    - __uw-krea2-nsfw/template/action-solo-panties-aside__
+    - __uw-krea2-nsfw/template/action-solo-masturbating__
+    - __uw-krea2-nsfw/template/action-solo-selfie__
+    - __uw-krea2-nsfw/template/action-partner-missionary__
+    - __uw-krea2-nsfw/template/action-partner-cowgirl__
+    - __uw-krea2-nsfw/template/riding-cowgirl__
+    - __uw-krea2-nsfw/template/action-partner-cowgirl-pov-lean__
+    - __uw-krea2-nsfw/template/action-partner-oral__
+    - __uw-krea2-nsfw/template/action-partner-doggystyle__
+    - __uw-krea2-nsfw/template/action-partner-anal-doggystyle__
+    - __uw-krea2-nsfw/template/action-partner-anal-missionary__
+    - __uw-krea2-nsfw/template/action-partner-creampie-missionary__
+    - __uw-krea2-nsfw/template/action-partner-creampie-doggystyle__
+    - __uw-krea2-nsfw/template/action-partner-reverse-cowgirl__
+    - __uw-krea2-nsfw/template/action-partner-handjob__
+    - __uw-krea2-nsfw/template/action-partner-giving-oral__
+    - __uw-krea2-nsfw/template/action-partner-prone__
+    - __uw-krea2-nsfw/template/action-partner-spooning__
+    - __uw-krea2-nsfw/template/action-partner-standing__
+    - __uw-krea2-nsfw/template/action-partner-missionary-pov__
+    - __uw-krea2-nsfw/template/action-partner-giving-oral-poolside__
+    - __uw-krea2-nsfw/template/action-partner-doggystyle-kitchen__
+    - __uw-krea2-nsfw/template/action-partner-deepthroat-shower__
+    - __uw-krea2-nsfw/template/action-partner-deepthroat__
+    - __uw-krea2-nsfw/template/action-partner-giving-oral-balcony__
+    - __uw-krea2-nsfw/template/action-solo-afterglow-spread__
+    - __uw-krea2-nsfw/template/action-partner-facial__
+    - __uw-krea2-nsfw/template/action-partner-facial-selfie-outdoor__
+    - __uw-krea2-nsfw/template/action-partner-missionary-hotel__
+    - __uw-krea2-nsfw/template/action-partner-standing-apartment__
+    - __uw-krea2-nsfw/template/action-partner-cowgirl-living-room__
+    - __uw-krea2-nsfw/template/action-partner-doggystyle-closet__
+    - __uw-krea2-nsfw/template/action-partner-car-backseat__
+    - __uw-krea2-nsfw/template/action-partner-doggystyle-pov__
+    - __uw-krea2-nsfw/template/action-partner-giving-oral-pov__
+    - __uw-krea2-nsfw/template/action-partner-selfie__
+    - __uw-krea2-nsfw/template/action-bus-reverse-ride__
+    - __uw-krea2-nsfw/template/action-bus-rail-lifted__
+    - __uw-krea2-nsfw/template/action-bus-seat-doggystyle__
+
+    # Solo sub-router (C1 + selfie)
+    portrait-intimate-action-solo-pics:
+    - __uw-krea2-nsfw/template/action-solo-fingering__
+    - __uw-krea2-nsfw/template/action-solo-fingering-mirror-selfie__
+    - __uw-krea2-nsfw/template/action-solo-toy__
+    - __uw-krea2-nsfw/template/action-solo-hitachi__
+    - __uw-krea2-nsfw/template/action-solo-panties-aside__
+    - __uw-krea2-nsfw/template/action-solo-masturbating__
+    - __uw-krea2-nsfw/template/action-solo-selfie__
+    - __uw-krea2-nsfw/template/action-solo-afterglow-spread__
+
+    # Partner sub-router (C1 + missionary-pov + scene-locked + portrait bus)
+    portrait-intimate-action-partner-pics:
+    - __uw-krea2-nsfw/template/action-partner-missionary__
+    - __uw-krea2-nsfw/template/action-partner-cowgirl__
+    - __uw-krea2-nsfw/template/riding-cowgirl__
+    - __uw-krea2-nsfw/template/action-partner-cowgirl-pov-lean__
+    - __uw-krea2-nsfw/template/action-partner-oral__
+    - __uw-krea2-nsfw/template/action-partner-doggystyle__
+    - __uw-krea2-nsfw/template/action-partner-anal-doggystyle__
+    - __uw-krea2-nsfw/template/action-partner-anal-missionary__
+    - __uw-krea2-nsfw/template/action-partner-creampie-missionary__
+    - __uw-krea2-nsfw/template/action-partner-creampie-doggystyle__
+    - __uw-krea2-nsfw/template/action-partner-reverse-cowgirl__
+    - __uw-krea2-nsfw/template/action-partner-handjob__
+    - __uw-krea2-nsfw/template/action-partner-giving-oral__
+    - __uw-krea2-nsfw/template/action-partner-prone__
+    - __uw-krea2-nsfw/template/action-partner-spooning__
+    - __uw-krea2-nsfw/template/action-partner-standing__
+    - __uw-krea2-nsfw/template/action-partner-missionary-pov__
+    - __uw-krea2-nsfw/template/action-partner-giving-oral-poolside__
+    - __uw-krea2-nsfw/template/action-partner-doggystyle-kitchen__
+    - __uw-krea2-nsfw/template/action-partner-deepthroat-shower__
+    - __uw-krea2-nsfw/template/action-partner-deepthroat__
+    - __uw-krea2-nsfw/template/action-partner-giving-oral-balcony__
+    - __uw-krea2-nsfw/template/action-partner-facial__
+    - __uw-krea2-nsfw/template/action-partner-facial-selfie-outdoor__
+    - __uw-krea2-nsfw/template/action-partner-missionary-hotel__
+    - __uw-krea2-nsfw/template/action-partner-standing-apartment__
+    - __uw-krea2-nsfw/template/action-partner-cowgirl-living-room__
+    - __uw-krea2-nsfw/template/action-partner-doggystyle-closet__
+    - __uw-krea2-nsfw/template/action-partner-car-backseat__
+    - __uw-krea2-nsfw/template/action-partner-doggystyle-pov__
+    - __uw-krea2-nsfw/template/action-partner-giving-oral-pov__
+    - __uw-krea2-nsfw/template/action-partner-selfie__
+    - __uw-krea2-nsfw/template/action-bus-reverse-ride__
+    - __uw-krea2-nsfw/template/action-bus-rail-lifted__
+    - __uw-krea2-nsfw/template/action-bus-seat-doggystyle__
+
+    # Landscape-only action router — NEVER on portrait routers
+    landscape-intimate-action-pics:
+    - __uw-krea2-nsfw/template/action-partner-spooning-wide__
+    - __uw-krea2-nsfw/template/action-partner-side-lying__
+    - __uw-krea2-nsfw/template/action-partner-doggystyle-wide__
+    - __uw-krea2-nsfw/template/action-partner-anal-doggystyle-wide__
+    - __uw-krea2-nsfw/template/action-partner-missionary-wide__
+    - __uw-krea2-nsfw/template/action-partner-creampie-missionary-wide__
+    - __uw-krea2-nsfw/template/action-partner-prone-wide__
+    - __uw-krea2-nsfw/template/action-partner-standing-wide__
+    - __uw-krea2-nsfw/template/action-partner-cowgirl-wide__
+    - __uw-krea2-nsfw/template/action-solo-reclined-wide__
+    - __uw-krea2-nsfw/template/action-partner-oral-wide__
+    - __uw-krea2-nsfw/template/action-partner-reverse-cowgirl-wide__
+    - __uw-krea2-nsfw/template/action-partner-giving-oral-wide__
+    - __uw-krea2-nsfw/template/action-partner-handjob-wide__
+    - __uw-krea2-nsfw/template/action-solo-hitachi-wide__
+    - __uw-krea2-nsfw/template/action-bus-bridge-seat__
+
+    # Soft (non-hot) — demoted from master/partner/landscape; never room routers
+    portrait-intimate-action-soft-pics:
+    - __uw-krea2-nsfw/template/action-partner-massage__
+    - __uw-krea2-nsfw/template/action-partner-implied-oral__
+
+    landscape-intimate-action-soft-pics:
+    - __uw-krea2-nsfw/template/action-partner-massage-wide__
+
+    # Bus convenience filters (location scene-locks — not a separate product)
+    portrait-intimate-action-bus-pics:
+    - __uw-krea2-nsfw/template/action-bus-reverse-ride__
+    - __uw-krea2-nsfw/template/action-bus-rail-lifted__
+    - __uw-krea2-nsfw/template/action-bus-seat-doggystyle__
+
+    landscape-intimate-action-bus-pics:
+    - __uw-krea2-nsfw/template/action-bus-bridge-seat__
+
+  template:
+    action-solo-fingering:
+    - >-
+        __uw-krea2-nsfw/leaf/action-solo-fingering/medium__
+        __uw-krea2-nsfw/leaf/action-solo-fingering/subject__.
+        __uw-krea2-nsfw/leaf/action-solo-fingering/pose__,
+        __uw-krea2-nsfw/leaf/action-solo-fingering/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-solo-fingering/environment__,
+        __uw-krea2-nsfw/leaf/action-solo-fingering/lighting__,
+        __uw-krea2-nsfw/leaf/action-solo-fingering/camera__,
+        __uw-krea2-nsfw/leaf/action-solo-fingering/treatment__. [3:4]
+    action-solo-fingering-mirror-selfie:
+    - >-
+        __uw-krea2-nsfw/leaf/action-solo-fingering-mirror-selfie/medium__
+        __uw-krea2-nsfw/leaf/action-solo-fingering-mirror-selfie/subject__.
+        __uw-krea2-nsfw/leaf/action-solo-fingering-mirror-selfie/pose__,
+        __uw-krea2-nsfw/leaf/action-solo-fingering-mirror-selfie/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-solo-fingering-mirror-selfie/environment__,
+        __uw-krea2-nsfw/leaf/action-solo-fingering-mirror-selfie/lighting__,
+        __uw-krea2-nsfw/leaf/action-solo-fingering-mirror-selfie/camera__,
+        __uw-krea2-nsfw/leaf/action-solo-fingering-mirror-selfie/treatment__. [9:16]
+    action-solo-toy:
+    - >-
+        __uw-krea2-nsfw/leaf/action-solo-toy/medium__
+        __uw-krea2-nsfw/leaf/action-solo-toy/subject__.
+        __uw-krea2-nsfw/leaf/action-solo-toy/pose__,
+        __uw-krea2-nsfw/leaf/action-solo-toy/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-solo-toy/environment__,
+        __uw-krea2-nsfw/leaf/action-solo-toy/lighting__,
+        __uw-krea2-nsfw/leaf/action-solo-toy/camera__,
+        __uw-krea2-nsfw/leaf/action-solo-toy/treatment__. [3:4]
+    action-solo-hitachi:
+    - >-
+        __uw-krea2-nsfw/leaf/action-solo-hitachi/medium__
+        __uw-krea2-nsfw/leaf/action-solo-hitachi/subject__.
+        __uw-krea2-nsfw/leaf/action-solo-hitachi/pose__,
+        __uw-krea2-nsfw/leaf/action-solo-hitachi/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-solo-hitachi/environment__,
+        __uw-krea2-nsfw/leaf/action-solo-hitachi/lighting__,
+        __uw-krea2-nsfw/leaf/action-solo-hitachi/camera__,
+        __uw-krea2-nsfw/leaf/action-solo-hitachi/treatment__. [3:4]
+    action-solo-panties-aside:
+    - >-
+        __uw-krea2-nsfw/leaf/action-solo-panties-aside/medium__
+        __uw-krea2-nsfw/leaf/action-solo-panties-aside/subject__.
+        __uw-krea2-nsfw/leaf/action-solo-panties-aside/pose__,
+        __uw-krea2-nsfw/leaf/action-solo-panties-aside/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-solo-panties-aside/environment__,
+        __uw-krea2-nsfw/leaf/action-solo-panties-aside/lighting__,
+        __uw-krea2-nsfw/leaf/action-solo-panties-aside/camera__,
+        __uw-krea2-nsfw/leaf/action-solo-panties-aside/treatment__. [3:4]
+    action-partner-missionary:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-missionary/medium__
+        __uw-krea2-nsfw/leaf/action-partner-missionary/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-missionary/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary/partner-body__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary/partner-action__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary/treatment__. [3:4]
+    action-partner-cowgirl:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl/medium__
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl/treatment__. [3:4]
+    riding-cowgirl:
+    - >-
+        __uw-krea2-nsfw/leaf/riding-cowgirl/medium__
+        __uw-krea2-nsfw/leaf/riding-cowgirl/subject__.
+        __uw-krea2-nsfw/leaf/riding-cowgirl/pose__,
+        __uw-krea2-nsfw/leaf/riding-cowgirl/wardrobe__,
+        __uw-krea2-nsfw/leaf/riding-cowgirl/environment__,
+        __uw-krea2-nsfw/leaf/riding-cowgirl/lighting__,
+        __uw-krea2-nsfw/leaf/riding-cowgirl/camera__,
+        __uw-krea2-nsfw/leaf/riding-cowgirl/treatment__. [3:4]
+    action-partner-cowgirl-pov-lean:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-pov-lean/medium__
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-pov-lean/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-pov-lean/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-pov-lean/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-pov-lean/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-pov-lean/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-pov-lean/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-pov-lean/treatment__. [9:16]
+    action-partner-oral:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-oral/medium__
+        __uw-krea2-nsfw/leaf/action-partner-oral/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-oral/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-oral/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-oral/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-oral/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-oral/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-oral/treatment__. [3:4]
+    action-partner-implied-oral:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-implied-oral/medium__
+        __uw-krea2-nsfw/leaf/action-partner-implied-oral/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-implied-oral/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-implied-oral/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-implied-oral/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-implied-oral/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-implied-oral/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-implied-oral/treatment__. [3:4]
+    action-partner-doggystyle:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle/medium__
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle/treatment__. [3:4]
+    action-partner-anal-doggystyle:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-anal-doggystyle/medium__
+        __uw-krea2-nsfw/leaf/action-partner-anal-doggystyle/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-anal-doggystyle/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-anal-doggystyle/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-anal-doggystyle/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-anal-doggystyle/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-anal-doggystyle/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-anal-doggystyle/treatment__. [3:4]
+    action-partner-anal-missionary:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-anal-missionary/medium__
+        __uw-krea2-nsfw/leaf/action-partner-anal-missionary/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-anal-missionary/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-anal-missionary/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-anal-missionary/partner-body__,
+        __uw-krea2-nsfw/leaf/action-partner-anal-missionary/partner-action__,
+        __uw-krea2-nsfw/leaf/action-partner-anal-missionary/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-anal-missionary/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-anal-missionary/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-anal-missionary/treatment__. [3:4]
+    action-partner-creampie-missionary:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary/medium__
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary/partner-body__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary/partner-action__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary/treatment__. [3:4]
+    action-partner-creampie-doggystyle:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-creampie-doggystyle/medium__
+        __uw-krea2-nsfw/leaf/action-partner-creampie-doggystyle/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-creampie-doggystyle/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-doggystyle/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-doggystyle/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-doggystyle/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-doggystyle/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-doggystyle/treatment__. [3:4]
+    action-partner-reverse-cowgirl:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-reverse-cowgirl/medium__
+        __uw-krea2-nsfw/leaf/action-partner-reverse-cowgirl/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-reverse-cowgirl/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-reverse-cowgirl/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-reverse-cowgirl/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-reverse-cowgirl/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-reverse-cowgirl/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-reverse-cowgirl/treatment__. [3:4]
+    action-partner-massage:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-massage/medium__
+        __uw-krea2-nsfw/leaf/action-partner-massage/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-massage/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-massage/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-massage/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-massage/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-massage/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-massage/treatment__. [3:4]
+    action-solo-masturbating:
+    - >-
+        __uw-krea2-nsfw/leaf/action-solo-masturbating/medium__
+        __uw-krea2-nsfw/leaf/action-solo-masturbating/subject__.
+        __uw-krea2-nsfw/leaf/action-solo-masturbating/pose__,
+        __uw-krea2-nsfw/leaf/action-solo-masturbating/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-solo-masturbating/environment__,
+        __uw-krea2-nsfw/leaf/action-solo-masturbating/lighting__,
+        __uw-krea2-nsfw/leaf/action-solo-masturbating/camera__,
+        __uw-krea2-nsfw/leaf/action-solo-masturbating/treatment__. [3:4]
+    action-partner-handjob:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-handjob/medium__
+        __uw-krea2-nsfw/leaf/action-partner-handjob/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-handjob/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-handjob/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-handjob/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-handjob/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-handjob/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-handjob/treatment__. [3:4]
+    action-partner-giving-oral:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral/medium__
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral/treatment__. [3:4]
+    action-partner-prone:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-prone/medium__
+        __uw-krea2-nsfw/leaf/action-partner-prone/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-prone/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-prone/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-prone/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-prone/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-prone/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-prone/treatment__. [3:4]
+    action-partner-spooning:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-spooning/medium__
+        __uw-krea2-nsfw/leaf/action-partner-spooning/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-spooning/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-spooning/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-spooning/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-spooning/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-spooning/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-spooning/treatment__. [3:4]
+    action-partner-standing:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-standing/medium__
+        __uw-krea2-nsfw/leaf/action-partner-standing/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-standing/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-standing/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-standing/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-standing/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-standing/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-standing/treatment__. [3:4]
+    action-solo-selfie:
+    - >-
+        __uw-krea2-nsfw/leaf/action-solo-selfie/medium__
+        __uw-krea2-nsfw/leaf/action-solo-selfie/subject__.
+        __uw-krea2-nsfw/leaf/action-solo-selfie/pose__,
+        __uw-krea2-nsfw/leaf/action-solo-selfie/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-solo-selfie/environment__,
+        __uw-krea2-nsfw/leaf/action-solo-selfie/lighting__,
+        __uw-krea2-nsfw/leaf/action-solo-selfie/camera__,
+        __uw-krea2-nsfw/leaf/action-solo-selfie/treatment__. [9:16]
+    action-partner-spooning-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-spooning-wide/medium__
+        __uw-krea2-nsfw/leaf/action-partner-spooning-wide/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-spooning-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-spooning-wide/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-spooning-wide/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-spooning-wide/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-spooning-wide/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-spooning-wide/treatment__. [4:3]
+    action-partner-side-lying:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-side-lying/medium__
+        __uw-krea2-nsfw/leaf/action-partner-side-lying/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-side-lying/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-side-lying/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-side-lying/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-side-lying/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-side-lying/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-side-lying/treatment__. [4:3]
+    action-partner-doggystyle-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-wide/medium__
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-wide/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-wide/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-wide/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-wide/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-wide/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-wide/treatment__. [16:9]
+    action-partner-anal-doggystyle-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-anal-doggystyle-wide/medium__
+        __uw-krea2-nsfw/leaf/action-partner-anal-doggystyle-wide/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-anal-doggystyle-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-anal-doggystyle-wide/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-anal-doggystyle-wide/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-anal-doggystyle-wide/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-anal-doggystyle-wide/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-anal-doggystyle-wide/treatment__. [16:9]
+    action-partner-missionary-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-missionary-wide/medium__
+        __uw-krea2-nsfw/leaf/action-partner-missionary-wide/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-missionary-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-wide/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-wide/partner-body__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-wide/partner-action__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-wide/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-wide/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-wide/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-wide/treatment__. [16:9]
+    action-partner-creampie-missionary-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary-wide/medium__
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary-wide/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary-wide/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary-wide/partner-body__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary-wide/partner-action__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary-wide/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary-wide/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary-wide/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-creampie-missionary-wide/treatment__. [16:9]
+    action-partner-prone-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-prone-wide/medium__
+        __uw-krea2-nsfw/leaf/action-partner-prone-wide/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-prone-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-prone-wide/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-prone-wide/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-prone-wide/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-prone-wide/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-prone-wide/treatment__. [16:9]
+    action-partner-standing-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-standing-wide/medium__
+        __uw-krea2-nsfw/leaf/action-partner-standing-wide/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-standing-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-standing-wide/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-standing-wide/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-standing-wide/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-standing-wide/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-standing-wide/treatment__. [16:9]
+    action-partner-cowgirl-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-wide/medium__
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-wide/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-wide/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-wide/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-wide/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-wide/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-wide/treatment__. [16:9]
+    action-solo-reclined-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/action-solo-reclined-wide/medium__
+        __uw-krea2-nsfw/leaf/action-solo-reclined-wide/subject__.
+        __uw-krea2-nsfw/leaf/action-solo-reclined-wide/pose__,
+        __uw-krea2-nsfw/leaf/action-solo-reclined-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-solo-reclined-wide/environment__,
+        __uw-krea2-nsfw/leaf/action-solo-reclined-wide/lighting__,
+        __uw-krea2-nsfw/leaf/action-solo-reclined-wide/camera__,
+        __uw-krea2-nsfw/leaf/action-solo-reclined-wide/treatment__. [4:3]
+    action-partner-missionary-pov:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-missionary-pov/medium__
+        __uw-krea2-nsfw/leaf/action-partner-missionary-pov/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-missionary-pov/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-pov/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-pov/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-pov/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-pov/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-pov/treatment__. [3:4]
+    action-partner-giving-oral-poolside:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-poolside/medium__
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-poolside/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-poolside/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-poolside/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-poolside/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-poolside/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-poolside/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-poolside/treatment__. [3:4]
+    action-partner-doggystyle-kitchen:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-kitchen/medium__
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-kitchen/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-kitchen/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-kitchen/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-kitchen/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-kitchen/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-kitchen/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-kitchen/treatment__. [3:4]
+    action-partner-deepthroat-shower:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-deepthroat-shower/medium__
+        __uw-krea2-nsfw/leaf/action-partner-deepthroat-shower/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-deepthroat-shower/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-deepthroat-shower/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-deepthroat-shower/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-deepthroat-shower/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-deepthroat-shower/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-deepthroat-shower/treatment__. [3:4]
+    action-partner-deepthroat:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-deepthroat/medium__
+        __uw-krea2-nsfw/leaf/action-partner-deepthroat/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-deepthroat/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-deepthroat/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-deepthroat/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-deepthroat/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-deepthroat/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-deepthroat/treatment__. [3:4]
+    action-partner-giving-oral-balcony:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-balcony/medium__
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-balcony/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-balcony/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-balcony/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-balcony/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-balcony/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-balcony/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-balcony/treatment__. [3:4]
+    action-solo-afterglow-spread:
+    - >-
+        __uw-krea2-nsfw/leaf/action-solo-afterglow-spread/medium__
+        __uw-krea2-nsfw/leaf/action-solo-afterglow-spread/subject__.
+        __uw-krea2-nsfw/leaf/action-solo-afterglow-spread/pose__,
+        __uw-krea2-nsfw/leaf/action-solo-afterglow-spread/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-solo-afterglow-spread/environment__,
+        __uw-krea2-nsfw/leaf/action-solo-afterglow-spread/lighting__,
+        __uw-krea2-nsfw/leaf/action-solo-afterglow-spread/camera__,
+        __uw-krea2-nsfw/leaf/action-solo-afterglow-spread/treatment__. [3:4]
+    action-partner-facial:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-facial/medium__
+        __uw-krea2-nsfw/leaf/action-partner-facial/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-facial/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-facial/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-facial/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-facial/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-facial/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-facial/treatment__. [3:4]
+    action-partner-facial-selfie-outdoor:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-facial-selfie-outdoor/medium__
+        __uw-krea2-nsfw/leaf/action-partner-facial-selfie-outdoor/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-facial-selfie-outdoor/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-facial-selfie-outdoor/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-facial-selfie-outdoor/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-facial-selfie-outdoor/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-facial-selfie-outdoor/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-facial-selfie-outdoor/treatment__. [9:16]
+    action-bus-bridge-seat:
+    - >-
+        __uw-krea2-nsfw/leaf/action-bus-bridge-seat/medium__
+        __uw-krea2-nsfw/leaf/action-bus-bridge-seat/subject__.
+        __uw-krea2-nsfw/leaf/action-bus-bridge-seat/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-bus-bridge-seat/pose__,
+        __uw-krea2-nsfw/leaf/action-bus-bridge-seat/environment__,
+        __uw-krea2-nsfw/leaf/action-bus-bridge-seat/lighting__,
+        __uw-krea2-nsfw/leaf/action-bus-bridge-seat/camera__,
+        __uw-krea2-nsfw/leaf/action-bus-bridge-seat/treatment__. [16:9]
+    action-bus-reverse-ride:
+    - >-
+        __uw-krea2-nsfw/leaf/action-bus-reverse-ride/medium__
+        __uw-krea2-nsfw/leaf/action-bus-reverse-ride/subject__.
+        __uw-krea2-nsfw/leaf/action-bus-reverse-ride/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-bus-reverse-ride/pose__,
+        __uw-krea2-nsfw/leaf/action-bus-reverse-ride/environment__,
+        __uw-krea2-nsfw/leaf/action-bus-reverse-ride/lighting__,
+        __uw-krea2-nsfw/leaf/action-bus-reverse-ride/camera__,
+        __uw-krea2-nsfw/leaf/action-bus-reverse-ride/treatment__. [3:4]
+    action-bus-rail-lifted:
+    - >-
+        __uw-krea2-nsfw/leaf/action-bus-rail-lifted/medium__
+        __uw-krea2-nsfw/leaf/action-bus-rail-lifted/subject__.
+        __uw-krea2-nsfw/leaf/action-bus-rail-lifted/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-bus-rail-lifted/pose__,
+        __uw-krea2-nsfw/leaf/action-bus-rail-lifted/environment__,
+        __uw-krea2-nsfw/leaf/action-bus-rail-lifted/lighting__,
+        __uw-krea2-nsfw/leaf/action-bus-rail-lifted/camera__,
+        __uw-krea2-nsfw/leaf/action-bus-rail-lifted/treatment__. [3:4]
+    action-bus-seat-doggystyle:
+    - >-
+        __uw-krea2-nsfw/leaf/action-bus-seat-doggystyle/medium__
+        __uw-krea2-nsfw/leaf/action-bus-seat-doggystyle/subject__.
+        __uw-krea2-nsfw/leaf/action-bus-seat-doggystyle/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-bus-seat-doggystyle/pose__,
+        __uw-krea2-nsfw/leaf/action-bus-seat-doggystyle/environment__,
+        __uw-krea2-nsfw/leaf/action-bus-seat-doggystyle/lighting__,
+        __uw-krea2-nsfw/leaf/action-bus-seat-doggystyle/camera__,
+        __uw-krea2-nsfw/leaf/action-bus-seat-doggystyle/treatment__. [3:4]
+    action-partner-missionary-hotel:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-missionary-hotel/medium__
+        __uw-krea2-nsfw/leaf/action-partner-missionary-hotel/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-missionary-hotel/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-hotel/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-hotel/partner-body__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-hotel/partner-action__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-hotel/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-hotel/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-hotel/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-missionary-hotel/treatment__. [3:4]
+    action-partner-standing-apartment:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-standing-apartment/medium__
+        __uw-krea2-nsfw/leaf/action-partner-standing-apartment/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-standing-apartment/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-standing-apartment/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-standing-apartment/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-standing-apartment/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-standing-apartment/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-standing-apartment/treatment__. [3:4]
+    action-partner-cowgirl-living-room:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-living-room/medium__
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-living-room/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-living-room/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-living-room/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-living-room/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-living-room/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-living-room/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-cowgirl-living-room/treatment__. [3:4]
+    action-partner-doggystyle-closet:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-closet/medium__
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-closet/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-closet/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-closet/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-closet/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-closet/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-closet/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-closet/treatment__. [3:4]
+    action-partner-car-backseat:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-car-backseat/medium__
+        __uw-krea2-nsfw/leaf/action-partner-car-backseat/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-car-backseat/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-car-backseat/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-car-backseat/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-car-backseat/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-car-backseat/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-car-backseat/treatment__. [3:4]
+    action-partner-doggystyle-pov:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-pov/medium__
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-pov/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-pov/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-pov/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-pov/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-pov/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-pov/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-doggystyle-pov/treatment__. [3:4]
+    action-partner-giving-oral-pov:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-pov/medium__
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-pov/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-pov/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-pov/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-pov/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-pov/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-pov/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-pov/treatment__. [3:4]
+    action-partner-selfie:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-selfie/medium__
+        __uw-krea2-nsfw/leaf/action-partner-selfie/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-selfie/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-selfie/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-selfie/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-selfie/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-selfie/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-selfie/treatment__. [9:16]
+    action-partner-oral-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-oral-wide/medium__
+        __uw-krea2-nsfw/leaf/action-partner-oral-wide/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-oral-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-oral-wide/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-oral-wide/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-oral-wide/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-oral-wide/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-oral-wide/treatment__. [16:9]
+    action-partner-reverse-cowgirl-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-reverse-cowgirl-wide/medium__
+        __uw-krea2-nsfw/leaf/action-partner-reverse-cowgirl-wide/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-reverse-cowgirl-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-reverse-cowgirl-wide/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-reverse-cowgirl-wide/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-reverse-cowgirl-wide/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-reverse-cowgirl-wide/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-reverse-cowgirl-wide/treatment__. [16:9]
+    action-partner-giving-oral-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-wide/medium__
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-wide/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-wide/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-wide/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-wide/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-wide/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-giving-oral-wide/treatment__. [16:9]
+    action-partner-handjob-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-handjob-wide/medium__
+        __uw-krea2-nsfw/leaf/action-partner-handjob-wide/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-handjob-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-handjob-wide/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-handjob-wide/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-handjob-wide/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-handjob-wide/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-handjob-wide/treatment__. [16:9]
+    action-partner-massage-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/action-partner-massage-wide/medium__
+        __uw-krea2-nsfw/leaf/action-partner-massage-wide/subject__.
+        __uw-krea2-nsfw/leaf/action-partner-massage-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-partner-massage-wide/pose__,
+        __uw-krea2-nsfw/leaf/action-partner-massage-wide/environment__,
+        __uw-krea2-nsfw/leaf/action-partner-massage-wide/lighting__,
+        __uw-krea2-nsfw/leaf/action-partner-massage-wide/camera__,
+        __uw-krea2-nsfw/leaf/action-partner-massage-wide/treatment__. [16:9]
+    action-solo-hitachi-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/action-solo-hitachi-wide/medium__
+        __uw-krea2-nsfw/leaf/action-solo-hitachi-wide/subject__.
+        __uw-krea2-nsfw/leaf/action-solo-hitachi-wide/pose__,
+        __uw-krea2-nsfw/leaf/action-solo-hitachi-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-solo-hitachi-wide/environment__,
+        __uw-krea2-nsfw/leaf/action-solo-hitachi-wide/lighting__,
+        __uw-krea2-nsfw/leaf/action-solo-hitachi-wide/camera__,
+        __uw-krea2-nsfw/leaf/action-solo-hitachi-wide/treatment__. [16:9]
+  leaf:
+    action-solo-fingering:
+      medium:
+      - __uw-shared/nsfw/shot/action-fingering-front__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-solo-fingering__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-solo-fingering-mirror-selfie:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-solo-fingering-mirror-selfie__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-selfie__
+      environment:
+      - __uw-shared/nsfw/environment/action-fingering-mirror-selfie__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-solo-toy:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-solo-toy__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-solo-hitachi:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-solo-hitachi__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bare-intimate-reclined__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    action-solo-panties-aside:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-solo-panties-aside__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-panties-aside__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-missionary:
+      medium:
+      - __uw-shared/nsfw/shot/action-missionary-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-missionary__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-missionary__
+      partner-body:
+      - __uw-shared/nsfw/partner-body/male-missionary__
+      partner-action:
+      - __uw-shared/nsfw/partner-action/male-missionary-hands__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate-bed__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/intimate-documentary__
+      treatment:
+      - __uw-shared/nsfw/finish/missionary-side__
+    action-partner-cowgirl:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-cowgirl__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    riding-cowgirl:
+      medium:
+      - __uw-shared/nsfw/shot/action-pov__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-riding-cowgirl__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-pov-partial__
+      environment:
+      - __uw-shared/nsfw/environment/action-pov__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-cowgirl-pov-lean:
+      medium:
+      - __uw-shared/nsfw/shot/cowgirl-pov-from-below__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-cowgirl-pov-lean__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-cosplay-revealed__
+      environment:
+      - __uw-shared/nsfw/environment/action-cowgirl-pov-public__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-oral:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-oral__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    action-partner-implied-oral:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-implied-oral__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-doggystyle:
+      medium:
+      - __uw-shared/nsfw/shot/action-cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-doggystyle__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+    action-partner-anal-doggystyle:
+      medium:
+      - __uw-shared/nsfw/shot/action-cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-anal-doggystyle__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+    action-partner-anal-missionary:
+      medium:
+      - __uw-shared/nsfw/shot/action-missionary-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-anal-missionary__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-missionary__
+      partner-body:
+      - __uw-shared/nsfw/partner-body/male-missionary__
+      partner-action:
+      - __uw-shared/nsfw/partner-action/male-missionary-hands__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate-bed__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/intimate-documentary__
+      treatment:
+      - __uw-shared/nsfw/finish/missionary-side__
+    action-partner-creampie-missionary:
+      medium:
+      - __uw-shared/nsfw/shot/action-missionary-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-creampie-missionary__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-missionary__
+      partner-body:
+      - __uw-shared/nsfw/partner-body/male-missionary__
+      partner-action:
+      - __uw-shared/nsfw/partner-action/male-missionary-hands__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate-bed__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/intimate-documentary__
+      treatment:
+      - __uw-shared/nsfw/finish/missionary-side__
+    action-partner-creampie-doggystyle:
+      medium:
+      - __uw-shared/nsfw/shot/action-cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-creampie-doggystyle__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+    action-partner-reverse-cowgirl:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-reverse-cowgirl__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-massage:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-massage__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-massage__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-solo-masturbating:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-solo-masturbating__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-handjob:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-handjob__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    action-partner-giving-oral:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-giving-oral__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    action-partner-prone:
+      medium:
+      - __uw-shared/nsfw/shot/action-cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-prone__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+    action-partner-spooning:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-spooning__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-standing:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-standing__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-solo-selfie:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-solo-selfie__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-selfie__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-spooning-wide:
+      medium:
+      - __uw-shared/nsfw/shot/action-landscape__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-spooning-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-landscape__
+      environment:
+      - __uw-shared/nsfw/environment/action-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-side-lying:
+      medium:
+      - __uw-shared/nsfw/shot/action-landscape__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-side-lying__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-landscape__
+      environment:
+      - __uw-shared/nsfw/environment/action-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-doggystyle-wide:
+      medium:
+      - __uw-shared/nsfw/shot/action-landscape__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-doggystyle-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-landscape__
+      environment:
+      - __uw-shared/nsfw/environment/action-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+    action-partner-anal-doggystyle-wide:
+      medium:
+      - __uw-shared/nsfw/shot/action-landscape__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-anal-doggystyle-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-landscape__
+      environment:
+      - __uw-shared/nsfw/environment/action-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+    action-partner-missionary-wide:
+      medium:
+      - __uw-shared/nsfw/shot/action-missionary-landscape__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-missionary-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-missionary__
+      partner-body:
+      - __uw-shared/nsfw/partner-body/male-missionary__
+      partner-action:
+      - __uw-shared/nsfw/partner-action/male-missionary-hands__
+      environment:
+      - __uw-shared/nsfw/environment/action-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/intimate-documentary__
+      treatment:
+      - __uw-shared/nsfw/finish/missionary-landscape__
+    action-partner-creampie-missionary-wide:
+      medium:
+      - __uw-shared/nsfw/shot/action-missionary-landscape__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-creampie-missionary-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-missionary__
+      partner-body:
+      - __uw-shared/nsfw/partner-body/male-missionary__
+      partner-action:
+      - __uw-shared/nsfw/partner-action/male-missionary-hands__
+      environment:
+      - __uw-shared/nsfw/environment/action-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/intimate-documentary__
+      treatment:
+      - __uw-shared/nsfw/finish/missionary-landscape__
+    action-partner-prone-wide:
+      medium:
+      - __uw-shared/nsfw/shot/action-landscape__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-prone-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-landscape__
+      environment:
+      - __uw-shared/nsfw/environment/action-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+    action-partner-standing-wide:
+      medium:
+      - __uw-shared/nsfw/shot/action-landscape__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-standing-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-landscape__
+      environment:
+      - __uw-shared/nsfw/environment/action-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-cowgirl-wide:
+      medium:
+      - __uw-shared/nsfw/shot/action-landscape__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-cowgirl-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-landscape__
+      environment:
+      - __uw-shared/nsfw/environment/action-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-solo-reclined-wide:
+      medium:
+      - __uw-shared/nsfw/shot/action-landscape__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-solo-reclined-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-landscape__
+      environment:
+      - __uw-shared/nsfw/environment/action-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-missionary-pov:
+      medium:
+      - __uw-shared/nsfw/shot/action-missionary-pov__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-missionary-pov__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-missionary__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate-bed__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-giving-oral-poolside:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-giving-oral-poolside__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-jewel-harness__
+      environment:
+      - __uw-shared/nsfw/environment/action-poolside__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-poolside__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    action-partner-doggystyle-kitchen:
+      medium:
+      - __uw-shared/nsfw/shot/action-cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-doggystyle-kitchen__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-apron__
+      environment:
+      - __uw-shared/nsfw/environment/action-kitchen__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-kitchen__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+    action-partner-deepthroat-shower:
+      medium:
+      - __uw-shared/nsfw/shot/action-cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-deepthroat-shower__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-shower__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-shower__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+    action-partner-deepthroat:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-deepthroat__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    action-partner-giving-oral-balcony:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-giving-oral-balcony__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-balcony__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-balcony__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    action-solo-afterglow-spread:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-solo-afterglow-spread__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-facial:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-facial__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    action-partner-facial-selfie-outdoor:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-close-outdoor__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-facial-selfie-outdoor__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-selfie-outdoor__
+      environment:
+      - __uw-shared/nsfw/environment/outdoor-campus-path__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-bus-bridge-seat:
+      medium:
+      - __uw-shared/nsfw/shot/action-bus__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-bus-bridge-seat__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-bus__
+      environment:
+      - __uw-shared/nsfw/environment/action-bus__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-bus__
+      camera:
+      - __uw-shared/nsfw/camera/action-bus__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-bus-reverse-ride:
+      medium:
+      - __uw-shared/nsfw/shot/action-bus__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-bus-reverse-ride__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-bus__
+      environment:
+      - __uw-shared/nsfw/environment/action-bus__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-bus__
+      camera:
+      - __uw-shared/nsfw/camera/action-bus__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-bus-rail-lifted:
+      medium:
+      - __uw-shared/nsfw/shot/action-bus__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-bus-rail-lifted__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-bus__
+      environment:
+      - __uw-shared/nsfw/environment/action-bus__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-bus__
+      camera:
+      - __uw-shared/nsfw/camera/action-bus__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-bus-seat-doggystyle:
+      medium:
+      - __uw-shared/nsfw/shot/action-bus__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-bus-seat-doggystyle__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-bus__
+      environment:
+      - __uw-shared/nsfw/environment/action-bus__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-bus__
+      camera:
+      - __uw-shared/nsfw/camera/action-bus__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-missionary-hotel:
+      medium:
+      - __uw-shared/nsfw/shot/action-missionary-side__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-missionary-hotel__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-missionary__
+      partner-body:
+      - __uw-shared/nsfw/partner-body/male-missionary__
+      partner-action:
+      - __uw-shared/nsfw/partner-action/male-missionary-hands__
+      environment:
+      - __uw-shared/nsfw/environment/action-hotel__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-hotel__
+      camera:
+      - __uw-shared/nsfw/camera/intimate-documentary__
+      treatment:
+      - __uw-shared/nsfw/finish/missionary-side__
+    action-partner-standing-apartment:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-standing-apartment__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-apartment__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-apartment__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-cowgirl-living-room:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-cowgirl-living-room__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-living-room__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-living-room__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-doggystyle-closet:
+      medium:
+      - __uw-shared/nsfw/shot/action-cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-doggystyle-closet__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-closet__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-closet__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+    action-partner-car-backseat:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-car-backseat__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-car__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-car__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-doggystyle-pov:
+      medium:
+      - __uw-shared/nsfw/shot/action-pov__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-doggystyle-pov__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-pov-partial__
+      environment:
+      - __uw-shared/nsfw/environment/action-pov__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-giving-oral-pov:
+      medium:
+      - __uw-shared/nsfw/shot/action-pov__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-giving-oral-pov__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-pov-partial__
+      environment:
+      - __uw-shared/nsfw/environment/action-pov__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-selfie:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-selfie__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-selfie__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-oral-wide:
+      medium:
+      - __uw-shared/nsfw/shot/action-landscape__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-oral-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-landscape__
+      environment:
+      - __uw-shared/nsfw/environment/action-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-reverse-cowgirl-wide:
+      medium:
+      - __uw-shared/nsfw/shot/action-landscape__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-reverse-cowgirl-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-landscape__
+      environment:
+      - __uw-shared/nsfw/environment/action-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-giving-oral-wide:
+      medium:
+      - __uw-shared/nsfw/shot/action-landscape__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-giving-oral-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-landscape__
+      environment:
+      - __uw-shared/nsfw/environment/action-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-handjob-wide:
+      medium:
+      - __uw-shared/nsfw/shot/action-landscape__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-handjob-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-landscape__
+      environment:
+      - __uw-shared/nsfw/environment/action-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-partner-massage-wide:
+      medium:
+      - __uw-shared/nsfw/shot/action-landscape__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-partner-massage-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-landscape__
+      environment:
+      - __uw-shared/nsfw/environment/action-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-solo-hitachi-wide:
+      medium:
+      - __uw-shared/nsfw/shot/action-landscape__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-solo-hitachi-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-landscape__
+      environment:
+      - __uw-shared/nsfw/environment/action-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__

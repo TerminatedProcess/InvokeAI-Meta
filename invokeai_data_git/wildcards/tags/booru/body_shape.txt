@@ -1,0 +1,22 @@
+shortstack, wide hips
+skinny
+skinny, wide hips
+petite
+petite, wide hips
+petite, belly
+curvy
+curvy, ((toned, toned female):0.9)
+curvy, belly
+plump
+fat
+toned, toned female
+plump muscular, ((muscular female):0.9)
+muscular female
+mature female
+petite, wide hips, narrow waist
+petite, curvy
+petite, belly
+petite, thick arms
+petite, thick arms, thick thighs
+thick thighs
+thick arms
