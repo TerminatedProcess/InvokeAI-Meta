@@ -1,0 +1,2 @@
+__colors__ __clothes_bottoms_shorts_male__
+__colors__ __clothes_bottoms_pants_male__

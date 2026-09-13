@@ -1,0 +1,5 @@
+daphne dress, ((revealing clothes, cocktail dress):0.8)
+dongtan dress, ((taut dress, ((pencil dress):0.8), scoop neck):0.8)
+modakawa dress, ((halterneck, o-ring, hip vent, chain, clothing cutout, gold chain):0.8)
+virgin killer sweater, ((bare shoulders, backless outfit, naked sweater, ribbed sweater, sleeveless, sleeveless sweater, sleeveless turtleneck, sweater, turtleneck, turtleneck sweater, sideboob, clothing cutout):0.8), ((butt crack):0.6)
+see-through china babydoll, ((china dress, see-through clothes, see-through dress, china clothes, side-tie dress, backless dress, covered nipples):0.8), ((floral print, panties, side-tie panties):0.8)

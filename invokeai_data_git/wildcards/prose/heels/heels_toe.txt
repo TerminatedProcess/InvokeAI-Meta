@@ -1,0 +1,12 @@
+pointed-toe
+sharply pointed-toe
+almond-toe
+round-toe
+square-toe
+snub-toe
+closed-toe
+open-toe
+peep-toe
+sculpted-toe
+tapered-toe
+wide square-toe

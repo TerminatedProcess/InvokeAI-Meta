@@ -1,0 +1,15 @@
+all fours
+all fours, top-down bottom-up
+all fours, bear position
+kneeling
+kneeling, on one knee
+kneeling, leaning forward, on one knee
+kneeling, leaning back, on one knee
+kneeling, leaning on object, on one knee
+kneeling, leaning forward
+kneeling, leaning back
+kneeling, leaning on object
+squatting
+squatting, leaning forward
+squatting, leaning back
+squatting, leaning on object

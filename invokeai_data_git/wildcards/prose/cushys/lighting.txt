@@ -1,0 +1,111 @@
+natural lighting
+flat lighting
+backlight
+soft light
+studio lighting
+hard light
+rim light
+loop lighting
+broad lighting
+short lighting
+split lighting
+key light
+hair light
+waning light
+spotlit
+cinematic lighting
+moody lighting
+specular lighting
+volumetric lighting
+dramatic lighting
+Reflected light
+Direct light
+Indirect light
+Side lighting
+Sun Rays
+Nostalgic lighting
+Lens Flare
+Light caustics
+Motion blur
+Bloom light
+Black lighting
+Gel lighting
+color lighting
+Moonlight
+Sunlight
+Accent lighting
+Rembrandt lighting
+Candle light
+beautifully lit
+ambient lighting
+available light (natural/room light)
+diffuse lighting
+indirect lighting
+directional lighting
+underlighting
+top lighting
+overhead lighting
+backlit edge
+catchlight lighting
+bounce lighting
+fill lighting
+negative fill (using flags to deepen shadows)
+rim lighting (edge highlights)
+kicker light
+practical lighting (visible light sources in-frame)
+motivated lighting (light source matches a logical origin in scene)
+motivated backlight
+three-point lighting
+butterfly lighting
+clamshell lighting
+split-face lighting (often overlaps “split lighting”)
+broad vs. narrow lighting (more explicitly)
+overexposed lighting / high-key lighting
+underexposed lighting / low-key lighting
+high contrast lighting
+low contrast lighting
+chiaroscuro lighting
+silhouette lighting
+silhouette backlight
+silhouette edge lighting
+rim spill / light spill
+god rays / beam lighting
+light rays / light streaks
+haze / fog lighting (for atmosphere-driven beams)
+firelight / flicker lighting
+sunset lighting (golden hour)
+moonlight (cool, low-key)
+dawn/dusk lighting
+overcast lighting
+golden-hour lighting
+blue-hour lighting
+bioluminescent lighting
+crepuscular rays
+starlight lighting
+aurora borealis lighting
+dappled sunlight
+eclipse lighting
+albedo lighting
+noir lighting
+neon noir lighting
+tenebrism
+sfumato lighting
+motel lighting
+halftoning lighting
+gobos lighting
+cross-lighting
+glamour lighting
+broadside lighting
+monster lighting
+parabolic lighting
+ring-light lighting
+subsurface scattering
+ethereal lighting
+cyberpunk lighting
+subdued lighting
+harsh midday lighting
+prismatic lighting
+laser beam lighting
+strobe lighting
+phosphorescent lighting
+gaslamp lighting

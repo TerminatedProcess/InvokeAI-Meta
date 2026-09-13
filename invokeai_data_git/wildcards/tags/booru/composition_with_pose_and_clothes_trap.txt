@@ -1,0 +1,23 @@
+wide shot, perspective, __composition_view_angle_pose_clothes_trap__
+wide shot, perspective, __composition_view_angle_pose_clothes_trap__
+wide shot, perspective, __composition_view_angle_pose_clothes_trap__
+close-up, __composition_view_angle_pose_clothes_trap__
+upper body, __composition_view_angle_pose_clothes_trap__
+cowboy shot, __composition_view_angle_pose_clothes_trap__
+cowboy shot, __composition_view_angle_pose_clothes_trap__
+cowboy shot, __composition_view_angle_pose_clothes_trap__
+cowboy shot, __composition_view_angle_pose_clothes_trap__
+perspective, __composition_view_angle_pose_clothes_trap__
+selfie, perspective, depth of field, __composition_view_angle_pose_clothes_trap__
+selfie, perspective, __composition_view_angle_pose_clothes_trap__
+foreshortening, __composition_view_angle_pose_clothes_trap__
+foreshortening, perspective, __composition_view_angle_pose_clothes_trap__
+foreshortening, __composition_view_angle_pose_clothes_trap__
+depth of field, __composition_view_angle_pose_clothes_trap__
+__composition_view_angle_pose_clothes_trap__, arm out of frame
+__composition_view_angle_pose_clothes_trap__, foot out of frame
+(__composition_view_angle_pose_clothes_trap__)
+__composition_view_angle_pose_clothes_trap__, vanishing point
+full body, __composition_view_angle_pose_clothes_trap__
+fisheye, __composition_view_angle_pose_clothes_trap__
+((multiple views):0.8), ((__composition_multiple_view_type_clothes_trap__):0.9)

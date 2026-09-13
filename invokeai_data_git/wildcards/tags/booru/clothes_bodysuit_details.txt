@@ -1,0 +1,5 @@
+bodysuit, __colors__ bodysuit, skin tight
+bodysuit, __colors__ bodysuit, latex, skin tight
+bodysuit, ((multicolored bodysuit, __colors__ bodysuit, __colors__ bodysuit):0.8), skin tight
+bodysuit, __colors__ bodysuit, skin tight, sleeveless bodysuit
+bodysuit, ((multicolored bodysuit, __colors__ bodysuit, __colors__ bodysuit):0.8), skin tight, sleeveless bodysuit

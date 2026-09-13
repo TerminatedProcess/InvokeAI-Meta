@@ -1,0 +1,3 @@
+__clothes_outfits__, ((bulge):0.7),
+__clothes_outfits__, ((bulge):0.7), __clothes_accessories__
+__clothes_outfits__, ((bulge):0.7), ((__clothes_accessories__):0.9)

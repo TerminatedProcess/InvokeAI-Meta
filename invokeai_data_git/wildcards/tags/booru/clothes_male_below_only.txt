@@ -1,0 +1,3 @@
+__clothes_outfits_male__
+__clothes_outfits_male__, __clothes_accessories_male__
+__clothes_outfits_male__, ((__clothes_accessories_male__):0.9)

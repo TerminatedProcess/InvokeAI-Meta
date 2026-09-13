@@ -1,0 +1,5 @@
+__clothes_outfits_nsfw_trap__
+__clothes_outfits_nsfw_trap__, __clothes_accessories__
+__clothes_outfits_nsfw_trap__, __clothes_accessories__, ((__clothes_shoes__):0.8)
+__clothes_outfits_nsfw_trap__, ((__clothes_accessories__):0.8)
+__clothes_outfits_nsfw_trap__, ((__clothes_accessories__, __clothes_shoes__):0.8)

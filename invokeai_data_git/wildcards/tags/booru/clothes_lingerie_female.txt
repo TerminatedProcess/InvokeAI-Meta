@@ -1,0 +1,36 @@
+babydoll, __colors__ babydoll, __clothes_lingerie_bottoms__, __clothes_legwear__
+babydoll, __colors__ babydoll, __clothes_lingerie_bottoms__
+babydoll, __colors__ babydoll, no panties, __body_bare_female_crotch__
+bodystocking, __colors__ bodystocking, bodystocking only, ((covered nipples):0.9)
+bodystocking, __colors__ bodystocking, bodystocking only, ((covered nipples):0.9), see-through clothes
+bodystocking, __colors__ bodystocking, bodystocking only, ((covered nipples):0.9), see-through clothes, ((__body_bare_female_crotch__):0.8)
+__colors__ lingerie, bra, __clothes_bra_type__, __clothes_lingerie_bottoms__
+__colors__ lingerie, bra, __clothes_bra_type__, __clothes_lingerie_bottoms__, __clothes_legwear__
+__colors__ lingerie, bra, __clothes_bra_type__, __clothes_pantyhose__
+bra, __clothes_bra_type__, __colors__ bra, __clothes_lingerie_bottoms__
+bra, __clothes_bra_type__, __colors__ bra, __clothes_lingerie_bottoms__, __clothes_legwear__
+bra, __clothes_bra_type__, __colors__ bra, __clothes_pantyhose__
+no bra, __clothes_lingerie_bottoms__, ((__body_breast_details__, ((__body_areolae_details__):0.9)):0.8)
+no bra, __clothes_lingerie_bottoms__, ((__body_breast_details__, ((__body_areolae_details__):0.9)):0.8), __clothes_legwear__
+no bra, __clothes_pantyhose__, ((__body_breast_details__, ((__body_areolae_details__):0.9)):0.8)
+bra, __clothes_bra_type__, __colors__ bra, no panties, __body_bare_female_crotch__
+bra, __clothes_bra_type__, __colors__ bra, no panties, __body_bare_female_crotch__, __clothes_legwear__
+chemise, __colors__ chemise
+chemise, __colors__ chemise, panty peek, __clothes_lingerie_bottoms__
+chemise, __colors__ chemise, pussy peek, no panties
+corset, __colors__ corset, __clothes_lingerie_bottoms__, __body_breast_details__, ((__body_areolae_details__):0.9)
+corset, __colors__ corset, __clothes_pantyhose__, __body_breast_details__, ((__body_areolae_details__):0.9)
+corset, __colors__ corset, __clothes_lingerie_bottoms__, __clothes_legwear__, __body_breast_details__, ((__body_areolae_details__):0.9)
+corset, __colors__ corset, __clothes_legwear__, no panties, __body_bare_female_crotch__, __body_breast_details__, ((__body_areolae_details__):0.9)
+nightgown, __colors__ nightgown
+nightgown, __colors__ nightgown, panty peek, __clothes_lingerie_bottoms__
+nightgown, __colors__ nightgown, pussy peek, no panties
+lingerie, ((leotard):0.8), ((see-through clothes, spaghetti strap, sleeveless, lace):0.8), ((see-through leotard, loose clothes, lace-trim, backless leotard):0.7), __colors__ lingerie
+bustier, __colors__ bustier, __clothes_lingerie_bottoms__
+bustier, __colors__ bustier, __clothes_lingerie_bottoms__, __clothes_legwear__
+bustier, __colors__ bustier, __clothes_pantyhose__
+bustier, __colors__ bustier, __clothes_legwear__, no panties, __body_bare_female_crotch__
+camisole, __colors__ camisole, __clothes_lingerie_bottoms__
+camisole, __colors__ camisole, __clothes_lingerie_bottoms__, __clothes_legwear__
+camisole, __colors__ camisole, __clothes_pantyhose__
+camisole, __colors__ camisole, __clothes_legwear__, no panties, __body_bare_female_crotch__

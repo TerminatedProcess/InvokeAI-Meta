@@ -1,0 +1,35 @@
+naked apron, ((bulge):0.8), ((__body_bare_male_crotch__):0.7), ((penis peek):0.8)
+naked cape, ((__body_bare_male_crotch__):0.7)
+naked jacket, ((__body_bare_male_crotch__):0.7), ((penis peek):0.8)
+naked overalls, ((bulge):0.8), ((covered penis):0.8)
+naked ribbon, ((__body_bare_male_crotch__):0.7), ((testicle peek, penis peek):0.8)
+naked shirt, ((__body_bare_male_crotch__):0.7), ((penis peek):0.8)
+naked sweater, ((bulge):0.8), ((__body_bare_male_crotch__):0.7), ((penis peek):0.8)
+virgin killer sweater, ((bare shoulders, backless outfit, naked sweater, ribbed sweater, sleeveless, sleeveless sweater, sleeveless turtleneck, sweater, turtleneck, turtleneck sweater, sideboob, clothing cutout):0.8), ((bulge):0.8), ((__body_bare_male_crotch__):0.7), ((penis peek):0.8)
+virgin destoyer sweater, ((thong, bare shoulders, backless outfit, detached sleeves, garter straps, navel, panties, ribbed panties, ribbed sleeves, ribbed sweater, ribbed thighhighs, side-tie panties, sleeveless, sleeveless sweater, sleeveless turtleneck, sweater, thighhighs, turtleneck, turtleneck sweater):0.8), ((bulge):0.8), testicle peek, ((covered penis):0.7)
+naked towel, ((bulge):0.8), ((__body_bare_male_crotch__):0.7), ((penis peek):0.8)
+naked tabard, ((bulge):0.8), ((__body_bare_male_crotch__):0.7), ((penis peek):0.8)
+naked lab coat, ((__body_bare_male_crotch__):0.7), ((penis peek):0.8)
+naked kigurumi, kigurumi, onesie, ((bulge):0.8), ((covered penis):0.8)
+naked kimono, ((bulge):0.8), ((__body_bare_male_crotch__):0.7), ((penis peek):0.8)
+naked cardigan, ((bulge):0.8), ((__body_bare_male_crotch__):0.7), ((penis peek):0.8)
+naked kappougi, ((bulge):0.8), ((__body_bare_male_crotch__):0.7), ((penis peek):0.8)
+naked hoodie, ((bulge):0.8), ((__body_bare_male_crotch__):0.7), ((penis peek):0.8)
+naked raincoat, see-through raincoat, ((__body_bare_male_crotch__):0.7), ((penis peek):0.8)
+naked apron, bulge
+naked cape, ((__body_bare_male_crotch__):0.8)
+naked jacket, bulge
+naked overalls, bulge
+naked ribbon, ((testicle peek, covered penis):0.8)
+naked shirt, ((bulge):0.8), ((covered penis):0.7)
+naked sweater, ((bulge):0.8), ((covered penis):0.7)
+virgin killer sweater, ((bare shoulders, backless outfit, naked sweater, ribbed sweater, sleeveless, sleeveless sweater, sleeveless turtleneck, sweater, turtleneck, turtleneck sweater, sideboob, clothing cutout):0.8), ((bulge):0.8), ((covered penis):0.7)
+naked towel, ((bulge):0.8), ((covered penis):0.7)
+naked tabard, ((bulge):0.8), ((covered penis):0.7)
+naked lab coat, bulge
+naked kigurumi, kigurumi, onesie, ((bulge):0.8), ((covered penis):0.7)
+naked kimono, bulge
+naked cardigan, bulge
+naked kappougi, ((bulge):0.8), ((covered penis):0.7)
+naked hoodie, ((bulge):0.8), ((covered penis):0.7)
+naked raincoat, see-through raincoat, ((bulge):0.8), ((covered penis):0.7), ((__body_bare_male_crotch__):0.6)

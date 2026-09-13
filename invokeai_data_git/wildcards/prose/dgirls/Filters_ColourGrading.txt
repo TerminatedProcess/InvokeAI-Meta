@@ -1,0 +1,115 @@
+natural editorial color grading, accurate skin tones, soft neutral whites, balanced highlights, gentle contrast, subtle filmic rolloff
+warm golden-hour color grading, warm amber highlights, slightly warm skin tones, soft contrast, creamy shadows, cinematic warmth
+cool cinematic color grading, cool blue shadows, neutral skin tones, restrained highlights, deep atmospheric contrast
+teal and orange cinematic color grading, warm skin tones against subtly teal shadows, rich contrast, polished blockbuster finish
+muted luxury color grading, desaturated sophisticated tones, warm beige highlights, soft charcoal shadows, restrained contrast
+high-fashion editorial color grading, clean neutral palette, slightly cool whites, precise skin tones, crisp tonal separation
+vintage film color grading, faded blacks, warm highlights, muted colors, subtle green-blue shadows, organic analog character
+Kodak-inspired film color grading, warm natural skin tones, rich reds, soft greens, gentle contrast, creamy highlight rolloff
+Fuji-inspired film color grading, slightly cool shadows, refined greens, soft skin tones, restrained saturation, elegant photographic finish
+Portra-inspired color grading, creamy skin tones, soft pastel colors, gentle contrast, warm highlights, smooth filmic tonality
+cinematic desaturated color grading, reduced saturation, deep blacks, subtle cool shadows, controlled highlights, dramatic photographic mood
+moody low-key color grading, crushed but detailed shadows, restrained saturation, cool dark tones, warm skin separation
+bright luxury color grading, luminous whites, warm skin tones, soft pastel colors, polished highlights, clean high-end editorial finish
+soft pastel color grading, delicate pinks, creams and muted blues, low contrast, luminous skin, dreamy fashion editorial finish
+deep crimson color grading, rich burgundy and red tones, warm skin, dark neutral shadows, dramatic cinematic atmosphere
+magenta cinematic color grading, subtle pink and magenta highlights, neutral skin tones, violet shadows, sophisticated nightlife aesthetic
+purple-blue cinematic color grading, cool violet shadows, soft blue highlights, natural skin tones, dramatic modern fashion finish
+rose-gold color grading, warm pink highlights, creamy skin tones, subtle bronze shadows, luxurious romantic editorial finish
+peach and cream color grading, soft peach highlights, warm natural skin, creamy whites, gentle contrast, polished beauty photography
+bronze cinematic color grading, warm bronze highlights, rich skin tones, deep brown shadows, luxurious cinematic finish
+amber noir color grading, golden amber highlights, dark neutral shadows, rich blacks, warm skin separation, sophisticated noir atmosphere
+black-and-white monochrome grading, rich grayscale tones, detailed shadows, luminous highlights, classic fine-art photography
+high-contrast monochrome grading, deep blacks, brilliant highlights, sculpted midtones, dramatic editorial photography
+soft monochrome film grading, gentle grayscale contrast, creamy highlights, smooth shadows, timeless analog portrait aesthetic
+silver gelatin inspired grading, deep blacks, luminous whites, detailed midtones, classic fine-art photographic character
+cool monochrome grading, steel-blue undertones, crisp highlights, deep shadows, dramatic modern editorial finish
+warm monochrome grading, sepia-brown undertones, creamy highlights, soft shadows, vintage portrait atmosphere
+cinematic bleach bypass color grading, reduced saturation, strong contrast, bright highlights, deep detailed shadows, gritty film aesthetic
+cross-processed color grading, unexpected cyan and magenta shifts, punchy contrast, saturated highlights, experimental editorial character
+dreamy diffusion color grading, pastel highlights, softened contrast, warm skin tones, subtle lavender shadows, ethereal fashion photography
+dark teal cinematic grading, deep teal shadows, warm skin tones, controlled highlights, dramatic premium film aesthetic
+midnight blue color grading, deep navy shadows, cool highlights, warm skin separation, sophisticated nighttime cinematic mood
+electric neon color grading, vivid magenta and cyan tones, luminous highlights, deep blue shadows, energetic nightlife aesthetic
+neon pink and purple grading, vibrant magenta highlights, violet shadows, warm skin tones, glossy nightlife editorial finish
+cyan and amber grading, cool cyan shadows, glowing amber highlights, natural skin tones, polished cinematic contrast
+green cinematic color grading, subtle emerald shadows, muted highlights, natural skin tones, atmospheric thriller aesthetic
+olive and cream color grading, muted olive shadows, warm cream highlights, soft skin tones, refined luxury editorial palette
+earth-tone color grading, terracotta, beige, brown and olive tones, warm skin, muted saturation, organic cinematic finish
+desert color grading, sun-baked ochre tones, warm highlights, dusty shadows, natural skin, cinematic travel-editorial aesthetic
+tropical color grading, rich greens, warm golden highlights, vibrant but controlled saturation, luminous skin, luxury vacation editorial finish
+ocean blue color grading, deep turquoise shadows, cool blue highlights, warm skin separation, clean cinematic coastal aesthetic
+icy winter color grading, pale blue shadows, cool whites, subtle desaturation, luminous skin, crisp fashion editorial finish
+arctic cyan color grading, icy cyan highlights, deep blue shadows, neutral skin tones, stark modern cinematic atmosphere
+autumn color grading, warm amber, burnt orange and deep brown tones, rich skin tones, cinematic seasonal atmosphere
+spring pastel color grading, soft pinks, pale greens, creamy highlights, delicate contrast, fresh editorial photography
+summer film color grading, warm sunlight tones, rich natural colors, glowing skin, gentle contrast, vibrant lifestyle editorial finish
+nightclub color grading, deep blacks, saturated magenta and blue highlights, warm skin tones, glossy high-contrast nightlife aesthetic
+luxury hotel color grading, warm ivory highlights, muted bronze shadows, rich skin tones, refined contrast, premium editorial finish
+fashion magazine color grading, clean whites, controlled saturation, precise skin tones, crisp contrast, polished editorial finish
+beauty campaign color grading, luminous skin tones, soft highlights, clean whites, delicate contrast, premium commercial photography
+glamour photography color grading, warm skin tones, creamy highlights, rich shadows, subtle saturation, luxurious cinematic finish
+boudoir editorial color grading, warm blush highlights, deep neutral shadows, creamy skin tones, soft contrast, intimate cinematic atmosphere
+film noir color grading, deep blacks, cool gray shadows, warm skin separation, controlled highlights, dramatic classic cinema aesthetic
+neo-noir color grading, deep blacks, cyan-blue shadows, subtle red highlights, strong tonal separation, modern cinematic atmosphere
+80s film color grading, warm skin tones, slightly faded colors, rich blacks, subtle cyan shadows, nostalgic analog character
+90s fashion editorial color grading, slightly muted saturation, warm skin, cool shadows, crisp contrast, authentic magazine-film aesthetic
+2000s glossy magazine color grading, luminous skin, warm highlights, rich blacks, polished saturation, high-end fashion campaign finish
+dark romantic color grading, muted burgundy shadows, warm skin tones, soft highlights, deep contrast, luxurious dramatic mood
+soft romantic color grading, blush pink highlights, warm ivory tones, delicate shadows, luminous skin, dreamy editorial finish
+sensual warm color grading, warm amber highlights, creamy skin tones, soft brown shadows, intimate cinematic atmosphere
+dramatic red color grading, subtle crimson shadows, warm highlights, rich skin tones, deep cinematic contrast
+gold and black color grading, luxurious golden highlights, deep black shadows, warm skin tones, high-contrast premium editorial finish
+champagne color grading, soft gold highlights, creamy whites, warm skin tones, muted shadows, sophisticated luxury photography
+mocha color grading, warm brown shadows, creamy highlights, rich skin tones, muted saturation, elegant fashion-editorial finish
+coffee-toned color grading, deep espresso shadows, warm beige highlights, natural skin, soft contrast, cozy cinematic atmosphere
+caramel color grading, golden-brown highlights, warm skin tones, soft shadows, rich cinematic depth
+terracotta color grading, burnt orange highlights, earthy shadows, warm skin tones, muted greens, sophisticated editorial palette
+burgundy color grading, deep wine shadows, warm skin highlights, restrained saturation, dramatic luxury fashion aesthetic
+emerald color grading, subtle emerald shadows, warm skin tones, controlled highlights, rich cinematic fashion finish
+sapphire color grading, deep blue shadows, cool highlights, warm skin separation, luxurious nighttime editorial aesthetic
+ruby color grading, rich crimson accents, warm skin, deep neutral shadows, dramatic high-fashion cinematic finish
+lavender color grading, soft violet shadows, pale highlights, natural skin tones, dreamy contemporary fashion aesthetic
+dusty rose color grading, muted pink highlights, warm skin tones, soft gray shadows, romantic editorial finish
+smoky gray color grading, neutral skin tones, soft gray shadows, restrained saturation, sophisticated minimalist photography
+matte cinematic color grading, lifted blacks, softened highlights, muted saturation, subtle film grain aesthetic
+crisp digital color grading, clean whites, precise skin tones, rich but controlled colors, sharp tonal separation, modern commercial finish
+HDR-inspired color grading, expanded tonal detail, controlled highlights, rich shadows, vibrant but natural colors, polished photographic finish
+soft highlight color grading, luminous highlights, gentle shadows, warm skin tones, restrained contrast, premium beauty photography
+deep shadow cinematic grading, rich blacks, detailed dark tones, warm skin separation, controlled highlights, dramatic film aesthetic
+faded summer film grading, sun-faded colors, warm highlights, soft contrast, slightly lifted blacks, nostalgic analog character
+faded pastel film grading, washed pastel colors, creamy highlights, soft shadows, delicate skin tones, dreamy analog photography
+rich saturated editorial grading, bold but controlled colors, luminous skin, deep blacks, crisp contrast, high-fashion campaign aesthetic
+muted cinematic grading, restrained saturation, deep neutral shadows, warm skin tones, subtle highlight detail, serious film aesthetic
+natural daylight film grading, accurate skin tones, soft greens, realistic blues, gentle contrast, authentic professional photography
+golden skin cinematic grading, luminous warm skin tones, amber highlights, subtle neutral shadows, luxurious portrait finish
+cool skin editorial grading, neutral-to-cool skin tones, blue-gray shadows, crisp highlights, modern fashion magazine aesthetic
+warm skin editorial grading, golden skin tones, creamy highlights, warm neutral shadows, polished high-fashion finish
+soft contrast color grading, gentle blacks, smooth highlights, natural saturation, clean skin tones, elegant photographic finish
+punchy contrast color grading, rich blacks, bright highlights, vibrant midtones, crisp skin separation, energetic editorial finish
+low-saturation luxury grading, muted colors, creamy skin, warm neutrals, deep shadows, understated premium aesthetic
+high-saturation fashion grading, vivid controlled colors, luminous skin, rich blacks, glossy commercial editorial finish
+cinematic skin-tone priority grading, natural warm skin, controlled background colors, subtle contrast, realistic professional photography
+subtle film grain color grading, natural film palette, soft contrast, restrained saturation, organic analog photographic character
+fine-art color grading, muted palette, delicate tonal transitions, subtle warmth, deep dimensional shadows, gallery-quality portrait aesthetic
+editorial matte color grading, slightly lifted blacks, muted highlights, refined skin tones, subdued saturation, luxury magazine finish
+glossy commercial color grading, luminous highlights, rich colors, clean skin tones, deep blacks, premium advertising photography
+moody luxury color grading, warm skin, charcoal shadows, muted jewel tones, polished highlights, sophisticated fashion campaign aesthetic
+cinematic sunset color grading, deep orange highlights, purple-blue shadows, glowing skin, dramatic contrast, epic film atmosphere
+twilight color grading, cool violet shadows, soft blue ambient tones, warm skin highlights, dreamy cinematic atmosphere
+blue-hour color grading, deep cobalt shadows, cool ambient highlights, warm skin separation, sophisticated evening photography
+sunset orange and teal grading, glowing orange highlights, teal shadows, warm skin, cinematic blockbuster contrast
+stormy cinematic grading, slate-gray shadows, cool highlights, muted colors, warm skin separation, dramatic atmospheric finish
+rainy-day color grading, cool gray-blue tones, subdued saturation, luminous skin, soft contrast, cinematic urban atmosphere
+urban night color grading, deep blacks, cool blue shadows, neon highlights, warm skin tones, modern cinematic photography
+luxury black-and-white fashion grading, deep blacks, luminous skin, sculpted highlights, refined grayscale contrast, high-fashion editorial finish
+soft flash editorial grading, slightly cool whites, warm skin tones, clean shadows, crisp highlights, modern fashion magazine aesthetic
+direct flash color grading, punchy contrast, bright highlights, deep shadows, realistic skin tones, raw high-fashion editorial character
+analog point-and-shoot grading, slightly warm colors, soft contrast, subtle grain, imperfect exposure character, nostalgic fashion photography
+35mm cinematic grading, organic colors, subtle grain, soft highlight rolloff, rich shadows, authentic film photography character
+medium-format editorial grading, creamy skin tones, refined colors, smooth tonal transitions, luxurious high-resolution fashion aesthetic
+Polaroid-inspired color grading, soft faded colors, warm skin tones, creamy highlights, gentle contrast, nostalgic instant-film character
+instant-film pastel grading, muted colors, lifted blacks, soft highlights, warm skin tones, dreamy retro aesthetic
+vintage magazine print grading, slightly faded colors, warm paper-like highlights, muted blacks, authentic retro editorial character
+darkroom print-inspired grading, rich blacks, warm midtones, subtle highlight compression, classic photographic depth
+cinematic print emulation, balanced skin tones, soft highlight rolloff, rich shadows, restrained saturation, professional filmic finish

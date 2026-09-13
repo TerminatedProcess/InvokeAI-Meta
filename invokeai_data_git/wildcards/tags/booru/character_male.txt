@@ -1,0 +1,10 @@
+((manly):0.8), __hair_male__, __body_eye_color__, __body_male__, __body_face_details_male__
+((manly):0.8), __hair_male__, __body_eye_color__, (__body_male__), __body_face_details_male__
+((manly):0.8), __hair_male__, __body_eye_color__, __body_male__, (__body_face_details_male__)
+((manly):0.8), __hair_male__, __body_eye_color__, __body_male__, __body_face_details_male__
+((manly):0.8), __hair_male__, __body_eye_color__, (__body_male__), __body_eye_details_male__
+((manly):0.8), __hair_male__, __body_eye_color__, __body_male__, (__body_eye_details_male__)
+((manly):0.8), __hair_male__, __body_eye_color__, __body_male__, __body_eye_details_male__
+((manly):0.8), __hair_male__, __body_eye_color__, __body_male__, ((punk):0.8), __body_face_details_male__
+((manly):0.8), __hair_male__, __body_eye_color__, __body_male__, ((casual):0.8), __body_face_details_male__
+((manly):0.8), __hair_male__, __body_eye_color__, __body_male__, ((emo fashion, scene fashion):0.8), __body_face_details_male__

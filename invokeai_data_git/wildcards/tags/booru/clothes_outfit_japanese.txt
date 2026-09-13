@@ -1,0 +1,17 @@
+kimono, ((obi, obiage, obijime, obidome):0.7)
+kimono, hakama, hakama skirt
+kimono, hakama, hakama short skirt
+kimono, hakama, hakama short skirt, __clothes_legwear__
+kimono, hakama, hakama pants
+kimono, hakama, hakama shorts
+kimono, hadanugi dousa, sarashi, arm out of sleeve, single bare shoulder
+kosode, hakama, hakama skirt
+kimono, ((obi, obiage, obijime, obidome):0.7), susohiki
+kimono, ((obi, obiage, obijime, obidome):0.7), furisode
+kimono, short kimono, ((obi, obiage, obijime, obidome):0.7)
+yukata, ((obi):0.7)
+yukata, short yukata, ((obi):0.7)
+yukata, short yukata, ((obi):0.7), __clothes_legwear__
+yukata, bath yukata, ((obi):0.7)
+dougi, ((uwagi, martial arts belt, pants):0.7)
+happi, mizu happi, ((fundoshi, ecchuu fundoshi, hachimaki, nejiri hachimaki):0.7)

@@ -1,0 +1,10 @@
+__not_so/background-cyberpunk-indoor__
+__not_so/background-cyberpunk-outdoor__
+__not_so/background-dark-fantasy-indoor__
+__not_so/background-dark-fantasy-outdoor__
+__not_so/background-fantasy-indoor__
+__not_so/background-fantasy-outdoor__
+__not_so/background-modern-indoor__
+__not_so/background-modern-outdoor__
+__not_so/background-post-apocalypse-indoor__
+__not_so/background-post-apocalypse-outdoor__

@@ -1,0 +1,20 @@
+t-shirt
+camisole
+camisole, strap slip
+dress shirt
+tank top
+tube top
+bandeau
+off-shoulder shirt
+sleeveless
+crop top
+crop top, crop top overhang
+polo shirt
+bustier
+compression shirt
+halterneck, criss-cross halter
+halterneck, turtleneck
+halterneck, wing collar
+polo shirt
+collared shirt
+collared shirt, __colors__ necktie

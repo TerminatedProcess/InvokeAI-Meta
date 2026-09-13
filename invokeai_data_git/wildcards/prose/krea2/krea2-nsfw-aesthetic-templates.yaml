@@ -1,0 +1,98 @@
+# Krea 2 NSFW AESTHETIC-PILOT templates (separate product — YAGNI)
+# Tags: __uw-krea2-nsfw/router|template|leaf/*__  (SAME root as room file)
+# Root key: uw-krea2-nsfw
+# Hard rule: register ONLY under portrait-aesthetic-pilot-pics — never dilute natural room routers
+# version: 2
+uw-krea2-nsfw:
+  router:
+    # G6 aesthetic pilot — editorial / soft-glam only (do NOT dilute natural room routers)
+    portrait-aesthetic-pilot-pics:
+    - __uw-krea2-nsfw/template/bedroom-candid-laying-back-editorial__
+    - __uw-krea2-nsfw/template/bedroom-cinematic-over-shoulder-soft-glam__
+    - __uw-krea2-nsfw/template/boudoir-portrait-vanity-editorial__
+
+
+  template:
+    bedroom-candid-laying-back-editorial:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-candid-laying-back-editorial/medium__
+        __uw-krea2-nsfw/leaf/bedroom-candid-laying-back-editorial/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-laying-back-editorial/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-laying-back-editorial/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-laying-back-editorial/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-laying-back-editorial/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-laying-back-editorial/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-laying-back-editorial/treatment__. [3:4]
+    bedroom-cinematic-over-shoulder-soft-glam:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-cinematic-over-shoulder-soft-glam/medium__
+        __uw-krea2-nsfw/leaf/bedroom-cinematic-over-shoulder-soft-glam/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-cinematic-over-shoulder-soft-glam/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-cinematic-over-shoulder-soft-glam/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-cinematic-over-shoulder-soft-glam/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-cinematic-over-shoulder-soft-glam/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-cinematic-over-shoulder-soft-glam/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-cinematic-over-shoulder-soft-glam/treatment__. [3:4]
+    boudoir-portrait-vanity-editorial:
+    - >-
+        __uw-krea2-nsfw/leaf/boudoir-portrait-vanity-editorial/medium__
+        __uw-krea2-nsfw/leaf/boudoir-portrait-vanity-editorial/subject__,
+        __uw-krea2-nsfw/leaf/boudoir-portrait-vanity-editorial/pose__,
+        __uw-krea2-nsfw/leaf/boudoir-portrait-vanity-editorial/wardrobe__,
+        __uw-krea2-nsfw/leaf/boudoir-portrait-vanity-editorial/environment__,
+        __uw-krea2-nsfw/leaf/boudoir-portrait-vanity-editorial/lighting__,
+        __uw-krea2-nsfw/leaf/boudoir-portrait-vanity-editorial/camera__,
+        __uw-krea2-nsfw/leaf/boudoir-portrait-vanity-editorial/treatment__. [3:4]
+  leaf:
+    bedroom-candid-laying-back-editorial:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/editorial-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-candid-laying-back__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/editorial__
+    bedroom-cinematic-over-shoulder-soft-glam:
+      medium:
+      - __uw-shared/nsfw/shot/cinematic__
+      subject:
+      - __uw-shared/common/identity-router/soft-glam-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-cinematic-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/bedroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/cinematic-bedroom__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/soft-glam__
+    boudoir-portrait-vanity-editorial:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/editorial-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/boudoir-portrait-vanity__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/boudoir-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/boudoir__
+      lighting:
+      - __uw-shared/nsfw/lighting/boudoir__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/editorial__

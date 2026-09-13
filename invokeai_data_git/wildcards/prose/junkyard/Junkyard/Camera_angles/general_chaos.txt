@@ -1,0 +1,102 @@
+full-body shot
+full-length portrait
+three-quarter shot
+cowboy shot
+knee-up framing
+thigh-up framing
+waist-up shot
+mid-length shot
+upper-body framing
+head-and-shoulders portrait
+close-up portrait
+tight face close-up
+extreme close-up
+beauty close-up
+close crop on eyes
+close crop on lips
+close crop on mouth and jaw
+close crop on hands
+close crop on legs
+close crop on feet and calves
+lower-body framing
+legs-focused framing
+toe-to-head vertical framing
+wide environmental shot
+very wide shot
+subject-small-in-frame composition
+editorial fashion framing
+lookbook-style framing
+campaign-shot composition
+magazine-cover framing
+street-style framing
+run-and-gun documentary framing
+candid snapshot framing
+caught-mid-moment framing
+paparazzi-style framing
+disposable-camera framing
+point-and-shoot composition
+party-photo framing
+mirror selfie framing
+bathroom-mirror framing
+selfie-style close framing
+arm's-length selfie angle
+phone-camera candid
+front-facing symmetrical framing
+centered composition
+off-center composition
+asymmetrical framing
+cropped candid framing
+messy partial crop
+cut-off-limbs composition
+horizontal cinematic framing
+vertical smartphone framing
+square social-media framing
+portrait-mode framing
+eye-level shot
+chest-level perspective
+waist-level perspective
+hip-level perspective
+high-angle shot
+slightly elevated angle
+top-down shot
+low-angle shot
+very low-angle shot
+ground-level perspective
+floor-level framing
+extreme ground-up angle
+side-profile shot
+rear three-quarter angle
+back-view framing
+over-the-shoulder shot
+body-turned face-back framing
+through-a-doorway framing
+through-glass framing
+through-the-crowd framing
+through-foreground framing
+peeking-around-a-corner framing
+voyeuristic distant framing
+security-cam-like high angle
+telephoto compression
+long-lens candid shot
+wide-angle intimacy
+slight wide-lens distortion
+fisheye framing
+tilted frame
+Dutch angle
+dynamic diagonal composition
+clean static framing
+frozen snapshot framing
+blurred-motion framing
+mid-step framing
+overhead crowd-shot angle
+front-row perspective
+back-seat car framing
+front-seat car portrait
+hallway candid framing
+stairwell framing
+window-light portrait framing
+backlit silhouette framing
+soft-focus portrait composition
+direct-flash composition
+accidental-looking composition
+final-frame snapshot composition

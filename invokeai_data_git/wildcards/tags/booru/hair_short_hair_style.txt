@@ -1,0 +1,20 @@
+buzz cut
+crew cut
+pixie cut
+pixie cut, undercut
+pixie cut, asymmetrical hair
+pixie cut, sidecut, ((undercut):0.9)
+bob cut
+bob cut, __hair_addon_bangs__
+bob cut, inverted bob
+bob cut, inverted bob, __hair_addon_bangs__
+bob cut, ((__hair_addon_sidelocks__):0.9)
+((bowl cut):0.8)
+parted hair
+parted hair, __hair_addon_bangs__
+__hair_addon__, __hair_addon_bangs__
+__hair_addon_texture__
+__hair_addon_texture__, __hair_addon_bangs__
+__hair_addon_texture__, __hair_addon_bangs__, __hair_addon__
+__hair_addon__, __hair_addon_bangs__, ((__hair_addon_sidelocks__):0.9)
+__hair_addon__, ((__hair_addon_sidelocks__):0.9)

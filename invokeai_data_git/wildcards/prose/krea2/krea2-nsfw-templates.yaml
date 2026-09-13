@@ -1,0 +1,3575 @@
+# Krea 2 NSFW ROOM templates — natural-language paragraphs
+# Tags: __uw-krea2-nsfw/router|template|leaf/*__
+# Sibling products (same root key, separate files): krea2-nsfw-action-templates.yaml, krea2-nsfw-aesthetic-templates.yaml, krea2-nsfw-theme-templates.yaml
+# Casting (separate root): krea2-nsfw-casting-templates.yaml → __uw-krea2-nsfw-casting/*__
+# Model: L1 router -> L2 prompt template -> L3 leaf clause (one per Krea element)
+# 8 elements in fixed order: medium, subject, pose, wardrobe, environment, lighting, camera, treatment
+# Inference: Krea 2 Turbo — 8 steps, CFG 0.0, mu 1.15
+# NSFW templates pull only __uw-shared/common/*__ and __uw-shared/nsfw/*__ (never __uw-shared/sfw/*__).
+# version: 39
+# W2 (2026-07-13): landscape routers for bathroom/apartment/closet/kitchen/poolside/boudoir.
+# 2026-07-18: bedroom selfie rebalance (weight::) + bedroom-candid-prone (+wide).
+
+uw-krea2-nsfw:
+  # Routers: *-pics = mixed shot classes (selfie + non-selfie). Legacy *-selfie-pics aliases retired.
+  router:
+    portrait-bedroom-pics:
+    # Target ~35% selfie: 1:: selfie ×9 + 2:: non-selfie ×7 + 3:: prone = 9+14+3 → 34.6% selfie
+    - 1::__uw-krea2-nsfw/template/bedroom-selfie-mirror__
+    - 1::__uw-krea2-nsfw/template/bedroom-selfie-laying-back__
+    - 1::__uw-krea2-nsfw/template/bedroom-selfie-sitting-edge__
+    - 1::__uw-krea2-nsfw/template/bedroom-selfie-over-shoulder__
+    - 1::__uw-krea2-nsfw/template/bedroom-selfie-kneeling__
+    - 1::__uw-krea2-nsfw/template/bedroom-selfie-from-above__
+    - 1::__uw-krea2-nsfw/template/bedroom-selfie-mirror-close__
+    - 1::__uw-krea2-nsfw/template/bedroom-selfie-cosplay__
+    - 1::__uw-krea2-nsfw/template/bedroom-selfie-semi-nsfw__
+    - 2::__uw-krea2-nsfw/template/bedroom-candid-laying-back__
+    - 2::__uw-krea2-nsfw/template/bedroom-candid-standing__
+    - 2::__uw-krea2-nsfw/template/bedroom-candid-kneeling__
+    - 2::__uw-krea2-nsfw/template/bedroom-portrait-sitting-edge__
+    - 2::__uw-krea2-nsfw/template/bedroom-cinematic-over-shoulder__
+    - 2::__uw-krea2-nsfw/template/bedroom-moody-kneeling__
+    - 2::__uw-krea2-nsfw/template/bedroom-portrait-standing-mirror__
+    - 3::__uw-krea2-nsfw/template/bedroom-candid-prone__
+    landscape-bedroom-pics:
+    - __uw-krea2-nsfw/template/bedroom-selfie-side-lying__
+    - __uw-krea2-nsfw/template/bedroom-candid-side-lying__
+    - __uw-krea2-nsfw/template/bedroom-candid-reclined__
+    - __uw-krea2-nsfw/template/bedroom-candid-prone-wide__
+    portrait-bathroom-pics:
+    - __uw-krea2-nsfw/template/bathroom-selfie-mirror__
+    - __uw-krea2-nsfw/template/bathroom-selfie-counter__
+    - __uw-krea2-nsfw/template/bathroom-selfie-over-shoulder__
+    - __uw-krea2-nsfw/template/bathroom-selfie-towel__
+    - __uw-krea2-nsfw/template/bathroom-selfie-tub-edge__
+    - __uw-krea2-nsfw/template/bathroom-candid-mirror__
+    - __uw-krea2-nsfw/template/bathroom-portrait-counter__
+    - __uw-krea2-nsfw/template/bathroom-cinematic-over-shoulder__
+    - __uw-krea2-nsfw/template/bathroom-moody-towel__
+    landscape-bathroom-pics:
+    - __uw-krea2-nsfw/template/bathroom-selfie-tub-wide__
+    - __uw-krea2-nsfw/template/bathroom-candid-tub-wide__
+    - __uw-krea2-nsfw/template/bathroom-candid-reclined-wide__
+    landscape-hotel-pics:
+    - __uw-krea2-nsfw/template/hotel-selfie-side-lying__
+    - __uw-krea2-nsfw/template/hotel-candid-side-lying__
+    - __uw-krea2-nsfw/template/hotel-candid-reclined__
+    portrait-hotel-pics:
+    - __uw-krea2-nsfw/template/hotel-selfie-mirror__
+    - __uw-krea2-nsfw/template/hotel-selfie-laying-back__
+    - __uw-krea2-nsfw/template/hotel-selfie-sitting-edge__
+    - __uw-krea2-nsfw/template/hotel-selfie-over-shoulder__
+    - __uw-krea2-nsfw/template/hotel-candid-laying-back__
+    - __uw-krea2-nsfw/template/hotel-portrait-standing-window__
+    - __uw-krea2-nsfw/template/hotel-cinematic-over-shoulder__
+    - __uw-krea2-nsfw/template/hotel-moody-laying-back__
+    portrait-apartment-pics:
+    - __uw-krea2-nsfw/template/apartment-selfie-mirror__
+    - __uw-krea2-nsfw/template/apartment-selfie-laying-back__
+    - __uw-krea2-nsfw/template/apartment-selfie-over-shoulder__
+    - __uw-krea2-nsfw/template/apartment-candid-floor__
+    - __uw-krea2-nsfw/template/apartment-portrait-standing__
+    - __uw-krea2-nsfw/template/apartment-cinematic-over-shoulder__
+    - __uw-krea2-nsfw/template/apartment-moody-lamp__
+    landscape-apartment-pics:
+    - __uw-krea2-nsfw/template/apartment-selfie-side-lying__
+    - __uw-krea2-nsfw/template/apartment-candid-side-lying__
+    - __uw-krea2-nsfw/template/apartment-candid-reclined__
+    portrait-living-room-pics:
+    - __uw-krea2-nsfw/template/living-room-selfie-sofa__
+    - __uw-krea2-nsfw/template/living-room-selfie-mirror__
+    - __uw-krea2-nsfw/template/living-room-selfie-over-shoulder__
+    - __uw-krea2-nsfw/template/living-room-selfie-laying-back__
+    - __uw-krea2-nsfw/template/living-room-selfie-semi-nsfw__
+    - __uw-krea2-nsfw/template/living-room-candid-sofa-recline__
+    - __uw-krea2-nsfw/template/living-room-portrait-standing__
+    - __uw-krea2-nsfw/template/living-room-cinematic-over-shoulder__
+    - __uw-krea2-nsfw/template/living-room-moody-sofa__
+    portrait-closet-pics:
+    - __uw-krea2-nsfw/template/closet-selfie-mirror__
+    - __uw-krea2-nsfw/template/closet-selfie-full-length__
+    - __uw-krea2-nsfw/template/closet-selfie-over-shoulder__
+    - __uw-krea2-nsfw/template/closet-selfie-cosplay__
+    - __uw-krea2-nsfw/template/closet-candid-mirror__
+    - __uw-krea2-nsfw/template/closet-portrait-trying-on__
+    - __uw-krea2-nsfw/template/closet-portrait-cosplay__
+    - __uw-krea2-nsfw/template/closet-cinematic-over-shoulder__
+    - __uw-krea2-nsfw/template/closet-candid-full-length__
+    - __uw-krea2-nsfw/template/closet-moody-mirror__
+    landscape-closet-pics:
+    - __uw-krea2-nsfw/template/closet-selfie-floor-wide__
+    - __uw-krea2-nsfw/template/closet-candid-floor-wide__
+    - __uw-krea2-nsfw/template/closet-candid-seated-wide__
+    portrait-kitchen-pics:
+    - __uw-krea2-nsfw/template/kitchen-selfie-counter__
+    - __uw-krea2-nsfw/template/kitchen-selfie-over-shoulder__
+    - __uw-krea2-nsfw/template/kitchen-selfie-stool__
+    - __uw-krea2-nsfw/template/kitchen-candid-counter__
+    - __uw-krea2-nsfw/template/kitchen-portrait-standing__
+    - __uw-krea2-nsfw/template/kitchen-cinematic-over-shoulder__
+    - __uw-krea2-nsfw/template/kitchen-candid-window__
+    - __uw-krea2-nsfw/template/kitchen-moody-counter__
+    landscape-kitchen-pics:
+    - __uw-krea2-nsfw/template/kitchen-selfie-counter-wide__
+    - __uw-krea2-nsfw/template/kitchen-candid-counter-wide__
+    - __uw-krea2-nsfw/template/kitchen-candid-window-wide__
+    landscape-balcony-pics:
+    - __uw-krea2-nsfw/template/balcony-selfie-railing-wide__
+    - __uw-krea2-nsfw/template/balcony-candid-seated-wide__
+    - __uw-krea2-nsfw/template/balcony-candid-railing-wide__
+    - __uw-krea2-nsfw/template/balcony-portrait-seated-wide__
+    landscape-living-room-pics:
+    - __uw-krea2-nsfw/template/living-room-selfie-side-lying__
+    - __uw-krea2-nsfw/template/living-room-candid-side-lying__
+    - __uw-krea2-nsfw/template/living-room-candid-reclined__
+    portrait-balcony-pics:
+    - __uw-krea2-nsfw/template/balcony-selfie-railing__
+    - __uw-krea2-nsfw/template/balcony-selfie-over-shoulder__
+    - __uw-krea2-nsfw/template/balcony-selfie-seated__
+    - __uw-krea2-nsfw/template/balcony-selfie-cosplay__
+    - __uw-krea2-nsfw/template/balcony-candid-railing__
+    - __uw-krea2-nsfw/template/balcony-portrait-seated__
+    - __uw-krea2-nsfw/template/balcony-cinematic-over-shoulder__
+    - __uw-krea2-nsfw/template/balcony-candid-seated__
+    - __uw-krea2-nsfw/template/balcony-moody-railing__
+    # G7 — outdoor beyond balcony: poolside room family
+    portrait-poolside-pics:
+    - __uw-krea2-nsfw/template/poolside-selfie-lounge__
+    - __uw-krea2-nsfw/template/poolside-selfie-over-shoulder__
+    - __uw-krea2-nsfw/template/poolside-selfie-towel__
+    - __uw-krea2-nsfw/template/poolside-candid-lounge__
+    - __uw-krea2-nsfw/template/poolside-portrait-standing__
+    - __uw-krea2-nsfw/template/poolside-cinematic-over-shoulder__
+    - __uw-krea2-nsfw/template/poolside-moody-evening__
+    landscape-poolside-pics:
+    - __uw-krea2-nsfw/template/poolside-selfie-lounge-wide__
+    - __uw-krea2-nsfw/template/poolside-candid-lounge-wide__
+    - __uw-krea2-nsfw/template/poolside-candid-reclined-wide__
+    portrait-boudoir-pics:
+    - __uw-krea2-nsfw/template/boudoir-selfie-mirror__
+    - __uw-krea2-nsfw/template/boudoir-selfie-chaise__
+    - __uw-krea2-nsfw/template/boudoir-selfie-cosplay__
+    - __uw-krea2-nsfw/template/boudoir-candid-chaise__
+    - __uw-krea2-nsfw/template/boudoir-portrait-vanity__
+    - __uw-krea2-nsfw/template/boudoir-portrait-standing__
+    - __uw-krea2-nsfw/template/boudoir-cinematic-seated__
+    - __uw-krea2-nsfw/template/boudoir-cinematic-over-shoulder__
+    - __uw-krea2-nsfw/template/boudoir-moody-chaise__
+    landscape-boudoir-pics:
+    - __uw-krea2-nsfw/template/boudoir-selfie-side-lying__
+    - __uw-krea2-nsfw/template/boudoir-candid-side-lying__
+    - __uw-krea2-nsfw/template/boudoir-candid-reclined__
+    portrait-outfit-focus-pics:
+    - __uw-krea2-nsfw/template/closet-selfie-cosplay__
+    - __uw-krea2-nsfw/template/closet-portrait-cosplay__
+    - __uw-krea2-nsfw/template/bedroom-selfie-cosplay__
+    - __uw-krea2-nsfw/template/bedroom-selfie-semi-nsfw__
+    - __uw-krea2-nsfw/template/living-room-selfie-semi-nsfw__
+    - __uw-krea2-nsfw/template/boudoir-selfie-cosplay__
+    - __uw-krea2-nsfw/template/balcony-selfie-cosplay__
+  template:
+    bedroom-selfie-mirror:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-selfie-mirror/medium__
+        __uw-krea2-nsfw/leaf/bedroom-selfie-mirror/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-mirror/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-mirror/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-mirror/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-mirror/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-mirror/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-mirror/treatment__. [9:16]
+    bedroom-selfie-laying-back:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-selfie-laying-back/medium__
+        __uw-krea2-nsfw/leaf/bedroom-selfie-laying-back/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-laying-back/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-laying-back/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-laying-back/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-laying-back/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-laying-back/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-laying-back/treatment__. [9:16]
+    bedroom-selfie-sitting-edge:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-selfie-sitting-edge/medium__
+        __uw-krea2-nsfw/leaf/bedroom-selfie-sitting-edge/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-sitting-edge/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-sitting-edge/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-sitting-edge/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-sitting-edge/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-sitting-edge/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-sitting-edge/treatment__. [9:16]
+    bedroom-selfie-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-selfie-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/bedroom-selfie-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-over-shoulder/treatment__. [9:16]
+    bedroom-selfie-kneeling:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-selfie-kneeling/medium__
+        __uw-krea2-nsfw/leaf/bedroom-selfie-kneeling/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-kneeling/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-kneeling/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-kneeling/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-kneeling/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-kneeling/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-kneeling/treatment__. [9:16]
+    bedroom-selfie-side-lying:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-selfie-side-lying/medium__
+        __uw-krea2-nsfw/leaf/bedroom-selfie-side-lying/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-side-lying/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-side-lying/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-side-lying/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-side-lying/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-side-lying/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-side-lying/treatment__. [4:3]
+    bathroom-selfie-mirror:
+    - >-
+        __uw-krea2-nsfw/leaf/bathroom-selfie-mirror/medium__
+        __uw-krea2-nsfw/leaf/bathroom-selfie-mirror/subject__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-mirror/pose__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-mirror/wardrobe__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-mirror/environment__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-mirror/lighting__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-mirror/camera__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-mirror/treatment__. [9:16]
+    bathroom-selfie-counter:
+    - >-
+        __uw-krea2-nsfw/leaf/bathroom-selfie-counter/medium__
+        __uw-krea2-nsfw/leaf/bathroom-selfie-counter/subject__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-counter/pose__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-counter/wardrobe__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-counter/environment__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-counter/lighting__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-counter/camera__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-counter/treatment__. [9:16]
+    bathroom-selfie-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/bathroom-selfie-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/bathroom-selfie-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-over-shoulder/treatment__. [9:16]
+    bathroom-selfie-towel:
+    - >-
+        __uw-krea2-nsfw/leaf/bathroom-selfie-towel/medium__
+        __uw-krea2-nsfw/leaf/bathroom-selfie-towel/subject__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-towel/pose__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-towel/wardrobe__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-towel/environment__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-towel/lighting__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-towel/camera__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-towel/treatment__. [9:16]
+    bedroom-candid-laying-back:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-candid-laying-back/medium__
+        __uw-krea2-nsfw/leaf/bedroom-candid-laying-back/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-laying-back/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-laying-back/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-laying-back/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-laying-back/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-laying-back/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-laying-back/treatment__. [3:4]
+    bedroom-portrait-sitting-edge:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-portrait-sitting-edge/medium__
+        __uw-krea2-nsfw/leaf/bedroom-portrait-sitting-edge/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-portrait-sitting-edge/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-portrait-sitting-edge/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-portrait-sitting-edge/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-portrait-sitting-edge/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-portrait-sitting-edge/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-portrait-sitting-edge/treatment__. [3:4]
+    bedroom-cinematic-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-cinematic-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/bedroom-cinematic-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-cinematic-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-cinematic-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-cinematic-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-cinematic-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-cinematic-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-cinematic-over-shoulder/treatment__. [3:4]
+    bedroom-moody-kneeling:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-moody-kneeling/medium__
+        __uw-krea2-nsfw/leaf/bedroom-moody-kneeling/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-moody-kneeling/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-moody-kneeling/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-moody-kneeling/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-moody-kneeling/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-moody-kneeling/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-moody-kneeling/treatment__. [3:4]
+    bedroom-portrait-standing-mirror:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-portrait-standing-mirror/medium__
+        __uw-krea2-nsfw/leaf/bedroom-portrait-standing-mirror/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-portrait-standing-mirror/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-portrait-standing-mirror/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-portrait-standing-mirror/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-portrait-standing-mirror/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-portrait-standing-mirror/camera__. [3:4]
+    bathroom-candid-mirror:
+    - >-
+        __uw-krea2-nsfw/leaf/bathroom-candid-mirror/medium__
+        __uw-krea2-nsfw/leaf/bathroom-candid-mirror/subject__,
+        __uw-krea2-nsfw/leaf/bathroom-candid-mirror/pose__,
+        __uw-krea2-nsfw/leaf/bathroom-candid-mirror/wardrobe__,
+        __uw-krea2-nsfw/leaf/bathroom-candid-mirror/environment__,
+        __uw-krea2-nsfw/leaf/bathroom-candid-mirror/lighting__,
+        __uw-krea2-nsfw/leaf/bathroom-candid-mirror/camera__,
+        __uw-krea2-nsfw/leaf/bathroom-candid-mirror/treatment__. [3:4]
+    bathroom-portrait-counter:
+    - >-
+        __uw-krea2-nsfw/leaf/bathroom-portrait-counter/medium__
+        __uw-krea2-nsfw/leaf/bathroom-portrait-counter/subject__,
+        __uw-krea2-nsfw/leaf/bathroom-portrait-counter/pose__,
+        __uw-krea2-nsfw/leaf/bathroom-portrait-counter/wardrobe__,
+        __uw-krea2-nsfw/leaf/bathroom-portrait-counter/environment__,
+        __uw-krea2-nsfw/leaf/bathroom-portrait-counter/lighting__,
+        __uw-krea2-nsfw/leaf/bathroom-portrait-counter/camera__,
+        __uw-krea2-nsfw/leaf/bathroom-portrait-counter/treatment__. [3:4]
+    bathroom-moody-towel:
+    - >-
+        __uw-krea2-nsfw/leaf/bathroom-moody-towel/medium__
+        __uw-krea2-nsfw/leaf/bathroom-moody-towel/subject__,
+        __uw-krea2-nsfw/leaf/bathroom-moody-towel/pose__,
+        __uw-krea2-nsfw/leaf/bathroom-moody-towel/wardrobe__,
+        __uw-krea2-nsfw/leaf/bathroom-moody-towel/environment__,
+        __uw-krea2-nsfw/leaf/bathroom-moody-towel/lighting__,
+        __uw-krea2-nsfw/leaf/bathroom-moody-towel/camera__,
+        __uw-krea2-nsfw/leaf/bathroom-moody-towel/treatment__. [3:4]
+    bedroom-candid-side-lying:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-candid-side-lying/medium__
+        __uw-krea2-nsfw/leaf/bedroom-candid-side-lying/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-side-lying/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-side-lying/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-side-lying/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-side-lying/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-side-lying/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-side-lying/treatment__. [4:3]
+    bedroom-selfie-from-above:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-selfie-from-above/medium__
+        __uw-krea2-nsfw/leaf/bedroom-selfie-from-above/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-from-above/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-from-above/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-from-above/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-from-above/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-from-above/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-from-above/treatment__. [9:16]
+    bedroom-selfie-mirror-close:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-selfie-mirror-close/medium__
+        __uw-krea2-nsfw/leaf/bedroom-selfie-mirror-close/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-mirror-close/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-mirror-close/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-mirror-close/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-mirror-close/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-mirror-close/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-mirror-close/treatment__. [9:16]
+    bathroom-selfie-tub-edge:
+    - >-
+        __uw-krea2-nsfw/leaf/bathroom-selfie-tub-edge/medium__
+        __uw-krea2-nsfw/leaf/bathroom-selfie-tub-edge/subject__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-tub-edge/pose__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-tub-edge/wardrobe__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-tub-edge/environment__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-tub-edge/lighting__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-tub-edge/camera__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-tub-edge/treatment__. [9:16]
+    bedroom-candid-standing:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-candid-standing/medium__
+        __uw-krea2-nsfw/leaf/bedroom-candid-standing/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-standing/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-standing/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-standing/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-standing/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-standing/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-standing/treatment__. [3:4]
+    bathroom-cinematic-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/bathroom-cinematic-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/bathroom-cinematic-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/bathroom-cinematic-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/bathroom-cinematic-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/bathroom-cinematic-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/bathroom-cinematic-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/bathroom-cinematic-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/bathroom-cinematic-over-shoulder/treatment__. [3:4]
+    bedroom-candid-reclined:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-candid-reclined/medium__
+        __uw-krea2-nsfw/leaf/bedroom-candid-reclined/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-reclined/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-reclined/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-reclined/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-reclined/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-reclined/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-reclined/treatment__. [4:3]
+    bedroom-candid-kneeling:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-candid-kneeling/medium__
+        __uw-krea2-nsfw/leaf/bedroom-candid-kneeling/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-kneeling/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-kneeling/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-kneeling/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-kneeling/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-kneeling/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-kneeling/treatment__. [3:4]
+    bedroom-candid-prone:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-candid-prone/medium__
+        __uw-krea2-nsfw/leaf/bedroom-candid-prone/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-prone/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-prone/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-prone/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-prone/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-prone/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-prone/treatment__. [3:4]
+    bedroom-candid-prone-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-candid-prone-wide/medium__
+        __uw-krea2-nsfw/leaf/bedroom-candid-prone-wide/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-prone-wide/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-prone-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-prone-wide/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-prone-wide/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-prone-wide/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-candid-prone-wide/treatment__. [4:3]
+    hotel-selfie-mirror:
+    - >-
+        __uw-krea2-nsfw/leaf/hotel-selfie-mirror/medium__
+        __uw-krea2-nsfw/leaf/hotel-selfie-mirror/subject__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-mirror/pose__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-mirror/wardrobe__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-mirror/environment__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-mirror/lighting__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-mirror/camera__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-mirror/treatment__. [9:16]
+    hotel-selfie-laying-back:
+    - >-
+        __uw-krea2-nsfw/leaf/hotel-selfie-laying-back/medium__
+        __uw-krea2-nsfw/leaf/hotel-selfie-laying-back/subject__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-laying-back/pose__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-laying-back/wardrobe__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-laying-back/environment__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-laying-back/lighting__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-laying-back/camera__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-laying-back/treatment__. [9:16]
+    hotel-selfie-sitting-edge:
+    - >-
+        __uw-krea2-nsfw/leaf/hotel-selfie-sitting-edge/medium__
+        __uw-krea2-nsfw/leaf/hotel-selfie-sitting-edge/subject__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-sitting-edge/pose__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-sitting-edge/wardrobe__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-sitting-edge/environment__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-sitting-edge/lighting__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-sitting-edge/camera__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-sitting-edge/treatment__. [9:16]
+    hotel-selfie-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/hotel-selfie-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/hotel-selfie-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-over-shoulder/treatment__. [9:16]
+    hotel-candid-laying-back:
+    - >-
+        __uw-krea2-nsfw/leaf/hotel-candid-laying-back/medium__
+        __uw-krea2-nsfw/leaf/hotel-candid-laying-back/subject__,
+        __uw-krea2-nsfw/leaf/hotel-candid-laying-back/pose__,
+        __uw-krea2-nsfw/leaf/hotel-candid-laying-back/wardrobe__,
+        __uw-krea2-nsfw/leaf/hotel-candid-laying-back/environment__,
+        __uw-krea2-nsfw/leaf/hotel-candid-laying-back/lighting__,
+        __uw-krea2-nsfw/leaf/hotel-candid-laying-back/camera__,
+        __uw-krea2-nsfw/leaf/hotel-candid-laying-back/treatment__. [3:4]
+    hotel-portrait-standing-window:
+    - >-
+        __uw-krea2-nsfw/leaf/hotel-portrait-standing-window/medium__
+        __uw-krea2-nsfw/leaf/hotel-portrait-standing-window/subject__,
+        __uw-krea2-nsfw/leaf/hotel-portrait-standing-window/pose__,
+        __uw-krea2-nsfw/leaf/hotel-portrait-standing-window/wardrobe__,
+        __uw-krea2-nsfw/leaf/hotel-portrait-standing-window/environment__,
+        __uw-krea2-nsfw/leaf/hotel-portrait-standing-window/lighting__,
+        __uw-krea2-nsfw/leaf/hotel-portrait-standing-window/camera__,
+        __uw-krea2-nsfw/leaf/hotel-portrait-standing-window/treatment__. [3:4]
+    hotel-cinematic-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/hotel-cinematic-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/hotel-cinematic-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/hotel-cinematic-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/hotel-cinematic-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/hotel-cinematic-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/hotel-cinematic-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/hotel-cinematic-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/hotel-cinematic-over-shoulder/treatment__. [3:4]
+    apartment-selfie-mirror:
+    - >-
+        __uw-krea2-nsfw/leaf/apartment-selfie-mirror/medium__
+        __uw-krea2-nsfw/leaf/apartment-selfie-mirror/subject__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-mirror/pose__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-mirror/wardrobe__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-mirror/environment__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-mirror/lighting__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-mirror/camera__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-mirror/treatment__. [9:16]
+    apartment-selfie-laying-back:
+    - >-
+        __uw-krea2-nsfw/leaf/apartment-selfie-laying-back/medium__
+        __uw-krea2-nsfw/leaf/apartment-selfie-laying-back/subject__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-laying-back/pose__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-laying-back/wardrobe__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-laying-back/environment__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-laying-back/lighting__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-laying-back/camera__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-laying-back/treatment__. [9:16]
+    apartment-selfie-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/apartment-selfie-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/apartment-selfie-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-over-shoulder/treatment__. [9:16]
+    apartment-candid-floor:
+    - >-
+        __uw-krea2-nsfw/leaf/apartment-candid-floor/medium__
+        __uw-krea2-nsfw/leaf/apartment-candid-floor/subject__,
+        __uw-krea2-nsfw/leaf/apartment-candid-floor/pose__,
+        __uw-krea2-nsfw/leaf/apartment-candid-floor/wardrobe__,
+        __uw-krea2-nsfw/leaf/apartment-candid-floor/environment__,
+        __uw-krea2-nsfw/leaf/apartment-candid-floor/lighting__,
+        __uw-krea2-nsfw/leaf/apartment-candid-floor/camera__,
+        __uw-krea2-nsfw/leaf/apartment-candid-floor/treatment__. [3:4]
+    apartment-portrait-standing:
+    - >-
+        __uw-krea2-nsfw/leaf/apartment-portrait-standing/medium__
+        __uw-krea2-nsfw/leaf/apartment-portrait-standing/subject__,
+        __uw-krea2-nsfw/leaf/apartment-portrait-standing/pose__,
+        __uw-krea2-nsfw/leaf/apartment-portrait-standing/wardrobe__,
+        __uw-krea2-nsfw/leaf/apartment-portrait-standing/environment__,
+        __uw-krea2-nsfw/leaf/apartment-portrait-standing/lighting__,
+        __uw-krea2-nsfw/leaf/apartment-portrait-standing/camera__,
+        __uw-krea2-nsfw/leaf/apartment-portrait-standing/treatment__. [3:4]
+    apartment-cinematic-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/apartment-cinematic-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/apartment-cinematic-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/apartment-cinematic-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/apartment-cinematic-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/apartment-cinematic-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/apartment-cinematic-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/apartment-cinematic-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/apartment-cinematic-over-shoulder/treatment__. [3:4]
+    apartment-moody-lamp:
+    - >-
+        __uw-krea2-nsfw/leaf/apartment-moody-lamp/medium__
+        __uw-krea2-nsfw/leaf/apartment-moody-lamp/subject__,
+        __uw-krea2-nsfw/leaf/apartment-moody-lamp/pose__,
+        __uw-krea2-nsfw/leaf/apartment-moody-lamp/wardrobe__,
+        __uw-krea2-nsfw/leaf/apartment-moody-lamp/environment__,
+        __uw-krea2-nsfw/leaf/apartment-moody-lamp/lighting__,
+        __uw-krea2-nsfw/leaf/apartment-moody-lamp/camera__,
+        __uw-krea2-nsfw/leaf/apartment-moody-lamp/treatment__. [3:4]
+    living-room-selfie-sofa:
+    - >-
+        __uw-krea2-nsfw/leaf/living-room-selfie-sofa/medium__
+        __uw-krea2-nsfw/leaf/living-room-selfie-sofa/subject__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-sofa/pose__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-sofa/wardrobe__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-sofa/environment__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-sofa/lighting__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-sofa/camera__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-sofa/treatment__. [9:16]
+    living-room-selfie-mirror:
+    - >-
+        __uw-krea2-nsfw/leaf/living-room-selfie-mirror/medium__
+        __uw-krea2-nsfw/leaf/living-room-selfie-mirror/subject__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-mirror/pose__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-mirror/wardrobe__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-mirror/environment__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-mirror/lighting__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-mirror/camera__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-mirror/treatment__. [9:16]
+    living-room-selfie-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/living-room-selfie-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/living-room-selfie-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-over-shoulder/treatment__. [9:16]
+    living-room-selfie-laying-back:
+    - >-
+        __uw-krea2-nsfw/leaf/living-room-selfie-laying-back/medium__
+        __uw-krea2-nsfw/leaf/living-room-selfie-laying-back/subject__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-laying-back/pose__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-laying-back/wardrobe__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-laying-back/environment__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-laying-back/lighting__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-laying-back/camera__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-laying-back/treatment__. [9:16]
+    living-room-candid-sofa-recline:
+    - >-
+        __uw-krea2-nsfw/leaf/living-room-candid-sofa-recline/medium__
+        __uw-krea2-nsfw/leaf/living-room-candid-sofa-recline/subject__,
+        __uw-krea2-nsfw/leaf/living-room-candid-sofa-recline/pose__,
+        __uw-krea2-nsfw/leaf/living-room-candid-sofa-recline/wardrobe__,
+        __uw-krea2-nsfw/leaf/living-room-candid-sofa-recline/environment__,
+        __uw-krea2-nsfw/leaf/living-room-candid-sofa-recline/lighting__,
+        __uw-krea2-nsfw/leaf/living-room-candid-sofa-recline/camera__,
+        __uw-krea2-nsfw/leaf/living-room-candid-sofa-recline/treatment__. [3:4]
+    living-room-portrait-standing:
+    - >-
+        __uw-krea2-nsfw/leaf/living-room-portrait-standing/medium__
+        __uw-krea2-nsfw/leaf/living-room-portrait-standing/subject__,
+        __uw-krea2-nsfw/leaf/living-room-portrait-standing/pose__,
+        __uw-krea2-nsfw/leaf/living-room-portrait-standing/wardrobe__,
+        __uw-krea2-nsfw/leaf/living-room-portrait-standing/environment__,
+        __uw-krea2-nsfw/leaf/living-room-portrait-standing/lighting__,
+        __uw-krea2-nsfw/leaf/living-room-portrait-standing/camera__,
+        __uw-krea2-nsfw/leaf/living-room-portrait-standing/treatment__. [3:4]
+    living-room-cinematic-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/living-room-cinematic-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/living-room-cinematic-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/living-room-cinematic-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/living-room-cinematic-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/living-room-cinematic-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/living-room-cinematic-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/living-room-cinematic-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/living-room-cinematic-over-shoulder/treatment__. [3:4]
+    closet-selfie-mirror:
+    - >-
+        __uw-krea2-nsfw/leaf/closet-selfie-mirror/medium__
+        __uw-krea2-nsfw/leaf/closet-selfie-mirror/subject__,
+        __uw-krea2-nsfw/leaf/closet-selfie-mirror/pose__,
+        __uw-krea2-nsfw/leaf/closet-selfie-mirror/wardrobe__,
+        __uw-krea2-nsfw/leaf/closet-selfie-mirror/environment__,
+        __uw-krea2-nsfw/leaf/closet-selfie-mirror/lighting__,
+        __uw-krea2-nsfw/leaf/closet-selfie-mirror/camera__,
+        __uw-krea2-nsfw/leaf/closet-selfie-mirror/treatment__. [9:16]
+    closet-selfie-full-length:
+    - >-
+        __uw-krea2-nsfw/leaf/closet-selfie-full-length/medium__
+        __uw-krea2-nsfw/leaf/closet-selfie-full-length/subject__,
+        __uw-krea2-nsfw/leaf/closet-selfie-full-length/pose__,
+        __uw-krea2-nsfw/leaf/closet-selfie-full-length/wardrobe__,
+        __uw-krea2-nsfw/leaf/closet-selfie-full-length/environment__,
+        __uw-krea2-nsfw/leaf/closet-selfie-full-length/lighting__,
+        __uw-krea2-nsfw/leaf/closet-selfie-full-length/camera__,
+        __uw-krea2-nsfw/leaf/closet-selfie-full-length/treatment__. [9:16]
+    closet-selfie-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/closet-selfie-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/closet-selfie-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/closet-selfie-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/closet-selfie-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/closet-selfie-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/closet-selfie-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/closet-selfie-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/closet-selfie-over-shoulder/treatment__. [9:16]
+    closet-candid-mirror:
+    - >-
+        __uw-krea2-nsfw/leaf/closet-candid-mirror/medium__
+        __uw-krea2-nsfw/leaf/closet-candid-mirror/subject__,
+        __uw-krea2-nsfw/leaf/closet-candid-mirror/pose__,
+        __uw-krea2-nsfw/leaf/closet-candid-mirror/wardrobe__,
+        __uw-krea2-nsfw/leaf/closet-candid-mirror/environment__,
+        __uw-krea2-nsfw/leaf/closet-candid-mirror/lighting__,
+        __uw-krea2-nsfw/leaf/closet-candid-mirror/camera__,
+        __uw-krea2-nsfw/leaf/closet-candid-mirror/treatment__. [3:4]
+    closet-portrait-trying-on:
+    - >-
+        __uw-krea2-nsfw/leaf/closet-portrait-trying-on/medium__
+        __uw-krea2-nsfw/leaf/closet-portrait-trying-on/subject__,
+        __uw-krea2-nsfw/leaf/closet-portrait-trying-on/pose__,
+        __uw-krea2-nsfw/leaf/closet-portrait-trying-on/wardrobe__,
+        __uw-krea2-nsfw/leaf/closet-portrait-trying-on/environment__,
+        __uw-krea2-nsfw/leaf/closet-portrait-trying-on/lighting__,
+        __uw-krea2-nsfw/leaf/closet-portrait-trying-on/camera__,
+        __uw-krea2-nsfw/leaf/closet-portrait-trying-on/treatment__. [3:4]
+    closet-cinematic-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/closet-cinematic-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/closet-cinematic-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/closet-cinematic-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/closet-cinematic-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/closet-cinematic-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/closet-cinematic-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/closet-cinematic-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/closet-cinematic-over-shoulder/treatment__. [3:4]
+    kitchen-selfie-counter:
+    - >-
+        __uw-krea2-nsfw/leaf/kitchen-selfie-counter/medium__
+        __uw-krea2-nsfw/leaf/kitchen-selfie-counter/subject__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-counter/pose__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-counter/wardrobe__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-counter/environment__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-counter/lighting__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-counter/camera__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-counter/treatment__. [9:16]
+    kitchen-selfie-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/kitchen-selfie-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/kitchen-selfie-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-over-shoulder/treatment__. [9:16]
+    kitchen-selfie-stool:
+    - >-
+        __uw-krea2-nsfw/leaf/kitchen-selfie-stool/medium__
+        __uw-krea2-nsfw/leaf/kitchen-selfie-stool/subject__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-stool/pose__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-stool/wardrobe__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-stool/environment__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-stool/lighting__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-stool/camera__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-stool/treatment__. [9:16]
+    kitchen-candid-counter:
+    - >-
+        __uw-krea2-nsfw/leaf/kitchen-candid-counter/medium__
+        __uw-krea2-nsfw/leaf/kitchen-candid-counter/subject__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-counter/pose__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-counter/wardrobe__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-counter/environment__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-counter/lighting__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-counter/camera__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-counter/treatment__. [3:4]
+    kitchen-portrait-standing:
+    - >-
+        __uw-krea2-nsfw/leaf/kitchen-portrait-standing/medium__
+        __uw-krea2-nsfw/leaf/kitchen-portrait-standing/subject__,
+        __uw-krea2-nsfw/leaf/kitchen-portrait-standing/pose__,
+        __uw-krea2-nsfw/leaf/kitchen-portrait-standing/wardrobe__,
+        __uw-krea2-nsfw/leaf/kitchen-portrait-standing/environment__,
+        __uw-krea2-nsfw/leaf/kitchen-portrait-standing/lighting__,
+        __uw-krea2-nsfw/leaf/kitchen-portrait-standing/camera__,
+        __uw-krea2-nsfw/leaf/kitchen-portrait-standing/treatment__. [3:4]
+    kitchen-cinematic-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/kitchen-cinematic-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/kitchen-cinematic-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/kitchen-cinematic-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/kitchen-cinematic-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/kitchen-cinematic-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/kitchen-cinematic-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/kitchen-cinematic-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/kitchen-cinematic-over-shoulder/treatment__. [3:4]
+    balcony-selfie-railing:
+    - >-
+        __uw-krea2-nsfw/leaf/balcony-selfie-railing/medium__
+        __uw-krea2-nsfw/leaf/balcony-selfie-railing/subject__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-railing/pose__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-railing/wardrobe__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-railing/environment__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-railing/lighting__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-railing/camera__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-railing/treatment__. [9:16]
+    balcony-selfie-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/balcony-selfie-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/balcony-selfie-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-over-shoulder/treatment__. [9:16]
+    balcony-selfie-seated:
+    - >-
+        __uw-krea2-nsfw/leaf/balcony-selfie-seated/medium__
+        __uw-krea2-nsfw/leaf/balcony-selfie-seated/subject__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-seated/pose__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-seated/wardrobe__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-seated/environment__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-seated/lighting__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-seated/camera__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-seated/treatment__. [9:16]
+    balcony-candid-railing:
+    - >-
+        __uw-krea2-nsfw/leaf/balcony-candid-railing/medium__
+        __uw-krea2-nsfw/leaf/balcony-candid-railing/subject__,
+        __uw-krea2-nsfw/leaf/balcony-candid-railing/pose__,
+        __uw-krea2-nsfw/leaf/balcony-candid-railing/wardrobe__,
+        __uw-krea2-nsfw/leaf/balcony-candid-railing/environment__,
+        __uw-krea2-nsfw/leaf/balcony-candid-railing/lighting__,
+        __uw-krea2-nsfw/leaf/balcony-candid-railing/camera__,
+        __uw-krea2-nsfw/leaf/balcony-candid-railing/treatment__. [3:4]
+    balcony-portrait-seated:
+    - >-
+        __uw-krea2-nsfw/leaf/balcony-portrait-seated/medium__
+        __uw-krea2-nsfw/leaf/balcony-portrait-seated/subject__,
+        __uw-krea2-nsfw/leaf/balcony-portrait-seated/pose__,
+        __uw-krea2-nsfw/leaf/balcony-portrait-seated/wardrobe__,
+        __uw-krea2-nsfw/leaf/balcony-portrait-seated/environment__,
+        __uw-krea2-nsfw/leaf/balcony-portrait-seated/lighting__,
+        __uw-krea2-nsfw/leaf/balcony-portrait-seated/camera__,
+        __uw-krea2-nsfw/leaf/balcony-portrait-seated/treatment__. [3:4]
+    balcony-cinematic-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/balcony-cinematic-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/balcony-cinematic-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/balcony-cinematic-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/balcony-cinematic-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/balcony-cinematic-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/balcony-cinematic-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/balcony-cinematic-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/balcony-cinematic-over-shoulder/treatment__. [3:4]
+    boudoir-selfie-mirror:
+    - >-
+        __uw-krea2-nsfw/leaf/boudoir-selfie-mirror/medium__
+        __uw-krea2-nsfw/leaf/boudoir-selfie-mirror/subject__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-mirror/pose__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-mirror/wardrobe__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-mirror/environment__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-mirror/lighting__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-mirror/camera__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-mirror/treatment__. [9:16]
+    boudoir-selfie-chaise:
+    - >-
+        __uw-krea2-nsfw/leaf/boudoir-selfie-chaise/medium__
+        __uw-krea2-nsfw/leaf/boudoir-selfie-chaise/subject__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-chaise/pose__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-chaise/wardrobe__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-chaise/environment__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-chaise/lighting__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-chaise/camera__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-chaise/treatment__. [9:16]
+    boudoir-candid-chaise:
+    - >-
+        __uw-krea2-nsfw/leaf/boudoir-candid-chaise/medium__
+        __uw-krea2-nsfw/leaf/boudoir-candid-chaise/subject__,
+        __uw-krea2-nsfw/leaf/boudoir-candid-chaise/pose__,
+        __uw-krea2-nsfw/leaf/boudoir-candid-chaise/wardrobe__,
+        __uw-krea2-nsfw/leaf/boudoir-candid-chaise/environment__,
+        __uw-krea2-nsfw/leaf/boudoir-candid-chaise/lighting__,
+        __uw-krea2-nsfw/leaf/boudoir-candid-chaise/camera__,
+        __uw-krea2-nsfw/leaf/boudoir-candid-chaise/treatment__. [3:4]
+    boudoir-portrait-vanity:
+    - >-
+        __uw-krea2-nsfw/leaf/boudoir-portrait-vanity/medium__
+        __uw-krea2-nsfw/leaf/boudoir-portrait-vanity/subject__,
+        __uw-krea2-nsfw/leaf/boudoir-portrait-vanity/pose__,
+        __uw-krea2-nsfw/leaf/boudoir-portrait-vanity/wardrobe__,
+        __uw-krea2-nsfw/leaf/boudoir-portrait-vanity/environment__,
+        __uw-krea2-nsfw/leaf/boudoir-portrait-vanity/lighting__,
+        __uw-krea2-nsfw/leaf/boudoir-portrait-vanity/camera__,
+        __uw-krea2-nsfw/leaf/boudoir-portrait-vanity/treatment__. [3:4]
+    boudoir-portrait-standing:
+    - >-
+        __uw-krea2-nsfw/leaf/boudoir-portrait-standing/medium__
+        __uw-krea2-nsfw/leaf/boudoir-portrait-standing/subject__,
+        __uw-krea2-nsfw/leaf/boudoir-portrait-standing/pose__,
+        __uw-krea2-nsfw/leaf/boudoir-portrait-standing/wardrobe__,
+        __uw-krea2-nsfw/leaf/boudoir-portrait-standing/environment__,
+        __uw-krea2-nsfw/leaf/boudoir-portrait-standing/lighting__,
+        __uw-krea2-nsfw/leaf/boudoir-portrait-standing/camera__,
+        __uw-krea2-nsfw/leaf/boudoir-portrait-standing/treatment__. [3:4]
+    boudoir-cinematic-seated:
+    - >-
+        __uw-krea2-nsfw/leaf/boudoir-cinematic-seated/medium__
+        __uw-krea2-nsfw/leaf/boudoir-cinematic-seated/subject__,
+        __uw-krea2-nsfw/leaf/boudoir-cinematic-seated/pose__,
+        __uw-krea2-nsfw/leaf/boudoir-cinematic-seated/wardrobe__,
+        __uw-krea2-nsfw/leaf/boudoir-cinematic-seated/environment__,
+        __uw-krea2-nsfw/leaf/boudoir-cinematic-seated/lighting__,
+        __uw-krea2-nsfw/leaf/boudoir-cinematic-seated/camera__,
+        __uw-krea2-nsfw/leaf/boudoir-cinematic-seated/treatment__. [3:4]
+    boudoir-cinematic-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/boudoir-cinematic-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/boudoir-cinematic-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/boudoir-cinematic-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/boudoir-cinematic-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/boudoir-cinematic-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/boudoir-cinematic-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/boudoir-cinematic-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/boudoir-cinematic-over-shoulder/treatment__. [3:4]
+    hotel-moody-laying-back:
+    - >-
+        __uw-krea2-nsfw/leaf/hotel-moody-laying-back/medium__
+        __uw-krea2-nsfw/leaf/hotel-moody-laying-back/subject__,
+        __uw-krea2-nsfw/leaf/hotel-moody-laying-back/pose__,
+        __uw-krea2-nsfw/leaf/hotel-moody-laying-back/wardrobe__,
+        __uw-krea2-nsfw/leaf/hotel-moody-laying-back/environment__,
+        __uw-krea2-nsfw/leaf/hotel-moody-laying-back/lighting__,
+        __uw-krea2-nsfw/leaf/hotel-moody-laying-back/camera__,
+        __uw-krea2-nsfw/leaf/hotel-moody-laying-back/treatment__. [3:4]
+    living-room-moody-sofa:
+    - >-
+        __uw-krea2-nsfw/leaf/living-room-moody-sofa/medium__
+        __uw-krea2-nsfw/leaf/living-room-moody-sofa/subject__,
+        __uw-krea2-nsfw/leaf/living-room-moody-sofa/pose__,
+        __uw-krea2-nsfw/leaf/living-room-moody-sofa/wardrobe__,
+        __uw-krea2-nsfw/leaf/living-room-moody-sofa/environment__,
+        __uw-krea2-nsfw/leaf/living-room-moody-sofa/lighting__,
+        __uw-krea2-nsfw/leaf/living-room-moody-sofa/camera__,
+        __uw-krea2-nsfw/leaf/living-room-moody-sofa/treatment__. [3:4]
+    closet-moody-mirror:
+    - >-
+        __uw-krea2-nsfw/leaf/closet-moody-mirror/medium__
+        __uw-krea2-nsfw/leaf/closet-moody-mirror/subject__,
+        __uw-krea2-nsfw/leaf/closet-moody-mirror/pose__,
+        __uw-krea2-nsfw/leaf/closet-moody-mirror/wardrobe__,
+        __uw-krea2-nsfw/leaf/closet-moody-mirror/environment__,
+        __uw-krea2-nsfw/leaf/closet-moody-mirror/lighting__,
+        __uw-krea2-nsfw/leaf/closet-moody-mirror/camera__,
+        __uw-krea2-nsfw/leaf/closet-moody-mirror/treatment__. [3:4]
+    kitchen-moody-counter:
+    - >-
+        __uw-krea2-nsfw/leaf/kitchen-moody-counter/medium__
+        __uw-krea2-nsfw/leaf/kitchen-moody-counter/subject__,
+        __uw-krea2-nsfw/leaf/kitchen-moody-counter/pose__,
+        __uw-krea2-nsfw/leaf/kitchen-moody-counter/wardrobe__,
+        __uw-krea2-nsfw/leaf/kitchen-moody-counter/environment__,
+        __uw-krea2-nsfw/leaf/kitchen-moody-counter/lighting__,
+        __uw-krea2-nsfw/leaf/kitchen-moody-counter/camera__,
+        __uw-krea2-nsfw/leaf/kitchen-moody-counter/treatment__. [3:4]
+    balcony-moody-railing:
+    - >-
+        __uw-krea2-nsfw/leaf/balcony-moody-railing/medium__
+        __uw-krea2-nsfw/leaf/balcony-moody-railing/subject__,
+        __uw-krea2-nsfw/leaf/balcony-moody-railing/pose__,
+        __uw-krea2-nsfw/leaf/balcony-moody-railing/wardrobe__,
+        __uw-krea2-nsfw/leaf/balcony-moody-railing/environment__,
+        __uw-krea2-nsfw/leaf/balcony-moody-railing/lighting__,
+        __uw-krea2-nsfw/leaf/balcony-moody-railing/camera__,
+        __uw-krea2-nsfw/leaf/balcony-moody-railing/treatment__. [3:4]
+    poolside-selfie-lounge:
+    - >-
+        __uw-krea2-nsfw/leaf/poolside-selfie-lounge/medium__
+        __uw-krea2-nsfw/leaf/poolside-selfie-lounge/subject__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-lounge/pose__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-lounge/wardrobe__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-lounge/environment__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-lounge/lighting__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-lounge/camera__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-lounge/treatment__. [9:16]
+    poolside-selfie-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/poolside-selfie-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/poolside-selfie-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-over-shoulder/treatment__. [9:16]
+    poolside-selfie-towel:
+    - >-
+        __uw-krea2-nsfw/leaf/poolside-selfie-towel/medium__
+        __uw-krea2-nsfw/leaf/poolside-selfie-towel/subject__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-towel/pose__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-towel/wardrobe__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-towel/environment__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-towel/lighting__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-towel/camera__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-towel/treatment__. [9:16]
+    poolside-candid-lounge:
+    - >-
+        __uw-krea2-nsfw/leaf/poolside-candid-lounge/medium__
+        __uw-krea2-nsfw/leaf/poolside-candid-lounge/subject__,
+        __uw-krea2-nsfw/leaf/poolside-candid-lounge/pose__,
+        __uw-krea2-nsfw/leaf/poolside-candid-lounge/wardrobe__,
+        __uw-krea2-nsfw/leaf/poolside-candid-lounge/environment__,
+        __uw-krea2-nsfw/leaf/poolside-candid-lounge/lighting__,
+        __uw-krea2-nsfw/leaf/poolside-candid-lounge/camera__,
+        __uw-krea2-nsfw/leaf/poolside-candid-lounge/treatment__. [3:4]
+    poolside-portrait-standing:
+    - >-
+        __uw-krea2-nsfw/leaf/poolside-portrait-standing/medium__
+        __uw-krea2-nsfw/leaf/poolside-portrait-standing/subject__,
+        __uw-krea2-nsfw/leaf/poolside-portrait-standing/pose__,
+        __uw-krea2-nsfw/leaf/poolside-portrait-standing/wardrobe__,
+        __uw-krea2-nsfw/leaf/poolside-portrait-standing/environment__,
+        __uw-krea2-nsfw/leaf/poolside-portrait-standing/lighting__,
+        __uw-krea2-nsfw/leaf/poolside-portrait-standing/camera__,
+        __uw-krea2-nsfw/leaf/poolside-portrait-standing/treatment__. [3:4]
+    poolside-cinematic-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/poolside-cinematic-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/poolside-cinematic-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/poolside-cinematic-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/poolside-cinematic-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/poolside-cinematic-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/poolside-cinematic-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/poolside-cinematic-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/poolside-cinematic-over-shoulder/treatment__. [3:4]
+    poolside-moody-evening:
+    - >-
+        __uw-krea2-nsfw/leaf/poolside-moody-evening/medium__
+        __uw-krea2-nsfw/leaf/poolside-moody-evening/subject__,
+        __uw-krea2-nsfw/leaf/poolside-moody-evening/pose__,
+        __uw-krea2-nsfw/leaf/poolside-moody-evening/wardrobe__,
+        __uw-krea2-nsfw/leaf/poolside-moody-evening/environment__,
+        __uw-krea2-nsfw/leaf/poolside-moody-evening/lighting__,
+        __uw-krea2-nsfw/leaf/poolside-moody-evening/camera__,
+        __uw-krea2-nsfw/leaf/poolside-moody-evening/treatment__. [3:4]
+    boudoir-moody-chaise:
+    - >-
+        __uw-krea2-nsfw/leaf/boudoir-moody-chaise/medium__
+        __uw-krea2-nsfw/leaf/boudoir-moody-chaise/subject__,
+        __uw-krea2-nsfw/leaf/boudoir-moody-chaise/pose__,
+        __uw-krea2-nsfw/leaf/boudoir-moody-chaise/wardrobe__,
+        __uw-krea2-nsfw/leaf/boudoir-moody-chaise/environment__,
+        __uw-krea2-nsfw/leaf/boudoir-moody-chaise/lighting__,
+        __uw-krea2-nsfw/leaf/boudoir-moody-chaise/camera__,
+        __uw-krea2-nsfw/leaf/boudoir-moody-chaise/treatment__. [3:4]
+    hotel-selfie-side-lying:
+    - >-
+        __uw-krea2-nsfw/leaf/hotel-selfie-side-lying/medium__
+        __uw-krea2-nsfw/leaf/hotel-selfie-side-lying/subject__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-side-lying/pose__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-side-lying/wardrobe__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-side-lying/environment__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-side-lying/lighting__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-side-lying/camera__,
+        __uw-krea2-nsfw/leaf/hotel-selfie-side-lying/treatment__. [4:3]
+    hotel-candid-side-lying:
+    - >-
+        __uw-krea2-nsfw/leaf/hotel-candid-side-lying/medium__
+        __uw-krea2-nsfw/leaf/hotel-candid-side-lying/subject__,
+        __uw-krea2-nsfw/leaf/hotel-candid-side-lying/pose__,
+        __uw-krea2-nsfw/leaf/hotel-candid-side-lying/wardrobe__,
+        __uw-krea2-nsfw/leaf/hotel-candid-side-lying/environment__,
+        __uw-krea2-nsfw/leaf/hotel-candid-side-lying/lighting__,
+        __uw-krea2-nsfw/leaf/hotel-candid-side-lying/camera__,
+        __uw-krea2-nsfw/leaf/hotel-candid-side-lying/treatment__. [4:3]
+    hotel-candid-reclined:
+    - >-
+        __uw-krea2-nsfw/leaf/hotel-candid-reclined/medium__
+        __uw-krea2-nsfw/leaf/hotel-candid-reclined/subject__,
+        __uw-krea2-nsfw/leaf/hotel-candid-reclined/pose__,
+        __uw-krea2-nsfw/leaf/hotel-candid-reclined/wardrobe__,
+        __uw-krea2-nsfw/leaf/hotel-candid-reclined/environment__,
+        __uw-krea2-nsfw/leaf/hotel-candid-reclined/lighting__,
+        __uw-krea2-nsfw/leaf/hotel-candid-reclined/camera__,
+        __uw-krea2-nsfw/leaf/hotel-candid-reclined/treatment__. [4:3]
+    balcony-selfie-railing-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/balcony-selfie-railing-wide/medium__
+        __uw-krea2-nsfw/leaf/balcony-selfie-railing-wide/subject__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-railing-wide/pose__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-railing-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-railing-wide/environment__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-railing-wide/lighting__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-railing-wide/camera__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-railing-wide/treatment__. [3:2]
+    balcony-candid-seated-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/balcony-candid-seated-wide/medium__
+        __uw-krea2-nsfw/leaf/balcony-candid-seated-wide/subject__,
+        __uw-krea2-nsfw/leaf/balcony-candid-seated-wide/pose__,
+        __uw-krea2-nsfw/leaf/balcony-candid-seated-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/balcony-candid-seated-wide/environment__,
+        __uw-krea2-nsfw/leaf/balcony-candid-seated-wide/lighting__,
+        __uw-krea2-nsfw/leaf/balcony-candid-seated-wide/camera__,
+        __uw-krea2-nsfw/leaf/balcony-candid-seated-wide/treatment__. [3:2]
+    balcony-candid-railing-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/balcony-candid-railing-wide/medium__
+        __uw-krea2-nsfw/leaf/balcony-candid-railing-wide/subject__,
+        __uw-krea2-nsfw/leaf/balcony-candid-railing-wide/pose__,
+        __uw-krea2-nsfw/leaf/balcony-candid-railing-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/balcony-candid-railing-wide/environment__,
+        __uw-krea2-nsfw/leaf/balcony-candid-railing-wide/lighting__,
+        __uw-krea2-nsfw/leaf/balcony-candid-railing-wide/camera__,
+        __uw-krea2-nsfw/leaf/balcony-candid-railing-wide/treatment__. [3:2]
+    balcony-portrait-seated-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/balcony-portrait-seated-wide/medium__
+        __uw-krea2-nsfw/leaf/balcony-portrait-seated-wide/subject__,
+        __uw-krea2-nsfw/leaf/balcony-portrait-seated-wide/pose__,
+        __uw-krea2-nsfw/leaf/balcony-portrait-seated-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/balcony-portrait-seated-wide/environment__,
+        __uw-krea2-nsfw/leaf/balcony-portrait-seated-wide/lighting__,
+        __uw-krea2-nsfw/leaf/balcony-portrait-seated-wide/camera__,
+        __uw-krea2-nsfw/leaf/balcony-portrait-seated-wide/treatment__. [3:2]
+    living-room-selfie-side-lying:
+    - >-
+        __uw-krea2-nsfw/leaf/living-room-selfie-side-lying/medium__
+        __uw-krea2-nsfw/leaf/living-room-selfie-side-lying/subject__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-side-lying/pose__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-side-lying/wardrobe__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-side-lying/environment__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-side-lying/lighting__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-side-lying/camera__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-side-lying/treatment__. [4:3]
+    living-room-candid-side-lying:
+    - >-
+        __uw-krea2-nsfw/leaf/living-room-candid-side-lying/medium__
+        __uw-krea2-nsfw/leaf/living-room-candid-side-lying/subject__,
+        __uw-krea2-nsfw/leaf/living-room-candid-side-lying/pose__,
+        __uw-krea2-nsfw/leaf/living-room-candid-side-lying/wardrobe__,
+        __uw-krea2-nsfw/leaf/living-room-candid-side-lying/environment__,
+        __uw-krea2-nsfw/leaf/living-room-candid-side-lying/lighting__,
+        __uw-krea2-nsfw/leaf/living-room-candid-side-lying/camera__,
+        __uw-krea2-nsfw/leaf/living-room-candid-side-lying/treatment__. [4:3]
+    living-room-candid-reclined:
+    - >-
+        __uw-krea2-nsfw/leaf/living-room-candid-reclined/medium__
+        __uw-krea2-nsfw/leaf/living-room-candid-reclined/subject__,
+        __uw-krea2-nsfw/leaf/living-room-candid-reclined/pose__,
+        __uw-krea2-nsfw/leaf/living-room-candid-reclined/wardrobe__,
+        __uw-krea2-nsfw/leaf/living-room-candid-reclined/environment__,
+        __uw-krea2-nsfw/leaf/living-room-candid-reclined/lighting__,
+        __uw-krea2-nsfw/leaf/living-room-candid-reclined/camera__,
+        __uw-krea2-nsfw/leaf/living-room-candid-reclined/treatment__. [4:3]
+    kitchen-candid-window:
+    - >-
+        __uw-krea2-nsfw/leaf/kitchen-candid-window/medium__
+        __uw-krea2-nsfw/leaf/kitchen-candid-window/subject__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-window/pose__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-window/wardrobe__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-window/environment__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-window/lighting__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-window/camera__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-window/treatment__. [3:4]
+    closet-candid-full-length:
+    - >-
+        __uw-krea2-nsfw/leaf/closet-candid-full-length/medium__
+        __uw-krea2-nsfw/leaf/closet-candid-full-length/subject__,
+        __uw-krea2-nsfw/leaf/closet-candid-full-length/pose__,
+        __uw-krea2-nsfw/leaf/closet-candid-full-length/wardrobe__,
+        __uw-krea2-nsfw/leaf/closet-candid-full-length/environment__,
+        __uw-krea2-nsfw/leaf/closet-candid-full-length/lighting__,
+        __uw-krea2-nsfw/leaf/closet-candid-full-length/camera__,
+        __uw-krea2-nsfw/leaf/closet-candid-full-length/treatment__. [3:4]
+    balcony-candid-seated:
+    - >-
+        __uw-krea2-nsfw/leaf/balcony-candid-seated/medium__
+        __uw-krea2-nsfw/leaf/balcony-candid-seated/subject__,
+        __uw-krea2-nsfw/leaf/balcony-candid-seated/pose__,
+        __uw-krea2-nsfw/leaf/balcony-candid-seated/wardrobe__,
+        __uw-krea2-nsfw/leaf/balcony-candid-seated/environment__,
+        __uw-krea2-nsfw/leaf/balcony-candid-seated/lighting__,
+        __uw-krea2-nsfw/leaf/balcony-candid-seated/camera__,
+        __uw-krea2-nsfw/leaf/balcony-candid-seated/treatment__. [3:4]
+    closet-selfie-cosplay:
+    - >-
+        __uw-krea2-nsfw/leaf/closet-selfie-cosplay/medium__
+        __uw-krea2-nsfw/leaf/closet-selfie-cosplay/subject__,
+        __uw-krea2-nsfw/leaf/closet-selfie-cosplay/pose__,
+        __uw-krea2-nsfw/leaf/closet-selfie-cosplay/wardrobe__,
+        __uw-krea2-nsfw/leaf/closet-selfie-cosplay/environment__,
+        __uw-krea2-nsfw/leaf/closet-selfie-cosplay/lighting__,
+        __uw-krea2-nsfw/leaf/closet-selfie-cosplay/camera__,
+        __uw-krea2-nsfw/leaf/closet-selfie-cosplay/treatment__. [2:3]
+    closet-portrait-cosplay:
+    - >-
+        __uw-krea2-nsfw/leaf/closet-portrait-cosplay/medium__
+        __uw-krea2-nsfw/leaf/closet-portrait-cosplay/subject__,
+        __uw-krea2-nsfw/leaf/closet-portrait-cosplay/pose__,
+        __uw-krea2-nsfw/leaf/closet-portrait-cosplay/wardrobe__,
+        __uw-krea2-nsfw/leaf/closet-portrait-cosplay/environment__,
+        __uw-krea2-nsfw/leaf/closet-portrait-cosplay/lighting__,
+        __uw-krea2-nsfw/leaf/closet-portrait-cosplay/camera__,
+        __uw-krea2-nsfw/leaf/closet-portrait-cosplay/treatment__. [2:3]
+    bedroom-selfie-cosplay:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-selfie-cosplay/medium__
+        __uw-krea2-nsfw/leaf/bedroom-selfie-cosplay/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-cosplay/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-cosplay/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-cosplay/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-cosplay/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-cosplay/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-cosplay/treatment__. [2:3]
+    bedroom-selfie-semi-nsfw:
+    - >-
+        __uw-krea2-nsfw/leaf/bedroom-selfie-semi-nsfw/medium__
+        __uw-krea2-nsfw/leaf/bedroom-selfie-semi-nsfw/subject__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-semi-nsfw/pose__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-semi-nsfw/wardrobe__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-semi-nsfw/environment__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-semi-nsfw/lighting__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-semi-nsfw/camera__,
+        __uw-krea2-nsfw/leaf/bedroom-selfie-semi-nsfw/treatment__. [2:3]
+    living-room-selfie-semi-nsfw:
+    - >-
+        __uw-krea2-nsfw/leaf/living-room-selfie-semi-nsfw/medium__
+        __uw-krea2-nsfw/leaf/living-room-selfie-semi-nsfw/subject__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-semi-nsfw/pose__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-semi-nsfw/wardrobe__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-semi-nsfw/environment__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-semi-nsfw/lighting__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-semi-nsfw/camera__,
+        __uw-krea2-nsfw/leaf/living-room-selfie-semi-nsfw/treatment__. [2:3]
+    boudoir-selfie-cosplay:
+    - >-
+        __uw-krea2-nsfw/leaf/boudoir-selfie-cosplay/medium__
+        __uw-krea2-nsfw/leaf/boudoir-selfie-cosplay/subject__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-cosplay/pose__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-cosplay/wardrobe__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-cosplay/environment__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-cosplay/lighting__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-cosplay/camera__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-cosplay/treatment__. [2:3]
+    balcony-selfie-cosplay:
+    - >-
+        __uw-krea2-nsfw/leaf/balcony-selfie-cosplay/medium__
+        __uw-krea2-nsfw/leaf/balcony-selfie-cosplay/subject__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-cosplay/pose__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-cosplay/wardrobe__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-cosplay/environment__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-cosplay/lighting__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-cosplay/camera__,
+        __uw-krea2-nsfw/leaf/balcony-selfie-cosplay/treatment__. [2:3]
+    bathroom-selfie-tub-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/bathroom-selfie-tub-wide/medium__
+        __uw-krea2-nsfw/leaf/bathroom-selfie-tub-wide/subject__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-tub-wide/pose__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-tub-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-tub-wide/environment__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-tub-wide/lighting__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-tub-wide/camera__,
+        __uw-krea2-nsfw/leaf/bathroom-selfie-tub-wide/treatment__. [3:2]
+    bathroom-candid-tub-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/bathroom-candid-tub-wide/medium__
+        __uw-krea2-nsfw/leaf/bathroom-candid-tub-wide/subject__,
+        __uw-krea2-nsfw/leaf/bathroom-candid-tub-wide/pose__,
+        __uw-krea2-nsfw/leaf/bathroom-candid-tub-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/bathroom-candid-tub-wide/environment__,
+        __uw-krea2-nsfw/leaf/bathroom-candid-tub-wide/lighting__,
+        __uw-krea2-nsfw/leaf/bathroom-candid-tub-wide/camera__,
+        __uw-krea2-nsfw/leaf/bathroom-candid-tub-wide/treatment__. [3:2]
+    bathroom-candid-reclined-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/bathroom-candid-reclined-wide/medium__
+        __uw-krea2-nsfw/leaf/bathroom-candid-reclined-wide/subject__,
+        __uw-krea2-nsfw/leaf/bathroom-candid-reclined-wide/pose__,
+        __uw-krea2-nsfw/leaf/bathroom-candid-reclined-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/bathroom-candid-reclined-wide/environment__,
+        __uw-krea2-nsfw/leaf/bathroom-candid-reclined-wide/lighting__,
+        __uw-krea2-nsfw/leaf/bathroom-candid-reclined-wide/camera__,
+        __uw-krea2-nsfw/leaf/bathroom-candid-reclined-wide/treatment__. [3:2]
+    apartment-selfie-side-lying:
+    - >-
+        __uw-krea2-nsfw/leaf/apartment-selfie-side-lying/medium__
+        __uw-krea2-nsfw/leaf/apartment-selfie-side-lying/subject__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-side-lying/pose__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-side-lying/wardrobe__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-side-lying/environment__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-side-lying/lighting__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-side-lying/camera__,
+        __uw-krea2-nsfw/leaf/apartment-selfie-side-lying/treatment__. [4:3]
+    apartment-candid-side-lying:
+    - >-
+        __uw-krea2-nsfw/leaf/apartment-candid-side-lying/medium__
+        __uw-krea2-nsfw/leaf/apartment-candid-side-lying/subject__,
+        __uw-krea2-nsfw/leaf/apartment-candid-side-lying/pose__,
+        __uw-krea2-nsfw/leaf/apartment-candid-side-lying/wardrobe__,
+        __uw-krea2-nsfw/leaf/apartment-candid-side-lying/environment__,
+        __uw-krea2-nsfw/leaf/apartment-candid-side-lying/lighting__,
+        __uw-krea2-nsfw/leaf/apartment-candid-side-lying/camera__,
+        __uw-krea2-nsfw/leaf/apartment-candid-side-lying/treatment__. [4:3]
+    apartment-candid-reclined:
+    - >-
+        __uw-krea2-nsfw/leaf/apartment-candid-reclined/medium__
+        __uw-krea2-nsfw/leaf/apartment-candid-reclined/subject__,
+        __uw-krea2-nsfw/leaf/apartment-candid-reclined/pose__,
+        __uw-krea2-nsfw/leaf/apartment-candid-reclined/wardrobe__,
+        __uw-krea2-nsfw/leaf/apartment-candid-reclined/environment__,
+        __uw-krea2-nsfw/leaf/apartment-candid-reclined/lighting__,
+        __uw-krea2-nsfw/leaf/apartment-candid-reclined/camera__,
+        __uw-krea2-nsfw/leaf/apartment-candid-reclined/treatment__. [4:3]
+    closet-selfie-floor-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/closet-selfie-floor-wide/medium__
+        __uw-krea2-nsfw/leaf/closet-selfie-floor-wide/subject__,
+        __uw-krea2-nsfw/leaf/closet-selfie-floor-wide/pose__,
+        __uw-krea2-nsfw/leaf/closet-selfie-floor-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/closet-selfie-floor-wide/environment__,
+        __uw-krea2-nsfw/leaf/closet-selfie-floor-wide/lighting__,
+        __uw-krea2-nsfw/leaf/closet-selfie-floor-wide/camera__,
+        __uw-krea2-nsfw/leaf/closet-selfie-floor-wide/treatment__. [3:2]
+    closet-candid-floor-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/closet-candid-floor-wide/medium__
+        __uw-krea2-nsfw/leaf/closet-candid-floor-wide/subject__,
+        __uw-krea2-nsfw/leaf/closet-candid-floor-wide/pose__,
+        __uw-krea2-nsfw/leaf/closet-candid-floor-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/closet-candid-floor-wide/environment__,
+        __uw-krea2-nsfw/leaf/closet-candid-floor-wide/lighting__,
+        __uw-krea2-nsfw/leaf/closet-candid-floor-wide/camera__,
+        __uw-krea2-nsfw/leaf/closet-candid-floor-wide/treatment__. [3:2]
+    closet-candid-seated-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/closet-candid-seated-wide/medium__
+        __uw-krea2-nsfw/leaf/closet-candid-seated-wide/subject__,
+        __uw-krea2-nsfw/leaf/closet-candid-seated-wide/pose__,
+        __uw-krea2-nsfw/leaf/closet-candid-seated-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/closet-candid-seated-wide/environment__,
+        __uw-krea2-nsfw/leaf/closet-candid-seated-wide/lighting__,
+        __uw-krea2-nsfw/leaf/closet-candid-seated-wide/camera__,
+        __uw-krea2-nsfw/leaf/closet-candid-seated-wide/treatment__. [3:2]
+    kitchen-selfie-counter-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/kitchen-selfie-counter-wide/medium__
+        __uw-krea2-nsfw/leaf/kitchen-selfie-counter-wide/subject__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-counter-wide/pose__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-counter-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-counter-wide/environment__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-counter-wide/lighting__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-counter-wide/camera__,
+        __uw-krea2-nsfw/leaf/kitchen-selfie-counter-wide/treatment__. [3:2]
+    kitchen-candid-counter-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/kitchen-candid-counter-wide/medium__
+        __uw-krea2-nsfw/leaf/kitchen-candid-counter-wide/subject__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-counter-wide/pose__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-counter-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-counter-wide/environment__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-counter-wide/lighting__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-counter-wide/camera__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-counter-wide/treatment__. [3:2]
+    kitchen-candid-window-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/kitchen-candid-window-wide/medium__
+        __uw-krea2-nsfw/leaf/kitchen-candid-window-wide/subject__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-window-wide/pose__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-window-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-window-wide/environment__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-window-wide/lighting__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-window-wide/camera__,
+        __uw-krea2-nsfw/leaf/kitchen-candid-window-wide/treatment__. [3:2]
+    poolside-selfie-lounge-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/poolside-selfie-lounge-wide/medium__
+        __uw-krea2-nsfw/leaf/poolside-selfie-lounge-wide/subject__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-lounge-wide/pose__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-lounge-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-lounge-wide/environment__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-lounge-wide/lighting__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-lounge-wide/camera__,
+        __uw-krea2-nsfw/leaf/poolside-selfie-lounge-wide/treatment__. [3:2]
+    poolside-candid-lounge-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/poolside-candid-lounge-wide/medium__
+        __uw-krea2-nsfw/leaf/poolside-candid-lounge-wide/subject__,
+        __uw-krea2-nsfw/leaf/poolside-candid-lounge-wide/pose__,
+        __uw-krea2-nsfw/leaf/poolside-candid-lounge-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/poolside-candid-lounge-wide/environment__,
+        __uw-krea2-nsfw/leaf/poolside-candid-lounge-wide/lighting__,
+        __uw-krea2-nsfw/leaf/poolside-candid-lounge-wide/camera__,
+        __uw-krea2-nsfw/leaf/poolside-candid-lounge-wide/treatment__. [3:2]
+    poolside-candid-reclined-wide:
+    - >-
+        __uw-krea2-nsfw/leaf/poolside-candid-reclined-wide/medium__
+        __uw-krea2-nsfw/leaf/poolside-candid-reclined-wide/subject__,
+        __uw-krea2-nsfw/leaf/poolside-candid-reclined-wide/pose__,
+        __uw-krea2-nsfw/leaf/poolside-candid-reclined-wide/wardrobe__,
+        __uw-krea2-nsfw/leaf/poolside-candid-reclined-wide/environment__,
+        __uw-krea2-nsfw/leaf/poolside-candid-reclined-wide/lighting__,
+        __uw-krea2-nsfw/leaf/poolside-candid-reclined-wide/camera__,
+        __uw-krea2-nsfw/leaf/poolside-candid-reclined-wide/treatment__. [3:2]
+    boudoir-selfie-side-lying:
+    - >-
+        __uw-krea2-nsfw/leaf/boudoir-selfie-side-lying/medium__
+        __uw-krea2-nsfw/leaf/boudoir-selfie-side-lying/subject__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-side-lying/pose__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-side-lying/wardrobe__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-side-lying/environment__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-side-lying/lighting__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-side-lying/camera__,
+        __uw-krea2-nsfw/leaf/boudoir-selfie-side-lying/treatment__. [4:3]
+    boudoir-candid-side-lying:
+    - >-
+        __uw-krea2-nsfw/leaf/boudoir-candid-side-lying/medium__
+        __uw-krea2-nsfw/leaf/boudoir-candid-side-lying/subject__,
+        __uw-krea2-nsfw/leaf/boudoir-candid-side-lying/pose__,
+        __uw-krea2-nsfw/leaf/boudoir-candid-side-lying/wardrobe__,
+        __uw-krea2-nsfw/leaf/boudoir-candid-side-lying/environment__,
+        __uw-krea2-nsfw/leaf/boudoir-candid-side-lying/lighting__,
+        __uw-krea2-nsfw/leaf/boudoir-candid-side-lying/camera__,
+        __uw-krea2-nsfw/leaf/boudoir-candid-side-lying/treatment__. [4:3]
+    boudoir-candid-reclined:
+    - >-
+        __uw-krea2-nsfw/leaf/boudoir-candid-reclined/medium__
+        __uw-krea2-nsfw/leaf/boudoir-candid-reclined/subject__,
+        __uw-krea2-nsfw/leaf/boudoir-candid-reclined/pose__,
+        __uw-krea2-nsfw/leaf/boudoir-candid-reclined/wardrobe__,
+        __uw-krea2-nsfw/leaf/boudoir-candid-reclined/environment__,
+        __uw-krea2-nsfw/leaf/boudoir-candid-reclined/lighting__,
+        __uw-krea2-nsfw/leaf/boudoir-candid-reclined/camera__,
+        __uw-krea2-nsfw/leaf/boudoir-candid-reclined/treatment__. [4:3]
+  leaf:
+    bedroom-selfie-mirror:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-selfie-mirror__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-selfie__
+      environment:
+      - __uw-shared/nsfw/environment/selfie-bedroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm-device__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bedroom-selfie-laying-back:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-selfie-laying-back__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-selfie__
+      environment:
+      - __uw-shared/nsfw/environment/selfie-laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm-device__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bedroom-selfie-sitting-edge:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-selfie-sitting-edge__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-selfie__
+      environment:
+      - __uw-shared/nsfw/environment/selfie-bedroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm-device__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bedroom-selfie-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-selfie-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-selfie__
+      environment:
+      - __uw-shared/nsfw/environment/selfie-bedroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm-device__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bedroom-selfie-kneeling:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-selfie-kneeling__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-selfie__
+      environment:
+      - __uw-shared/nsfw/environment/selfie-bedroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm-device__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bedroom-selfie-side-lying:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-selfie-side-lying__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-selfie__
+      environment:
+      - __uw-shared/nsfw/environment/selfie-laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm-device__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bathroom-selfie-mirror:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bathroom-selfie-mirror__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bathroom-selfie__
+      environment:
+      - __uw-shared/nsfw/environment/selfie-bathroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bathroom__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bathroom-selfie-counter:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bathroom-selfie-counter__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bathroom-selfie__
+      environment:
+      - __uw-shared/nsfw/environment/selfie-bathroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bathroom__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bathroom-selfie-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bathroom-selfie-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bathroom-selfie__
+      environment:
+      - __uw-shared/nsfw/environment/selfie-bathroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bathroom__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bathroom-selfie-towel:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bathroom-selfie-towel__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bathroom-towel__
+      environment:
+      - __uw-shared/nsfw/environment/selfie-bathroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bathroom__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bedroom-candid-laying-back:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-candid-laying-back__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bedroom-portrait-sitting-edge:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-portrait-sitting-edge__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/bedroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    bedroom-cinematic-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-cinematic-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/bedroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/cinematic-bedroom__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    bedroom-moody-kneeling:
+      medium:
+      - __uw-shared/nsfw/shot/moody__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-moody-kneeling__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/bedroom-evening__
+      lighting:
+      - __uw-shared/nsfw/lighting/moody-bedroom__
+      camera:
+      - __uw-shared/nsfw/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    bedroom-portrait-standing-mirror:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-portrait-standing-mirror__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/bedroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+    bathroom-candid-mirror:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bathroom-candid-mirror__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bathroom-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/bathroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bathroom__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bathroom-portrait-counter:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bathroom-portrait-counter__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bathroom-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/bathroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bathroom__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    bathroom-moody-towel:
+      medium:
+      - __uw-shared/nsfw/shot/moody__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bathroom-moody-towel__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bathroom-towel__
+      environment:
+      - __uw-shared/nsfw/environment/bathroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/moody-bathroom__
+      camera:
+      - __uw-shared/nsfw/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    bedroom-candid-side-lying:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-candid-side-lying__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bedroom-selfie-from-above:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-selfie-from-above__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-selfie__
+      environment:
+      - __uw-shared/nsfw/environment/selfie-laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm-device__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bedroom-selfie-mirror-close:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-selfie-mirror-close__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-selfie__
+      environment:
+      - __uw-shared/nsfw/environment/selfie-bedroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm-device__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bathroom-selfie-tub-edge:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bathroom-selfie-tub-edge__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bathroom-towel__
+      environment:
+      - __uw-shared/nsfw/environment/selfie-bathroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bathroom__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bedroom-candid-standing:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-candid-standing__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/bedroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bathroom-cinematic-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bathroom-cinematic-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bathroom-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/bathroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/cinematic-bathroom__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    bedroom-candid-reclined:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-candid-reclined__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bedroom-candid-kneeling:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-candid-kneeling__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bedroom-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/bedroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bedroom-candid-prone:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-candid-prone__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/stockings-only__
+      environment:
+      - __uw-shared/nsfw/environment/laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bedroom-candid-prone-wide:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-candid-prone__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/stockings-only__
+      environment:
+      - __uw-shared/nsfw/environment/laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    hotel-selfie-mirror:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/hotel-selfie-mirror__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/hotel-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/hotel__
+      lighting:
+      - __uw-shared/nsfw/lighting/hotel__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    hotel-selfie-laying-back:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/hotel-selfie-laying-back__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/hotel-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/hotel-laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/hotel__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    hotel-selfie-sitting-edge:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/hotel-selfie-sitting-edge__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/hotel-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/hotel__
+      lighting:
+      - __uw-shared/nsfw/lighting/hotel__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    hotel-selfie-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/hotel-selfie-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/hotel-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/hotel__
+      lighting:
+      - __uw-shared/nsfw/lighting/hotel__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    hotel-candid-laying-back:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/hotel-candid-laying-back__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/hotel-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/hotel-laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/hotel__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    hotel-portrait-standing-window:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/hotel-portrait-standing-window__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/hotel-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/hotel__
+      lighting:
+      - __uw-shared/nsfw/lighting/hotel__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    hotel-cinematic-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/hotel-cinematic-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/hotel-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/hotel__
+      lighting:
+      - __uw-shared/nsfw/lighting/cinematic-hotel__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    apartment-selfie-mirror:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/apartment-selfie-mirror__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/apartment-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/apartment__
+      lighting:
+      - __uw-shared/nsfw/lighting/apartment__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    apartment-selfie-laying-back:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/apartment-selfie-laying-back__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/apartment-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/apartment-laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/apartment__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    apartment-selfie-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/apartment-selfie-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/apartment-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/apartment__
+      lighting:
+      - __uw-shared/nsfw/lighting/apartment__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    apartment-candid-floor:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/apartment-candid-floor__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/apartment-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/apartment__
+      lighting:
+      - __uw-shared/nsfw/lighting/apartment__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    apartment-portrait-standing:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/apartment-portrait-standing__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/apartment-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/apartment__
+      lighting:
+      - __uw-shared/nsfw/lighting/apartment__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    apartment-cinematic-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/apartment-cinematic-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/apartment-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/apartment__
+      lighting:
+      - __uw-shared/nsfw/lighting/cinematic-apartment__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    apartment-moody-lamp:
+      medium:
+      - __uw-shared/nsfw/shot/moody__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/apartment-moody-lamp__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/apartment-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/apartment-evening__
+      lighting:
+      - __uw-shared/nsfw/lighting/moody-apartment__
+      camera:
+      - __uw-shared/nsfw/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    living-room-selfie-sofa:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/living-room-selfie-sofa__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/living-room-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/living-room__
+      lighting:
+      - __uw-shared/nsfw/lighting/living-room__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    living-room-selfie-mirror:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/living-room-selfie-mirror__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/living-room-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/living-room__
+      lighting:
+      - __uw-shared/nsfw/lighting/living-room__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    living-room-selfie-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/living-room-selfie-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/living-room-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/living-room__
+      lighting:
+      - __uw-shared/nsfw/lighting/living-room__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    living-room-selfie-laying-back:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/living-room-selfie-laying-back__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/living-room-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/living-room-laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/living-room__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    living-room-candid-sofa-recline:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/living-room-candid-sofa-recline__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/living-room-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/living-room__
+      lighting:
+      - __uw-shared/nsfw/lighting/living-room__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    living-room-portrait-standing:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/living-room-portrait-standing__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/living-room-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/living-room__
+      lighting:
+      - __uw-shared/nsfw/lighting/living-room__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    living-room-cinematic-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/living-room-cinematic-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/living-room-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/living-room__
+      lighting:
+      - __uw-shared/nsfw/lighting/cinematic-living-room__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    closet-selfie-mirror:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/closet-selfie-mirror__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/closet-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/walk-in-closet__
+      lighting:
+      - __uw-shared/nsfw/lighting/closet__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    closet-selfie-full-length:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/closet-selfie-full-length__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/closet-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/walk-in-closet__
+      lighting:
+      - __uw-shared/nsfw/lighting/closet__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    closet-selfie-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/closet-selfie-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/closet-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/walk-in-closet__
+      lighting:
+      - __uw-shared/nsfw/lighting/closet__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    closet-candid-mirror:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/closet-candid-mirror__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/closet-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/walk-in-closet__
+      lighting:
+      - __uw-shared/nsfw/lighting/closet__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    closet-portrait-trying-on:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/closet-portrait-trying-on__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/closet-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/walk-in-closet__
+      lighting:
+      - __uw-shared/nsfw/lighting/closet__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    closet-cinematic-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/closet-cinematic-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/closet-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/walk-in-closet__
+      lighting:
+      - __uw-shared/nsfw/lighting/cinematic-closet__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+
+    kitchen-selfie-counter:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/kitchen-selfie-counter__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/kitchen-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/kitchen-morning__
+      lighting:
+      - __uw-shared/nsfw/lighting/kitchen-morning__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    kitchen-selfie-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/kitchen-selfie-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/kitchen-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/kitchen-morning__
+      lighting:
+      - __uw-shared/nsfw/lighting/kitchen-morning__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    kitchen-selfie-stool:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/kitchen-selfie-stool__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/kitchen-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/kitchen-morning__
+      lighting:
+      - __uw-shared/nsfw/lighting/kitchen-morning__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    kitchen-candid-counter:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/kitchen-candid-counter__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/kitchen-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/kitchen-morning__
+      lighting:
+      - __uw-shared/nsfw/lighting/kitchen-morning__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    kitchen-portrait-standing:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/kitchen-portrait-standing__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/kitchen-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/kitchen-morning__
+      lighting:
+      - __uw-shared/nsfw/lighting/kitchen-morning__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    kitchen-cinematic-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/kitchen-cinematic-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/kitchen-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/kitchen-morning__
+      lighting:
+      - __uw-shared/nsfw/lighting/cinematic-kitchen__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    balcony-selfie-railing:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/balcony-selfie-railing__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/balcony-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/balcony-golden-hour__
+      lighting:
+      - __uw-shared/nsfw/lighting/golden-hour__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    balcony-selfie-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/balcony-selfie-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/balcony-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/balcony-golden-hour__
+      lighting:
+      - __uw-shared/nsfw/lighting/golden-hour__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    balcony-selfie-seated:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/balcony-selfie-seated__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/balcony-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/balcony-golden-hour__
+      lighting:
+      - __uw-shared/nsfw/lighting/golden-hour__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    balcony-candid-railing:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/balcony-candid-railing__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/balcony-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/balcony-golden-hour__
+      lighting:
+      - __uw-shared/nsfw/lighting/golden-hour__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    balcony-portrait-seated:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/balcony-portrait-seated__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/balcony-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/balcony-golden-hour__
+      lighting:
+      - __uw-shared/nsfw/lighting/golden-hour__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    balcony-cinematic-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/balcony-cinematic-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/balcony-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/balcony-golden-hour__
+      lighting:
+      - __uw-shared/nsfw/lighting/cinematic-balcony__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    boudoir-selfie-mirror:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/boudoir-selfie-mirror__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/boudoir-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/boudoir__
+      lighting:
+      - __uw-shared/nsfw/lighting/boudoir__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    boudoir-selfie-chaise:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/boudoir-selfie-chaise__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/boudoir-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/boudoir__
+      lighting:
+      - __uw-shared/nsfw/lighting/boudoir__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    boudoir-candid-chaise:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/boudoir-candid-chaise__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/boudoir-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/boudoir__
+      lighting:
+      - __uw-shared/nsfw/lighting/boudoir__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    boudoir-portrait-vanity:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/boudoir-portrait-vanity__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/boudoir-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/boudoir__
+      lighting:
+      - __uw-shared/nsfw/lighting/boudoir__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    boudoir-portrait-standing:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/boudoir-portrait-standing__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/boudoir-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/boudoir__
+      lighting:
+      - __uw-shared/nsfw/lighting/boudoir__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    boudoir-cinematic-seated:
+      medium:
+      - __uw-shared/nsfw/shot/cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/boudoir-cinematic-seated__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/boudoir-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/boudoir__
+      lighting:
+      - __uw-shared/nsfw/lighting/cinematic-boudoir__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    boudoir-cinematic-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/boudoir-cinematic-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/boudoir-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/boudoir__
+      lighting:
+      - __uw-shared/nsfw/lighting/cinematic-boudoir__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    hotel-moody-laying-back:
+      medium:
+      - __uw-shared/nsfw/shot/moody__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/hotel-moody-laying-back__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/hotel-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/hotel-laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/moody-hotel__
+      camera:
+      - __uw-shared/nsfw/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    living-room-moody-sofa:
+      medium:
+      - __uw-shared/nsfw/shot/moody__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/living-room-moody-sofa__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/living-room-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/living-room-evening__
+      lighting:
+      - __uw-shared/nsfw/lighting/moody-living-room__
+      camera:
+      - __uw-shared/nsfw/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    closet-moody-mirror:
+      medium:
+      - __uw-shared/nsfw/shot/moody__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/closet-moody-mirror__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/closet-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/walk-in-closet__
+      lighting:
+      - __uw-shared/nsfw/lighting/moody-closet__
+      camera:
+      - __uw-shared/nsfw/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    kitchen-moody-counter:
+      medium:
+      - __uw-shared/nsfw/shot/moody__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/kitchen-moody-counter__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/kitchen-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/kitchen-evening__
+      lighting:
+      - __uw-shared/nsfw/lighting/moody-kitchen__
+      camera:
+      - __uw-shared/nsfw/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    balcony-moody-railing:
+      medium:
+      - __uw-shared/nsfw/shot/moody__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/balcony-moody-railing__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/balcony-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/balcony-evening__
+      lighting:
+      - __uw-shared/nsfw/lighting/moody-balcony__
+      camera:
+      - __uw-shared/nsfw/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    boudoir-moody-chaise:
+      medium:
+      - __uw-shared/nsfw/shot/moody__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/boudoir-moody-chaise__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/boudoir-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/boudoir-evening__
+      lighting:
+      - __uw-shared/nsfw/lighting/moody-boudoir__
+      camera:
+      - __uw-shared/nsfw/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    hotel-selfie-side-lying:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/hotel-selfie-side-lying__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/hotel-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/hotel-laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/hotel__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    hotel-candid-side-lying:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/hotel-candid-side-lying__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/hotel-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/hotel-laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/hotel__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    hotel-candid-reclined:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/hotel-candid-reclined__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/hotel-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/hotel-laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/hotel__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    balcony-selfie-railing-wide:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/balcony-selfie-railing-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/balcony-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/balcony-golden-hour__
+      lighting:
+      - __uw-shared/nsfw/lighting/golden-hour__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    balcony-candid-seated-wide:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/balcony-candid-seated-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/balcony-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/balcony-golden-hour__
+      lighting:
+      - __uw-shared/nsfw/lighting/golden-hour__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    balcony-candid-railing-wide:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/balcony-candid-railing-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/balcony-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/balcony-golden-hour__
+      lighting:
+      - __uw-shared/nsfw/lighting/golden-hour__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    balcony-portrait-seated-wide:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/balcony-portrait-seated-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/balcony-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/balcony-golden-hour__
+      lighting:
+      - __uw-shared/nsfw/lighting/golden-hour__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    living-room-selfie-side-lying:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/living-room-selfie-side-lying__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/living-room-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/living-room-laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/living-room__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    living-room-candid-side-lying:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/living-room-candid-side-lying__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/living-room-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/living-room-laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/living-room__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    living-room-candid-reclined:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/living-room-candid-reclined__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/living-room-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/living-room-laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/living-room__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    kitchen-candid-window:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/kitchen-candid-window__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/kitchen-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/kitchen-morning__
+      lighting:
+      - __uw-shared/nsfw/lighting/kitchen-morning__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    closet-candid-full-length:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/closet-candid-full-length__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/closet-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/walk-in-closet__
+      lighting:
+      - __uw-shared/nsfw/lighting/closet__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    balcony-candid-seated:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/balcony-candid-seated__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/balcony-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/balcony-golden-hour__
+      lighting:
+      - __uw-shared/nsfw/lighting/golden-hour__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    closet-selfie-cosplay:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/closet-selfie-mirror__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/cosplay-composer__
+      environment:
+      - __uw-shared/nsfw/environment/walk-in-closet__
+      lighting:
+      - __uw-shared/nsfw/lighting/closet__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    closet-portrait-cosplay:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/closet-portrait-trying-on__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/cosplay-composer__
+      environment:
+      - __uw-shared/nsfw/environment/walk-in-closet__
+      lighting:
+      - __uw-shared/nsfw/lighting/closet__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    bedroom-selfie-cosplay:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-selfie-mirror__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/cosplay-composer__
+      environment:
+      - __uw-shared/nsfw/environment/selfie-bedroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm-device__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bedroom-selfie-semi-nsfw:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bedroom-selfie-mirror__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/semi-nsfw-composer__
+      environment:
+      - __uw-shared/nsfw/environment/selfie-bedroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-warm-device__
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    living-room-selfie-semi-nsfw:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/living-room-selfie-sofa__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/semi-nsfw-composer__
+      environment:
+      - __uw-shared/nsfw/environment/living-room__
+      lighting:
+      - __uw-shared/nsfw/lighting/living-room__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    boudoir-selfie-cosplay:
+      medium:
+      - __uw-shared/nsfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/boudoir-selfie-mirror__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/cosplay-composer__
+      environment:
+      - __uw-shared/nsfw/environment/boudoir__
+      lighting:
+      - __uw-shared/nsfw/lighting/boudoir__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    balcony-selfie-cosplay:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/balcony-selfie-railing__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/cosplay-composer__
+      environment:
+      - __uw-shared/nsfw/environment/balcony-golden-hour__
+      lighting:
+      - __uw-shared/nsfw/lighting/golden-hour__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    # G7 — poolside outdoor room family
+    poolside-selfie-lounge:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/poolside-selfie-lounge__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/poolside-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/poolside-day__
+      lighting:
+      - __uw-shared/nsfw/lighting/poolside-day__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    poolside-selfie-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/poolside-selfie-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/poolside-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/poolside-day__
+      lighting:
+      - __uw-shared/nsfw/lighting/poolside-day__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    poolside-selfie-towel:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/poolside-selfie-towel__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/poolside-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/poolside-day__
+      lighting:
+      - __uw-shared/nsfw/lighting/poolside-day__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    poolside-candid-lounge:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/poolside-candid-lounge__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/poolside-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/poolside-day__
+      lighting:
+      - __uw-shared/nsfw/lighting/poolside-day__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    poolside-portrait-standing:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/poolside-portrait-standing__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/poolside-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/poolside-day__
+      lighting:
+      - __uw-shared/nsfw/lighting/poolside-day__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    poolside-cinematic-over-shoulder:
+      medium:
+      - __uw-shared/nsfw/shot/cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/poolside-cinematic-over-shoulder__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/poolside-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/poolside-day__
+      lighting:
+      - __uw-shared/nsfw/lighting/cinematic-poolside__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic__
+    poolside-moody-evening:
+      medium:
+      - __uw-shared/nsfw/shot/moody__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/poolside-moody-evening__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/poolside-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/poolside-evening__
+      lighting:
+      - __uw-shared/nsfw/lighting/moody-poolside__
+      camera:
+      - __uw-shared/nsfw/camera/moody__
+      treatment:
+      - __uw-shared/common/treatment/moody__
+    bathroom-selfie-tub-wide:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bathroom-selfie-tub-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bathroom-towel__
+      environment:
+      - __uw-shared/nsfw/environment/bathroom-tub-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bathroom__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bathroom-candid-tub-wide:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bathroom-candid-tub-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bathroom-towel__
+      environment:
+      - __uw-shared/nsfw/environment/bathroom-tub-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bathroom__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    bathroom-candid-reclined-wide:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/bathroom-candid-reclined-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bathroom-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/bathroom-tub-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bathroom__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    apartment-selfie-side-lying:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/apartment-selfie-side-lying__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/apartment-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/apartment-laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/apartment__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    apartment-candid-side-lying:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/apartment-candid-side-lying__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/apartment-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/apartment-laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/apartment__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    apartment-candid-reclined:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/apartment-candid-reclined__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/apartment-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/apartment-laying-back__
+      lighting:
+      - __uw-shared/nsfw/lighting/apartment__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    closet-selfie-floor-wide:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/closet-selfie-floor-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/closet-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/walk-in-closet__
+      lighting:
+      - __uw-shared/nsfw/lighting/closet__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    closet-candid-floor-wide:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/closet-candid-floor-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/closet-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/walk-in-closet__
+      lighting:
+      - __uw-shared/nsfw/lighting/closet__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    closet-candid-seated-wide:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/closet-candid-seated-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/closet-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/walk-in-closet__
+      lighting:
+      - __uw-shared/nsfw/lighting/closet__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    kitchen-selfie-counter-wide:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/kitchen-selfie-counter-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/kitchen-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/kitchen-morning__
+      lighting:
+      - __uw-shared/nsfw/lighting/kitchen-morning__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    kitchen-candid-counter-wide:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/kitchen-candid-counter-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/kitchen-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/kitchen-morning__
+      lighting:
+      - __uw-shared/nsfw/lighting/kitchen-morning__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    kitchen-candid-window-wide:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/kitchen-candid-window-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/kitchen-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/kitchen-morning__
+      lighting:
+      - __uw-shared/nsfw/lighting/kitchen-morning__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    poolside-selfie-lounge-wide:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/poolside-selfie-lounge-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/poolside-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/poolside-day__
+      lighting:
+      - __uw-shared/nsfw/lighting/poolside-day__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    poolside-candid-lounge-wide:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/poolside-candid-lounge-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/poolside-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/poolside-day__
+      lighting:
+      - __uw-shared/nsfw/lighting/poolside-day__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    poolside-candid-reclined-wide:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/poolside-candid-reclined-wide__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/poolside-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/poolside-day__
+      lighting:
+      - __uw-shared/nsfw/lighting/poolside-day__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    boudoir-selfie-side-lying:
+      medium:
+      - __uw-shared/nsfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/boudoir-selfie-side-lying__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/boudoir-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/boudoir__
+      lighting:
+      - __uw-shared/nsfw/lighting/boudoir__
+      camera:
+      - __uw-shared/nsfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    boudoir-candid-side-lying:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/boudoir-candid-side-lying__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/boudoir-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/boudoir__
+      lighting:
+      - __uw-shared/nsfw/lighting/boudoir__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    boudoir-candid-reclined:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/boudoir-candid-reclined__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/boudoir-intimate__
+      environment:
+      - __uw-shared/nsfw/environment/boudoir__
+      lighting:
+      - __uw-shared/nsfw/lighting/boudoir__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__

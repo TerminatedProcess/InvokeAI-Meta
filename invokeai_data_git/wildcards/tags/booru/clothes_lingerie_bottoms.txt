@@ -1,0 +1,10 @@
+panties, __clothes_panty_pattern__
+panties, crotchless panties, ((pearl thong):0.9), ((__body_bare_female_crotch__):0.8)
+panties, crotchless panties, __body_bare_female_crotch__
+panties, __colors__ panties
+panties, __colors__ panties, see-through panties, covered pussy, ((__body_bare_female_crotch__):0.8)
+panties, __clothes_panty_pattern__, __clothes_panty_features__
+panties, __colors__ panties, see-through panties, covered pussy, ((__body_bare_female_crotch__):0.8), __clothes_panty_features__
+panties, __colors__ panties, see-through panties, covered pussy, ((__body_bare_female_crotch__):0.8), bow panties, lace-trimmed panties
+panties, __colors__ panties, __clothes_panty_features__
+panties, __colors__ panties, __clothes_panty_pattern__

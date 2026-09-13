@@ -1,0 +1,13 @@
+__colors__-framed eyewear
+heart-shaped eyewear
+rectangular eyewear
+round eyewear
+semi-circular eyewear
+aviator sunglasses
+tortoiseshell-framed eyewear
+cat eye-framed eyewear, __colors__-framed eyewear
+heart-shaped eyewear, __colors__-framed eyewear
+rectangular eyewear, __colors__-framed eyewear
+round eyewear, __colors__-framed eyewear
+semi-circular eyewear, __colors__-framed eyewear
+__clothes_accessories_tinted_sunglasses__

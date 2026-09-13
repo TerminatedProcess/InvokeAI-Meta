@@ -1,0 +1,20 @@
+dark skin
+dark skin, dark-skinned male
+dark skin, dark-skinned male, very dark skin
+pale skin
+tan
+((tan):0.7)
+((tan):0.8)
+((tan):0.9)
+__body_special_male__
+tan, ((tanlines):0.8)
+tan, ((tanlines):0.7)
+dark skin, ((tanlines):0.7)
+dark skin, dark-skinned male, very dark skin
+((shiny skin):0.7)
+((shiny skin):0.8)
+((wet):0.7)
+((wet):0.8)
+((sweat):0.6)
+((sweat):0.8)
+dark skin, dark-skinned male

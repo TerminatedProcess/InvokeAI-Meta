@@ -1,0 +1,6 @@
+from below, __poses_front_side_gamescreen__, __clothes_gamescreen__
+from side, __poses_front_side_gamescreen__, __clothes_gamescreen__
+from side, breast focus, __poses_front_side_gamescreen__, __clothes_gamescreen__
+from side, __poses_back_side_gamescreen__, __clothes_gamescreen__, ((ass focus, ass):0.7)
+from behind, __poses_back_side_gamescreen__, __clothes_gamescreen__, ((ass focus, ass):0.7)
+straight-on, __poses_front_side_gamescreen__, __clothes_gamescreen__

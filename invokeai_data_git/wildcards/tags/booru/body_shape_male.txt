@@ -1,0 +1,28 @@
+skinny, ((__body_pectorals__):0.9)
+plump, ((__body_pectorals__):0.9)
+fat, fat man, ((__body_pectorals__):0.9)
+skinny, toned, ((__body_pectorals__):0.9)
+skinny, muscular male, ((__body_pectorals__):0.9)
+toned, toned male, ((__body_pectorals__):0.9)
+plump, ((muscular male):0.9), ((__body_pectorals__):0.9)
+muscular male, ((__body_pectorals__):0.9)
+mature male, ((__body_pectorals__):0.9)
+muscular male, v-taper, ((__body_pectorals__):0.9)
+bara, ((__body_pectorals__):0.9)
+bara, plump, belly, ((__body_pectorals__):0.9)
+bara, thick arms, ((__body_pectorals__):0.9)
+bara, thick arms, thick thighs, ((__body_pectorals__):0.9)
+skinny, __body_pectorals__
+plump, __body_pectorals__
+fat, fat man, __body_pectorals__
+skinny, toned, __body_pectorals__
+skinny, muscular male, __body_pectorals__
+toned, toned male, __body_pectorals__
+plump, ((muscular male):0.9), __body_pectorals__
+muscular male, __body_pectorals__
+mature male, __body_pectorals__
+muscular male, v-taper, __body_pectorals__
+bara, __body_pectorals__
+bara, plump, belly, __body_pectorals__
+bara, thick arms, __body_pectorals__
+bara, thick arms, thick thighs, __body_pectorals__

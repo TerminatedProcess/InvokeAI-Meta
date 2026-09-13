@@ -1,0 +1,4 @@
+__clothes_outfits_male__, ((clothes pull, clothes lift, open clothes):0.8), nude, ((__body_bare_male_crotch__):0.9)
+((__clothes_outfits_male__, ((clothes pull, clothes lift, open clothes):0.8), nude, ((__body_bare_male_crotch__):0.9)):0.9)
+__colors__ __clothes_swimsuit_male__, male swimwear pull, __body_bare_male_crotch__
+__colors__ male underwear, __clothes_underwear_male__, male underwear pull, __body_bare_male_crotch__

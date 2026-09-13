@@ -1,0 +1,3 @@
+((puffy cheeks):0.7)
+((dimple):0.8)
+((cheekbones):0.8)

@@ -1,0 +1,418 @@
+cropped hair
+short hair
+long hair
+medium hair
+medium-long hair
+shoulder-length hair
+bobbed hair
+blunt cut
+layered hair
+shag haircut
+shaggy hair
+wispy hair
+feathered hair
+tapered cut
+taper fade hair
+fade haircut
+buzzed hair
+buzz cut
+crew cut
+straight hair
+wavy hair
+curly hair
+kinky hair
+textured hair
+frizzy hair
+voluminous hair
+sleek hair
+messy hair
+messy bun hair
+tousled hair
+windblown hair
+wet hair
+slicked-back hair
+combed-back hair
+side swept hair
+back swept hair
+front bangs
+curtain bangs hair
+undercut
+long undercut
+half shaved head
+shaved sides
+mohawk
+faux hawk
+chonmage
+flattop
+pompadour
+quiff
+spiky hair
+spiked hair
+messy spikes
+faux bob
+lob
+long bob
+short bob
+asymmetrical bob
+angled bob
+A-line bob
+chin-length bob
+bob cut
+inverted bob
+graduated bob
+stacked bob
+pixie cut
+long pixie
+pixie with bangs
+crop cut
+bowl cut
+bowl cut with bangs
+shag bob
+mullet
+modern mullet
+wolf cut
+butterfly haircut
+butterfly cut hair
+ramen hair (fad tag)
+bird nest hair
+hedgehog hair (fuzzy/spiky tag)
+flippy hair
+flipped hair
+layered bob
+layered shag
+curtain fringe cut
+asymmetrical bangs
+asymmetrical fringe
+baby bangs
+bangs
+blunt bangs
+curtain bangs
+feather bangs
+fringed bangs
+full bangs
+hair between eyes
+hair intakes
+hair over eyes
+hair over one eye
+hair framing bangs
+heavy fringe
+long bangs
+long fringe
+micro bangs
+parted bangs
+round fringe
+short bangs
+short fringe
+side-swept bangs
+side-swept fringe
+sidelocks
+single hair intake
+straight-across bangs
+straight-across fringe
+swept bangs
+textured bangs
+thin fringe
+widow’s peak
+wispy bangs
+side fringe
+center part fringe
+curtain fringe
+layered fringe
+coquette bangs
+curly bangs
+choppy bangs
+shag bangs
+swoop bangs
+V-cut bangs
+soft bangs
+soft fringe
+wispy fringe
+rockstar bangs
+shaggy bangs
+fringe veil
+traightened hair
+smooth hair
+glossy hair
+shiny hair
+matte hair
+frizzed hair
+curly fringe
+beach waves
+mermaid waves
+tight curls
+loose curls
+corkscrew curls
+ringlets
+micro curls
+afro puff
+puff hairstyle
+damp hair
+blowout hair
+blow-dried hair
+heat-styled hair
+air-dried hair
+wet-look hair
+crimped hair
+crimp curls
+retro curls
+perm hair
+spiral curls
+wave pattern
+S-waves
+C-waves
+ombré hair
+balayage hair
+two-tone hair
+highlight hair
+lowlights hair
+silver hair
+gray hair
+streaked hair
+streak hair
+dyed hair
+natural hair (tag)
+salt-and-pepper hair
+center part
+middle part
+side part
+deep side part
+zigzag part
+off-center part
+natural part
+hair tucked behind ear
+hair behind ear
+hair over ear
+hair swept across forehead
+hair covering forehead
+hair pushed back
+hair tucked back
+braid
+braids
+plait
+plaits
+single braid
+multiple braids
+twin braids
+low twin braids
+high twin braids
+tri braids
+quad braids
+five-strand braid
+four-strand braid
+three-strand braid
+six-strand braid
+dutch braid
+reverse braid
+reverse dutch braid
+french braid
+french braiding
+dutch fishtail braid
+fishtail braid
+fishtail crown braid
+crown braid
+braid crown
+halo braid
+waterfall braid
+waterfall fishtail braid
+waterfall dutch braid
+french waterfall braid
+french fishtail braid
+half-up half-down braid
+headband braid
+ribbon braid
+rope braid
+rope twist
+twist braid
+s-shaped braid
+shoelace braid
+herringbone braid
+inverted braid
+lace braid
+ladder braid
+mermaid braid
+milk-and-honey braid
+milkmaid braid
+milkmaid crown braid
+pineapple braid
+pull-through braid
+reverse french braid
+sculptural braid
+stacked braid
+staircase braid
+star braid
+surf braid
+spike braid
+tied-up braid
+braided bangs
+front braid
+side braid
+side-swept braid
+side-twist braid
+seductive side braid
+braided headband
+braid with beads
+beaded braid
+braided bun
+braided bun updo
+braided ponytail
+braided updo
+braided crown updo
+feed-in braid
+stitch braid
+stitch cornrow
+interlocking braid
+interlocking cornrow
+zig-zag braid
+zigzag cornrows
+zigzag part braid
+cornrows
+cornrow braids
+reverse cornrows
+ladder cornrows
+faux cornrows
+goddess braids
+goddess braid crown
+jumbo braids
+jumbo cornrows
+double dutch braid
+dutch braid bun (braided bun)
+half halo braid
+braid halo crown
+braid-wrapped ponytail
+braid ponytail
+braided pigtails
+pigtail braids
+braided rope pigtails
+box braids
+faux box braids
+micro braids
+jumbo box braids
+goddess braids
+senegalese twists
+kanekalon braids
+crochet braids
+passion twists
+senegal twists
+passion twists
+twists
+flat twists
+flat twist hairstyle
+braid twists
+two-strand twist
+three-strand twist
+rope twist
+twist out
+bantu knots
+knotless braids
+passion twists
+Havana twists
+senegalese twists
+marley twists
+feeder braids
+locs
+dreadlocks
+dreadlock styles
+loc extensions
+dreadlocks
+locs
+short locs
+long locs
+freeform dreads
+interlocked dreads
+twisted locs
+dread bun
+loc ponytail
+locs with beads
+bead locs
+loc crown
+ponytail
+folded ponytail
+front ponytail
+high ponytail
+low ponytail
+short ponytail
+side ponytail
+split ponytail
+ponytail braid
+braided ponytail
+ponytail with bangs
+ponytail with side sweep
+high ponytail with bangs
+sleek ponytail
+curly ponytail
+wavy ponytail
+teased ponytail
+waterfall ponytail
+man bun ponytail
+twintails
+low twintails
+short twintails
+uneven twintails
+tri tails
+quad tails
+quin tails
+twin tails
+low twin tails
+side twintails
+double tails
+hair bun
+bun
+updo
+half updo
+updo hairstyle
+messy bun
+braided bun
+single hair bun
+double bun
+triple bun
+donut bun
+doughnut bun
+cone hair bun
+cone bun
+heart hair bun
+bow bun
+topknot
+top knot
+mohawk bun (combo)
+chignon
+French twist
+victory rolls
+beehive hairdo
+shouten pegasus mix mori
+beehive
+teased beehive
+pompadour updo
+bun with bangs
+bun with face framing
+crown bun
+low bun
+high bun
+side bun
+braided bun with beads
+twist bun
+looped bun
+sock bun
+waterfall bun
+braided updo bun
+afro
+huge afro
+afro puff
+natural afro
+rounded afro
+puffball afro
+huge puff
+beehive hair
+beehive hairdo
+beehive pouf
+beehive ponytail
+pompadour
+quiff
+flattop
+buzz cut
+crew cut
+undercut
+slick back
+slicked back
+combed hair
+side swept
+swept bangs

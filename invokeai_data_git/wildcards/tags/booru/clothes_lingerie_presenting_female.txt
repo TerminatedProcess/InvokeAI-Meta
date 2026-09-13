@@ -1,0 +1,63 @@
+babydoll, __colors__ babydoll, __clothes_lingerie_bottoms__, __clothes_legwear__, (panty pull), __body_bare_female_crotch__, __poses_presenting_pussy__
+babydoll, __colors__ babydoll, __clothes_lingerie_bottoms__, (panty pull), __body_bare_female_crotch__, __poses_presenting_pussy__
+babydoll, __colors__ babydoll, no panties, __body_bare_female_crotch__, __poses_presenting_pussy__
+bodystocking, __colors__ bodystocking, bodystocking only, ((covered nipples):0.9), torn bodystocking, __body_bare_female_crotch__, __poses_presenting_pussy__
+bodystocking, __colors__ bodystocking, bodystocking only, ((covered nipples):0.9), see-through clothes, torn bodystocking, __body_bare_female_crotch__, __poses_presenting_pussy__
+__colors__ lingerie, bra, __clothes_bra_type__, __clothes_lingerie_bottoms__, (panty pull), __body_bare_female_crotch__, __poses_presenting_pussy__
+__colors__ lingerie, bra, __clothes_bra_type__, __clothes_pantyhose__, torn pantyhose, __body_bare_female_crotch__, __poses_presenting_pussy__
+bra, __clothes_bra_type__, __colors__ bra, __clothes_lingerie_bottoms__, (panty pull), __body_bare_female_crotch__, __poses_presenting_pussy__
+bra, __clothes_bra_type__, __colors__ bra, __clothes_pantyhose__, torn pantyhose, __body_bare_female_crotch__, __poses_presenting_pussy__
+no bra, __clothes_lingerie_bottoms__, ((__body_breast_details__, ((__body_areolae_details__):0.9)):0.8), (panty pull), __body_bare_female_crotch__, __poses_presenting_pussy__
+no bra, __clothes_pantyhose__, ((__body_breast_details__, ((__body_areolae_details__):0.9)):0.8), torn pantyhose, __body_bare_female_crotch__, __poses_presenting_pussy__
+bra, __clothes_bra_type__, __colors__ bra, no panties, __body_bare_female_crotch__, __poses_presenting_pussy__
+chemise, __colors__ chemise, (panty pull), __body_bare_female_crotch__, __poses_presenting_pussy__
+chemise, __colors__ chemise, panty peek, __clothes_lingerie_bottoms__, panties aside, __body_bare_female_crotch__, __poses_presenting_pussy__
+chemise, __colors__ chemise, pussy peek, no panties, __body_bare_female_crotch__, __poses_presenting_pussy__
+corset, __colors__ corset, __clothes_lingerie_bottoms__, __body_breast_details__, ((__body_areolae_details__):0.9), (panty pull), __body_bare_female_crotch__, __poses_presenting_pussy__
+corset, __colors__ corset, __clothes_pantyhose__, __body_breast_details__, ((__body_areolae_details__):0.9), torn pantyhose, __body_bare_female_crotch__, __poses_presenting_pussy__
+corset, __colors__ corset, __clothes_lingerie_bottoms__, __clothes_legwear__, __body_breast_details__, ((__body_areolae_details__):0.9), (panty pull), __body_bare_female_crotch__, __poses_presenting_pussy__
+corset, __colors__ corset, __clothes_legwear__, no panties, __body_bare_female_crotch__, __body_breast_details__, ((__body_areolae_details__):0.9)
+nightgown, __colors__ nightgown, (panty pull), __body_bare_female_crotch__, __poses_presenting_pussy__
+nightgown, __colors__ nightgown, panty peek, __clothes_lingerie_bottoms__, panties aside, __body_bare_female_crotch__, __poses_presenting_pussy__
+nightgown, __colors__ nightgown, pussy peek, no panties, __poses_presenting_pussy__
+lingerie, ((leotard):0.8), ((see-through clothes, spaghetti strap, sleeveless, lace):0.8), ((see-through leotard, loose clothes, lace-trim, backless leotard):0.7), __colors__ lingerie
+bustier, __colors__ bustier, __clothes_lingerie_bottoms__, (panty pull), __body_bare_female_crotch__, __poses_presenting_pussy__
+bustier, __colors__ bustier, __clothes_lingerie_bottoms__, __clothes_legwear__, (panty pull), __body_bare_female_crotch__, __poses_presenting_pussy__
+bustier, __colors__ bustier, __clothes_pantyhose__, torn pantyhose, __body_bare_female_crotch__, __poses_presenting_pussy__
+bustier, __colors__ bustier, __clothes_legwear__, no panties, __body_bare_female_crotch__, __poses_presenting_pussy__
+camisole, __colors__ camisole, __clothes_lingerie_bottoms__, (panty pull), __body_bare_female_crotch__, __poses_presenting_pussy__
+camisole, __colors__ camisole, __clothes_lingerie_bottoms__, __clothes_legwear__, (panty pull), __body_bare_female_crotch__, __poses_presenting_pussy__
+camisole, __colors__ camisole, __clothes_pantyhose__, torn pantyhose, __body_bare_female_crotch__, __poses_presenting_pussy__
+camisole, __colors__ camisole, __clothes_legwear__, no panties, __body_bare_female_crotch__, __poses_presenting_pussy__
+babydoll, __colors__ babydoll, __clothes_lingerie_bottoms__, __clothes_legwear__, clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+babydoll, __colors__ babydoll, __clothes_lingerie_bottoms__, clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+babydoll, __colors__ babydoll, no panties, __body_bare_female_crotch__, clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+bodystocking, __colors__ bodystocking, bodystocking only, between breasts, clothes between breasts, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+bodystocking, __colors__ bodystocking, bodystocking only, ((covered nipples):0.9), see-through clothes, __body_breast_details__, __poses_presenting_breasts__
+bodystocking, __colors__ bodystocking, bodystocking only, ((covered nipples):0.9), see-through clothes, ((__body_bare_female_crotch__):0.8), __body_breast_details__, __poses_presenting_breasts__
+__colors__ lingerie, bra, __clothes_bra_type__, __clothes_lingerie_bottoms__, ((bra pull), clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+__colors__ lingerie, bra, __clothes_bra_type__, __clothes_pantyhose__, ((bra pull), clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+bra, __clothes_bra_type__, __colors__ bra, __clothes_lingerie_bottoms__, ((bra pull), clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+bra, __clothes_bra_type__, __colors__ bra, __clothes_pantyhose__, ((bra pull), clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+no bra, __clothes_lingerie_bottoms__, ((__body_breast_details__, ((__body_areolae_details__):0.9)):0.8), breasts out, __poses_presenting_breasts__
+no bra, __clothes_pantyhose__, ((__body_breast_details__, ((__body_areolae_details__):0.9)):0.8), breasts out, __poses_presenting_breasts__
+bra, __clothes_bra_type__, __colors__ bra, no panties, __body_bare_female_crotch__, ((bra pull), clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+chemise, __colors__ chemise, chemise pull, clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+chemise, __colors__ chemise, panty peek, __clothes_lingerie_bottoms__, chemise pull, clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+chemise, __colors__ chemise, pussy peek, no panties, chemise pull, clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+corset, __colors__ corset, __clothes_lingerie_bottoms__, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+corset, __colors__ corset, __clothes_pantyhose__, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+corset, __colors__ corset, __clothes_lingerie_bottoms__, __clothes_legwear__, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+corset, __colors__ corset, __clothes_legwear__, no panties, __body_bare_female_crotch__, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+nightgown, __colors__ nightgown, nightgown pull, clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+nightgown, __colors__ nightgown, panty peek, __clothes_lingerie_bottoms__, nightgown pull, clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+nightgown, __colors__ nightgown, pussy peek, no panties, nightgown pull, clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+lingerie, ((leotard):0.8), ((see-through clothes, spaghetti strap, sleeveless, lace):0.8), ((see-through leotard, loose clothes, lace-trim, backless leotard):0.7), __colors__ lingerie, leotard pull, clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+bustier, __colors__ bustier, __clothes_lingerie_bottoms__, clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+bustier, __colors__ bustier, __clothes_lingerie_bottoms__, __clothes_legwear__, clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+bustier, __colors__ bustier, __clothes_pantyhose__, clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+bustier, __colors__ bustier, __clothes_legwear__, no panties, __body_bare_female_crotch__, clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+camisole, __colors__ camisole, __clothes_lingerie_bottoms__, shirt pull, camisole pull, clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+camisole, __colors__ camisole, __clothes_lingerie_bottoms__, __clothes_legwear__, shirt pull, camisole pull, clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+camisole, __colors__ camisole, __clothes_pantyhose__, shirt pull, camisole pull, clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__
+camisole, __colors__ camisole, __clothes_legwear__, no panties, __body_bare_female_crotch__, shirt pull, camisole pull, clothes pull, breasts out, __body_breast_details__, ((__body_areolae_details__):0.9), __poses_presenting_breasts__

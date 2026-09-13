@@ -1,0 +1,45 @@
+china dress
+backless dress
+((cake dress):0.7)
+coat dress
+collared dress
+cross-laced dress
+denim dress
+((feather dress):0.8)
+figure skating dress
+frilled dress
+glitter dress
+((half-dress):0.8)
+highleg dress
+hooded dress
+latex dress
+layered dress
+o-ring dress
+pinafore dress
+pleated dress
+((polo dress):0.8)
+((puffy dress):0.8)
+ribbed dress
+((sailor dress):0.8)
+((santa dress):0.7)
+sideless dress
+single-shoulder dress
+sundress
+sweater dress
+tennis dress
+((tent dress):0.8)
+((trapeze dress):0.8)
+((zipper dress):0.8)
+ball gown
+cocktail dress
+evening gown
+((flamenco dress):0.8)
+funeral dress
+gown
+hobble dress
+((mermaid dress):0.6)
+((princess dress):0.8)
+kimono
+yukata
+((pencil dress):0.8)
+dongtan dress, ((taut dress, ((pencil dress):0.8), scoop neck):0.8)

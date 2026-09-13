@@ -1,0 +1,5 @@
+__not_so/clothing-athletic-1980s-aerobics__
+__not_so/clothing-athletic-indoor__
+__not_so/clothing-athletic-outdoor__
+__not_so/clothing-athletic-streetwear__
+__not_so/clothing-athletic-yoga__

@@ -1,0 +1,8 @@
+(bikini pull), __colors__ __clothes_swimsuit_bikini__, ((__body_breast_details__, ass, sideboob):0.8)
+(bikini lift), __colors__ __clothes_swimsuit_bikini__, ((__body_breast_details__, ass, sideboob):0.8)
+(bikini bottom lift), __colors__ __clothes_swimsuit_bikini__, cameltoe, partially visible vulva, ((ass, wedgie):0.8)
+(bikini bottom aside), __colors__ __clothes_swimsuit_bikini__, ((__body_bare_female_crotch__, ass, sideboob):0.8)
+bikini top only, bottomless, __colors__ __clothes_swimsuit_bikini__, ((__body_bare_female_crotch__, ass, sideboob):0.8)
+bikini bottom only, topless, __colors__ __clothes_swimsuit_bikini__, ((__body_breast_details__, ass, sideboob):0.8)
+(swimsuit aside), ((__body_bare_female_crotch__, ass, sideboob):0.8), __colors__ __clothes_swimsuit_onepiece__
+(one-piece swimsuit pull), __colors__ __clothes_swimsuit_onepiece__, ((__body_breast_details__, ass, sideboob):0.8)

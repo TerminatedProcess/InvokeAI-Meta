@@ -1,0 +1,378 @@
+# Krea 2 NSFW FANTASY-SELFIE templates (Model A — phone-selfie anachronism in fantasy locales)
+# Tags: __uw-krea2-nsfw/router|template|leaf/*__  (SAME root as room/core/theme files)
+# Root key: uw-krea2-nsfw
+# Hard rule: register ONLY under fantasy-selfie routers below — NEVER room/theme/vanilla-action/casting
+#   or fantasy-core/fantasy-action routers (Model A #15). Do NOT add fantasy-selfie-* into portrait-fantasy-pics.
+# Pulls: __uw-shared/common/*__ + __uw-shared/fantasy/*__ only
+# Product: photoreal demi-human fantasy women taking modern phone selfies in fantasy locations
+# version: 3
+uw-krea2-nsfw:
+  router:
+    portrait-fantasy-forest-selfie-pics:
+    - __uw-krea2-nsfw/template/fantasy-selfie-forest-mirror-pool__
+    - __uw-krea2-nsfw/template/fantasy-selfie-forest-front-glade__
+    - __uw-krea2-nsfw/template/fantasy-selfie-forest-over-shoulder__
+
+    portrait-fantasy-castle-selfie-pics:
+    - __uw-krea2-nsfw/template/fantasy-selfie-castle-mirror__
+    - __uw-krea2-nsfw/template/fantasy-selfie-castle-front-bedchamber__
+    - __uw-krea2-nsfw/template/fantasy-selfie-castle-over-shoulder-window__
+
+    portrait-fantasy-tavern-selfie-pics:
+    - __uw-krea2-nsfw/template/fantasy-selfie-tavern-mirror__
+    - __uw-krea2-nsfw/template/fantasy-selfie-tavern-front-loft__
+    - __uw-krea2-nsfw/template/fantasy-selfie-tavern-sitting-edge__
+
+    portrait-fantasy-ruins-selfie-pics:
+    - __uw-krea2-nsfw/template/fantasy-selfie-ruins-front-moonlit__
+    - __uw-krea2-nsfw/template/fantasy-selfie-ruins-over-shoulder__
+    - __uw-krea2-nsfw/template/fantasy-selfie-ruins-mirror-polished-stone__
+
+    # Aggregate — even mix of all fantasy-selfie L2s
+    portrait-fantasy-selfie-pics:
+    - __uw-krea2-nsfw/template/fantasy-selfie-forest-mirror-pool__
+    - __uw-krea2-nsfw/template/fantasy-selfie-forest-front-glade__
+    - __uw-krea2-nsfw/template/fantasy-selfie-forest-over-shoulder__
+    - __uw-krea2-nsfw/template/fantasy-selfie-castle-mirror__
+    - __uw-krea2-nsfw/template/fantasy-selfie-castle-front-bedchamber__
+    - __uw-krea2-nsfw/template/fantasy-selfie-castle-over-shoulder-window__
+    - __uw-krea2-nsfw/template/fantasy-selfie-tavern-mirror__
+    - __uw-krea2-nsfw/template/fantasy-selfie-tavern-front-loft__
+    - __uw-krea2-nsfw/template/fantasy-selfie-tavern-sitting-edge__
+    - __uw-krea2-nsfw/template/fantasy-selfie-ruins-front-moonlit__
+    - __uw-krea2-nsfw/template/fantasy-selfie-ruins-over-shoulder__
+    - __uw-krea2-nsfw/template/fantasy-selfie-ruins-mirror-polished-stone__
+
+  template:
+    fantasy-selfie-forest-mirror-pool:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-mirror-pool/medium__
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-mirror-pool/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-mirror-pool/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-mirror-pool/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-mirror-pool/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-mirror-pool/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-mirror-pool/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-mirror-pool/treatment__. [9:16]
+    fantasy-selfie-forest-front-glade:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-front-glade/medium__
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-front-glade/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-front-glade/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-front-glade/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-front-glade/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-front-glade/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-front-glade/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-front-glade/treatment__. [9:16]
+    fantasy-selfie-forest-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-forest-over-shoulder/treatment__. [9:16]
+    fantasy-selfie-castle-mirror:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-mirror/medium__
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-mirror/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-mirror/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-mirror/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-mirror/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-mirror/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-mirror/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-mirror/treatment__. [9:16]
+    fantasy-selfie-castle-front-bedchamber:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-front-bedchamber/medium__
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-front-bedchamber/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-front-bedchamber/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-front-bedchamber/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-front-bedchamber/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-front-bedchamber/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-front-bedchamber/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-front-bedchamber/treatment__. [9:16]
+    fantasy-selfie-castle-over-shoulder-window:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-over-shoulder-window/medium__
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-over-shoulder-window/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-over-shoulder-window/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-over-shoulder-window/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-over-shoulder-window/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-over-shoulder-window/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-over-shoulder-window/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-castle-over-shoulder-window/treatment__. [9:16]
+    fantasy-selfie-tavern-mirror:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-mirror/medium__
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-mirror/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-mirror/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-mirror/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-mirror/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-mirror/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-mirror/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-mirror/treatment__. [9:16]
+    fantasy-selfie-tavern-front-loft:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-front-loft/medium__
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-front-loft/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-front-loft/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-front-loft/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-front-loft/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-front-loft/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-front-loft/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-front-loft/treatment__. [9:16]
+    fantasy-selfie-tavern-sitting-edge:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-sitting-edge/medium__
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-sitting-edge/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-sitting-edge/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-sitting-edge/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-sitting-edge/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-sitting-edge/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-sitting-edge/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-tavern-sitting-edge/treatment__. [9:16]
+    fantasy-selfie-ruins-front-moonlit:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-front-moonlit/medium__
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-front-moonlit/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-front-moonlit/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-front-moonlit/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-front-moonlit/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-front-moonlit/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-front-moonlit/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-front-moonlit/treatment__. [9:16]
+    fantasy-selfie-ruins-over-shoulder:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-over-shoulder/medium__
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-over-shoulder/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-over-shoulder/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-over-shoulder/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-over-shoulder/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-over-shoulder/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-over-shoulder/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-over-shoulder/treatment__. [9:16]
+    fantasy-selfie-ruins-mirror-polished-stone:
+    - >-
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-mirror-polished-stone/medium__
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-mirror-polished-stone/subject__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-mirror-polished-stone/pose__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-mirror-polished-stone/wardrobe__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-mirror-polished-stone/environment__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-mirror-polished-stone/lighting__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-mirror-polished-stone/camera__,
+        __uw-krea2-nsfw/leaf/fantasy-selfie-ruins-mirror-polished-stone/treatment__. [9:16]
+  leaf:
+    # --- Forest selfie ---
+    fantasy-selfie-forest-mirror-pool:
+      medium:
+      - __uw-shared/fantasy/shot/selfie__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-forest-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-forest-selfie-mirror__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/forest-spring__
+      lighting:
+      - __uw-shared/fantasy/lighting/forest-selfie__
+      camera:
+      - __uw-shared/fantasy/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    fantasy-selfie-forest-front-glade:
+      medium:
+      - __uw-shared/fantasy/shot/selfie__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-forest-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-forest-selfie-front__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/forest__
+      lighting:
+      - __uw-shared/fantasy/lighting/forest-selfie__
+      camera:
+      - __uw-shared/fantasy/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    fantasy-selfie-forest-over-shoulder:
+      medium:
+      - __uw-shared/fantasy/shot/selfie__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-forest-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-forest-selfie-over-shoulder__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/forest__
+      lighting:
+      - __uw-shared/fantasy/lighting/forest-selfie__
+      camera:
+      - __uw-shared/fantasy/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+
+    # --- Castle selfie ---
+    fantasy-selfie-castle-mirror:
+      medium:
+      - __uw-shared/fantasy/shot/selfie-mirror__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-castle-selfie-mirror__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/castle-selfie__
+      lighting:
+      - __uw-shared/fantasy/lighting/castle-selfie__
+      camera:
+      - __uw-shared/fantasy/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    fantasy-selfie-castle-front-bedchamber:
+      medium:
+      - __uw-shared/fantasy/shot/selfie__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-castle-selfie-front__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/castle-bedchamber__
+      lighting:
+      - __uw-shared/fantasy/lighting/castle-selfie__
+      camera:
+      - __uw-shared/fantasy/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    fantasy-selfie-castle-over-shoulder-window:
+      medium:
+      - __uw-shared/fantasy/shot/selfie__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-castle-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-castle-selfie-over-shoulder__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/castle__
+      lighting:
+      - __uw-shared/fantasy/lighting/castle-selfie__
+      camera:
+      - __uw-shared/fantasy/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+
+    # --- Tavern selfie ---
+    fantasy-selfie-tavern-mirror:
+      medium:
+      - __uw-shared/fantasy/shot/selfie-mirror__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-tavern-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-tavern-selfie-mirror__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/tavern-selfie__
+      lighting:
+      - __uw-shared/fantasy/lighting/tavern-selfie__
+      camera:
+      - __uw-shared/fantasy/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    fantasy-selfie-tavern-front-loft:
+      medium:
+      - __uw-shared/fantasy/shot/selfie__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-tavern-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-tavern-selfie-front__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/tavern-loft__
+      lighting:
+      - __uw-shared/fantasy/lighting/tavern-selfie__
+      camera:
+      - __uw-shared/fantasy/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    fantasy-selfie-tavern-sitting-edge:
+      medium:
+      - __uw-shared/fantasy/shot/selfie__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-tavern-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-tavern-selfie-sitting-edge__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/tavern__
+      lighting:
+      - __uw-shared/fantasy/lighting/tavern-selfie__
+      camera:
+      - __uw-shared/fantasy/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+
+    # --- Ruins selfie ---
+    fantasy-selfie-ruins-front-moonlit:
+      medium:
+      - __uw-shared/fantasy/shot/selfie__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-ruins-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-ruins-selfie-front__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/ruins__
+      lighting:
+      - __uw-shared/fantasy/lighting/ruins-selfie__
+      camera:
+      - __uw-shared/fantasy/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    fantasy-selfie-ruins-over-shoulder:
+      medium:
+      - __uw-shared/fantasy/shot/selfie__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-ruins-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-ruins-selfie-over-shoulder__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/ruins__
+      lighting:
+      - __uw-shared/fantasy/lighting/ruins-selfie__
+      camera:
+      - __uw-shared/fantasy/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    fantasy-selfie-ruins-mirror-polished-stone:
+      medium:
+      - __uw-shared/fantasy/shot/selfie-mirror__
+      subject:
+      - __uw-shared/fantasy/identity-router/fantasy-ruins-matched__
+      pose:
+      - __uw-shared/fantasy/pose/fantasy-ruins-selfie-mirror__
+      wardrobe:
+      - __uw-shared/fantasy/wardrobe/outfit-accent__
+      environment:
+      - __uw-shared/fantasy/environment/ruins-selfie__
+      lighting:
+      - __uw-shared/fantasy/lighting/ruins-selfie__
+      camera:
+      - __uw-shared/fantasy/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__

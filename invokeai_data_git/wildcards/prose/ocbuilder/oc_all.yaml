@@ -1,0 +1,170 @@
+# oc_all.yaml — ネスト型ワイルドカード（sd-dynamic-prompts / CivitAI 互換）
+# 全セクションをサブワイルドカードとして定義し、
+# oc_character キー 1 つで全属性を一括ランダムに引ける。
+#
+# 使用例:
+#   全ランダム  : __original_character/oc_character__
+#   髪色のみ    : __original_character/hair_color__
+#   (フォルダ名はアップロード先サブフォルダに合わせる)
+
+hair_color:
+  - black hair
+  - dark brown hair
+  - brown hair
+  - light brown hair
+  - blonde hair
+  - gold hair
+  - red hair
+  - orange hair
+  - pink hair
+  - light blue hair
+  - blue hair
+  - dark blue hair
+  - light green hair
+  - green hair
+  - dark green hair
+  - light purple hair
+  - purple hair
+  - grey hair
+  - silver hair
+  - white hair
+
+eye_color:
+  - black eyes
+  - brown eyes
+  - light brown eyes
+  - blue eyes
+  - green eyes
+  - red eyes
+  - orange eyes
+  - pink eyes
+  - purple eyes
+  - grey eyes
+  - yellow eyes
+  - white eyes
+
+hairstyle:
+  - very short hair
+  - short hair
+  - medium hair
+  - long hair
+  - very long hair
+  - absurdly long hair
+  - ponytail
+  - high ponytail
+  - low ponytail
+  - side ponytail
+  - twintails
+  - low twintails
+  - short twintails
+  - twin drills
+  - hair bun
+  - double bun
+  - single hair bun
+  - topknot
+  - braid
+  - twin braids
+  - single braid
+  - side braid
+  - french braid
+  - fishtail braid
+  - crown braid
+  - half updo
+  - bob cut
+  - pixie cut
+  - wolf cut
+  - hime cut
+  - layered hair
+  - undercut
+  - wavy hair
+  - curly hair
+  - straight hair
+  - flipped hair
+  - swept back hair
+  - loose hair
+  - messy hair
+  - spiky hair
+  - drill hair
+  - asymmetrical hair
+  - ahoge
+  - sidelocks
+  - hair over one eye
+  - no bangs
+  - blunt bangs
+  - swept bangs
+  - parted bangs
+  - long bangs
+  - crossed bangs
+  - hair between eyes
+  - ponytail, hair ribbon
+  - twintails, hair ribbon
+  - low ponytail, hair scrunchie
+  - braid, hair scrunchie
+  - single braid, hair ribbon
+  - hair bun, hairpin
+  - hair bun, hair stick
+  - half updo, hair bow
+  - twintails, hair bow
+  - low twintails, hair bow
+
+hair_accessory:
+  - ""
+  - hairpin
+  - hair clip
+  - barrette
+  - bobby pin
+  - hair stick
+  - kanzashi
+  - butterfly hair clip
+  - bow hairpin
+  - star hair clip
+  - heart hair clip
+  - flower hair clip
+  - leaf hair clip
+  - cross hairpin
+  - skull hair clip
+  - cat-shaped hair clip
+  - bear hair clip
+  - crescent hair clip
+  - diamond-shaped hair clip
+  - scrunchie
+  - hair ribbon
+  - hair bow
+  - large hair bow
+  - side clip
+  - multiple hair clips
+
+eyebrows:
+  - ""
+  - thick eyebrows
+  - thin eyebrows
+  - arched eyebrows
+  - straight eyebrows
+  - short eyebrows
+  - v-shaped eyebrows
+  - eyebrows visible through hair
+
+breast_size:
+  - flat chest
+  - small breasts
+  - medium breasts
+  - large breasts
+  - huge breasts
+  - gigantic breasts
+
+body_type:
+  - petite
+  - slim
+  - slender
+  - curvy
+  - plump
+  - chubby
+  - muscular female
+  - toned
+  - wide hips
+  - thick thighs
+  - narrow waist
+
+# ---- 全セクションをまとめて引く combined wildcard ----
+oc_character:
+  - "1girl, __oc_builder/hair_color__, __oc_builder/eye_color__, __oc_builder/hairstyle__, __oc_builder/hair_accessory__, __oc_builder/eyebrows__, __oc_builder/breast_size__, __oc_builder/body_type__"

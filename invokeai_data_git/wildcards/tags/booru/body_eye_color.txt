@@ -1,0 +1,14 @@
+__body_eye_colors__ eyes
+blue eyes
+brown eyes
+green eyes
+grey eyes
+((heterochromia):0.75), ((__body_eye_colors__ eyes, __body_eye_colors__ eyes):0.85)
+((__body_eye_colors__ eyes):0.9)
+((multicolored eyes):0.8), ((__body_eye_colors__ eyes, __body_eye_colors__ eyes):0.9)
+((__body_eye_colors__ eyes):0.8)
+((multicolored eyes, gradient eyes, __body_eye_colors__ eyes, __body_eye_colors__ eyes):0.8)
+((multicolored eyes, gradient eyes, __body_eye_colors__ eyes, __body_eye_colors__ eyes):0.9)
+__body_eye_colors__ eyes
+((multicolored eyes, two-tone eyes, __body_eye_colors__ eyes, __body_eye_colors__ eyes):0.8)
+((multicolored eyes, two-tone eyes, __body_eye_colors__ eyes, __body_eye_colors__ eyes):0.9)

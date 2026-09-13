@@ -1,0 +1,5 @@
+__clothes_outfits__
+__clothes_outfits__, __clothes_accessories__
+__clothes_outfits__, __clothes_shoes__
+__clothes_outfits__, ((__clothes_accessories__):0.9)
+__clothes_outfits__, ((__clothes_accessories__, __clothes_shoes__):0.9)

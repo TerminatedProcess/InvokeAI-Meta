@@ -1,0 +1,40 @@
+salute, two-finger salute
+salute, three-finger salute
+salute, straight-arm salute
+salute, vulcan salute
+(\\//:0.9)
+(\||/:0.9)
+(\m/:0.9)
+(\n/:0.9)
+shocker \(gesture\)
+thumbs up
+thumbs down
+middle finger
+index finger raised
+beckoning
+pointing, pointing at viewer
+pointing
+shaka sign
+finger heart
+ok sign
+pinching gesture
+((money gesture):0.9)
+clenched hand
+cunnilingus gesture, ((tongue, tongue out):0.8)
+fellatio gesture, ((open mouth):0.8)
+handjob gesture
+oral invitation
+finger gun
+v, ((v over eye):0.9)
+v, ((v over mouth):0.9)
+v, ((gyaru v):0.9)
+v, ((inward v):0.9)
+v, ((bent v):0.9)
+w, ((w over eye):0.9)
+w, ((w over mouth):0.9)
+w, ((w over head):0.9)
+w, ((w over face):0.9)
+w, ((gyaru w):0.9)
+w, ((inward w):0.9)
+w, ((middle w):0.9)
+w, ((bent w):0.9)

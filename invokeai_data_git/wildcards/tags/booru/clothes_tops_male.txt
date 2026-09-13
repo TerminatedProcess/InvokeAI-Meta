@@ -1,0 +1,7 @@
+shirt, __clothes_tops_shirt_male__
+shirt, __colors__ shirt, __clothes_tops_shirt_male__
+shirt, __colors__ shirt, __pattern__ shirt, __clothes_tops_shirt_male__
+sweater, __colors__ sweater, __clothes_tops_sweater__
+shirt, __clothes_tops_shirt_male__, __clothes_tops_overshirt__
+shirt, __colors__ shirt, __clothes_tops_shirt_male__, __clothes_tops_overshirt__
+shirt, __colors__ shirt, __clothes_tops_shirt_male__, __colors__ __clothes_tops_overshirt__

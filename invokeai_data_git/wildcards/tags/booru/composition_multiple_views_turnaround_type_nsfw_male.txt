@@ -1,0 +1,16 @@
+__clothes_nsfw_male__, ((ass focus):0.7), ((straight-on):0.8), ((from behind):0.8), standing, ((full body):0.7)
+__clothes_nsfw_male__, ((ass focus):0.7), ((straight-on):0.8), ((from behind):0.8), variations
+__clothes_nsfw_male__, ((ass focus):0.7), ((straight-on):0.8), ((from behind):0.8), ((full body):0.7)
+__clothes_nsfw_male__, ((ass focus):0.7), ((straight-on):0.8), ((from behind):0.8), standing, ((cowboy shot):0.7)
+__clothes_nsfw_male__, ((ass focus):0.7), ((straight-on):0.8), ((from behind):0.8), standing, ((cowboy shot, full body):0.7)
+__clothes_nsfw_male__, ((ass focus):0.7), ((straight-on):0.8), ((from behind):0.8), standing, ((full body):0.7), ((__poses_sitting_back__):0.7)
+__clothes_nsfw_male__, ((ass focus):0.7), ((straight-on):0.8), ((from behind):0.8), standing, ((full body):0.7), ((__poses_knees_squat_back__):0.7)
+__clothes_nsfw_male__, ((ass focus):0.7), ((straight-on):0.8), ((from behind):0.8), standing, ((full body):0.7), ((__poses_standing_back__):0.7)
+__clothes_male__, ((ass focus):0.7), ((clothes on and off):1.1), nude, completely nude, ((__body_bare_male_crotch__):0.6), ((straight-on):0.8), ((from behind):0.8), standing, ((full body):0.7)
+__clothes_male__, ((ass focus):0.7), ((clothes on and off):1.1), nude, completely nude, ((__body_bare_male_crotch__):0.6), ((straight-on):0.8), ((from behind):0.8), variations
+__clothes_male__, ((ass focus):0.7), ((clothes on and off):1.1), nude, completely nude, ((__body_bare_male_crotch__):0.6), ((straight-on):0.8), ((from behind):0.8), ((full body):0.7)
+__clothes_male__, ((ass focus):0.7), ((clothes on and off):1.1), nude, completely nude, ((__body_bare_male_crotch__):0.6), ((straight-on):0.8), ((from behind):0.8), standing, ((cowboy shot):0.7)
+__clothes_male__, ((ass focus):0.7), ((clothes on and off):1.1), nude, completely nude, ((__body_bare_male_crotch__):0.6), ((straight-on):0.8), ((from behind):0.8), standing, ((cowboy shot, full body):0.7)
+__clothes_male__, ((ass focus):0.7), ((clothes on and off):1.1), nude, completely nude, ((__body_bare_male_crotch__):0.6), ((straight-on):0.8), ((from behind):0.8), standing, ((full body):0.7), ((__poses_sitting_back__):0.7)
+__clothes_male__, ((ass focus):0.7), ((clothes on and off):1.1), nude, completely nude, ((__body_bare_male_crotch__):0.6), ((straight-on):0.8), ((from behind):0.8), standing, ((full body):0.7), ((__poses_knees_squat_back__):0.7)
+__clothes_male__, ((ass focus):0.7), ((clothes on and off):1.1), nude, completely nude, ((__body_bare_male_crotch__):0.6), ((straight-on):0.8), ((from behind):0.8), standing, ((full body):0.7), ((__poses_standing_back__):0.7)

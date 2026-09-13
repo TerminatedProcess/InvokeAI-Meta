@@ -1,0 +1,6 @@
+1girl, solo, __character__, __faces__, __locations__, __composition_with_pose_and_clothes__
+1girl, solo, __character__, ((__faces__):0.9), __locations__, __composition_with_pose_and_clothes__
+2girls, __poses_2p_alignment__, __locations__, __character__, __faces__, __character__, __faces__, __composition_with_pose_and_clothes_2p__
+1girl, solo, __character__, ((__faces__):0.9), ((__locations__):0.9), __composition_with_pose_and_clothes__
+1girl, solo, __character__, __faces__, ((__locations__):0.9), __composition_with_pose_and_clothes__
+__composition_view_angle_pose_user_specials__

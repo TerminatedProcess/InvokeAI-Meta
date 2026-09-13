@@ -1,0 +1,9 @@
+__clothes_tops_male__, __clothes_bottoms_male__
+((__clothes_tops_male__):0.9), __clothes_bottoms_male__
+__clothes_tops_male__, ((__clothes_bottoms_male__):0.9)
+((__clothes_tops_male__, __clothes_bottoms_male__):0.9)
+__colors__ __clothes_swimsuit_male__
+__colors__ japanese clothes, __clothes_outfit_japanese_male__
+__colors__ school uniform, __clothes_outfit_school_male__
+__clothes_outfits_suit_male__
+__colors__ gym uniform, ((gym shirt, gym shorts):0.8)

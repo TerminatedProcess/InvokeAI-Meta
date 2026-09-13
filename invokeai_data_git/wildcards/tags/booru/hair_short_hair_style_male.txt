@@ -1,0 +1,16 @@
+buzz cut
+crew cut
+undercut
+balding
+asymmetrical hair
+crew cut, sidecut, ((undercut):0.9)
+flattop
+((bowl cut):0.8)
+parted hair
+parted hair, __hair_addon_bangs__
+__hair_addon_texture_male__
+__hair_addon_texture_male__, __hair_addon_bangs__
+__hair_addon_texture_male__, __hair_addon_bangs__, __hair_addon_male__
+__hair_addon_male__, __hair_addon_bangs__
+__hair_addon_male__, __hair_addon_bangs__, ((__hair_addon_sidelocks__):0.9)
+__hair_addon_male__, ((__hair_addon_sidelocks__):0.9)

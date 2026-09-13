@@ -1,0 +1,10 @@
+hakama shirt, hakama, hakama pants
+hakama shirt, hakama, hakama shorts
+hakama shirt, hadanugi dousa, sarashi, arm out of sleeve, single bare shoulder
+yukata, ((obi):0.7)
+yukata, short yukata, ((obi):0.7)
+yukata, bath yukata, ((obi):0.7)
+dougi, ((uwagi, martial arts belt, pants):0.7)
+happi, mizu happi, ((fundoshi, ecchuu fundoshi, hachimaki, nejiri hachimaki):0.7)
+samue
+sokutai

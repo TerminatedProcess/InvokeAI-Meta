@@ -1,0 +1,6 @@
+lying, indoors, on couch, ((__poses_lying_sleep__):0.8), sleeping, ((closed eyes):1.1), __clothes_nsfw_male__, ((__lighting__):0.75)
+lying, bedroom, on bed, bed sheet, blanket, pillow, ((__poses_lying_sleep__):0.8), sleeping, ((closed eyes):1.1), ((messy sleeper, under covers):0.8), __clothes_sleepwear_nsfw_male__, ((__lighting__):0.75)
+lying, ((__locations__):0.8), ((__poses_lying_sleep__):0.8), drunk, fainted, alcohol, bottle, full-face blush, open mouth, ((drooling):0.7), (sleeping), ((closed eyes):1.1), __clothes_nsfw_male__
+((pov across bed):1.1), lying, from side, ((upper body, pectoral focus):0.5), head on pillow, ((__poses_lying_sleep__):0.7), ((sleeping, sleepy, waking up, half-closed eyes):0.7), indoors, bedroom, on bed, ((bed sheet, blanket, pillow, under covers):0.7), ((__clothes_sleepwear_nsfw_male__):0.8), ((__lighting__):0.75)
+lying, outdoors, ((beach, towel, on ground):0.8), ((__poses_lying_sleep__):0.8), sleeping, ((closed eyes):1.1), __clothes_swimsuit_nsfw_male__, ((__time__):0.75)
+lying, outdoors, ((beach, towel, on ground):0.8), ((__poses_lying_sleep__):0.8), sleeping, ((closed eyes):1.1), __colors__ __clothes_swimsuit_male__, bulge, ((covered penis, penis in swimsuit):0.7), ((wedgie, covered nipples):0.65), ((__time__):0.75)

@@ -1,0 +1,6 @@
+bedroom, __lighting__
+bedroom, bed, nightstand, __lighting__
+bedroom, plush, __lighting__
+living room, __lighting__
+living room, table, __lighting__
+living room, plant, __lighting__

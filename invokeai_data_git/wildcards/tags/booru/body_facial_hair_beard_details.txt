@@ -1,0 +1,8 @@
+beard
+beard over mouth
+long beard
+very long beard
+thick beard
+two-tone beard, ((streaked beard):0.8)
+two-tone beard, ((gradient beard):0.8)
+stubble, beard stubble

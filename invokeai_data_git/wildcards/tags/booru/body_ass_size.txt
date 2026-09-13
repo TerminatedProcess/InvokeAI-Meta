@@ -1,0 +1,7 @@
+ass
+ass, flat ass
+ass, huge ass
+ass, ((flat ass):0.8)
+ass, ((huge ass):0.8)
+ass, ((flat ass):0.9)
+ass, ((huge ass):0.9)

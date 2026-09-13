@@ -1,0 +1,298 @@
+# Shared SFW family-scoped atom pools
+# Tags: __uw-shared/sfw/*__
+# Depth: max 3 key levels under uw-shared -> sfw -> element -> family
+# Granularity (normative): pose/environment/furniture = fine; wardrobe/lighting = medium; shot/camera = coarse.
+# version: 18
+# W1 (2026-07-13): light env texture twins for existing selfie/catalog families (pool expand only).
+
+uw-shared:
+  sfw:
+    shot:
+      selfie:
+      - A candid selfie photograph of
+      - A casual selfie photo of
+      selfie-mirror:
+      - A mirror selfie photograph of
+      - A casual mirror selfie of
+      - A bathroom mirror selfie photograph of
+
+    pose:
+      selfie-mirror-front:
+      - standing front-on to the mirror holding her phone up, __uw-shared/common/expression/sfw-front__
+      - facing the mirror squarely with her phone raised, __uw-shared/common/expression/sfw-front__
+      - leaning forward slightly toward the mirror with phone held at chest level, __uw-shared/common/expression/sfw-front__
+      - standing at the bathroom mirror with one hand holding her phone up for a selfie, __uw-shared/common/expression/sfw-front__
+      - standing square to the mirror with phone in one hand and free hand at her hip, __uw-shared/common/expression/sfw-front__
+      - facing the mirror with both arms raised slightly framing her face, __uw-shared/common/expression/sfw-front__
+      - leaning one shoulder toward the mirror with phone held at chin level, __uw-shared/common/expression/sfw-front__
+      - standing front-on with weight shifted to one leg and phone raised, __uw-shared/common/expression/sfw-front__
+      selfie-laying-back:
+      - lying on her back looking up at the camera, __uw-shared/common/expression/sfw-front__
+      - reclined with the phone held above her, __uw-shared/common/expression/sfw-front__
+      - lying on her back with the phone held at arm's length above her face, __uw-shared/common/expression/sfw-front__
+      - propped on one elbow with the phone angled toward her face, __uw-shared/common/expression/sfw-front__
+      - lying on her back with one knee bent and phone held overhead, __uw-shared/common/expression/sfw-front__
+      - reclined on pillows with both hands gripping the phone above her chest, __uw-shared/common/expression/sfw-front__
+      - on her back with phone at arm's length and free hand on her stomach, __uw-shared/common/expression/sfw-front__
+      - lying flat on her back with phone in both hands above her face, __uw-shared/common/expression/sfw-front__
+      selfie-mirror-side:
+      - standing angled sideways to the mirror with her phone raised, __uw-shared/common/expression/sfw-front__
+      - turned in profile toward the mirror glancing at the screen, __uw-shared/common/expression/sfw-front__
+      - side angle mirror selfie with her arm raised holding the phone, __uw-shared/common/expression/sfw-front__
+      - standing with a slight body turn toward the mirror, __uw-shared/common/expression/sfw-front__
+      - standing in profile with phone extended toward the mirror, __uw-shared/common/expression/sfw-front__
+      - angled three-quarter toward the mirror with one elbow bent holding the phone, __uw-shared/common/expression/sfw-front__
+      - side-on mirror selfie with chin slightly lifted and phone raised, __uw-shared/common/expression/sfw-front__
+      - standing perpendicular to the mirror with phone at shoulder height, __uw-shared/common/expression/sfw-front__
+      selfie-over-shoulder:
+      - standing with her back to the camera looking back over her shoulder at the mirror, __uw-shared/common/expression/sfw-front__
+      - facing away turning her head to glance over her shoulder into the mirror, __uw-shared/common/expression/sfw-front__
+      - over-the-shoulder bedroom mirror reflection with the phone visible, __uw-shared/common/expression/sfw-front__
+      - facing away from the mirror with phone held high over one shoulder, __uw-shared/common/expression/sfw-front__
+      - standing with back to camera, phone raised over one shoulder toward the mirror, __uw-shared/common/expression/sfw-front__
+      - glancing over her shoulder with phone visible at cheek level, __uw-shared/common/expression/sfw-front__
+      - facing away with one hand tucking hair while holding phone in the other, __uw-shared/common/expression/sfw-front__
+      - over-shoulder mirror glance with phone held at mid-back height, __uw-shared/common/expression/sfw-front__
+
+      # Catalog pose families (fine)
+      catalog-standing:
+      - standing front-on to the camera with her weight on one hip, __uw-shared/common/expression/sfw-catalog__
+      - standing squarely facing the lens with one hand at her side, __uw-shared/common/expression/sfw-catalog__
+      - standing with a relaxed posture, __uw-shared/common/expression/sfw-catalog__
+      - standing straight with shoulders back and hands resting at her sides, __uw-shared/common/expression/sfw-catalog__
+      - standing with one knee slightly bent and her chin lifted, __uw-shared/common/expression/sfw-catalog__
+      - standing with her shoulders relaxed and arms loosely at her sides, __uw-shared/common/expression/sfw-catalog__
+      catalog-turning:
+      - turning slightly to the side with one hand resting on her hip, __uw-shared/common/expression/sfw-catalog__
+      - a three-quarter body turn with her head facing the camera, __uw-shared/common/expression/sfw-catalog__
+      - angled toward the camera with one shoulder relaxed, __uw-shared/common/expression/sfw-catalog__
+      - turned to the side glancing back toward the lens with one hand on her thigh, __uw-shared/common/expression/sfw-catalog__
+      - standing in profile with her head turned toward the camera and a hand at her hip, __uw-shared/common/expression/sfw-catalog__
+      catalog-walking:
+      - walking forward with one foot in mid-step and her arms swinging naturally, __uw-shared/common/expression/sfw-catalog__
+      - captured mid-stride with a relaxed walk, __uw-shared/common/expression/sfw-catalog__
+      - walking toward the camera with her hair moving softly, __uw-shared/common/expression/sfw-catalog__
+      - a natural walking pose with her weight shifting to the front foot, __uw-shared/common/expression/sfw-catalog__
+      catalog-arms-in-pockets:
+      - standing with her hands tucked casually into her pockets, __uw-shared/common/expression/sfw-catalog__
+      - standing with both hands in her pockets and one shoulder relaxed, __uw-shared/common/expression/sfw-catalog__
+      - walking with her hands in her pockets and a casual relaxed posture, __uw-shared/common/expression/sfw-catalog__
+      catalog-arms-crossed:
+      - standing with her arms loosely crossed, __uw-shared/common/expression/sfw-catalog__
+      - arms crossed gently at the chest with a relaxed posture, __uw-shared/common/expression/sfw-catalog__
+      catalog-hip-hand:
+      - standing with one hand on her hip and the other resting at her side, __uw-shared/common/expression/sfw-catalog__
+      - posing with her weight on one hip and a hand resting on the other thigh, __uw-shared/common/expression/sfw-catalog__
+      - standing with one hand lightly on her hip and her chin slightly lifted, __uw-shared/common/expression/sfw-catalog__
+
+    furniture:
+      lay-back-surface:
+      - '{her|the} bed'
+      - the couch
+      - a recliner
+      - floor cushions
+
+    wardrobe:
+      color:
+      - white
+      - heather gray
+      - navy
+      - dusty rose
+      - sage green
+      - charcoal
+      - cream
+      - warm oatmeal
+      - powder blue
+      top-casual:
+      - loose t-shirt
+      - oversized hoodie
+      - ribbed tank top
+      - knit sweater
+      - soft cotton camisole
+      - cropped hoodie
+      - waffle-knit top
+      - oversized sleep shirt
+      bottom-casual:
+      - soft cotton shorts
+      - biker shorts
+      - lounging joggers
+      - cotton underwear
+      - jersey sleep shorts
+      - linen lounge shorts
+      - sleep pants
+      - lounge leggings
+      casual-composer:
+      - a __uw-shared/sfw/wardrobe/color__ __uw-shared/sfw/wardrobe/top-casual__ and __uw-shared/sfw/wardrobe/bottom-casual__{2::|1::, __uw-shared/common/piercing/natural__}{3::|1::, __uw-shared/common/accessories/natural__}{4::|1::, __uw-shared/common/makeup/natural__}
+      - an oversized __uw-shared/sfw/wardrobe/color__ hoodie and biker shorts{2::|1::, __uw-shared/common/piercing/natural__}{3::|1::, __uw-shared/common/accessories/natural__}{4::|1::, __uw-shared/common/makeup/natural__}
+      - a __uw-shared/sfw/wardrobe/color__ knit sweater and underwear{2::|1::, __uw-shared/common/piercing/natural__}{3::|1::, __uw-shared/common/accessories/natural__}
+      - a loose __uw-shared/sfw/wardrobe/color__ t-shirt and soft cotton shorts{2::|1::, __uw-shared/common/piercing/natural__}
+      - a __uw-shared/sfw/wardrobe/color__ ribbed tank top and lounging joggers{2::|1::, __uw-shared/common/piercing/natural__}
+      - a soft __uw-shared/sfw/wardrobe/color__ cotton camisole and jersey sleep shorts{2::|1::, __uw-shared/common/piercing/natural__}
+      - a __uw-shared/sfw/wardrobe/color__ oversized hoodie and cotton underwear{2::|1::, __uw-shared/common/piercing/natural__}
+      - a loose __uw-shared/sfw/wardrobe/color__ t-shirt and biker shorts{2::|1::, __uw-shared/common/piercing/natural__}
+      - an oversized __uw-shared/sfw/wardrobe/color__ sleep shirt and soft cotton shorts{2::|1::, __uw-shared/common/piercing/natural__}
+      - a __uw-shared/sfw/wardrobe/color__ waffle-knit top and linen lounge shorts{2::|1::, __uw-shared/common/piercing/natural__}
+
+      # Catalog wardrobe (medium)
+      garment-top:
+      - a fitted ribbed tank top
+      - a simple cotton t-shirt
+      - a thin-strapped silk camisole
+      - a cropped knit sweater
+      - a soft linen button-down shirt
+      - a slim-fit crew-neck tee
+      garment-bottom:
+      - high-waisted straight-leg jeans
+      - tailored cotton shorts
+      - a fitted midi skirt
+      - slim-fit trousers
+      - a pleated knee-length skirt
+      - stretch denim jeans
+      garment-full:
+      - a fitted dress that skims her figure
+      - a tailored blouse tucked into high-waisted jeans
+      - a soft knit dress with a defined waist
+      - a structured blazer over a simple camisole
+      - a relaxed button-down shirt with slim trousers
+      - a soft jersey dress with a cinched waist
+      catalog-composer:
+      - 4::__uw-shared/sfw/wardrobe/garment-top__ and __uw-shared/sfw/wardrobe/garment-bottom__{2::|1::, __uw-shared/common/piercing/natural__}{3::|1::, __uw-shared/common/accessories/natural__}{4::|1::, __uw-shared/common/makeup/natural__}
+      - 2::__uw-shared/sfw/wardrobe/garment-full__{2::|1::, __uw-shared/common/piercing/natural__}{3::|1::, __uw-shared/common/accessories/natural__}
+
+    environment:
+      selfie-bedroom:
+      - in her bedroom with rumpled sheets
+      - in a cozy bedroom with a made bed and a plant on the windowsill
+      - in a small bedroom with pillows stacked against the headboard
+      - in a tidy bedroom with folded blankets at the foot of the bed
+      - in a bedroom with framed photos on the wall and a bedside table
+      - in a minimal bedroom with white bedding and a wooden nightstand
+      # Batch C — light texture enrichers (env props only)
+      - in a Scandinavian bedroom with white oak furniture and sheepskin throws
+      - in a French country bedroom with toile fabric and antique wood furniture
+      - in a cozy cabin bedroom with timber walls and thick wool blankets
+      # W1 — light texture twins (env props only)
+      - in a loft bedroom with steel beams and a low platform bed
+      - in a penthouse bedroom with skyline windows and polished wood floors
+      selfie-bathroom:
+      - in her bathroom in front of a vanity mirror
+      - in a bathroom with tile walls and a vanity mirror
+      - in a bathroom with a marble countertop and folded hand towels
+      - in a tidy bathroom with a glass shower door and chrome fixtures
+      - in a compact bathroom with a sink vanity and wall-mounted shelf
+      - in a bathroom with a full-length mirror and woven bath mat
+      # Batch C — light texture enrichers (env props only)
+      - in a marble bathroom with a freestanding tub and polished stone
+      - in a tidy bathroom with a rainfall shower enclosure and chrome fixtures
+      - in a subway-tile bathroom with a gilded vanity mirror and chrome fixtures
+      # W1 — light texture twins (env props only)
+      - in a spa bathroom with heated stone floors and a deep soaking tub
+      - in a Victorian bathroom with a clawfoot tub and ornate gilded mirror
+      selfie-laying-back:
+      - on __uw-shared/sfw/furniture/lay-back-surface__ in her bedroom
+      - across __uw-shared/sfw/furniture/lay-back-surface__ in a cozy room
+      - on __uw-shared/sfw/furniture/lay-back-surface__ in a simply furnished bedroom
+      - across __uw-shared/sfw/furniture/lay-back-surface__ with pillows nearby
+      - on __uw-shared/sfw/furniture/lay-back-surface__ in a small apartment bedroom
+      - on __uw-shared/sfw/furniture/lay-back-surface__ in a tidy guest room
+
+      # Catalog environment (fine)
+      catalog-studio:
+      - against a clean white seamless backdrop
+      - standing against a soft gray studio backdrop
+      - in a bright minimalist studio space
+      - against a pale off-white seamless wall
+      - in a simple studio with a neutral backdrop
+      catalog-bright-retail:
+      - in a bright retail setting with soft white walls
+      - in a clean modern clothing store with organized racks
+      - standing in a well-lit boutique with light wooden floors
+      - in a bright styled showroom with garment displays
+      - against a bright white wall with subtle retail styling
+      catalog-urban-street:
+      - on a city street with soft urban architecture behind her
+      - in an urban setting with a brick wall and natural light
+      - standing on a sidewalk with blurred city life in the background
+      - in a vibrant street scene with soft-focus urban details
+      - on a tree-lined street with dappled sunlight
+      # Batch C — light outdoor texture
+      - on a Parisian street with iron balconies and flower boxes soft behind her
+      - along a European courtyard with ivy-covered stone walls
+      # W1 — light outdoor texture
+      - on a rooftop terrace with potted olive trees and soft city haze beyond
+      catalog-outdoor-garden:
+      - in a sunlit garden with soft greenery behind her
+      - standing outdoors with blurred foliage in the background
+      - in a bright garden setting with soft natural light
+      - on a patio with lush plants and warm sunlight
+      - in a natural outdoor setting with soft leafy greenery
+      # Batch C — light outdoor texture
+      - in a botanical garden path with monstera leaves and soft misty air
+      - in a Japanese courtyard with mossy stones and bamboo fencing
+      # W1 — light outdoor texture
+      - in a greenhouse path with fogged glass walls and dense foliage
+      - along a cliffside terrace above soft blue ocean water
+
+    lighting:
+      selfie-window:
+      - soft natural daylight from a nearby window
+      - diffused window light falling gently across her face
+      - gentle overcast daylight through sheer curtains
+      - pale golden-hour light from a west-facing window
+      - cool morning window light with soft shadows
+      - bright indirect daylight reflected off white walls
+      - muted cloudy-day light through frosted glass
+      # Batch C — pattern lights
+      - window light through venetian blinds casting soft stripes across her face
+      - dappled leaf shadows from a nearby plant across her skin
+      selfie-bathroom:
+      - soft vanity-adjacent window glow beside the mirror
+      - warm overhead vanity light mixed with faint window glow
+      - even bathroom vanity lighting across her face and mirror
+      - soft side light from a frosted bathroom window near the vanity
+      - gentle mixed vanity bulbs and pale daylight from a small window
+      - diffused bathroom light reflecting off tile and the mirror surface
+      # Batch C — pattern/atmosphere lights
+      - soft skylight fill falling gently onto tile and mirror
+      - warm vanity-bulb wrap with soft steam-diffused highlights
+
+      # Catalog lighting (medium)
+      catalog-studio-light:
+      - bright even studio lighting across her figure
+      - soft diffused studio light wrapping around her body
+      - clean studio lighting with gentle shadow detail
+      - bright overhead studio light with soft fill
+      catalog-outdoor-daylight:
+      - soft natural daylight illuminating her figure
+      - gentle overcast outdoor light with even tonal range
+      - bright daylight with soft shadows across her body
+      - natural sunlight falling evenly across her from camera-left
+      # Batch C — pattern lights
+      - dappled canopy light casting soft leaf shadows across her figure
+      catalog-golden-hour:
+      - warm golden-hour sunlight raking across her figure
+      - soft afternoon light with a warm golden tone
+      - golden sunlight catching the edges of her silhouette
+      - warm late-afternoon light with soft long shadows
+      catalog-urban-light:
+      - soft urban daylight with a mix of open sky and reflected light
+      - bright natural light in a shaded urban setting
+      - diffused city daylight with gentle directional quality
+      # Batch C — pattern lights
+      - soft courtyard bounce from pale stone walls wrapping her figure
+    camera:
+      selfie-phone:
+      - shot on a phone with mild wide-angle distortion and soft background focus
+      - phone selfie angle with slight barrel distortion and gentle background blur
+      - front-camera phone shot with mild perspective stretch and out-of-focus backdrop
+      - handheld phone capture with wide selfie lens and softly defocused background
+      - arm's-length phone selfie with slight wide-angle bend and shallow backdrop focus
+      portrait-85mm:
+      - captured with an 85mm portrait lens, soft background blur
+      - shot on an 85mm lens with creamy bokeh and sharp facial focus
+      - portrait lens framing with gentle background separation
+      - 85mm lens, shallow depth of field, sharp focus on her figure
+      lifestyle-35mm:
+      - shot on a 35mm lens with a natural perspective and contextual background
+      - captured with a 35mm lens, balanced subject-to-environment framing
+      - 35mm lens shot with a natural field of view and soft background detail

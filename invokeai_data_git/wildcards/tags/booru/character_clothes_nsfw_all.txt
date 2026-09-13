@@ -1,0 +1,4 @@
+__character__, __clothes_nsfw_female__
+__character__, futanari, ((bulge):0.9), __clothes_nsfw_futa__
+__character_trap__, __clothes_nsfw_trap__
+__character_male__, __clothes_nsfw_male__

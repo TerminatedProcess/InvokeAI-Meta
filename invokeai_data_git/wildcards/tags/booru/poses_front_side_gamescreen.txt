@@ -1,0 +1,9 @@
+standing, __poses_standing__, looking at viewer
+sitting, __poses_sitting__, looking at viewer, from below
+standing, __poses_standing__, looking at viewer
+standing, __poses_arms_hands__, looking at viewer
+midair, __poses_midair__, looking at viewer
+midair, __poses_midair__, __poses_gesture_salute__, looking at viewer
+midair, __poses_midair__, __poses_arms_hands__, looking at viewer
+__poses_knees_squat__, looking at viewer
+lying, __poses_lying__, looking at viewer

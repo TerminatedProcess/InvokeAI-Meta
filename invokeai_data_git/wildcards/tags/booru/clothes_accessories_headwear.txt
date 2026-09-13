@@ -1,0 +1,6 @@
+__colors__ __clothes_accessories_hat__
+circlet
+tiara
+hair flower
+hair ornament
+__colors__ headscarf

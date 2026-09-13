@@ -1,0 +1,9 @@
+t-shirt
+dress shirt
+tank top
+sleeveless
+polo shirt
+compression shirt
+polo shirt
+collared shirt
+collared shirt, __colors__ necktie

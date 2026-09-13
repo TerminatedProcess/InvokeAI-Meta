@@ -1,0 +1,18 @@
+__hair__, __body_eye_color__, __body__, __body_breasts__, __body_face_details__
+oppai loli, __hair__, __body_eye_color__, __body__, (__body_breasts__), __body_face_details__
+__hair__, __body_eye_color__, (__body__), __body_breasts__, __body_face_details__
+__hair__, __body_eye_color__, __body__, (__body_breasts__), __body_face_details__
+__hair__, __body_eye_color__, __body__, __body_breasts__, (__body_face_details__)
+__hair__, __body_eye_color__, __body__, __body_breasts__, __body_face_details__
+__hair__, __body_eye_color__, __body__, __body_breasts__
+oppai loli, __hair__, __body_eye_color__, (__body__), (__body_breasts__), __body_eye_details__
+__hair__, __body_eye_color__, (__body__), __body_breasts__, __body_eye_details__
+__hair__, __body_eye_color__, __body__, (__body_breasts__), __body_eye_details__
+__hair__, __body_eye_color__, __body__, __body_breasts__, (__body_eye_details__)
+__hair__, __body_eye_color__, __body__, __body_breasts__, __body_eye_details__
+__hair__, __body_eye_color__, __body__, __body_breasts__, ((gyaru):0.8), __body_face_details__
+__hair__, __body_eye_color__, __body__, __body_breasts__, ((gyaru, onee gyaru):0.8), __body_face_details__
+__hair__, __body_eye_color__, __body__, __body_breasts__, ((punk):0.8), __body_face_details__
+__hair__, __body_eye_color__, __body__, __body_breasts__, ((casual):0.8), __body_face_details__
+__hair__, __body_eye_color__, __body__, __body_breasts__, ((lolita fashion):0.8), __body_face_details__
+__hair__, __body_eye_color__, __body__, __body_breasts__, ((emo fashion, scene fashion):0.8), __body_face_details__

@@ -1,0 +1,23 @@
+dark skin, ((tanlines):0.7)
+dark skin
+dark skin, dark-skinned female
+dark skin, dark-skinned female, very dark skin
+pale skin
+tan
+((tan):0.5)
+((tan):0.6)
+((tan):0.7)
+((tan):0.8)
+((tan):0.9)
+__body_special__
+tan, ((tanlines):0.8)
+tan, ((tanlines):0.5)
+tan, ((tanlines):0.7)
+((shiny skin):0.7)
+((shiny skin):0.6)
+((shiny skin):0.5)
+((shiny skin):0.8)
+((wet):0.7)
+((wet):0.8)
+((sweat):0.6)
+((sweat):0.8)

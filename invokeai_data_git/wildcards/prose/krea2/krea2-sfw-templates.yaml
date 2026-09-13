@@ -1,0 +1,365 @@
+# Krea 2 SFW templates — natural-language paragraphs
+# Tags: __uw-krea2-sfw/router|template|leaf/*__
+# Model: L1 router -> L2 prompt template -> L3 leaf clause (one per Krea element)
+# 8 elements in fixed order: medium, subject, pose, wardrobe, environment, lighting, camera, treatment
+# Inference: Krea 2 Turbo — 8 steps, CFG 0.0, mu 1.15
+# Each L2 template assembles its 8 leaves with comma joins into one cohesive paragraph.
+# A leaf pulls at most one family-scoped pool; subject pulls one common identity-router pool.
+# version: 9
+uw-krea2-sfw:
+  router:
+    portrait-selfie-pics:
+    - __uw-krea2-sfw/template/selfie-mirror-front__
+    - __uw-krea2-sfw/template/selfie-laying-back__
+    - __uw-krea2-sfw/template/selfie-mirror-side__
+    - __uw-krea2-sfw/template/selfie-over-shoulder__
+
+    catalog-try-on-pics:
+    - __uw-krea2-sfw/template/catalog-standing-front__
+    - __uw-krea2-sfw/template/catalog-standing-turning__
+    - __uw-krea2-sfw/template/catalog-walking__
+    - __uw-krea2-sfw/template/catalog-arms-in-pockets__
+    - __uw-krea2-sfw/template/catalog-studio__
+    - __uw-krea2-sfw/template/catalog-bright-retail__
+    - __uw-krea2-sfw/template/catalog-urban-street__
+    - __uw-krea2-sfw/template/catalog-outdoor-garden__
+
+  template:
+    # === Existing Selfie Templates ===
+    selfie-mirror-front:
+    - >-
+        __uw-krea2-sfw/leaf/selfie-mirror-front/medium__
+        __uw-krea2-sfw/leaf/selfie-mirror-front/subject__,
+        __uw-krea2-sfw/leaf/selfie-mirror-front/pose__,
+        __uw-krea2-sfw/leaf/selfie-mirror-front/wardrobe__,
+        __uw-krea2-sfw/leaf/selfie-mirror-front/environment__,
+        __uw-krea2-sfw/leaf/selfie-mirror-front/lighting__,
+        __uw-krea2-sfw/leaf/selfie-mirror-front/camera__,
+        __uw-krea2-sfw/leaf/selfie-mirror-front/treatment__. [9:16]
+    selfie-laying-back:
+    - >-
+        __uw-krea2-sfw/leaf/selfie-laying-back/medium__
+        __uw-krea2-sfw/leaf/selfie-laying-back/subject__,
+        __uw-krea2-sfw/leaf/selfie-laying-back/pose__,
+        __uw-krea2-sfw/leaf/selfie-laying-back/wardrobe__,
+        __uw-krea2-sfw/leaf/selfie-laying-back/environment__,
+        __uw-krea2-sfw/leaf/selfie-laying-back/lighting__,
+        __uw-krea2-sfw/leaf/selfie-laying-back/camera__,
+        __uw-krea2-sfw/leaf/selfie-laying-back/treatment__. [9:16]
+    selfie-mirror-side:
+    - >-
+        __uw-krea2-sfw/leaf/selfie-mirror-side/medium__
+        __uw-krea2-sfw/leaf/selfie-mirror-side/subject__,
+        __uw-krea2-sfw/leaf/selfie-mirror-side/pose__,
+        __uw-krea2-sfw/leaf/selfie-mirror-side/wardrobe__,
+        __uw-krea2-sfw/leaf/selfie-mirror-side/environment__,
+        __uw-krea2-sfw/leaf/selfie-mirror-side/lighting__,
+        __uw-krea2-sfw/leaf/selfie-mirror-side/camera__,
+        __uw-krea2-sfw/leaf/selfie-mirror-side/treatment__. [9:16]
+    selfie-over-shoulder:
+    - >-
+        __uw-krea2-sfw/leaf/selfie-over-shoulder/medium__
+        __uw-krea2-sfw/leaf/selfie-over-shoulder/subject__,
+        __uw-krea2-sfw/leaf/selfie-over-shoulder/pose__,
+        __uw-krea2-sfw/leaf/selfie-over-shoulder/wardrobe__,
+        __uw-krea2-sfw/leaf/selfie-over-shoulder/environment__,
+        __uw-krea2-sfw/leaf/selfie-over-shoulder/lighting__,
+        __uw-krea2-sfw/leaf/selfie-over-shoulder/camera__,
+        __uw-krea2-sfw/leaf/selfie-over-shoulder/treatment__. [9:16]
+    # === New Catalog Try-On Templates ===
+    catalog-standing-front:
+    - >-
+        __uw-krea2-sfw/leaf/catalog-standing-front/medium__
+        __uw-krea2-sfw/leaf/catalog-standing-front/subject__,
+        __uw-krea2-sfw/leaf/catalog-standing-front/pose__,
+        __uw-krea2-sfw/leaf/catalog-standing-front/wardrobe__,
+        __uw-krea2-sfw/leaf/catalog-standing-front/environment__,
+        __uw-krea2-sfw/leaf/catalog-standing-front/lighting__,
+        __uw-krea2-sfw/leaf/catalog-standing-front/camera__,
+        __uw-krea2-sfw/leaf/catalog-standing-front/treatment__. [2:3]
+    catalog-standing-turning:
+    - >-
+        __uw-krea2-sfw/leaf/catalog-standing-turning/medium__
+        __uw-krea2-sfw/leaf/catalog-standing-turning/subject__,
+        __uw-krea2-sfw/leaf/catalog-standing-turning/pose__,
+        __uw-krea2-sfw/leaf/catalog-standing-turning/wardrobe__,
+        __uw-krea2-sfw/leaf/catalog-standing-turning/environment__,
+        __uw-krea2-sfw/leaf/catalog-standing-turning/lighting__,
+        __uw-krea2-sfw/leaf/catalog-standing-turning/camera__,
+        __uw-krea2-sfw/leaf/catalog-standing-turning/treatment__. [2:3]
+    catalog-walking:
+    - >-
+        __uw-krea2-sfw/leaf/catalog-walking/medium__
+        __uw-krea2-sfw/leaf/catalog-walking/subject__,
+        __uw-krea2-sfw/leaf/catalog-walking/pose__,
+        __uw-krea2-sfw/leaf/catalog-walking/wardrobe__,
+        __uw-krea2-sfw/leaf/catalog-walking/environment__,
+        __uw-krea2-sfw/leaf/catalog-walking/lighting__,
+        __uw-krea2-sfw/leaf/catalog-walking/camera__,
+        __uw-krea2-sfw/leaf/catalog-walking/treatment__. [2:3]
+    catalog-arms-in-pockets:
+    - >-
+        __uw-krea2-sfw/leaf/catalog-arms-in-pockets/medium__
+        __uw-krea2-sfw/leaf/catalog-arms-in-pockets/subject__,
+        __uw-krea2-sfw/leaf/catalog-arms-in-pockets/pose__,
+        __uw-krea2-sfw/leaf/catalog-arms-in-pockets/wardrobe__,
+        __uw-krea2-sfw/leaf/catalog-arms-in-pockets/environment__,
+        __uw-krea2-sfw/leaf/catalog-arms-in-pockets/lighting__,
+        __uw-krea2-sfw/leaf/catalog-arms-in-pockets/camera__,
+        __uw-krea2-sfw/leaf/catalog-arms-in-pockets/treatment__. [2:3]
+    catalog-studio:
+    - >-
+        __uw-krea2-sfw/leaf/catalog-studio/medium__
+        __uw-krea2-sfw/leaf/catalog-studio/subject__,
+        __uw-krea2-sfw/leaf/catalog-studio/pose__,
+        __uw-krea2-sfw/leaf/catalog-studio/wardrobe__,
+        __uw-krea2-sfw/leaf/catalog-studio/environment__,
+        __uw-krea2-sfw/leaf/catalog-studio/lighting__,
+        __uw-krea2-sfw/leaf/catalog-studio/camera__,
+        __uw-krea2-sfw/leaf/catalog-studio/treatment__. [2:3]
+    catalog-bright-retail:
+    - >-
+        __uw-krea2-sfw/leaf/catalog-bright-retail/medium__
+        __uw-krea2-sfw/leaf/catalog-bright-retail/subject__,
+        __uw-krea2-sfw/leaf/catalog-bright-retail/pose__,
+        __uw-krea2-sfw/leaf/catalog-bright-retail/wardrobe__,
+        __uw-krea2-sfw/leaf/catalog-bright-retail/environment__,
+        __uw-krea2-sfw/leaf/catalog-bright-retail/lighting__,
+        __uw-krea2-sfw/leaf/catalog-bright-retail/camera__,
+        __uw-krea2-sfw/leaf/catalog-bright-retail/treatment__. [2:3]
+    catalog-urban-street:
+    - >-
+        __uw-krea2-sfw/leaf/catalog-urban-street/medium__
+        __uw-krea2-sfw/leaf/catalog-urban-street/subject__,
+        __uw-krea2-sfw/leaf/catalog-urban-street/pose__,
+        __uw-krea2-sfw/leaf/catalog-urban-street/wardrobe__,
+        __uw-krea2-sfw/leaf/catalog-urban-street/environment__,
+        __uw-krea2-sfw/leaf/catalog-urban-street/lighting__,
+        __uw-krea2-sfw/leaf/catalog-urban-street/camera__,
+        __uw-krea2-sfw/leaf/catalog-urban-street/treatment__. [2:3]
+    catalog-outdoor-garden:
+    - >-
+        __uw-krea2-sfw/leaf/catalog-outdoor-garden/medium__
+        __uw-krea2-sfw/leaf/catalog-outdoor-garden/subject__,
+        __uw-krea2-sfw/leaf/catalog-outdoor-garden/pose__,
+        __uw-krea2-sfw/leaf/catalog-outdoor-garden/wardrobe__,
+        __uw-krea2-sfw/leaf/catalog-outdoor-garden/environment__,
+        __uw-krea2-sfw/leaf/catalog-outdoor-garden/lighting__,
+        __uw-krea2-sfw/leaf/catalog-outdoor-garden/camera__,
+        __uw-krea2-sfw/leaf/catalog-outdoor-garden/treatment__. [2:3]
+  leaf:
+    # === Existing Selfie Leaves ===
+    selfie-mirror-front:
+      medium:
+      - __uw-shared/sfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-sfw__
+      pose:
+      - __uw-shared/sfw/pose/selfie-mirror-front__
+      wardrobe:
+      - wearing __uw-shared/sfw/wardrobe/casual-composer__
+      environment:
+      - __uw-shared/sfw/environment/selfie-bathroom__
+      lighting:
+      - __uw-shared/sfw/lighting/selfie-bathroom__
+      camera:
+      - __uw-shared/sfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    selfie-laying-back:
+      medium:
+      - __uw-shared/sfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-sfw__
+      pose:
+      - __uw-shared/sfw/pose/selfie-laying-back__
+      wardrobe:
+      - wearing __uw-shared/sfw/wardrobe/casual-composer__
+      environment:
+      - __uw-shared/sfw/environment/selfie-laying-back__
+      lighting:
+      - __uw-shared/sfw/lighting/selfie-window__
+      camera:
+      - __uw-shared/sfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    selfie-mirror-side:
+      medium:
+      - __uw-shared/sfw/shot/selfie-mirror__
+      subject:
+      - __uw-shared/common/identity-router/natural-sfw__
+      pose:
+      - __uw-shared/sfw/pose/selfie-mirror-side__
+      wardrobe:
+      - wearing __uw-shared/sfw/wardrobe/casual-composer__
+      environment:
+      - __uw-shared/sfw/environment/selfie-bathroom__
+      lighting:
+      - __uw-shared/sfw/lighting/selfie-bathroom__
+      camera:
+      - __uw-shared/sfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    selfie-over-shoulder:
+      medium:
+      - __uw-shared/sfw/shot/selfie__
+      subject:
+      - __uw-shared/common/identity-router/natural-sfw__
+      pose:
+      - __uw-shared/sfw/pose/selfie-over-shoulder__
+      wardrobe:
+      - wearing __uw-shared/sfw/wardrobe/casual-composer__
+      environment:
+      - __uw-shared/sfw/environment/selfie-bedroom__
+      lighting:
+      - __uw-shared/sfw/lighting/selfie-window__
+      camera:
+      - __uw-shared/sfw/camera/selfie-phone__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+
+    # === New Catalog Leaves ===
+    catalog-standing-front:
+      medium:
+      - A full-length photograph of
+      - A complete full-body shot of
+      subject:
+      - __uw-shared/common/identity-router/catalog__
+      pose:
+      - __uw-shared/sfw/pose/catalog-standing__
+      wardrobe:
+      - wearing __uw-shared/sfw/wardrobe/catalog-composer__
+      environment:
+      - __uw-shared/sfw/environment/catalog-studio__
+      lighting:
+      - __uw-shared/sfw/lighting/catalog-studio-light__
+      camera:
+      - __uw-shared/sfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    catalog-standing-turning:
+      medium:
+      - A full-length photograph of
+      - An editorial-style photo of
+      subject:
+      - __uw-shared/common/identity-router/catalog__
+      pose:
+      - __uw-shared/sfw/pose/catalog-turning__
+      wardrobe:
+      - wearing __uw-shared/sfw/wardrobe/catalog-composer__
+      environment:
+      - __uw-shared/sfw/environment/catalog-bright-retail__
+      lighting:
+      - __uw-shared/sfw/lighting/catalog-outdoor-daylight__
+      camera:
+      - __uw-shared/sfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    catalog-walking:
+      medium:
+      - A lifestyle photograph of
+      - An editorial-style photo of
+      subject:
+      - __uw-shared/common/identity-router/catalog__
+      pose:
+      - __uw-shared/sfw/pose/catalog-walking__
+      wardrobe:
+      - wearing __uw-shared/sfw/wardrobe/catalog-composer__
+      environment:
+      - __uw-shared/sfw/environment/catalog-urban-street__
+      lighting:
+      - __uw-shared/sfw/lighting/catalog-golden-hour__
+      camera:
+      - __uw-shared/sfw/camera/lifestyle-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    catalog-arms-in-pockets:
+      medium:
+      - A full-length photograph of
+      - A complete full-body shot of
+      subject:
+      - __uw-shared/common/identity-router/catalog__
+      pose:
+      - __uw-shared/sfw/pose/catalog-arms-in-pockets__
+      wardrobe:
+      - wearing __uw-shared/sfw/wardrobe/catalog-composer__
+      environment:
+      - __uw-shared/sfw/environment/catalog-outdoor-garden__
+      lighting:
+      - __uw-shared/sfw/lighting/catalog-outdoor-daylight__
+      camera:
+      - __uw-shared/sfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    catalog-studio:
+      medium:
+      - A full-length photograph of
+      - A complete full-body shot of
+      subject:
+      - __uw-shared/common/identity-router/catalog__
+      pose:
+      - __uw-shared/sfw/pose/catalog-standing__
+      wardrobe:
+      - wearing __uw-shared/sfw/wardrobe/catalog-composer__
+      environment:
+      - __uw-shared/sfw/environment/catalog-studio__
+      lighting:
+      - __uw-shared/sfw/lighting/catalog-studio-light__
+      camera:
+      - __uw-shared/sfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    catalog-bright-retail:
+      medium:
+      - A lifestyle photograph of
+      - An editorial-style photo of
+      subject:
+      - __uw-shared/common/identity-router/catalog__
+      pose:
+      - __uw-shared/sfw/pose/catalog-hip-hand__
+      wardrobe:
+      - wearing __uw-shared/sfw/wardrobe/catalog-composer__
+      environment:
+      - __uw-shared/sfw/environment/catalog-bright-retail__
+      lighting:
+      - __uw-shared/sfw/lighting/catalog-urban-light__
+      camera:
+      - __uw-shared/sfw/camera/lifestyle-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    catalog-urban-street:
+      medium:
+      - A lifestyle photograph of
+      - An editorial-style photo of
+      subject:
+      - __uw-shared/common/identity-router/catalog__
+      pose:
+      - __uw-shared/sfw/pose/catalog-arms-crossed__
+      wardrobe:
+      - wearing __uw-shared/sfw/wardrobe/catalog-composer__
+      environment:
+      - __uw-shared/sfw/environment/catalog-urban-street__
+      lighting:
+      - __uw-shared/sfw/lighting/catalog-urban-light__
+      camera:
+      - __uw-shared/sfw/camera/lifestyle-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__
+    catalog-outdoor-garden:
+      medium:
+      - A lifestyle photograph of
+      - An editorial-style photo of
+      subject:
+      - __uw-shared/common/identity-router/catalog__
+      pose:
+      - __uw-shared/sfw/pose/catalog-walking__
+      wardrobe:
+      - wearing __uw-shared/sfw/wardrobe/catalog-composer__
+      environment:
+      - __uw-shared/sfw/environment/catalog-outdoor-garden__
+      lighting:
+      - __uw-shared/sfw/lighting/catalog-golden-hour__
+      camera:
+      - __uw-shared/sfw/camera/lifestyle-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural__

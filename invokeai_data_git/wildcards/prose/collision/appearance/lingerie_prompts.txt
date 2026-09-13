@@ -1,0 +1,58 @@
+# === LINGERIE PROMPTS — готовые строки для вайлдкарда ===
+# Каждая строка = один готовый фрагмент промпта
+
+wearing classic black silk charmeuse nightgown with lace bodice, matching high-cut panties, thigh-high black stockings with garter belt
+wearing fiery red lace-trimmed silk chemise with scalloped edges, embroidered silk thong, red fishnet stockings
+wearing soft pink sheer mesh bodysuit with criss-cross detailing, lace boyshorts, nude seamless stockings
+wearing elegant white satin camisole with adjustable straps, satin hipsters, white lace-trimmed stockings
+wearing midnight blue velvet tap pants with embroidered details, matching bralette, sheer black stockings
+wearing deep purple lace-up corset with satin accents, silk shorts, burgundy lace-top stockings
+wearing champagne silk teddie with delicate lace trim, satin garter skirt, black back-seam stockings
+wearing emerald green sheer chiffon babydoll with sweetheart neckline, lace high-cut panties, black fishnet stockings
+wearing gold satin bustier with lace trim, velvet tap pants, nude stockings with subtle sheen
+wearing pastel lavender modal nightdress with bow detail, lace boyshorts, white over-the-knee stockings
+wearing cream-colored cotton bra and panties set, simple classic cut, no stockings, natural look
+wearing black leather-look bralette with metal hardware, matching high-waist briefs, fishnet tights
+wearing vintage-inspired high-waist panties with polka dots, matching balconette bra, seamed stockings
+wearing sheer black bodystocking with geometric patterns, no additional pieces, continuous silhouette
+wearing ivory bridal lace set with garter belt, matching panties, white satin stockings with lace tops
+wearing neon green sports bra with mesh panels, matching athletic briefs, compression-style leg wraps
+wearing oversized men's white button-down shirt as nightwear, no visible undergarments, casual draped fit
+wearing mismatched set: black lace bra with pink floral panties, different textures, intentionally clashing
+wearing wearing two bras layered over each other, different colors, confused styling choice
+wearing corset over thick cotton sweater, contradictory layering, impractical combination
+wearing silk nightgown worn backwards, visible seams in front, awkward draping
+wearing stockings with visible runs and ladders, worn lingerie, lived-in realistic appearance
+wearing garter belt worn over stockings instead of under, incorrect styling, amateur mistake
+wearing bra sized incorrectly with visible spillage, poor fit, uncomfortable appearance
+wearing panties worn over stockings, confusing layer order, impractical styling
+wearing three different garter belts layered, excessive accessories, overdone look
+wearing nightgown with visible tags still attached, new unworn appearance, forgot to remove
+wearing lingerie inside out, visible seams and labels, careless mistake
+wearing one stocking only, missing pair, incomplete outfit
+wearing bra on backwards with clasp in front, incorrect wearing, confused styling
+wearing delicate lace bra with thick athletic socks, mismatched formality levels
+wearing expensive silk set with visibly cheap plastic garter clips, quality mismatch
+wearing formal corset with casual cotton granny panties, style contradiction
+wearing sheer babydoll with no undergarments beneath, bold transparent look
+wearing vintage 1950s bullet bra with modern micro panties, era mismatch
+wearing bridal white lingerie set with black funeral-style garter, tone contradiction
+wearing satin chemise with wool knee-high socks, fabric texture clash
+wearing lace bodysuit with visible panty lines underneath, layering mistake
+wearing corset laced so tight it creates bulges, uncomfortable over-tightening
+wearing fishnet stockings over solid tights, redundant layering, confusing choice
+wearing pearl necklace with casual sleep shorts, accessory mismatch
+wearing silk robe worn open with completely different lingerie set underneath, uncoordinated
+wearing garter belt with no stockings attached, incomplete accessory use
+wearing matching set but stockings are completely different color, coordination failure
+wearing lingerie with visible stains and wear, heavily used appearance, realistic imperfection
+wearing expensive French lace set with plastic hair clip accessories, quality contradiction
+wearing bustier with visible zipper broken halfway, damaged garment
+wearing silk nightgown with athletic sweatband, contradictory styling choices
+wearing vintage girdle over modern thong, era and style confusion
+wearing multiple necklaces tangled with lingerie straps, accessorizing mistake
+wearing sheer mesh set with visible safety pins holding it together, makeshift repair
+wearing formal bustier with fuzzy slippers visible, indoor casual contradiction
+wearing high-end designer lingerie with price tag still dangling, forgot to remove
+wearing corset with visible sweat marks underneath, worn appearance
+wearing delicate silk set with rough rope belt accessory, texture contradiction

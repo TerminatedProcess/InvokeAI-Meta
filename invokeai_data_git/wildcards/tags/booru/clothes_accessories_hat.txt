@@ -1,0 +1,25 @@
+__clothes_accessories_special_hat__
+baseball cap
+bonnet
+flat cap
+field cap
+peaked cap
+bowler hat
+boater hat
+bucket hat
+cowboy hat
+fedora
+picture hat
+porkpie hat
+straw hat
+female service cap
+sunhat
+chullo
+earflap beanie
+ushanka
+beanie
+beret
+coif
+flight attendant hat
+nurse cap
+sailor hat

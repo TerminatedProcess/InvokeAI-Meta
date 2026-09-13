@@ -1,0 +1,213 @@
+body-builder:
+  female:
+    - a __body-traits/age__ __body-traits/ethnicity__ woman with __body-traits/hair/hair-generation-f__. her body is __body-traits/body-shape-f__, she has a __body-traits/breasts/breast-builder__
+  male:
+    - a __body-traits/age__ __body-traits/ethnicity__ man with __body-traits/hair/hair-generation-m__. his body is __body-traits/body-shape-m__,
+  cyborg:
+    -  a heavyly modified cyborg, mechanical joints everywhere, robot chest, cyborg face, robot torso, robot legs, robot arms, energy core, robot eyes,
+body-traits:
+  ethnicity:
+    - African
+    - Dark-skinned African
+    - Japanese
+    - Chinese
+    - Korean
+    - German
+    - Spanish
+    - Italian
+    - Polish
+    - Russian
+    - Indigenous American
+    - Arabic
+    - Latina
+    - Hispanic
+  age:
+    - 18 years-old
+    - young adult
+    - mature
+    - middle-aged woman
+  hair:
+    hair-generation-f:
+      - __body-traits/hair/haircolor__ __body-traits/hair/hairstyle-f__
+    hair-generation-m:
+    - __body-traits/hair/haircolor__ __body-traits/hair/hairstyle-m__ and on his face __body-traits/hair/facial-hair__
+    hairstyle-f:
+      - Crew cut hairstyle
+      - Pixie cut hairstyle
+      - Bob hairstyle
+      - Undercut hairstyle
+      - Cornrows hairstyle
+      - Dreadlocks hairstyle
+      - French twist hairstyle
+      - Ponytail hairstyle
+      - Top knot hairstyle
+      - Long Straight Hair
+      - Long Wavy Hair
+      - Long Curly Hair
+      - Short Straight Hair
+      - Short Wavy Hair
+      - Short Curly Hair
+      - Medium-Length Hair
+      - Layered Hair
+      - Bun
+      - Ponytail     
+    hairstyle-m:
+      - shaved
+      - buzz cut
+      - crew cut
+      - short hair
+      - medium-length hair
+      - long hair
+      - side part
+      - slicked back
+      - quiff
+      - pompadour
+      - textured crop
+      - french crop
+      - caesar cut
+      - undercut
+      - fade
+      - messy hairstyle
+      - spiky hairstyle
+      - combed hairstyle
+      - ponytail
+      - man bun
+    facial-hair:
+      - clean-shaven
+      - light stubble
+      - medium stubble
+      - heavy stubble
+      - short beard
+      - full beard
+      - trimmed beard
+      - boxed beard
+      - goatee
+      - van dyke beard
+      - mustache
+      - handlebar mustache
+      - soul patch
+      - chin strap beard
+      - mutton chops      
+    haircolor:
+      - Black
+      - Brown
+      - Blonde
+      - Red
+      - Auburn
+      - Chestnut
+      - Platinum
+      - Ash
+      - Silver
+      - Gray
+      - Ombre
+      - Balayage
+      - Highlights
+      - Lowlights
+      - Dip-dye
+      - Two-tone
+      - Rainbow
+      - Peekaboo
+      - Pastel fade
+      - Oil slick
+  body-shape-f:
+      - petite
+      - slim
+      - lean
+      - fit
+      - athletic
+      - toned
+      - average build
+      - curvy
+      - voluptuous
+      - hourglass
+      - pear-shaped
+      - rectangle
+      - inverted triangle
+      - soft body
+      - muscular
+      - tall
+      - long-legged
+      - compact build
+  body-shape-m:
+      - petite
+      - slim
+      - lean
+      - fit
+      - athletic
+      - toned
+      - average build
+      - pear-shaped
+      - rectangle
+      - soft body
+      - muscular
+      - tall
+      - chubby
+      - compact build
+  breasts:
+    breast-builder:
+      - __body-traits/breasts/breast-size__ chest with __body-traits/breasts/breast-firmness__, __body-traits/breasts/breast-spacing__,__body-traits/breasts/breast-position__, __body-traits/breasts/breast-profile__ breasts.
+    nipple-builder:
+      - __body-traits/breasts/areola-size__, __body-traits/breasts/areola-shape__, __body-traits/breasts/areola-color__ areolas with __body-traits/breasts/nipple-size__, __body-traits/breasts/nipple-projection__, __body-traits/breasts/nipple-orientation__
+    breast-size:
+      - a flat
+      - very small breasts
+      - small breasts
+      - medium breasts
+      - full breasts
+      - large breasts
+      - very large breasts              
+    breast-position:
+      - high-set
+      - average-set
+      - low-set   
+    breast-spacing:
+      - close-set
+      - average spacing
+      - wide-set  
+    breast-profile:
+      - rounded
+      - natural
+      - teardrop-shaped
+      - projected
+      - shallow
+    breast-firmness:
+      - firm
+      - natural
+      - soft  
+    areola-size:
+      - very small
+      - small
+      - medium-sized
+      - large
+      - wide      
+    areola-shape:
+      - round
+      - oval
+      - slightly oval
+      - asymmetrical
+      - irregularly shaped
+    areola-color:
+      - slightly darker than skin
+      - moderately darker than skin
+      - significantly darker than skin
+    areola-edge:
+      - well-defined
+      - softly defined
+      - feathered-edged
+    nipple-projection:
+      - flat
+      - slightly projecting
+      - moderately projecting
+      - prominent
+      - inverted
+      - partially inverted  
+    nipple-size:
+      - tiny
+      - small
+      - medium-sized
+      - large  
+    nipple-orientation:
+      - forward-facing nipples
+      - slightly upward-pointing nipples
+      - slightly downward-pointing nipples
+      - outward-pointing nipples

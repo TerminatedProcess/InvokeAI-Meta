@@ -1,0 +1,5 @@
+__body_skin_male__, __body_shape_male__
+__body_skin_male__, __body_shape_male__
+__body_skin_male__, __body_shape_male__
+__body_skin_male__, __body_shape_male__
+__body_shape_male__

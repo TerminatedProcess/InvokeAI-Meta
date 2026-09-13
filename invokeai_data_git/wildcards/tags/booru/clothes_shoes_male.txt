@@ -1,0 +1,29 @@
+loafer
+loafer, penny loafer
+barefoot
+boots
+boots, ankle boots
+boots, cowboy boots
+boots, knee boots
+boots, lace-up boots
+boots, rubber boots
+boots, work boots
+cross-laced footwear
+cross-laced sandals
+cross-laced shoes
+lace-up boots
+sneakers
+sneakers, high tops
+sneakers, converse
+dress shoes
+dress shoes, loafers
+dress shoes, oxfords
+sandals, cross-laced sandals
+sandals, flip-flops
+sandals, ((geta):0.8)
+sandals, sports sandals
+sandals, waraji
+sandals, zouri
+monk shoes
+slippers
+uwabaki

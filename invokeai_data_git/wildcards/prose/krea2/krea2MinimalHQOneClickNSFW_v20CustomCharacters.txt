@@ -1,0 +1,339 @@
+Krea2 NSFW Wildcard Routers
+============================
+
+Paste any tag below into ImpactWildcardProcessor wildcard_text.
+portrait-* = portrait aspect (3:4, 9:16, 2:3). landscape-* = widescreen (16:9, 3:2, 4:3).
+
+Total: 73 routers
+
+
+--------------------------------------------------------------------------------
+ROOM SCENES (soft / tease photoreal)
+--------------------------------------------------------------------------------
+
+Bedroom (portrait)
+Mixed selfie + candid + cinematic bedroom tease. 17 templates.
+__uw-krea2-nsfw/router/portrait-bedroom-pics__
+
+Bedroom (landscape)
+Side-lying, reclined, prone-wide bedroom shots. 4 templates.
+__uw-krea2-nsfw/router/landscape-bedroom-pics__
+
+Bathroom (portrait)
+Mirror, counter, towel, tub selfies + candid/cinematic bathroom. 9 templates.
+__uw-krea2-nsfw/router/portrait-bathroom-pics__
+
+Bathroom (landscape)
+Tub-wide and reclined bathroom wides. 3 templates.
+__uw-krea2-nsfw/router/landscape-bathroom-pics__
+
+Hotel (portrait)
+Hotel room mirror, bed, window intimate shots. 8 templates.
+__uw-krea2-nsfw/router/portrait-hotel-pics__
+
+Hotel (landscape)
+Hotel side-lying and reclined wides. 3 templates.
+__uw-krea2-nsfw/router/landscape-hotel-pics__
+
+Apartment (portrait)
+Apartment mirror, floor, lamp moody shots. 7 templates.
+__uw-krea2-nsfw/router/portrait-apartment-pics__
+
+Apartment (landscape)
+Apartment side-lying and reclined wides. 3 templates.
+__uw-krea2-nsfw/router/landscape-apartment-pics__
+
+Living room (portrait)
+Sofa, mirror, over-shoulder living room mix. 9 templates.
+__uw-krea2-nsfw/router/portrait-living-room-pics__
+
+Living room (landscape)
+Living room side-lying and reclined wides. 3 templates.
+__uw-krea2-nsfw/router/landscape-living-room-pics__
+
+Closet (portrait)
+Walk-in closet mirror, cosplay, trying-on shots. 10 templates.
+__uw-krea2-nsfw/router/portrait-closet-pics__
+
+Closet (landscape)
+Closet floor-wide and seated wides. 3 templates.
+__uw-krea2-nsfw/router/landscape-closet-pics__
+
+Kitchen (portrait)
+Counter, stool, window kitchen shots. 8 templates.
+__uw-krea2-nsfw/router/portrait-kitchen-pics__
+
+Kitchen (landscape)
+Kitchen counter and window wides. 3 templates.
+__uw-krea2-nsfw/router/landscape-kitchen-pics__
+
+Balcony (portrait)
+Railing, seated, golden-hour balcony mix. 9 templates.
+__uw-krea2-nsfw/router/portrait-balcony-pics__
+
+Balcony (landscape)
+Balcony railing and seated wides. 4 templates.
+__uw-krea2-nsfw/router/landscape-balcony-pics__
+
+Poolside (portrait)
+Lounge, towel, evening poolside shots. 7 templates.
+__uw-krea2-nsfw/router/portrait-poolside-pics__
+
+Poolside (landscape)
+Poolside lounge and reclined wides. 3 templates.
+__uw-krea2-nsfw/router/landscape-poolside-pics__
+
+Boudoir (portrait)
+Vanity, chaise, cinematic boudoir mix. 9 templates.
+__uw-krea2-nsfw/router/portrait-boudoir-pics__
+
+Boudoir (landscape)
+Boudoir side-lying and reclined wides. 3 templates.
+__uw-krea2-nsfw/router/landscape-boudoir-pics__
+
+Outfit focus (portrait)
+Cosplay + semi-nsfw wardrobe-locked looks. 7 templates.
+__uw-krea2-nsfw/router/portrait-outfit-focus-pics__
+
+
+--------------------------------------------------------------------------------
+INTIMATE ACTION (vanilla explicit — not in room routers)
+--------------------------------------------------------------------------------
+
+All intimate action (portrait)
+Master union: solo + partner + bus hot action. 41 templates.
+__uw-krea2-nsfw/router/portrait-intimate-action-pics__
+
+Solo only (portrait)
+Fingering, toy, hitachi, masturbating, selfie, afterglow. 8 templates.
+__uw-krea2-nsfw/router/portrait-intimate-action-solo-pics__
+
+Partner only (portrait)
+Missionary, doggy, oral, POV, scene-locked partner acts. 33 templates.
+__uw-krea2-nsfw/router/portrait-intimate-action-partner-pics__
+
+Soft action (portrait)
+Non-explicit: massage, implied oral. 2 templates.
+__uw-krea2-nsfw/router/portrait-intimate-action-soft-pics__
+
+All intimate action (landscape)
+Wide spooning, doggy, missionary, solo reclined, etc. 16 templates.
+__uw-krea2-nsfw/router/landscape-intimate-action-pics__
+
+Soft action (landscape)
+Wide massage only. 1 template.
+__uw-krea2-nsfw/router/landscape-intimate-action-soft-pics__
+
+Bus / transit (portrait)
+Public bus reverse-ride, rail-lifted, seat doggy. 3 templates.
+__uw-krea2-nsfw/router/portrait-intimate-action-bus-pics__
+
+Bus / transit (landscape)
+Bus bridge-seat wide. 1 template.
+__uw-krea2-nsfw/router/landscape-intimate-action-bus-pics__
+
+
+--------------------------------------------------------------------------------
+GROUP ACTION (multi-person)
+--------------------------------------------------------------------------------
+
+All group action (portrait)
+Threesome, DP, spitroast, blowbang, shower group. 9 templates.
+__uw-krea2-nsfw/router/portrait-intimate-action-group-pics__
+
+Group oral (portrait)
+Blowbang, oral threesome, girl-girl oral, shower threesome. 4 templates.
+__uw-krea2-nsfw/router/portrait-intimate-action-group-oral-pics__
+
+Group penetration (portrait)
+DP, spitroast, couch DP, hotel multi, etc. 6 templates.
+__uw-krea2-nsfw/router/portrait-intimate-action-group-penetration-pics__
+
+Group action (landscape)
+Wide horizontal spitroast only. 1 template.
+__uw-krea2-nsfw/router/landscape-intimate-action-group-pics__
+
+
+--------------------------------------------------------------------------------
+FANTASY
+--------------------------------------------------------------------------------
+
+Fantasy core (portrait)
+All fantasy scenes: forest, castle, tavern, ruins mix. 25 templates.
+__uw-krea2-nsfw/router/portrait-fantasy-pics__
+
+Fantasy core (landscape)
+Fantasy cinematic and soft wides across scenes. 8 templates.
+__uw-krea2-nsfw/router/landscape-fantasy-pics__
+
+Forest (portrait)
+Glade, bathing, dancing, moody forest fantasy. 6 templates.
+__uw-krea2-nsfw/router/portrait-fantasy-forest-pics__
+
+Forest (landscape)
+Forest glade-wide and bathing-spring-wide. 2 templates.
+__uw-krea2-nsfw/router/landscape-fantasy-forest-pics__
+
+Castle (portrait)
+Chamber, throne, bathing, warrior-lap castle fantasy. 9 templates.
+__uw-krea2-nsfw/router/portrait-fantasy-castle-pics__
+
+Castle (landscape)
+Castle chamber-wide and lounge bedchamber-wide. 2 templates.
+__uw-krea2-nsfw/router/landscape-fantasy-castle-pics__
+
+Tavern (portrait)
+Candle booth, loft, slave-service tavern fantasy. 5 templates.
+__uw-krea2-nsfw/router/portrait-fantasy-tavern-pics__
+
+Tavern (landscape)
+Tavern booth-wide and loft-wide. 2 templates.
+__uw-krea2-nsfw/router/landscape-fantasy-tavern-pics__
+
+Ruins (portrait)
+Shrine, moonlit ruins, bathing tide-pool fantasy. 5 templates.
+__uw-krea2-nsfw/router/portrait-fantasy-ruins-pics__
+
+Ruins (landscape)
+Ruins shrine-wide and moonlit-wide. 2 templates.
+__uw-krea2-nsfw/router/landscape-fantasy-ruins-pics__
+
+Dark vignettes (portrait)
+Ivy-bound, slave-service, warrior-lap, dungeon dark fantasy. 6 templates.
+__uw-krea2-nsfw/router/portrait-fantasy-dark-pics__
+
+Fantasy selfie (portrait)
+Phone selfies across all fantasy scenes. 12 templates.
+__uw-krea2-nsfw/router/portrait-fantasy-selfie-pics__
+
+Forest selfie (portrait)
+Forest glade and mirror-pool fantasy selfies. 3 templates.
+__uw-krea2-nsfw/router/portrait-fantasy-forest-selfie-pics__
+
+Castle selfie (portrait)
+Castle mirror and window fantasy selfies. 3 templates.
+__uw-krea2-nsfw/router/portrait-fantasy-castle-selfie-pics__
+
+Tavern selfie (portrait)
+Tavern mirror and loft fantasy selfies. 3 templates.
+__uw-krea2-nsfw/router/portrait-fantasy-tavern-selfie-pics__
+
+Ruins selfie (portrait)
+Ruins moonlit and polished-stone fantasy selfies. 3 templates.
+__uw-krea2-nsfw/router/portrait-fantasy-ruins-selfie-pics__
+
+Fantasy intimate action (portrait)
+Explicit solo + partner action in fantasy settings. 16 templates.
+__uw-krea2-nsfw/router/portrait-fantasy-intimate-action-pics__
+
+Fantasy solo action (portrait)
+Fantasy fingering, toy, hitachi, masturbating. 5 templates.
+__uw-krea2-nsfw/router/portrait-fantasy-intimate-action-solo-pics__
+
+Fantasy partner action (portrait)
+Fantasy missionary, doggy, oral, cowgirl, etc. 11 templates.
+__uw-krea2-nsfw/router/portrait-fantasy-intimate-action-partner-pics__
+
+Fantasy action (landscape)
+Wide fantasy partner and solo action shots. 7 templates.
+__uw-krea2-nsfw/router/landscape-fantasy-intimate-action-pics__
+
+Fantasy group action (portrait)
+Multi-person fantasy threesome, spitroast, double. 4 templates.
+__uw-krea2-nsfw/router/portrait-fantasy-intimate-action-group-pics__
+
+Monster action (portrait)
+Partner = troll/knight/orc via partner-body pools. 3 templates.
+__uw-krea2-nsfw/router/portrait-fantasy-monster-action-pics__
+
+Epic scenic (portrait)
+Illustration-epic sorceress portrait. 1 template.
+__uw-krea2-nsfw/router/portrait-fantasy-epic-pics__
+
+Epic scenic (landscape)
+Valkyrie, goddess, nymph, goblin epic wides (23:9). 7 templates.
+__uw-krea2-nsfw/router/landscape-fantasy-epic-pics__
+
+
+--------------------------------------------------------------------------------
+DUAL-IMAGE (side-by-side before/after panels, landscape only)
+--------------------------------------------------------------------------------
+
+All dual-image (landscape)
+Full dual-image product union. 16 templates.
+__uw-krea2-nsfw/router/landscape-dual-image-pics__
+
+Dual outfit partner (landscape)
+Clothed-to-action partner panels (missionary, doggy, oral). 5 templates.
+__uw-krea2-nsfw/router/landscape-dual-outfit-partner-pics__
+
+Dual outfit reveal (landscape)
+Standing/sofa clothed-to-reveal panels. 4 templates.
+__uw-krea2-nsfw/router/landscape-dual-outfit-reveal-pics__
+
+Dual outfit solo (landscape)
+Solo clothed-to-action panels. 4 templates.
+__uw-krea2-nsfw/router/landscape-dual-outfit-solo-pics__
+
+Dual pose shift (landscape)
+Same outfit, pose change panels. 3 templates.
+__uw-krea2-nsfw/router/landscape-dual-pose-shift-pics__
+
+
+--------------------------------------------------------------------------------
+THEME (wardrobe-locked — not in room routers)
+--------------------------------------------------------------------------------
+
+Lingerie (portrait)
+Boudoir, dressing room, penthouse, conservatory lingerie. 8 templates.
+__uw-krea2-nsfw/router/portrait-lingerie-pics__
+
+Swimsuit (portrait)
+Poolside swimsuit selfies and portraits. 4 templates.
+__uw-krea2-nsfw/router/portrait-swimsuit-pics__
+
+Cheerleader costume (portrait)
+Cheerleader outfit in bedroom/closet/living room. 3 templates.
+__uw-krea2-nsfw/router/portrait-cheerleader-pics__
+
+Schoolgirl costume (portrait)
+Plaid uniform in bedroom/closet (adult framing). 3 templates.
+__uw-krea2-nsfw/router/portrait-schoolgirl-pics__
+
+Cosplay (portrait)
+Full cosplay-composer across closet/bedroom/boudoir/balcony. 5 templates.
+__uw-krea2-nsfw/router/portrait-cosplay-pics__
+
+Nature outdoor (portrait)
+Outdoor nature swimsuit/semi-nsfw shots. 4 templates.
+__uw-krea2-nsfw/router/portrait-nature-pics__
+
+Librarian (portrait)
+Library study costume shots. 3 templates.
+__uw-krea2-nsfw/router/portrait-librarian-pics__
+
+Spa editorial (portrait)
+Spa/suitcase editorial theme shots. 3 templates.
+__uw-krea2-nsfw/router/portrait-spa-editorial-pics__
+
+Strip club (portrait)
+Stage kneel strip-club theme. 2 templates.
+__uw-krea2-nsfw/router/portrait-strip-club-pics__
+
+
+--------------------------------------------------------------------------------
+AESTHETIC PILOT (editorial / soft-glam — not in room routers)
+--------------------------------------------------------------------------------
+
+Aesthetic pilot (portrait)
+Editorial and soft-glam clones of bedroom/boudoir shots. 3 templates.
+__uw-krea2-nsfw/router/portrait-aesthetic-pilot-pics__
+
+
+--------------------------------------------------------------------------------
+CASTING SHEET (multi-pose LoRA prompts, separate root)
+--------------------------------------------------------------------------------
+
+Casting sheet (landscape)
+Clothed-to-nude multi-pose casting prompts (23:9). 5 templates.
+__uw-krea2-nsfw-casting/router/landscape-casting-sheet-pics__

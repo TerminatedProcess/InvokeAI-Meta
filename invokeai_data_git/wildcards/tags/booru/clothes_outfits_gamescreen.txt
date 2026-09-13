@@ -1,0 +1,21 @@
+((__clothes_tops__, __clothes_bottoms__):0.9), taut clothes, revealing clothing
+__colors__ __clothes_dresses__, __clothes_dress_length__, upskirt, wind lift
+multicolored dress, __colors__ dress, ((__colors__ dress):0.8), __clothes_dresses__, __clothes_dress_length__, upskirt, wind lift
+gradient dress, __colors__ dress, ((__colors__ dress):0.8), __clothes_dresses__, __clothes_dress_length__, upskirt, wind lift
+two-tone dress, __colors__ dress, ((__colors__ dress):0.8), __clothes_dresses__, __clothes_dress_length__, upskirt, wind lift
+two-sided dress, __colors__ dress, ((__colors__ dress):0.8), __clothes_dresses__, __clothes_dress_length__, upskirt, wind lift
+__colors__ japanese clothes, __clothes_outfit_japanese__, revealing clothing
+__colors__ idol clothes, __clothes_outfit_idol__, upskirt, wind lift
+__colors__ maid, __clothes_outfit_maid__, upskirt, wind lift
+__colors__ school uniform, upskirt
+__colors__ gym uniform, upshorts
+__colors__ playboy bunny, bursting breasts
+__clothes_revealing_nsfw_female__
+__clothes_swimsuit_nsfw_female__
+__clothes_lingerie_female__
+(__clothes_lingerie_female__)
+((__clothes_revealing_nsfw_female__):0.9)
+((__clothes_swimsuit_nsfw_female__):0.9)
+((__clothes_lingerie_female__):0.9)
+__clothes_naked_nsfw_female__
+__clothes_bodysuit_nsfw_female__

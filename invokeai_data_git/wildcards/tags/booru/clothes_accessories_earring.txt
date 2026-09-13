@@ -1,0 +1,13 @@
+((crescent earrings):0.7)
+((cross earrings):0.7)
+((crystal earrings):0.7)
+((flower earrings):0.7)
+((heart earrings):0.7)
+((pearl earrings):0.7)
+((sphere earrings):0.7)
+((star earrings):0.7)
+__clothes_accessories_special_earrings__
+tassel earrings
+floating earrings
+hoop earrings
+stud earrings

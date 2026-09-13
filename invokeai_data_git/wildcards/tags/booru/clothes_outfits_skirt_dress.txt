@@ -1,0 +1,6 @@
+__clothes_outfits_dresses__
+__clothes_outfit_idol__
+__clothes_tops__, __clothes_bottoms_skirt__
+__colors__ maid, __clothes_outfit_maid__
+__colors__ school uniform, __clothes_outfit_school__
+__colors__ kimono, __clothes_outfit_japanese_kimono__

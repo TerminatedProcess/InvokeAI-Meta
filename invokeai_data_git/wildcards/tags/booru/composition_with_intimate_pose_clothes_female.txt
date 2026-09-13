@@ -1,0 +1,4 @@
+1boy, ((__body_male__):0.6), out of frame, 1girl, ((solo focus):0.8), clothed female nude male, ((__body_bare_male_crotch__):0.9), __composition_view_angle_pose_nsfw__
+1boy, ((__character_male__):0.8), 1girl, ((solo focus):0.8), clothed female nude male, ((__body_bare_male_crotch__):0.9), __composition_view_angle_pose_nsfw__
+1boy, ((__character_male__):0.8), 1girl, hetero, clothed female nude male, ((__body_bare_male_crotch__):0.9), __composition_view_angle_pose_nsfw__
+2girls, out of frame, ((solo focus):0.8), clothed female nude female, ((__hair__, __body_breasts__):0.8), strap-on, ((sex toy, object insertion):0.9), ((dildo):0.7), ((__colors__ strapon):0.8), __composition_view_angle_pose_nsfw__

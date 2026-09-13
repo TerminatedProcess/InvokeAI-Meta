@@ -1,0 +1,50 @@
+blouse
+crop top
+tank top
+halter top
+tube top
+camisole
+turtleneck sweater
+cardigan
+hoodie
+off-shoulder top
+wrap top
+peplum top
+button-down shirt
+skinny jeans
+wide-leg trousers
+leggings
+culottes
+palazzo pants
+cargo pants
+bermuda shorts
+denim shorts
+pencil skirt
+a-line skirt
+pleated skirt
+maxi skirt
+mini skirt
+denim skirt
+sundress
+slip dress
+wrap dress
+shirt dress
+cocktail dress
+maxi dress
+sheath dress
+shift dress
+jumpsuit
+romper
+overalls
+trench coat
+denim jacket
+blazer
+parka
+peacoat
+bomber jacket
+poncho
+kimono
+sari
+cheongsam
+hanbok
+dirndl

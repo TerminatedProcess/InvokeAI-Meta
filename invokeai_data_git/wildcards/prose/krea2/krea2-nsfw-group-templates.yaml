@@ -1,0 +1,377 @@
+# Krea 2 NSFW GROUP ACTION templates (multi-person product)
+# Tags: __uw-krea2-nsfw/router|template|leaf/*__
+# Root key: uw-krea2-nsfw
+# Hard rule: register action-group-* ONLY under group routers — never room/vanilla-action/bus/theme/fantasy/casting
+# Word budget: ~120–140 words; shorten env/lighting before cutting pose cast
+# Landscape *-wide / wide-spitroast ONLY on landscape-intimate-action-group-pics — never portrait routers
+# version: 8
+# 2026-08-15: doorway-caught oral (generic) + roleplay birthday caught oral.
+# 2026-07-26: Group L2 assembly ? wardrobe before pose (partner-cue boundary).
+uw-krea2-nsfw:
+  router:
+    # Group multi-person action — NEVER register into room / vanilla-action / bus / theme / fantasy / casting
+    # ALL portrait group L2s (existing 4 + new 5 portrait) — NOT wide-spitroast
+    portrait-intimate-action-group-pics:
+    - __uw-krea2-nsfw/template/action-group-dorm-dp-roommate__
+    - __uw-krea2-nsfw/template/action-group-blowbang__
+    - __uw-krea2-nsfw/template/action-group-multi-partner-couch__
+    - __uw-krea2-nsfw/template/action-group-oral-threesome__
+    - __uw-krea2-nsfw/template/action-group-standing-spitroast__
+    - __uw-krea2-nsfw/template/action-group-shower-threesome__
+    - __uw-krea2-nsfw/template/action-group-hotel-suite-multi__
+    - __uw-krea2-nsfw/template/action-group-girl-girl-oral__
+    - __uw-krea2-nsfw/template/action-group-couch-dp__
+    - __uw-krea2-nsfw/template/action-group-doorway-caught-oral__
+    - __uw-krea2-nsfw/template/action-group-roleplay-birthday-caught-oral__
+
+    # blowbang, oral-threesome, girl-girl-oral, shower-threesome (multi-partner-couch re-homed off oral)
+    portrait-intimate-action-group-oral-pics:
+    - __uw-krea2-nsfw/template/action-group-blowbang__
+    - __uw-krea2-nsfw/template/action-group-oral-threesome__
+    - __uw-krea2-nsfw/template/action-group-girl-girl-oral__
+    - __uw-krea2-nsfw/template/action-group-shower-threesome__
+    - __uw-krea2-nsfw/template/action-group-doorway-caught-oral__
+    - __uw-krea2-nsfw/template/action-group-roleplay-birthday-caught-oral__
+
+    portrait-intimate-action-group-roleplay-pics:
+    - __uw-krea2-nsfw/template/action-group-roleplay-birthday-caught-oral__
+
+    # dorm-dp-roommate, couch-dp, standing-spitroast, hotel-suite-multi, oral-threesome + multi-partner-couch
+    portrait-intimate-action-group-penetration-pics:
+    - __uw-krea2-nsfw/template/action-group-dorm-dp-roommate__
+    - __uw-krea2-nsfw/template/action-group-couch-dp__
+    - __uw-krea2-nsfw/template/action-group-standing-spitroast__
+    - __uw-krea2-nsfw/template/action-group-hotel-suite-multi__
+    - __uw-krea2-nsfw/template/action-group-oral-threesome__
+    - __uw-krea2-nsfw/template/action-group-multi-partner-couch__
+
+    # Landscape-only group L2s
+    landscape-intimate-action-group-pics:
+    - __uw-krea2-nsfw/template/action-group-wide-spitroast__
+
+  template:
+    action-group-dorm-dp-roommate:
+    - >-
+        __uw-krea2-nsfw/leaf/action-group-dorm-dp-roommate/medium__
+        __uw-krea2-nsfw/leaf/action-group-dorm-dp-roommate/subject__.
+        __uw-krea2-nsfw/leaf/action-group-dorm-dp-roommate/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-group-dorm-dp-roommate/pose__,
+        __uw-krea2-nsfw/leaf/action-group-dorm-dp-roommate/environment__,
+        __uw-krea2-nsfw/leaf/action-group-dorm-dp-roommate/lighting__,
+        __uw-krea2-nsfw/leaf/action-group-dorm-dp-roommate/camera__,
+        __uw-krea2-nsfw/leaf/action-group-dorm-dp-roommate/treatment__. [3:4]
+    action-group-blowbang:
+    - >-
+        __uw-krea2-nsfw/leaf/action-group-blowbang/medium__
+        __uw-krea2-nsfw/leaf/action-group-blowbang/subject__.
+        __uw-krea2-nsfw/leaf/action-group-blowbang/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-group-blowbang/pose__,
+        __uw-krea2-nsfw/leaf/action-group-blowbang/environment__,
+        __uw-krea2-nsfw/leaf/action-group-blowbang/lighting__,
+        __uw-krea2-nsfw/leaf/action-group-blowbang/camera__,
+        __uw-krea2-nsfw/leaf/action-group-blowbang/treatment__. [3:4]
+    action-group-multi-partner-couch:
+    - >-
+        __uw-krea2-nsfw/leaf/action-group-multi-partner-couch/medium__
+        __uw-krea2-nsfw/leaf/action-group-multi-partner-couch/subject__.
+        __uw-krea2-nsfw/leaf/action-group-multi-partner-couch/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-group-multi-partner-couch/pose__,
+        __uw-krea2-nsfw/leaf/action-group-multi-partner-couch/environment__,
+        __uw-krea2-nsfw/leaf/action-group-multi-partner-couch/lighting__,
+        __uw-krea2-nsfw/leaf/action-group-multi-partner-couch/camera__,
+        __uw-krea2-nsfw/leaf/action-group-multi-partner-couch/treatment__. [3:4]
+    action-group-oral-threesome:
+    - >-
+        __uw-krea2-nsfw/leaf/action-group-oral-threesome/medium__
+        __uw-krea2-nsfw/leaf/action-group-oral-threesome/subject__.
+        __uw-krea2-nsfw/leaf/action-group-oral-threesome/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-group-oral-threesome/pose__,
+        __uw-krea2-nsfw/leaf/action-group-oral-threesome/environment__,
+        __uw-krea2-nsfw/leaf/action-group-oral-threesome/lighting__,
+        __uw-krea2-nsfw/leaf/action-group-oral-threesome/camera__,
+        __uw-krea2-nsfw/leaf/action-group-oral-threesome/treatment__. [3:4]
+    action-group-standing-spitroast:
+    - >-
+        __uw-krea2-nsfw/leaf/action-group-standing-spitroast/medium__
+        __uw-krea2-nsfw/leaf/action-group-standing-spitroast/subject__.
+        __uw-krea2-nsfw/leaf/action-group-standing-spitroast/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-group-standing-spitroast/pose__,
+        __uw-krea2-nsfw/leaf/action-group-standing-spitroast/environment__,
+        __uw-krea2-nsfw/leaf/action-group-standing-spitroast/lighting__,
+        __uw-krea2-nsfw/leaf/action-group-standing-spitroast/camera__,
+        __uw-krea2-nsfw/leaf/action-group-standing-spitroast/treatment__. [3:4]
+    action-group-shower-threesome:
+    - >-
+        __uw-krea2-nsfw/leaf/action-group-shower-threesome/medium__
+        __uw-krea2-nsfw/leaf/action-group-shower-threesome/subject__.
+        __uw-krea2-nsfw/leaf/action-group-shower-threesome/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-group-shower-threesome/pose__,
+        __uw-krea2-nsfw/leaf/action-group-shower-threesome/environment__,
+        __uw-krea2-nsfw/leaf/action-group-shower-threesome/lighting__,
+        __uw-krea2-nsfw/leaf/action-group-shower-threesome/camera__,
+        __uw-krea2-nsfw/leaf/action-group-shower-threesome/treatment__. [3:4]
+    action-group-hotel-suite-multi:
+    - >-
+        __uw-krea2-nsfw/leaf/action-group-hotel-suite-multi/medium__
+        __uw-krea2-nsfw/leaf/action-group-hotel-suite-multi/subject__.
+        __uw-krea2-nsfw/leaf/action-group-hotel-suite-multi/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-group-hotel-suite-multi/pose__,
+        __uw-krea2-nsfw/leaf/action-group-hotel-suite-multi/environment__,
+        __uw-krea2-nsfw/leaf/action-group-hotel-suite-multi/lighting__,
+        __uw-krea2-nsfw/leaf/action-group-hotel-suite-multi/camera__,
+        __uw-krea2-nsfw/leaf/action-group-hotel-suite-multi/treatment__. [3:4]
+    action-group-girl-girl-oral:
+    - >-
+        __uw-krea2-nsfw/leaf/action-group-girl-girl-oral/medium__
+        __uw-krea2-nsfw/leaf/action-group-girl-girl-oral/subject__.
+        __uw-krea2-nsfw/leaf/action-group-girl-girl-oral/pose__,
+        __uw-krea2-nsfw/leaf/action-group-girl-girl-oral/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-group-girl-girl-oral/environment__,
+        __uw-krea2-nsfw/leaf/action-group-girl-girl-oral/lighting__,
+        __uw-krea2-nsfw/leaf/action-group-girl-girl-oral/camera__,
+        __uw-krea2-nsfw/leaf/action-group-girl-girl-oral/treatment__. [3:4]
+    action-group-couch-dp:
+    - >-
+        __uw-krea2-nsfw/leaf/action-group-couch-dp/medium__
+        __uw-krea2-nsfw/leaf/action-group-couch-dp/subject__.
+        __uw-krea2-nsfw/leaf/action-group-couch-dp/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-group-couch-dp/pose__,
+        __uw-krea2-nsfw/leaf/action-group-couch-dp/environment__,
+        __uw-krea2-nsfw/leaf/action-group-couch-dp/lighting__,
+        __uw-krea2-nsfw/leaf/action-group-couch-dp/camera__,
+        __uw-krea2-nsfw/leaf/action-group-couch-dp/treatment__. [3:4]
+    action-group-wide-spitroast:
+    - >-
+        __uw-krea2-nsfw/leaf/action-group-wide-spitroast/medium__
+        __uw-krea2-nsfw/leaf/action-group-wide-spitroast/subject__.
+        __uw-krea2-nsfw/leaf/action-group-wide-spitroast/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-group-wide-spitroast/pose__,
+        __uw-krea2-nsfw/leaf/action-group-wide-spitroast/environment__,
+        __uw-krea2-nsfw/leaf/action-group-wide-spitroast/lighting__,
+        __uw-krea2-nsfw/leaf/action-group-wide-spitroast/camera__,
+        __uw-krea2-nsfw/leaf/action-group-wide-spitroast/treatment__. [23:9]
+    action-group-doorway-caught-oral:
+    - >-
+        __uw-krea2-nsfw/leaf/action-group-doorway-caught-oral/medium__
+        __uw-krea2-nsfw/leaf/action-group-doorway-caught-oral/subject__.
+        __uw-krea2-nsfw/leaf/action-group-doorway-caught-oral/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-group-doorway-caught-oral/pose__,
+        __uw-krea2-nsfw/leaf/action-group-doorway-caught-oral/environment__,
+        __uw-krea2-nsfw/leaf/action-group-doorway-caught-oral/lighting__,
+        __uw-krea2-nsfw/leaf/action-group-doorway-caught-oral/camera__,
+        __uw-krea2-nsfw/leaf/action-group-doorway-caught-oral/treatment__. [3:4]
+    action-group-roleplay-birthday-caught-oral:
+    - >-
+        __uw-krea2-nsfw/leaf/action-group-roleplay-birthday-caught-oral/medium__
+        __uw-krea2-nsfw/leaf/action-group-roleplay-birthday-caught-oral/subject__.
+        __uw-krea2-nsfw/leaf/action-group-roleplay-birthday-caught-oral/wardrobe__,
+        __uw-krea2-nsfw/leaf/action-group-roleplay-birthday-caught-oral/pose__,
+        __uw-krea2-nsfw/leaf/action-group-roleplay-birthday-caught-oral/environment__,
+        __uw-krea2-nsfw/leaf/action-group-roleplay-birthday-caught-oral/lighting__,
+        __uw-krea2-nsfw/leaf/action-group-roleplay-birthday-caught-oral/camera__,
+        __uw-krea2-nsfw/leaf/action-group-roleplay-birthday-caught-oral/treatment__. [3:4]
+  leaf:
+    action-group-dorm-dp-roommate:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-group-dorm-dp-roommate__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-dorm__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-dorm__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-group-blowbang:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-group-blowbang__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-group-dim__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-group-dim__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-group-multi-partner-couch:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-group-multi-partner-couch__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bare-intimate-reclined__
+      environment:
+      - __uw-shared/nsfw/environment/action-group-couch__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-group-couch__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-group-oral-threesome:
+      medium:
+      - __uw-shared/nsfw/shot/cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-group-oral-threesome__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+    action-group-standing-spitroast:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-group-standing-spitroast__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-standing__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-group-shower-threesome:
+      medium:
+      - __uw-shared/nsfw/shot/action-cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-group-shower-threesome__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/bare-intimate-reclined__
+      environment:
+      - __uw-shared/nsfw/environment/action-shower__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-shower__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+    action-group-hotel-suite-multi:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-group-hotel-suite-multi__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-hotel-suite__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-hotel-suite__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-group-girl-girl-oral:
+      medium:
+      - __uw-shared/nsfw/shot/intimate-portrait__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-group-girl-girl-oral__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-intimate__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/portrait-85mm__
+      treatment:
+      - __uw-shared/common/treatment/intimate-portrait__
+    action-group-couch-dp:
+      medium:
+      - __uw-shared/nsfw/shot/candid__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-group-couch-dp__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      environment:
+      - __uw-shared/nsfw/environment/action-group-couch__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-group-couch__
+      camera:
+      - __uw-shared/nsfw/camera/candid-35mm__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-group-wide-spitroast:
+      medium:
+      - __uw-shared/nsfw/shot/action-landscape__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      pose:
+      - __uw-shared/nsfw/pose/action-group-wide-spitroast__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-landscape__
+      environment:
+      - __uw-shared/nsfw/environment/action-landscape__
+      lighting:
+      - __uw-shared/nsfw/lighting/action-intimate__
+      camera:
+      - __uw-shared/nsfw/camera/action-landscape__
+      treatment:
+      - __uw-shared/common/treatment/natural-action__
+    action-group-doorway-caught-oral:
+      medium:
+      - __uw-shared/nsfw/shot/cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      pose:
+      - __uw-shared/nsfw/pose/action-group-doorway-caught-oral__
+      environment:
+      - __uw-shared/nsfw/environment/action-bedroom-doorway__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__
+    action-group-roleplay-birthday-caught-oral:
+      medium:
+      - __uw-shared/nsfw/shot/cinematic__
+      subject:
+      - __uw-shared/common/identity-router/natural-nsfw-birthday__
+      wardrobe:
+      - __uw-shared/nsfw/wardrobe/action-explicit__
+      pose:
+      - __uw-shared/nsfw/pose/action-group-roleplay-birthday-caught-oral__
+      environment:
+      - __uw-shared/nsfw/environment/roleplay-birthday-bedroom__
+      lighting:
+      - __uw-shared/nsfw/lighting/selfie-bedroom-window__
+      camera:
+      - __uw-shared/nsfw/camera/cinematic__
+      treatment:
+      - __uw-shared/common/treatment/cinematic-action__

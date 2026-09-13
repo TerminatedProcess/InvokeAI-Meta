@@ -1,0 +1,11 @@
+__colors__ lingerie, bra, __clothes_bra_type__, __clothes_lingerie_bottoms_trap__
+__colors__ lingerie, bra, __clothes_bra_type__, __clothes_lingerie_bottoms_trap__, __clothes_legwear__
+__colors__ lingerie, bra, __clothes_bra_type__, __clothes_pantyhose_trap__
+bra, __clothes_bra_type__, __colors__ bra, __clothes_lingerie_bottoms_trap__
+bra, __clothes_bra_type__, __colors__ bra, __clothes_lingerie_bottoms_trap__, __clothes_legwear__
+bra, __clothes_bra_type__, __colors__ bra, __clothes_pantyhose_trap__
+no bra, __clothes_lingerie_bottoms_trap__
+no bra, __clothes_lingerie_bottoms_trap__, __clothes_legwear__
+no bra, __clothes_pantyhose_trap__
+bra, __clothes_bra_type__, __colors__ bra, no panties, ((__body_bare_male_crotch__, __body_penis_state__):0.8)
+bra, __clothes_bra_type__, __colors__ bra, no panties, ((__body_bare_male_crotch__, __body_penis_state__):0.8), __clothes_legwear__

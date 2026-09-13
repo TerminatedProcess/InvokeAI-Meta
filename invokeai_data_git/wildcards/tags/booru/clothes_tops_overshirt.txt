@@ -1,0 +1,28 @@
+vest
+sweater vest
+cardigan vest
+cropped vest
+waistcoat
+down vest
+poncho
+cardigan
+jacket, blazer
+jacket, cropped jacket
+jacket, letterman jacket
+jacket, safari jacket
+jacket, suit jacket
+jacket, sukajan
+jacket, trench coat
+hooded jacket
+hoodie
+hoodie, animal hood
+coat, duffel coat
+coat, fur coat
+coat, fur-trimmed coat
+coat, long coat
+coat, overcoat
+coat, peacoat
+coat, raincoat
+coat, see-through raincoat
+coat, trench coat
+coat, winter coat

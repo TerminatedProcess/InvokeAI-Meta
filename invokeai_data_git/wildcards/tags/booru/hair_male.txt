@@ -1,0 +1,6 @@
+bald
+__hair_color__, very short hair, __hair_short_hair_style_male__
+__hair_color__, short hair, __hair_short_hair_style_male__
+__hair_color__, medium hair, __hair_long_hair_style_male__
+__hair_color__, long hair, __hair_long_hair_style_male__
+__hair_color__, very long hair, __hair_long_hair_style_male__

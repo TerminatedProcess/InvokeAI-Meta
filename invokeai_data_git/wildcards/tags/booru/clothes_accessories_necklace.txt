@@ -1,0 +1,13 @@
+((festoon \(necklace\)):0.8)
+((lariat \(necklace\)):0.8)
+((station necklace):0.8)
+bead necklace
+((chain necklace):0.9)
+crystal necklace
+__clothes_accessories_special_necklace__
+diamond necklace
+gold necklace
+pearl necklace
+silver necklace
+((cross necklace):0.9)
+((heart necklace):0.9)

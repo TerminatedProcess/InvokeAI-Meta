@@ -1,0 +1,15 @@
+sitting, __poses_sitting__
+sitting, __poses_sitting__, __poses_gesture_salute_2h__
+sitting, __poses_sitting__, __poses_arms_hands__
+standing, __poses_standing__
+standing, __poses_standing__
+standing, __poses_arms_hands__
+midair, __poses_midair__
+midair, __poses_midair__, __poses_gesture_salute__
+midair, __poses_midair__, __poses_arms_hands__
+__poses_knees_squat__
+__poses_knees_squat__
+__poses_knees_squat__
+lying, __poses_lying__
+lying, __poses_lying__, __poses_arms_hands__
+lying, __poses_lying__, __poses_gesture_salute_2h__

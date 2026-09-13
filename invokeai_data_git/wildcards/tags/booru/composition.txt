@@ -1,0 +1,24 @@
+wide shot, perspective, __composition_view_angle__
+wide shot, perspective, __composition_view_angle__
+wide shot, perspective, __composition_view_angle__
+close-up, __composition_view_angle__
+upper body, __composition_view_angle__
+cowboy shot, __composition_view_angle__
+cowboy shot, __composition_view_angle__
+cowboy shot, __composition_view_angle__
+cowboy shot, __composition_view_angle__
+perspective, __composition_view_angle__
+selfie, perspective, depth of field
+selfie, perspective
+foreshortening, perspective
+foreshortening, perspective, __composition_view_angle__
+foreshortening, __composition_view_angle__
+depth of field, __composition_view_angle__
+ __composition_view_angle__
+ __composition_view_angle__
+ __composition_view_angle__
+ __composition_view_angle__
+ __composition_view_angle__, vanishing point
+full body, __composition_view_angle__
+fisheye, __composition_view_angle__
+((multiple views, __composition_multiple_view_type__):0.9), __composition_view_angle__

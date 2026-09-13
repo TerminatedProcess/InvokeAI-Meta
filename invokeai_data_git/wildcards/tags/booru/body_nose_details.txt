@@ -1,0 +1,11 @@
+nose
+nose, ((long nose):0.8)
+nose, ((short nose):0.8)
+nose, ((wide nose):0.8)
+nose, ((narrow nose):0.8)
+nose, aquiline nose
+nose, ((big nose):0.85)
+nose, ((pointy nose):0.8)
+nose, ((upturned nose):0.8)
+nose, ((snub nose):0.8)
+nose, ((celestial nose):0.8)

@@ -1,0 +1,4 @@
+__clothes_outfits_gamescreen__
+__clothes_outfits_gamescreen__, __clothes_accessories__
+__clothes_outfits_gamescreen__, ((__clothes_accessories__):0.9)
+__clothes_outfits_gamescreen__, ((__clothes_accessories__):0.8)

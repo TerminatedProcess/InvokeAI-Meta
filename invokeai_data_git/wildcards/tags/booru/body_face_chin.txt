@@ -1,0 +1,7 @@
+((pointy chin):0.8)
+((cleft chin):0.8)
+((wide chin):0.8)
+((double chin):0.8)
+((pointy chin):0.8)
+((cleft chin):0.8)
+((wide chin):0.8)

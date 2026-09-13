@@ -1,0 +1,78 @@
+soft natural daylight
+bright diffused daylight
+soft overcast daylight
+warm afternoon sunlight
+golden hour sunlight
+late afternoon sunlight
+early morning sunlight
+soft sunrise light
+soft sunset light
+warm window light
+cool window light
+diffused studio lighting
+softbox studio lighting
+large softbox lighting
+beauty dish lighting
+high-key studio lighting
+low-key studio lighting
+dramatic cinematic lighting
+moody cinematic lighting
+soft cinematic lighting
+subtle rim lighting
+strong rim lighting
+warm rim lighting
+cool rim lighting
+backlit by soft sunlight
+backlit by bright daylight
+subtle edge lighting
+dramatic edge lighting
+soft side lighting
+dramatic side lighting
+three-quarter lighting
+soft frontal lighting
+directional frontal lighting
+overhead cinematic lighting
+subtle overhead lighting
+dramatic overhead lighting
+cool blue ambient lighting
+warm amber ambient lighting
+neutral daylight-balanced lighting
+mixed warm and cool lighting
+soft golden ambient light
+cool moonlight
+dim blue moonlight
+cold fluorescent lighting
+industrial fluorescent lighting
+harsh overhead fluorescent lighting
+neon ambient lighting
+subtle red neon illumination
+subtle blue neon illumination
+subtle purple neon illumination
+red and blue cinematic lighting
+warm orange practical lighting
+cool cyan practical lighting
+firelight illumination
+candlelit ambient lighting
+soft practical lighting
+dramatic chiaroscuro lighting
+high-contrast cinematic lighting
+low-contrast natural lighting
+soft diffused shadows
+long natural shadows
+deep cinematic shadows
+subtle atmospheric lighting
+volumetric cinematic lighting
+soft volumetric light rays
+dramatic volumetric light rays
+light beams through smoke
+light beams through windows
+natural reflected light
+soft bounced light
+subtle reflective fill light
+cinematic backlighting
+fashion editorial lighting
+high-end beauty lighting
+professional portrait lighting
+realistic photographic lighting
+natural realistic lighting
+physically accurate lighting
