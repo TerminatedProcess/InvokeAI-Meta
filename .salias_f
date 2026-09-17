@@ -121,7 +121,6 @@ function stop
         sleep 2
         echo "Services stopped"
         sleep 5
-        exit
     else
         echo "No InvokeAI services are currently running"
     end
