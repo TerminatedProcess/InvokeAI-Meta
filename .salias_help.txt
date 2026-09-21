@@ -32,3 +32,7 @@ MODELS
   up                Reconcile with hub: prune broken/dupe/unknown, import new
   reset             Wipe InvokeAI models DB + symlinks, then re-import
   ipush             invokepush web service (auto-started by run)
+
+SECRETS
+  mkdotenv          Write .env from the SOPS vault using .env.keys
+  rmdotenv          Delete the generated .env
