@@ -1,0 +1,37 @@
+InvokeAI-Meta - Project Commands
+=================================
+
+HELP
+  help              Show this help text
+
+PYTHON ENVIRONMENT
+  envclean          Clean Python cache and uv artifacts
+  install           Run setup_dev.sh (uv sync + webv2 build)
+  rmenv             Remove venv, .envrc and exit shell
+  updateall         Re-sync python packages to the committed uv.lock
+
+SERVER
+  restart           Stop services then start them again
+  run               Restart invokeai-web (9090) via the Service Dashboard
+  stop              Stop all InvokeAI services and exit shell
+
+DEVELOPMENT
+  build-ui          Build webv2 (--legacy also builds webv1)
+  dev               Start backend (9090) + webv2 dev server (5173)
+
+MAINTENANCE
+  clean             Remove frontend dist, vite cache, __pycache__ dirs
+  logs              Tail the InvokeAI log file
+
+GIT
+  gitupdate         Sync main and mryan with upstream; restarts already-running services
+
+MODELS
+  up                Reconcile with hub: prune broken/dupe/unknown, import new
+                    (restarts only the services that were running)
+  reset             Wipe InvokeAI models DB + symlinks, then re-import
+  ipush             invokepush web service (auto-started by run)
+
+SECRETS
+  mkdotenv          Write .env from the SOPS vault using .env.keys
+  rmdotenv          Delete the generated .env
