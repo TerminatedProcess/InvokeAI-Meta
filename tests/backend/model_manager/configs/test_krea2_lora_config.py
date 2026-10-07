@@ -371,3 +371,72 @@ def test_explicit_krea2_override_accepts_single_module_native_lora(_raise_if_not
     config = LoRA_LyCORIS_Krea2_Config.from_model_on_disk(mod, {**_REQUIRED_FIELDS, "base": BaseModelType.Krea2})
 
     assert config.base is BaseModelType.Krea2
+
+
+def _native_lycoris_lora(factors: dict[str, list[str]]) -> MagicMock:
+    """A native Krea-2 LyCORIS file: per module, the given factor suffixes plus `alpha`."""
+    mod = MagicMock()
+    mod.load_state_dict.return_value = {
+        f"diffusion_model.{module}.{suffix}": object()
+        for module, suffixes in factors.items()
+        for suffix in [*suffixes, "alpha"]
+    }
+    return mod
+
+
+_FULL_LOKR = ["lokr_w1", "lokr_w2"]
+
+
+@pytest.mark.parametrize(
+    "factors",
+    [
+        # Full LoKr, as in CivitAI "LoCon" uploads such as realism_engine_krea2_v3.1.
+        {"blocks.0.attn.wq": _FULL_LOKR, "blocks.0.attn.gate": _FULL_LOKR, "txtfusion.projector": _FULL_LOKR},
+        # Factorized LoKr.
+        {
+            "blocks.0.attn.wq": ["lokr_w1", "lokr_w2_a", "lokr_w2_b"],
+            "blocks.0.attn.gate": ["lokr_w1_a", "lokr_w1_b", "lokr_w2"],
+        },
+        # LoHa.
+        {
+            "blocks.0.attn.wq": ["hada_w1_a", "hada_w1_b", "hada_w2_a", "hada_w2_b"],
+            "blocks.0.attn.gate": ["hada_w1_a", "hada_w1_b", "hada_w2_a", "hada_w2_b"],
+        },
+    ],
+)
+@patch("invokeai.backend.model_manager.configs.lora.raise_if_not_file")
+def test_automatic_probe_accepts_native_lycoris_krea2_lora(_raise_if_not_file, factors) -> None:
+    """LoKr/LoHa files carry no lora_A/B pair; the converter builds their layers via any_lora_layer_from_state_dict."""
+    config = LoRA_LyCORIS_Krea2_Config.from_model_on_disk(_native_lycoris_lora(factors), {**_REQUIRED_FIELDS})
+    assert config.base is BaseModelType.Krea2
+
+
+@pytest.mark.parametrize(
+    "partial",
+    [
+        ["lokr_w1"],  # no w2
+        ["lokr_w1_a", "lokr_w2"],  # w1 factor without its partner
+        ["hada_w1_a", "hada_w1_b", "hada_w2_a"],  # LoHa missing a factor
+    ],
+)
+@patch("invokeai.backend.model_manager.configs.lora.raise_if_not_file")
+def test_automatic_probe_rejects_partial_lycoris_layer(_raise_if_not_file, partial: list[str]) -> None:
+    """One complete layer does not excuse a partial one: it would install, then crash during conversion."""
+    mod = _native_lycoris_lora({"blocks.0.attn.wq": _FULL_LOKR, "blocks.0.attn.gate": partial})
+    with pytest.raises(NotAMatchError):
+        LoRA_LyCORIS_Krea2_Config.from_model_on_disk(mod, {**_REQUIRED_FIELDS})
+
+
+@patch("invokeai.backend.model_manager.configs.lora.raise_if_not_file")
+def test_automatic_probe_rejects_lycoris_lora_without_krea2_signature(_raise_if_not_file) -> None:
+    """A LoKr for another architecture (no gated attention, no text fusion) is not Krea-2."""
+    mod = _native_lycoris_lora({"double_blocks.0.img_attn.proj": _FULL_LOKR})
+    with pytest.raises(NotAMatchError):
+        LoRA_LyCORIS_Krea2_Config.from_model_on_disk(mod, {**_REQUIRED_FIELDS})
+
+
+@patch("invokeai.backend.model_manager.configs.lora.raise_if_not_file")
+def test_explicit_krea2_override_accepts_lokr_lora(_raise_if_not_file) -> None:
+    mod = _native_lycoris_lora({"blocks.0.mlp.down": _FULL_LOKR})
+    config = LoRA_LyCORIS_Krea2_Config.from_model_on_disk(mod, {**_REQUIRED_FIELDS, "base": BaseModelType.Krea2})
+    assert config.base is BaseModelType.Krea2

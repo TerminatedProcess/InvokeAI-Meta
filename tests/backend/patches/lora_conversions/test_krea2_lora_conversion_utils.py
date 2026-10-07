@@ -5,6 +5,7 @@ from diffusers import Krea2Transformer2DModel
 
 from invokeai.backend.model_manager.load.model_loaders.krea2 import KREA2_TRANSFORMER_CONFIG
 from invokeai.backend.patches.layers.dora_layer import DoRALayer
+from invokeai.backend.patches.layers.lokr_layer import LoKRLayer
 from invokeai.backend.patches.layers.lora_layer import LoRALayer
 from invokeai.backend.patches.lora_conversions.krea2_lora_constants import (
     KREA2_LORA_QWEN3VL_PREFIX,
@@ -404,11 +405,13 @@ def test_kohya_lycoris_algorithm_keys_do_not_abort_the_load(lycoris_suffixes: tu
 
     model = lora_model_from_krea2_state_dict(state_dict)
 
-    # The ordinary module still converts, and the LyCORIS one stays verbatim so it degrades to the per-layer
-    # "Failed to find module" warning at apply time rather than taking the whole adapter down.
+    # The ordinary module converts. LoKr/LoHa suffixes are known to `_group_by_layer`, so those modules
+    # un-flatten onto their real module and apply; `diff` is not, so it stays verbatim and degrades to the
+    # per-layer "Failed to find module" warning at apply time rather than taking the whole adapter down.
+    lycoris_module = "lora_unet_blocks_6_attn_wq" if "diff" in lycoris_suffixes else "transformer_blocks.6.attn.to_q"
     assert set(model.layers) == {
         f"{KREA2_LORA_TRANSFORMER_PREFIX}transformer_blocks.0.attn.to_v",
-        f"{KREA2_LORA_TRANSFORMER_PREFIX}lora_unet_blocks_6_attn_wq",
+        f"{KREA2_LORA_TRANSFORMER_PREFIX}{lycoris_module}",
     }
 
 
@@ -483,3 +486,22 @@ def test_native_krea2_top_level_linear_keys_are_remapped() -> None:
         f"{KREA2_LORA_TRANSFORMER_PREFIX}{diffusers_module}" for diffusers_module in native_to_diffusers.values()
     }
     assert expected_keys < set(model.layers)
+
+
+def test_native_lokr_krea2_lora_groups_factors_with_their_alpha() -> None:
+    # Native (ComfyUI) LoKr files, e.g. CivitAI "LoCon" uploads like realism_engine_krea2_v3.1, store
+    # `<module>.lokr_w1/.lokr_w2/.alpha`. The grouper must keep all three on one layer: its old two-segment
+    # fallback split `attn.gate.lokr_w1` into layer `attn` + key `gate.lokr_w1`, orphaning `{'alpha'}`.
+    state_dict = {
+        f"diffusion_model.blocks.0.attn.{name}.{suffix}": value
+        for name in ("wq", "gate")
+        for suffix, value in (("lokr_w1", torch.ones(2, 2)), ("lokr_w2", torch.ones(3, 3)), ("alpha", torch.tensor(1.0)))
+    }
+
+    model = lora_model_from_krea2_state_dict(state_dict)
+
+    assert set(model.layers) == {
+        f"{KREA2_LORA_TRANSFORMER_PREFIX}transformer_blocks.0.attn.to_q",
+        f"{KREA2_LORA_TRANSFORMER_PREFIX}transformer_blocks.0.attn.to_gate",
+    }
+    assert all(isinstance(layer, LoKRLayer) for layer in model.layers.values())

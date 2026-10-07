@@ -956,6 +956,38 @@ def _has_complete_lora_pair(state_dict: dict[str | int, Any], key_filter: Callab
     return False
 
 
+# LyCORIS layers that carry no lora_A/B (or lora_down/up) pair. Each layer is complete when every factor it
+# needs is present: LoKr needs w1 (full, or the w1_a/w1_b factors) and w2 (full, or w2_a/w2_b); LoHa needs all
+# four Hadamard factors. `any_lora_layer_from_state_dict` builds these layers; a partial one crashes there.
+_LOKR_SUFFIXES = (".lokr_w1", ".lokr_w1_a", ".lokr_w1_b", ".lokr_w2", ".lokr_w2_a", ".lokr_w2_b", ".lokr_t2")
+_LOHA_SUFFIXES = (".hada_w1_a", ".hada_w1_b", ".hada_w2_a", ".hada_w2_b", ".hada_t1", ".hada_t2")
+
+
+def _lycoris_layer_completeness(
+    state_dict: dict[str | int, Any], key_filter: Callable[[str], bool] | None = None
+) -> tuple[bool, bool]:
+    """(has a complete LoKr/LoHa layer, every LoKr/LoHa layer is complete), optionally restricted to the keys
+    `key_filter` accepts. With no such layers at all: (False, True)."""
+    layers: dict[str, set[str]] = {}
+    for key in state_dict:
+        if not isinstance(key, str) or (key_filter is not None and not key_filter(key)):
+            continue
+        for suffix in (*_LOKR_SUFFIXES, *_LOHA_SUFFIXES):
+            if key.endswith(suffix):
+                layers.setdefault(key[: -len(suffix)], set()).add(suffix[1:])
+                break
+
+    def is_complete(parts: set[str]) -> bool:
+        if any(p.startswith("hada_") for p in parts):
+            return {"hada_w1_a", "hada_w1_b", "hada_w2_a", "hada_w2_b"} <= parts
+        has_w1 = "lokr_w1" in parts or {"lokr_w1_a", "lokr_w1_b"} <= parts
+        has_w2 = "lokr_w2" in parts or {"lokr_w2_a", "lokr_w2_b"} <= parts
+        return has_w1 and has_w2
+
+    verdicts = [is_complete(parts) for parts in layers.values()]
+    return any(verdicts), all(verdicts)
+
+
 # Dotted layouts the converter understands for an explicit Krea-2 override (a transformer-only or
 # text-encoder-only LoRA that lacks the auto-detection text_fusion/time_mod_proj keys still installs under
 # an explicit base). The kohya/LyCORIS layout is deliberately absent - see `_key_is_supported_krea2_layout`.
@@ -1004,10 +1036,18 @@ class LoRA_LyCORIS_Krea2_Config(LoRA_LyCORIS_Config_Base, Config_Base):
 
         state_dict = mod.load_state_dict()
         explicit_krea2_override = override_fields.get("base") is BaseModelType.Krea2
-        has_supported_explicit_pair = _has_complete_lora_pair(state_dict, _key_is_supported_krea2_layout)
+        has_supported_explicit_pair = (
+            _has_complete_lora_pair(state_dict, _key_is_supported_krea2_layout)
+            or _lycoris_layer_completeness(state_dict, _key_is_supported_krea2_layout)[0]
+        )
         # Reject an orphaned half *anywhere* in the state dict (e.g. a dangling text_fusion half not under
         # the approved prefixes) — it would install here but fail during LoRA conversion at generation time.
-        if explicit_krea2_override and has_supported_explicit_pair and _lora_weight_keys_are_all_paired(state_dict):
+        if (
+            explicit_krea2_override
+            and has_supported_explicit_pair
+            and _lora_weight_keys_are_all_paired(state_dict)
+            and _lycoris_layer_completeness(state_dict)[1]
+        ):
             return cls(**override_fields)
 
         cls._validate_looks_like_lora(mod)
@@ -1017,18 +1057,22 @@ class LoRA_LyCORIS_Krea2_Config(LoRA_LyCORIS_Config_Base, Config_Base):
     @classmethod
     def _validate_looks_like_lora(cls, mod: ModelOnDisk) -> None:
         """Krea-2 LoRAs have keys like transformer.text_fusion.* / transformer.transformer_blocks.* with
-        a lora_A/lora_B (or lora_down/lora_up) suffix. The text-fusion stage is unique to Krea-2."""
+        a lora_A/lora_B (or lora_down/lora_up) suffix, or LyCORIS LoKr/LoHa factors (many CivitAI Krea-2
+        "LoCon"s are LoKr). The text-fusion stage is unique to Krea-2."""
         state_dict = mod.load_state_dict()
-        # Require a *complete* lora_A/B (or lora_down/up) pair, not merely any lora/dora suffix: a file with
+        has_lycoris_layer, lycoris_layers_complete = _lycoris_layer_completeness(state_dict)
+        # Require a *complete* weight pair or LyCORIS layer, not merely any lora/dora suffix: a file with
         # only ``dora_scale`` and no A/B weights would pass a suffix check but fail later on missing weights.
-        if not (_has_krea2_lora_keys(state_dict) and _has_complete_lora_pair(state_dict)):
+        if not (_has_krea2_lora_keys(state_dict) and (_has_complete_lora_pair(state_dict) or has_lycoris_layer)):
             raise NotAMatchError(
-                "model does not match Krea-2 LoRA heuristics (no complete lora_A/B or lora_down/up pair)"
+                "model does not match Krea-2 LoRA heuristics (no complete lora_A/B, lora_down/up or LoKr/LoHa layer)"
             )
-        # Reject a file with an orphaned LoRA half (a valid layer plus a dangling lora_A/B/down/up); it
-        # would install here but fail later during LoRA conversion.
+        # Reject a file with an orphaned LoRA half (a valid layer plus a dangling lora_A/B/down/up) or a
+        # partial LoKr/LoHa layer; it would install here but fail later during LoRA conversion.
         if not _lora_weight_keys_are_all_paired(state_dict):
             raise NotAMatchError("Krea-2 LoRA has an incomplete lora_A/B (or lora_down/up) weight pair")
+        if not lycoris_layers_complete:
+            raise NotAMatchError("Krea-2 LoRA has an incomplete LoKr/LoHa layer")
 
     @classmethod
     def _get_base_or_raise(cls, mod: ModelOnDisk) -> BaseModelType:
