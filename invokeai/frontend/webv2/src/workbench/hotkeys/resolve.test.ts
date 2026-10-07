@@ -2,6 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 import type { RegisteredHotkey } from './types';
 
+import { firstPartyHotkeyCatalog } from './catalog';
 import { applyCustomHotkeys, resolveHotkey, toPlatformHotkey } from './resolve';
 
 const event = { target: null } as KeyboardEvent;
@@ -54,6 +55,25 @@ describe('resolveHotkey', () => {
 
     expect(resolve('gallery')).toBe('widget');
     expect(resolve(null)).toBe('global');
+  });
+
+  it.each([
+    ['gallery', 'gallery.recallAll'],
+    ['preview', 'viewer.recallAll'],
+  ])('resolves the recall-all key while %s has focus', (activeWidgetTypeId, commandId) => {
+    expect(
+      resolveHotkey({
+        context: {
+          ...context,
+          activeInstanceId: `${activeWidgetTypeId}-1`,
+          activeWidgetTypeId,
+          focusedRegion: 'right',
+        },
+        event,
+        hotkeys: firstPartyHotkeyCatalog.map((hotkey) => applyCustomHotkeys(hotkey, {})),
+        matchedKey: 'a',
+      })?.commandId
+    ).toBe(commandId);
   });
 
   it('prefers active widget over global', () => {
