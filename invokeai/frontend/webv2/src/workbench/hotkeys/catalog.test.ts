@@ -11,7 +11,7 @@ import { toPlatformHotkey } from './resolve';
 
 describe('firstPartyHotkeyCatalog', () => {
   it('keeps legacy default hotkey parity', () => {
-    expect(firstPartyHotkeyCatalog).toHaveLength(120);
+    expect(firstPartyHotkeyCatalog).toHaveLength(125);
     expect(firstPartyHotkeyCatalog.map((hotkey) => hotkey.id)).toContain('app.togglePreview');
     expect(firstPartyHotkeyCatalog.map((hotkey) => hotkey.id)).toContain('app.invoke');
     expect(firstPartyHotkeyCatalog.map((hotkey) => hotkey.id)).toContain('app.openCommandPalette');

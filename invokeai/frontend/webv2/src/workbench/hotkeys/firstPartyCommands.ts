@@ -43,7 +43,11 @@ const layoutPresetCommands = builtInLayoutPresetDescriptors.map(({ hotkeyId, pre
 }));
 
 const imageRecallCommands: Record<string, ImageRecallKind> = {
+  'gallery.recallAll': 'all',
+  'gallery.recallPrompts': 'prompts',
+  'gallery.recallSeed': 'seed',
   'gallery.remix': 'remix',
+  'gallery.useSize': 'dimensions',
   'viewer.recallAll': 'all',
   'viewer.recallPrompts': 'prompts',
   'viewer.recallSeed': 'seed',
@@ -82,13 +86,13 @@ export const FIRST_PARTY_APP_COMMAND_IDS = [
 ] as const;
 
 export const FIRST_PARTY_IMAGE_RECALL_COMMAND_IDS = Object.keys(imageRecallCommands);
-/** Loads the selected image's embedded workflow; shares the recall commands' selected-image lookup. */
-const LOAD_WORKFLOW_COMMAND_ID = 'viewer.loadWorkflow';
+/** Load the selected image's embedded workflow; share the recall commands' selected-image lookup. */
+const LOAD_WORKFLOW_COMMAND_IDS = ['gallery.loadWorkflow', 'viewer.loadWorkflow'];
 
 export const FIRST_PARTY_COMMAND_IDS = [
   ...FIRST_PARTY_APP_COMMAND_IDS,
   ...Object.keys(imageRecallCommands),
-  LOAD_WORKFLOW_COMMAND_ID,
+  ...LOAD_WORKFLOW_COMMAND_IDS,
 ] as const;
 
 const getAvailableModels = () => {
@@ -473,11 +477,9 @@ export const useRegisterFirstPartyCommands = () => {
       ...Object.entries(imageRecallCommands).map(([id, kind]) =>
         commandApi.register({ handler: () => recallSelectedImage(kind), id, title: id })
       ),
-      commandApi.register({
-        handler: () => loadSelectedImageWorkflow(),
-        id: LOAD_WORKFLOW_COMMAND_ID,
-        title: 'Load workflow from image',
-      }),
+      ...LOAD_WORKFLOW_COMMAND_IDS.map((id) =>
+        commandApi.register({ handler: () => loadSelectedImageWorkflow(), id, title: 'Load workflow from image' })
+      ),
     ];
 
     return () => {

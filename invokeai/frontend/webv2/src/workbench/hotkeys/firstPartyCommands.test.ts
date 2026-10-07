@@ -26,7 +26,12 @@ describe('first-party hotkey commands', () => {
 
   it('registers handlers for implemented app and shared image recall commands', () => {
     const sharedImageRecallCommands = new Set([
+      'gallery.loadWorkflow',
+      'gallery.recallAll',
+      'gallery.recallPrompts',
+      'gallery.recallSeed',
       'gallery.remix',
+      'gallery.useSize',
       'viewer.loadWorkflow',
       'viewer.recallAll',
       'viewer.recallPrompts',
