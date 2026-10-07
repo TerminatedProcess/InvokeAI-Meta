@@ -117,7 +117,7 @@ def _maybe_convert_kohya_krea2_state_dict(
 ) -> Dict[str, torch.Tensor]:
     """Rewrite kohya/LyCORIS flattened Krea-2 keys to the dotted native layout, leaving all others untouched."""
     # Whether a module can be converted is a property of the *module*, not of each key on its own. A LyCORIS
-    # module (``lokr_w1``, ``hada_w1_a``, ``diff``) has to stay verbatim — see below — but LyCORIS also saves
+    # module whose suffix the grouper can't split (``diff``) has to stay verbatim — see below — but LyCORIS also saves
     # a sibling ``.alpha`` (and ``.dora_scale`` for the weight-decomposed variants), whose suffix this
     # converter *does* recognize. Deciding per key rewrites that sibling alone and splits one module across
     # two layer groups: the rewritten ``.alpha`` ends up in a group by itself, and ``_get_lora_layer_values``
@@ -146,9 +146,9 @@ def _maybe_convert_kohya_krea2_state_dict(
             # Only rewrite when ``_group_by_layer`` can split the suffix back off. Un-flattening introduces
             # dots into the module path, and the grouper's fallback for an unknown suffix is a blind
             # ``rsplit(".", 2)`` — on a dotted path that cuts *inside the module name*, fusing two modules
-            # into one bogus layer that aborts the whole load. LyCORIS suffixes such as ``.lokr_w1`` or
-            # ``.hada_w1_a`` hit exactly that. Flattened, they have no interior dot and group harmlessly,
-            # so leaving them verbatim keeps them at the pre-existing warn-and-skip behaviour.
+            # into one bogus layer that aborts the whole load. LoKr/LoHa suffixes are now registered in
+            # ``_SUFFIX_TO_VALUE_KEY`` and convert; others (``.diff``) still hit that fallback. Flattened, they
+            # have no interior dot and group harmlessly, so leaving them verbatim keeps warn-and-skip.
             if module_path is not None and flat_path in fully_convertible_flat_paths:
                 converted_key = f"{module_path}{dot}{weight_suffix}"
         if converted_key in converted_state_dict:
@@ -276,6 +276,11 @@ _SUFFIX_TO_VALUE_KEY = {
     ".lora_magnitude_vector.weight": "dora_magnitude",
     ".magnitude": "dora_magnitude",
     ".alpha": "alpha",
+    # LyCORIS LoKr/LoHa factors (CivitAI labels many Krea-2 LoKr files "LoCon"). Without these the fallback
+    # below splits two segments off ("attn.gate.lokr_w1" -> layer "attn", key "gate.lokr_w1"), parting the
+    # factors from their alpha and leaving an alpha-only layer that any_lora_layer_from_state_dict rejects.
+    **{f".{name}": name for name in ("lokr_w1", "lokr_w1_a", "lokr_w1_b", "lokr_w2", "lokr_w2_a", "lokr_w2_b", "lokr_t2")},
+    **{f".{name}": name for name in ("hada_w1_a", "hada_w1_b", "hada_w2_a", "hada_w2_b", "hada_t1", "hada_t2")},
 }
 
 
