@@ -48,6 +48,14 @@ def test_has_qwen_vl_keys_rejects_lm_only() -> None:
     assert not _has_qwen_vl_keys(["model.embed_tokens.weight", "model.layers.0.self_attn.q_proj.weight"])
 
 
+def test_has_qwen_vl_keys_rejects_qwen3_vl() -> None:
+    """Qwen3-VL has the same LM + visual layout; its decoder's q_norm/k_norm must keep it out of the
+    Qwen2.5-VL config, wherever the norm key sorts relative to the LM and visual keys."""
+    qwen3_vl = ["model.embed_tokens.weight", "visual.blocks.0.norm1.weight", "model.layers.0.self_attn.q_norm.weight"]
+    assert not _has_qwen_vl_keys(qwen3_vl)
+    assert not _has_qwen_vl_keys(["model.layers.3.self_attn.k_norm.weight", *qwen3_vl[:2]])
+
+
 def test_has_qwen_vl_keys_rejects_empty() -> None:
     assert not _has_qwen_vl_keys([])
 
