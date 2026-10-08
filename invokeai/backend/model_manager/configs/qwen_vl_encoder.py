@@ -23,19 +23,24 @@ _RECOGNIZED_TEXT_ENCODER_CLASSES = {
 
 def _has_qwen_vl_keys(keys: Iterable[str]) -> bool:
     """A Qwen2.5-VL/Qwen2-VL checkpoint must have both LM weights and a visual
-    tower — that's what distinguishes it from text-only Qwen3/Qwen2 encoders."""
+    tower — that's what distinguishes it from text-only Qwen3/Qwen2 encoders.
+
+    Qwen3-VL checkpoints have the same LM + visual layout, so they are told apart by the Qwen3
+    decoder's per-head attention norms (``self_attn.q_norm`` / ``k_norm``), which Qwen2/2.5 lack.
+    Without that, a Qwen3-VL file matched both this config and a Qwen3-VL config, and identification
+    picked one by ``Config_Base.CONFIG_CLASSES`` set order — i.e. differently from run to run."""
     has_lm = False
     has_vision = False
     for k in keys:
         if not isinstance(k, str):
             continue
-        if not has_lm and (k == "model.embed_tokens.weight" or k.startswith("model.layers.")):
+        if ".self_attn.q_norm." in k or ".self_attn.k_norm." in k:
+            return False
+        if k == "model.embed_tokens.weight" or k.startswith("model.layers."):
             has_lm = True
-        if not has_vision and (k.startswith("visual.patch_embed.") or k.startswith("visual.blocks.")):
+        if k.startswith("visual.patch_embed.") or k.startswith("visual.blocks."):
             has_vision = True
-        if has_lm and has_vision:
-            return True
-    return False
+    return has_lm and has_vision
 
 
 def _read_safetensors_keys(path: Path) -> list[str]:
