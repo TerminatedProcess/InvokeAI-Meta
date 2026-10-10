@@ -113,14 +113,6 @@ function stop
         set found 1
     end
 
-    set mc_pids (pgrep -f "model_compare/server.py")
-    if test -n "$mc_pids"
-        echo "Found Model Compare service (PIDs: $mc_pids)"
-        echo "Stopping Model Compare..."
-        pkill -f "model_compare/server.py"
-        set found 1
-    end
-
     set ip_pids (pgrep -f "invokepush/web.py")
     if test -n "$ip_pids"
         echo "Found invokepush service (PIDs: $ip_pids)"
