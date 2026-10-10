@@ -26,7 +26,7 @@ if [ ! -d "$TOOLS_DIR/.git" ]; then
 else
     git -C "$TOOLS_DIR" pull --ff-only
 fi
-TOOL_LINKS=(hub_import.py hub_update.py model_compare)
+TOOL_LINKS=(hub_import.py hub_update.py)
 for name in "${TOOL_LINKS[@]}"; do
     ln -sfn "../../invokeai-claude-fixes/scripts/$name" "scripts/$name"
     [ -e "scripts/$name" ] || { echo "Error: scripts/$name does not resolve into $TOOLS_DIR/scripts" >&2; exit 1; }
