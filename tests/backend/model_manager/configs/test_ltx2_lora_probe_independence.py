@@ -140,6 +140,18 @@ def _h3_turbo_keys() -> dict[str, torch.Tensor]:
     return sd
 
 
+def _qwen_image_comfy_keys() -> dict[str, torch.Tensor]:
+    """ComfyUI's Qwen Image layout: the same ``diffusion_model.transformer_blocks.N`` prefix as
+    LTX-2, told apart by Qwen Image's dual-stream ``img_mod``/``txt_mlp`` modules."""
+    sd: dict[str, torch.Tensor] = {}
+    for block in range(2):
+        base = f"diffusion_model.transformer_blocks.{block}"
+        for module in ("attn.to_q", "attn.add_k_proj", "img_mod.1", "txt_mlp.net.2"):
+            sd[f"{base}.{module}.lora_A.weight"] = _z(16, 3072)
+            sd[f"{base}.{module}.lora_B.weight"] = _z(3072, 16)
+    return sd
+
+
 def _anima_kohya_keys() -> dict[str, torch.Tensor]:
     sd: dict[str, torch.Tensor] = {}
     for block in range(2):
@@ -188,12 +200,26 @@ def test_an_ltx2_lora_is_rejected_by_every_other_probe(other) -> None:
         ("wan-diffusers", _wan_diffusers_keys),
         ("minimax-h3", _h3_turbo_keys),
         ("anima", _anima_kohya_keys),
+        ("qwen-image-comfy", _qwen_image_comfy_keys),
     ],
 )
 def test_another_familys_lora_is_rejected_by_the_ltx2_probe(name: str, keys) -> None:
     """``wan-diffusers`` is the one that matters: it shares ``transformer_blocks.N.attn1`` with
     LTX-2, so only the absent audio tower separates them."""
     matched, _ = _probe(LoRA_LyCORIS_LTX2_Config, keys(), name=name)
+
+    assert not matched
+
+
+def test_a_comfy_qwen_image_lora_identifies_as_qwen_image() -> None:
+    matched, result = _probe(LoRA_LyCORIS_QwenImage_Config, _qwen_image_comfy_keys())
+
+    assert matched, result
+    assert result.base is BaseModelType.QwenImage
+
+
+def test_the_qwen_image_probe_does_not_take_wan_diffusers_keys_under_the_comfy_prefix() -> None:
+    matched, _ = _probe(LoRA_LyCORIS_QwenImage_Config, _wan_diffusers_keys())
 
     assert not matched
 

@@ -4,6 +4,7 @@ Qwen Image uses QwenImageTransformer2DModel architecture.
 Supports multiple LoRA formats:
 - Diffusers/PEFT: transformer_blocks.0.attn.to_k.lora_down.weight
 - With prefix: transformer.transformer_blocks.0.attn.to_k.lora_down.weight
+- ComfyUI: diffusion_model.transformer_blocks.0.attn.to_k.lora_A.weight
 - Kohya: lora_unet_transformer_blocks_0_attn_to_k.lora_down.weight (underscores instead of dots)
 """
 
@@ -15,6 +16,7 @@ import torch
 from invokeai.backend.patches.layers.base_layer_patch import BaseLayerPatch
 from invokeai.backend.patches.layers.utils import any_lora_layer_from_state_dict
 from invokeai.backend.patches.lora_conversions.qwen_image_lora_constants import (
+    QWEN_IMAGE_COMFY_PREFIX,
     QWEN_IMAGE_EDIT_LORA_TRANSFORMER_PREFIX,
 )
 from invokeai.backend.patches.model_patch_raw import ModelPatchRaw
@@ -82,9 +84,10 @@ def lora_model_from_qwen_image_state_dict(
 ) -> ModelPatchRaw:
     """Convert a Qwen Image LoRA state dict to a ModelPatchRaw.
 
-    Handles three key formats:
+    Handles four key formats:
     - Diffusers/PEFT: transformer_blocks.0.attn.to_k.lora_down.weight
     - With prefix: transformer.transformer_blocks.0.attn.to_k.lora_down.weight
+    - ComfyUI: diffusion_model.transformer_blocks.0.attn.to_k.lora_A.weight
     - Kohya: lora_unet_transformer_blocks_0_attn_to_k.lora_down.weight
     """
     is_kohya = is_state_dict_likely_kohya_qwen_image(state_dict)
@@ -125,8 +128,8 @@ def _convert_diffusers_format(state_dict: Dict[str, torch.Tensor], alpha: float 
     """Convert Diffusers/PEFT format state dict."""
     layers: dict[str, BaseLayerPatch] = {}
 
-    # Some LoRAs use a "transformer." prefix on keys
-    strip_prefixes = ["transformer."]
+    # Some LoRAs use a "transformer." (PEFT) or "diffusion_model." (ComfyUI) prefix on keys
+    strip_prefixes = ["transformer.", QWEN_IMAGE_COMFY_PREFIX]
 
     grouped = _group_by_layer(state_dict)
 
