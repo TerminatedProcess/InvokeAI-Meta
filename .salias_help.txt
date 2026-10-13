@@ -21,7 +21,7 @@ DEVELOPMENT
 
 MAINTENANCE
   clean             Remove frontend dist, vite cache, __pycache__ dirs
-  logs              Tail the InvokeAI log file
+  logs              Follow the InvokeAI service logs (journal)
 
 GIT
   gitupdate         Sync main and mryan with upstream; restarts already-running services
