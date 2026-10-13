@@ -60,6 +60,18 @@ def _make_turbo_style_state_dict(prefix: str = "") -> dict[str, torch.Tensor]:
     return sd
 
 
+def _to_kohya(sd: dict[str, torch.Tensor]) -> dict[str, torch.Tensor]:
+    """Re-key a native-layout state dict the way sd-scripts saves it: underscored layer names,
+    ``lora_down``/``lora_up``, and an explicit per-layer ``alpha``."""
+    kohya: dict[str, torch.Tensor] = {}
+    for key, value in sd.items():
+        layer, suffix = key.rsplit(".lora_", 1)
+        name = "lora_unet_" + layer.replace(".", "_")
+        kohya[f"{name}.lora_{'down' if suffix == 'A.weight' else 'up'}.weight"] = value
+        kohya[f"{name}.alpha"] = torch.tensor(float(value.shape[0] if suffix == "A.weight" else value.shape[1]) / 2)
+    return kohya
+
+
 EXPECTED_LAYER_PATHS = {
     "transformer_blocks.0.attn.to_q",
     "transformer_blocks.0.attn.to_k",
@@ -89,6 +101,21 @@ def test_layer_path_mapping(prefix: str):
         assert isinstance(layer, LoRALayer)
         got_paths.add(key[len(MINIMAX_H3_LORA_TRANSFORMER_PREFIX) :])
     assert got_paths == EXPECTED_LAYER_PATHS
+
+
+def test_kohya_layout_maps_to_the_same_layers_and_keeps_its_alpha():
+    native = _make_turbo_style_state_dict()
+    patch = lora_model_from_minimax_h3_state_dict(_to_kohya(native))
+
+    got_paths = {key[len(MINIMAX_H3_LORA_TRANSFORMER_PREFIX) :] for key in patch.layers}
+    assert got_paths == EXPECTED_LAYER_PATHS
+    for layer in patch.layers.values():
+        assert isinstance(layer, LoRALayer)
+        assert layer.scale() == 0.5
+    # The fused-QKV fan-out still row-splits lora_up after the re-key.
+    q = patch.layers[f"{MINIMAX_H3_LORA_TRANSFORMER_PREFIX}transformer_blocks.0.attn.to_q"]
+    assert isinstance(q, LoRALayer)
+    torch.testing.assert_close(q.up, native["blocks.0.attn.qkv_proj.lora_B.weight"][:HIDDEN])
 
 
 def test_alpha_defaults_to_rank_scale_one():

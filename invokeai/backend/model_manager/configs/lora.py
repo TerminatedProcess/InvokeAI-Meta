@@ -59,6 +59,7 @@ from invokeai.backend.patches.lora_conversions.minimax_h3_lora_constants import 
     has_non_minimax_h3_architecture_keys,
     has_unsupported_minimax_h3_lora_variant_keys,
 )
+from invokeai.backend.patches.lora_conversions.qwen_image_lora_constants import has_comfy_qwen_image_lora_keys
 from invokeai.backend.patches.lora_conversions.wan_lora_constants import (
     detect_wan_lora_variant,
     has_non_wan_architecture_keys,
@@ -830,7 +831,7 @@ class LoRA_LyCORIS_QwenImage_Config(LoRA_LyCORIS_Config_Base, Config_Base):
                 "transformer.transformer_blocks.",
                 "lora_unet_transformer_blocks_",  # Kohya format
             },
-        )
+        ) or has_comfy_qwen_image_lora_keys([k for k in state_dict.keys() if isinstance(k, str)])
         has_lora_suffix = state_dict_has_any_keys_ending_with(
             state_dict,
             {
@@ -875,7 +876,7 @@ class LoRA_LyCORIS_QwenImage_Config(LoRA_LyCORIS_Config_Base, Config_Base):
         has_qwen_ie_keys = state_dict_has_any_keys_starting_with(
             state_dict,
             {"transformer_blocks.", "transformer.transformer_blocks.", "lora_unet_transformer_blocks_"},
-        )
+        ) or has_comfy_qwen_image_lora_keys([k for k in state_dict.keys() if isinstance(k, str)])
         has_z_image_keys = state_dict_has_any_keys_starting_with(state_dict, {"diffusion_model.layers."})
         has_krea2_keys = _has_krea2_lora_keys(state_dict)
         has_flux_keys = state_dict_has_any_keys_starting_with(

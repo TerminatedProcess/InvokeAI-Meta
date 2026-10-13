@@ -117,6 +117,22 @@ def test_diffusers_with_transformer_prefix_strips_it():
     assert expected_key in model.layers
 
 
+def test_comfy_diffusion_model_prefix_strips_it():
+    """ComfyUI keys carry a 'diffusion_model.' prefix that must not reach the module path."""
+    state_dict = {
+        "diffusion_model.transformer_blocks.0.img_mod.1.lora_A.weight": torch.empty(16, 3072),
+        "diffusion_model.transformer_blocks.0.img_mod.1.lora_B.weight": torch.empty(18432, 16),
+        "diffusion_model.img_in.lora_A.weight": torch.empty(16, 64),
+        "diffusion_model.img_in.lora_B.weight": torch.empty(3072, 16),
+    }
+    model = lora_model_from_qwen_image_state_dict(state_dict, alpha=None)
+
+    assert set(model.layers.keys()) == {
+        f"{QWEN_IMAGE_EDIT_LORA_TRANSFORMER_PREFIX}transformer_blocks.0.img_mod.1",
+        f"{QWEN_IMAGE_EDIT_LORA_TRANSFORMER_PREFIX}img_in",
+    }
+
+
 # ---- Unknown key handling tests ----
 
 

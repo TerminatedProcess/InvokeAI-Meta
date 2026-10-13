@@ -15,6 +15,9 @@
 #
 # ComfyUI users sometimes re-key these with a ``diffusion_model.`` prefix; a bare
 # ``transformer.`` / ``base_model.model.transformer.`` PEFT prefix is also accepted.
+# Kohya/sd-scripts trainers flatten the same paths with underscores and use
+# ``lora_down`` / ``lora_up`` / ``alpha`` (``lora_unet_blocks_0_attn_qkv_proj.lora_down.weight``);
+# ``minimax_h3_native_key`` rewrites those to the native layout before detection and conversion.
 #
 # The detection helpers below are shared with ``configs/lora.py`` so the probe and
 # the conversion code agree on what counts as an H3 LoRA. They keep this file
@@ -48,6 +51,20 @@ _H3_EXCLUSIVE_RE = re.compile(
 )
 _H3_FINAL_LAYER_RE = re.compile(_PEFT_PREFIX_RE + r"final_layer\.adaln_proj\.linear\.")
 
+# Kohya layer names for every H3 LoRA target. Matched against the whole layer name (not by
+# splitting on ``_``) because the module names themselves contain underscores.
+_KOHYA_BLOCK_RE = re.compile(
+    r"^lora_unet_(token_refiner_)?blocks_(\d+)_(attn_qkv_proj|attn_out_proj|mlp_fc1|mlp_fc2|adaln_proj_linear)\."
+)
+_KOHYA_FINAL_LAYER = "lora_unet_final_layer_adaln_proj_linear."
+_KOHYA_MODULES = {
+    "attn_qkv_proj": "attn.qkv_proj",
+    "attn_out_proj": "attn.out_proj",
+    "mlp_fc1": "mlp.fc1",
+    "mlp_fc2": "mlp.fc2",
+    "adaln_proj_linear": "adaln_proj.linear",
+}
+
 # Any of these indicates a different architecture; an H3 LoRA never carries them.
 _NON_H3_ANTI_RES = (
     re.compile(r"(self_attn|cross_attn)[\._]"),  # Wan / Anima attention naming
@@ -73,6 +90,17 @@ _UNSUPPORTED_H3_VARIANT_SUFFIXES = (
 )
 
 
+def minimax_h3_native_key(key: str) -> str:
+    """Rewrite a Kohya-format H3 LoRA key to the native dotted layout; other keys pass through."""
+    m = _KOHYA_BLOCK_RE.match(key)
+    if m:
+        refiner = "token_refiner." if m.group(1) else ""
+        return f"{refiner}blocks.{m.group(2)}.{_KOHYA_MODULES[m.group(3)]}.{key[m.end() :]}"
+    if key.startswith(_KOHYA_FINAL_LAYER):
+        return "final_layer.adaln_proj.linear." + key[len(_KOHYA_FINAL_LAYER) :]
+    return key
+
+
 def has_unsupported_minimax_h3_lora_variant_keys(str_keys: list[str]) -> bool:
     """True if the state dict carries LyCORIS-variant tensors (LoKR/LoHA/DoRA) that the H3
     conversion pipeline cannot apply to the fused transformer layers."""
@@ -81,8 +109,9 @@ def has_unsupported_minimax_h3_lora_variant_keys(str_keys: list[str]) -> bool:
 
 def has_minimax_h3_lora_keys(str_keys: list[str]) -> bool:
     """PEFT-style keys naming H3-exclusive submodules (fused ``attn.qkv_proj`` or
-    ``adaln_proj.linear``) in the checkpoint's native layout."""
-    return any(_H3_EXCLUSIVE_RE.search(k) or _H3_FINAL_LAYER_RE.search(k) for k in str_keys)
+    ``adaln_proj.linear``) in the checkpoint's native or Kohya layout."""
+    native_keys = map(minimax_h3_native_key, str_keys)
+    return any(_H3_EXCLUSIVE_RE.search(k) or _H3_FINAL_LAYER_RE.search(k) for k in native_keys)
 
 
 def has_non_minimax_h3_architecture_keys(str_keys: list[str]) -> bool:

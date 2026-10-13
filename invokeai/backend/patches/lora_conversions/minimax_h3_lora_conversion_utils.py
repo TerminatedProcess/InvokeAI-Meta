@@ -38,6 +38,7 @@ from invokeai.backend.patches.lora_conversions.minimax_h3_lora_constants import 
     has_minimax_h3_lora_keys,
     has_non_minimax_h3_architecture_keys,
     has_unsupported_minimax_h3_lora_variant_keys,
+    minimax_h3_native_key,
 )
 from invokeai.backend.patches.model_patch_raw import ModelPatchRaw
 
@@ -103,8 +104,9 @@ def lora_model_from_minimax_h3_state_dict(
         )
 
     layers: dict[str, BaseLayerPatch] = {}
+    native_state_dict = {minimax_h3_native_key(k): v for k, v in state_dict.items() if isinstance(k, str)}
 
-    for raw_layer_path, layer_dict in _group_by_layer(state_dict).items():
+    for raw_layer_path, layer_dict in _group_by_layer(native_state_dict).items():
         layer_path = _rename_layer_path(_strip_peft_prefix(raw_layer_path))
         values = _normalize_lora_param_names(layer_dict, alpha)
 

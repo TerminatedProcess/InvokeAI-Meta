@@ -90,6 +90,18 @@ def _h3_turbo_keys(prefix: str = "") -> dict[str, torch.Tensor]:
     return sd
 
 
+def _h3_kohya_keys() -> dict[str, torch.Tensor]:
+    """The same layers as sd-scripts saves them: ``lora_unet_`` + underscored path, with
+    ``lora_down``/``lora_up``/``alpha``. Shares the ``lora_unet_blocks_N_`` shape with Anima."""
+    sd: dict[str, torch.Tensor] = {}
+    for key, value in _h3_turbo_keys().items():
+        layer, suffix = key.rsplit(".lora_", 1)
+        name = "lora_unet_" + layer.replace(".", "_")
+        sd[f"{name}.lora_{'down' if suffix == 'A.weight' else 'up'}.weight"] = value
+        sd[f"{name}.alpha"] = torch.tensor(1.0)
+    return sd
+
+
 def _wan_native_keys() -> dict[str, torch.Tensor]:
     sd: dict[str, torch.Tensor] = {}
     for block in range(2):
@@ -116,6 +128,16 @@ def test_h3_lora_identifies_as_h3():
         accepted, result = _probe(LoRA_LyCORIS_MiniMaxH3_Config, _h3_turbo_keys(prefix))
         assert accepted, f"H3 probe rejected its own layout (prefix={prefix!r}): {result}"
         assert result.base is BaseModelType.MiniMaxH3
+
+
+def test_kohya_h3_lora_identifies_as_h3_only():
+    sd = _h3_kohya_keys()
+    accepted, result = _probe(LoRA_LyCORIS_MiniMaxH3_Config, sd)
+    assert accepted, f"H3 probe rejected the Kohya layout: {result}"
+    assert result.base is BaseModelType.MiniMaxH3
+    for cls in (LoRA_LyCORIS_Wan_Config, LoRA_LyCORIS_Anima_Config, LoRA_LyCORIS_Krea2_Config):
+        accepted, result = _probe(cls, sd)
+        assert not accepted, f"{cls.__name__} wrongly accepted a Kohya H3 LoRA: {result}"
 
 
 def test_h3_lora_rejected_by_other_probes():
