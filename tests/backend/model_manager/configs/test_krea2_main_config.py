@@ -58,6 +58,12 @@ class TestKrea2VariantFromName:
             # "base"/"raw" only match as whole tokens, not arbitrary substrings.
             ("krea2_database_model.safetensors", Krea2VariantType.Turbo),
             ("krea2_baseline_q8.gguf", Krea2VariantType.Turbo),
+            # Civitai camelCase filenames: "Raw" is a token at a camelCase boundary...
+            ("snofsSexNudesAndOther_krea2RawV13D.safetensors", Krea2VariantType.Base),
+            ("krea2Raw_v10_bf16.safetensors", Krea2VariantType.Base),
+            # ...but not when it only starts a longer word.
+            ("rawgirlKrea2_v10.safetensors", Krea2VariantType.Turbo),
+            ("DasiwaKrea2TurboRaw_cutedisasterV2Turbo.safetensors", Krea2VariantType.Turbo),
         ],
     )
     def test_variant_from_name(self, name: str, expected: Krea2VariantType) -> None:
