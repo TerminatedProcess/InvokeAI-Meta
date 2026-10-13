@@ -51,7 +51,17 @@ function updateall
 end
 
 # ── Help ──
-alias help='clear; cat ./.salias_help.txt'
+function help
+    clear
+    cat ./.salias_help.txt
+    echo ""
+    if systemctl --user is-active --quiet $INVOKE_UNIT
+        set_color green; echo "InvokeAI: running ($INVOKE_URL)"
+    else
+        set_color red; echo "InvokeAI: not running ($(systemctl --user is-active $INVOKE_UNIT))"
+    end
+    set_color normal
+end
 
 # ── Server ──
 # invokeai-web runs as a systemd user unit fronted by the Service Dashboard
@@ -198,8 +208,9 @@ function clean
     find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null
     echo "Done"
 end
+# invokeai-web runs under systemd and logs to the journal; invokeai.yaml has no file handler.
 function logs
-    tail -f $INVOKE_DATA_DIR/logs/invokeai.log
+    journalctl --user -u invokeai-web -u invokeai-generator -f $argv
 end
 
 # ── Git ──
