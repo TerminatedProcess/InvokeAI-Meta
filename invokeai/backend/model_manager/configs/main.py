@@ -202,9 +202,11 @@ def _get_krea2_variant_from_name(name: str) -> Krea2VariantType:
     # is not misread as Base.
     if "turbo" in lowered:
         return Krea2VariantType.Turbo
-    # Otherwise match "raw"/"base" only as a whole token delimited by non-alphanumeric separators
-    # ("-", "_", ".") - not as an arbitrary substring.
-    tokens = re.split(r"[^a-z0-9]+", lowered)
+    # Otherwise match "raw"/"base" only as a whole token - not as an arbitrary substring. Tokens are
+    # delimited by non-alphanumeric separators ("-", "_", ".") and by camelCase boundaries, since
+    # Civitai filenames are camelCase (e.g. "snofs_krea2RawV13D").
+    camel_split = re.sub(r"(?<=[a-z0-9])(?=[A-Z])", "_", name)
+    tokens = re.split(r"[^a-z0-9]+", camel_split.lower())
     if "raw" in tokens or "base" in tokens:
         return Krea2VariantType.Base
     return Krea2VariantType.Turbo
