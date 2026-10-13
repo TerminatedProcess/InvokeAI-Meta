@@ -318,21 +318,14 @@ function __invoke_reset
     echo "Resetting InvokeAI models DB and symlinks..."
     echo "Data dir: $INVOKE_DATA_DIR"
     echo ""
-    __invoke_hub_py hub_import.py --reset --no-import $argv
-    or return $status
-
-    echo ""
-    read -P "Reimport? (Y/n) " -l reply
-    switch (string lower -- $reply)
-        case n no
-            echo "Skipping re-import."
-        case '*'
-            __invoke_hub_py hub_import.py $argv
-    end
+    __invoke_hub_py hub_import.py --reset $argv
 end
 function reset
     imd
     __invoke_hub_session __invoke_reset $argv
+end
+function resetclearcache
+    reset --clear-cache $argv
 end
 function ipush
     python /home/dev/work/media/invokedev/invokepush/web.py $argv
