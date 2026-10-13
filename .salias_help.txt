@@ -30,6 +30,7 @@ MODELS
   up                Reconcile with hub: prune broken/dupe/unknown, import new
                     (restarts only the services that were running)
   reset             Wipe InvokeAI models DB + symlinks, then re-import
+  resetclearcache   reset, but drop the probe caches first (re-probe every model)
   ipush             invokepush web service (auto-started by run)
 
 SECRETS
