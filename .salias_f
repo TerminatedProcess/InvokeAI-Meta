@@ -223,6 +223,8 @@ end
 # setup_dev.sh creates the scripts/ symlinks into invokeai-claude-fixes). Nothing upstream-owned is edited
 # or deleted, so a rebase has nothing to conflict over and gitupdate needs no autodrop
 # rules. Keep it that way: a patch to an upstream file is a cost paid on every sync.
+# Standard project verb; comfy defines its own `update` (comfy-cli), forks call gitupdate.
+alias update='gitupdate'
 # Local-only paths (invokeai_data, .env*) are excluded via .git/info/exclude, written
 # by setup_dev.sh, rather than by editing upstream's .gitignore.
 
