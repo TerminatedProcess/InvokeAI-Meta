@@ -24,7 +24,7 @@ MAINTENANCE
   logs              Follow the InvokeAI service logs (journal)
 
 GIT
-  update            Sync main and mryan with upstream (gitupdate); restarts running services
+  update            Sync with upstream (gitupdate), updateall, build-ui; restarts running services
 
 MODELS
   up                Reconcile with hub: prune broken/dupe/unknown, import new
