@@ -224,7 +224,24 @@ end
 # or deleted, so a rebase has nothing to conflict over and gitupdate needs no autodrop
 # rules. Keep it that way: a patch to an upstream file is a cost paid on every sync.
 # Standard project verb; comfy defines its own `update` (comfy-cli), forks call gitupdate.
-alias update='gitupdate'
+# A sync alone leaves the venv and the served webv2 bundle behind the new code, so update
+# also re-syncs packages and rebuilds the UI. It owns the restart (GITUPDATE_NO_RESTART):
+# gitupdate's own would bring services up before either step ran.
+function update
+    imd
+    set -l was_up
+    for unit in (git config --get-all gitupdate.restartunit)
+        systemctl --user is-active --quiet $unit; and set -a was_up $unit
+    end
+    GITUPDATE_NO_RESTART=1 gitupdate $argv
+    and updateall
+    and build-ui
+    or return $status
+    for unit in $was_up
+        echo "Restarting $unit ..."
+        systemctl --user restart $unit; or echo "Warning: failed to restart $unit" >&2
+    end
+end
 # Local-only paths (invokeai_data, .env*) are excluded via .git/info/exclude, written
 # by setup_dev.sh, rather than by editing upstream's .gitignore.
 
