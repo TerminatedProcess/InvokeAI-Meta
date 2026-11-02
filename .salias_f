@@ -331,6 +331,9 @@ function up
     clear
     imd
     __invoke_hub_session __invoke_hub_py hub_update.py $argv
+    echo "Sleeping 7"
+    sleep 7
+    exit
 end
 
 function __invoke_reset
