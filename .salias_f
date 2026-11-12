@@ -264,16 +264,6 @@ for unit in $INVOKE_UNIT model-compare.service
 end
 
 # ── Models ──
-# Restart the units an update took down — and only those. Goes through the same
-# dashboard endpoint `run` uses so the dashboard's own bookkeeping stays right.
-function __invoke_restore_units
-    for unit in $argv
-        echo "Restarting $unit ..."
-        set -l code (curl -s -m 60 -o /dev/null -w '%{http_code}' -X POST $SVC_DASH/api/services/$unit/restart)
-        test "$code" = 200; or echo "Warning: dashboard returned HTTP $code restarting $unit" >&2
-    end
-end
-
 # Hub scripts run on this checkout's venv explicitly: bare `python` only works when
 # direnv has activated .venv, and they import invokeai even in the filter phase.
 function __invoke_hub_py
@@ -283,68 +273,28 @@ function __invoke_hub_py
         $argv[2..-1]
 end
 
-# Run $argv with InvokeAI off the models DB and the hub API up, then restore
-# exactly the units that were running before.
-function __invoke_hub_session
-    # The update needs InvokeAI to let go of the models DB, but it must not *start*
-    # a stack that was deliberately left stopped. Record what is up now and put
-    # back exactly that at the end.
-    set -l was_up (svcgroup invokeai status | string match -rg '^\s+(\S+\.service)\s+running')
-    if test (count $was_up) -gt 0
-        echo "Running, will be restarted afterwards: "(string join ', ' $was_up)
-        # Call svcgroup directly, NOT the svstop/svr aliases: those end in `exit`
-        # (they're meant for "stop the stack and close this window"), which would
-        # kill the shell before the hub script ever runs.
-        svcgroup invokeai stop
-        or return $status
-    else
-        echo "No InvokeAI units are running — they will be left stopped."
-    end
-
-    # hub_import reads the hub over its API (127.0.0.1:8000) rather than its SQLite
-    # file, so the import phase needs hubroot up. Only hubroot: what the stop above
-    # is really for is InvokeAI letting go of the models DB, and hubroot never
-    # touches that DB. Already running in the usual case — start is idempotent.
-    systemctl --user start hubroot
-    or return $status
-    set -l hub_up 0
-    for i in (seq 30)
-        if curl -sf -m 2 -o /dev/null http://127.0.0.1:8000/api/health
-            set hub_up 1
-            break
-        end
-        sleep 1
-    end
-    if test $hub_up -eq 0
-        echo "Hub API never came up on http://127.0.0.1:8000 — aborting" >&2
-        __invoke_restore_units $was_up
-        return 1
-    end
-
-    $argv
-    set -l rc $status
-    __invoke_restore_units $was_up
-    return $rc
-end
-
+# hub_deploy.py owns the session that both `up` and the hub's Deploy button go through:
+# the deploy lock, letting InvokeAI's running job finish (the queue is paused, not
+# drained), stopping the stack, and restoring exactly the units that were up. Its
+# stdout is JSON for the hub; the progress a person reads is on stderr.
 function up
     clear
     imd
-    __invoke_hub_session __invoke_hub_py hub_update.py $argv
+    __invoke_hub_py hub_deploy.py --all $argv >/dev/null
     echo "Sleeping 7"
     sleep 7
     exit
 end
 
-function __invoke_reset
+function reset
+    imd
     echo "Resetting InvokeAI models DB and symlinks..."
     echo "Data dir: $INVOKE_DATA_DIR"
     echo ""
-    __invoke_hub_py hub_import.py --reset $argv
-end
-function reset
-    imd
-    __invoke_hub_session __invoke_reset $argv
+    $INVOKE_DIR/.venv/bin/python $INVOKE_DIR/scripts/hub_deploy.py \
+        --invokeai-db $INVOKEAI_DB --session \
+        $INVOKE_DIR/.venv/bin/python $INVOKE_DIR/scripts/hub_import.py --reset \
+        --invokeai-db $INVOKEAI_DB --invokeai-models $INVOKE_DATA_DIR/models $argv
 end
 function resetclearcache
     reset --clear-cache $argv
